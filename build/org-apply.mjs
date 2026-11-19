@@ -52,7 +52,11 @@ for (const a of p.actions) {
     if (!names.has('main-locked')) must(await gh('POST', `${base}/rulesets`, { name: 'main-locked', target: 'branch', enforcement: 'active', bypass_actors: admins, conditions: { ref_name: { include: ['refs/heads/main'], exclude: [] } }, rules: [{ type: 'deletion' }, { type: 'non_fast_forward' }, { type: 'update' }] }), `ruleset main-locked on ${a.target}`, [201]);
     if (!names.has('dev-safe')) must(await gh('POST', `${base}/rulesets`, { name: 'dev-safe', target: 'branch', enforcement: 'active', bypass_actors: [], conditions: { ref_name: { include: ['refs/heads/dev'], exclude: [] } }, rules: [{ type: 'deletion' }, { type: 'non_fast_forward' }] }), `ruleset dev-safe on ${a.target}`, [201]);
   } else if (a.action === 'pages.enforce_https') must(await gh('PUT', `${base}/pages`, { cname: r.cname, https_enforced: true }), `HTTPS enforced on ${r.cname}`);
-  else if (a.action === 'pages.nudge_certificate') must(await gh('PUT', `${base}/pages`, { cname: r.cname }), `certificate nudge for ${r.cname} (was ${a.state})`);
+  else if (a.action === 'pages.nudge_certificate') {
+    // Remove the custom domain and set it again: GitHub then re-checks DNS and requests the certificate.
+    must(await gh('PUT', `${base}/pages`, { cname: null }), `custom domain cleared on ${a.target}`);
+    must(await gh('PUT', `${base}/pages`, { cname: r.cname }), `certificate nudge for ${r.cname} (was ${a.state})`);
+  }
   else throw new Error(`unknown action ${a.action}`);
 }
 console.log(`APPLIED ${p.actions.length} actions`);

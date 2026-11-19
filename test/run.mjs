@@ -40,6 +40,7 @@ assert.deepEqual(one({ cert_state: 'approved' }), ['pages.enforce_https']);
 assert.deepEqual(one({ cert_state: 'authorization_pending' }), [], 'never nudge while pending');
 assert.deepEqual(one({ cert_state: null }), [], 'no certificate yet: wait, the domain was just set');
 assert.deepEqual(one({ cert_state: 'errored' }), ['pages.nudge_certificate']);
+process.env.NUDGE_MISSING = 'true'; assert.deepEqual(one({ cert_state: null }), ['pages.nudge_certificate'], 'by hand: nudge a missing certificate'); delete process.env.NUDGE_MISSING;
 assert.deepEqual(one({ cert_state: 'approved', https_enforced: true }), []);
 assert.equal(checkActions(p, { pipeline: 'org-apply', actions: [{ action: 'ruleset.delete', target: 'X' }] }).length, 1);
 console.log('OK (tests)');

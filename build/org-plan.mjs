@@ -39,7 +39,7 @@ export function plan(org, live) {
     if (r.cname && l.cname === r.cname && !l.https_enforced) {
       const st = l.cert_state;
       if (st === 'approved' || st === 'issued') actions.push({ action: 'pages.enforce_https', target: r.name });
-      else if (['errored', 'bad_authz', 'authorization_revoked', 'dns_changed', 'destroy_pending'].includes(st)) actions.push({ action: 'pages.nudge_certificate', target: r.name, state: st || 'none' });
+      else if ((process.env.NUDGE_MISSING === 'true' && !st) || ['errored', 'bad_authz', 'authorization_revoked', 'dns_changed', 'destroy_pending'].includes(st)) actions.push({ action: 'pages.nudge_certificate', target: r.name, state: st || 'none' });
     }
   }
   const names = new Set(org.repos.map((r) => r.name));

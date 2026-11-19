@@ -6,6 +6,11 @@ on:
     branches: [dev]
     paths: ['org/**', 'policy/**']
   workflow_dispatch:
+    inputs:
+      nudge_missing_certificates:
+        description: 'Also re-set custom domains that have no certificate yet (use once DNS points at Pages)'
+        type: boolean
+        default: false
   schedule:
     - cron: '17 * * * *'
 permissions:
@@ -30,6 +35,7 @@ jobs:
       - name: Plan against the live organisation
         env:
           GH_TOKEN: ${{ steps.app.outputs.token }}
+          NUDGE_MISSING: ${{ inputs.nudge_missing_certificates == true }}
         run: node build/org-plan.mjs plan.json | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Policy check
         run: node build/abp.mjs actions plan.json
