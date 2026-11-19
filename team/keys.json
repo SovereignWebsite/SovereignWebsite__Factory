@@ -1,0 +1,28 @@
+{
+  "about": "Public keys of the agents that commit to this repository. Every commit is signed with one of these keys (git SSH signature from bundle.sign) and names the session recorded here.",
+  "keys": [
+    {
+      "id": "conductor-b-sovereignwebsite",
+      "agent": "conductor.b@SovereignWebsite.dinis",
+      "role": "Conductor of the Sovereign Agentic Website team. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 19 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-19",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
+      "fingerprint": "sha256:fabd2942df366c5f",
+      "signing_fingerprint": "sha256:706a24f8808e02a2",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAhbnbEs+xFWjwc/ooSNir\nRhJBu90NLqrjwKaj3pevhpS6qZd7QN9XZYseLHGBElCgFGMSIwBWbiQ8U/5A8z4m\nFPC4j8P344sCHPnCk15e5xrtDl+6YG4M08fSH8n1vNizx6aMxYbv24q37T71NtQ5\nAn3VN0rriP6btbOTmkm3tyig91Y2+BvUMjh9xFXAZvOsrvs/15cIMzVakmwd438S\nklYcVz0QfVp7sFdBueczA4Q1AQiPrlY5xLn/MLJoG0pfHVMG55vqI6x+ekOcomV6\nYpyAE3n5x612aSV825+RIpmivXSmw0AGA4Mj2IX5awWDsPCl3HbVqbfmWsK71lig\nPsbKItLMfpIuAA1bpC2/YtKa0G+pOdfamlKaw6DDhR68SgXT00BqzUyAEorB4j73\nTW0Q8aeaGv8+s7T1lo5r3NXskbDbp/AVytP7BzEHSPazcITCyhXQxLFmtO2O7S6C\nKPO2uYtmynm8dGCLl+5vXw4YwE7bcA2vEfq+7JH8GlXtBoT9+2gYvaR7DWrrqDyq\n1E4gIZruyc1LtefYEX2Fe5E6sSFBKoRbXB8BgqBuPDGa0HWSgOy0D01KI7/OdfFj\nv46jzBysqXQg72zZNpe0r1CgNUaX2kmw3J8srCDrTFkdiwbrpPREA7tuOxF92pwa\nBOkO9QGP+j41jw4JNomwaY8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEiM2/Qlx0LQ1CoVG28LIHsS4R8ujT\nSftAQ6alhffEC+rLYDMeK+qdHkM+uWHnogBELP5GQbD1BWzHpsBMrzedlA==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:fabd2942df366c5f",
+        "signing_fingerprint": "sha256:706a24f8808e02a2"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    }
+  ]
+}

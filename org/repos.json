@@ -1,0 +1,10 @@
+{
+  "about": "The SovereignWebsite organisation's repositories, as code. org-apply creates any that are missing and keeps their settings as written here. It never deletes, transfers, archives or makes private (policy/abp.json).",
+  "org": "SovereignWebsite",
+  "defaults": { "visibility": "public", "default_branch": "dev", "has_wiki": false, "has_projects": false, "delete_branch_on_merge": true, "allow_merge_commit": true, "allow_squash_merge": false, "allow_rebase_merge": false },
+  "repos": [
+    { "name": "SovereignWebsite__Factory", "description": "Control repository: the organisation as code, and requests for hosted sovereign websites on sovereignwebsite.site. Driven by CI under an Agent Behaviour Policy.", "exists_by": "Dinis, 19 Nov 2026" },
+    { "name": "SovereignWebsite__Pattern", "description": "The open pattern for a Sovereign Agentic Website: a site you own as plain files, with its schema, agent instructions, behaviour policy, checks and a deploy that runs on any host. Free to use.", "pages": false },
+    { "name": "SovereignWebsite__Website", "description": "sovereignwebsite.ai: built by agents, owned by you.", "pages": true, "homepage": "https://sovereignwebsite.ai" }
+  ]
+}

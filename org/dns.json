@@ -1,0 +1,8 @@
+{
+  "about": "DNS for the SovereignWebsite domains, as code. Applied by dns-apply once the AWS role exists. Proposal until Dinis confirms where each domain is registered and hosted.",
+  "zones": [
+    { "zone": "sovereignwebsite.ai", "records": [ { "name": "sovereignwebsite.ai", "type": "A", "values": ["185.199.108.153", "185.199.109.153", "185.199.110.153", "185.199.111.153"], "for": "GitHub Pages apex, SovereignWebsite__Website" } ] },
+    { "zone": "sovereignwebsite.com", "records": [], "note": "redirect to sovereignwebsite.ai: method to agree (registrar forwarding, or a Pages site with a redirect)" },
+    { "zone": "sovereignwebsite.site", "records": [], "note": "one CNAME per hosted site, <label>.sovereignwebsite.site to sovereignwebsite.github.io, written by the site requests" }
+  ]
+}

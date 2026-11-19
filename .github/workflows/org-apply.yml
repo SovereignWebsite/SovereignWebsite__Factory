@@ -1,0 +1,37 @@
+name: Org apply
+# On a push to dev that changes org/ or policy/, or by hand: plan against the live organisation,
+# check the plan against policy/abp.json, then apply it with the pipeline App's token.
+on:
+  push:
+    branches: [dev]
+    paths: ['org/**', 'policy/**']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency: org-apply
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    environment: apply
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node test/run.mjs && node build/abp.mjs validate
+      - id: app
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.FACTORY_APP_ID }}
+          private-key: ${{ secrets.FACTORY_APP_PRIVATE_KEY }}
+          owner: SovereignWebsite
+      - name: Plan against the live organisation
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+        run: node build/org-plan.mjs plan.json | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Policy check
+        run: node build/abp.mjs actions plan.json
+      - name: Apply
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+        run: node build/org-apply.mjs plan.json | tee -a "$GITHUB_STEP_SUMMARY"

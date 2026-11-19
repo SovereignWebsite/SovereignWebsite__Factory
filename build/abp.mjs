@@ -1,0 +1,72 @@
+// The Agent Behaviour Policy check. Node built-ins only.
+// Usage:
+//   node build/abp.mjs validate                 the policy file is well formed
+//   node build/abp.mjs actions <plan.json>      every action in a plan is allowed for its pipeline
+//   node build/abp.mjs paths <base> <head>      every commit in base..head changes only paths its Agent: may change
+// Exit 1 on any refusal, with the reason. Prints no secret.
+import { readFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+
+export const load = (file = 'policy/abp.json') => JSON.parse(readFileSync(file, 'utf8'));
+
+export function glob(pattern, path) {
+  const re = new RegExp('^' + pattern.split('**').map((p) => p.split('*').map((s) => s.replace(/[.+?^${}()|[\]\\]/g, '\\$&')).join('[^/]*')).join('.*') + '$');
+  return re.test(path);
+}
+
+export function validate(p) {
+  const e = [];
+  if (p.version !== 1) e.push('version must be 1');
+  if (!p.agents || typeof p.agents !== 'object') e.push('agents missing');
+  for (const [a, v] of Object.entries(p.agents || {})) {
+    if (!/^[a-z0-9.-]+@[A-Za-z0-9.-]+$/.test(a)) e.push(`agent name ${a} is not agent@Project.owner`);
+    if (!Array.isArray(v.may_change) || !v.may_change.length) e.push(`${a}: may_change missing`);
+    if ((v.branches || []).includes('main')) e.push(`${a}: no agent may push to main`);
+  }
+  for (const [n, v] of Object.entries(p.pipelines || {})) {
+    if (!Array.isArray(v.allowed)) e.push(`pipeline ${n}: allowed missing`);
+    const both = (v.allowed || []).filter((x) => (v.refused_always || []).includes(x));
+    if (both.length) e.push(`pipeline ${n}: ${both.join(', ')} both allowed and refused`);
+  }
+  for (const pr of p.privileges || []) if (!pr.holder || !pr.permission || !pr.why) e.push('each privilege needs holder, permission and why');
+  return e;
+}
+
+export function checkActions(p, plan) {
+  const e = [], pipe = p.pipelines?.[plan.pipeline];
+  if (!pipe) return [`pipeline ${plan.pipeline} is not in the policy`];
+  for (const a of plan.actions || []) {
+    if ((pipe.refused_always || []).includes(a.action)) e.push(`${a.action} on ${a.target}: refused always for ${plan.pipeline}`);
+    else if (!pipe.allowed.includes(a.action)) e.push(`${a.action} on ${a.target}: not allowed for ${plan.pipeline}`);
+  }
+  return e;
+}
+
+export function checkPaths(p, { base, head = 'HEAD', cwd = process.cwd() }) {
+  const git = (...a) => execFileSync('git', a, { cwd, encoding: 'utf8' }).trim();
+  const e = [];
+  const commits = git('rev-list', '--no-merges', `${base}..${head}`).split('\n').filter(Boolean);
+  for (const c of commits) {
+    const agent = git('log', '-1', '--format=%(trailers:key=Agent,valueonly)', c).split('\n').map((s) => s.trim()).filter(Boolean)[0];
+    const rule = agent && p.agents[agent];
+    if (!rule) { e.push(`${c.slice(0, 7)}: Agent ${agent || 'none'} is not in the policy`); continue; }
+    for (const f of git('diff-tree', '--no-commit-id', '--name-only', '-r', c).split('\n').filter(Boolean))
+      if (!rule.may_change.some((g) => glob(g, f))) e.push(`${c.slice(0, 7)}: ${agent} may not change ${f}`);
+  }
+  return { errors: e, checked: commits.length };
+}
+
+export function needsDinis(p, files) {
+  const pats = new Set(Object.values(p.agents).flatMap((a) => a.needs_dinis_merge || []));
+  return files.filter((f) => [...pats].some((g) => glob(g, f)));
+}
+
+if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
+  const [cmd, x, y] = process.argv.slice(2), p = load();
+  let errs = validate(p);
+  if (!errs.length && cmd === 'actions') errs = checkActions(p, JSON.parse(readFileSync(x, 'utf8')));
+  if (!errs.length && cmd === 'paths') errs = checkPaths(p, { base: x, head: y || 'HEAD' }).errors;
+  if (errs.length) { console.error(errs.join('\n')); console.error(`ABP REFUSED (${errs.length})`); process.exit(1); }
+  console.log(`ABP OK (${cmd || 'validate'})`);
+}
