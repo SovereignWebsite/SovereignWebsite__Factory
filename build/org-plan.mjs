@@ -19,8 +19,8 @@ export function plan(org, live) {
       actions.push({ action: 'branch.create_dev', target: r.name });
       actions.push({ action: 'repo.set_default_branch', target: r.name });
       if (r.pages) actions.push({ action: 'pages.enable', target: r.name });
-      if (r.seed) actions.push({ action: 'repo.seed', target: r.name });
       if (r.cname) actions.push({ action: 'pages.set_cname', target: r.name });
+      if (r.seed) actions.push({ action: 'repo.seed', target: r.name });
       for (const [t, perm] of Object.entries(r.teams || {})) if (perm === 'push') actions.push({ action: 'team.grant_push', target: r.name, team: t });
       continue;
     }

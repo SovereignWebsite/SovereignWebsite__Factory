@@ -22,7 +22,7 @@ for (const n of ['SovereignWebsite__Website', 'SovereignWebsite__Org', 'Sovereig
   const f = seedFiles(`seed/${n}`);
   for (const must of ['.github/workflows/pages.yml', 'site/CNAME', 'site/index.html']) assert.ok(f.includes(must), `${n} seeds ${must}`);
   const order = fresh.actions.filter((a) => a.target === n).map((a) => a.action);
-  assert.ok(order.indexOf('pages.enable') < order.indexOf('repo.seed'), 'Pages on before the seed, so the first deploy runs');
+  assert.ok(order.indexOf('pages.enable') < order.indexOf('repo.seed') && order.indexOf('pages.set_cname') < order.indexOf('repo.seed'), 'Pages and the domain before the seed, so the one deploy serves the domain');
 }
 assert.equal(readFileSync('seed/SovereignWebsite__Org/site/CNAME', 'utf8').trim(), 'sovereignwebsite.org');
 const { dnsPlan } = await import('../build/dns-plan.mjs');
