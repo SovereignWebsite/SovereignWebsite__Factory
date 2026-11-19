@@ -48,11 +48,19 @@
     },
     {
       "name": "SovereignWebsite__Hub",
-      "description": "hub.sovereignwebsite.site: the hub for sovereign websites powered by sgit vaults; every site lives in a public repository and a vault holding the same files.",
+      "description": "hub.sovereignwebsite.site: the gallery of sovereign websites, each with its owner, team, address, repository, vault, licence and versions.",
       "homepage": "https://hub.sovereignwebsite.site",
       "pages": true,
       "cname": "hub.sovereignwebsite.site",
       "seed": "seed/SovereignWebsite__Hub"
+    },
+    {
+      "name": "SovereignWebsite__Vault",
+      "description": "vault.sovereignwebsite.site: the base for sovereign websites powered by sgit vaults; each site lives in a public repository and an sgit vault holding the same files.",
+      "homepage": "https://vault.sovereignwebsite.site",
+      "pages": true,
+      "cname": "vault.sovereignwebsite.site",
+      "seed": "seed/SovereignWebsite__Vault"
     }
   ]
 }

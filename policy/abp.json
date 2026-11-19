@@ -22,14 +22,16 @@
         ".github/**",
         "LICENSE",
         "LICENSE-TEXT",
-        ".gitignore"
+        ".gitignore",
+        "seed/**"
       ],
       "needs_dinis_merge": [
         "policy/**",
         ".github/**",
         "build/**",
         "org/**",
-        "team/keys.json"
+        "team/keys.json",
+        "seed/**"
       ],
       "branches": [
         "dev"
@@ -38,7 +40,8 @@
         "push to main",
         "print or commit a key or token",
         "name a private prospect"
-      ]
+      ],
+      "seed_paths_source": "Dinis, 19 Nov 2026 ~16:30 UTC in the conductor session, answering the proposal to add seed/** to may_change and needs_dinis_merge: \"yes\"."
     }
   },
   "pipelines": {
