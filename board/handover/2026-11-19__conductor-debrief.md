@@ -8,8 +8,8 @@ Session: https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu. Written 16:32 
 - First real versions of the .ai, .org and .site sites, written by three site-team sub-agents from the public newsroom articles and passed by a separate security and accuracy review before push.
 
 ## Sessions created by this conductor (Dinis's word, 19 Nov ~16:15 UTC)
-- migration.b@SovereignWebsite.dinis, session_01Kw9UwDKiseUFyqtG1xyVaG: inventory and per-site checklists for moving AgentiCCells sites; transfers nothing. Its key and policy entry wait for Dinis's yes.
-- hub.b@SovereignWebsite.dinis, session_01Kw9UwB7XboTsnbPPWaMr2d: the Hub gallery (plan, site page schema, first page); told that Vault is a separate repository.
+- migration.b@SovereignWebsite.dinis, https://claude.ai/code/session_01Kw9UwDKiseUFyqtG1xyVaG : inventory and per-site checklists for moving AgentiCCells sites; transfers nothing. Its key and policy entry wait for Dinis's yes.
+- hub.b@SovereignWebsite.dinis, https://claude.ai/code/session_01Kw9UwB7XboTsnbPPWaMr2d : the Hub gallery (plan, site page schema, first page); told that Vault is a separate repository.
 
 ## Lessons
 - Seed a new site in one commit, after Pages and its domain are set (the first seeding started racing deploys).

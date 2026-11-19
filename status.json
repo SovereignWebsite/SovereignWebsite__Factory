@@ -7,7 +7,7 @@
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
     "repositories: Website (.ai), Org (.org), Site (.site), Hub (gallery, hub.sovereignwebsite.site), Vault (vault.sovereignwebsite.site); each with Pages, domain, team push, rulesets main-locked and dev-safe",
     "first real versions of .ai, .org and .site, security-reviewed before push (234405b, a036c2d, 34f8b98)",
-    "sessions: migration.b (session_01Kw9UwDKiseUFyqtG1xyVaG), hub.b (session_01Kw9UwB7XboTsnbPPWaMr2d)"
+    "sessions: migration.b (https://claude.ai/code/session_01Kw9UwDKiseUFyqtG1xyVaG), hub.b (https://claude.ai/code/session_01Kw9UwB7XboTsnbPPWaMr2d)"
   ],
   "next": [
     "HTTPS on all sites when certificates are issued",
