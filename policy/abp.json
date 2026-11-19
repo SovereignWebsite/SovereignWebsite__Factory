@@ -66,7 +66,8 @@
         "repo.set_default_branch",
         "pages.enable",
         "repo.seed",
-        "pages.set_cname"
+        "pages.set_cname",
+        "team.grant_push"
       ],
       "refused_always": [
         "repo.delete",
@@ -74,7 +75,9 @@
         "repo.archive",
         "repo.make_private",
         "member.change",
-        "app.change"
+        "app.change",
+        "team.grant_admin",
+        "team.grant_maintain"
       ],
       "note": "A repository that exists but is not in org/repos.json is reported, never deleted. repo.seed only adds files that are missing on dev, never overwrites."
     },
@@ -95,6 +98,19 @@
       ],
       "status": "active once the apply environment has SW_AWS_ROLE_ARN (a role for this repository) and the three SW_ZONE_ID_* variables",
       "note": "UPSERT only, records named in org/dns.json, only in the three sovereignwebsite zones; the AWS role enforces the same limits (docs/aws-oidc.md)."
+    },
+    "org-status": {
+      "runs_on": [
+        "after org-apply",
+        "by hand"
+      ],
+      "environment": "apply",
+      "allowed": [
+        "read repository",
+        "read pages",
+        "read workflow runs"
+      ],
+      "note": "Reports; changes nothing."
     }
   },
   "privileges": [
@@ -133,6 +149,12 @@
       "permission": "route53:ChangeResourceRecordSets (UPSERT; A, AAAA, CNAME, TXT) on the three sovereignwebsite zones; route53:ListResourceRecordSets, route53:GetHostedZone, route53:GetChange",
       "why": "dns-apply: write org/dns.json to Route 53",
       "state": "to be created by Dinis from docs/aws-oidc.md"
+    },
+    {
+      "holder": "github-app:agenticcells-site-factory",
+      "permission": "members:read (organisation)",
+      "why": "org-apply: give the agents' team push on each repository (team.grant_push)",
+      "state": "needed; not yet checked"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "about": "The SovereignWebsite organisation's repositories, as code. org-apply creates any that are missing and keeps their settings as written here. It never deletes, transfers, archives or makes private (policy/abp.json). Each site repository is seeded with the files in its seed/ folder (only files that are missing are added), Pages on from a workflow on dev, and its apex domain.",
+  "about": "The SovereignWebsite organisation's repositories, as code. org-apply creates any that are missing and keeps their settings as written here. It never deletes, transfers, archives or makes private (policy/abp.json). Each site repository is seeded with the files in its seed/ folder (only files that are missing are added), Pages on from a workflow on dev, and its apex domain. Every repository gives the teams in defaults.teams their permission (the agents' team gets push, never admin).",
   "org": "SovereignWebsite",
   "defaults": {
     "visibility": "public",
@@ -9,7 +9,10 @@
     "delete_branch_on_merge": true,
     "allow_merge_commit": true,
     "allow_squash_merge": false,
-    "allow_rebase_merge": false
+    "allow_rebase_merge": false,
+    "teams": {
+      "sovereignwebsite-agents-ci": "push"
+    }
   },
   "repos": [
     {

@@ -21,6 +21,7 @@ export function plan(org, live) {
       if (r.pages) actions.push({ action: 'pages.enable', target: r.name });
       if (r.seed) actions.push({ action: 'repo.seed', target: r.name });
       if (r.cname) actions.push({ action: 'pages.set_cname', target: r.name });
+      for (const [t, perm] of Object.entries(r.teams || {})) if (perm === 'push') actions.push({ action: 'team.grant_push', target: r.name, team: t });
       continue;
     }
     const diff = ['description', 'has_wiki', 'has_projects', 'delete_branch_on_merge', 'allow_merge_commit', 'allow_squash_merge', 'allow_rebase_merge', 'homepage'].filter((k) => r[k] !== undefined && (l[k] ?? null) !== (r[k] ?? null));
@@ -32,6 +33,7 @@ export function plan(org, live) {
     if (r.pages && !l.has_pages) actions.push({ action: 'pages.enable', target: r.name });
     if (r.seed && l.seed_missing?.length) actions.push({ action: 'repo.seed', target: r.name, files: l.seed_missing });
     if (r.cname && l.cname !== r.cname) actions.push({ action: 'pages.set_cname', target: r.name });
+    for (const [t, perm] of Object.entries(r.teams || {})) if (perm === 'push' && !(l.teams || {})[t]) actions.push({ action: 'team.grant_push', target: r.name, team: t });
   }
   const names = new Set(org.repos.map((r) => r.name));
   const unlisted = Object.keys(live).filter((n) => !names.has(n));
@@ -56,7 +58,9 @@ export async function liveRepos(org, spec = {}) {
       let cname = null, seed_missing = [];
       if (x.has_pages) { const pg = await gh('GET', `/repos/${org}/${x.name}/pages`); cname = pg.data?.cname ?? null; }
       if (want.seed && dev.status === 200) for (const f of seedFiles(want.seed)) { const c = await gh('GET', `/repos/${org}/${x.name}/contents/${f}?ref=dev`); if (c.status === 404) seed_missing.push(f); }
-      out[x.name] = { ...x, has_dev: dev.status === 200, cname, seed_missing };
+      const tm = await gh('GET', `/repos/${org}/${x.name}/teams`);
+      const teams = Object.fromEntries((Array.isArray(tm.data) ? tm.data : []).map((t) => [t.slug, t.permission]));
+      out[x.name] = { ...x, has_dev: dev.status === 200, cname, seed_missing, teams };
     }
     if (r.data.length < 100) break;
   }
@@ -65,7 +69,7 @@ export async function liveRepos(org, spec = {}) {
 
 export function markdown(p) {
   const l = [`### Plan for ${p.org} (${p.actions.length} actions)`];
-  for (const a of p.actions) l.push(`- \`${a.action}\` ${a.target}${a.fields ? ` (${a.fields.join(', ')})` : a.files ? ` (${a.files.join(', ')})` : ''}`);
+  for (const a of p.actions) l.push(`- \`${a.action}\` ${a.target}${a.fields ? ` (${a.fields.join(', ')})` : a.files ? ` (${a.files.join(', ')})` : a.team ? ` (${a.team})` : ''}`);
   if (!p.actions.length) l.push('- nothing to do');
   if (p.unlisted?.length) l.push(`\nNot in org/repos.json (reported, never deleted): ${p.unlisted.join(', ')}`);
   return l.join('\n');

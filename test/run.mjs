@@ -15,7 +15,7 @@ const org = JSON.parse(readFileSync('org/repos.json', 'utf8'));
 const fresh = plan(org, {});
 assert.ok(fresh.actions.some((a) => a.action === 'pages.enable' && a.target === 'SovereignWebsite__Website'));
 assert.deepEqual(checkActions(p, fresh), [], 'a fresh plan is allowed');
-const live = { SovereignWebsite__Factory: { ...org.defaults, description: org.repos[0].description, default_branch: 'dev', has_dev: true }, Stray: {} };
+const live = { SovereignWebsite__Factory: { ...org.defaults, description: org.repos[0].description, default_branch: 'dev', has_dev: true, teams: { 'sovereignwebsite-agents-ci': 'push' } }, Stray: {} };
 const pl = plan({ ...org, repos: [org.repos[0]] }, live);
 assert.deepEqual(pl.actions, [], 'factory as Dinis made it needs nothing'); assert.deepEqual(pl.unlisted, ['Stray']);
 for (const n of ['SovereignWebsite__Website', 'SovereignWebsite__Org', 'SovereignWebsite__Site']) {
@@ -31,4 +31,6 @@ assert.deepEqual(dp.errors, []); assert.deepEqual(checkActions(p, dp.plan), [], 
 assert.ok(dp.batches.every((b) => b.batch.Changes.every((c) => c.Action === 'UPSERT')), 'UPSERT only');
 assert.equal(dnsPlan({ zones: [{ zone: 'example.com', records: [] }] }).errors.length, 1, 'foreign zone refused');
 assert.equal(dnsPlan({ zones: [{ zone: 'sovereignwebsite.ai', records: [{ name: 'evil.example.com', type: 'A', values: ['1.1.1.1'] }] }] }).errors.length, 1, 'record outside zone refused');
+assert.ok(fresh.actions.some((a) => a.action === 'team.grant_push'), 'new repositories give the agents team push');
+assert.equal(checkActions(p, { pipeline: 'org-apply', actions: [{ action: 'team.grant_admin', target: 'X' }] }).length, 1, 'admin for a team refused');
 console.log('OK (tests)');

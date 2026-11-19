@@ -31,6 +31,7 @@ for (const a of p.actions) {
       must(await gh('PUT', `${base}/contents/${f}`, { message: `Seed ${f} from SovereignWebsite__Factory (org-apply)`, content: readFileSync(join(r.seed, f)).toString('base64'), branch: 'dev' }), `seed ${a.target}/${f}`);
     }
   } else if (a.action === 'pages.set_cname') must(await gh('PUT', `${base}/pages`, { cname: r.cname, build_type: 'workflow' }), `custom domain ${r.cname} on ${a.target}`);
+  else if (a.action === 'team.grant_push') must(await gh('PUT', `/orgs/${p.org}/teams/${a.team}/repos/${p.org}/${a.target}`, { permission: 'push' }), `team ${a.team} push on ${a.target}`);
   else throw new Error(`unknown action ${a.action}`);
 }
 console.log(`APPLIED ${p.actions.length} actions`);
