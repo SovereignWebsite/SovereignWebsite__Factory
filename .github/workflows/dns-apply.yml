@@ -4,7 +4,7 @@ name: DNS apply
 on:
   push:
     branches: [dev]
-    paths: ['org/dns.json']
+    paths: ['org/dns.json', 'requests/**']
   workflow_dispatch:
 permissions:
   contents: read

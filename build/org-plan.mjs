@@ -5,6 +5,14 @@ import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { gh } from './github.mjs';
+import { load as loadRequests, repos as requestRepos } from './requests.mjs';
+
+// The organisation as code plus one repository per hosted-site request.
+export function withRequests(org, dir = 'requests') {
+  const { requests, errors } = loadRequests(dir);
+  if (errors.length) throw new Error(`requests: ${errors.join('; ')}`);
+  return { ...org, repos: [...org.repos, ...requestRepos(requests)] };
+}
 
 export function wanted(org) {
   return org.repos.map((r) => ({ ...org.defaults, ...r }));
@@ -87,7 +95,7 @@ export function markdown(p) {
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
-  const org = JSON.parse(readFileSync('org/repos.json', 'utf8'));
+  const org = withRequests(JSON.parse(readFileSync('org/repos.json', 'utf8')));
   const live = process.env.GH_TOKEN ? await liveRepos(org.org, Object.fromEntries(wanted(org).map((r) => [r.name, r]))) : {};
   const p = plan(org, live);
   if (process.argv[2]) writeFileSync(process.argv[2], JSON.stringify(p, null, 2));

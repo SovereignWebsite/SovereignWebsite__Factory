@@ -3,13 +3,13 @@
 import { readFileSync } from 'node:fs';
 import { gh } from './github.mjs';
 import { load, checkActions } from './abp.mjs';
-import { wanted, seedFiles } from './org-plan.mjs';
+import { wanted, seedFiles, withRequests } from './org-plan.mjs';
 import { join } from 'node:path';
 
 const p = JSON.parse(readFileSync(process.argv[2], 'utf8'));
 const refused = checkActions(load(), p);
 if (refused.length) { console.error(refused.join('\n')); process.exit(1); }
-const org = JSON.parse(readFileSync('org/repos.json', 'utf8'));
+const org = withRequests(JSON.parse(readFileSync('org/repos.json', 'utf8')));
 const spec = Object.fromEntries(wanted(org).map((r) => [r.name, r]));
 const settings = (r) => ({ description: r.description, homepage: r.homepage, has_wiki: r.has_wiki, has_projects: r.has_projects, delete_branch_on_merge: r.delete_branch_on_merge, allow_merge_commit: r.allow_merge_commit, allow_squash_merge: r.allow_squash_merge, allow_rebase_merge: r.allow_rebase_merge });
 const must = (r, what, ok = [200, 201, 204]) => { if (!ok.includes(r.status)) throw new Error(`${what}: HTTP ${r.status} ${r.data?.message || ''}`); console.log(`done: ${what}`); };
@@ -36,7 +36,9 @@ for (const a of p.actions) {
       const commit = await gh('GET', `${base}/git/commits/${head}`);
       const tree = [];
       for (const f of files) {
-        const b = await gh('POST', `${base}/git/blobs`, { content: readFileSync(join(r.seed, f)).toString('base64'), encoding: 'base64' });
+        let buf = readFileSync(join(r.seed, f));
+        if (r.vars) { let t = buf.toString('utf8'); for (const [k, v] of Object.entries(r.vars)) t = t.split(`{{${k}}}`).join(String(v).replace(/[<>&"]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' })[c])); buf = Buffer.from(t); }
+        const b = await gh('POST', `${base}/git/blobs`, { content: buf.toString('base64'), encoding: 'base64' });
         must(b, `blob ${a.target}/${f}`, [201]); tree.push({ path: f, mode: '100644', type: 'blob', sha: b.data.sha });
       }
       const t = await gh('POST', `${base}/git/trees`, { base_tree: commit.data.tree.sha, tree }); must(t, `tree ${a.target}`, [201]);

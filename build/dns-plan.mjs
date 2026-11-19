@@ -4,6 +4,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { load as loadRequests, dnsRecords } from './requests.mjs';
 
 export const ZONE_VAR = { 'sovereignwebsite.ai': 'SW_ZONE_ID_AI', 'sovereignwebsite.org': 'SW_ZONE_ID_ORG', 'sovereignwebsite.site': 'SW_ZONE_ID_SITE' };
 
@@ -26,7 +27,10 @@ export function dnsPlan(dns, env = {}) {
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const out = process.argv[2] || 'dns-out';
   mkdirSync(out, { recursive: true });
-  const { plan, batches, errors } = dnsPlan(JSON.parse(readFileSync('org/dns.json', 'utf8')), process.env);
+  const dns = JSON.parse(readFileSync('org/dns.json', 'utf8'));
+  const req = loadRequests('requests'); if (req.errors.length) { console.error(req.errors.join('\n')); process.exit(1); }
+  dns.zones.find((z) => z.zone === 'sovereignwebsite.site').records.push(...dnsRecords(req.requests));
+  const { plan, batches, errors } = dnsPlan(dns, process.env);
   if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
   writeFileSync(join(out, 'plan.json'), JSON.stringify(plan, null, 2));
   const lines = [`### DNS plan (${plan.actions.length} records, UPSERT only)`];

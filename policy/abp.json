@@ -31,7 +31,8 @@
         "build/**",
         "org/**",
         "team/keys.json",
-        "seed/**"
+        "seed/**",
+        "requests/**"
       ],
       "branches": [
         "dev"

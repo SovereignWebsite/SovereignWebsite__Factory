@@ -4,7 +4,7 @@ name: Org apply
 on:
   push:
     branches: [dev]
-    paths: ['org/**', 'policy/**']
+    paths: ['org/**', 'policy/**', 'requests/**']
   workflow_dispatch:
     inputs:
       nudge_missing_certificates:
