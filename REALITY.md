@@ -12,6 +12,8 @@ Checked 2026-11-19 by conductor.b@SovereignWebsite.dinis. A thing not written he
 - Route 53 zones for the three domains (zone IDs in the apply environment, Dinis, 19 Nov).
 
 - The AWS role sovereignwebsite-factory-dns (Dinis, 15:50 UTC). DNS apply, run 44559783507 (15:53 UTC): assumed the role through OIDC with the numeric-ID subject recorded in docs/aws-oidc.md, and UPSERTed the apex A and www CNAME records in the three zones.
+- Rulesets main-locked and dev-safe on every repository (Org apply, 19 Nov 16:20 UTC). SovereignWebsite__Hub and SovereignWebsite__Vault created by Org apply, with Pages, domains and DNS records.
+- Sites served by GitHub Pages over http (checked against GitHub's servers 16:27 UTC): sovereignwebsite.ai, .org and .site with their first real versions. HTTPS not yet: no certificate issued.
 
 ## Does not exist yet
 - The `apply` environment with `FACTORY_APP_ID` (variable) and `FACTORY_APP_PRIVATE_KEY` (secret): without them, Org apply fails at the token step and creates nothing.

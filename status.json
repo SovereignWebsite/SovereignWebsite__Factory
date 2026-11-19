@@ -1,26 +1,23 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-19",
-  "state": "three apex sites live over http; branch protection, HTTPS and the Hub repository being applied by the pipeline",
+  "updated": "2026-11-19T16:32Z",
+  "state": "five repositories run by CI under the ABP; sites live over http on .ai, .org and .site; HTTPS waits for GitHub's certificates (Org apply enforces it hourly)",
   "done": [
-    "strategy map, team, sites and pipeline, deck draft v0 (board/2026-11-19__saw-plan.md)",
-    "signing key and team/keys.json",
-    "policy/abp.json, org/repos.json, org/dns.json",
-    "Checks and Org apply workflows with tests",
-    "seeds and plan for sovereignwebsite.ai, .org and .site (repositories, Pages, apex domains)",
-    "Org apply created SovereignWebsite__Website, __Org and __Site with Pages, seeds and apex domains (19 Nov 15:41 UTC)",
-    "dns-apply workflow and docs/aws-oidc.md (role policies)",
-    "DNS apply run 44559783507: records UPSERTed in the three zones through the new role (19 Nov 15:53 UTC)",
-    "sites served by GitHub Pages: sovereignwebsite.ai, .org, .site (19 Nov 16:10 UTC)",
-    "seed in one commit after Pages and domain (a3cc738)"
+    "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
+    "repositories: Website (.ai), Org (.org), Site (.site), Hub (gallery, hub.sovereignwebsite.site), Vault (vault.sovereignwebsite.site); each with Pages, domain, team push, rulesets main-locked and dev-safe",
+    "first real versions of .ai, .org and .site, security-reviewed before push (234405b, a036c2d, 34f8b98)",
+    "sessions: migration.b (session_01Kw9UwDKiseUFyqtG1xyVaG), hub.b (session_01Kw9UwB7XboTsnbPPWaMr2d)"
   ],
   "next": [
-    "Org apply: rulesets main-locked and dev-safe on every repository; HTTPS enforced once certificates are issued (hourly)",
-    "SovereignWebsite__Hub at hub.sovereignwebsite.site",
-    "site teams on .ai, .org and .site",
-    "migration session for AgentiCCells sites",
-    "Hub session for sgit-vault sites"
+    "HTTPS on all sites when certificates are issued",
+    "migration inventory into board/migration/ once migration.b is in the policy",
+    "sovereignweb.site, .ai, .org (Dinis buying, 19 Nov ~16:30 UTC): zones and records when Dinis says",
+    "deck: re-map onto PrompTugal's investor decks once readable"
   ],
-  "asks": []
+  "asks": [
+    "Dinis: say yes to adding migration.b@SovereignWebsite.dinis to policy/abp.json (board/migration/** only) and its key to team/keys.json - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
+    "Dinis: tell hub.b whether it also does the Vault work - https://claude.ai/code/session_01Kw9UwB7XboTsnbPPWaMr2d",
+    "Dinis: allow reading PrompTugal__News__Website or paste the brief, for the deck - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu"
+  ]
 }
