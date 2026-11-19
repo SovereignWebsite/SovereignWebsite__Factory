@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-19T18:32Z",
+  "updated": "2026-11-19T20:32Z",
   "state": "all five sites live over HTTPS with HTTPS enforced (.ai, .org, .site, hub, vault); family bar on every page; ten pages on .ai; principles on .org; vault drop page by hub.b",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -11,15 +11,18 @@
     "sovereignwebsite.ai ten pages and sovereignwebsite.org principles, each security-reviewed before push",
     "family bar across the sites (seed/shared, build/family-bar.mjs)",
     "certificates issued after one by-hand nudge (17:47 UTC); HTTPS enforced on all five by 18:32 UTC",
-    "deck v1 (board/deck) and the Kickstarter page plan (board/launch)"
+    "deck v1 (board/deck) and the Kickstarter page plan (board/launch)",
+    "five homepage designs at sovereignwebsite.ai/designs/ (reviewed, live)",
+    "European Portuguese version of the ten pages at sovereignwebsite.ai/pt/ (checked, live)"
   ],
   "next": [
-    "five homepage designs for sovereignwebsite.ai",
-    "the Portuguese versions",
-    "google-maps example site if Dinis says yes",
-    "the hosted-site request path in the Factory (the \u00a350 tier as a pipeline run)"
+    "the hosted-site request path in the Factory: requests/<label>/ to a repository and <label>.sovereignwebsite.site, so the \u00a350 tier is a pipeline run",
+    "the home page design Dinis picks",
+    "google-maps example if Dinis says yes"
   ],
   "asks": [
+    "Dinis: pick the home page design - https://sovereignwebsite.ai/designs/",
+    "Dinis: read the Portuguese choices (numbers, tier names, Maestro) - https://sovereignwebsite.ai/pt/",
     "Dinis: yes or no to the google-maps example and its name; the Google key, budget and quota are his - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
     "Dinis: the licence for the principles on sovereignwebsite.org - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
     "Dinis: yes to adding migration.b to policy/abp.json (board/migration/** only) - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu"
