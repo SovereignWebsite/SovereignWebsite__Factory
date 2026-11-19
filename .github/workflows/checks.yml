@@ -25,5 +25,8 @@ jobs:
         run: |
           node build/check-signatures.mjs ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }}
           node build/abp.mjs paths ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }}
+      - name: Policy paths for a push to dev
+        if: github.event_name == 'push' && github.event.before != '0000000000000000000000000000000000000000'
+        run: node build/abp.mjs paths ${{ github.event.before }} ${{ github.event.after }}
       - name: Dry plan of the organisation
         run: node build/org-plan.mjs plan.json >> "$GITHUB_STEP_SUMMARY" && node build/abp.mjs actions plan.json

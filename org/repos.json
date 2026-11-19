@@ -12,13 +12,15 @@
     "allow_rebase_merge": false,
     "teams": {
       "sovereignwebsite-agents-ci": "push"
-    }
+    },
+    "protect": true
   },
   "repos": [
     {
       "name": "SovereignWebsite__Factory",
       "description": "Control repository: the organisation as code, and requests for hosted sovereign websites on sovereignwebsite.site. Driven by CI under an Agent Behaviour Policy.",
-      "exists_by": "Dinis, 19 Nov 2026"
+      "exists_by": "Dinis, 19 Nov 2026",
+      "pages": false
     },
     {
       "name": "SovereignWebsite__Website",
@@ -43,6 +45,14 @@
       "pages": true,
       "cname": "sovereignwebsite.site",
       "seed": "seed/SovereignWebsite__Site"
+    },
+    {
+      "name": "SovereignWebsite__Hub",
+      "description": "hub.sovereignwebsite.site: the hub for sovereign websites powered by sgit vaults; every site lives in a public repository and a vault holding the same files.",
+      "homepage": "https://hub.sovereignwebsite.site",
+      "pages": true,
+      "cname": "hub.sovereignwebsite.site",
+      "seed": "seed/SovereignWebsite__Hub"
     }
   ]
 }

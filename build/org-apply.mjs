@@ -45,6 +45,14 @@ for (const a of p.actions) {
     }
   } else if (a.action === 'pages.set_cname') must(await gh('PUT', `${base}/pages`, { cname: r.cname, build_type: 'workflow' }), `custom domain ${r.cname} on ${a.target}`);
   else if (a.action === 'team.grant_push') must(await gh('PUT', `/orgs/${p.org}/teams/${a.team}/repos/${p.org}/${a.target}`, { permission: 'push' }), `team ${a.team} push on ${a.target}`);
+  else if (a.action === 'repo.protect_branches') {
+    const have = await gh('GET', `${base}/rulesets`);
+    const names = new Set((Array.isArray(have.data) ? have.data : []).map((q) => q.name));
+    const admins = [{ actor_id: 1, actor_type: 'OrganizationAdmin', bypass_mode: 'always' }];
+    if (!names.has('main-locked')) must(await gh('POST', `${base}/rulesets`, { name: 'main-locked', target: 'branch', enforcement: 'active', bypass_actors: admins, conditions: { ref_name: { include: ['refs/heads/main'], exclude: [] } }, rules: [{ type: 'deletion' }, { type: 'non_fast_forward' }, { type: 'update' }] }), `ruleset main-locked on ${a.target}`, [201]);
+    if (!names.has('dev-safe')) must(await gh('POST', `${base}/rulesets`, { name: 'dev-safe', target: 'branch', enforcement: 'active', bypass_actors: [], conditions: { ref_name: { include: ['refs/heads/dev'], exclude: [] } }, rules: [{ type: 'deletion' }, { type: 'non_fast_forward' }] }), `ruleset dev-safe on ${a.target}`, [201]);
+  } else if (a.action === 'pages.enforce_https') must(await gh('PUT', `${base}/pages`, { cname: r.cname, https_enforced: true }), `HTTPS enforced on ${r.cname}`);
+  else if (a.action === 'pages.nudge_certificate') must(await gh('PUT', `${base}/pages`, { cname: r.cname }), `certificate nudge for ${r.cname} (was ${a.state})`);
   else throw new Error(`unknown action ${a.action}`);
 }
 console.log(`APPLIED ${p.actions.length} actions`);

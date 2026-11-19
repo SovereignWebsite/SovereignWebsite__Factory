@@ -15,7 +15,7 @@ const org = JSON.parse(readFileSync('org/repos.json', 'utf8'));
 const fresh = plan(org, {});
 assert.ok(fresh.actions.some((a) => a.action === 'pages.enable' && a.target === 'SovereignWebsite__Website'));
 assert.deepEqual(checkActions(p, fresh), [], 'a fresh plan is allowed');
-const live = { SovereignWebsite__Factory: { ...org.defaults, description: org.repos[0].description, default_branch: 'dev', has_dev: true, teams: { 'sovereignwebsite-agents-ci': 'push' } }, Stray: {} };
+const live = { SovereignWebsite__Factory: { ...org.defaults, description: org.repos[0].description, default_branch: 'dev', has_dev: true, teams: { 'sovereignwebsite-agents-ci': 'push' }, protected: true }, Stray: {} };
 const pl = plan({ ...org, repos: [org.repos[0]] }, live);
 assert.deepEqual(pl.actions, [], 'factory as Dinis made it needs nothing'); assert.deepEqual(pl.unlisted, ['Stray']);
 for (const n of ['SovereignWebsite__Website', 'SovereignWebsite__Org', 'SovereignWebsite__Site']) {
@@ -33,4 +33,12 @@ assert.equal(dnsPlan({ zones: [{ zone: 'example.com', records: [] }] }).errors.l
 assert.equal(dnsPlan({ zones: [{ zone: 'sovereignwebsite.ai', records: [{ name: 'evil.example.com', type: 'A', values: ['1.1.1.1'] }] }] }).errors.length, 1, 'record outside zone refused');
 assert.ok(fresh.actions.some((a) => a.action === 'team.grant_push'), 'new repositories give the agents team push');
 assert.equal(checkActions(p, { pipeline: 'org-apply', actions: [{ action: 'team.grant_admin', target: 'X' }] }).length, 1, 'admin for a team refused');
+assert.ok(fresh.actions.some((a) => a.action === 'repo.protect_branches' && a.target === 'SovereignWebsite__Hub'), 'new repositories are protected');
+const base = { ...org.defaults, default_branch: 'dev', has_dev: true, teams: { 'sovereignwebsite-agents-ci': 'push' }, protected: true, has_pages: true };
+const one = (l) => plan({ ...org, repos: [org.repos.find((x) => x.name === 'SovereignWebsite__Site')] }, { SovereignWebsite__Site: { ...base, description: org.repos.find((x) => x.name === 'SovereignWebsite__Site').description, homepage: 'https://sovereignwebsite.site', cname: 'sovereignwebsite.site', seed_missing: [], ...l } }).actions.map((a) => a.action);
+assert.deepEqual(one({ cert_state: 'approved' }), ['pages.enforce_https']);
+assert.deepEqual(one({ cert_state: 'authorization_pending' }), [], 'never nudge while pending');
+assert.deepEqual(one({ cert_state: null }), ['pages.nudge_certificate']);
+assert.deepEqual(one({ cert_state: 'approved', https_enforced: true }), []);
+assert.equal(checkActions(p, { pipeline: 'org-apply', actions: [{ action: 'ruleset.delete', target: 'X' }] }).length, 1);
 console.log('OK (tests)');

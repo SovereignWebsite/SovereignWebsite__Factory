@@ -70,6 +70,14 @@
             "sovereignwebsite.github.io"
           ],
           "for": "www to the same Pages site"
+        },
+        {
+          "name": "hub.sovereignwebsite.site",
+          "type": "CNAME",
+          "values": [
+            "sovereignwebsite.github.io"
+          ],
+          "for": "SovereignWebsite__Hub"
         }
       ],
       "note": "hosted sites add one CNAME each, <label>.sovereignwebsite.site to sovereignwebsite.github.io"

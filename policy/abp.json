@@ -56,7 +56,9 @@
     },
     "org-apply": {
       "runs_on": [
-        "push to dev that changes org/ or policy/"
+        "push to dev that changes org/ or policy/",
+        "hourly schedule (converges: HTTPS once certificates are issued)",
+        "by hand"
       ],
       "environment": "apply",
       "allowed": [
@@ -67,7 +69,10 @@
         "pages.enable",
         "repo.seed",
         "pages.set_cname",
-        "team.grant_push"
+        "team.grant_push",
+        "repo.protect_branches",
+        "pages.enforce_https",
+        "pages.nudge_certificate"
       ],
       "refused_always": [
         "repo.delete",
@@ -77,9 +82,15 @@
         "member.change",
         "app.change",
         "team.grant_admin",
-        "team.grant_maintain"
+        "team.grant_maintain",
+        "ruleset.delete",
+        "ruleset.weaken"
       ],
-      "note": "A repository that exists but is not in org/repos.json is reported, never deleted. repo.seed only adds files that are missing on dev, never overwrites."
+      "note": "A repository that exists but is not in org/repos.json is reported, never deleted. repo.seed only adds files that are missing on dev, never overwrites. pages.nudge_certificate re-sets the same custom domain only when Pages has no certificate or a failed one, so GitHub retries issuing it; it never runs while a certificate is pending.",
+      "protection": {
+        "main": "no deletion, no force push, no direct update; only organisation admins (Dinis) bypass, so main moves only when Dinis merges a release",
+        "dev": "no deletion, no force push; agents push here, and every push runs Checks including the policy path check"
+      }
     },
     "dns-apply": {
       "runs_on": [
