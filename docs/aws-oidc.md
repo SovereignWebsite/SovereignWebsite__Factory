@@ -10,7 +10,7 @@ Already in account 745506449035 (the AgentiCCells role uses it): `token.actions.
 ## 2. The role
 Name: `sovereignwebsite-factory-dns`. Maximum session: 1 hour. Then set its ARN as `SW_AWS_ROLE_ARN` in this repository's `apply` environment.
 
-**Trust policy** (only this repository's `apply` environment). Both subject forms are listed: the one with numeric IDs (organisation 358722364, repository 1464324035) is the form GitHub sent for AgentiCCells, and it stops a deleted and recreated repository of the same name from matching. The `DNS apply` workflow prints the subject it actually sends; once seen, drop the other line.
+**Trust policy** (only this repository's `apply` environment). Both subject forms are listed: the one with numeric IDs (organisation 358722364, repository 1464324035) is the form GitHub sent for AgentiCCells, and it stops a deleted and recreated repository of the same name from matching. The `DNS apply` workflow prints the subject it actually sends. Run 44559783507 (19 Nov 15:53 UTC) printed the form with numeric IDs, so the name-only line can be removed from the trust policy.
 
 ```json
 {
