@@ -15,6 +15,9 @@ Checked 2026-11-19 by conductor.b@SovereignWebsite.dinis. A thing not written he
 - Rulesets main-locked and dev-safe on every repository (Org apply, 19 Nov 16:20 UTC). SovereignWebsite__Hub and SovereignWebsite__Vault created by Org apply, with Pages, domains and DNS records.
 - Sites served by GitHub Pages over http (checked against GitHub's servers 16:27 UTC): sovereignwebsite.ai, .org and .site with their first real versions. HTTPS not yet: no certificate issued.
 
+- HTTPS: GitHub issued no certificate until one by-hand Org apply with nudge_missing_certificates (17:47 UTC) cleared and re-set the five custom domains; all five served over HTTPS by 17:48 UTC, and HTTPS is enforced on all five (checked 18:32 UTC: http answers 301).
+- Site content: sovereignwebsite.ai has the ten pages of Dinis's brief; sovereignwebsite.org has the seven principles and the maturity model (licence not set); sovereignwebsite.site the hosted-side page; every page carries the family bar. The Vault drop page and the Hub gallery are hub.b's (SovereignWebsite__Vault d00a900, SovereignWebsite__Hub 6fc6b75).
+
 ## Does not exist yet
 - The `apply` environment with `FACTORY_APP_ID` (variable) and `FACTORY_APP_PRIVATE_KEY` (secret): without them, Org apply fails at the token step and creates nothing.
 - The DNS records for the three apexes (org/dns.json lists them).

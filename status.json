@@ -1,23 +1,27 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-19T16:32Z",
-  "state": "five repositories run by CI under the ABP; sites live over http on .ai, .org and .site; HTTPS waits for GitHub's certificates (Org apply enforces it hourly)",
+  "updated": "2026-11-19T18:32Z",
+  "state": "all five sites live over HTTPS with HTTPS enforced (.ai, .org, .site, hub, vault); family bar on every page; ten pages on .ai; principles on .org; vault drop page by hub.b",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
     "repositories: Website (.ai), Org (.org), Site (.site), Hub (gallery, hub.sovereignwebsite.site), Vault (vault.sovereignwebsite.site); each with Pages, domain, team push, rulesets main-locked and dev-safe",
     "first real versions of .ai, .org and .site, security-reviewed before push (234405b, a036c2d, 34f8b98)",
-    "sessions: migration.b (https://claude.ai/code/session_01Kw9UwDKiseUFyqtG1xyVaG), hub.b (https://claude.ai/code/session_01Kw9UwB7XboTsnbPPWaMr2d)"
+    "sessions: migration.b (https://claude.ai/code/session_01Kw9UwDKiseUFyqtG1xyVaG), hub.b (https://claude.ai/code/session_01Kw9UwB7XboTsnbPPWaMr2d)",
+    "sovereignwebsite.ai ten pages and sovereignwebsite.org principles, each security-reviewed before push",
+    "family bar across the sites (seed/shared, build/family-bar.mjs)",
+    "certificates issued after one by-hand nudge (17:47 UTC); HTTPS enforced on all five by 18:32 UTC",
+    "deck v1 (board/deck) and the Kickstarter page plan (board/launch)"
   ],
   "next": [
-    "HTTPS on all sites when certificates are issued",
-    "migration inventory into board/migration/ once migration.b is in the policy",
-    "sovereignweb.site, .ai, .org (Dinis buying, 19 Nov ~16:30 UTC): zones and records when Dinis says",
-    "deck: re-map onto PrompTugal's investor decks once readable"
+    "five homepage designs for sovereignwebsite.ai",
+    "the Portuguese versions",
+    "google-maps example site if Dinis says yes",
+    "the hosted-site request path in the Factory (the \u00a350 tier as a pipeline run)"
   ],
   "asks": [
-    "Dinis: say yes to adding migration.b@SovereignWebsite.dinis to policy/abp.json (board/migration/** only) and its key to team/keys.json - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-    "Dinis: tell hub.b whether it also does the Vault work - https://claude.ai/code/session_01Kw9UwB7XboTsnbPPWaMr2d",
-    "Dinis: allow reading PrompTugal__News__Website or paste the brief, for the deck - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu"
+    "Dinis: yes or no to the google-maps example and its name; the Google key, budget and quota are his - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
+    "Dinis: the licence for the principles on sovereignwebsite.org - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
+    "Dinis: yes to adding migration.b to policy/abp.json (board/migration/** only) - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu"
   ]
 }
