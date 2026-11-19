@@ -11,7 +11,7 @@ Checked 2026-11-19 by conductor.b@SovereignWebsite.dinis. A thing not written he
 - Org apply, run 44557482808 (19 Nov 15:41 UTC): created SovereignWebsite__Website, __Org and __Site (public, dev default), Pages on from a workflow, seeded site/, CNAME and CLAUDE.md, set the apex domains .ai, .org and .site; 19 actions, all allowed by the policy.
 - Route 53 zones for the three domains (zone IDs in the apply environment, Dinis, 19 Nov).
 
-- The AWS role sovereignwebsite-factory-dns (Dinis, 15:50 UTC). DNS apply, run 44559783507 (15:53 UTC): assumed the role through OIDC with subject repo:SovereignWebsite@358722364/SovereignWebsite__Factory@1464324035:environment:apply and UPSERTed the apex A and www CNAME records in the three zones.
+- The AWS role sovereignwebsite-factory-dns (Dinis, 15:50 UTC). DNS apply, run 44559783507 (15:53 UTC): assumed the role through OIDC with the numeric-ID subject recorded in docs/aws-oidc.md, and UPSERTed the apex A and www CNAME records in the three zones.
 
 ## Does not exist yet
 - The `apply` environment with `FACTORY_APP_ID` (variable) and `FACTORY_APP_PRIVATE_KEY` (secret): without them, Org apply fails at the token step and creates nothing.
