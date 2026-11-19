@@ -38,7 +38,8 @@ const base = { ...org.defaults, default_branch: 'dev', has_dev: true, teams: { '
 const one = (l) => plan({ ...org, repos: [org.repos.find((x) => x.name === 'SovereignWebsite__Site')] }, { SovereignWebsite__Site: { ...base, description: org.repos.find((x) => x.name === 'SovereignWebsite__Site').description, homepage: 'https://sovereignwebsite.site', cname: 'sovereignwebsite.site', seed_missing: [], ...l } }).actions.map((a) => a.action);
 assert.deepEqual(one({ cert_state: 'approved' }), ['pages.enforce_https']);
 assert.deepEqual(one({ cert_state: 'authorization_pending' }), [], 'never nudge while pending');
-assert.deepEqual(one({ cert_state: null }), ['pages.nudge_certificate']);
+assert.deepEqual(one({ cert_state: null }), [], 'no certificate yet: wait, the domain was just set');
+assert.deepEqual(one({ cert_state: 'errored' }), ['pages.nudge_certificate']);
 assert.deepEqual(one({ cert_state: 'approved', https_enforced: true }), []);
 assert.equal(checkActions(p, { pipeline: 'org-apply', actions: [{ action: 'ruleset.delete', target: 'X' }] }).length, 1);
 console.log('OK (tests)');
