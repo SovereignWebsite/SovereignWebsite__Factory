@@ -3,7 +3,8 @@
 import { readFileSync } from 'node:fs';
 import { gh } from './github.mjs';
 import { load, checkActions } from './abp.mjs';
-import { wanted } from './org-plan.mjs';
+import { wanted, seedFiles } from './org-plan.mjs';
+import { join } from 'node:path';
 
 const p = JSON.parse(readFileSync(process.argv[2], 'utf8'));
 const refused = checkActions(load(), p);
@@ -23,6 +24,13 @@ for (const a of p.actions) {
     must(res, `dev branch ${a.target}`, [201, 422]);
   } else if (a.action === 'repo.set_default_branch') must(await gh('PATCH', base, { default_branch: 'dev' }), `default branch dev ${a.target}`);
   else if (a.action === 'pages.enable') must(await gh('POST', `${base}/pages`, { build_type: 'workflow' }), `pages ${a.target}`, [201, 409]);
+  else if (a.action === 'repo.seed') {
+    for (const f of a.files || seedFiles(r.seed)) {
+      const have = await gh('GET', `${base}/contents/${f}?ref=dev`);
+      if (have.status === 200) { console.log(`kept: ${a.target}/${f} (exists, never overwritten)`); continue; }
+      must(await gh('PUT', `${base}/contents/${f}`, { message: `Seed ${f} from SovereignWebsite__Factory (org-apply)`, content: readFileSync(join(r.seed, f)).toString('base64'), branch: 'dev' }), `seed ${a.target}/${f}`);
+    }
+  } else if (a.action === 'pages.set_cname') must(await gh('PUT', `${base}/pages`, { cname: r.cname, build_type: 'workflow' }), `custom domain ${r.cname} on ${a.target}`);
   else throw new Error(`unknown action ${a.action}`);
 }
 console.log(`APPLIED ${p.actions.length} actions`);

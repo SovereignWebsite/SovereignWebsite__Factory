@@ -1,10 +1,45 @@
 {
-  "about": "The SovereignWebsite organisation's repositories, as code. org-apply creates any that are missing and keeps their settings as written here. It never deletes, transfers, archives or makes private (policy/abp.json).",
+  "about": "The SovereignWebsite organisation's repositories, as code. org-apply creates any that are missing and keeps their settings as written here. It never deletes, transfers, archives or makes private (policy/abp.json). Each site repository is seeded with the files in its seed/ folder (only files that are missing are added), Pages on from a workflow on dev, and its apex domain.",
   "org": "SovereignWebsite",
-  "defaults": { "visibility": "public", "default_branch": "dev", "has_wiki": false, "has_projects": false, "delete_branch_on_merge": true, "allow_merge_commit": true, "allow_squash_merge": false, "allow_rebase_merge": false },
+  "defaults": {
+    "visibility": "public",
+    "default_branch": "dev",
+    "has_wiki": false,
+    "has_projects": false,
+    "delete_branch_on_merge": true,
+    "allow_merge_commit": true,
+    "allow_squash_merge": false,
+    "allow_rebase_merge": false
+  },
   "repos": [
-    { "name": "SovereignWebsite__Factory", "description": "Control repository: the organisation as code, and requests for hosted sovereign websites on sovereignwebsite.site. Driven by CI under an Agent Behaviour Policy.", "exists_by": "Dinis, 19 Nov 2026" },
-    { "name": "SovereignWebsite__Pattern", "description": "The open pattern for a Sovereign Agentic Website: a site you own as plain files, with its schema, agent instructions, behaviour policy, checks and a deploy that runs on any host. Free to use.", "pages": false },
-    { "name": "SovereignWebsite__Website", "description": "sovereignwebsite.ai: built by agents, owned by you.", "pages": true, "homepage": "https://sovereignwebsite.ai" }
+    {
+      "name": "SovereignWebsite__Factory",
+      "description": "Control repository: the organisation as code, and requests for hosted sovereign websites on sovereignwebsite.site. Driven by CI under an Agent Behaviour Policy.",
+      "exists_by": "Dinis, 19 Nov 2026"
+    },
+    {
+      "name": "SovereignWebsite__Website",
+      "description": "sovereignwebsite.ai: the Sovereign Agentic Website brand. Built by agents, owned by you.",
+      "homepage": "https://sovereignwebsite.ai",
+      "pages": true,
+      "cname": "sovereignwebsite.ai",
+      "seed": "seed/SovereignWebsite__Website"
+    },
+    {
+      "name": "SovereignWebsite__Org",
+      "description": "sovereignwebsite.org: the open pattern for a Sovereign Agentic Website, free for anyone to use.",
+      "homepage": "https://sovereignwebsite.org",
+      "pages": true,
+      "cname": "sovereignwebsite.org",
+      "seed": "seed/SovereignWebsite__Org"
+    },
+    {
+      "name": "SovereignWebsite__Site",
+      "description": "sovereignwebsite.site: where hosted sovereign websites live, at <name>.sovereignwebsite.site.",
+      "homepage": "https://sovereignwebsite.site",
+      "pages": true,
+      "cname": "sovereignwebsite.site",
+      "seed": "seed/SovereignWebsite__Site"
+    }
   ]
 }

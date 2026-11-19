@@ -1,8 +1,78 @@
 {
-  "about": "DNS for the SovereignWebsite domains, as code. Applied by dns-apply once the AWS role exists. Proposal until Dinis confirms where each domain is registered and hosted.",
+  "about": "DNS for the SovereignWebsite domains, as code: .ai, .org and .site (Dinis's list, 19 Nov 2026). Applied by dns-apply once the AWS role exists; until then these are the records to set at the registrar.",
   "zones": [
-    { "zone": "sovereignwebsite.ai", "records": [ { "name": "sovereignwebsite.ai", "type": "A", "values": ["185.199.108.153", "185.199.109.153", "185.199.110.153", "185.199.111.153"], "for": "GitHub Pages apex, SovereignWebsite__Website" } ] },
-    { "zone": "sovereignwebsite.com", "records": [], "note": "redirect to sovereignwebsite.ai: method to agree (registrar forwarding, or a Pages site with a redirect)" },
-    { "zone": "sovereignwebsite.site", "records": [], "note": "one CNAME per hosted site, <label>.sovereignwebsite.site to sovereignwebsite.github.io, written by the site requests" }
+    {
+      "zone": "sovereignwebsite.ai",
+      "records": [
+        {
+          "name": "sovereignwebsite.ai",
+          "type": "A",
+          "values": [
+            "185.199.108.153",
+            "185.199.109.153",
+            "185.199.110.153",
+            "185.199.111.153"
+          ],
+          "for": "GitHub Pages apex, SovereignWebsite__Website"
+        },
+        {
+          "name": "www.sovereignwebsite.ai",
+          "type": "CNAME",
+          "values": [
+            "sovereignwebsite.github.io"
+          ],
+          "for": "www to the same Pages site"
+        }
+      ]
+    },
+    {
+      "zone": "sovereignwebsite.org",
+      "records": [
+        {
+          "name": "sovereignwebsite.org",
+          "type": "A",
+          "values": [
+            "185.199.108.153",
+            "185.199.109.153",
+            "185.199.110.153",
+            "185.199.111.153"
+          ],
+          "for": "GitHub Pages apex, SovereignWebsite__Org"
+        },
+        {
+          "name": "www.sovereignwebsite.org",
+          "type": "CNAME",
+          "values": [
+            "sovereignwebsite.github.io"
+          ],
+          "for": "www to the same Pages site"
+        }
+      ]
+    },
+    {
+      "zone": "sovereignwebsite.site",
+      "records": [
+        {
+          "name": "sovereignwebsite.site",
+          "type": "A",
+          "values": [
+            "185.199.108.153",
+            "185.199.109.153",
+            "185.199.110.153",
+            "185.199.111.153"
+          ],
+          "for": "GitHub Pages apex, SovereignWebsite__Site"
+        },
+        {
+          "name": "www.sovereignwebsite.site",
+          "type": "CNAME",
+          "values": [
+            "sovereignwebsite.github.io"
+          ],
+          "for": "www to the same Pages site"
+        }
+      ],
+      "note": "hosted sites add one CNAME each, <label>.sovereignwebsite.site to sovereignwebsite.github.io"
+    }
   ]
 }

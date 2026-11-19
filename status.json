@@ -2,22 +2,23 @@
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
   "updated": "2026-11-19",
-  "state": "skeleton committed; waiting for push access and the apply environment",
+  "state": "three apex site repositories planned; waiting for the apply environment to run Org apply",
   "done": [
     "strategy map, team, sites and pipeline, deck draft v0 (board/2026-11-19__saw-plan.md)",
     "signing key and team/keys.json",
     "policy/abp.json, org/repos.json, org/dns.json",
-    "Checks and Org apply workflows with tests"
+    "Checks and Org apply workflows with tests",
+    "seeds and plan for sovereignwebsite.ai, .org and .site (repositories, Pages, apex domains)"
   ],
   "next": [
-    "Org apply creates SovereignWebsite__Pattern and SovereignWebsite__Website",
+    "Org apply creates SovereignWebsite__Website, __Org and __Site with Pages and apex domains",
+    "DNS for the three apexes",
+    "start the team (designer, writer, developer, security) on the three sites",
     "branch protection by the pipeline",
-    "AWS role and dns-apply",
-    "hosted-site requests on the AgentiCCells factory pattern",
-    "re-map the deck onto PrompTugal's investor decks"
+    "AWS role and dns-apply"
   ],
   "asks": [
-    "Dinis: install the Claude GitHub App on SovereignWebsite so this session can push - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
+    "Dinis: set the apex DNS records for sovereignwebsite.ai, .org and .site (org/dns.json) at the registrar, or say which DNS host to automate - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
     "Dinis: create the apply environment in this repository with FACTORY_APP_ID (variable) and FACTORY_APP_PRIVATE_KEY (secret) of agenticcells-site-factory - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
     "Dinis: allow reading PrompTugal__News__Website or paste the brief - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu"
   ]

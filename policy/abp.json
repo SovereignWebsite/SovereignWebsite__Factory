@@ -6,39 +6,129 @@
   "agents": {
     "conductor.b@SovereignWebsite.dinis": {
       "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-      "may_change": ["README.md", "REALITY.md", "CLAUDE.md", "status.json", "board/**", "docs/**", "requests/**", "org/**", "team/**", "test/**", "build/**", "policy/**", ".github/**", "LICENSE", "LICENSE-TEXT", ".gitignore"],
-      "needs_dinis_merge": ["policy/**", ".github/**", "build/**", "org/**", "team/keys.json"],
-      "branches": ["dev"],
-      "never": ["push to main", "print or commit a key or token", "name a private prospect"]
+      "may_change": [
+        "README.md",
+        "REALITY.md",
+        "CLAUDE.md",
+        "status.json",
+        "board/**",
+        "docs/**",
+        "requests/**",
+        "org/**",
+        "team/**",
+        "test/**",
+        "build/**",
+        "policy/**",
+        ".github/**",
+        "LICENSE",
+        "LICENSE-TEXT",
+        ".gitignore"
+      ],
+      "needs_dinis_merge": [
+        "policy/**",
+        ".github/**",
+        "build/**",
+        "org/**",
+        "team/keys.json"
+      ],
+      "branches": [
+        "dev"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "name a private prospect"
+      ]
     }
   },
   "pipelines": {
     "checks": {
-      "runs_on": ["pull_request to dev", "push to dev"],
-      "allowed": ["read repository"],
-      "github_token": { "contents": "read" }
+      "runs_on": [
+        "pull_request to dev",
+        "push to dev"
+      ],
+      "allowed": [
+        "read repository"
+      ],
+      "github_token": {
+        "contents": "read"
+      }
     },
     "org-apply": {
-      "runs_on": ["push to dev that changes org/ or policy/"],
+      "runs_on": [
+        "push to dev that changes org/ or policy/"
+      ],
       "environment": "apply",
-      "allowed": ["repo.create", "repo.update_settings", "branch.create_dev", "repo.set_default_branch", "pages.enable"],
-      "refused_always": ["repo.delete", "repo.transfer", "repo.archive", "repo.make_private", "member.change", "app.change"],
-      "note": "A repository that exists but is not in org/repos.json is reported, never deleted."
+      "allowed": [
+        "repo.create",
+        "repo.update_settings",
+        "branch.create_dev",
+        "repo.set_default_branch",
+        "pages.enable",
+        "repo.seed",
+        "pages.set_cname"
+      ],
+      "refused_always": [
+        "repo.delete",
+        "repo.transfer",
+        "repo.archive",
+        "repo.make_private",
+        "member.change",
+        "app.change"
+      ],
+      "note": "A repository that exists but is not in org/repos.json is reported, never deleted. repo.seed only adds files that are missing on dev, never overwrites."
     },
     "dns-apply": {
-      "runs_on": ["push to dev that changes org/dns.json"],
+      "runs_on": [
+        "push to dev that changes org/dns.json"
+      ],
       "environment": "apply",
-      "allowed": ["route53.upsert_record"],
-      "refused_always": ["route53.delete_zone", "route53domains.transfer"],
+      "allowed": [
+        "route53.upsert_record"
+      ],
+      "refused_always": [
+        "route53.delete_zone",
+        "route53domains.transfer"
+      ],
       "status": "not active until the AWS role exists (FACTORY_AWS_ROLE_ARN set)"
     }
   },
   "privileges": [
-    { "holder": "github-app:agenticcells-site-factory", "permission": "metadata:read", "why": "required by GitHub for any App", "state": "expected" },
-    { "holder": "github-app:agenticcells-site-factory", "permission": "administration:write", "why": "org-apply: create repositories and set their settings from org/repos.json", "state": "expected" },
-    { "holder": "github-app:agenticcells-site-factory", "permission": "contents:write", "why": "org-apply: create the dev branch and seed files in a new repository", "state": "expected" },
-    { "holder": "github-app:agenticcells-site-factory", "permission": "pages:write", "why": "org-apply: turn on GitHub Pages for site repositories", "state": "expected" },
-    { "holder": "github-app:agenticcells-site-factory", "permission": "workflows:write", "why": "org-apply: seed a new repository's CI workflows", "state": "expected" },
-    { "holder": "aws-role:sovereignwebsite-factory-dns", "permission": "route53:ChangeResourceRecordSets, route53:ListResourceRecordSets on the sovereignwebsite zones", "why": "dns-apply", "state": "not yet created" }
+    {
+      "holder": "github-app:agenticcells-site-factory",
+      "permission": "metadata:read",
+      "why": "required by GitHub for any App",
+      "state": "expected"
+    },
+    {
+      "holder": "github-app:agenticcells-site-factory",
+      "permission": "administration:write",
+      "why": "org-apply: create repositories and set their settings from org/repos.json",
+      "state": "expected"
+    },
+    {
+      "holder": "github-app:agenticcells-site-factory",
+      "permission": "contents:write",
+      "why": "org-apply: create the dev branch and seed files in a new repository",
+      "state": "expected"
+    },
+    {
+      "holder": "github-app:agenticcells-site-factory",
+      "permission": "pages:write",
+      "why": "org-apply: turn on GitHub Pages for site repositories",
+      "state": "expected"
+    },
+    {
+      "holder": "github-app:agenticcells-site-factory",
+      "permission": "workflows:write",
+      "why": "org-apply: seed a new repository's CI workflows",
+      "state": "expected"
+    },
+    {
+      "holder": "aws-role:sovereignwebsite-factory-dns",
+      "permission": "route53:ChangeResourceRecordSets, route53:ListResourceRecordSets on the sovereignwebsite zones",
+      "why": "dns-apply",
+      "state": "not yet created"
+    }
   ]
 }

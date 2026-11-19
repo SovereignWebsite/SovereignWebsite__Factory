@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { validate, checkActions, glob, load } from '../build/abp.mjs';
-import { plan } from '../build/org-plan.mjs';
+import { plan, seedFiles } from '../build/org-plan.mjs';
 
 const p = load();
 assert.deepEqual(validate(p), [], 'policy validates');
@@ -18,4 +18,11 @@ assert.deepEqual(checkActions(p, fresh), [], 'a fresh plan is allowed');
 const live = { SovereignWebsite__Factory: { ...org.defaults, description: org.repos[0].description, default_branch: 'dev', has_dev: true }, Stray: {} };
 const pl = plan({ ...org, repos: [org.repos[0]] }, live);
 assert.deepEqual(pl.actions, [], 'factory as Dinis made it needs nothing'); assert.deepEqual(pl.unlisted, ['Stray']);
+for (const n of ['SovereignWebsite__Website', 'SovereignWebsite__Org', 'SovereignWebsite__Site']) {
+  const f = seedFiles(`seed/${n}`);
+  for (const must of ['.github/workflows/pages.yml', 'site/CNAME', 'site/index.html']) assert.ok(f.includes(must), `${n} seeds ${must}`);
+  const order = fresh.actions.filter((a) => a.target === n).map((a) => a.action);
+  assert.ok(order.indexOf('pages.enable') < order.indexOf('repo.seed'), 'Pages on before the seed, so the first deploy runs');
+}
+assert.equal(readFileSync('seed/SovereignWebsite__Org/site/CNAME', 'utf8').trim(), 'sovereignwebsite.org');
 console.log('OK (tests)');
