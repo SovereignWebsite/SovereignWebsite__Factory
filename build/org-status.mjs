@@ -8,7 +8,7 @@ for (const r of org.repos.filter((x) => x.pages)) {
   const pg = await gh('GET', `${base}/pages`);
   const runs = await gh('GET', `${base}/actions/runs?per_page=3`);
   const p = pg.data || {};
-  out.push(`- **${r.name}**: pages HTTP ${pg.status}, status ${p.status ?? 'none'}, build_type ${p.build_type ?? '-'}, cname ${p.cname ?? '-'}, https_enforced ${p.https_enforced ?? '-'}, url ${p.html_url ?? '-'}`);
+  out.push(`- **${r.name}**: pages HTTP ${pg.status}, status ${p.status ?? 'none'}, build_type ${p.build_type ?? '-'}, cname ${p.cname ?? '-'}, https_enforced ${p.https_enforced ?? '-'}, certificate ${p.https_certificate?.state ?? 'none'}${p.https_certificate?.description ? ` (${p.https_certificate.description})` : ''}, url ${p.html_url ?? '-'}`);
   for (const w of runs.data?.workflow_runs || []) out.push(`  - run ${w.id} ${w.name} ${w.event} ${w.status}/${w.conclusion ?? '-'} ${w.created_at}`);
   const fails = (runs.data?.workflow_runs || []).filter((w) => w.conclusion === 'failure').slice(0, 1);
   for (const w of fails) {
