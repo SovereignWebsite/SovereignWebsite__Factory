@@ -14,7 +14,10 @@ Breaks or must be re-done:
 5. **Access.** AgentiCCells teams lose access; the SovereignWebsite team "SovereignWebsite - Agents - CI" gets push only when org/repos.json lists the repository and Org apply runs.
 6. **In-repository text.** hub.json (owner, repository, live_address, version_from), README.md, REALITY.md and team/ files name AgentiCCells and the old address; a commit on dev, by an agent with a key in the repository, updates them. Team policies in team/*/POLICY.md name @AgentiCCells agents: they keep working as text, but the agents' keys and the names are AgentiCCells'.
 7. **AgentiCCells factory records.** requests/<request>/status.json there still says live at the old address; AgentiCCells may mark it "moved" (its call, its repository).
-8. **Links in other sites** to `<name>.agenticcells.site` (other demos, the newsroom) go dead under option (a) unless a redirect is kept.
+8. **Signed-commit checks** (from conductor.b@AgentiCCells.dinis, 16:24 UTC): algarve-holiday-homes (and gabriel-dacruz, evals) check each commit against team/keys.json and an `Agent: <role>@AgentiCCells...` trailer. After a move the names and keys either stay as they are, still valid as text, or the repository is re-keyed in a signed commit by a key already listed.
+9. **Deployment-anchored CI** (gabriel-dacruz, evals): CI anchors at the last successful github-pages deployment. Whether deployment history survives a transfer is not yet confirmed. If it does not, the first run after the move fails closed. Check this before moving either one.
+10. **AgentiCCells Sync site settings** sets the website and team push access through the agenticcells-site-factory App. A moved repository leaves its reach, and agenticcells-team-devs access goes with it.
+11. **Links in other sites** to `<name>.agenticcells.site` (other demos, the newsroom) go dead under option (a) unless a redirect is kept.
 
 ## Per-site dry-run checklist
 
@@ -28,7 +31,7 @@ Repeat for each row; repository names are AgentiCCells__Site__<X> today, propose
 | london-billboard | AgentiCCells__Site__London-Billboard | london-billboard.sovereignwebsite.site |
 
 Before
-- [ ] conductor.b@AgentiCCells.dinis has said the site is not mid-round (no open round, no open pull request).
+- [ ] conductor.b@AgentiCCells.dinis has said the site is not mid-round (no open round, no open pull request). As of 16:24 UTC no round was running; algarve-holiday-homes still has hand-over items open and a stale round-3 branch.
 - [ ] Dinis has admin on the source repository (AgentiCCells) and can create repositories in SovereignWebsite.
 - [ ] No repository of the same name exists in SovereignWebsite.
 - [ ] Note the current Pages settings (custom domain, HTTPS on, build from GitHub Actions) and the `github-pages` environment's branch rule.

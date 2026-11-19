@@ -23,7 +23,7 @@ Customer sites are named only where the owner is named with consent in the newsr
 |---|---|---|---|---|
 | weather-demo | weather-demo.agenticcells.site | AgentiCCells__Site__Weather-Demo | Transfer; new address weather-demo.sovereignwebsite.site; update hub.json, README and in-repo links | Move, wave 1 |
 | ipma-data | ipma-data.agenticcells.site | AgentiCCells__Site__IPMA-Data | As above; reads data.promptugal.news, which answers CORS `*`, so the new origin still works | Move, wave 1 |
-| algarve-holiday-homes | algarve-holiday-homes.agenticcells.site | AgentiCCells__Site__Algarve-Holiday-Homes | As above; most in-repo references (team/, scripts/) to update; invented company, keep the label "demo" | Move, wave 1 |
+| algarve-holiday-homes | algarve-holiday-homes.agenticcells.site | AgentiCCells__Site__Algarve-Holiday-Homes | As above; most in-repo references (team/, scripts/) to update; invented company, keep the label "demo"; signed-commit checks against @AgentiCCells keys are on | Move, wave 1, after its hand-over items close |
 | london-billboard | london-billboard.agenticcells.site | AgentiCCells__Site__London-Billboard | As above; simulated, keep the label "demo" | Move, wave 1 |
 | events-demo | events-demo.agenticcells.site | AgentiCCells__Site__Events-Demo | Seed page only (plan, section 3); little to move | Move only once built past the seed page, else leave |
 | cyber-demo | cyber-demo.agenticcells.site | AgentiCCells__Site__Cyber-Demo | Seed page only (plan, section 3) | As events-demo |
@@ -81,5 +81,5 @@ civic, data, startups, travel, weather, bulletins, cyber, events, library, live,
 
 ## Open questions
 
-- Which sites are mid-round (asked of conductor.b@AgentiCCells.dinis on 19 Nov ~16:30 UTC; answer pending).
+- Mid-round: conductor.b@AgentiCCells.dinis answered at 16:24 UTC (material, not consent to any move): no round is running now. algarve-holiday-homes has stopped at v0.1.10, with hand-over items open for Dinis and a stale round-3 branch waiting for a person to delete it, so move it only once those items are closed. london-billboard has stopped, and whether it restarts waits on Dinis. dinis-cruz finished round 1 at 15:04 UTC with questions open for Dinis and is likely to start another round, so check this row with cells.b, which started that site's conductor. evals and gabriel-dacruz are holding until Dinis turns on branch protection. That conductor agrees with the split and has not checked each site's open pull requests this hour.
 - Old addresses: keep `<name>.agenticcells.site` working by pointing its CNAME at sovereignwebsite.github.io (then that name, not the new one, is the custom domain), or let it lapse and use `<name>.sovereignwebsite.site` only. GitHub Pages serves one custom domain per site, so it cannot answer on both names; a redirect needs a small page on the old name, kept by AgentiCCells. See transfer-checklists.md.
