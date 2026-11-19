@@ -25,4 +25,10 @@ for (const n of ['SovereignWebsite__Website', 'SovereignWebsite__Org', 'Sovereig
   assert.ok(order.indexOf('pages.enable') < order.indexOf('repo.seed'), 'Pages on before the seed, so the first deploy runs');
 }
 assert.equal(readFileSync('seed/SovereignWebsite__Org/site/CNAME', 'utf8').trim(), 'sovereignwebsite.org');
+const { dnsPlan } = await import('../build/dns-plan.mjs');
+const dp = dnsPlan(JSON.parse(readFileSync('org/dns.json', 'utf8')), { SW_ZONE_ID_AI: 'Z1' });
+assert.deepEqual(dp.errors, []); assert.deepEqual(checkActions(p, dp.plan), [], 'DNS plan allowed');
+assert.ok(dp.batches.every((b) => b.batch.Changes.every((c) => c.Action === 'UPSERT')), 'UPSERT only');
+assert.equal(dnsPlan({ zones: [{ zone: 'example.com', records: [] }] }).errors.length, 1, 'foreign zone refused');
+assert.equal(dnsPlan({ zones: [{ zone: 'sovereignwebsite.ai', records: [{ name: 'evil.example.com', type: 'A', values: ['1.1.1.1'] }] }] }).errors.length, 1, 'record outside zone refused');
 console.log('OK (tests)');

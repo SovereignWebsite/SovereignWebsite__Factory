@@ -87,10 +87,14 @@
         "route53.upsert_record"
       ],
       "refused_always": [
+        "route53.delete_record",
         "route53.delete_zone",
-        "route53domains.transfer"
+        "route53.create_zone",
+        "route53domains.transfer",
+        "route53domains.update_nameservers"
       ],
-      "status": "not active until the AWS role exists (FACTORY_AWS_ROLE_ARN set)"
+      "status": "active once the apply environment has SW_AWS_ROLE_ARN (a role for this repository) and the three SW_ZONE_ID_* variables",
+      "note": "UPSERT only, records named in org/dns.json, only in the three sovereignwebsite zones; the AWS role enforces the same limits (docs/aws-oidc.md)."
     }
   },
   "privileges": [
@@ -126,9 +130,9 @@
     },
     {
       "holder": "aws-role:sovereignwebsite-factory-dns",
-      "permission": "route53:ChangeResourceRecordSets, route53:ListResourceRecordSets on the sovereignwebsite zones",
-      "why": "dns-apply",
-      "state": "not yet created"
+      "permission": "route53:ChangeResourceRecordSets (UPSERT; A, AAAA, CNAME, TXT) on the three sovereignwebsite zones; route53:ListResourceRecordSets, route53:GetHostedZone, route53:GetChange",
+      "why": "dns-apply: write org/dns.json to Route 53",
+      "state": "to be created by Dinis from docs/aws-oidc.md"
     }
   ]
 }

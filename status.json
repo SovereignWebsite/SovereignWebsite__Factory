@@ -2,13 +2,15 @@
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
   "updated": "2026-11-19",
-  "state": "three apex site repositories planned; waiting for the apply environment to run Org apply",
+  "state": "three apex repositories live on GitHub (Org apply run 44557482808); DNS pipeline written, waiting for the AWS role",
   "done": [
     "strategy map, team, sites and pipeline, deck draft v0 (board/2026-11-19__saw-plan.md)",
     "signing key and team/keys.json",
     "policy/abp.json, org/repos.json, org/dns.json",
     "Checks and Org apply workflows with tests",
-    "seeds and plan for sovereignwebsite.ai, .org and .site (repositories, Pages, apex domains)"
+    "seeds and plan for sovereignwebsite.ai, .org and .site (repositories, Pages, apex domains)",
+    "Org apply created SovereignWebsite__Website, __Org and __Site with Pages, seeds and apex domains (19 Nov 15:41 UTC)",
+    "dns-apply workflow and docs/aws-oidc.md (role policies)"
   ],
   "next": [
     "Org apply creates SovereignWebsite__Website, __Org and __Site with Pages and apex domains",
@@ -18,8 +20,8 @@
     "AWS role and dns-apply"
   ],
   "asks": [
-    "Dinis: set the apex DNS records for sovereignwebsite.ai, .org and .site (org/dns.json) at the registrar, or say which DNS host to automate - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-    "Dinis: create the apply environment in this repository with FACTORY_APP_ID (variable) and FACTORY_APP_PRIVATE_KEY (secret) of agenticcells-site-factory - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-    "Dinis: allow reading PrompTugal__News__Website or paste the brief - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu"
+    "Dinis: create the role sovereignwebsite-factory-dns from docs/aws-oidc.md and put its ARN in SW_AWS_ROLE_ARN (it holds the AgentiCCells role now) - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
+    "Dinis: delete SW_APP_ID (FACTORY_APP_ID is the one read) - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
+    "Dinis: confirm the registrar lists each zone's four Route 53 nameservers - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu"
   ]
 }
