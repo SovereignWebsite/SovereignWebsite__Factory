@@ -332,6 +332,14 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   assert.equal(q(), 1, 'a plain zip with a key inside fails');
   w(d + '/private/v.zip', randomBytes(2048));
   assert.equal(q(), 1, 'a .zip that is not a readable zip fails');
+  w(d + '/private/v.zip', zip([['manifest.json', Buffer.from('{"v":1}')], ['objects/cd', Buffer.from('Dear Sam, a private letter. '.repeat(100))]]));
+  assert.equal(q(), 1, 'a vault entry that is plaintext, not ciphertext, fails on a gated site');
+  w(d + '/private/v.zip', zip([['manifest.json', Buffer.from('{"v":1}')], ['objects/ab', randomBytes(4096)]]));
+  w(d + '/data.bin', zip([['k.txt', Buffer.from('-----BEGIN RSA PRIVATE' + ' KEY-----')]]));
+  assert.equal(q(), 1, 'a zip under another name is found by its content and opened');
+  const big = Buffer.alloc(9 * 1024 * 1024, 0x61); Buffer.from('-----BEGIN EC PRIVATE' + ' KEY-----').copy(big, 4 * 1024 * 1024 - 10);
+  w(d + '/data.bin', big);
+  assert.equal(q(), 1, 'a file over 5 MB is scanned, across its piece boundaries');
   const s = mkdtempSync(tmpdir() + '/fam2-'); mkdirSync(s + '/designs');
   for (const p of ['index.html', 'designs/a.html']) w(s + '/' + p, '<html><body><main>x</main><footer>f</footer></body></html>');
   execFileSync('node', ['build/family-bar.mjs', s, '--credit']);

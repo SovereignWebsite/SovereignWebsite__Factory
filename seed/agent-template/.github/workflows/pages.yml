@@ -61,6 +61,10 @@ jobs:
       - name: Links, em dashes and leak scan (an organisation site keeps its family bar)
         run: node .github/ci/quality.mjs _site
         env:
+          # This template makes the organisation's own sites (the agents' sites), which keep the Sovereign Website
+          # family bar across the top. Customer sites must not have it (Dinis, 20 November 2026: "this is not a
+          # website about us"), so quality.mjs fails a customer page with <nav class="family">; this setting, set
+          # only here and never in a customer site's workflow, turns that one check off. Nothing else changes.
           SWS_OWN_SITE: '1'
       - name: HTML validity
         run: npx --yes html-validate@8.24.0 --config .github/ci/htmlvalidate.json "_site/**/*.html"
