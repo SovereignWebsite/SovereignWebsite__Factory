@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-20T15:34Z",
+  "updated": "2026-11-20T16:34Z",
   "state": "18 site requests; all main sites, the agents area (agents, design, library), whois.tool and the people's sites answer over HTTPS; one company site still waits on its certificate",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -29,7 +29,9 @@
     "signing without passphrases (Dinis); how-to in board/workflow/2026-11-20__signing-with-your-key.md",
     "standing guidance for founder and personal sites (board/workflow/2026-11-20__founder-and-personal-sites.md)",
     "family bar folds on phones (fc21653); Org apply can invite a person a request names, with push only (055f7ce)",
-    "Dinis said yes to the AgentiCCells transfer test repository (15:10 UTC); cells.b makes it"
+    "Dinis said yes to the AgentiCCells transfer test repository (15:10 UTC); cells.b makes it",
+    "owner handover as org member (board/workflow/2026-11-20__owner-handover.md); Kate a member since 16:16 UTC",
+    "accountant.agents.sovereignweb.site made (a64bff7)"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
@@ -63,7 +65,10 @@
     "accountant.b": "budgets for every agent and loop - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF",
     "librarian.b": "the SWS library and the newsroom relay to each agent (library.agents.sovereignweb.site) - https://claude.ai/code/session_01Kw9UwDgZWdzwjxSRSJ4Lzt",
     "sarah-cruz.b": "Sarah Cruz's public site - https://claude.ai/code/session_01Kw9UwBAh6Xwws4CiPBkYZY",
-    "kate-curtis-evans.b": "Kate Curtis-Evans's founder site; first phase handed over - https://claude.ai/code/session_01Kw9UwEREYzo2rPJ4cv4XVN"
+    "kate-curtis-evans.b": "Kate Curtis-Evans's founder site; first phase handed over - https://claude.ai/code/session_01Kw9UwEREYzo2rPJ4cv4XVN",
+    "security.b": "security reviews before anything goes live - https://claude.ai/code/session_01Kw9UwBQqeQAymiagw8BjRY",
+    "startups.b": "five startup brochure sites under startups.sovereignweb.site - https://claude.ai/code/session_01Kw9UwCbSQgp3wavatYAbqd",
+    "design session (name pending)": "started from kate-curtis-evans.b's session as design.b's successor; its name and key wait on Dinis - https://claude.ai/code/session_01Kw9UwFCJTPWFaTq4TX5vUT"
   },
   "short_name": "SWS (Sovereign Website), Dinis, 20 Nov 2026"
 }
