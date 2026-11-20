@@ -384,6 +384,25 @@
         "fingerprint": "sha256:f5a495b2efdc6b33",
         "signing_fingerprint": "sha256:1c3156175cbc2bcf"
       }
+    },
+    {
+      "id": "evals-mistral-sovereignwebsite",
+      "agent": "evals.mistral@SovereignWebsite.dinis",
+      "role": "Evaluates Mistral for a sovereign website's jobs, in Site__Provider__Mistral (site/evals/, site/data/evals/); started by conductor.mistral. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 20 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
+      "created": "2026-11-20",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwE2tPJDuHKuufXi7gF",
+      "fingerprint": "sha256:db2a342e98327e61",
+      "signing_fingerprint": "sha256:0034e2e8c4fe2c59",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAusTFVTko0bZJCcPFzMMn\nxX8bbkd4sB89/F5EnW2fKAb9zWS5HLf5bzAu4mNacNys4lAL4gvU2Phi1zOdfhoc\nXxc+ZDPL2K9ftMDTb+0Yzv/R+tqcZPptIn+Zygi+mMb8RwNplGEWCQbbGo4MPdkD\ncdCy3jHj0sEnOMjFtXwE6D/fe6V2S3thK5tKQtq8DkbYzzCFXuIXpuGTeImvLgzF\nw19uVR6TIXJwWayewqX1+7ddr9Xd19J2KFx5qyJIDzQlcGSmNnestHnM/fDGz/7p\nlHEF7u1CaPC8hcmOMxMJ9G/cAVrDTS3HzoGV5sgMlDrmtMxOtAgtVfcm4CzXlcnA\n0LSFHntg3WObN5Wdw0cSdUmsLaYoIKMc3HZhdwBVYjFS/i46zRGNBxQpR/momXlg\n2EuqHko/8zMBvFXV6Na1KEFFjqarSMY6hifOPUheOPf4nUqxOhSI9OyDFHUU4e6X\n6ARobJ8x5zJlRh1N1YfQTxwvEuZgydwlGvJdBgAGH03VEklmEDEpeBVRtpw6eQa/\ngxa058wQaMR9V4NeepjkmQrtanQST7dOKCVValeIcnV3NZvUgUA9P0qWBOQtMo14\nQfhB+FcpWYsJfqdJ82iSXOevTt5ftiRlSgEOVvqxvc6vaGC/oJNXgAT/NedDa2pU\ngL51h8q/CVsH0sF18cqWiA0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZQhHpv35jDpcdpflUapUajBxBgC9\neTnvieJ2m0aIQSA99ctY9fPHosUY6Gk0u65VAM2B3f8JVPRZ4S2vgZbsJw==\n-----END PUBLIC KEY-----\n",
+        "label": "evals.mistral@SovereignWebsite.dinis",
+        "fingerprint": "sha256:db2a342e98327e61",
+        "signing_fingerprint": "sha256:0034e2e8c4fe2c59"
+      }
     }
   ]
 }
