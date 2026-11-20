@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-20T16:34Z",
+  "updated": "2026-11-20T17:34Z",
   "state": "18 site requests; all main sites, the agents area (agents, design, library), whois.tool and the people's sites answer over HTTPS; one company site still waits on its certificate",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -31,7 +31,8 @@
     "family bar folds on phones (fc21653); Org apply can invite a person a request names, with push only (055f7ce)",
     "Dinis said yes to the AgentiCCells transfer test repository (15:10 UTC); cells.b makes it",
     "owner handover as org member (board/workflow/2026-11-20__owner-handover.md); Kate a member since 16:16 UTC",
-    "accountant.agents.sovereignweb.site made (a64bff7)"
+    "accountant.agents.sovereignweb.site made (a64bff7)",
+    "milestone: Kate is the first owner to edit her own site herself on GitHub (board/milestones.md); hub.sovereignweb.site features Kate, Emily and Sarah first"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
@@ -70,5 +71,12 @@
     "startups.b": "five startup brochure sites under startups.sovereignweb.site - https://claude.ai/code/session_01Kw9UwCbSQgp3wavatYAbqd",
     "design session (name pending)": "started from kate-curtis-evans.b's session as design.b's successor; its name and key wait on Dinis - https://claude.ai/code/session_01Kw9UwFCJTPWFaTq4TX5vUT"
   },
-  "short_name": "SWS (Sovereign Website), Dinis, 20 Nov 2026"
+  "short_name": "SWS (Sovereign Website), Dinis, 20 Nov 2026",
+  "held_for_dinis": [
+    "factory.b: six local commits d03de93, 171ef2e, ed203d2, 4c073c5, 6c9688b, 83e098e (family-bar pop-up on customer sites, start/agents/llms.txt/admin pages, link previews, CI versions and quality checks)",
+    "factory.b: the five startups requests and security.agents (not yet committed)",
+    "feedback.b (not started)",
+    "the design session's name and key",
+    "security.b's review of the owner setup, after the member privileges check"
+  ]
 }
