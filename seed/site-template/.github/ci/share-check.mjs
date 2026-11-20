@@ -1,5 +1,5 @@
 // Fails the deploy when a page has no link preview: every HTML page under site/ needs its Open Graph and Twitter
-// tags, and a 1200x630 JPEG share card under 300 KB, served from this site. node .github/share-check.mjs site
+// tags, and a 1200x630 JPEG share card under 300 KB, served from this site. node .github/ci/share-check.mjs _site
 // Seeded by SovereignWebsite__Factory. No dependencies.
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';

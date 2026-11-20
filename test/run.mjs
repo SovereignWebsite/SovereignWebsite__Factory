@@ -258,13 +258,38 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   const { execFileSync } = await import('node:child_process');
   const { tmpdir } = await import('node:os');
   assert.ok(seedFiles('seed/site-template').includes('site/assets/share/card-1200x630.jpg'), 'the template seeds a share card');
-  assert.ok(r('seed/site-template/.github/workflows/pages.yml', 'utf8').includes('node .github/share-check.mjs site'), 'the deploy runs the share check');
+  assert.ok(r('seed/site-template/.github/workflows/pages.yml', 'utf8').includes('node .github/ci/share-check.mjs _site'), 'the deploy runs the share check');
   const d = mkdtempSync(tmpdir() + '/share-'); cpSync('seed/site-template', d, { recursive: true });
   const fill = (p) => { for (const e of ls(p, { withFileTypes: true })) { const q = p + '/' + e.name; if (e.isDirectory()) fill(q); else if (/\.(html|txt|json)$|CNAME$/.test(e.name)) w(q, r(q, 'utf8').replaceAll('{{host}}', 'a.cv.sovereignweb.site').replaceAll('{{title}}', 'A').replaceAll('{{description}}', 'B').replaceAll('{{repo}}', 'Site__CV__A')); } };
   fill(d + '/site');
-  const check = () => { try { execFileSync('node', ['.github/share-check.mjs', 'site'], { cwd: d, stdio: 'pipe' }); return 0; } catch (e) { return e.status; } };
+  const check = () => { try { execFileSync('node', ['.github/ci/build.mjs'], { cwd: d, stdio: 'pipe' }); execFileSync('node', ['.github/ci/share-check.mjs', '_site'], { cwd: d, stdio: 'pipe' }); return 0; } catch (e) { return e.status; } };
   assert.equal(check(), 0, 'a fresh site passes the share check');
   w(d + '/site/start/index.html', r(d + '/site/start/index.html', 'utf8').replace(/<meta property="og:image" [^>]*>/, ''));
   assert.equal(check(), 1, 'a page without og:image fails the deploy');
+}
+// The site pipeline: build makes version.json and the chip on every page; quality fails on a broken internal link,
+// an em dash in visible text, the family strip or a leaked key; pages.yml versions from tags, then deploys, then tags.
+{
+  const { mkdtempSync, cpSync, writeFileSync: w, readFileSync: r, readdirSync: ls } = await import('node:fs');
+  const { execFileSync } = await import('node:child_process');
+  const { tmpdir } = await import('node:os');
+  const wf = r('seed/site-template/.github/workflows/pages.yml', 'utf8');
+  for (const step of ['node .github/ci/build.mjs', 'node .github/ci/quality.mjs _site', 'html-validate@', 'node .github/ci/axe.mjs _site', 'git push origin "$VERSION"']) assert.ok(wf.includes(step), `pages.yml runs ${step}`);
+  assert.ok(wf.indexOf('quality.mjs') < wf.indexOf('upload-pages-artifact') && wf.indexOf('deploy-pages') < wf.indexOf('git tag "$VERSION"'), 'checks before deploy, tag after deploy');
+  const d = mkdtempSync(tmpdir() + '/ci-'); cpSync('seed/site-template', d, { recursive: true });
+  const fill = (p) => { for (const e of ls(p, { withFileTypes: true })) { const q = p + '/' + e.name; if (e.isDirectory()) fill(q); else if (/\.(html|txt|json)$|CNAME$/.test(e.name)) w(q, r(q, 'utf8').replaceAll('{{host}}', 'a.cv.sovereignweb.site').replaceAll('{{title}}', 'A').replaceAll('{{description}}', 'B').replaceAll('{{repo}}', 'Site__CV__A')); } };
+  fill(d + '/site');
+  const run = (f, ...a) => { try { execFileSync('node', [f, ...a], { cwd: d, stdio: 'pipe', env: { ...process.env, SITE_VERSION: 'v0.1.7', GITHUB_SHA: 'abcdef1234567', GITHUB_STEP_SUMMARY: '' } }); return 0; } catch (e) { return e.status; } };
+  assert.equal(run('.github/ci/build.mjs'), 0);
+  const v = JSON.parse(r(d + '/_site/version.json', 'utf8')); assert.equal(v.version, 'v0.1.7'); assert.equal(v.commit, 'abcdef1');
+  assert.ok(r(d + '/_site/start/index.html', 'utf8').includes('<a class="sws-version"'), 'the chip is on every page');
+  const local = (f) => { const s = r(f, 'utf8').replace(/ href="https?:[^"]*"/g, ' href="/"'); w(f, s); };
+  for (const p of ['index.html', 'start/index.html', 'agents/index.html', 'admin/index.html']) local(d + '/_site/' + p);
+  assert.equal(run('.github/ci/quality.mjs', '_site'), 0, 'a fresh site passes the quality checks');
+  const home = d + '/_site/index.html'; const ok = r(home, 'utf8');
+  w(home, ok.replace('</main>', '<a href="/missing/">x</a></main>')); assert.equal(run('.github/ci/quality.mjs', '_site'), 1, 'a broken internal link fails');
+  w(home, ok.replace('</main>', '<p>a \u2014 b</p></main>')); assert.equal(run('.github/ci/quality.mjs', '_site'), 1, 'an em dash fails');
+  w(home, ok.replace('<main', '<nav class="family"></nav><main')); assert.equal(run('.github/ci/quality.mjs', '_site'), 1, 'the family strip fails');
+  w(home, ok.replace('</main>', '<p>-----BEGIN OPENSSH PRIVATE' + ' KEY-----</p></main>')); assert.equal(run('.github/ci/quality.mjs', '_site'), 1, 'a private key fails');
 }
 console.log('OK (tests)');
