@@ -308,6 +308,25 @@
         "fingerprint": "sha256:a1b019c237883d37",
         "signing_fingerprint": "sha256:69ac69caf72bcd7c"
       }
+    },
+    {
+      "id": "observability-b-sovereignwebsite",
+      "agent": "observability.b@SovereignWebsite.dinis",
+      "role": "Traffic for every site: the shared page piece, the aggregates per site and across all sites. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 20 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
+      "created": "2026-11-20",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwDcJXSxNCBzPpxxXw8",
+      "fingerprint": "sha256:ddfbf8335c123e5e",
+      "signing_fingerprint": "sha256:0a773143f2975585",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAymfn2+nbTDniaQidEyLZ\nCwsQDmM8+PIY70fDYyPKhLquszhUfU1WaVYn2zNg3qcluqLRY3WGyXC/oh/CW25u\nLSQqTT7OznAOrDmzj7Pkon8hGeTLol57f+z+IMDPynOGidiSXqHQMqjxsEs12ram\nQm3hRebpkPhAB7Q77QIuSL4MbYKrhUDTqAxv5/0LNsMZbIV6M8tWb0Sm/0Q1mhbr\nlMvjANwzrgRZQgafXmnq2RhFzKHqgeHkontC0JX2gamuOdUTRBT2/DRpJ+jseaOZ\nro5ztI9ST2mgO4qAV5qiwhO1oA1buen/RXr0IlUTiLiP0jb4nYPicP0DLy5RnkiJ\n/6xswjAc1Ng4jKFJocXNU8Uo+eZapjJnnwZIvAUAdwakq/rYHwcVRIdY1FRtAIDj\nsuKjHBhGbdav22piEbCCKwis8AYQIdeuqGuP+jGboyJc9khZJMPziT6efYu6F1WL\n/THGIjTzjam1bnDUFJPmyrMxJmUl0B8pxMj1GO9EZJJkh17z01tW1NmF4p4Bt/Xq\nSSyBAqLNZ58znXdoGu7od5l8W8XtBxyRuiejUpAXQJXELLmwUke9BPl+8b0oyYeG\nN9sM09PGyVHZrTOhrwaVmPsR3yzTAZqd1Sm+7XrFiJLJ6T1/29thpbDlKAnnEteG\nkutAMFv592U17ciVrvpSwMMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEtugvSn51HBhgjWOc/pStsY3xILEa\nl7d7jNcGQDY0nlVvX7qv9BgEqX66A8GV3qeyE2tRgCf3hrAQsK+VldljOw==\n-----END PUBLIC KEY-----\n",
+        "label": "observability.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:ddfbf8335c123e5e",
+        "signing_fingerprint": "sha256:0a773143f2975585"
+      }
     }
   ]
 }
