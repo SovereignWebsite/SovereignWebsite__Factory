@@ -1,6 +1,6 @@
 # SovereignWebsite__Factory
 
-The control repository of the Sovereign Agentic Website (SWS): the SovereignWebsite organisation as code, and, next, the requests for hosted sites on sovereignwebsite.site. Everything is done by CI, under an Agent Behaviour Policy (`policy/abp.json`).
+The control repository of the Sovereign Website (SWS): the SovereignWebsite organisation as code, and, next, the requests for hosted sites on sovereignwebsite.site. Everything is done by CI, under an Agent Behaviour Policy (`policy/abp.json`).
 
 Dinis Cruz, 19 November 2026 (in the conductor session recorded in team/keys.json): "let's take the opportunity to add as much automation (via CI pipelines) as possible, and then use our ABP to control it"; "let's try to do this completely from the CI pipeline and if we need to add more privs to the GH App and the AWS Role, we'll add them".
 
