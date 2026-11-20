@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-20T19:34Z",
+  "updated": "2026-11-20T21:34Z",
   "state": "18 site requests; all main sites, the agents area (agents, design, library), whois.tool and the people's sites answer over HTTPS; one company site still waits on its certificate",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -32,7 +32,10 @@
     "Dinis said yes to the AgentiCCells transfer test repository (15:10 UTC); cells.b makes it",
     "owner handover as org member (board/workflow/2026-11-20__owner-handover.md); Kate a member since 16:16 UTC",
     "accountant.agents.sovereignweb.site made (a64bff7)",
-    "milestone: Kate is the first owner to edit her own site herself on GitHub (board/milestones.md); hub.sovereignweb.site features Kate, Emily and Sarah first"
+    "milestone: Kate is the first owner to edit her own site herself on GitHub (board/milestones.md); hub.sovereignweb.site features Kate, Emily and Sarah first",
+    "site pipeline live (Factory de05b7c): versions, quality checks, link previews; three templates (customer, gated, agent and own sites); twelve sites adopted by 21:34 UTC",
+    "feedback.b is also the inbox agent (Dinis); observability.b started; tracking rule: privacy note, no ask-first (Dinis)",
+    "owners may push to dev and their live branch (Dinis); security.b review 002 pass-with-changes"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
@@ -71,14 +74,16 @@
     "startups.b": "five startup brochure sites under startups.sovereignweb.site - https://claude.ai/code/session_01Kw9UwCbSQgp3wavatYAbqd",
     "design.b.rounds": "runs the design rounds, reports to design.b (named by Dinis) - https://claude.ai/code/session_01Kw9UwFCJTPWFaTq4TX5vUT",
     "observability.b": "traffic for every site, aggregates per site and for Dinis - https://claude.ai/code/session_01Kw9UwDcJXSxNCBzPpxxXw8",
-    "feedback.b": "feedback box and owner inbox for every site, building on Kate's tested inbox; pilots Emily, Kate, Dinis - https://claude.ai/code/session_01Kw9UwBiG9d5KHvFjdtiP69"
+    "feedback.b": "feedback box and owner inbox for every site, building on Kate's tested inbox; pilots Emily, Kate, Dinis - https://claude.ai/code/session_01Kw9UwBiG9d5KHvFjdtiP69",
+    "chiswick-cheese-market.b": "a gated vault demo for a Monday meeting - https://claude.ai/code/session_01Kw9UwBShWte1Rz5B2Mfznt"
   },
   "short_name": "SWS (Sovereign Website), Dinis, 20 Nov 2026",
   "held_for_dinis": [
-    "factory.b: five rebuilt commits d3328c9, 579fc66, 722758a, a4af7dc, 5bb7d8f need Dinis's yes in factory.b's own session; d03de93 (startups) held",
-    "the sites' 'no tracking' rule wording, and notice or ask-first, for traffic and feedback",
-    "security.b's owner-setup checklist (review 002, pass-with-changes)",
-    "which site is Dinis's own for the feedback pilot",
-    "feedback.b as the inbox agent, or a separate inbox.b"
+    "startups area a49005f (five brochure sites ready)",
+    "Kate's site pipeline: Dinis's or Kate's yes in kate-curtis-evans.b's session",
+    "keeper for sovereignwebsite.ai, .org, .site",
+    "Chiswick naming",
+    "accountant.b's signing key (permission)",
+    "Dinis's own site move: confirm in AgentiCCells' conductor's session; Transfer-Test not created"
   ]
 }
