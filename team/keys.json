@@ -213,6 +213,25 @@
         "fingerprint": "sha256:97ea8c356fbf1697",
         "signing_fingerprint": "sha256:ad8a7bf35603a085"
       }
+    },
+    {
+      "id": "sarah-cruz-b-sovereignwebsite",
+      "agent": "sarah-cruz.b@SovereignWebsite.dinis",
+      "role": "Keeps Sarah Cruz's public site, Site__Designer__Sarah-Cruz. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 20 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
+      "created": "2026-11-20",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwBAh6Xwws4CiPBkYZY",
+      "fingerprint": "sha256:fec56e61edc16577",
+      "signing_fingerprint": "sha256:7b80c51f6e622eff",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzPXwyDa0V/Ful27aWYt1\nlT7Alz5ZxZiWMbvZM9Tv9mXL8hT3q6cKMOOUab4z1TDnDd4rPt+hhzg7I8gMSI1Z\nwlLzPeN6HDt8P7KwYFSSDn/MXGq3h8Wzm9kWutcXurJuKU7jzdjA+hhPLKA1APkA\nkEfwMcVTlL+WNs+VgN/1x6Z64vAkBqjSIvIC6+xmy1OxOwRRy8wKdq+o1Y/mAYkC\nDHdZbdBplyRubNVVbHbQyDIcyWf6yw0EE/CRkdhqGQOYnmEN/OpRNTRu/TYR1W/D\nmAvMQkZv8X2LHvcKmpmIUCcwfrSpk81mCJ373yhmAOUFyGAbHUyVIyqUGGIR8kB5\nSZBUt38XvADoqVjLpZxqMVoeUf7bVZuuWXBB4ogodYK7oNlKWtBnWaYAYGZQjCUz\nQVWSLrbt9P294nTnQdbMe5c1i0P6iGvvn/9SpOVwR2pbpRnVFcCVTleUCIa5qo4R\nFi/BMfuXg5ehfrIgdUKAd0vA1rsY4UreCy3I42toUOjkzPYg1az++UhYyT944jGw\novHVuqmqaav7wdhBzdC/zRoCt6Iks6bawqZ6vixiq00rZ7K/2flUB48Ld0qVSmHu\nEyJTghnQBHn8bee6QWlblIsFv87CCdntj3Uk7V/Z7p2IaoELPOEyye19VSexUiPp\n/6Qqu5nFevFHKYpcjOyZJT0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEOgOamtwYbovAxOUQUEPlqbaFoW/9\nv1zgcjnozfZGNw6UHIwKgeG6gETldeJroMH92hc3GiHYrdI+ULd5x/MZeg==\n-----END PUBLIC KEY-----\n",
+        "label": "sarah-cruz.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:fec56e61edc16577",
+        "signing_fingerprint": "sha256:7b80c51f6e622eff"
+      }
     }
   ]
 }
