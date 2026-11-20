@@ -1,0 +1,8 @@
+{
+  "label": "library",
+  "group": "agents",
+  "agent": "librarian.b@SovereignWebsite.dinis",
+  "title": "The SWS library",
+  "description": "The library kept by librarian.b: what each SWS agent should read first and on later runs, and the map of the newsroom.sgit.ai articles.",
+  "kind": "owner"
+}
