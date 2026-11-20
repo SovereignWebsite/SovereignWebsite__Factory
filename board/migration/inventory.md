@@ -1,6 +1,6 @@
 # Migration inventory: AgentiCCells sites to SovereignWebsite
 
-By migration.b@SovereignWebsite.dinis, 19 November 2026, from the public AgentiCCells/AgentiCCells__Site__Factory (requests/, REALITY.md) at dev as cloned at 16:23 UTC, and the SAW plan (board/2026-11-19__saw-plan.md, section 3). A proposal for Dinis; nothing has been moved, transferred or changed.
+By migration.b@SovereignWebsite.dinis, 19 November 2026, from the public AgentiCCells/AgentiCCells__Site__Factory (requests/, REALITY.md) at dev as cloned at 16:23 UTC, and the SWS plan (board/2026-11-19__saw-plan.md, section 3). A proposal for Dinis; nothing has been moved, transferred or changed.
 
 ## Summary
 
@@ -15,7 +15,7 @@ By migration.b@SovereignWebsite.dinis, 19 November 2026, from the public AgentiC
 | Withdrawn | 1 | Record only |
 | **Total** | **41** | Every folder in requests/ on 19 Nov (the plan counted 40, before dinis-cruz) |
 
-Customer sites are named only where the owner is named with consent in the newsroom (as listed in the SAW plan, section 3); the others are referred to by a neutral label, and the mapping is the public requests/ folder.
+Customer sites are named only where the owner is named with consent in the newsroom (as listed in the SWS plan, section 3); the others are referred to by a neutral label, and the mapping is the public requests/ folder.
 
 ## Demos on the data (move first)
 
@@ -43,7 +43,7 @@ What I checked in the six demo repositories (dev, shallow clone): each has one w
 | customer site C | (see requests/, 2026-11-18) | (see requests/) | As above | Offer; move on the owner's yes |
 | customer site D (business) | (see requests/, 2026-11-18) | (see requests/) | As above | Offer; move on the owner's yes |
 
-Note: a transfer to SovereignWebsite is not the hand-over to the owner. If an owner would rather own the repository themselves, the cleaner path is one transfer, straight to the owner, and SAW points its address there; two transfers mean two re-sets of the custom domain.
+Note: a transfer to SovereignWebsite is not the hand-over to the owner. If an owner would rather own the repository themselves, the cleaner path is one transfer, straight to the owner, and SWS points its address there; two transfers mean two re-sets of the custom domain.
 
 ## Dinis's own site
 
@@ -71,7 +71,7 @@ Note: a transfer to SovereignWebsite is not the hand-over to the owner. If an ow
 
 ## Stay with PrompTugal
 
-civic, data, startups, travel, weather, bulletins, cyber, events, library, live, signals, videos (all `<section>.promptugal.news`, repositories PrompTugal/PrompTugal__News__*). Thirteen in the plan's count; twelve requests in requests/ carry the promptugal-news suffix, so one of the thirteen is outside the factory (to confirm). They stay; SAW may link to them as examples.
+civic, data, startups, travel, weather, bulletins, cyber, events, library, live, signals, videos (all `<section>.promptugal.news`, repositories PrompTugal/PrompTugal__News__*). Thirteen in the plan's count; twelve requests in requests/ carry the promptugal-news suffix, so one of the thirteen is outside the factory (to confirm). They stay; SWS may link to them as examples.
 
 ## Withdrawn
 
