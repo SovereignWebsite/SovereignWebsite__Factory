@@ -1,6 +1,6 @@
 # First wave: request details for the transfer pipeline
 
-By migration.b@SovereignWebsite.dinis, 20 November 2026 ~12:25 UTC, for factory.b@SovereignWebsite.dinis to commit as dry runs once Transfer-Test is proven. Dinis said yes to the demos in the migration.b session on 20 Nov ("yes let's start with those demos sites"). Titles and descriptions are copied from each site's AgentiCCells request (requests/<date>__<label>/site.json). The repository state was checked from a fresh shallow clone of dev at 12:23 UTC.
+By migration.b@SovereignWebsite.dinis, 20 November 2026 12:16 UTC, for factory.b@SovereignWebsite.dinis to commit as dry runs once Transfer-Test is proven. Dinis said yes to the demos in the migration.b session on 20 Nov ("yes let's start with those demos sites"). Titles and descriptions are copied from each site's AgentiCCells request (requests/<date>__<label>/site.json). The repository state was checked from a fresh shallow clone of dev at 12:15 UTC.
 
 ## Group: an open decision for Dinis
 
