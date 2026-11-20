@@ -23,6 +23,25 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "migration-b-sovereignwebsite",
+      "agent": "migration.b@SovereignWebsite.dinis",
+      "role": "Migration of the AgentiCCells repositories to SovereignWebsite: inventory and checklists only. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 19 November 2026 with sgit pki keygen; public bundle from sgit pki export, sent to the conductor. Only the public half is here.",
+      "created": "2026-11-19",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwDKiseUFyqtG1xyVaG",
+      "fingerprint": "sha256:08724e25fc6140e5",
+      "signing_fingerprint": "sha256:cc8f2fd9b495b6f8",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEApG7MELbN/W82yurviGfy\nIPGOehc4U0C6KdG1/6XgAcbC4K2lmgH1+0VL8tRYlzK/pPKGQDM1m0EKIMCvArgE\nsLdcQUWOd9Qh7cb5LdCwdtkKfY6Olhj9B1OMvhB0iHDVnz+zDb4pIqkLJbmXhFW2\n0caIbOsgsTq/aed5UKgCh3ksF3B7bLcAOBwo/7VzZB/Am1oseFVVflzbC/7ZIiPx\nx1XR3KVFgYijjwfDZvMf29uSWQlqaYfZvvOz8bEcQC1w6PSkmNcq9m0VZB5pIufs\no6whFgBYIO1tk79chHuYgboRasUhT321Q/w+8zQzRIWnogL7PvVKY9+4H3jVJO7h\nNpc2Wrtmh0SuZ+jeIQS+xdR5csaFKp4Ma+8YUEF1o+gaC1+UcF/jXVkx4QGQWVhA\n1ivfNQF3/ke3/YBvP7YXo+SJKmha6I5kJNkoFDsLrP3FQdW8sH8bry0ldHL2MfpO\nx51nAQqQYBdoOBsvof7lsBp2JSC0A7U+j67NI9CDuRCDxUEkCc9jCrHhpXYXJ5eX\naUekEWcpg0yvgO6rteVUYWYQ/DdlPFQ3Odqlx57kWZJnwX77vlD81VhFLacfBxUd\nqLF6K03/zoFcd1PcTDc88yAazFgc3epYMECVnN13Cdhq71/0HZHtCNGDAjNZIlau\nmbWjveLV04S+hWhQrJSnFlUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEX0KBXWVt+GE4Tx+DjGSsSSWmwKMM\n57O8gkGNtLTs72jgiQ57gdIz0qhJEclPsAEXLS/VV9qBZKf8W7jU0bGy+A==\n-----END PUBLIC KEY-----\n",
+        "label": "migration.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:08724e25fc6140e5",
+        "signing_fingerprint": "sha256:cc8f2fd9b495b6f8"
+      }
     }
   ]
 }

@@ -43,6 +43,23 @@
         "name a private prospect"
       ],
       "seed_paths_source": "Dinis, 19 Nov 2026 ~16:30 UTC in the conductor session, answering the proposal to add seed/** to may_change and needs_dinis_merge: \"yes\"."
+    },
+    "migration.b@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_01Kw9UwDKiseUFyqtG1xyVaG",
+      "may_change": [
+        "board/migration/**"
+      ],
+      "needs_dinis_merge": [],
+      "branches": [
+        "dev"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "name a private prospect",
+        "transfer, delete or archive a repository"
+      ],
+      "source": "Dinis, 20 Nov 2026 ~09:45 UTC in the conductor session: \"yes to adding migration.b to the policy, limited to board/migration/**\"."
     }
   },
   "pipelines": {

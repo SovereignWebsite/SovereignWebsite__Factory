@@ -224,3 +224,6 @@ node_modules/
 plan.json
 .credentials/
 .sg-send/
+
+# Local output of build/dns-plan.mjs
+dns-out/
