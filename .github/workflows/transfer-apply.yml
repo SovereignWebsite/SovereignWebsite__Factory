@@ -1,0 +1,100 @@
+name: Transfer apply
+# Moves one repository from AgentiCCells to SovereignWebsite, from a hosted-site request with a from block
+# (requests/<id>/site.json), under policy/abp.json pipelines.transfer-apply.
+# plan: read-only. Plans from the files, then a read-only preflight with the factory App's tokens.
+# apply: only when the request says apply "real", the preflight has no blocker and Dinis approves the run
+# in the transfer environment. The only credential there is TRANSFER_USER_TOKEN, used for one call.
+on:
+  push:
+    branches: [dev]
+    paths: ['requests/*/site.json']
+  workflow_dispatch:
+    inputs:
+      request:
+        description: 'Request folder, for example 2026-11-20__transfer-test (empty: the one pending request)'
+        type: string
+        default: ''
+permissions:
+  contents: read
+concurrency: transfer-apply
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    environment: apply
+    outputs:
+      ready: ${{ steps.plan.outputs.ready }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node test/run.mjs && node build/abp.mjs validate
+      - name: Plan from the files
+        id: files
+        env:
+          REQUEST: ${{ inputs.request }}
+        run: |
+          node build/transfer-plan.mjs files-plan.json "$REQUEST"
+          node build/abp.mjs actions files-plan.json
+          echo "repo=$(node -e 'const p=require("./files-plan.json");console.log(p.actions[0]?p.actions[0].target.split("/")[1]:"")')" >> "$GITHUB_OUTPUT"
+      - id: src
+        if: steps.files.outputs.repo != ''
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.FACTORY_APP_ID }}
+          private-key: ${{ secrets.FACTORY_APP_PRIVATE_KEY }}
+          owner: AgentiCCells
+          repositories: ${{ steps.files.outputs.repo }}
+          permission-metadata: read
+          permission-contents: read
+          permission-actions: read
+          permission-pull-requests: read
+          permission-pages: read
+          permission-administration: read
+      - id: sw
+        if: steps.files.outputs.repo != ''
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.FACTORY_APP_ID }}
+          private-key: ${{ secrets.FACTORY_APP_PRIVATE_KEY }}
+          owner: SovereignWebsite
+          permission-metadata: read
+      - name: Preflight (read-only)
+        id: plan
+        if: steps.files.outputs.repo != ''
+        env:
+          REQUEST: ${{ inputs.request }}
+          SRC_TOKEN: ${{ steps.src.outputs.token }}
+          GH_TOKEN: ${{ steps.sw.outputs.token }}
+        run: |
+          node build/transfer-plan.mjs transfer-plan.json "$REQUEST" | tee -a "$GITHUB_STEP_SUMMARY"
+          node build/abp.mjs actions transfer-plan.json
+          echo "ready=$(node -e 'const p=require("./transfer-plan.json");console.log(p.apply==="real"&&!p.blockers.length)')" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        if: steps.files.outputs.repo != ''
+        with:
+          name: transfer-plan
+          path: transfer-plan.json
+  apply:
+    needs: plan
+    if: needs.plan.outputs.ready == 'true'
+    runs-on: ubuntu-latest
+    environment: transfer
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node test/run.mjs && node build/abp.mjs validate
+      - uses: actions/download-artifact@v4
+        with:
+          name: transfer-plan
+      - name: Transfer (one call)
+        env:
+          TRANSFER_USER_TOKEN: ${{ secrets.TRANSFER_USER_TOKEN }}
+        run: node build/transfer-apply.mjs transfer-plan.json transfer.json | tee -a "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: transfer-record
+          path: transfer.json

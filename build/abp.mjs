@@ -39,7 +39,19 @@ export function checkActions(p, plan) {
   for (const a of plan.actions || []) {
     if ((pipe.refused_always || []).includes(a.action)) e.push(`${a.action} on ${a.target}: refused always for ${plan.pipeline}`);
     else if (!pipe.allowed.includes(a.action)) e.push(`${a.action} on ${a.target}: not allowed for ${plan.pipeline}`);
+    else if (a.action === 'repo.transfer_in') e.push(...checkTransfer(pipe.limits || {}, a));
   }
+  if (pipe.limits?.per_run && (plan.actions || []).length > pipe.limits.per_run) e.push(`${plan.pipeline}: at most ${pipe.limits.per_run} action per run`);
+  return e;
+}
+
+// A transfer is allowed only from the named owner, for a repository on the explicit list, to the named owner as Site__<label>.
+export function checkTransfer(l, a) {
+  const e = [], [fo, fr] = String(a.target).split('/'), [to, tn] = String(a.to || '').split('/');
+  if (fo !== l.from_owner) e.push(`repo.transfer_in ${a.target}: only from ${l.from_owner}`);
+  if (!(l.repositories || []).includes(fr)) e.push(`repo.transfer_in ${a.target}: not on the policy's repository list`);
+  if (to !== l.to_owner) e.push(`repo.transfer_in ${a.target}: only to ${l.to_owner}`);
+  if (!/^Site__[a-z0-9-]{1,40}$/.test(tn || '')) e.push(`repo.transfer_in ${a.target}: new name must be Site__<label>`);
   return e;
 }
 

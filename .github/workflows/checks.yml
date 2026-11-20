@@ -30,3 +30,5 @@ jobs:
         run: node build/abp.mjs paths ${{ github.event.before }} ${{ github.event.after }}
       - name: Dry plan of the organisation
         run: node build/org-plan.mjs plan.json >> "$GITHUB_STEP_SUMMARY" && node build/abp.mjs actions plan.json
+      - name: Dry plan of any move (files only, no token)
+        run: node build/transfer-plan.mjs transfer-plan.json >> "$GITHUB_STEP_SUMMARY" && node build/abp.mjs actions transfer-plan.json

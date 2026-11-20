@@ -22,6 +22,7 @@ export function plan(org, live) {
   const actions = [];
   for (const r of wanted(org)) {
     const l = live[r.name];
+    if (!l && r.transfer_from) continue; // a moved site: transfer-apply brings it, Org apply never creates it
     if (!l) {
       actions.push({ action: 'repo.create', target: r.name });
       actions.push({ action: 'branch.create_dev', target: r.name });

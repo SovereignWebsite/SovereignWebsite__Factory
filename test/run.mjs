@@ -56,4 +56,60 @@ const rp = plan({ ...org, repos: [...org.repos, ...rr] }, {});
 assert.deepEqual(checkActions(p, rp), [], 'a request plan is allowed by the policy');
 assert.deepEqual(R.dnsRecords([good])[0], { name: 'pipeline-demo.sovereignwebsite.site', type: 'CNAME', values: ['sovereignwebsite.github.io'], for: 'Site__pipeline-demo' });
 const st = seedFiles('seed/site-template'); for (const must of ['.github/workflows/pages.yml', 'site/CNAME', 'site/index.html']) assert.ok(st.includes(must));
+// Moves: a request with a from block, transfer-apply, and the moved site handed to Org apply and DNS apply.
+const T = await import('../build/transfer-plan.mjs'), A = await import('../build/transfer-apply.mjs'), { checkTransfer } = await import('../build/abp.mjs');
+const mv = { label: 'transfer-test', title: 'A move test', description: 'A throwaway repository to prove the move.', kind: 'demo', from: { owner: 'AgentiCCells', repo: 'AgentiCCells__Site__Transfer-Test', address: 'transfer-test.agenticcells.site' }, apply: 'dry-run' };
+const F = '2026-11-20__transfer-test';
+assert.deepEqual(R.validate(mv, F), [], 'a move request validates');
+assert.ok(R.validate({ ...mv, from: { ...mv.from, owner: 'PrompTugal' } }, F).length, 'only from AgentiCCells');
+assert.ok(R.validate({ ...mv, apply: 'yes' }, F).length, 'apply is dry-run or real');
+assert.ok(R.validate({ ...mv, from: undefined }, F).length, 'apply only with from');
+assert.ok(R.validate({ ...mv, from: { ...mv.from, repo: '../x' } }, F).length, 'from.repo is a name');
+const waiting = { ...mv, folder: F, moved: false }, moved = { ...waiting, moved: true };
+assert.deepEqual(R.repos([waiting]), [], 'Org apply leaves a move alone until it is recorded');
+assert.deepEqual(R.dnsRecords([waiting]), [], 'no CNAME until the move is recorded');
+const mr = R.repos([moved]);
+assert.equal(mr[0].name, 'Site__transfer-test'); assert.equal(mr[0].seed, undefined, 'a moved repository is never seeded'); assert.ok(mr[0].transfer_from);
+assert.ok(!plan({ ...org, repos: [...org.repos, ...mr] }, {}).actions.some((a) => a.target === 'Site__transfer-test'), 'Org apply never creates a moved repository');
+const tp = T.planFor(waiting);
+assert.deepEqual(tp.actions, [{ action: 'repo.transfer_in', target: 'AgentiCCells/AgentiCCells__Site__Transfer-Test', to: 'SovereignWebsite/Site__transfer-test' }]);
+assert.deepEqual(checkActions(p, tp), [], 'a listed move is allowed');
+assert.deepEqual(T.pending([waiting, moved, { ...good, folder: 'x', moved: false }]).map((r) => r.folder), [F], 'only unmoved requests with from are pending');
+const L = p.pipelines['transfer-apply'].limits;
+const tr = (target, to = 'SovereignWebsite/Site__x') => checkTransfer(L, { action: 'repo.transfer_in', target, to });
+assert.ok(tr('AgentiCCells/AgentiCCells__Site__Gabriel-DaCruz').length, 'a repository not on the list is refused');
+assert.ok(tr('PrompTugal/AgentiCCells__Site__Weather-Demo').length, 'another source organisation is refused');
+assert.ok(tr('AgentiCCells/AgentiCCells__Site__Weather-Demo', 'Elsewhere/Site__x').length, 'another target is refused');
+assert.ok(tr('AgentiCCells/AgentiCCells__Site__Weather-Demo', 'SovereignWebsite/Other').length, 'the new name is Site__<label>');
+assert.deepEqual(tr('AgentiCCells/AgentiCCells__Site__Weather-Demo'), []);
+assert.ok(checkActions(p, { pipeline: 'transfer-apply', actions: [tp.actions[0], tp.actions[0]] }).length, 'one move per run');
+for (const x of ['repo.delete', 'repo.transfer_out', 'repo.update_settings']) assert.ok(checkActions(p, { pipeline: 'transfer-apply', actions: [{ action: x, target: 'AgentiCCells/AgentiCCells__Site__Weather-Demo' }] }).length, `${x} refused for transfer-apply`);
+assert.equal(checkActions(p, { pipeline: 'org-apply', actions: [{ action: 'repo.transfer_in', target: 'AgentiCCells/AgentiCCells__Site__Weather-Demo', to: 'SovereignWebsite/Site__x' }] }).length, 1, 'Org apply may not move');
+const checked = { ...tp, findings: ['Pages: workflow'], blockers: [] };
+assert.ok(A.refusals(p, checked).some((e) => e.includes('dry-run')), 'a dry run never moves');
+assert.deepEqual(A.refusals(p, { ...checked, apply: 'real' }), [], 'a real, checked move is allowed');
+assert.ok(A.refusals(p, { ...checked, apply: 'real', blockers: ['1 open pull request(s): mid-round'] }).length, 'a blocker stops the move');
+assert.ok(A.refusals(p, { ...tp, apply: 'real' }).length, 'no move without a live preflight');
+assert.deepEqual(A.body(tp), { path: '/repos/AgentiCCells/AgentiCCells__Site__Transfer-Test/transfer', data: { new_owner: 'SovereignWebsite', new_name: 'Site__transfer-test' } });
+// Preflight against a fake GitHub: what stops a move.
+const fake = (over = {}) => async (o, path) => {
+  const base = {
+    '/repos/AgentiCCells/AgentiCCells__Site__Transfer-Test': { status: 200, data: { full_name: 'AgentiCCells/AgentiCCells__Site__Transfer-Test', private: false, archived: false, fork: false, default_branch: 'dev' } },
+    '/repos/SovereignWebsite/Site__transfer-test': { status: 404, data: {} },
+  };
+  const k = path.split('?')[0];
+  return over[k] ?? base[k] ?? (k.endsWith('/pulls') ? { status: 200, data: [] } : k.endsWith('/runs') ? { status: 200, data: { total_count: 0 } } : { status: 404, data: null });
+};
+globalThis.fetch = async () => ({ ok: false });
+const ok = await T.preflight(T.planFor(waiting), fake());
+assert.deepEqual(ok.blockers, [], 'a clean source passes');
+const taken = await T.preflight(T.planFor(waiting), fake({ '/repos/SovereignWebsite/Site__transfer-test': { status: 200, data: {} } }));
+assert.ok(taken.blockers.some((b) => b.includes('already answers')), 'an existing target stops the move');
+const pr = await T.preflight(T.planFor(waiting), fake({ '/repos/AgentiCCells/AgentiCCells__Site__Transfer-Test/pulls': { status: 200, data: [{}] } }));
+assert.ok(pr.blockers.some((b) => b.includes('mid-round')), 'an open pull request stops the move');
+const wfSecret = await T.preflight(T.planFor(waiting), fake({
+  '/repos/AgentiCCells/AgentiCCells__Site__Transfer-Test/contents/.github/workflows': { status: 200, data: [{ path: '.github/workflows/x.yml' }] },
+  '/repos/AgentiCCells/AgentiCCells__Site__Transfer-Test/contents/.github/workflows/x.yml': { status: 200, data: { content: Buffer.from('token: ${{ secrets.APP_KEY }}').toString('base64') } },
+}));
+assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secret that stays behind stops the move');
 console.log('OK (tests)');

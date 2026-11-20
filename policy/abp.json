@@ -192,6 +192,56 @@
         "read workflow runs"
       ],
       "note": "Reports; changes nothing."
+    },
+    "transfer-apply": {
+      "runs_on": [
+        "push to dev that changes a request with a from block",
+        "by hand"
+      ],
+      "environment": "transfer",
+      "environment_rules": {
+        "required_reviewers": [
+          "Dinis Cruz"
+        ],
+        "deployment_branches": [
+          "dev"
+        ],
+        "secrets": [
+          "TRANSFER_USER_TOKEN"
+        ]
+      },
+      "allowed": [
+        "repo.transfer_in"
+      ],
+      "limits": {
+        "from_owner": "AgentiCCells",
+        "to_owner": "SovereignWebsite",
+        "to_name": "Site__<label>",
+        "per_run": 1,
+        "repositories": [
+          "AgentiCCells__Site__Transfer-Test",
+          "AgentiCCells__Site__Weather-Demo",
+          "AgentiCCells__Site__IPMA-Data",
+          "AgentiCCells__Site__London-Billboard"
+        ]
+      },
+      "needs": [
+        "requests/<id>/site.json with a from block and apply \"dry-run\", merged by Dinis",
+        "a dry run whose preflight passed",
+        "a second commit setting apply to \"real\", merged by Dinis",
+        "Dinis approving the run in the transfer environment"
+      ],
+      "refused_always": [
+        "repo.transfer_out",
+        "repo.delete",
+        "repo.archive",
+        "repo.make_private",
+        "repo.update_settings",
+        "repo.create",
+        "member.change",
+        "app.change"
+      ],
+      "note": "The plan job is read-only (the factory App on AgentiCCells, read). Only the apply job, in the transfer environment, holds the user token, and it makes one call: POST /repos/AgentiCCells/<repo>/transfer with new_owner SovereignWebsite and new_name Site__<label>. Without TRANSFER_USER_TOKEN it prints that call for Dinis to make. The repository list is explicit; adding one is a policy change Dinis merges. Org apply keeps repo.transfer refused."
     }
   },
   "privileges": [
@@ -235,6 +285,18 @@
       "holder": "github-app:agenticcells-site-factory",
       "permission": "members:read (organisation)",
       "why": "org-apply: give the agents' team push on each repository (team.grant_push)",
+      "state": "needed; not yet checked"
+    },
+    {
+      "holder": "github-user-token:Dinis Cruz via github-app:sovereignwebsite-transfer",
+      "permission": "administration:write (repository), metadata:read; the App installed only on the repositories in transfer-apply limits and on SovereignWebsite",
+      "why": "transfer-apply: POST /repos/{owner}/{repo}/transfer accepts a user access token only (GitHub App permissions page, 20 Nov 2026); held as TRANSFER_USER_TOKEN in the transfer environment, revoked after each wave",
+      "state": "proposed; Dinis chose option A on 20 Nov 2026, App and token for Dinis to make"
+    },
+    {
+      "holder": "github-app:agenticcells-site-factory",
+      "permission": "metadata, contents, actions and pull requests: read, on the AgentiCCells installation",
+      "why": "transfer-apply plan: read-only preflight of the source repository",
       "state": "needed; not yet checked"
     }
   ]
