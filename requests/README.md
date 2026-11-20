@@ -14,7 +14,7 @@ One folder per site: `requests/<date>__<label>/site.json`. Merged to dev with Di
 }
 ```
 
-A request may name a `group` to sit under its own subdomain: `"group": "artists"` gives `https://<label>.artists.sovereignwebsite.site`. Groups: `artists`, `cv`, `invest` (Dinis, 20 November 2026).
+A request may name a `group` to sit under its own subdomain: `"group": "artists"` gives `https://<label>.artists.sovereignwebsite.site`. Groups: `artists`, `cv`, `invest`, `artist`, `company`, `organisation`, `person` (Dinis, 20 November 2026; on sovereignweb.site the singular names, such as `artist` and `company`).
 
 A request may name a `domain`: `sovereignwebsite.site` (the default) or `sovereignweb.site`, the new domain (Dinis, 20 November 2026). With both, `"group": "invest", "domain": "sovereignweb.site"` gives `https://<label>.invest.sovereignweb.site`.
 
