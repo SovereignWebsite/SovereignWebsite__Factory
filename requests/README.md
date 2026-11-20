@@ -14,6 +14,8 @@ One folder per site: `requests/<date>__<label>/site.json`. Merged to dev with Di
 }
 ```
 
+A request may name a `group` to sit under its own subdomain: `"group": "artists"` gives `https://<label>.artists.sovereignwebsite.site`. Groups: `artists`, `cv` (Dinis, 20 November 2026). The repository is still `Site__<label>`, so a label is unique across groups, and a group name cannot be a label.
+
 Rules, checked by build/requests.mjs and the tests: label of lower-case letters, digits and hyphens, at most 40 characters, not reserved (www, hub, vault, api, admin, mail, factory), matching the folder name; title at most 80 characters; description at most 200; kind "demo" or "owner"; no em or en dashes. A request names no private person: an owner's details stay out of this public repository until they agree.
 
 The pipeline never deletes: a request removed from this folder leaves its repository and address in place, for Dinis to retire by hand.
