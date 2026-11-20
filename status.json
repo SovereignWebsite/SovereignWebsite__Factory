@@ -1,8 +1,8 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-20T08:50Z",
-  "state": "all five sites live over HTTPS with HTTPS enforced (.ai, .org, .site, hub, vault); family bar on every page; ten pages on .ai; principles on .org; vault drop page by hub.b",
+  "updated": "2026-11-20T10:34Z",
+  "state": "eight sites live over HTTPS (.ai, .org, .site, hub, vault, pipeline-demo, google-maps) plus emily-cruz.artists (HTTPS pending); the conductor coordinates, the agents do",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
     "repositories: Website (.ai), Org (.org), Site (.site), Hub (gallery, hub.sovereignwebsite.site), Vault (vault.sovereignwebsite.site); each with Pages, domain, team push, rulesets main-locked and dev-safe",
@@ -13,16 +13,23 @@
     "certificates issued after one by-hand nudge (17:47 UTC); HTTPS enforced on all five by 18:32 UTC",
     "deck v1 (board/deck) and the Kickstarter page plan (board/launch)",
     "five homepage designs at sovereignwebsite.ai/designs/; Dinis chose design 1 on 20 Nov 2026, now the home page and the site theme (SovereignWebsite__Website c5a114a, live 00:47 UTC)",
-    "European Portuguese version of the ten pages at sovereignwebsite.ai/pt/ (checked, live)"
+    "European Portuguese version of the ten pages at sovereignwebsite.ai/pt/ (checked, live)",
+    "pipeline-demo and google-maps through the request path (20 Nov); pipeline-demo has three documentation pages (Site__pipeline-demo 7fa98f0)",
+    "google-maps: directions and cameras on the route, waiting on Dinis's key (Site__google-maps 2ea36b3)",
+    "content CC BY 4.0 on .ai, .org, .site (Dinis, 20 Nov)",
+    "agents factory.b, sites.b, design.b created; factory.b the only Factory writer (14253b9, 744b23b)",
+    "transfer pipeline, option A, four listed repositories (3c2e547, 7338d12)",
+    "request groups artists and cv; emily-cruz.artists.sovereignwebsite.site (aff142e, Site__emily-cruz e409581)"
   ],
   "next": [
-    "pipeline-demo and google-maps through Org apply and DNS apply, then HTTPS",
-    "google-maps: the directions page and the cameras along the route, waiting on a Google Maps key restricted to google-maps.sovereignwebsite.site",
-    "CC BY 4.0 notices on .ai, .org and .site"
+    "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
+    "the vault as the approval step before a site goes live (Dinis, in sites.b's session), when he says build it",
+    "transfers, once TRANSFER_USER_TOKEN is set"
   ],
   "asks": [
-    "Dinis: yes to adding migration.b to policy/abp.json (board/migration/** only) - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-    "Dinis: a Google Maps Platform key restricted to https://google-maps.sovereignwebsite.site/*, with Maps JavaScript, Directions and Places APIs only, a budget and a daily quota - https://console.cloud.google.com/google/maps-apis/credentials"
+    "Dinis: yes to design.b's policy entry when factory.b asks - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+    "Dinis: TRANSFER_USER_TOKEN in the Factory's transfer environment, when ready - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+    "Dinis: the Google Maps key for google-maps.sovereignwebsite.site, later - https://console.cloud.google.com/google/maps-apis/credentials"
   ],
   "decisions": [
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",
@@ -30,5 +37,13 @@
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to the Google Maps example, google-maps.sovereignwebsite.site (requests/2026-11-20__google-maps); its key, budget and quota are his",
     "Dinis, 20 Nov 2026 ~08:40 UTC: the principles and all content we create here are CC BY (applied as CC BY 4.0)",
     "Dinis, 20 Nov 2026 ~08:40 UTC: keep the wake hourly"
-  ]
+  ],
+  "team": {
+    "conductor.b": "coordinates, keeps status.json, board/, REALITY.md and team keys; briefs Dinis - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
+    "factory.b": "the only writer of the Factory's pipeline, policy, org, requests and DNS files - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+    "sites.b": "new sites (requests via factory.b) and their content in Site__* - https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67",
+    "design.b": "design guidelines, briefs, reviews and sign-off for every site (policy entry waits) - https://claude.ai/code/session_01Kw9UwCvZbGkWo3D9DEpRMv",
+    "hub.b": "hub gallery and vault sites - https://claude.ai/code/session_01Kw9UwB7XboTsnbPPWaMr2d",
+    "migration.b": "AgentiCCells to SovereignWebsite transfer plan, board/migration/** - https://claude.ai/code/session_01Kw9UwDKiseUFyqtG1xyVaG"
+  }
 }
