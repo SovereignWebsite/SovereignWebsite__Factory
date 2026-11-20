@@ -1,8 +1,8 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-20T11:33Z",
-  "state": "eight sites live over HTTPS (.ai, .org, .site, hub, vault, pipeline-demo, google-maps) plus emily-cruz.artists (HTTPS pending); the conductor coordinates, the agents do",
+  "updated": "2026-11-20T12:35Z",
+  "state": "twelve sites answering: .ai, .org, .site, hub, vault, google-maps on sovereignwebsite.*; pipeline-demo, emily-cruz.artist, two invest sites, algarve-evolution.organisation on sovereignweb.site (the default since 20 Nov); one company site waiting on its certificate",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
     "repositories: Website (.ai), Org (.org), Site (.site), Hub (gallery, hub.sovereignwebsite.site), Vault (vault.sovereignwebsite.site); each with Pages, domain, team push, rulesets main-locked and dev-safe",
@@ -20,7 +20,9 @@
     "agents factory.b, sites.b, design.b created; factory.b the only Factory writer (14253b9, 744b23b)",
     "transfer pipeline, option A, four listed repositories (3c2e547, 7338d12)",
     "request groups artists and cv; emily-cruz.artists.sovereignwebsite.site (aff142e, Site__emily-cruz e409581)",
-    "workflow: retire an agent once its handover is recorded (board/workflow/2026-11-20__retiring-agents.md)"
+    "workflow: retire an agent once its handover is recorded (board/workflow/2026-11-20__retiring-agents.md)",
+    "sovereignweb.site live in Route 53 and the default; areas artist, cv, company, organisation, invest; old addresses redirect (factory.b)",
+    "transfer App and TRANSFER_USER_TOKEN set by Dinis; a throwaway test repository in AgentiCCells waits on his yes there"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
@@ -28,10 +30,11 @@
     "transfers, once TRANSFER_USER_TOKEN is set"
   ],
   "asks": [
-    "Dinis: whether the Algarve Evolution site moves from AgentiCCells to SovereignWebsite - https://claude.ai/code/session_01Kw9UwFgyMuNDYCnrW1ZKkm",
+    "Dinis: yes to AgentiCCells making AgentiCCells__Site__Transfer-Test, to prove the transfer - https://claude.ai/code/session_01Kw9UwFgyMuNDYCnrW1ZKkm",
+    "Dinis: confirm or hold the new Algarve Evolution holding page while ownership is settled with AgentiCCells - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+    "Dinis: whether and when the main sites move to sovereignweb.* - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: yes to design.b's policy entry when factory.b asks - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
-    "Dinis: TRANSFER_USER_TOKEN in the Factory's transfer environment, when ready - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
-    "Dinis: the Google Maps key, later - https://console.cloud.google.com/google/maps-apis/credentials"
+    "Dinis: the Google Maps key, allowing the new address - https://console.cloud.google.com/google/maps-apis/credentials"
   ],
   "decisions": [
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",
@@ -48,6 +51,8 @@
     "hub.b": "hub gallery and vault sites - https://claude.ai/code/session_01Kw9UwB7XboTsnbPPWaMr2d",
     "migration.b": "AgentiCCells to SovereignWebsite transfer plan, board/migration/** - https://claude.ai/code/session_01Kw9UwDKiseUFyqtG1xyVaG",
     "algarve.b": "a gated landing and private vault for a site in AgentiCCells' domain; holding until Dinis decides its owner - https://claude.ai/code/session_01Kw9UwDDHfm3RVNtWomz2XA",
-    "invest agents": "research and private vaults behind gated holding pages in the 'invest' group, at Dinis's request"
-  }
+    "invest agents": "research and private vaults behind gated holding pages in the 'invest' group, at Dinis's request",
+    "emily.b": "keeps Site__emily-cruz, Dinis's photos and videos - https://claude.ai/code/session_01Kw9UwBvXb8qAME1TexsQss"
+  },
+  "short_name": "SWS (Sovereign Website), Dinis, 20 Nov 2026"
 }
