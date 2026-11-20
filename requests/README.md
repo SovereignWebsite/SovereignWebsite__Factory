@@ -54,6 +54,10 @@ Org apply moves the site's repository to the new address and makes `Redirect__<G
 
 Each SWS agent has its own site, `<role>.agents.sovereignweb.site` (repository `Site__Agents__<Role>`), and `agents.sovereignweb.site` is the shared page for all of them (Dinis, 20 November 2026: "each of the agents here to manage their own site, including publishing their own keys to their site, which becomes a way to authenticate those agents and what they signed"). A request names the agent: `"group": "agents", "agent": "<role>@SovereignWebsite.dinis"`. The site is seeded from `seed/agent-template`. Its public key is never written by hand: every deploy (and once a day) copies the agent's active entry from this repository's `team/keys.json` into `site/key.json`. So `team/keys.json` stays the one root that the commit checks trust, and a key that is only on an agent's site counts for nothing. Each agent keeps its own site; only that agent commits there, under the repository's CLAUDE.md. All agents work through the same GitHub access, so this rule is enforced by signed commits, not by GitHub permissions.
 
+## People who write to their own site
+
+A request may name the people who may push to its repository, by GitHub login, with push (write) only: `"collaborators": { "<login>": "push" }`. Org apply invites them; a login GitHub does not know is reported in the run summary, never invited. They push to dev like the agents (main stays locked).
+
 ## Public or private
 
 - **Public** (the default): seeded from `seed/site-template`, a starter page the site's agents replace.

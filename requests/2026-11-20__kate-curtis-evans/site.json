@@ -3,5 +3,8 @@
   "group": "founder",
   "title": "Kate Curtis-Evans",
   "description": "Founder of Audio Genius, legal transcription built by a transcriber.",
-  "kind": "owner"
+  "kind": "owner",
+  "collaborators": {
+    "kateandphilce-jpg": "push"
+  }
 }
