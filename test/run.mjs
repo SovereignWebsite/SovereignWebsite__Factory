@@ -251,4 +251,20 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
     assert.ok(h.includes('class="family-credit"') && !h.includes('<nav class="family"'), `${p} carries the pop-up, not the bar`);
   }
 }
+// Link previews: every template page has its Open Graph and Twitter tags, the seed card is a 1200x630 JPEG under
+// 300 KB, and the site's own deploy runs the share check, which fails a page without them.
+{
+  const { mkdtempSync, cpSync, writeFileSync: w, readFileSync: r, readdirSync: ls } = await import('node:fs');
+  const { execFileSync } = await import('node:child_process');
+  const { tmpdir } = await import('node:os');
+  assert.ok(seedFiles('seed/site-template').includes('site/assets/share/card-1200x630.jpg'), 'the template seeds a share card');
+  assert.ok(r('seed/site-template/.github/workflows/pages.yml', 'utf8').includes('node .github/share-check.mjs site'), 'the deploy runs the share check');
+  const d = mkdtempSync(tmpdir() + '/share-'); cpSync('seed/site-template', d, { recursive: true });
+  const fill = (p) => { for (const e of ls(p, { withFileTypes: true })) { const q = p + '/' + e.name; if (e.isDirectory()) fill(q); else if (/\.(html|txt|json)$|CNAME$/.test(e.name)) w(q, r(q, 'utf8').replaceAll('{{host}}', 'a.cv.sovereignweb.site').replaceAll('{{title}}', 'A').replaceAll('{{description}}', 'B').replaceAll('{{repo}}', 'Site__CV__A')); } };
+  fill(d + '/site');
+  const check = () => { try { execFileSync('node', ['.github/share-check.mjs', 'site'], { cwd: d, stdio: 'pipe' }); return 0; } catch (e) { return e.status; } };
+  assert.equal(check(), 0, 'a fresh site passes the share check');
+  w(d + '/site/start/index.html', r(d + '/site/start/index.html', 'utf8').replace(/<meta property="og:image" [^>]*>/, ''));
+  assert.equal(check(), 1, 'a page without og:image fails the deploy');
+}
 console.log('OK (tests)');

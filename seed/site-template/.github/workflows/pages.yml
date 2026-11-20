@@ -19,6 +19,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - name: Link previews (Open Graph tags and the share card)
+        run: node .github/share-check.mjs site
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
