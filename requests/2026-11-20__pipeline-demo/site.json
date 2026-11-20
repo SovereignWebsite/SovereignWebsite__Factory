@@ -1,9 +1,11 @@
 {
   "label": "pipeline-demo",
+  "group": "demo",
   "title": "A site from one request",
   "description": "Made by the Sovereign Website pipeline from one request folder.",
   "kind": "demo",
   "previous": [
-    "pipeline-demo.sovereignwebsite.site"
+    "pipeline-demo.sovereignwebsite.site",
+    "pipeline-demo.sovereignweb.site"
   ]
 }

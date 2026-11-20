@@ -46,7 +46,8 @@ assert.equal(checkActions(p, { pipeline: 'org-apply', actions: [{ action: 'rules
 const R = await import('../build/requests.mjs');
 const good = { label: 'pipeline-demo', domain: 'sovereignwebsite.site', title: 'A site from one request', description: 'Made by the pipeline.', kind: 'demo' };
 assert.equal(R.repos([{ ...good, domain: undefined }])[0].cname, 'pipeline-demo.sovereignweb.site', 'no domain: sovereignweb.site, the default');
-assert.deepEqual(R.validate(good, '2026-11-19__pipeline-demo'), []);
+assert.ok(R.validate(good, '2026-11-19__pipeline-demo').some((e) => e.includes('needs a group')), 'no group is refused now');
+assert.deepEqual(R.validate({ ...good, group: 'demo' }, '2026-11-19__pipeline-demo'), []);
 assert.ok(R.validate({ ...good, label: 'Bad_Label' }, '2026-11-19__Bad_Label').length, 'bad label refused');
 assert.ok(R.validate({ ...good, label: 'hub' }, '2026-11-19__hub').length, 'reserved label refused at the top level');
 assert.deepEqual(R.validate({ ...good, label: 'hub', group: 'agents', agent: 'hub.b@SovereignWebsite.dinis', kind: 'owner' }, '2026-11-19__hub'), [], 'a reserved name is fine inside a group');
@@ -119,7 +120,7 @@ assert.equal(R.repoName({ label: 'silvio-switha', group: 'cv' }), 'Site__CV__Sil
 assert.equal(R.repoName({ label: '33n-ventures', group: 'invest' }), 'Site__Invest__33n-Ventures');
 assert.equal(R.repoName({ label: 'weather-demo' }), 'Site__Weather-Demo');
 const ren = R.repos([em])[0];
-assert.deepEqual(ren.aka, ['Site__emily-cruz']);
+assert.deepEqual(ren.aka, ['Site__emily-cruz', 'Site__Emily-Cruz']);
 const rp2 = plan({ ...org, repos: [...org.repos, ...R.repos([em])] }, { 'Site__emily-cruz': { ...base }, 'Redirect__emily-cruz': { ...base } });
 assert.deepEqual(rp2.actions.filter((a) => a.action === 'repo.rename').map((a) => [a.target, a.to]), [['Site__emily-cruz', 'Site__Artist__Emily-Cruz'], ['Redirect__emily-cruz', 'Redirect__Artist__Emily-Cruz']], 'the old names are renamed');
 assert.ok(!rp2.actions.some((a) => a.action === 'repo.create' && /Emily-Cruz/.test(a.target)), 'never a second copy');
@@ -154,7 +155,7 @@ assert.ok(checkActions(p, { pipeline: 'org-apply', actions: [{ action: 'repo.inv
 const st = seedFiles('seed/site-template'); for (const must of ['.github/workflows/pages.yml', 'site/CNAME', 'site/index.html']) assert.ok(st.includes(must));
 // Moves: a request with a from block, transfer-apply, and the moved site handed to Org apply and DNS apply.
 const T = await import('../build/transfer-plan.mjs'), A = await import('../build/transfer-apply.mjs'), { checkTransfer } = await import('../build/abp.mjs');
-const mv = { label: 'transfer-test', domain: 'sovereignwebsite.site', title: 'A move test', description: 'A throwaway repository to prove the move.', kind: 'demo', from: { owner: 'AgentiCCells', repo: 'AgentiCCells__Site__Transfer-Test', address: 'transfer-test.agenticcells.site' }, apply: 'dry-run' };
+const mv = { label: 'transfer-test', group: 'demo', domain: 'sovereignwebsite.site', title: 'A move test', description: 'A throwaway repository to prove the move.', kind: 'demo', from: { owner: 'AgentiCCells', repo: 'AgentiCCells__Site__Transfer-Test', address: 'transfer-test.agenticcells.site' }, apply: 'dry-run' };
 const F = '2026-11-20__transfer-test';
 assert.deepEqual(R.validate(mv, F), [], 'a move request validates');
 assert.ok(R.validate({ ...mv, from: { ...mv.from, owner: 'PrompTugal' } }, F).length, 'only from AgentiCCells');
@@ -165,10 +166,10 @@ const waiting = { ...mv, folder: F, moved: false }, moved = { ...waiting, moved:
 assert.deepEqual(R.repos([waiting]), [], 'Org apply leaves a move alone until it is recorded');
 assert.deepEqual(R.dnsRecords([waiting]), [], 'no CNAME until the move is recorded');
 const mr = R.repos([moved]);
-assert.equal(mr[0].name, 'Site__Transfer-Test'); assert.equal(mr[0].seed, undefined, 'a moved repository is never seeded'); assert.ok(mr[0].transfer_from);
-assert.ok(!plan({ ...org, repos: [...org.repos, ...mr] }, {}).actions.some((a) => a.target === 'Site__Transfer-Test'), 'Org apply never creates a moved repository');
+assert.equal(mr[0].name, 'Site__Demo__Transfer-Test'); assert.equal(mr[0].seed, undefined, 'a moved repository is never seeded'); assert.ok(mr[0].transfer_from);
+assert.ok(!plan({ ...org, repos: [...org.repos, ...mr] }, {}).actions.some((a) => a.target === 'Site__Demo__Transfer-Test'), 'Org apply never creates a moved repository');
 const tp = T.planFor(waiting);
-assert.deepEqual(tp.actions, [{ action: 'repo.transfer_in', target: 'AgentiCCells/AgentiCCells__Site__Transfer-Test', to: 'SovereignWebsite/Site__Transfer-Test', address_from: 'transfer-test.agenticcells.site', address_to: 'transfer-test.sovereignwebsite.site' }]);
+assert.deepEqual(tp.actions, [{ action: 'repo.transfer_in', target: 'AgentiCCells/AgentiCCells__Site__Transfer-Test', to: 'SovereignWebsite/Site__Demo__Transfer-Test', address_from: 'transfer-test.agenticcells.site', address_to: 'transfer-test.demo.sovereignwebsite.site' }]);
 assert.ok(checkActions(p, { pipeline: 'transfer-apply', actions: [{ ...tp.actions[0], address_from: 'shop.example.com' }] }).some((x) => x.includes('not a domain we control')), 'a domain outside our control is refused');
 assert.ok(checkActions(p, { pipeline: 'transfer-apply', actions: [{ ...tp.actions[0], address_from: 'evilagenticcells.site' }] }).length, 'a look-alike domain is refused');
 const { ownKeyChanged } = await import('../build/abp.mjs');
@@ -193,12 +194,12 @@ assert.ok(A.refusals(p, checked).some((e) => e.includes('dry-run')), 'a dry run 
 assert.deepEqual(A.refusals(p, { ...checked, apply: 'real' }), [], 'a real, checked move is allowed');
 assert.ok(A.refusals(p, { ...checked, apply: 'real', blockers: ['1 open pull request(s): mid-round'] }).length, 'a blocker stops the move');
 assert.ok(A.refusals(p, { ...tp, apply: 'real' }).length, 'no move without a live preflight');
-assert.deepEqual(A.body(tp), { path: '/repos/AgentiCCells/AgentiCCells__Site__Transfer-Test/transfer', data: { new_owner: 'SovereignWebsite', new_name: 'Site__Transfer-Test' } });
+assert.deepEqual(A.body(tp), { path: '/repos/AgentiCCells/AgentiCCells__Site__Transfer-Test/transfer', data: { new_owner: 'SovereignWebsite', new_name: 'Site__Demo__Transfer-Test' } });
 // Preflight against a fake GitHub: what stops a move.
 const fake = (over = {}) => async (o, path) => {
   const base = {
     '/repos/AgentiCCells/AgentiCCells__Site__Transfer-Test': { status: 200, data: { full_name: 'AgentiCCells/AgentiCCells__Site__Transfer-Test', private: false, archived: false, fork: false, default_branch: 'dev' } },
-    '/repos/SovereignWebsite/Site__Transfer-Test': { status: 404, data: {} },
+    '/repos/SovereignWebsite/Site__Demo__Transfer-Test': { status: 404, data: {} },
   };
   const k = path.split('?')[0];
   return over[k] ?? base[k] ?? (k.endsWith('/pulls') ? { status: 200, data: [] } : k.endsWith('/runs') ? { status: 200, data: { total_count: 0 } } : { status: 404, data: null });
@@ -206,7 +207,7 @@ const fake = (over = {}) => async (o, path) => {
 globalThis.fetch = async () => ({ ok: false });
 const ok = await T.preflight(T.planFor(waiting), fake());
 assert.deepEqual(ok.blockers, [], 'a clean source passes');
-const taken = await T.preflight(T.planFor(waiting), fake({ '/repos/SovereignWebsite/Site__Transfer-Test': { status: 200, data: {} } }));
+const taken = await T.preflight(T.planFor(waiting), fake({ '/repos/SovereignWebsite/Site__Demo__Transfer-Test': { status: 200, data: {} } }));
 assert.ok(taken.blockers.some((b) => b.includes('already answers')), 'an existing target stops the move');
 const pr = await T.preflight(T.planFor(waiting), fake({ '/repos/AgentiCCells/AgentiCCells__Site__Transfer-Test/pulls': { status: 200, data: [{}] } }));
 assert.ok(pr.blockers.some((b) => b.includes('mid-round')), 'an open pull request stops the move');
@@ -359,4 +360,12 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
 { const t = readFileSync('seed/site-template/.github/ci/quality.mjs', 'utf8'), l = readFileSync('build/leak-scan.mjs', 'utf8');
   for (const m of l.matchAll(/^\s+\['[^']+', (\/.*\/[a-z]*)\],$/gm)) assert.ok(t.includes(m[1]), `the site leak scan has the Factory shape ${m[1].slice(0, 30)}`); }
 { const R = await import('../build/requests.mjs'); const st = { label: 'sgit', group: 'startups', title: 'sgit', description: 'A brochure.', kind: 'demo' }; assert.equal(R.repoName(st), 'Site__Startups__Sgit'); assert.equal(R.host(st), 'sgit.startups.sovereignweb.site'); }
+// Every site has a group (demo for demos), with the NO_GROUP exceptions; a capitalised ungrouped repository is renamed.
+{ const R = await import('../build/requests.mjs'); const F = new Set(['2026-11-20__x']);
+  assert.ok(R.validate({ label: 'x', title: 'X', description: 'Y.', kind: 'demo' }, '2026-11-20__x', F).some((e) => e.includes('needs a group')), 'a site with no group is refused');
+  const d = { label: 'pipeline-demo', group: 'demo', title: 'P', description: 'D.', kind: 'demo', previous: ['pipeline-demo.sovereignwebsite.site', 'pipeline-demo.sovereignweb.site'] };
+  assert.equal(R.repoName(d), 'Site__Demo__Pipeline-Demo'); assert.equal(R.host(d), 'pipeline-demo.demo.sovereignweb.site');
+  const rs = R.repos([d]); assert.ok(rs[0].aka.includes('Site__Pipeline-Demo'), 'the ungrouped capitalised name is an aka');
+  assert.deepEqual(rs.slice(1).map((x) => x.cname), d.previous, 'both old addresses keep a redirect');
+  assert.ok(rs[1].aka.includes('Redirect__Pipeline-Demo'), 'the existing redirect repository is renamed, not made again'); }
 console.log('OK (tests)');

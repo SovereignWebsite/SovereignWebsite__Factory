@@ -9,9 +9,13 @@ export const LABEL = /^[a-z0-9](?:[a-z0-9-]{0,38}[a-z0-9])?$/;
 export const FROM_OWNERS = ['AgentiCCells'];
 // Groups of sites under their own subdomain: <label>.<group>.sovereignweb.site. The official list (requests/README.md),
 // agreed by Dinis on 20 Nov 2026 ~12:02 UTC: "I agree with, can you put that on our official guidance"; more will be added.
-export const GROUPS = ['artist', 'cv', 'company', 'organisation', 'invest', 'agents', 'designer', 'tool', 'founder', 'startups'];
+export const GROUPS = ['artist', 'cv', 'company', 'organisation', 'invest', 'agents', 'designer', 'tool', 'founder', 'startups', 'demo'];
 // Kept only while a live site still uses it, until that site moves.
 export const LEGACY_GROUPS = ['artists'];
+export const NO_GROUP = {
+  agents: "the agents area's own index page, agents.sovereignweb.site",
+  'google-maps': 'held at its old address until its Maps key lists the new one (Dinis, 20 Nov 2026)',
+};
 // The starting page a request is seeded with: a public starter page, or a gated holding page that opens a vault.
 export const ACCESS = { public: 'seed/site-template', vault: 'seed/gate-template' };
 const RESERVED = new Set(['www', 'hub', 'vault', 'api', 'admin', 'mail', 'factory', ...GROUPS, ...LEGACY_GROUPS]);
@@ -38,6 +42,9 @@ export function validate(req, folder = '') {
   if (folder && !folder.endsWith(`__${req.label}`)) e.push(`${folder}: folder must end with __${req.label}`);
   if (!req.title || req.title.length > 80) e.push(`${folder}: title is required, at most 80 characters`);
   if (!req.description || req.description.length > 200) e.push(`${folder}: description is required, at most 200 characters`);
+  // Every site has a group (Dinis, 20 Nov 2026 ~21:05 UTC: "Everything should have a group for now"), but for the two
+  // named here: a group's own index page, and a site held where it is.
+  if (req.group === undefined && !NO_GROUP[req.label]) e.push(`${folder}: a site needs a group (one of ${GROUPS.join(', ')})`);
   if (req.group !== undefined && !GROUPS.includes(req.group) && !LEGACY_GROUPS.includes(req.group)) e.push(`${folder}: group must be one of ${GROUPS.join(', ')}`);
   if (req.domain !== undefined && !DOMAINS.includes(req.domain)) e.push(`${folder}: domain must be one of ${DOMAINS.join(', ')}`);
   if (req.previous !== undefined) {
@@ -99,11 +106,11 @@ export function load(dir = 'requests') {
 // Repository names are indexed by type, capitalised (Dinis, 20 Nov 2026 ~12:28 UTC: "the repo should be
 // Site__Organisation__Algarve-Evolution, Site__Artist__Emily-Cruz (note the capitalisation on the names)").
 // A site without a group is Site__<Name>. The old name, Site__<label>, is kept as aka so Org apply renames it.
-export const GROUP_NAMES = { artist: 'Artist', cv: 'CV', company: 'Company', organisation: 'Organisation', invest: 'Invest', agents: 'Agents', designer: 'Designer', tool: 'Tool', founder: 'Founder', startups: 'Startups', artists: 'Artist' };
+export const GROUP_NAMES = { artist: 'Artist', cv: 'CV', company: 'Company', organisation: 'Organisation', invest: 'Invest', agents: 'Agents', designer: 'Designer', tool: 'Tool', founder: 'Founder', startups: 'Startups', demo: 'Demo', artists: 'Artist' };
 export const cap = (label) => label.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join('-');
 const suffix = (r) => `${r.group ? `${GROUP_NAMES[r.group]}__` : ''}${cap(r.label)}`;
 export const repoName = (r) => `Site__${suffix(r)}`;
-const aka = (name, old) => (name === old ? {} : { aka: [old] });
+const aka = (name, ...old) => { const a = [...new Set(old)].filter((o) => o !== name); return a.length ? { aka: a } : {}; };
 
 // The sites Org apply and DNS apply look after: new ones, and moved ones once the move is recorded.
 export const live = (requests) => requests.filter((r) => !r.from || r.moved);
@@ -114,14 +121,14 @@ export const live = (requests) => requests.filter((r) => !r.from || r.moved);
 export function redirects(requests) {
   return live(requests).flatMap((r) => (r.previous || []).map((from, i) => {
     const n = i ? `-${i + 1}` : '';
-    return { from, to: host(r), label: r.label, name: `Redirect__${suffix(r)}${n}`, old: `Redirect__${r.label}${n}` };
+    return { from, to: host(r), label: r.label, name: `Redirect__${suffix(r)}${n}`, old: [`Redirect__${r.label}${n}`, `Redirect__${cap(r.label)}${n}`] };
   }));
 }
 
 export function repos(requests) {
   return [...sites(requests), ...redirects(requests).map((x) => ({
     name: x.name,
-    ...aka(x.name, x.old),
+    ...aka(x.name, ...x.old),
     description: `${x.from}: moved to https://${x.to}`,
     homepage: `https://${x.to}`,
     pages: true,
@@ -134,7 +141,7 @@ export function repos(requests) {
 function sites(requests) {
   return live(requests).map((r) => ({
     name: repoName(r),
-    ...aka(repoName(r), `Site__${r.label}`),
+    ...aka(repoName(r), `Site__${r.label}`, `Site__${cap(r.label)}`),
     description: `${host(r)}: ${r.description}`.slice(0, 350),
     homepage: `https://${host(r)}`,
     pages: true,
