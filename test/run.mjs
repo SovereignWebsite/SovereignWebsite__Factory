@@ -285,6 +285,8 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   assert.equal(run('.github/ci/build.mjs'), 0);
   const v = JSON.parse(r(d + '/_site/version.json', 'utf8')); assert.equal(v.version, 'v0.1.7'); assert.equal(v.commit, 'abcdef1');
   assert.ok(r(d + '/_site/start/index.html', 'utf8').includes('<a class="sws-version"'), 'the chip is on every page');
+  { const h = r(d + '/_site/index.html', 'utf8'), i = h.indexOf('class="sws-version"'); assert.ok(h.lastIndexOf('<footer', i) > h.lastIndexOf('</footer>', i), 'the chip sits inside a footer landmark'); }
+  assert.ok(r('seed/site-template/.github/ci/axe.mjs', 'utf8').includes("'best-practice'"), 'axe runs the best-practice rules too');
   const local = (f) => { const s = r(f, 'utf8').replace(/ href="https?:[^"]*"/g, ' href="/"'); w(f, s); };
   for (const p of ['index.html', 'start/index.html', 'agents/index.html', 'admin/index.html']) local(d + '/_site/' + p);
   assert.equal(run('.github/ci/quality.mjs', '_site'), 0, 'a fresh site passes the quality checks');
