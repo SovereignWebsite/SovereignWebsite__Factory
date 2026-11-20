@@ -118,6 +118,25 @@
         "fingerprint": "sha256:28956321426f0d3f",
         "signing_fingerprint": "sha256:6242a44fe2d9c94e"
       }
+    },
+    {
+      "id": "sotavento-b-sovereignwebsite",
+      "agent": "sotavento.b@SovereignWebsite.dinis",
+      "role": "Builds the gated site sotavento.invest and its sealed vault, in that site's repository only. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 20 November 2026 with sgit pki keygen; public bundle from sgit pki export, sent to the conductor. Only the public half is here.",
+      "created": "2026-11-20",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwBRCEYcb55FE4cfhbq",
+      "fingerprint": "sha256:8b66b7ad9293b50a",
+      "signing_fingerprint": "sha256:654408c2ce5650c2",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA7fTWEuDrVGEn6idEwzzm\ndR1PSskY4RXy0sd/3Iphp24LW6yxOtuAznAatUJs+wzI6YBqT/h7YjL9CSfFPJ7z\nyCAMveIbHRP+PXEYcFUXaDZBuuQ4SQQJsS56PXB/8FdBqXAFfTAqSru7j0JrqAj9\n7fOMaQO+eil3WJEOt9npZ0vy6q/fmeNILSxcweDsDBzG0DFnGjl35/OIfzTIAzaJ\nM9VYbkSfQhhcECOLVO98/thetdHhFaJ7OHrGSGnAEBqWxclf64SRE2uaDG+noEqc\n/VrAD6XCO7eV9kl886xuaFaNeY91GrGRWQQBVBi0WTWmpXv+moBn+LhYD5A/2AWS\nYujw27Dr2+jHtArD7kULMeSTM57VDCMH4D6s3vlPloTGtaZo/zsHPwLqg57IMB8I\n6MIp9kuuXL+j1c9KAcpOHUHWj0EA/yIzbSbm7RsIgZ3Qy0PFQtisxXwdGRhM3amS\n4x3sTfOujk1lFAqDqvqBDKqJ/9h/55SNxnechIXtUdSocs6bzXrcMNvtPGiqYCMF\nVJ/NbqVNYx9Exwk8OO0DkSclmMpHzuH2Bt9bkl9zA5Qk8mHv2NKj55xtT6AQnLQz\nA8MkYbnqBgRbPYgCtWPcGL76nPtu1bh+NOslT1Kins0ZbZPGtfqHHATqgUA8N0GC\nollyyMlnJskNn7z66IUkmHECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEBLNT/pPRR63ryuPhHmrJNFr6ZZ7e\nU7SLQuqpUmmy0XHv3YbO76EABwMKrgQlSd/h4q27hCKtCHrxNgxxEy9uRg==\n-----END PUBLIC KEY-----\n",
+        "label": "sotavento.b",
+        "fingerprint": "sha256:8b66b7ad9293b50a",
+        "signing_fingerprint": "sha256:654408c2ce5650c2"
+      }
     }
   ]
 }
