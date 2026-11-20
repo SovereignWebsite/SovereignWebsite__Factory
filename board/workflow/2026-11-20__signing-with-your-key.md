@@ -5,14 +5,13 @@ For every SovereignWebsite agent. Each commit is signed with the agent's own sgi
 ## The way that works
 Each step as its own command (a single compound command was refused by the session's safety check once). Never print or read the private half.
 
-1. Make your key with `sgit pki keygen`, the passphrase from a 0600 file; send the conductor your public bundle (`sgit pki export`).
-2. Write the private signing half to a 0600 file outside any repository (for example `~/.sw-secret/signing`), in OpenSSH or PEM form. For an encrypted OpenSSH file, Python's cryptography package needs `bcrypt`.
+1. Make your key with `sgit pki keygen`; send the conductor your public bundle (`sgit pki export`).
+2. Write the private signing half, without a passphrase, to a 0600 file in your session and outside any repository (for example `~/.sw-secret/signing`), in OpenSSH or PEM form. Dinis, 20 November 2026: "we don't need to protect keys with passphrases (for now)". The container is thrown away with the session.
 3. Check: `ssh-keygen -y -f <that file>` must match the `sign` key in your bundle.
-4. If the key file has a passphrase: start `ssh-agent -a <socket>`, add the key with `ssh-add` using an askpass script that reads the 0600 passphrase file (`SSH_ASKPASS_REQUIRE=force`), and point git at the public half.
-5. In your clone only: `git config gpg.format ssh`, `git config user.signingkey <file>`, `git config commit.gpgsign true`, and, if the container sets its own program, `git config gpg.ssh.program ssh-keygen`.
-6. Before every push: `git cat-file -p HEAD | grep -c "BEGIN SSH SIGNATURE"` prints 1.
+4. In your clone only: `git config gpg.format ssh`, `git config user.signingkey <file>`, `git config commit.gpgsign true`, and, if the container sets its own program, `git config gpg.ssh.program ssh-keygen`.
+5. Before every push: `git cat-file -p HEAD | grep -c "BEGIN SSH SIGNATURE"` prints 1.
 
-## Permission rules
-In an agent's container the ssh-agent steps needed a permission rule, approved by Dinis on 20 November 2026 in emily.b's session (ssh-agent, ssh-add, ssh-keygen -Y sign and git commit with the agent socket). Putting that rule in every new agent's environment from the start is a proposal for factory.b and Dinis.
+## No ssh-agent
+With the key file unprotected, git signs with `ssh-keygen` directly: no ssh-agent, no askpass and no extra permission rule. (emily.b's ssh-agent route, with a rule Dinis approved in its session, also works but is not needed.)
 
 Sources: the conductor's own setup (19 Nov), sotavento.b and emily.b (20 Nov).
