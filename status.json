@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-20T21:34Z",
+  "updated": "2026-11-20T23:34Z",
   "state": "18 site requests; all main sites, the agents area (agents, design, library), whois.tool and the people's sites answer over HTTPS; one company site still waits on its certificate",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -35,7 +35,9 @@
     "milestone: Kate is the first owner to edit her own site herself on GitHub (board/milestones.md); hub.sovereignweb.site features Kate, Emily and Sarah first",
     "site pipeline live (Factory de05b7c): versions, quality checks, link previews; three templates (customer, gated, agent and own sites); twelve sites adopted by 21:34 UTC",
     "feedback.b is also the inbox agent (Dinis); observability.b started; tracking rule: privacy note, no ask-first (Dinis)",
-    "owners may push to dev and their live branch (Dinis); security.b review 002 pass-with-changes"
+    "owners may push to dev and their live branch (Dinis); security.b review 002 pass-with-changes",
+    "startups area and its five sites (a49005f)",
+    "Chiswick demo made public at Dinis's word, with a 'not the official site' note"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
@@ -75,15 +77,17 @@
     "design.b.rounds": "runs the design rounds, reports to design.b (named by Dinis) - https://claude.ai/code/session_01Kw9UwFCJTPWFaTq4TX5vUT",
     "observability.b": "traffic for every site, aggregates per site and for Dinis - https://claude.ai/code/session_01Kw9UwDcJXSxNCBzPpxxXw8",
     "feedback.b": "feedback box and owner inbox for every site, building on Kate's tested inbox; pilots Emily, Kate, Dinis - https://claude.ai/code/session_01Kw9UwBiG9d5KHvFjdtiP69",
-    "chiswick-cheese-market.b": "a gated vault demo for a Monday meeting - https://claude.ai/code/session_01Kw9UwBShWte1Rz5B2Mfznt"
+    "chiswick-cheese-market.b": "a gated vault demo for a Monday meeting - https://claude.ai/code/session_01Kw9UwBShWte1Rz5B2Mfznt",
+    "conductor.mistral": "conducts the Mistral provider site and Saturday's hackathon demos, with evals.mistral, swarm.mistral and team.mistral - https://claude.ai/code/session_01Kw9UwFkZvAwG1yRZJhexqX"
   },
   "short_name": "SWS (Sovereign Website), Dinis, 20 Nov 2026",
   "held_for_dinis": [
-    "startups area a49005f (five brochure sites ready)",
     "Kate's site pipeline: Dinis's or Kate's yes in kate-curtis-evans.b's session",
     "keeper for sovereignwebsite.ai, .org, .site",
-    "Chiswick naming",
     "accountant.b's signing key (permission)",
-    "Dinis's own site move: confirm in AgentiCCells' conductor's session; Transfer-Test not created"
+    "Dinis's own site move: confirm in AgentiCCells' conductor's session; Transfer-Test not created",
+    "transfer App installed on SovereignWebsite (weather-demo transfer refused, 403)",
+    "budget for conductor.mistral and its agents up to the hackathon",
+    "Chiswick images and the organiser's name"
   ]
 }
