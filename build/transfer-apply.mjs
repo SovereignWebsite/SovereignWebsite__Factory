@@ -40,7 +40,9 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   if (!plan.actions?.length) { console.log('nothing to move'); process.exit(0); }
   const e = refusals(load(), plan);
   if (e.length) { console.error(e.join('\n')); console.error(`TRANSFER REFUSED (${e.length})`); process.exit(1); }
-  const b = body(plan), record = { request: plan.request, from: plan.actions[0].target, to: plan.actions[0].to, run: process.env.GITHUB_RUN_ID || null, at: new Date().toISOString(), version_before: plan.version_before ?? null, findings: plan.findings };
+  const b = body(plan), record = { request: plan.request, from: plan.actions[0].target, to: plan.actions[0].to, run: process.env.GITHUB_RUN_ID || null, at: new Date().toISOString(), version_before: plan.version_before ?? null, pages_branches: plan.pages_branches ?? null, findings: plan.findings,
+    old_name: `GitHub redirects github.com/${plan.actions[0].target} only while no repository takes that name again: AgentiCCells must not reuse it`,
+    old_address: plan.from?.address ? `for AgentiCCells' own factory: a redirect page at ${plan.from.address} to https://${plan.address}` : null };
   if (!process.env.TRANSFER_USER_TOKEN) {
     Object.assign(record, { state: 'waiting for Dinis', how: `gh api -X POST ${b.path} -f new_owner=${b.data.new_owner} -f new_name=${b.data.new_name}` });
     console.log(`No TRANSFER_USER_TOKEN in the transfer environment. Dinis makes the one call:\n\n    ${record.how}\n\nor github.com/${plan.actions[0].target}/settings, Transfer, to ${b.data.new_owner}, name ${b.data.new_name}.`);

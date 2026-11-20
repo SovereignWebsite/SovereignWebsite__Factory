@@ -27,6 +27,7 @@ export function validate(req, folder = '') {
       if (!/^[A-Za-z0-9._-]{1,100}$/.test(f.repo || '')) e.push(`${folder}: from.repo must be a repository name`);
       if (f.address !== undefined && !/^[a-z0-9.-]+$/.test(f.address)) e.push(`${folder}: from.address must be a host name`);
     }
+    if (req.signed !== undefined && typeof req.signed !== 'boolean') e.push(`${folder}: signed is true or false`);
     if (!['dry-run', 'real'].includes(req.apply)) e.push(`${folder}: a request with from needs apply "dry-run" or "real"`);
   } else if (req.apply !== undefined) e.push(`${folder}: apply is only for a request with from`);
   return e;

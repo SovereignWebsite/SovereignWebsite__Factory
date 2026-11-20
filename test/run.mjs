@@ -111,5 +111,9 @@ const wfSecret = await T.preflight(T.planFor(waiting), fake({
   '/repos/AgentiCCells/AgentiCCells__Site__Transfer-Test/contents/.github/workflows': { status: 200, data: [{ path: '.github/workflows/x.yml' }] },
   '/repos/AgentiCCells/AgentiCCells__Site__Transfer-Test/contents/.github/workflows/x.yml': { status: 200, data: { content: Buffer.from('token: ${{ secrets.APP_KEY }}').toString('base64') } },
 }));
+const signedRepo = fake({ '/repos/AgentiCCells/AgentiCCells__Site__Transfer-Test/contents/team/keys.json': { status: 200, data: {} } });
+assert.ok((await T.preflight(T.planFor(waiting), signedRepo)).blockers.some((b) => b.includes('signed')), 'a signed repository the request does not expect stops the move');
+assert.deepEqual((await T.preflight(T.planFor({ ...waiting, signed: true }), signedRepo)).blockers, [], 'a signed repository the request expects passes');
+assert.ok(R.validate({ ...mv, signed: 'yes' }, F).length, 'signed is a boolean');
 assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secret that stays behind stops the move');
 console.log('OK (tests)');

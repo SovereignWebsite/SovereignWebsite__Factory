@@ -23,6 +23,7 @@ export function planFor(r) {
     from: r.from,
     actions: [{ action: 'repo.transfer_in', target: `${r.from.owner}/${r.from.repo}`, to: `${TO_OWNER}/Site__${r.label}` }],
     address: `${r.label}.sovereignwebsite.site`,
+    signed: r.signed === true,
     findings: [],
     blockers: [],
   };
@@ -54,13 +55,20 @@ export async function preflight(plan, get) {
     if (used.length) stop(`${w.path} uses secrets ${used.join(', ')}, which stay behind`);
     if (/create-github-app-token/.test(text)) stop(`${w.path} mints an App token, which will not work after the move`);
   }
+  // Signed-commit checks: a SovereignWebsite agent's commit fails them until the repository lists its key.
   const keys = await get(owner, `/repos/${owner}/${repo}/contents/team/keys.json?ref=${src.data.default_branch}`);
-  if (keys.status === 200) f('team/keys.json present: signed-commit checks may name @AgentiCCells keys (move as they are; re-keying is a later request)');
+  const sigs = await get(owner, `/repos/${owner}/${repo}/contents/build/check-signatures.mjs?ref=${src.data.default_branch}`);
+  const isSigned = keys.status === 200 || sigs.status === 200;
+  if (isSigned && !plan.signed) stop('the repository checks signed commits (team/keys.json or build/check-signatures.mjs) but the request does not say "signed": true');
+  else if (isSigned) f('signed-commit checks present, as the request says: keys move as they are; re-keying is a later request');
+  else if (plan.signed) f('the request says signed, but no signed-commit check was found');
   const pg = await get(owner, `/repos/${owner}/${repo}/pages`);
   if (pg.status === 200) f(`Pages: ${pg.data.build_type || 'legacy'}, custom domain ${pg.data.cname || 'none'}, HTTPS ${pg.data.https_enforced ? 'enforced' : 'not enforced'}`);
   else f('Pages: off');
   const env = await get(owner, `/repos/${owner}/${repo}/environments`);
   if (env.status === 200) f(`environments: ${(env.data.environments || []).map((e) => e.name).join(', ') || 'none'}`);
+  const gp = await get(owner, `/repos/${owner}/${repo}/environments/github-pages/deployment-branch-policies`);
+  if (gp.status === 200) { plan.pages_branches = (gp.data.branch_policies || []).map((b) => b.name); f(`github-pages may deploy from: ${plan.pages_branches.join(', ') || 'protected branches only'} (set again after the move if missing)`); }
   const rs = await get(owner, `/repos/${owner}/${repo}/rulesets`);
   if (Array.isArray(rs.data)) f(`rulesets: ${rs.data.map((x) => x.name).join(', ') || 'none'}`);
   const addr = plan.from.address;
