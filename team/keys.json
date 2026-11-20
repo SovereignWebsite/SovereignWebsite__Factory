@@ -156,6 +156,25 @@
         "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAxgaWtRidMfSYvHctgxJa\nIEMN/uFJ0GulXrckD0Euue83Jg01UoArNWSiQZCNY2LNDpwz7GMgwSj3YnVygaAO\nNYK6WCFcDmwPcJ7SSIZHUFtpNCX8O1dnJjcO1hu+9Mi8ZvDRBw0c9pRXmiZDpGrL\n44CpOoi3MiawC4aGQQJSa1SeU9vKFtoRSMu8j3XN/LXpyfp8bHtz+aEbhbHQUpqO\nAd5a/MaidvuFUqobU1STIhOwNUB/AYruqfmz6CKdNWJTJ3fpBkzpF/wbSUhtFxrm\nSzxfqcRFu1lnnXLkQkPAmwSYEtVm0TZBK8p4cLXB3jY/D+arhdRq0Uhx60WwhRsr\nsI87y6qRlaFD8h3WJ800SlDLX8juCvw7gDBY7JgVY+7U0F0UmcW3k1a1MFwZqqfp\n1q+3KiwZfu2UBTCE7rJX8amHtrSbFS0fKkoN7fiEHzECRo0mMbLpGb81VxqQFJPX\nkxRChXiPDq1q6tS5L1DZ+AyQ2ND84v+Mt8vkiIINq+4296MlKk13zPaj0Yxsaoai\n5ODhCaxueFQToHMxqiQwa2bkgjbESsxhgARrbcEz2o6X++0y4froxyI+HSTqxyJe\njZ0ik8VRPUmXL9NAtoiL2dNC8qO2ptnwmfDVAxnK4ZgsX2WNT6Sn8ZZ0JPttjFEI\nTmV+MvIO4GjjjPYOAMyNvKUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
         "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEtoBUJfMDn0sAPTxM26p2j6HCzy6X\nr/T2c7JDkPacbMY+DbZQN8DcdspdT4ib8TfsnGhVJ3odaxa7P+8ZpnpZYQ==\n-----END PUBLIC KEY-----\n"
       }
+    },
+    {
+      "id": "emily-b-sovereignwebsite",
+      "agent": "emily.b@SovereignWebsite.dinis",
+      "role": "Keeps Site__Artist__Emily-Cruz: its pages, and Dinis's photos and videos for it. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 20 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
+      "created": "2026-11-20",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwBvXb8qAME1TexsQss",
+      "fingerprint": "sha256:01ce91ec1ceb37f0",
+      "signing_fingerprint": "sha256:bd2723b8f28a4681",
+      "bundle": {
+        "v": 1,
+        "label": "emily.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:01ce91ec1ceb37f0",
+        "signing_fingerprint": "sha256:bd2723b8f28a4681",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAipyKD826NVhirydSZIOl\nZ8wgQFfzV9tRan51dguOXUeM+s0Om1TRqMKuhe65b/CC5Ev3P+tvacPDVfShUEYY\nmdrDHfkxWz0eiffZBagpvoZXtbIitMooJNDBpD24yLwPT4lfBL7LZuxhbY5cVbcJ\nQv6svYJyRwx9bbH3Iy15awCJmI5y5f37thA/6fHxT+4dQwdYL6LRh7ISNZC76CVm\nkgGmcNBvYYrTVYIAD8gfrBqkSVyZbeRWsAkG4iiMXzvR4mmAIfjHs86EEEHxCwdV\npJB1d8ESQlSg7mFLmv8nPCS/NXPNPELNWs9WHEw/1zOwslvsJyd8yQDvEZc+Qj9g\nwCGZLrSCsVGZz/PlRZzFEzMjI3UCslaMOH5BYJ+e+TSAMA9Tsp8zksyGvzpCMUNx\ng+JGMEBtFJxfj3je8dVKryBqWoddZsV7QyqYMKNneW0cpg8i2ofC/xnjIJFSYAes\nMWcQVRTPTe3CaIjYBYQABCPA3lbqogkws29wk9ffH/LqotNMC5oAvP4BeyFDzptx\nCNHEfWuhcfs6tsAfjX28PJvi0d29mT6ma5L/O05DkSJ5Fu+FyrwjYKZuM+ZBnw8h\n09/9QCsdm7YmgGqr7ctMGOxYfWToVm3lT1EOP3mSEvJ1kXrpnn7W6YwwtFAKWhmi\nvvMy9Qm2CBykgnuVr5XWVt0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYymMQEGEFeJAe+N6l07aRVuouovu\naDEQGAcLyX9Ex4GcKS3VQh5ywPd/Y/U5/+qoDN84vOh3f/YkgM6TXKO6OQ==\n-----END PUBLIC KEY-----\n"
+      }
     }
   ]
 }
