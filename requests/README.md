@@ -56,7 +56,7 @@ Each SWS agent has its own site, `<role>.agents.sovereignweb.site` (repository `
 
 ## People who write to their own site
 
-A request may name the people who may push to its repository, by GitHub login, with push (write) only: `"collaborators": { "<login>": "push" }`. Org apply invites them; a login GitHub does not know is reported in the run summary, never invited. They push to dev like the agents (main stays locked).
+A request may name the people who may push to its repository, by GitHub login, with push (write) only: `"collaborators": { "<login>": "push" }`. Org apply invites them; a login GitHub does not know is reported in the run summary, never invited. They push to dev like the agents (main stays locked). An owner who uses Claude with their repository must also be an organisation member: as an outside collaborator Claude's GitHub check fails ("SovereignWebsite needs reconnecting"), even with the Claude App on all repositories (Kate Curtis-Evans, 20 November 2026). The route that works, done by Dinis by hand for now: the organisation's base permission is "No permission" (the agents' team holds the repositories), the owner is invited as a member with no teams and keeps their direct write on their own repository, accepts at https://github.com/orgs/SovereignWebsite/invitation (the email's link may not offer it), then presses "Check again" in Claude. Each site's /start/ page says the same.
 
 ## Public or private
 
