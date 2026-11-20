@@ -179,9 +179,7 @@
       ],
       "environment": "transfer",
       "environment_rules": {
-        "required_reviewers": [
-          "Dinis Cruz"
-        ],
+        "required_reviewers": [],
         "deployment_branches": [
           "dev"
         ],
@@ -216,8 +214,7 @@
       "needs": [
         "requests/<id>/site.json with a from block and apply \"dry-run\", merged by Dinis",
         "a dry run whose preflight passed",
-        "a second commit setting apply to \"real\", merged by Dinis",
-        "Dinis approving the run in the transfer environment"
+        "a second commit setting apply to \"real\", merged by Dinis"
       ],
       "refused_always": [
         "repo.transfer_out",
@@ -232,7 +229,8 @@
       ],
       "note": "The plan job is read-only (the factory App on AgentiCCells, read). Only the apply job, in the transfer environment, holds the user token, and it makes one call: POST /repos/AgentiCCells/<repo>/transfer with new_owner SovereignWebsite and new_name Site__<label>. Without TRANSFER_USER_TOKEN it prints that call for Dinis to make. The repository list is explicit; adding one is a policy change Dinis merges. Org apply keeps repo.transfer refused.",
       "controlled_source": "Dinis, 20 Nov 2026 ~10:20 UTC in the factory.b session: \"you can only do transfers for domains that we control. So you can never do a transfer for a domain outside of our control. That is going to be a separate flow\". A move from or to an owner or domain we do not control is refused here; it will be its own pipeline, with a shorter-lived token.",
-      "after_the_move": "migration.b@SovereignWebsite.dinis commits the moved-to-SovereignWebsite update in each moved repository, under that repository's own rules (Dinis, 20 Nov 2026 ~10:20 UTC in the factory.b session)."
+      "after_the_move": "migration.b@SovereignWebsite.dinis commits the moved-to-SovereignWebsite update in each moved repository, under that repository's own rules (Dinis, 20 Nov 2026 ~10:20 UTC in the factory.b session).",
+      "reviewer_source": "Dinis, 20 Nov 2026 ~12:25 UTC in the factory.b session: \"I didn't check the required reviewer so let's see if this works end to end automatically\". So a real move runs once its second commit (apply \"real\") lands on dev; the dry run first, the explicit repository list and the controlled owners and domains still apply."
     }
   },
   "privileges": [
@@ -282,7 +280,7 @@
       "holder": "github-user-token:Dinis Cruz via github-app:sovereignwebsite-transfer",
       "permission": "administration:write (repository), metadata:read; the App installed only on the repositories in transfer-apply limits and on SovereignWebsite",
       "why": "transfer-apply: POST /repos/{owner}/{repo}/transfer accepts a user access token only (GitHub App permissions page, 20 Nov 2026); held as TRANSFER_USER_TOKEN in the transfer environment, a long-lived token for the waves of moves between organisations we control, revoked when they are done",
-      "state": "Dinis, 20 Nov 2026: yes to a new App sovereignwebsite-transfer and a longer-lived token; App and token for Dinis to make"
+      "state": "made by Dinis, 20 Nov 2026 ~12:15 UTC: App sovereignwebsite-transfer (repository Administration read and write, metadata read), installed on AgentiCCells with all repositories; TRANSFER_USER_TOKEN stored in the transfer environment"
     },
     {
       "holder": "github-app:agenticcells-site-factory",
