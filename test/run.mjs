@@ -368,4 +368,10 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   const rs = R.repos([d]); assert.ok(rs[0].aka.includes('Site__Pipeline-Demo'), 'the ungrouped capitalised name is an aka');
   assert.deepEqual(rs.slice(1).map((x) => x.cname), d.previous, 'both old addresses keep a redirect');
   assert.ok(rs[1].aka.includes('Redirect__Pipeline-Demo'), 'the existing redirect repository is renamed, not made again'); }
+// liveRepos reads each repository's own record, so the merge settings the list endpoint leaves out are compared
+// against real values and not applied again on every run.
+{ const src = readFileSync('build/org-plan.mjs', 'utf8');
+  assert.ok(/gh\('GET', `\/repos\/\$\{org\}\/\$\{listed\.name\}`\)/.test(src), "liveRepos fetches each repository's full record");
+  const want = { ...org.defaults, name: 'R', description: 'd' }; const have = { ...org.defaults, description: 'd', default_branch: 'dev', has_dev: true, teams: { 'sovereignwebsite-agents-ci': 'push' }, protected: true };
+  assert.ok(!plan({ ...org, repos: [want] }, { R: have }).actions.some((a) => a.action === 'repo.update_settings'), 'settings that match are not applied again'); }
 console.log('OK (tests)');

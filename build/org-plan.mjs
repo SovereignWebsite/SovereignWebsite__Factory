@@ -79,7 +79,11 @@ export async function liveRepos(org, spec = {}) {
   for (let page = 1; ; page++) {
     const r = await gh('GET', `/orgs/${org}/repos?per_page=100&page=${page}`);
     if (r.status !== 200) throw new Error(`listing repositories: HTTP ${r.status}`);
-    for (const x of r.data) {
+    for (const listed of r.data) {
+      // The list endpoint leaves out the merge settings (delete_branch_on_merge, allow_*_merge), so every run saw
+      // them as different and applied them again. The repository's own record has them.
+      const full = await gh('GET', `/repos/${org}/${listed.name}`);
+      const x = full.status === 200 ? { ...listed, ...full.data } : listed;
       const dev = await gh('GET', `/repos/${org}/${x.name}/branches/dev`);
       const want = spec[x.name] || {};
       let cname = null, seed_missing = [];
