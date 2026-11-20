@@ -3,6 +3,7 @@
 // Seeded by SovereignWebsite__Factory. No dependencies (HTML validity and axe run as their own steps).
 import { readFileSync, readdirSync, existsSync, statSync, appendFileSync } from 'node:fs';
 import { join, relative, dirname, posix } from 'node:path';
+import { inflateRawSync } from 'node:zlib';
 const dir = process.argv[2] || '_site';
 const host = existsSync(join(dir, 'CNAME')) ? readFileSync(join(dir, 'CNAME'), 'utf8').trim() : '';
 const files = []; const walk = (d) => { for (const e of readdirSync(d, { withFileTypes: true })) { const p = join(d, e.name); e.isDirectory() ? walk(p) : files.push(p); } }; walk(dir);
@@ -56,7 +57,29 @@ add('No family strip', strip);
 // 5. Leak scan: no private key, token or secret in any published file.
 const LEAK = [/-----BEGIN [A-Z ]*PRIVATE KEY-----/, /\bgh[pousr]_[A-Za-z0-9]{30,}/, /\bgithub_pat_[A-Za-z0-9_]{40,}/, /\bAKIA[0-9A-Z]{16}\b/, /\bsk-[A-Za-z0-9_-]{32,}/, /\bxox[abpr]-[A-Za-z0-9-]{20,}/, /\bAIza[0-9A-Za-z_-]{35}\b/];
 const leaks = [];
-for (const f of files) { if (statSync(f).size > 5e6 || f.endsWith('.zip')) continue; /* a sealed vault is ciphertext: random bytes, not text */ const s = readFileSync(f).toString('latin1'); for (const re of LEAK) if (re.test(s)) leaks.push(`${relative(dir, f)}: matches ${re.source.slice(0, 24)}`); }
+// A zip is opened and every entry inside it is scanned (a sealed vault's entries are ciphertext and pass; a plain zip
+// with a key inside does not). A zip that cannot be read fails the scan (security.b, 20 November 2026).
+function zipEntries(b) {
+  let e = -1; for (let i = b.length - 22; i >= Math.max(0, b.length - 65558); i--) if (b.readUInt32LE(i) === 0x06054b50) { e = i; break; }
+  if (e < 0) throw new Error('no end of central directory');
+  const n = b.readUInt16LE(e + 10); let p = b.readUInt32LE(e + 16); const out = [];
+  for (let k = 0; k < n; k++) {
+    if (b.readUInt32LE(p) !== 0x02014b50) throw new Error('damaged central directory');
+    const method = b.readUInt16LE(p + 10), csize = b.readUInt32LE(p + 20), nlen = b.readUInt16LE(p + 28), xlen = b.readUInt16LE(p + 30), clen = b.readUInt16LE(p + 32), local = b.readUInt32LE(p + 42);
+    const name = b.subarray(p + 46, p + 46 + nlen).toString('utf8');
+    const start = local + 30 + b.readUInt16LE(local + 26) + b.readUInt16LE(local + 28); const raw = b.subarray(start, start + csize);
+    if (!name.endsWith('/')) { if (method === 0) out.push([name, raw]); else if (method === 8) out.push([name, inflateRawSync(raw)]); else throw new Error(`${name}: compression method ${method}`); }
+    p += 46 + nlen + xlen + clen;
+  }
+  return out;
+}
+const scan = (label, buf) => { const s = buf.toString('latin1'); for (const re of LEAK) if (re.test(s)) leaks.push(`${label}: matches ${re.source.slice(0, 24)}`); };
+for (const f of files) {
+  const at = relative(dir, f); const b = readFileSync(f);
+  if (f.endsWith('.zip')) { try { for (const [name, data] of zipEntries(b)) scan(`${at}!${name}`, data); } catch (e) { leaks.push(`${at}: not a readable zip (${e.message})`); } continue; }
+  if (b.length > 5e6) continue;
+  scan(at, b);
+}
 add('Leak scan', leaks);
 
 const failed = results.filter((r) => r.errors.length);

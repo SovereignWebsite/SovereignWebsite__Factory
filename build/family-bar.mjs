@@ -16,8 +16,10 @@ let block = seed(credit ? 'family-credit.html' : 'family-bar.html').trim();
 if (!credit && arg) block = block.replaceAll(`href="${arg}"`, `href="${arg}" aria-current="true"`);
 const css = seed(credit ? 'family-credit.css' : 'family-bar.css');
 let n = 0;
-for (const f of readdirSync(dir).filter((x) => x.endsWith('.html'))) {
-  const p = join(dir, f); let s = readFileSync(p, 'utf8');
+const pagesIn = (d) => readdirSync(d, { withFileTypes: true }).flatMap((e) => e.isDirectory() ? pagesIn(join(d, e.name)) : e.name.endsWith('.html') ? [join(d, e.name)] : []);
+// Every page, in subfolders too (designs/*.html were missed before; emily.b, 20 November 2026).
+for (const p of pagesIn(dir)) {
+  let s = readFileSync(p, 'utf8');
   s = s.replace(/\n?<nav class="family"[\s\S]*?<\/nav>/, '').replace(/\n?<details class="family-credit">[\s\S]*?<\/details>/, '');
   if (credit) {
     // Straight after <body> (and after the skip link if there is one): CSS puts it in the top right corner.

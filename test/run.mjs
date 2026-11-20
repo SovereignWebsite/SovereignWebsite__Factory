@@ -310,4 +310,31 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   assert.ok(b.includes('/assets/sws-version.css') && !b.includes("'<style>"), 'the chip CSS is a file, not inline');
   for (const t of ['gate-template', 'agent-template']) for (const f of ['build.mjs', 'quality.mjs', 'share-check.mjs', 'axe.mjs']) assert.equal(readFileSync(`seed/${t}/.github/ci/${f}`, 'utf8'), readFileSync(`seed/site-template/.github/ci/${f}`, 'utf8'), `${t} ci/${f} matches the site template`);
 }
+// The leak scan opens every zip: a sealed vault (manifest plus ciphertext) passes, a plain zip with a key inside
+// fails, and a file named .zip that is not a zip fails. family-bar.mjs reaches pages in subfolders.
+{
+  const { mkdtempSync, mkdirSync, writeFileSync: w, readFileSync: r } = await import('node:fs');
+  const { execFileSync } = await import('node:child_process');
+  const { tmpdir } = await import('node:os');
+  const { randomBytes, crc32 } = await import('node:crypto').then((c) => ({ randomBytes: c.randomBytes })).then(async (o) => ({ ...o, crc32: (await import('node:zlib')).crc32 }));
+  const zip = (entries) => { const parts = [], cd = []; let off = 0;
+    for (const [name, data] of entries) { const n = Buffer.from(name), h = Buffer.alloc(30); h.writeUInt32LE(0x04034b50, 0); h.writeUInt16LE(20, 4); h.writeUInt32LE(crc32(data), 14); h.writeUInt32LE(data.length, 18); h.writeUInt32LE(data.length, 22); h.writeUInt16LE(n.length, 26);
+      const c = Buffer.alloc(46); c.writeUInt32LE(0x02014b50, 0); c.writeUInt16LE(20, 4); c.writeUInt16LE(20, 6); c.writeUInt32LE(crc32(data), 16); c.writeUInt32LE(data.length, 20); c.writeUInt32LE(data.length, 24); c.writeUInt16LE(n.length, 28); c.writeUInt32LE(off, 42);
+      parts.push(h, n, data); cd.push(c, n); off += 30 + n.length + data.length; }
+    const cdb = Buffer.concat(cd), e = Buffer.alloc(22); e.writeUInt32LE(0x06054b50, 0); e.writeUInt16LE(entries.length, 8); e.writeUInt16LE(entries.length, 10); e.writeUInt32LE(cdb.length, 12); e.writeUInt32LE(off, 16);
+    return Buffer.concat([...parts, cdb, e]); };
+  const d = mkdtempSync(tmpdir() + '/zip-'); mkdirSync(d + '/private');
+  const q = () => { try { execFileSync('node', ['seed/gate-template/.github/ci/quality.mjs', d], { stdio: 'pipe' }); return 0; } catch (e) { return e.status; } };
+  w(d + '/index.html', '<html><body><main>x</main></body></html>');
+  w(d + '/private/v.zip', zip([['manifest.json', Buffer.from('{"v":1}')], ['objects/ab', randomBytes(4096)]]));
+  assert.equal(q(), 0, 'a sealed vault (ciphertext entries) passes the leak scan');
+  w(d + '/private/v.zip', zip([['notes.txt', Buffer.from('-----BEGIN OPENSSH PRIVATE' + ' KEY-----')]]));
+  assert.equal(q(), 1, 'a plain zip with a key inside fails');
+  w(d + '/private/v.zip', randomBytes(2048));
+  assert.equal(q(), 1, 'a .zip that is not a readable zip fails');
+  const s = mkdtempSync(tmpdir() + '/fam2-'); mkdirSync(s + '/designs');
+  for (const p of ['index.html', 'designs/a.html']) w(s + '/' + p, '<html><body><main>x</main><footer>f</footer></body></html>');
+  execFileSync('node', ['build/family-bar.mjs', s, '--credit']);
+  assert.ok(r(s + '/designs/a.html', 'utf8').includes('class="family-credit"'), 'family-bar.mjs reaches designs/*.html');
+}
 console.log('OK (tests)');
