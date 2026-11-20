@@ -60,6 +60,55 @@
         "transfer, delete or archive a repository"
       ],
       "source": "Dinis, 20 Nov 2026 ~09:45 UTC in the conductor session: \"yes to adding migration.b to the policy, limited to board/migration/**\"."
+    },
+    "sites.b@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67",
+      "may_change": [
+        "requests/**"
+      ],
+      "needs_dinis_merge": [
+        "requests/**"
+      ],
+      "branches": [
+        "dev"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "name a private person without their consent",
+        "push a request before Dinis says yes to that site"
+      ],
+      "source": "Dinis, 20 Nov 2026 ~10:10 UTC in the conductor session: \"Yes to those policy changes\"."
+    },
+    "factory.b@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+      "may_change": [
+        ".github/**",
+        "build/**",
+        "test/**",
+        "org/**",
+        "seed/**",
+        "docs/aws-oidc.md",
+        ".gitignore",
+        "policy/**"
+      ],
+      "needs_dinis_merge": [
+        "policy/**",
+        ".github/**",
+        "build/**",
+        "org/**",
+        "seed/**"
+      ],
+      "branches": [
+        "dev"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "name a private prospect"
+      ],
+      "source": "Dinis, 20 Nov 2026 ~10:10 UTC in the conductor session: \"Yes to those policy changes\".",
+      "note": "policy/** is for proposals: a change there takes effect only when Dinis merges it."
     }
   },
   "pipelines": {

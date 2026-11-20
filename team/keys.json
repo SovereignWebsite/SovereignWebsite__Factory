@@ -42,6 +42,44 @@
         "fingerprint": "sha256:08724e25fc6140e5",
         "signing_fingerprint": "sha256:cc8f2fd9b495b6f8"
       }
+    },
+    {
+      "id": "sites-b-sovereignwebsite",
+      "agent": "sites.b@SovereignWebsite.dinis",
+      "role": "New sites through the Factory (requests/) and their content in the Site__* repositories. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 20 November 2026 with sgit pki keygen; public bundle from sgit pki export, sent to the conductor. Only the public half is here.",
+      "created": "2026-11-20",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67",
+      "fingerprint": "sha256:465dbb2f12e2a103",
+      "signing_fingerprint": "sha256:6fa7d782ea144422",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAof9DF7QHlMQ0x6rgYQhx\nuJyLnKjHMB2svDgXfXw9zMHWz59Z0dhT49gppc2Dl/xngVKuI0G4Rr3vAJEbklJR\nah3Vw5BoC0fJqQN7RpinJldukA8v7PqAp4WpJhOADsWa6mQ/KdCqsWewlNl+9BWy\nmFfwzU0KkRk43lJQRyqOYq7tkBLk/14BrKKydL8DbByJ7+MUjTKvF08VE0seYQ1S\nCnc+cBvCR24yvXvz36qWYDEcm2pLyPQjEPQMNo5D2AqxoWw+pBn/YgJIZAIl5byM\nHnAMD5jpvMhc3adfxokWPVaMp9ZPBonvLTfoxWUqdB99M655LZB2NiUiOpSoeWy0\nxuVKl2QPZ5fmuuhHl+1P4Sj6hm62G/Qnf4UYrFmXrvyE5vhBbC+3PCZBbpcpHh8W\nM7+O3vSJCKrDr8XKtOX0Rc7c7t18V3DLKVBJS/mmZgtg/UX3s0tfHuE/79JVvzen\nOZcrumS3W5hUAgUlUEhKwj8EtiwB6ywYqUZUvaN2Ou9k/Kh+uIEZe/FPEypOxb5Z\nAulM8qKw1vjq4/e3pv/WIVFyAAvElrE0D98jos67snZdA0QrtFizQToZ3R7j6oFG\nEawaQigi6XJ5qv1CzYk/T6pFx0VIXsbR2nVteXvLtFjzJQ5a7UDInjOxkZPEaTp3\nsL4vxQ7lxtV5ZM2CcBRPHKUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEhsNdbvjduAWaFIeefwPg0VFFH/Nq\nwbcqbxCL5RTD/5dML9e8b/Q4y3cvmob1qlOAuWPk6fQ6DpDs5nOatL6qRA==\n-----END PUBLIC KEY-----\n",
+        "label": "sites.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:465dbb2f12e2a103",
+        "signing_fingerprint": "sha256:6fa7d782ea144422"
+      }
+    },
+    {
+      "id": "factory-b-sovereignwebsite",
+      "agent": "factory.b@SovereignWebsite.dinis",
+      "role": "The SovereignWebsite Factory: workflows, build scripts and tests, org and DNS as code, starter files for new repositories, and policy proposals. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 20 November 2026 with sgit pki keygen; public bundle from sgit pki export, sent to the conductor. Only the public half is here.",
+      "created": "2026-11-20",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+      "fingerprint": "sha256:01baa0ccc31e0120",
+      "signing_fingerprint": "sha256:2b10c38549602a84",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAqZUb3t/rDUCUXMU36dUj\nHj4SBUpmK2CXmk2fqUAzFXsP1iA66yQb2y5YE15VCmIQNJmfIn7zXrVPDeQ0rM9L\nABQYXo3XqgFj2lxedA5N7Ah0aOFq/Gw4YHSulxCMPLi4NHZW/hgWAsLTVJbRzSjr\nH161tL80OSxIo3QHq5FMtM8EC6nKx7gaPrrpTMVcl98xhLiitwYrLb2P3DEUPDye\ndq+YVfwyaSEepG3D2j7Wix8PjCmo9iL9eg5CTUcJ/dOrh7OD8sMVPH8fcaLAhJmv\nkps87gurWsrPvj1lwA2cCraZQcaaMeA3a25l5ec06A05r/ONOqERfcTd7F5O9XF3\nkIWyToU606Y55728PBj3ZkFB4a/oDknRLqLpnbN3G65bGh+sCvS9LZvwbXtJmX8i\nERRbEaUBRSvTbVrC7vKYJIaOtoSZpsmsGDpCN+tWcZo4enEAuIkix0u6fSeO4565\nWfwuVvzCswIlISW8BoHGa9HoxGeUstj/P8Azz6kyDEGiponrl8ZuRu6EoFhWt4lf\nWU+2Fimlp5BL7nO18uDGpSHZxzc4N8AvzxvVffGmJYEGGGqUC+1h9NhVVn3Hzan6\nDZbZVvIKAQbxzAF5GJEdzFLPXNHHdHg1gmbJ0W8yGgvs+hw9gC+FEzCD1dpAgDbN\ngfrq6nP13zSNEVHAqbfnlv0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEjrk5H9lY0aa6IsxVbFdwBsCFnRJi\n18zQNBZQq+4y6uFCJ5WDBbKNqqcsd6B4HqjTM9f6ql5vy52aFvCM21mn1g==\n-----END PUBLIC KEY-----\n",
+        "label": "factory.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:01baa0ccc31e0120",
+        "signing_fingerprint": "sha256:2b10c38549602a84"
+      }
     }
   ]
 }
