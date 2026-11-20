@@ -17,6 +17,10 @@ on:
 permissions:
   contents: read
 concurrency: transfer-apply
+# bash with pipefail, so a step piped into tee still fails when its command fails.
+defaults:
+  run:
+    shell: bash
 jobs:
   plan:
     runs-on: ubuntu-latest

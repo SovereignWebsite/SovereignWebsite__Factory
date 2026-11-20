@@ -84,7 +84,7 @@ export function markdown(p) {
   const l = [`### Transfer plan: ${p.request} (${p.apply})`, `- \`repo.transfer_in\` ${a.target} to ${a.to}, address ${p.address}`];
   for (const x of p.findings) l.push(`- ${x}`);
   for (const x of p.blockers) l.push(`- **blocker:** ${x}`);
-  l.push(p.blockers.length ? '\nStopped: fix the blockers first.' : p.apply === 'real' ? '\nReady: the apply job waits for Dinis in the transfer environment.' : '\nDry run: nothing moves. Change apply to "real" in a second commit to move.');
+  l.push(p.blockers.length ? '\nStopped: fix the blockers first.' : p.apply === 'real' ? '\nReady: the apply job runs in the transfer environment (with a required reviewer there, after their approval).' : '\nDry run: nothing moves. Change apply to "real" in a second commit to move.');
   return l.join('\n');
 }
 
