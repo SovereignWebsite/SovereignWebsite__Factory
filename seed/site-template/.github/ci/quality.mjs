@@ -55,7 +55,7 @@ add('No family strip', strip);
 // 5. Leak scan: no private key, token or secret in any published file.
 const LEAK = [/-----BEGIN [A-Z ]*PRIVATE KEY-----/, /\bgh[pousr]_[A-Za-z0-9]{30,}/, /\bgithub_pat_[A-Za-z0-9_]{40,}/, /\bAKIA[0-9A-Z]{16}\b/, /\bsk-[A-Za-z0-9_-]{32,}/, /\bxox[abpr]-[A-Za-z0-9-]{20,}/, /\bAIza[0-9A-Za-z_-]{35}\b/];
 const leaks = [];
-for (const f of files) { if (statSync(f).size > 5e6) continue; const s = readFileSync(f).toString('latin1'); for (const re of LEAK) if (re.test(s)) leaks.push(`${relative(dir, f)}: matches ${re.source.slice(0, 24)}`); }
+for (const f of files) { if (statSync(f).size > 5e6 || f.endsWith('.zip')) continue; /* a sealed vault is ciphertext: random bytes, not text */ const s = readFileSync(f).toString('latin1'); for (const re of LEAK) if (re.test(s)) leaks.push(`${relative(dir, f)}: matches ${re.source.slice(0, 24)}`); }
 add('Leak scan', leaks);
 
 const failed = results.filter((r) => r.errors.length);

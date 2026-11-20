@@ -292,4 +292,11 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   w(home, ok.replace('<main', '<nav class="family"></nav><main')); assert.equal(run('.github/ci/quality.mjs', '_site'), 1, 'the family strip fails');
   w(home, ok.replace('</main>', '<p>-----BEGIN OPENSSH PRIVATE' + ' KEY-----</p></main>')); assert.equal(run('.github/ci/quality.mjs', '_site'), 1, 'a private key fails');
 }
+// A gated (vault) site runs the same pipeline, but publishes nothing about the private site beyond its holding page.
+{
+  const g = seedFiles('seed/gate-template');
+  for (const must of ['.github/workflows/pages.yml', '.github/ci/build.mjs', '.github/ci/quality.mjs', '.github/ci/share-check.mjs', 'site/assets/share/card-1200x630.jpg']) assert.ok(g.includes(must), `gate-template seeds ${must}`);
+  for (const never of ['site/start/index.html', 'site/agents/index.html', 'site/admin/index.html', 'site/llms.txt', 'site/data/agents.json']) assert.ok(!g.includes(never), `gate-template never seeds ${never}`);
+  assert.equal(readFileSync('seed/gate-template/.github/workflows/pages.yml', 'utf8'), readFileSync('seed/site-template/.github/workflows/pages.yml', 'utf8'), 'one pipeline for both templates');
+}
 console.log('OK (tests)');
