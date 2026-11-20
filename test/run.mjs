@@ -239,4 +239,16 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   assert.ok(t.includes('class="family-credit"') && !t.includes('<nav class="family"'), 'new sites start with the credit, not the bar');
   assert.ok(r('seed/shared/family-credit.css', 'utf8').includes('[data-family-credit="off"]'), 'the owner can turn the credit off with one attribute');
 }
+// Every customer site starts with Start here, Use with your AI (llms.txt, data/agents.json) and How this site was made.
+{
+  const sf = seedFiles('seed/site-template');
+  for (const must of ['site/start/index.html', 'site/agents/index.html', 'site/admin/index.html', 'site/llms.txt', 'site/data/agents.json']) assert.ok(sf.includes(must), `site-template seeds ${must}`);
+  const j = JSON.parse(readFileSync('seed/site-template/site/data/agents.json', 'utf8').replaceAll('{{host}}', 'x.y').replaceAll('{{repo}}', 'Site__X'));
+  assert.ok(Array.isArray(j.agents) && j.agents.length === 0, 'agents.json starts empty: each site agent adds itself, nothing invented');
+  for (const p of ['index.html', 'start/index.html', 'agents/index.html', 'admin/index.html']) {
+    const h = readFileSync('seed/site-template/site/' + p, 'utf8');
+    for (const l of ['href="/start/"', 'href="/agents/"', 'href="/admin/"']) assert.ok(h.includes(l), `${p} links ${l}`);
+    assert.ok(h.includes('class="family-credit"') && !h.includes('<nav class="family"'), `${p} carries the pop-up, not the bar`);
+  }
+}
 console.log('OK (tests)');
