@@ -232,6 +232,25 @@
         "fingerprint": "sha256:fec56e61edc16577",
         "signing_fingerprint": "sha256:7b80c51f6e622eff"
       }
+    },
+    {
+      "id": "kate-curtis-evans-b-sovereignwebsite",
+      "agent": "kate-curtis-evans.b@SovereignWebsite.dinis",
+      "role": "Keeps Kate Curtis-Evans's site, Site__Founder__Kate-Curtis-Evans, made by sites.b at Dinis Cruz's request. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 20 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
+      "created": "2026-11-20",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwEREYzo2rPJ4cv4XVN",
+      "fingerprint": "sha256:ce3c9a0ea48f232b",
+      "signing_fingerprint": "sha256:af439e6f8231af8d",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwmhFaj0yhNerrz2x8qy6\nV8DHKGSNI64Wgengwz2+4KBwNr1nMN5QGbV8DAcR2K+AL7XuVA0j5rGyK638SA/H\n9+efxXIp+aDwWgVEDj40+Rpgc2pGrNcOEJvsAHvuU9w1HDVtXYFLWpeZ9sjtTQxC\nmB3uVtLIbARMftZWVmklmxGJ/r3DMHirslzs+Fg+8BbQ75fVvBDAkGaUm+UE0E/N\nZ/9BJ8egDoaj+Ctqldv2qXuUN1pvNHtlACS82aINN88SP+J4SnZ4wgyrP0ye15sk\nwPUEt5hYVc0lAH4DHvWVe2ROU9cXB6FJ/jynIM0mzC19lSbuojoKKgoKfOLIzm3Z\nc36fLurO0zL1JMnWRUBkbw496aWsZPCM8DZSMl017bp8urXrLdB5lN7UwJcUOtTH\n3ThYjEH7tWMnbyOe/n8tkEn85u06/U6gGuS94kPcmAVC7rYx2IJ2PwyMLEhnz/nn\nfBJdwMNaG96Kw655whnv0WlMQJuj+eqxBhTlPnYmnCHx5vJEgl4vRmisd5JGTi5y\nFLgUyJMGUqB1HaJVo1KYSsYculcltGTGKq0h7UGiIZJq9QGBk0wO3dRqzOoCnVdK\nxCPI10SM/VhHHzQHK6dA9ttzo2qXKmd6IP3pjNHm7kRTh0hZ4M+WNIr5t5fJKyNb\nj9/0C8LCV8Sio7nGkPJ9B7sCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEedqd/Nc6MjerVw9HpLbjGILrRLnr\nWyZ/a+0Ey35W0xtlyfyfqg2sXME7vWFZ6y2vctQbE2udyIe3WTmkQ0hoQg==\n-----END PUBLIC KEY-----\n",
+        "label": "kate-curtis-evans.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:ce3c9a0ea48f232b",
+        "signing_fingerprint": "sha256:af439e6f8231af8d"
+      }
     }
   ]
 }
