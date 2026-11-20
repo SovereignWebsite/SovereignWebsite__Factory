@@ -274,7 +274,8 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   const { execFileSync } = await import('node:child_process');
   const { tmpdir } = await import('node:os');
   const wf = r('seed/site-template/.github/workflows/pages.yml', 'utf8');
-  for (const step of ['node .github/ci/build.mjs', 'node .github/ci/quality.mjs _site', 'html-validate@', 'node .github/ci/axe.mjs _site', 'git push origin "$VERSION"']) assert.ok(wf.includes(step), `pages.yml runs ${step}`);
+  for (const step of ['node .github/ci/build.mjs', 'node .github/ci/quality.mjs _site', 'html-validate@8.24.0 --config .github/ci/htmlvalidate.json', 'node .github/ci/axe.mjs _site', 'git push origin "$VERSION"']) assert.ok(wf.includes(step), `pages.yml runs ${step}`);
+  assert.ok(!wf.includes('--preset'), 'html-validate takes its config file, not an unknown --preset option');
   assert.ok(wf.indexOf('quality.mjs') < wf.indexOf('upload-pages-artifact') && wf.indexOf('deploy-pages') < wf.indexOf('git tag "$VERSION"'), 'checks before deploy, tag after deploy');
   const d = mkdtempSync(tmpdir() + '/ci-'); cpSync('seed/site-template', d, { recursive: true });
   const fill = (p) => { for (const e of ls(p, { withFileTypes: true })) { const q = p + '/' + e.name; if (e.isDirectory()) fill(q); else if (/\.(html|txt|json)$|CNAME$/.test(e.name)) w(q, r(q, 'utf8').replaceAll('{{host}}', 'a.cv.sovereignweb.site').replaceAll('{{title}}', 'A').replaceAll('{{description}}', 'B').replaceAll('{{repo}}', 'Site__CV__A')); } };

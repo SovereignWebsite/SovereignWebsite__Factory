@@ -46,7 +46,7 @@ jobs:
       - name: Links, em dashes, family strip and leak scan
         run: node .github/ci/quality.mjs _site
       - name: HTML validity
-        run: npx --yes html-validate@8.24.0 --preset=standard --rule 'no-inline-style:off' --rule 'long-title:off' --rule 'no-trailing-whitespace:off' "_site/**/*.html"
+        run: npx --yes html-validate@8.24.0 --config .github/ci/htmlvalidate.json "_site/**/*.html"
       - name: Accessibility (axe-core)
         run: |
           npm install --no-save --no-audit --no-fund playwright@1.49.1 @axe-core/playwright@4.10.1
