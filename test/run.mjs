@@ -91,6 +91,24 @@ assert.deepEqual(dz.zones.map((z) => [z.zone, z.records.map((r) => r.name)]), [[
 assert.equal(ZONE_VAR['sovereignweb.site'], 'SW_ZONE_ID_WEB_SITE');
 assert.deepEqual(dnsPlan(dz).errors, [], 'the new zone is one of ours');
 assert.ok(p.pipelines['transfer-apply'].limits.controlled_domains.includes('sovereignweb.site'), 'the new domain is ours for moves too');
+// Moves: the old address gets a redirect site, listed after every site so its domain is freed first.
+const em = { label: 'emily-cruz', group: 'artist', title: 'E', description: 'An artist.', kind: 'owner', previous: ['emily-cruz.artists.sovereignwebsite.site'] };
+assert.deepEqual(R.validate(em, '2026-11-20__emily-cruz'), [], 'a moved request validates');
+assert.ok(R.validate({ ...em, previous: ['emily.example.com'] }, '2026-11-20__emily-cruz').length, 'an old address must be on our domains');
+assert.ok(R.validate({ ...em, previous: ['emily-cruz.artist.sovereignweb.site'] }, '2026-11-20__emily-cruz').length, 'an old address is not the new one');
+assert.ok(R.validate({ ...em, previous: 'x' }, '2026-11-20__emily-cruz').length, 'previous is a list');
+const mr2 = R.repos([em, good]);
+assert.deepEqual(mr2.map((x) => x.name), ['Site__emily-cruz', 'Site__pipeline-demo', 'Redirect__emily-cruz'], 'redirects come after every site');
+assert.equal(mr2[0].cname, 'emily-cruz.artist.sovereignweb.site');
+assert.equal(mr2[2].cname, 'emily-cruz.artists.sovereignwebsite.site'); assert.equal(mr2[2].seed, 'seed/redirect-template'); assert.equal(mr2[2].vars.to, 'emily-cruz.artist.sovereignweb.site');
+const md = R.dnsRecords([em]);
+assert.deepEqual(md.map((x) => [x.zone, x.name]), [['sovereignweb.site', 'emily-cruz.artist.sovereignweb.site'], ['sovereignwebsite.site', 'emily-cruz.artists.sovereignwebsite.site']], 'both names keep a CNAME');
+const mp = plan({ ...org, repos: [...org.repos, ...mr2] }, {});
+assert.deepEqual(checkActions(p, mp), [], 'a move plan is allowed');
+const rt = seedFiles('seed/redirect-template');
+for (const must of ['.github/workflows/pages.yml', 'CLAUDE.md', 'site/CNAME', 'site/index.html', 'site/404.html']) assert.ok(rt.includes(must), `redirect template seeds ${must}`);
+const rh = readFileSync('seed/redirect-template/site/index.html', 'utf8');
+assert.ok(rh.includes("location.replace('https://{{to}}' + location.pathname + location.search + location.hash)") && rh.includes('rel="canonical"') && rh.includes('noindex'), 'the redirect keeps the path and the #fragment');
 const st = seedFiles('seed/site-template'); for (const must of ['.github/workflows/pages.yml', 'site/CNAME', 'site/index.html']) assert.ok(st.includes(must));
 // Moves: a request with a from block, transfer-apply, and the moved site handed to Org apply and DNS apply.
 const T = await import('../build/transfer-plan.mjs'), A = await import('../build/transfer-apply.mjs'), { checkTransfer } = await import('../build/abp.mjs');

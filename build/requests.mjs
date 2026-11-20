@@ -23,6 +23,9 @@ export const DEFAULT_DOMAIN = 'sovereignweb.site';
 export const DOMAINS = ['sovereignweb.site', 'sovereignwebsite.site'];
 export const domain = (r) => r.domain || DEFAULT_DOMAIN;
 
+// The domain an address sits under, if it is one of ours.
+export const zoneOf = (h) => DOMAINS.find((d) => h.endsWith(`.${d}`)) || null;
+
 // The address of a hosted site.
 export const host = (r) => `${r.label}.${r.group ? `${r.group}.` : ''}${domain(r)}`;
 
@@ -36,6 +39,13 @@ export function validate(req, folder = '') {
   if (!req.description || req.description.length > 200) e.push(`${folder}: description is required, at most 200 characters`);
   if (req.group !== undefined && !GROUPS.includes(req.group) && !LEGACY_GROUPS.includes(req.group)) e.push(`${folder}: group must be one of ${GROUPS.join(', ')}`);
   if (req.domain !== undefined && !DOMAINS.includes(req.domain)) e.push(`${folder}: domain must be one of ${DOMAINS.join(', ')}`);
+  if (req.previous !== undefined) {
+    if (!Array.isArray(req.previous) || !req.previous.length) e.push(`${folder}: previous is a list of the site's old addresses`);
+    else for (const p of req.previous) {
+      if (typeof p !== 'string' || !/^[a-z0-9.-]+$/.test(p) || !zoneOf(p)) e.push(`${folder}: previous address ${p} is not on one of our domains`);
+      else if (p === host(req)) e.push(`${folder}: previous address ${p} is the site's own address`);
+    }
+  }
   if (req.access !== undefined && !Object.hasOwn(ACCESS, req.access)) e.push(`${folder}: access must be one of ${Object.keys(ACCESS).join(', ')}`);
   if (!['demo', 'owner'].includes(req.kind)) e.push(`${folder}: kind must be "demo" or "owner"`);
   for (const ch of ['—', '–']) if (JSON.stringify(req).includes(ch)) e.push(`${folder}: no em or en dashes`);
@@ -77,7 +87,26 @@ const repoName = (label) => `Site__${label}`;
 // The sites Org apply and DNS apply look after: new ones, and moved ones once the move is recorded.
 export const live = (requests) => requests.filter((r) => !r.from || r.moved);
 
+// A moved address keeps working: each old address gets a small redirect site, Redirect__<label>, sending every path
+// (and its query and #fragment, so a vault key still opens) to the new address. Listed after every site, so Org apply
+// frees the old custom domain on Site__<label> before it gives it to the redirect.
+export function redirects(requests) {
+  return live(requests).flatMap((r) => (r.previous || []).map((from, i) => ({ from, to: host(r), label: r.label, name: `Redirect__${r.label}${i ? `-${i + 1}` : ''}` })));
+}
+
 export function repos(requests) {
+  return [...sites(requests), ...redirects(requests).map((x) => ({
+    name: x.name,
+    description: `${x.from}: moved to https://${x.to}`,
+    homepage: `https://${x.to}`,
+    pages: true,
+    cname: x.from,
+    seed: 'seed/redirect-template',
+    vars: { from: x.from, to: x.to, label: x.label },
+  }))];
+}
+
+function sites(requests) {
   return live(requests).map((r) => ({
     name: repoName(r.label),
     description: `${host(r)}: ${r.description}`.slice(0, 350),
@@ -90,5 +119,8 @@ export function repos(requests) {
 }
 
 export function dnsRecords(requests) {
-  return live(requests).map((r) => ({ zone: domain(r), name: host(r), type: 'CNAME', values: ['sovereignwebsite.github.io'], for: repoName(r.label) }));
+  return [
+    ...live(requests).map((r) => ({ zone: domain(r), name: host(r), type: 'CNAME', values: ['sovereignwebsite.github.io'], for: repoName(r.label) })),
+    ...redirects(requests).map((x) => ({ zone: zoneOf(x.from), name: x.from, type: 'CNAME', values: ['sovereignwebsite.github.io'], for: x.name })),
+  ];
 }

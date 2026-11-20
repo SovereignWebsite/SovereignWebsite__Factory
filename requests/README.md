@@ -32,6 +32,16 @@ More groups will be added as we go; adding one is a change to `GROUPS` in build/
 
 Rules: the repository is always `Site__<label>`, so a label is unique across all groups, and a group name cannot be a label. A site still on the old domain names it: `"domain": "sovereignwebsite.site"` (and `artists`, the old group, is kept only until emily-cruz moves).
 
+## Moving a site to a new address
+
+Change the request's address (its group, or drop `"domain": "sovereignwebsite.site"`) and list the old address in `previous`:
+
+```json
+"previous": ["emily-cruz.artists.sovereignwebsite.site"]
+```
+
+Org apply moves `Site__<label>` to the new address and makes `Redirect__<label>`, a one-page site at the old address that sends every visitor, with the same path, query and `#fragment` (so a vault key still opens), to the new one. DNS apply keeps a CNAME for both names. Old addresses never vanish. Check the site's own content for the old address after a move.
+
 ## Public or private
 
 - **Public** (the default): seeded from `seed/site-template`, a starter page the site's agents replace.
