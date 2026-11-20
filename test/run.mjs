@@ -299,4 +299,14 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   for (const never of ['site/start/index.html', 'site/agents/index.html', 'site/admin/index.html', 'site/llms.txt', 'site/data/agents.json']) assert.ok(!g.includes(never), `gate-template never seeds ${never}`);
   assert.equal(readFileSync('seed/gate-template/.github/workflows/pages.yml', 'utf8'), readFileSync('seed/site-template/.github/workflows/pages.yml', 'utf8'), 'one pipeline for both templates');
 }
+// Agent sites: the same pipeline, plus the key copied from team/keys.json, a daily refresh that makes no new
+// version, and the family bar allowed. The version chip's CSS is a file, for a strict style-src 'self'.
+{
+  const a = readFileSync('seed/agent-template/.github/workflows/pages.yml', 'utf8');
+  for (const must of ['team/keys.json', 'site/key.json', "SWS_OWN_SITE: '1'", 'node .github/ci/build.mjs', "if: github.event_name != 'schedule'"]) assert.ok(a.includes(must), `agent pages.yml has ${must}`);
+  assert.ok(a.indexOf('site/key.json') < a.indexOf('node .github/ci/build.mjs'), 'the key is written before the build');
+  const b = readFileSync('seed/site-template/.github/ci/build.mjs', 'utf8');
+  assert.ok(b.includes('/assets/sws-version.css') && !b.includes("'<style>"), 'the chip CSS is a file, not inline');
+  for (const t of ['gate-template', 'agent-template']) for (const f of ['build.mjs', 'quality.mjs', 'share-check.mjs', 'axe.mjs']) assert.equal(readFileSync(`seed/${t}/.github/ci/${f}`, 'utf8'), readFileSync(`seed/site-template/.github/ci/${f}`, 'utf8'), `${t} ci/${f} matches the site template`);
+}
 console.log('OK (tests)');

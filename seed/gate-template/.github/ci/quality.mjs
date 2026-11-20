@@ -48,8 +48,9 @@ for (const p of pages) {
 }
 add('No em dashes', dash);
 
-// 4. A customer site carries no family strip above its header: only the top-right pop-up.
-const strip = pages.filter((p) => /<nav class="family"/.test(readFileSync(p, 'utf8'))).map((p) => `${relative(dir, p)}: the family strip (use build/family-bar.mjs --credit)`);
+// 4. A customer site carries no family strip above its header: only the top-right pop-up. The organisation's
+//    own sites (SWS_OWN_SITE=1, set in their pages.yml) keep the family bar.
+const strip = process.env.SWS_OWN_SITE === '1' ? [] : pages.filter((p) => /<nav class="family"/.test(readFileSync(p, 'utf8'))).map((p) => `${relative(dir, p)}: the family strip (use build/family-bar.mjs --credit)`);
 add('No family strip', strip);
 
 // 5. Leak scan: no private key, token or secret in any published file.
