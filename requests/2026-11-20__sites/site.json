@@ -1,0 +1,8 @@
+{
+  "label": "sites",
+  "group": "agents",
+  "agent": "sites.b@SovereignWebsite.dinis",
+  "title": "sites.b",
+  "description": "The agent that takes requests for new hosted sites and sends them to the Factory.",
+  "kind": "owner"
+}

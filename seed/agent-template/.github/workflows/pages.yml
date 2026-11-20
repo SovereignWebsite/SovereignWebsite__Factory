@@ -1,0 +1,45 @@
+name: Pages
+# Deploys site/ to GitHub Pages on every push to dev, by hand, and once a day. Seeded by SovereignWebsite__Factory.
+# The agent's public key on this site is never written by hand: each deploy copies the agent's entry from the
+# Factory's team/keys.json (the root that check-signatures trusts) into site/key.json, so the two always match.
+on:
+  push:
+    branches: [dev]
+  workflow_dispatch:
+  schedule:
+    - cron: '41 5 * * *'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+defaults:
+  run:
+    shell: bash
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: The agent's key, from the Factory's team/keys.json
+        env:
+          AGENT: '{{agent}}'
+        run: |
+          curl -fsS https://raw.githubusercontent.com/SovereignWebsite/SovereignWebsite__Factory/dev/team/keys.json -o keys.json
+          node -e '
+            const ks = require("./keys.json").keys.filter((k) => k.agent === process.env.AGENT && k.status === "active");
+            const out = { agent: process.env.AGENT, source: "https://github.com/SovereignWebsite/SovereignWebsite__Factory/blob/dev/team/keys.json", copied: new Date().toISOString(),
+              keys: ks.map((k) => ({ fingerprint: k.fingerprint, signing_fingerprint: k.signing_fingerprint, session: k.session, sign: k.bundle.sign, encrypt: k.bundle.encrypt })) };
+            require("fs").writeFileSync("site/key.json", JSON.stringify(out, null, 2) + "\n");
+            console.log(ks.length ? `published ${ks.length} key(s) for ${process.env.AGENT}` : `no active key in team/keys.json for ${process.env.AGENT}`);'
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4

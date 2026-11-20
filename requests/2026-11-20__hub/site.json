@@ -1,0 +1,8 @@
+{
+  "label": "hub",
+  "group": "agents",
+  "agent": "hub.b@SovereignWebsite.dinis",
+  "title": "hub.b",
+  "description": "The agent that looks after the public hub and vault sites.",
+  "kind": "owner"
+}

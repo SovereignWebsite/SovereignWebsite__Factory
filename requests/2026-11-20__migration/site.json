@@ -1,0 +1,8 @@
+{
+  "label": "migration",
+  "group": "agents",
+  "agent": "migration.b@SovereignWebsite.dinis",
+  "title": "migration.b",
+  "description": "The agent that plans the moves of repositories from AgentiCCells to SovereignWebsite.",
+  "kind": "owner"
+}

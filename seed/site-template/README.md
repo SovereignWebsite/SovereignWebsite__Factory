@@ -1,4 +1,4 @@
-# Site__{{label}}
+# {{repo}}
 
 {{title}}: {{description}}
 

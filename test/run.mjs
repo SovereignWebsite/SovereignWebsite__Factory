@@ -48,7 +48,9 @@ const good = { label: 'pipeline-demo', domain: 'sovereignwebsite.site', title: '
 assert.equal(R.repos([{ ...good, domain: undefined }])[0].cname, 'pipeline-demo.sovereignweb.site', 'no domain: sovereignweb.site, the default');
 assert.deepEqual(R.validate(good, '2026-11-19__pipeline-demo'), []);
 assert.ok(R.validate({ ...good, label: 'Bad_Label' }, '2026-11-19__Bad_Label').length, 'bad label refused');
-assert.ok(R.validate({ ...good, label: 'hub' }, '2026-11-19__hub').length, 'reserved label refused');
+assert.ok(R.validate({ ...good, label: 'hub' }, '2026-11-19__hub').length, 'reserved label refused at the top level');
+assert.deepEqual(R.validate({ ...good, label: 'hub', group: 'agents', agent: 'hub.b@SovereignWebsite.dinis', kind: 'owner' }, '2026-11-19__hub'), [], 'a reserved name is fine inside a group');
+assert.deepEqual(R.validate({ ...good, label: 'agents', domain: undefined }, '2026-11-19__agents'), [], "a group's own home page");
 assert.ok(R.validate(good, '2026-11-19__other').length, 'folder must match label');
 assert.ok(R.validate({ ...good, kind: 'customer' }, '2026-11-19__pipeline-demo').length, 'kind is demo or owner');
 const rr = R.repos([good]);
@@ -60,7 +62,7 @@ const ec = { label: 'emily-cruz', group: 'artists', domain: 'sovereignwebsite.si
 assert.deepEqual(R.validate(ec, '2026-11-20__emily-cruz'), [], 'a grouped request validates');
 assert.ok(R.validate({ ...ec, group: 'shops' }, '2026-11-20__emily-cruz').length, 'only known groups');
 assert.ok(R.validate({ ...ec, group: 'person' }, '2026-11-20__emily-cruz').length, 'person is not an official group');
-assert.ok(R.validate({ ...good, label: 'artists' }, '2026-11-19__artists').length, 'a group name is reserved as a label');
+assert.ok(R.validate({ ...good, label: 'artists' }, '2026-11-19__artists').length, 'the old group name stays reserved');
 const er = R.repos([ec])[0];
 assert.equal(er.name, 'Site__Artist__Emily-Cruz'); assert.equal(er.cname, 'emily-cruz.artists.sovereignwebsite.site'); assert.equal(er.vars.host, 'emily-cruz.artists.sovereignwebsite.site');
 assert.equal(R.dnsRecords([ec])[0].name, 'emily-cruz.artists.sovereignwebsite.site');
@@ -84,7 +86,7 @@ assert.deepEqual(R.validate(sv, '2026-11-20__sotavento'), [], 'a request on the 
 assert.ok(R.validate({ ...sv, domain: 'example.com' }, '2026-11-20__sotavento').length, 'only our domains');
 assert.equal(R.repos([sv])[0].cname, 'sotavento.invest.sovereignweb.site');
 assert.equal(R.repos([{ ...sv, label: 'perspace', group: 'company' }])[0].cname, 'perspace.company.sovereignweb.site');
-for (const g of ['artist', 'cv', 'company', 'organisation', 'invest', 'artists']) assert.ok(R.validate({ ...good, label: g }, `2026-11-19__${g}`).length, `${g} is reserved as a label`);
+assert.ok(R.validate({ ...good, label: 'artists' }, '2026-11-19__artists').length, 'artists is reserved');
 assert.equal(R.repos([good])[0].cname, 'pipeline-demo.sovereignwebsite.site', 'no domain: sovereignwebsite.site');
 const { addRequests, ZONE_VAR } = await import('../build/dns-plan.mjs');
 const dz = addRequests({ zones: [{ zone: 'sovereignwebsite.site', records: [] }] }, R.dnsRecords([sv, good]));
@@ -124,6 +126,17 @@ assert.ok(!rp2.actions.some((a) => a.action === 'repo.create' && /Emily-Cruz/.te
 assert.ok(!rp2.unlisted.includes('Site__emily-cruz'), 'an old name is not reported as unlisted');
 assert.deepEqual(checkActions(p, rp2), [], 'a rename is allowed for Org apply');
 assert.ok((await import('../build/abp.mjs')).checkTransfer(p.pipelines['transfer-apply'].limits, { action: 'repo.transfer_in', target: 'AgentiCCells/AgentiCCells__Site__Weather-Demo', to: 'SovereignWebsite/Site__Weather-Demo', address_to: 'weather-demo.sovereignweb.site' }).length === 0, 'a transfer to Site__<Name>');
+// Agents' own sites: Site__Agents__<Role>, seeded with a page whose key is copied from team/keys.json at each deploy.
+const ag = { label: 'factory', group: 'agents', agent: 'factory.b@SovereignWebsite.dinis', title: 'factory.b', description: 'An agent.', kind: 'owner' };
+assert.deepEqual(R.validate(ag, '2026-11-20__factory'), []);
+assert.ok(R.validate({ ...ag, group: 'company' }, '2026-11-20__factory').length, 'an agent site is in the agents group');
+assert.ok(R.validate({ ...ag, agent: 'not an agent' }, '2026-11-20__factory').length, 'agent is <role>@<Project>.<owner>');
+const agr = R.repos([ag])[0];
+assert.equal(agr.name, 'Site__Agents__Factory'); assert.equal(agr.cname, 'factory.agents.sovereignweb.site'); assert.equal(agr.seed, 'seed/agent-template'); assert.equal(agr.vars.agent, 'factory.b@SovereignWebsite.dinis');
+assert.equal(R.repos([{ ...good, label: 'agents', domain: undefined }])[0].name, 'Site__Agents');
+const apy = readFileSync('seed/agent-template/.github/workflows/pages.yml', 'utf8');
+assert.ok(apy.includes('SovereignWebsite__Factory/dev/team/keys.json') && apy.includes('site/key.json'), 'the key is copied from the Factory root at each deploy');
+assert.ok(!seedFiles('seed/agent-template').includes('site/key.json'), 'no hand-written key in the template');
 const st = seedFiles('seed/site-template'); for (const must of ['.github/workflows/pages.yml', 'site/CNAME', 'site/index.html']) assert.ok(st.includes(must));
 // Moves: a request with a from block, transfer-apply, and the moved site handed to Org apply and DNS apply.
 const T = await import('../build/transfer-plan.mjs'), A = await import('../build/transfer-apply.mjs'), { checkTransfer } = await import('../build/abp.mjs');

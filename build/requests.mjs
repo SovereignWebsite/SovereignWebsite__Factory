@@ -9,7 +9,7 @@ export const LABEL = /^[a-z0-9](?:[a-z0-9-]{0,38}[a-z0-9])?$/;
 export const FROM_OWNERS = ['AgentiCCells'];
 // Groups of sites under their own subdomain: <label>.<group>.sovereignweb.site. The official list (requests/README.md),
 // agreed by Dinis on 20 Nov 2026 ~12:02 UTC: "I agree with, can you put that on our official guidance"; more will be added.
-export const GROUPS = ['artist', 'cv', 'company', 'organisation', 'invest'];
+export const GROUPS = ['artist', 'cv', 'company', 'organisation', 'invest', 'agents'];
 // Kept only while a live site still uses it, until that site moves.
 export const LEGACY_GROUPS = ['artists'];
 // The starting page a request is seeded with: a public starter page, or a gated holding page that opens a vault.
@@ -33,7 +33,8 @@ export function validate(req, folder = '') {
   const e = [];
   if (!req || typeof req !== 'object') return [`${folder}: site.json is not an object`];
   if (!LABEL.test(req.label || '')) e.push(`${folder}: label must be lower-case letters, digits and hyphens, 1 to 40 characters`);
-  if (RESERVED.has(req.label)) e.push(`${folder}: label ${req.label} is reserved`);
+  // Reserved names guard the top level only; a group's own home page (label = group, no group) is allowed.
+  if (!req.group && RESERVED.has(req.label) && !GROUPS.includes(req.label)) e.push(`${folder}: label ${req.label} is reserved`);
   if (folder && !folder.endsWith(`__${req.label}`)) e.push(`${folder}: folder must end with __${req.label}`);
   if (!req.title || req.title.length > 80) e.push(`${folder}: title is required, at most 80 characters`);
   if (!req.description || req.description.length > 200) e.push(`${folder}: description is required, at most 200 characters`);
@@ -45,6 +46,11 @@ export function validate(req, folder = '') {
       if (typeof p !== 'string' || !/^[a-z0-9.-]+$/.test(p) || !zoneOf(p)) e.push(`${folder}: previous address ${p} is not on one of our domains`);
       else if (p === host(req)) e.push(`${folder}: previous address ${p} is the site's own address`);
     }
+  }
+  if (req.agent !== undefined) {
+    if (!/^[a-z0-9.-]+@[A-Za-z0-9.-]+$/.test(req.agent)) e.push(`${folder}: agent must be <role>@<Project>.<owner>`);
+    if (req.group !== 'agents') e.push(`${folder}: an agent's site is in the agents group`);
+    if (req.access !== undefined) e.push(`${folder}: an agent's site is public`);
   }
   if (req.access !== undefined && !Object.hasOwn(ACCESS, req.access)) e.push(`${folder}: access must be one of ${Object.keys(ACCESS).join(', ')}`);
   if (!['demo', 'owner'].includes(req.kind)) e.push(`${folder}: kind must be "demo" or "owner"`);
@@ -85,7 +91,7 @@ export function load(dir = 'requests') {
 // Repository names are indexed by type, capitalised (Dinis, 20 Nov 2026 ~12:28 UTC: "the repo should be
 // Site__Organisation__Algarve-Evolution, Site__Artist__Emily-Cruz (note the capitalisation on the names)").
 // A site without a group is Site__<Name>. The old name, Site__<label>, is kept as aka so Org apply renames it.
-export const GROUP_NAMES = { artist: 'Artist', cv: 'CV', company: 'Company', organisation: 'Organisation', invest: 'Invest', artists: 'Artist' };
+export const GROUP_NAMES = { artist: 'Artist', cv: 'CV', company: 'Company', organisation: 'Organisation', invest: 'Invest', agents: 'Agents', artists: 'Artist' };
 export const cap = (label) => label.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join('-');
 const suffix = (r) => `${r.group ? `${GROUP_NAMES[r.group]}__` : ''}${cap(r.label)}`;
 export const repoName = (r) => `Site__${suffix(r)}`;
@@ -125,8 +131,8 @@ function sites(requests) {
     homepage: `https://${host(r)}`,
     pages: true,
     cname: host(r),
-    ...(r.from ? { transfer_from: `${r.from.owner}/${r.from.repo}` } : { seed: ACCESS[r.access || 'public'] }),
-    vars: { label: r.label, host: host(r), title: r.title, description: r.description, kind: r.kind },
+    ...(r.from ? { transfer_from: `${r.from.owner}/${r.from.repo}` } : { seed: r.agent ? 'seed/agent-template' : ACCESS[r.access || 'public'] }),
+    vars: { label: r.label, repo: repoName(r), host: host(r), title: r.title, description: r.description, kind: r.kind, ...(r.agent ? { agent: r.agent } : {}) },
   }));
 }
 

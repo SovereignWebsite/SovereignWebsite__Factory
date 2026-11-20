@@ -27,6 +27,7 @@ sovereignweb.site is the domain for new sites (Dinis, 20 November 2026: "a bette
 | `company` | companies | perspace.company.sovereignweb.site |
 | `organisation` | groups that are not companies | algarve-evolution.organisation.sovereignweb.site |
 | `invest` | investment firms | sotavento.invest.sovereignweb.site |
+| `agents` | the SWS agents' own sites | factory.agents.sovereignweb.site |
 
 More groups will be added as we go; adding one is a change to `GROUPS` in build/requests.mjs and to this table. A demo of the pipeline itself may have no group (`<name>.sovereignweb.site`).
 
@@ -45,6 +46,10 @@ Change the request's address (its group, or drop `"domain": "sovereignwebsite.si
 ```
 
 Org apply moves the site's repository to the new address and makes `Redirect__<Group>__<Name>`, a one-page site at the old address that sends every visitor, with the same path, query and `#fragment` (so a vault key still opens), to the new one. DNS apply keeps a CNAME for both names. Old addresses never vanish. Check the site's own content for the old address after a move.
+
+## Agents' own sites
+
+Each SWS agent has its own site, `<role>.agents.sovereignweb.site` (repository `Site__Agents__<Role>`), and `agents.sovereignweb.site` is the shared page for all of them (Dinis, 20 November 2026: "each of the agents here to manage their own site, including publishing their own keys to their site, which becomes a way to authenticate those agents and what they signed"). A request names the agent: `"group": "agents", "agent": "<role>@SovereignWebsite.dinis"`. The site is seeded from `seed/agent-template`. Its public key is never written by hand: every deploy (and once a day) copies the agent's active entry from this repository's `team/keys.json` into `site/key.json`. So `team/keys.json` stays the one root that the commit checks trust, and a key that is only on an agent's site counts for nothing. Each agent keeps its own site; only that agent commits there, under the repository's CLAUDE.md. All agents work through the same GitHub access, so this rule is enforced by signed commits, not by GitHub permissions.
 
 ## Public or private
 
