@@ -65,6 +65,17 @@ assert.equal(R.dnsRecords([ec])[0].name, 'emily-cruz.artists.sovereignwebsite.si
 assert.equal(dnsPlan({ zones: [{ zone: 'sovereignwebsite.site', records: R.dnsRecords([ec]) }] }).errors.length, 0, 'a grouped name is inside the .site zone');
 assert.equal(R.repos([good])[0].vars.host, 'pipeline-demo.sovereignwebsite.site', 'no group: the address is unchanged');
 assert.equal(readFileSync('seed/site-template/site/CNAME', 'utf8').trim(), '{{host}}');
+const gv = { label: '33n-ventures', group: 'invest', title: 'A firm', description: 'A private preview.', kind: 'owner', access: 'vault' };
+assert.deepEqual(R.validate(gv, '2026-11-20__33n-ventures'), [], 'a gated request validates');
+assert.ok(R.validate({ ...gv, access: 'secret' }, '2026-11-20__33n-ventures').length, 'access is public or vault');
+const gr = R.repos([gv])[0];
+assert.equal(gr.seed, 'seed/gate-template'); assert.equal(gr.cname, '33n-ventures.invest.sovereignwebsite.site');
+assert.equal(R.repos([good])[0].seed, 'seed/site-template', 'no access: the public starter page');
+const gt = seedFiles('seed/gate-template');
+for (const must of ['.github/workflows/pages.yml', 'CLAUDE.md', 'site/CNAME', 'site/index.html', 'site/open.js', 'site/robots.txt', 'site/vendor/jsqr-1.4.0/jsQR.js', 'site/vendor/jsqr-1.4.0/LICENSE']) assert.ok(gt.includes(must), `gate template seeds ${must}`);
+const gi = readFileSync('seed/gate-template/site/index.html', 'utf8');
+for (const id of ['key', 'open', 'file', 'status', 'loading', 'loading-msg', 'dropping', 'viewer', 'tabs', 'close', 'frame', 'viewer-title', 'viewer-meta']) assert.ok(gi.includes(`id="${id}"`), `gate page keeps #${id} for open.js`);
+assert.ok(gi.includes('data-vault-zip=""') && gi.includes('<script src="open.js">') && gi.includes('noindex'), 'gate page: no vault yet, open.js beside it, not indexed');
 const st = seedFiles('seed/site-template'); for (const must of ['.github/workflows/pages.yml', 'site/CNAME', 'site/index.html']) assert.ok(st.includes(must));
 // Moves: a request with a from block, transfer-apply, and the moved site handed to Org apply and DNS apply.
 const T = await import('../build/transfer-plan.mjs'), A = await import('../build/transfer-apply.mjs'), { checkTransfer } = await import('../build/abp.mjs');

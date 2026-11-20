@@ -8,7 +8,9 @@ export const LABEL = /^[a-z0-9](?:[a-z0-9-]{0,38}[a-z0-9])?$/;
 // Organisations a repository may be moved from (the ABP's transfer-apply limits name the repositories).
 export const FROM_OWNERS = ['AgentiCCells'];
 // Groups of sites under their own subdomain: <label>.<group>.sovereignwebsite.site (Dinis, 20 Nov 2026).
-export const GROUPS = ['artists', 'cv'];
+export const GROUPS = ['artists', 'cv', 'invest'];
+// The starting page a request is seeded with: a public starter page, or a gated holding page that opens a vault.
+export const ACCESS = { public: 'seed/site-template', vault: 'seed/gate-template' };
 const RESERVED = new Set(['www', 'hub', 'vault', 'api', 'admin', 'mail', 'factory', ...GROUPS]);
 
 // The address of a hosted site.
@@ -23,6 +25,7 @@ export function validate(req, folder = '') {
   if (!req.title || req.title.length > 80) e.push(`${folder}: title is required, at most 80 characters`);
   if (!req.description || req.description.length > 200) e.push(`${folder}: description is required, at most 200 characters`);
   if (req.group !== undefined && !GROUPS.includes(req.group)) e.push(`${folder}: group must be one of ${GROUPS.join(', ')}`);
+  if (req.access !== undefined && !Object.hasOwn(ACCESS, req.access)) e.push(`${folder}: access must be one of ${Object.keys(ACCESS).join(', ')}`);
   if (!['demo', 'owner'].includes(req.kind)) e.push(`${folder}: kind must be "demo" or "owner"`);
   for (const ch of ['—', '–']) if (JSON.stringify(req).includes(ch)) e.push(`${folder}: no em or en dashes`);
   if (req.from !== undefined) {
@@ -70,7 +73,7 @@ export function repos(requests) {
     homepage: `https://${host(r)}`,
     pages: true,
     cname: host(r),
-    ...(r.from ? { transfer_from: `${r.from.owner}/${r.from.repo}` } : { seed: 'seed/site-template' }),
+    ...(r.from ? { transfer_from: `${r.from.owner}/${r.from.repo}` } : { seed: ACCESS[r.access || 'public'] }),
     vars: { label: r.label, host: host(r), title: r.title, description: r.description, kind: r.kind },
   }));
 }
