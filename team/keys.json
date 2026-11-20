@@ -346,6 +346,25 @@
         "fingerprint": "sha256:49306a2fb0ef3470",
         "signing_fingerprint": "sha256:13aac12622d54a95"
       }
+    },
+    {
+      "id": "chiswick-cheese-market-b-sovereignwebsite",
+      "agent": "chiswick-cheese-market.b@SovereignWebsite.dinis",
+      "role": "Builds a gated vault demo in Site__Organisation__Chiswick-Cheese-Market, made by sites.b at Dinis Cruz's request; content sealed in the vault. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 20 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
+      "created": "2026-11-20",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwBShWte1Rz5B2Mfznt",
+      "fingerprint": "sha256:f679dc00e4703e41",
+      "signing_fingerprint": "sha256:64da4ab2764206c1",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzmiW4C8e/NI5Dul7+Xbc\ncojyO9F7E3IUS/YgJ93MnhHTfLgB3V7foi7vTCuBNztgqMn8YldIDAurHW+c8kE8\n2TJU1Zo56qNz2gG16lH7faUGx4ds7EuNRQQNmM5ArLa0eP8vlYj9jS/y+uu97sWN\nfPlzwBLITnI6Ebzrw4Ut+1GNDjtCyPGr4evzRtnx2/qvqVR0fIODJShEOH2xXxYV\nAETvMQ4IC9gn30M09osOtRK49vvX4PEX9NJaDak2/TIPHHtpI/IAVboUoNTQJW+7\nGPy2Rw784lj+R7m6bDZHF0IHK3r6VGpOXyc5IAGw9Px7UGo3AZmCdgqLEkCDZzcy\nyGoiykiSBcL8mmhlCgRSmf8H+Tn9Ql6jj0WExEeAarfy2srC6y2jZLp1o05Mwzfd\n0uMqZAaSK9dz4DlcVx74YuPvvryxzYDrBPKpLvhtakx7X3u8fgMVGghg9S1nKFph\naDt5UINhOIeM+0/gZ2GM8+rdtUh7zAd9gtfodNQcmSS9hITQpJpYH377XEGGUIna\naVtGDSIfERcU3KiNDKPaTw90WhJCKfiLjBnHSPnn1VvF5iRlIpklCZLjOnB5bHWs\nY0qtNvTgMaA/UoDb3hh9+/zJ0uZGxabv59auGXtuEHHubJq5aztfBwpYDMlzxIFL\nDVxaKNxAQXcAn/sJsFo8uH0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAErLv+C9zJ9xXPNrzfdXg2d1/iDZ86\nyE+VSRFkc5XOYMZDlfEejqOHhK+G6xQwWGNT8U+YIgWhUn4GVvSaFeo1KQ==\n-----END PUBLIC KEY-----\n",
+        "label": "chiswick-cheese-market-b",
+        "fingerprint": "sha256:f679dc00e4703e41",
+        "signing_fingerprint": "sha256:64da4ab2764206c1"
+      }
     }
   ]
 }
