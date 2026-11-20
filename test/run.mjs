@@ -358,4 +358,5 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
 }
 { const t = readFileSync('seed/site-template/.github/ci/quality.mjs', 'utf8'), l = readFileSync('build/leak-scan.mjs', 'utf8');
   for (const m of l.matchAll(/^\s+\['[^']+', (\/.*\/[a-z]*)\],$/gm)) assert.ok(t.includes(m[1]), `the site leak scan has the Factory shape ${m[1].slice(0, 30)}`); }
+{ const R = await import('../build/requests.mjs'); const st = { label: 'sgit', group: 'startups', title: 'sgit', description: 'A brochure.', kind: 'demo' }; assert.equal(R.repoName(st), 'Site__Startups__Sgit'); assert.equal(R.host(st), 'sgit.startups.sovereignweb.site'); }
 console.log('OK (tests)');
