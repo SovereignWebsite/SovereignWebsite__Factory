@@ -2,6 +2,6 @@
 
 {{title}}: {{description}}
 
-A gated site at https://{{host}}: the public page is a holding page, and the site itself opens only for people holding its QR code. The site is sealed in a private sgit vault; only its ciphertext is published, as `site/private/<id>.zip`, and the holding page names it in `data-vault-zip`. The pattern is SovereignWebsite__Vault docs/gated-site.md, and `site/open.js` and `site/vendor/jsqr-1.4.0` (Apache-2.0) are copied from it unchanged.
+A gated site at https://{{host}}: the public page is a holding page, and the site itself opens only for people holding its QR code. The site is sealed in a private sgit vault; only its ciphertext is published, as `site/private/<id>.zip`, and the holding page names it in `data-vault-zip`. `site/open.js` and `site/vendor/jsqr-1.4.0` (Apache-2.0) are copies kept in this repository, so the site depends on nothing outside it. The site's own agent seals the vault; private sites are never routed through the hub.
 
 Made by one request in SovereignWebsite/SovereignWebsite__Factory.

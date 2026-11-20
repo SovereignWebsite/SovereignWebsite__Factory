@@ -44,7 +44,8 @@ process.env.NUDGE_MISSING = 'true'; assert.deepEqual(one({ cert_state: null }), 
 assert.deepEqual(one({ cert_state: 'approved', https_enforced: true }), []);
 assert.equal(checkActions(p, { pipeline: 'org-apply', actions: [{ action: 'ruleset.delete', target: 'X' }] }).length, 1);
 const R = await import('../build/requests.mjs');
-const good = { label: 'pipeline-demo', title: 'A site from one request', description: 'Made by the pipeline.', kind: 'demo' };
+const good = { label: 'pipeline-demo', domain: 'sovereignwebsite.site', title: 'A site from one request', description: 'Made by the pipeline.', kind: 'demo' };
+assert.equal(R.repos([{ ...good, domain: undefined }])[0].cname, 'pipeline-demo.sovereignweb.site', 'no domain: sovereignweb.site, the default');
 assert.deepEqual(R.validate(good, '2026-11-19__pipeline-demo'), []);
 assert.ok(R.validate({ ...good, label: 'Bad_Label' }, '2026-11-19__Bad_Label').length, 'bad label refused');
 assert.ok(R.validate({ ...good, label: 'hub' }, '2026-11-19__hub').length, 'reserved label refused');
@@ -55,9 +56,10 @@ assert.equal(rr[0].name, 'Site__pipeline-demo'); assert.equal(rr[0].cname, 'pipe
 const rp = plan({ ...org, repos: [...org.repos, ...rr] }, {});
 assert.deepEqual(checkActions(p, rp), [], 'a request plan is allowed by the policy');
 assert.deepEqual(R.dnsRecords([good])[0], { zone: 'sovereignwebsite.site', name: 'pipeline-demo.sovereignwebsite.site', type: 'CNAME', values: ['sovereignwebsite.github.io'], for: 'Site__pipeline-demo' });
-const ec = { label: 'emily-cruz', group: 'artists', title: 'Emily Cruz', description: 'Actor-musician.', kind: 'owner' };
+const ec = { label: 'emily-cruz', group: 'artists', domain: 'sovereignwebsite.site', title: 'Emily Cruz', description: 'Actor-musician.', kind: 'owner' };
 assert.deepEqual(R.validate(ec, '2026-11-20__emily-cruz'), [], 'a grouped request validates');
 assert.ok(R.validate({ ...ec, group: 'shops' }, '2026-11-20__emily-cruz').length, 'only known groups');
+assert.ok(R.validate({ ...ec, group: 'person' }, '2026-11-20__emily-cruz').length, 'person is not an official group');
 assert.ok(R.validate({ ...good, label: 'artists' }, '2026-11-19__artists').length, 'a group name is reserved as a label');
 const er = R.repos([ec])[0];
 assert.equal(er.name, 'Site__emily-cruz'); assert.equal(er.cname, 'emily-cruz.artists.sovereignwebsite.site'); assert.equal(er.vars.host, 'emily-cruz.artists.sovereignwebsite.site');
@@ -65,7 +67,7 @@ assert.equal(R.dnsRecords([ec])[0].name, 'emily-cruz.artists.sovereignwebsite.si
 assert.equal(dnsPlan({ zones: [{ zone: 'sovereignwebsite.site', records: R.dnsRecords([ec]) }] }).errors.length, 0, 'a grouped name is inside the .site zone');
 assert.equal(R.repos([good])[0].vars.host, 'pipeline-demo.sovereignwebsite.site', 'no group: the address is unchanged');
 assert.equal(readFileSync('seed/site-template/site/CNAME', 'utf8').trim(), '{{host}}');
-const gv = { label: '33n-ventures', group: 'invest', title: 'A firm', description: 'A private preview.', kind: 'owner', access: 'vault' };
+const gv = { label: '33n-ventures', group: 'invest', domain: 'sovereignwebsite.site', title: 'A firm', description: 'A private preview.', kind: 'owner', access: 'vault' };
 assert.deepEqual(R.validate(gv, '2026-11-20__33n-ventures'), [], 'a gated request validates');
 assert.ok(R.validate({ ...gv, access: 'secret' }, '2026-11-20__33n-ventures').length, 'access is public or vault');
 const gr = R.repos([gv])[0];
@@ -81,7 +83,7 @@ assert.deepEqual(R.validate(sv, '2026-11-20__sotavento'), [], 'a request on the 
 assert.ok(R.validate({ ...sv, domain: 'example.com' }, '2026-11-20__sotavento').length, 'only our domains');
 assert.equal(R.repos([sv])[0].cname, 'sotavento.invest.sovereignweb.site');
 assert.equal(R.repos([{ ...sv, label: 'perspace', group: 'company' }])[0].cname, 'perspace.company.sovereignweb.site');
-for (const g of ['artist', 'company', 'organisation', 'person']) assert.ok(R.validate({ ...good, label: g }, `2026-11-19__${g}`).length, `${g} is reserved as a label`);
+for (const g of ['artist', 'cv', 'company', 'organisation', 'invest', 'artists']) assert.ok(R.validate({ ...good, label: g }, `2026-11-19__${g}`).length, `${g} is reserved as a label`);
 assert.equal(R.repos([good])[0].cname, 'pipeline-demo.sovereignwebsite.site', 'no domain: sovereignwebsite.site');
 const { addRequests, ZONE_VAR } = await import('../build/dns-plan.mjs');
 const dz = addRequests({ zones: [{ zone: 'sovereignwebsite.site', records: [] }] }, R.dnsRecords([sv, good]));
@@ -92,7 +94,7 @@ assert.ok(p.pipelines['transfer-apply'].limits.controlled_domains.includes('sove
 const st = seedFiles('seed/site-template'); for (const must of ['.github/workflows/pages.yml', 'site/CNAME', 'site/index.html']) assert.ok(st.includes(must));
 // Moves: a request with a from block, transfer-apply, and the moved site handed to Org apply and DNS apply.
 const T = await import('../build/transfer-plan.mjs'), A = await import('../build/transfer-apply.mjs'), { checkTransfer } = await import('../build/abp.mjs');
-const mv = { label: 'transfer-test', title: 'A move test', description: 'A throwaway repository to prove the move.', kind: 'demo', from: { owner: 'AgentiCCells', repo: 'AgentiCCells__Site__Transfer-Test', address: 'transfer-test.agenticcells.site' }, apply: 'dry-run' };
+const mv = { label: 'transfer-test', domain: 'sovereignwebsite.site', title: 'A move test', description: 'A throwaway repository to prove the move.', kind: 'demo', from: { owner: 'AgentiCCells', repo: 'AgentiCCells__Site__Transfer-Test', address: 'transfer-test.agenticcells.site' }, apply: 'dry-run' };
 const F = '2026-11-20__transfer-test';
 assert.deepEqual(R.validate(mv, F), [], 'a move request validates');
 assert.ok(R.validate({ ...mv, from: { ...mv.from, owner: 'PrompTugal' } }, F).length, 'only from AgentiCCells');

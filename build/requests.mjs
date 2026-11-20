@@ -1,4 +1,4 @@
-// Hosted-site requests: requests/<date>__<label>/site.json becomes a repository and <label>.sovereignwebsite.site.
+// Hosted-site requests: requests/<date>__<label>/site.json becomes a repository and <label>[.<group>].sovereignweb.site.
 // One request, one site: org-apply creates the repository from seed/site-template (Pages, domain, team, rulesets),
 // dns-apply writes the CNAME. A request is merged to dev only with Dinis's merge (policy/abp.json: requests/**).
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
@@ -7,16 +7,21 @@ import { join } from 'node:path';
 export const LABEL = /^[a-z0-9](?:[a-z0-9-]{0,38}[a-z0-9])?$/;
 // Organisations a repository may be moved from (the ABP's transfer-apply limits name the repositories).
 export const FROM_OWNERS = ['AgentiCCells'];
-// Groups of sites under their own subdomain: <label>.<group>.sovereignwebsite.site (Dinis, 20 Nov 2026).
-export const GROUPS = ['artists', 'cv', 'invest', 'artist', 'company', 'organisation', 'person'];
+// Groups of sites under their own subdomain: <label>.<group>.sovereignweb.site. The official list (requests/README.md),
+// agreed by Dinis on 20 Nov 2026 ~12:02 UTC: "I agree with, can you put that on our official guidance"; more will be added.
+export const GROUPS = ['artist', 'cv', 'company', 'organisation', 'invest'];
+// Kept only while a live site still uses it, until that site moves.
+export const LEGACY_GROUPS = ['artists'];
 // The starting page a request is seeded with: a public starter page, or a gated holding page that opens a vault.
 export const ACCESS = { public: 'seed/site-template', vault: 'seed/gate-template' };
-const RESERVED = new Set(['www', 'hub', 'vault', 'api', 'admin', 'mail', 'factory', ...GROUPS]);
+const RESERVED = new Set(['www', 'hub', 'vault', 'api', 'admin', 'mail', 'factory', ...GROUPS, ...LEGACY_GROUPS]);
 
-// Domains a hosted site may sit under. sovereignweb.site is the new one (Dinis, 20 Nov 2026 ~11:38 UTC:
-// "a better domain ... than sovereignwebsite.site"); a request without a domain keeps sovereignwebsite.site.
-export const DOMAINS = ['sovereignwebsite.site', 'sovereignweb.site'];
-export const domain = (r) => r.domain || DOMAINS[0];
+// Domains a hosted site may sit under. sovereignweb.site is the default (Dinis, 20 Nov 2026 ~11:38 UTC:
+// "a better domain ... than sovereignwebsite.site"; ~12:02 UTC: "sovereignweb.site is now fully configured").
+// sovereignwebsite.site is kept for the sites that still use it, named in their requests.
+export const DEFAULT_DOMAIN = 'sovereignweb.site';
+export const DOMAINS = ['sovereignweb.site', 'sovereignwebsite.site'];
+export const domain = (r) => r.domain || DEFAULT_DOMAIN;
 
 // The address of a hosted site.
 export const host = (r) => `${r.label}.${r.group ? `${r.group}.` : ''}${domain(r)}`;
@@ -29,7 +34,7 @@ export function validate(req, folder = '') {
   if (folder && !folder.endsWith(`__${req.label}`)) e.push(`${folder}: folder must end with __${req.label}`);
   if (!req.title || req.title.length > 80) e.push(`${folder}: title is required, at most 80 characters`);
   if (!req.description || req.description.length > 200) e.push(`${folder}: description is required, at most 200 characters`);
-  if (req.group !== undefined && !GROUPS.includes(req.group)) e.push(`${folder}: group must be one of ${GROUPS.join(', ')}`);
+  if (req.group !== undefined && !GROUPS.includes(req.group) && !LEGACY_GROUPS.includes(req.group)) e.push(`${folder}: group must be one of ${GROUPS.join(', ')}`);
   if (req.domain !== undefined && !DOMAINS.includes(req.domain)) e.push(`${folder}: domain must be one of ${DOMAINS.join(', ')}`);
   if (req.access !== undefined && !Object.hasOwn(ACCESS, req.access)) e.push(`${folder}: access must be one of ${Object.keys(ACCESS).join(', ')}`);
   if (!['demo', 'owner'].includes(req.kind)) e.push(`${folder}: kind must be "demo" or "owner"`);
