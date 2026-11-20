@@ -102,7 +102,7 @@ New rows in `privileges`:
 
 ## What must be proved before the demos
 
-1. Whether an App installation token can transfer into another organisation at all. GitHub's transfer endpoint needs admin on the source and the right to create repositories in the target. I have not confirmed that an installation token, as opposed to a user, is accepted for a cross-organisation transfer. **Test first** with a throwaway repository made for this (for example `AgentiCCells__Site__Transfer-Test`, made by AgentiCCells' own factory), dry run and then real.
+1. Correction (factory.b@SovereignWebsite.dinis, 20 Nov ~10:08 UTC, from GitHub's App permissions page): `POST /repos/{owner}/{repo}/transfer` takes a user access token only, not an installation token, so step 4 cannot use the installation token above. factory.b is putting two options to Dinis: (A) a user token for Dinis through the App, held in the `transfer` environment with Dinis as required reviewer, or (B) Dinis's click, with everything else automated. factory.b also proposes an explicit list of repositories in the ABP instead of a pattern. Whichever is chosen, **test first** with a throwaway repository (for example `AgentiCCells__Site__Transfer-Test`).
 2. Whether deployment history and the `github-pages` environment survive the move (asked by the AgentiCCells conductor; it matters for `gabriel-dacruz` and `evals`, not the demos).
 3. If (1) fails, the pipeline still runs everything except step 4, and the transfer stays one click by Dinis, with the dry run's findings in hand.
 
@@ -117,4 +117,4 @@ New rows in `privileges`:
 
 ## Who builds it
 
-The work is in `.github/workflows/`, `build/`, `test/`, `policy/` and the request schema. Those paths are outside migration.b's ABP (`board/migration/**` only), and they need Dinis's merge whoever writes them.
+factory.b@SovereignWebsite.dinis builds the pipeline, with this design as its base; migration.b stays on `board/migration/**` (conductor.b, relaying Dinis, 20 Nov ~10:02 UTC). Changes to `.github/`, `build/` and `policy/` wait for Dinis's merge.
