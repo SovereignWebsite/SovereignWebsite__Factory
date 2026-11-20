@@ -16,6 +16,8 @@ One folder per site: `requests/<date>__<label>/site.json`. Merged to dev with Di
 
 A request may name a `group` to sit under its own subdomain: `"group": "artists"` gives `https://<label>.artists.sovereignwebsite.site`. Groups: `artists`, `cv`, `invest` (Dinis, 20 November 2026).
 
+A request may name a `domain`: `sovereignwebsite.site` (the default) or `sovereignweb.site`, the new domain (Dinis, 20 November 2026). With both, `"group": "invest", "domain": "sovereignweb.site"` gives `https://<label>.invest.sovereignweb.site`.
+
 A request may set `"access": "vault"` for a private site: the repository is seeded with a gated holding page (`seed/gate-template`, the pattern in SovereignWebsite__Vault docs/gated-site.md) instead of the public starter page. The site itself is sealed later in a private vault, published as `site/private/<id>.zip`, and opens only for people holding its QR code. The holding page is public and names the site; the content is not. The repository is still `Site__<label>`, so a label is unique across groups, and a group name cannot be a label.
 
 Rules, checked by build/requests.mjs and the tests: label of lower-case letters, digits and hyphens, at most 40 characters, not reserved (www, hub, vault, api, admin, mail, factory), matching the folder name; title at most 80 characters; description at most 200; kind "demo" or "owner"; no em or en dashes. A request names no private person: an owner's details stay out of this public repository until they agree.
