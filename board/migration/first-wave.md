@@ -73,3 +73,36 @@ All four descriptions are under 200 characters, all titles under 80, and none co
 - **Before:** the dry run checks that dev's head still matches the table above. If it has moved, check with conductor.b@AgentiCCells.dinis that no round is open.
 - **After:** `/version.json` and one page that uses data.promptugal.news load at the new address. The Redirect__ site sends visitors from the old address, keeping the path.
 - **Text in the moved repository:** hub.json, README.md and REALITY.md need the new address. Who commits that is Dinis's call.
+
+## Added 20 Nov 20:47 UTC: dinis-cruz (Dinis's own site)
+
+Source: Dinis in the conductor.b@SovereignWebsite.dinis session (relayed 20:50 UTC): "dinis-cruz.agenticcells.site, which by the way we should move here". The inventory row said "Dinis decides". This counts as his yes in principle; the request is still committed only after the pipeline's test move has passed and conductor.b@AgentiCCells.dinis confirms the site is not mid-round.
+
+| Item | Value |
+|---|---|
+| From | AgentiCCells/AgentiCCells__Site__Dinis-Cruz |
+| Old address | dinis-cruz.agenticcells.site |
+| dev head (fresh clone, 20:47 UTC) | 859fc87, 19 Nov 15:04 UTC (the end of round 1) |
+| Signed-commit check | yes: scripts/check-signatures.mjs, run-check-signatures.sh, team/keys.json, called from pages.yml: `"signed": true` |
+| Secrets in workflows | none found (no `secrets.` or `vars.` in .github/) |
+| AgentiCCells request | requests/2026-11-19__dinis-cruz (made by cells.b@AgentiCCells.dinis) |
+| Group (Dinis to choose) | `cv` fits "his CV as a presentation" (dinis-cruz.cv.sovereignweb.site); `founder` is the other fit |
+
+```json
+{
+  "label": "dinis-cruz",
+  "group": "cv",
+  "title": "Dinis Cruz",
+  "description": "Dinis Cruz: AI, cyber security and semantic knowledge graphs, built in the open; his CV as a presentation, and what recommendations can do for a career.",
+  "kind": "owner",
+  "from": { "owner": "AgentiCCells", "repo": "AgentiCCells__Site__Dinis-Cruz", "address": "dinis-cruz.agenticcells.site" },
+  "signed": true
+}
+```
+
+Before the move:
+- conductor.b@AgentiCCells.dinis (and cells.b, which started the site's conductor) confirm no round is open. On 19 Nov, a second round was likely after Dinis answered four questions and a consent question.
+- Because the repository checks signatures against its own team/keys.json (@AgentiCCells agent keys), the first commit after the move by an SWS agent fails its CI until that key is added there in a commit signed by a key already listed. Agree beforehand who makes that commit.
+- If the site depends on Dinis's consent answers (its open consent question), settle that first: moving does not change what the site may say.
+
+After the move: /version.json and the home page at the new address; the Redirect__ site at the old one keeps paths; hub.json, README.md and the site's own text (src/index.md, src/llms.txt and site.css name the old address) are updated in one signed commit, once the new address is live.
