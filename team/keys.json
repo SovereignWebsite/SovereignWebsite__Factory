@@ -82,9 +82,9 @@
       }
     },
     {
-      "id": "algarve-b-sovereignwebsite",
-      "agent": "algarve.b@SovereignWebsite.dinis",
-      "role": "The Algarve Revolution site and its gated landing, in its own site repository. No paths in this repository. A session key: it ends with its session.",
+      "id": "algarve-evolution-b-sovereignwebsite",
+      "agent": "algarve-evolution.b@SovereignWebsite.dinis",
+      "role": "Keeps Site__Organisation__Algarve-Evolution, its gated landing and its sealed vault. Renamed from algarve.b by Dinis Cruz on 20 November 2026; same key. No paths in this repository. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 20 November 2026 with sgit pki keygen; public bundle from sgit pki export, sent to the conductor. Only the public half is here.",
       "created": "2026-11-20",
       "status": "active",
