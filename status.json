@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-20T13:34Z",
+  "updated": "2026-11-20T15:34Z",
   "state": "18 site requests; all main sites, the agents area (agents, design, library), whois.tool and the people's sites answer over HTTPS; one company site still waits on its certificate",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -26,7 +26,10 @@
     "agents area: agents, conductor, factory, sites, design, hub, migration and library .agents.sovereignweb.site; each page shows its agent's key from team/keys.json",
     "design.b's guidelines, ratings and hourly design loop (Site__Agents__Design)",
     "whois.tool.sovereignweb.site (sites.b)",
-    "signing without passphrases (Dinis); how-to in board/workflow/2026-11-20__signing-with-your-key.md"
+    "signing without passphrases (Dinis); how-to in board/workflow/2026-11-20__signing-with-your-key.md",
+    "standing guidance for founder and personal sites (board/workflow/2026-11-20__founder-and-personal-sites.md)",
+    "family bar folds on phones (fc21653); Org apply can invite a person a request names, with push only (055f7ce)",
+    "Dinis said yes to the AgentiCCells transfer test repository (15:10 UTC); cells.b makes it"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
@@ -59,7 +62,8 @@
     "algarve-evolution.b": "the Algarve Evolution vault site, rebuilt from the old one at Dinis's word - https://claude.ai/code/session_01Kw9UwDDHfm3RVNtWomz2XA",
     "accountant.b": "budgets for every agent and loop - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF",
     "librarian.b": "the SWS library and the newsroom relay to each agent (library.agents.sovereignweb.site) - https://claude.ai/code/session_01Kw9UwDgZWdzwjxSRSJ4Lzt",
-    "sarah-cruz.b": "Sarah Cruz's public site - https://claude.ai/code/session_01Kw9UwBAh6Xwws4CiPBkYZY"
+    "sarah-cruz.b": "Sarah Cruz's public site - https://claude.ai/code/session_01Kw9UwBAh6Xwws4CiPBkYZY",
+    "kate-curtis-evans.b": "Kate Curtis-Evans's founder site; first phase handed over - https://claude.ai/code/session_01Kw9UwEREYzo2rPJ4cv4XVN"
   },
   "short_name": "SWS (Sovereign Website), Dinis, 20 Nov 2026"
 }
