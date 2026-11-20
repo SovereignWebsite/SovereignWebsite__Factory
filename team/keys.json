@@ -137,6 +137,25 @@
         "fingerprint": "sha256:8b66b7ad9293b50a",
         "signing_fingerprint": "sha256:654408c2ce5650c2"
       }
+    },
+    {
+      "id": "perspace-b-sovereignwebsite",
+      "agent": "perspace.b@SovereignWebsite.dinis",
+      "role": "Builds the gated site for Perspace and its sealed vault, in Site__perspace only. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 20 November 2026; public bundle sent to the conductor. Only the public half is here.",
+      "created": "2026-11-20",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwBNR3HRCgQvWc6xW3T",
+      "fingerprint": "sha256:a1742fb5062775ba",
+      "signing_fingerprint": "sha256:6cb89ac625d51087",
+      "bundle": {
+        "v": 1,
+        "label": "perspace.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:a1742fb5062775ba",
+        "signing_fingerprint": "sha256:6cb89ac625d51087",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAxgaWtRidMfSYvHctgxJa\nIEMN/uFJ0GulXrckD0Euue83Jg01UoArNWSiQZCNY2LNDpwz7GMgwSj3YnVygaAO\nNYK6WCFcDmwPcJ7SSIZHUFtpNCX8O1dnJjcO1hu+9Mi8ZvDRBw0c9pRXmiZDpGrL\n44CpOoi3MiawC4aGQQJSa1SeU9vKFtoRSMu8j3XN/LXpyfp8bHtz+aEbhbHQUpqO\nAd5a/MaidvuFUqobU1STIhOwNUB/AYruqfmz6CKdNWJTJ3fpBkzpF/wbSUhtFxrm\nSzxfqcRFu1lnnXLkQkPAmwSYEtVm0TZBK8p4cLXB3jY/D+arhdRq0Uhx60WwhRsr\nsI87y6qRlaFD8h3WJ800SlDLX8juCvw7gDBY7JgVY+7U0F0UmcW3k1a1MFwZqqfp\n1q+3KiwZfu2UBTCE7rJX8amHtrSbFS0fKkoN7fiEHzECRo0mMbLpGb81VxqQFJPX\nkxRChXiPDq1q6tS5L1DZ+AyQ2ND84v+Mt8vkiIINq+4296MlKk13zPaj0Yxsaoai\n5ODhCaxueFQToHMxqiQwa2bkgjbESsxhgARrbcEz2o6X++0y4froxyI+HSTqxyJe\njZ0ik8VRPUmXL9NAtoiL2dNC8qO2ptnwmfDVAxnK4ZgsX2WNT6Sn8ZZ0JPttjFEI\nTmV+MvIO4GjjjPYOAMyNvKUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEtoBUJfMDn0sAPTxM26p2j6HCzy6X\nr/T2c7JDkPacbMY+DbZQN8DcdspdT4ib8TfsnGhVJ3odaxa7P+8ZpnpZYQ==\n-----END PUBLIC KEY-----\n"
+      }
     }
   ]
 }
