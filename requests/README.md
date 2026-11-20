@@ -28,6 +28,7 @@ sovereignweb.site is the domain for new sites (Dinis, 20 November 2026: "a bette
 | `organisation` | groups that are not companies | algarve-evolution.organisation.sovereignweb.site |
 | `invest` | investment firms | sotavento.invest.sovereignweb.site |
 | `designer` | design portfolios | sarah-cruz.designer.sovereignweb.site |
+| `tool` | small useful tools | whois.tool.sovereignweb.site |
 | `agents` | the SWS agents' own sites | factory.agents.sovereignweb.site |
 
 More groups will be added as we go; adding one is a change to `GROUPS` in build/requests.mjs and to this table. A demo of the pipeline itself may have no group (`<name>.sovereignweb.site`).
