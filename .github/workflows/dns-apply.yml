@@ -25,6 +25,7 @@ jobs:
           SW_ZONE_ID_AI: ${{ vars.SW_ZONE_ID_AI }}
           SW_ZONE_ID_ORG: ${{ vars.SW_ZONE_ID_ORG }}
           SW_ZONE_ID_SITE: ${{ vars.SW_ZONE_ID_SITE }}
+          SW_ZONE_ID_WEB_SITE: ${{ vars.SW_ZONE_ID_WEB_SITE }}
         run: node build/dns-plan.mjs dns-out | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Policy check
         run: node build/abp.mjs actions dns-out/plan.json
@@ -42,6 +43,7 @@ jobs:
           SW_ZONE_ID_AI: ${{ vars.SW_ZONE_ID_AI }}
           SW_ZONE_ID_ORG: ${{ vars.SW_ZONE_ID_ORG }}
           SW_ZONE_ID_SITE: ${{ vars.SW_ZONE_ID_SITE }}
+          SW_ZONE_ID_WEB_SITE: ${{ vars.SW_ZONE_ID_WEB_SITE }}
         run: |
           while read -r zone var; do
             id="${!var}"

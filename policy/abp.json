@@ -150,7 +150,14 @@
         "route53domains.update_nameservers"
       ],
       "status": "active once the apply environment has SW_AWS_ROLE_ARN (a role for this repository) and the three SW_ZONE_ID_* variables",
-      "note": "UPSERT only, records named in org/dns.json, only in the three sovereignwebsite zones; the AWS role enforces the same limits (docs/aws-oidc.md)."
+      "note": "UPSERT only, records named in org/dns.json, only in the three sovereignwebsite zones; the AWS role enforces the same limits (docs/aws-oidc.md).",
+      "zones": [
+        "sovereignwebsite.ai",
+        "sovereignwebsite.org",
+        "sovereignwebsite.site",
+        "sovereignweb.site"
+      ],
+      "zones_source": "Dinis, 20 Nov 2026 ~11:38 UTC in the sites.b session: \"we are going to be using sovereignweb.site since that is a better domain (which I just wired up to AWS Hosted Zone)\". Its records are written only once SW_ZONE_ID_WEB_SITE is set and the AWS role allows the zone (docs/aws-oidc.md)."
     },
     "org-status": {
       "runs_on": [
@@ -202,7 +209,8 @@
         ],
         "controlled_domains": [
           "agenticcells.site",
-          "sovereignwebsite.site"
+          "sovereignwebsite.site",
+          "sovereignweb.site"
         ]
       },
       "needs": [
@@ -260,9 +268,9 @@
     },
     {
       "holder": "aws-role:sovereignwebsite-factory-dns",
-      "permission": "route53:ChangeResourceRecordSets (UPSERT; A, AAAA, CNAME, TXT) on the three sovereignwebsite zones; route53:ListResourceRecordSets, route53:GetHostedZone, route53:GetChange",
+      "permission": "route53:ChangeResourceRecordSets (UPSERT; A, AAAA, CNAME, TXT) on the three sovereignwebsite zones and the sovereignweb.site zone; route53:ListResourceRecordSets, route53:GetHostedZone, route53:GetChange",
       "why": "dns-apply: write org/dns.json to Route 53",
-      "state": "to be created by Dinis from docs/aws-oidc.md"
+      "state": "active for the three sovereignwebsite zones; sovereignweb.site to be added to the role by Dinis (docs/aws-oidc.md)"
     },
     {
       "holder": "github-app:agenticcells-site-factory",

@@ -13,8 +13,13 @@ export const GROUPS = ['artists', 'cv', 'invest'];
 export const ACCESS = { public: 'seed/site-template', vault: 'seed/gate-template' };
 const RESERVED = new Set(['www', 'hub', 'vault', 'api', 'admin', 'mail', 'factory', ...GROUPS]);
 
+// Domains a hosted site may sit under. sovereignweb.site is the new one (Dinis, 20 Nov 2026 ~11:38 UTC:
+// "a better domain ... than sovereignwebsite.site"); a request without a domain keeps sovereignwebsite.site.
+export const DOMAINS = ['sovereignwebsite.site', 'sovereignweb.site'];
+export const domain = (r) => r.domain || DOMAINS[0];
+
 // The address of a hosted site.
-export const host = (r) => `${r.label}.${r.group ? `${r.group}.` : ''}sovereignwebsite.site`;
+export const host = (r) => `${r.label}.${r.group ? `${r.group}.` : ''}${domain(r)}`;
 
 export function validate(req, folder = '') {
   const e = [];
@@ -25,6 +30,7 @@ export function validate(req, folder = '') {
   if (!req.title || req.title.length > 80) e.push(`${folder}: title is required, at most 80 characters`);
   if (!req.description || req.description.length > 200) e.push(`${folder}: description is required, at most 200 characters`);
   if (req.group !== undefined && !GROUPS.includes(req.group)) e.push(`${folder}: group must be one of ${GROUPS.join(', ')}`);
+  if (req.domain !== undefined && !DOMAINS.includes(req.domain)) e.push(`${folder}: domain must be one of ${DOMAINS.join(', ')}`);
   if (req.access !== undefined && !Object.hasOwn(ACCESS, req.access)) e.push(`${folder}: access must be one of ${Object.keys(ACCESS).join(', ')}`);
   if (!['demo', 'owner'].includes(req.kind)) e.push(`${folder}: kind must be "demo" or "owner"`);
   for (const ch of ['—', '–']) if (JSON.stringify(req).includes(ch)) e.push(`${folder}: no em or en dashes`);
@@ -79,5 +85,5 @@ export function repos(requests) {
 }
 
 export function dnsRecords(requests) {
-  return live(requests).map((r) => ({ name: host(r), type: 'CNAME', values: ['sovereignwebsite.github.io'], for: repoName(r.label) }));
+  return live(requests).map((r) => ({ zone: domain(r), name: host(r), type: 'CNAME', values: ['sovereignwebsite.github.io'], for: repoName(r.label) }));
 }

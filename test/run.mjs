@@ -54,7 +54,7 @@ const rr = R.repos([good]);
 assert.equal(rr[0].name, 'Site__pipeline-demo'); assert.equal(rr[0].cname, 'pipeline-demo.sovereignwebsite.site');
 const rp = plan({ ...org, repos: [...org.repos, ...rr] }, {});
 assert.deepEqual(checkActions(p, rp), [], 'a request plan is allowed by the policy');
-assert.deepEqual(R.dnsRecords([good])[0], { name: 'pipeline-demo.sovereignwebsite.site', type: 'CNAME', values: ['sovereignwebsite.github.io'], for: 'Site__pipeline-demo' });
+assert.deepEqual(R.dnsRecords([good])[0], { zone: 'sovereignwebsite.site', name: 'pipeline-demo.sovereignwebsite.site', type: 'CNAME', values: ['sovereignwebsite.github.io'], for: 'Site__pipeline-demo' });
 const ec = { label: 'emily-cruz', group: 'artists', title: 'Emily Cruz', description: 'Actor-musician.', kind: 'owner' };
 assert.deepEqual(R.validate(ec, '2026-11-20__emily-cruz'), [], 'a grouped request validates');
 assert.ok(R.validate({ ...ec, group: 'shops' }, '2026-11-20__emily-cruz').length, 'only known groups');
@@ -76,6 +76,17 @@ for (const must of ['.github/workflows/pages.yml', 'CLAUDE.md', 'site/CNAME', 's
 const gi = readFileSync('seed/gate-template/site/index.html', 'utf8');
 for (const id of ['key', 'open', 'file', 'status', 'loading', 'loading-msg', 'dropping', 'viewer', 'tabs', 'close', 'frame', 'viewer-title', 'viewer-meta']) assert.ok(gi.includes(`id="${id}"`), `gate page keeps #${id} for open.js`);
 assert.ok(gi.includes('data-vault-zip=""') && gi.includes('<script src="open.js">') && gi.includes('noindex'), 'gate page: no vault yet, open.js beside it, not indexed');
+const sv = { label: 'sotavento', group: 'invest', domain: 'sovereignweb.site', title: 'A firm', description: 'A private preview.', kind: 'owner', access: 'vault' };
+assert.deepEqual(R.validate(sv, '2026-11-20__sotavento'), [], 'a request on the new domain validates');
+assert.ok(R.validate({ ...sv, domain: 'example.com' }, '2026-11-20__sotavento').length, 'only our domains');
+assert.equal(R.repos([sv])[0].cname, 'sotavento.invest.sovereignweb.site');
+assert.equal(R.repos([good])[0].cname, 'pipeline-demo.sovereignwebsite.site', 'no domain: sovereignwebsite.site');
+const { addRequests, ZONE_VAR } = await import('../build/dns-plan.mjs');
+const dz = addRequests({ zones: [{ zone: 'sovereignwebsite.site', records: [] }] }, R.dnsRecords([sv, good]));
+assert.deepEqual(dz.zones.map((z) => [z.zone, z.records.map((r) => r.name)]), [['sovereignwebsite.site', ['pipeline-demo.sovereignwebsite.site']], ['sovereignweb.site', ['sotavento.invest.sovereignweb.site']]], 'each CNAME in its own zone');
+assert.equal(ZONE_VAR['sovereignweb.site'], 'SW_ZONE_ID_WEB_SITE');
+assert.deepEqual(dnsPlan(dz).errors, [], 'the new zone is one of ours');
+assert.ok(p.pipelines['transfer-apply'].limits.controlled_domains.includes('sovereignweb.site'), 'the new domain is ours for moves too');
 const st = seedFiles('seed/site-template'); for (const must of ['.github/workflows/pages.yml', 'site/CNAME', 'site/index.html']) assert.ok(st.includes(must));
 // Moves: a request with a from block, transfer-apply, and the moved site handed to Org apply and DNS apply.
 const T = await import('../build/transfer-plan.mjs'), A = await import('../build/transfer-apply.mjs'), { checkTransfer } = await import('../build/abp.mjs');

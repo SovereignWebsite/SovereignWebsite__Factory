@@ -78,3 +78,13 @@ When hosted sites need teardown, a DELETE on `*.sovereignwebsite.site` CNAMEs wi
 
 ## 3. Nameservers
 Each zone has four Route 53 nameservers. The domain's registrar must list those four, or the records are written but never served. If the domains are registered in Route 53 Domains this is already true for zones created there; otherwise set them at the registrar.
+
+## 4. Adding sovereignweb.site (20 November 2026)
+
+Dinis, about 11:38 UTC in the sites.b session: "we are going to be using sovereignweb.site since that is a better domain (which I just wired up to AWS Hosted Zone)". For DNS apply to write its records:
+
+1. **Nameservers:** at the registrar, set sovereignweb.site's nameservers to the four the new zone lists (ns-707.awsdns-24, ns-1855.awsdns-39, ns-326.awsdns-40, ns-1375.awsdns-43, as shown in Dinis's screenshot; check the zone). At 11:40 UTC public DNS still answered ns55 and ns56.worldnic.com.
+2. **The role:** add `arn:aws:route53:::hostedzone/<the sovereignweb.site zone ID>` to the `Resource` list of both the `UpsertOurRecords` and `ReadOurZones` statements above. Nothing else changes: still UPSERT only, still A, AAAA, CNAME and TXT.
+3. **The variable:** set `SW_ZONE_ID_WEB_SITE` to that zone ID in this repository's `apply` environment.
+
+Until steps 2 and 3 are done, DNS apply plans the sovereignweb.site records and skips them ("SW_ZONE_ID_WEB_SITE not set"); the other zones are unaffected. Until step 1 propagates, the records are written but not served.
