@@ -52,6 +52,10 @@ export function checkTransfer(l, a) {
   if (!(l.repositories || []).includes(fr)) e.push(`repo.transfer_in ${a.target}: not on the policy's repository list`);
   if (to !== l.to_owner) e.push(`repo.transfer_in ${a.target}: only to ${l.to_owner}`);
   if (!/^Site__[a-z0-9-]{1,40}$/.test(tn || '')) e.push(`repo.transfer_in ${a.target}: new name must be Site__<label>`);
+  const owners = l.controlled_owners || [], domains = l.controlled_domains || [];
+  if (!owners.includes(fo) || !owners.includes(to)) e.push(`repo.transfer_in ${a.target}: an owner outside our control (a separate flow)`);
+  for (const d of [a.address_from, a.address_to].filter(Boolean)) if (!domains.some((z) => d === z || d.endsWith(`.${z}`))) e.push(`repo.transfer_in ${a.target}: ${d} is not a domain we control (a separate flow)`);
+  if (!a.address_to) e.push(`repo.transfer_in ${a.target}: no new address`);
   return e;
 }
 
@@ -63,10 +67,20 @@ export function checkPaths(p, { base, head = 'HEAD', cwd = process.cwd() }) {
     const agent = git('log', '-1', '--format=%(trailers:key=Agent,valueonly)', c).split('\n').map((s) => s.trim()).filter(Boolean)[0];
     const rule = agent && p.agents[agent];
     if (!rule) { e.push(`${c.slice(0, 7)}: Agent ${agent || 'none'} is not in the policy`); continue; }
-    for (const f of git('diff-tree', '--no-commit-id', '--name-only', '-r', c).split('\n').filter(Boolean))
+    const files = git('diff-tree', '--no-commit-id', '--name-only', '-r', '--root', c).split('\n').filter(Boolean);
+    for (const f of files)
       if (!rule.may_change.some((g) => glob(g, f))) e.push(`${c.slice(0, 7)}: ${agent} may not change ${f}`);
+    if (files.includes('team/keys.json') && ownKeyChanged(agent, show(git, `${c}^`, 'team/keys.json'), show(git, c, 'team/keys.json'))) e.push(`${c.slice(0, 7)}: ${agent} may not change its own key in team/keys.json (Dinis does)`);
   }
   return { errors: e, checked: commits.length };
+}
+
+const show = (git, rev, f) => { try { return git('show', `${rev}:${f}`); } catch { return '{}'; } };
+
+// True when the entries for this agent in team/keys.json differ between two versions of the file.
+export function ownKeyChanged(agent, before, after) {
+  const mine = (t) => { try { return JSON.stringify((JSON.parse(t).keys || []).filter((k) => k.agent === agent)); } catch { return 'unreadable'; } };
+  return mine(before) !== mine(after);
 }
 
 export function needsDinis(p, files) {

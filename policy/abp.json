@@ -9,9 +9,15 @@
       "may_change": [
         "status.json",
         "REALITY.md",
-        "board/**"
+        "board/**",
+        "README.md",
+        "CLAUDE.md",
+        "LICENSE",
+        "team/keys.json"
       ],
-      "needs_dinis_merge": [],
+      "needs_dinis_merge": [
+        "team/keys.json"
+      ],
       "branches": [
         "dev"
       ],
@@ -21,7 +27,8 @@
         "name a private prospect"
       ],
       "seed_paths_source": "Dinis, 19 Nov 2026 ~16:30 UTC in the conductor session, answering the proposal to add seed/** to may_change and needs_dinis_merge: \"yes\".",
-      "scope_source": "Dinis, 20 Nov 2026 ~10:04 UTC in the conductor session: \"Yes agreed\", to the conductor proposing factory.b as the only agent that writes the Factory pipeline, policy, org, requests and DNS files; sites.b out of the Factory, sending requests to factory.b by message; the conductor narrowed to status.json, REALITY.md and board/**."
+      "scope_source": "Dinis, 20 Nov 2026 ~10:04 UTC in the conductor session: \"Yes agreed\", to the conductor proposing factory.b as the only agent that writes the Factory pipeline, policy, org, requests and DNS files; sites.b out of the Factory, sending requests to factory.b by message; the conductor narrowed to status.json, REALITY.md and board/**.",
+      "keys_source": "Dinis, 20 Nov 2026 ~10:20 UTC in the factory.b session: \"a conductor ... is the only one that should be able to update the keys for its team, and the master should be the only one who can update the key for the conductor\"."
     },
     "migration.b@SovereignWebsite.dinis": {
       "session": "https://claude.ai/code/session_01Kw9UwDKiseUFyqtG1xyVaG",
@@ -91,7 +98,7 @@
     "org-apply": {
       "runs_on": [
         "push to dev that changes org/ or policy/",
-        "hourly schedule (converges: HTTPS once certificates are issued)",
+        "hourly schedule (converges: HTTPS once certificates are issued; every sixth hour it also nudges a domain with no certificate)",
         "by hand"
       ],
       "environment": "apply",
@@ -124,7 +131,8 @@
       "protection": {
         "main": "no deletion, no force push, no direct update; only organisation admins (Dinis) bypass, so main moves only when Dinis merges a release",
         "dev": "no deletion, no force push; agents push here, and every push runs Checks including the policy path check"
-      }
+      },
+      "nudge_source": "Dinis, 20 Nov 2026 ~10:20 UTC in the factory.b session: \"you have to run that regularly ... until they are stable\"."
     },
     "dns-apply": {
       "runs_on": [
@@ -187,6 +195,14 @@
           "AgentiCCells__Site__Weather-Demo",
           "AgentiCCells__Site__IPMA-Data",
           "AgentiCCells__Site__London-Billboard"
+        ],
+        "controlled_owners": [
+          "AgentiCCells",
+          "SovereignWebsite"
+        ],
+        "controlled_domains": [
+          "agenticcells.site",
+          "sovereignwebsite.site"
         ]
       },
       "needs": [
@@ -203,9 +219,12 @@
         "repo.update_settings",
         "repo.create",
         "member.change",
-        "app.change"
+        "app.change",
+        "repo.transfer_outside_our_control"
       ],
-      "note": "The plan job is read-only (the factory App on AgentiCCells, read). Only the apply job, in the transfer environment, holds the user token, and it makes one call: POST /repos/AgentiCCells/<repo>/transfer with new_owner SovereignWebsite and new_name Site__<label>. Without TRANSFER_USER_TOKEN it prints that call for Dinis to make. The repository list is explicit; adding one is a policy change Dinis merges. Org apply keeps repo.transfer refused."
+      "note": "The plan job is read-only (the factory App on AgentiCCells, read). Only the apply job, in the transfer environment, holds the user token, and it makes one call: POST /repos/AgentiCCells/<repo>/transfer with new_owner SovereignWebsite and new_name Site__<label>. Without TRANSFER_USER_TOKEN it prints that call for Dinis to make. The repository list is explicit; adding one is a policy change Dinis merges. Org apply keeps repo.transfer refused.",
+      "controlled_source": "Dinis, 20 Nov 2026 ~10:20 UTC in the factory.b session: \"you can only do transfers for domains that we control. So you can never do a transfer for a domain outside of our control. That is going to be a separate flow\". A move from or to an owner or domain we do not control is refused here; it will be its own pipeline, with a shorter-lived token.",
+      "after_the_move": "migration.b@SovereignWebsite.dinis commits the moved-to-SovereignWebsite update in each moved repository, under that repository's own rules (Dinis, 20 Nov 2026 ~10:20 UTC in the factory.b session)."
     }
   },
   "privileges": [
@@ -254,8 +273,8 @@
     {
       "holder": "github-user-token:Dinis Cruz via github-app:sovereignwebsite-transfer",
       "permission": "administration:write (repository), metadata:read; the App installed only on the repositories in transfer-apply limits and on SovereignWebsite",
-      "why": "transfer-apply: POST /repos/{owner}/{repo}/transfer accepts a user access token only (GitHub App permissions page, 20 Nov 2026); held as TRANSFER_USER_TOKEN in the transfer environment, revoked after each wave",
-      "state": "proposed; Dinis chose option A on 20 Nov 2026, App and token for Dinis to make"
+      "why": "transfer-apply: POST /repos/{owner}/{repo}/transfer accepts a user access token only (GitHub App permissions page, 20 Nov 2026); held as TRANSFER_USER_TOKEN in the transfer environment, a long-lived token for the waves of moves between organisations we control, revoked when they are done",
+      "state": "Dinis, 20 Nov 2026: yes to a new App sovereignwebsite-transfer and a longer-lived token; App and token for Dinis to make"
     },
     {
       "holder": "github-app:agenticcells-site-factory",
@@ -263,5 +282,6 @@
       "why": "transfer-apply plan: read-only preflight of the source repository",
       "state": "needed; not yet checked"
     }
-  ]
+  ],
+  "keys_rule": "No agent may change its own entry in team/keys.json (build/abp.mjs paths refuses it). The conductor adds and retires its team's keys; only Dinis changes the conductor's key."
 }

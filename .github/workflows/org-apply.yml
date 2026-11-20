@@ -35,8 +35,13 @@ jobs:
       - name: Plan against the live organisation
         env:
           GH_TOKEN: ${{ steps.app.outputs.token }}
-          NUDGE_MISSING: ${{ inputs.nudge_missing_certificates == true }}
-        run: node build/org-plan.mjs plan.json | tee -a "$GITHUB_STEP_SUMMARY"
+          NUDGE_INPUT: ${{ inputs.nudge_missing_certificates == true }}
+          EVENT: ${{ github.event_name }}
+        # A domain with no certificate is nudged when asked by hand, and by the schedule every sixth hour
+        # (00, 06, 12, 18 UTC), so a new site gets its certificate without a person; never while one is pending.
+        run: |
+          if [ "$NUDGE_INPUT" = "true" ] || { [ "$EVENT" = "schedule" ] && [ $(( 10#$(date -u +%H) % 6 )) -eq 0 ]; }; then export NUDGE_MISSING=true; fi
+          node build/org-plan.mjs plan.json | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Policy check
         run: node build/abp.mjs actions plan.json
       - name: Apply

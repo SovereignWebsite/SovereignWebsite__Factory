@@ -21,7 +21,7 @@ export function planFor(r) {
     request: r.folder,
     apply: r.apply,
     from: r.from,
-    actions: [{ action: 'repo.transfer_in', target: `${r.from.owner}/${r.from.repo}`, to: `${TO_OWNER}/Site__${r.label}` }],
+    actions: [{ action: 'repo.transfer_in', target: `${r.from.owner}/${r.from.repo}`, to: `${TO_OWNER}/Site__${r.label}`, address_from: r.from.address, address_to: `${r.label}.sovereignwebsite.site` }],
     address: `${r.label}.sovereignwebsite.site`,
     signed: r.signed === true,
     findings: [],
