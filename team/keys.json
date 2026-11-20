@@ -270,6 +270,25 @@
         "fingerprint": "sha256:f3fbcc0fc9c77d70",
         "signing_fingerprint": "sha256:3d2718588a92518b"
       }
+    },
+    {
+      "id": "startups-b-sovereignwebsite",
+      "agent": "startups.b@SovereignWebsite.dinis",
+      "role": "Keeps the five startup brochure sites under startups.sovereignweb.site (Site__Startups__*), made by sites.b at Dinis Cruz's request. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 20 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
+      "created": "2026-11-20",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwCbSQgp3wavatYAbqd",
+      "fingerprint": "sha256:57bedf0371520b54",
+      "signing_fingerprint": "sha256:01eebfc491aa83f8",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEApQnsTBHdyqRH08y5WhW+\nneTxhJOnvsU0O8X5cj5bfL3Ng5XbYxGTPgC3K94dnsOarZd+8eX/nzlUJs/VcjEG\naVJACHioXiFJALljakrHeMeJcDqeqIP6gYvab2ET/c/Rjevj4VLgERpKXnebUViy\nZZ4bS0wjZ/LQEp6PJIzz9K+gljW1lnj1WgilfS+accgRWz4dMYMXcpuizAfm3p7Y\ne0chJr6s1ssvkkw89bvJTW84yyptSeMUElnlhy6z97ykmz/5XrQPua3Q7lPMLtVo\nWOAWIrndwHhzSl4+ttsA2zUNAX9rH5g2xElZOyQ05xVbC1e+kbjEY9n63OtkVq86\n5paKalLpgiElm+lM3dTvfzTznNDcfGAZ5SghOn9vQF6lk+BIMyaHtHQ1DVYxa++P\nqCEtfD63CWg4oYd/569Jma3W7rDstPgg7ummkQA5yGj9MKjLv+7iR+NFGyGUAFGs\nXauwkN8hD7zWUpSJz0AcdlkQrulynHL0ZDCKEq+ZCCHcu+5uCXfAz2pruGuxvATe\n9mudJqfREpLAPEESOkJmgEOEukblAAhA2BAab3hD4lUEtx+ul2i1POD72XkaBYeT\n10eX0hdaWUU0oBde40GZhAgV5W+MJh9Vjn+cGxcpSMJAcGEPQm3JwifxYFDBTmV3\n5zR5hAwsTdrTbzhhecudhy8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEglgr5mo+nT5gLrpX3FeJQKjojHOr\nWqhbXwzfg88LqK4f/Z/kj7w1oQvIsCaCAoVdLFXYGav8JdCRi0f76+4BuQ==\n-----END PUBLIC KEY-----\n",
+        "label": "startups.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:57bedf0371520b54",
+        "signing_fingerprint": "sha256:01eebfc491aa83f8"
+      }
     }
   ]
 }
