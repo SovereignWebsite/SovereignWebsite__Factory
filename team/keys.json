@@ -365,6 +365,25 @@
         "fingerprint": "sha256:f679dc00e4703e41",
         "signing_fingerprint": "sha256:64da4ab2764206c1"
       }
+    },
+    {
+      "id": "conductor-mistral-sovereignwebsite",
+      "agent": "conductor.mistral@SovereignWebsite.dinis",
+      "role": "Conducts the Mistral work: mistral.provider.sovereignweb.site and the hackathon demos, with its own agents; started by sites.b at Dinis Cruz's request. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 20 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
+      "created": "2026-11-20",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwFkZvAwG1yRZJhexqX",
+      "fingerprint": "sha256:f5a495b2efdc6b33",
+      "signing_fingerprint": "sha256:1c3156175cbc2bcf",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAvocdG20fS2iqserN0wuV\nH7/sYGzM2Cg+LHOYii1uNnUYzXf+h+6xFUS7Dg/x4nKedQ7zr9Q8XYDBhoDIWaf+\nj5410oKk9hCK4+Acm71R0ApmUp82zd+G3VchxuYKm6qyCpA7OKFL5wiYg8qzlyHT\nhWaOwl627wHB6/Qr474bIdxjwNHIWOm+lDxh9XNIrx2ChDbr2KYHSkmEsj+0zC8M\nS8ZBwqJC7NdLnFDh9biRqezDSu5oQk20i0YHu/2NNtn+tMhmz7T655hgYYGIzyGe\n1tcKlwcMvR0jtAFrmVr8H7mQN4DYWxSeUyTxs2rBOT7EzOgFfwkV+oCvX55pykrc\nZ6TQg71sKVF4PZOy7tLX3W2ORhFg7zloh5AoPDXp+tgwj6+nRfVEYXosck+dasnL\ne9hAvQdCCCNEoBpsV6ho7IRVBS3qZ8C3HzSdJthW5NKZAQph0vnqLBDqtwKugpU/\ndF+jC8mzQaSahHNmViarm0mn4nBSGulKCzoxnNXmX49gtRKSCa3gG8dC9pMyYB/5\nRBQCqoHhhBmUBmlzIIpaEeRrLQH+w3g9kKhHTgnrKsWi7nthRnDZFPKmDJl+gOAG\nA8wZg4Uy1xRkv1H5U3e9wTrmY/UF+fNHvOKqz39Sd3sFUb89vt0703CPohkJSlUl\ne0D3FJCEeWQZ8rrHGhR/J+ECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE+Yktj1+P5zyjYgnsssTlDFBG3ef9\n7KY6zE8lr3Swn6iM59n2sfZcFTqRCGXUAieyLmfRw0bg+Y3lUQY5sJFxfQ==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor.mistral@SovereignWebsite.dinis",
+        "fingerprint": "sha256:f5a495b2efdc6b33",
+        "signing_fingerprint": "sha256:1c3156175cbc2bcf"
+      }
     }
   ]
 }
