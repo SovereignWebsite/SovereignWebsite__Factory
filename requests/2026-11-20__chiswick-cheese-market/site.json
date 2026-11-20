@@ -1,0 +1,8 @@
+{
+  "label": "chiswick-cheese-market",
+  "group": "organisation",
+  "title": "Chiswick Cheese Market, a demonstration",
+  "description": "A private preview. Scan, paste or drop the QR code you were given to open it.",
+  "kind": "owner",
+  "access": "vault"
+}
