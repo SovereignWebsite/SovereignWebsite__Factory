@@ -9,5 +9,5 @@
     "address": "weather-demo.agenticcells.site"
   },
   "signed": false,
-  "apply": "dry-run"
+  "apply": "real"
 }
