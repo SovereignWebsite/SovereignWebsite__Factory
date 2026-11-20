@@ -55,6 +55,16 @@ assert.equal(rr[0].name, 'Site__pipeline-demo'); assert.equal(rr[0].cname, 'pipe
 const rp = plan({ ...org, repos: [...org.repos, ...rr] }, {});
 assert.deepEqual(checkActions(p, rp), [], 'a request plan is allowed by the policy');
 assert.deepEqual(R.dnsRecords([good])[0], { name: 'pipeline-demo.sovereignwebsite.site', type: 'CNAME', values: ['sovereignwebsite.github.io'], for: 'Site__pipeline-demo' });
+const ec = { label: 'emily-cruz', group: 'artists', title: 'Emily Cruz', description: 'Actor-musician.', kind: 'owner' };
+assert.deepEqual(R.validate(ec, '2026-11-20__emily-cruz'), [], 'a grouped request validates');
+assert.ok(R.validate({ ...ec, group: 'shops' }, '2026-11-20__emily-cruz').length, 'only known groups');
+assert.ok(R.validate({ ...good, label: 'artists' }, '2026-11-19__artists').length, 'a group name is reserved as a label');
+const er = R.repos([ec])[0];
+assert.equal(er.name, 'Site__emily-cruz'); assert.equal(er.cname, 'emily-cruz.artists.sovereignwebsite.site'); assert.equal(er.vars.host, 'emily-cruz.artists.sovereignwebsite.site');
+assert.equal(R.dnsRecords([ec])[0].name, 'emily-cruz.artists.sovereignwebsite.site');
+assert.equal(dnsPlan({ zones: [{ zone: 'sovereignwebsite.site', records: R.dnsRecords([ec]) }] }).errors.length, 0, 'a grouped name is inside the .site zone');
+assert.equal(R.repos([good])[0].vars.host, 'pipeline-demo.sovereignwebsite.site', 'no group: the address is unchanged');
+assert.equal(readFileSync('seed/site-template/site/CNAME', 'utf8').trim(), '{{host}}');
 const st = seedFiles('seed/site-template'); for (const must of ['.github/workflows/pages.yml', 'site/CNAME', 'site/index.html']) assert.ok(st.includes(must));
 // Moves: a request with a from block, transfer-apply, and the moved site handed to Org apply and DNS apply.
 const T = await import('../build/transfer-plan.mjs'), A = await import('../build/transfer-apply.mjs'), { checkTransfer } = await import('../build/abp.mjs');

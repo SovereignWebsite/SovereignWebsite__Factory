@@ -7,7 +7,12 @@ import { join } from 'node:path';
 export const LABEL = /^[a-z0-9](?:[a-z0-9-]{0,38}[a-z0-9])?$/;
 // Organisations a repository may be moved from (the ABP's transfer-apply limits name the repositories).
 export const FROM_OWNERS = ['AgentiCCells'];
-const RESERVED = new Set(['www', 'hub', 'vault', 'api', 'admin', 'mail', 'factory']);
+// Groups of sites under their own subdomain: <label>.<group>.sovereignwebsite.site (Dinis, 20 Nov 2026).
+export const GROUPS = ['artists', 'cv'];
+const RESERVED = new Set(['www', 'hub', 'vault', 'api', 'admin', 'mail', 'factory', ...GROUPS]);
+
+// The address of a hosted site.
+export const host = (r) => `${r.label}.${r.group ? `${r.group}.` : ''}sovereignwebsite.site`;
 
 export function validate(req, folder = '') {
   const e = [];
@@ -17,6 +22,7 @@ export function validate(req, folder = '') {
   if (folder && !folder.endsWith(`__${req.label}`)) e.push(`${folder}: folder must end with __${req.label}`);
   if (!req.title || req.title.length > 80) e.push(`${folder}: title is required, at most 80 characters`);
   if (!req.description || req.description.length > 200) e.push(`${folder}: description is required, at most 200 characters`);
+  if (req.group !== undefined && !GROUPS.includes(req.group)) e.push(`${folder}: group must be one of ${GROUPS.join(', ')}`);
   if (!['demo', 'owner'].includes(req.kind)) e.push(`${folder}: kind must be "demo" or "owner"`);
   for (const ch of ['—', '–']) if (JSON.stringify(req).includes(ch)) e.push(`${folder}: no em or en dashes`);
   if (req.from !== undefined) {
@@ -60,15 +66,15 @@ export const live = (requests) => requests.filter((r) => !r.from || r.moved);
 export function repos(requests) {
   return live(requests).map((r) => ({
     name: repoName(r.label),
-    description: `${r.label}.sovereignwebsite.site: ${r.description}`.slice(0, 350),
-    homepage: `https://${r.label}.sovereignwebsite.site`,
+    description: `${host(r)}: ${r.description}`.slice(0, 350),
+    homepage: `https://${host(r)}`,
     pages: true,
-    cname: `${r.label}.sovereignwebsite.site`,
+    cname: host(r),
     ...(r.from ? { transfer_from: `${r.from.owner}/${r.from.repo}` } : { seed: 'seed/site-template' }),
-    vars: { label: r.label, title: r.title, description: r.description, kind: r.kind },
+    vars: { label: r.label, host: host(r), title: r.title, description: r.description, kind: r.kind },
   }));
 }
 
 export function dnsRecords(requests) {
-  return live(requests).map((r) => ({ name: `${r.label}.sovereignwebsite.site`, type: 'CNAME', values: ['sovereignwebsite.github.io'], for: repoName(r.label) }));
+  return live(requests).map((r) => ({ name: host(r), type: 'CNAME', values: ['sovereignwebsite.github.io'], for: repoName(r.label) }));
 }
