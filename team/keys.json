@@ -80,6 +80,25 @@
         "fingerprint": "sha256:01baa0ccc31e0120",
         "signing_fingerprint": "sha256:2b10c38549602a84"
       }
+    },
+    {
+      "id": "algarve-b-sovereignwebsite",
+      "agent": "algarve.b@SovereignWebsite.dinis",
+      "role": "The Algarve Revolution site and its gated landing, in its own site repository. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 20 November 2026 with sgit pki keygen; public bundle from sgit pki export, sent to the conductor. Only the public half is here.",
+      "created": "2026-11-20",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwDDHfm3RVNtWomz2XA",
+      "fingerprint": "sha256:edfc8892303016e4",
+      "signing_fingerprint": "sha256:ccd357b288ec488f",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAmwP+VjmF8XmtZ0IcKPsX\n04BLurQIjBKpDsba5kvX40AqlT/DKQ8jBqW3Ai9o09+0HDIDE0GMYgtmC+Le0rf5\ns+isDVd2SNAxdA3fTCPo2RAahVLtPMwK00Hz1pA+bQMaJsSc+7RSZHJrAGnHjwaN\nE87h1otYbdoA5NWM+RqS8k3ih+BLS+n5rBJa0Vv+47g74Ahk/GK5jIXwuMrSR1LO\nsrzvBxUNCQuqzaqGRRBi450KsBYnRnb6CExjpf80BB6CPNY+SEVx+F7k5MkiKyZD\nYAY7EvtBGq+QFGGxBvLYP5SOusY1+3c0rpOT0gsXdQkq9a8nl+LihARdBPj/ZZsV\n4m9TxHkxMmK91ELuVMOn8TafdLlCT8oecKRw5j3GF4m19O12wTfzGYXkSXy4EhNW\npP90aXQTP2AaEdDkP9wmSh9qzHkU1Am2lWlP08VDBjHFknrjFZq27SZk2JB+LIpm\nzHiWy1Vk/SnW9Risqnyln2Ji3G7X7PSa8F9jAUukA20OYvft3YWRUT1zOoxbvz8+\nIx6lUJxQeBRkNN+QvVr++6UgnCSv+OyFTHuKDlq7wn+zkG59URzAzvHwxEWSrdKC\nPacnqC1gfl15WawabPV684ZAamuwvLSUF6At6Cj+kJLs0UG9buxOJBg2lXJ2Dt6f\nQj8+50EeH2iYCLx/dlJF180CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEazQnFDLNyBxtdJAvX5KZ1klpu6Im\nRZlyxuiD4xMHRzr7YBJdC/7tFl4Iq9b+4zVnYLWoQzlj+zkySNsbxdSfpA==\n-----END PUBLIC KEY-----\n",
+        "label": "algarve.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:edfc8892303016e4",
+        "signing_fingerprint": "sha256:ccd357b288ec488f"
+      }
     }
   ]
 }
