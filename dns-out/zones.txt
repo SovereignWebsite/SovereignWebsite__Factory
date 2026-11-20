@@ -1,0 +1,3 @@
+sovereignwebsite.ai SW_ZONE_ID_AI
+sovereignwebsite.org SW_ZONE_ID_ORG
+sovereignwebsite.site SW_ZONE_ID_SITE

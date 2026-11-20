@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-20T01:33Z",
+  "updated": "2026-11-20T08:50Z",
   "state": "all five sites live over HTTPS with HTTPS enforced (.ai, .org, .site, hub, vault); family bar on every page; ten pages on .ai; principles on .org; vault drop page by hub.b",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -16,13 +16,19 @@
     "European Portuguese version of the ten pages at sovereignwebsite.ai/pt/ (checked, live)"
   ],
   "next": [
-    "the hosted-site request path in the Factory: requests/<label>/ to a repository and <label>.sovereignwebsite.site, so the £50 tier is a pipeline run",
-    "google-maps example if Dinis says yes"
+    "pipeline-demo and google-maps through Org apply and DNS apply, then HTTPS",
+    "google-maps: the directions page and the cameras along the route, waiting on a Google Maps key restricted to google-maps.sovereignwebsite.site",
+    "CC BY 4.0 notices on .ai, .org and .site"
   ],
   "asks": [
-    "Dinis: read the Portuguese choices (numbers, tier names, Maestro) - https://sovereignwebsite.ai/pt/",
-    "Dinis: yes or no to the google-maps example and its name; the Google key, budget and quota are his - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-    "Dinis: the licence for the principles on sovereignwebsite.org - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-    "Dinis: yes to adding migration.b to policy/abp.json (board/migration/** only) - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu"
+    "Dinis: yes to adding migration.b to policy/abp.json (board/migration/** only) - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
+    "Dinis: a Google Maps Platform key restricted to https://google-maps.sovereignwebsite.site/*, with Maps JavaScript, Directions and Places APIs only, a budget and a daily quota - https://console.cloud.google.com/google/maps-apis/credentials"
+  ],
+  "decisions": [
+    "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",
+    "Dinis, 20 Nov 2026 ~08:40 UTC: the Portuguese site is OK",
+    "Dinis, 20 Nov 2026 ~08:40 UTC: yes to the Google Maps example, google-maps.sovereignwebsite.site (requests/2026-11-20__google-maps); its key, budget and quota are his",
+    "Dinis, 20 Nov 2026 ~08:40 UTC: the principles and all content we create here are CC BY (applied as CC BY 4.0)",
+    "Dinis, 20 Nov 2026 ~08:40 UTC: keep the wake hourly"
   ]
 }
