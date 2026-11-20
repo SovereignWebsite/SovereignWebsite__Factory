@@ -194,6 +194,25 @@
         "fingerprint": "sha256:af936bb535837009",
         "signing_fingerprint": "sha256:5131e886013a6483"
       }
+    },
+    {
+      "id": "design-b-sovereignwebsite",
+      "agent": "design.b@SovereignWebsite.dinis",
+      "role": "Design guidelines, briefs, reviews and sign-off for every site; keeps Site__Agents__Design (design.agents.sovereignweb.site). No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 20 November 2026 with sgit, at Dinis's word there; public bundle sent to the conductor. Only the public half is here.",
+      "created": "2026-11-20",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwCvZbGkWo3D9DEpRMv",
+      "fingerprint": "sha256:97ea8c356fbf1697",
+      "signing_fingerprint": "sha256:ad8a7bf35603a085",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAkfl57eyyfqvYAVMZEWGj\nm92SYjzfsSKXDvcDpPYW4jPtOd3sHjqBeMu8284I2JCmQW5aV+FVOHmUkKUyf5RX\npOHOblxo0lHAgzKwtHvQro9j2+Waz+mt4Xt3mBpmJ2p1zVxNuOwaHT1r8JvLZT3T\nNkpODrZGkU+o4H6/oG/K0abUugH8wGm+3ykCw6LsblhaxPwW8ndvlGijCFDm0wgC\nZnXwOJFDStimAUcNn9b8U79iEsPZiISGw4dQWO6OrLRIb+vuqY7pNohjQs9raSx1\nxhxQyDI1ivoj+JaNulMo/klA4alRMVhgDUfpUw4hlPmQVzrRohHAxkUGatbpTS8I\nRYsPt4rQOtRKE6LSTd1yehC+cHXnQmvoh3bsUtgowX4TeTyHchRwVr9pXZ+BwCXW\nvd6YRWD4z2EhH/BUP9I51cLvFugEZVpkMY/hLwGPLLnp6o4nuzssscQ5IpzhbMTA\na5kHtHxGx08OJ98RfZ2ufPbJNGdqCRcu1pRXN8sVpfLlyZ2oIJQSqPKZMyjuqKUE\nrFJWljq1QzaGAUMZA9lUuyXMtjQkfW/SM0E9vegu5PoJYMyrdt1ojCxx1+YHkyH9\nI/3gbwOhW+x/ygrmkr5cYKTHxnhT0tcJi4qTXAfCG4HDNrm0f1flQPvq09igMx6f\nya1YJCLJVQFgIKVw7PkST2MCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEKX0anXO630r+a1yTRhqacJ7D7sVw\ntFGCNjQan1KAiBUk8PyQzwlB6EWRECtPF9UZEoP/ckbkulWNbtzBy2BgPA==\n-----END PUBLIC KEY-----\n",
+        "label": "design.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:97ea8c356fbf1697",
+        "signing_fingerprint": "sha256:ad8a7bf35603a085"
+      }
     }
   ]
 }
