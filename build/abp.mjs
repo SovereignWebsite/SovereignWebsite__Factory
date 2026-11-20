@@ -40,6 +40,7 @@ export function checkActions(p, plan) {
     if ((pipe.refused_always || []).includes(a.action)) e.push(`${a.action} on ${a.target}: refused always for ${plan.pipeline}`);
     else if (!pipe.allowed.includes(a.action)) e.push(`${a.action} on ${a.target}: not allowed for ${plan.pipeline}`);
     else if (a.action === 'repo.transfer_in') e.push(...checkTransfer(pipe.limits || {}, a));
+    else if (a.action === 'repo.invite_collaborator' && a.permission !== 'push') e.push(`repo.invite_collaborator ${a.user} on ${a.target}: push only`);
   }
   if (pipe.limits?.per_run && (plan.actions || []).length > pipe.limits.per_run) e.push(`${plan.pipeline}: at most ${pipe.limits.per_run} action per run`);
   return e;

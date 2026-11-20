@@ -19,7 +19,7 @@ export function wanted(org) {
 }
 
 export function plan(org, live) {
-  const actions = [];
+  const actions = [], notes = [];
   for (const r of wanted(org)) {
     const l = live[r.name];
     // Renamed (Site__<label> to Site__<Group>__<Name>): rename it this run; the next run converges its settings.
@@ -35,6 +35,7 @@ export function plan(org, live) {
       if (r.seed) actions.push({ action: 'repo.seed', target: r.name });
       for (const [t, perm] of Object.entries(r.teams || {})) if (perm === 'push') actions.push({ action: 'team.grant_push', target: r.name, team: t });
       if (r.protect) actions.push({ action: 'repo.protect_branches', target: r.name });
+      for (const [u, perm] of Object.entries(r.collaborators || {})) actions.push({ action: 'repo.invite_collaborator', target: r.name, user: u, permission: perm });
       continue;
     }
     const diff = ['description', 'has_wiki', 'has_projects', 'delete_branch_on_merge', 'allow_merge_commit', 'allow_squash_merge', 'allow_rebase_merge', 'homepage'].filter((k) => r[k] !== undefined && (l[k] ?? null) !== (r[k] ?? null));
@@ -47,6 +48,13 @@ export function plan(org, live) {
     if (r.seed && l.seed_missing?.length) actions.push({ action: 'repo.seed', target: r.name, files: l.seed_missing });
     if (r.cname && l.cname !== r.cname) actions.push({ action: 'pages.set_cname', target: r.name });
     for (const [t, perm] of Object.entries(r.teams || {})) if (perm === 'push' && !(l.teams || {})[t]) actions.push({ action: 'team.grant_push', target: r.name, team: t });
+    // A person a request names gets push only, by invitation; an unknown login is reported, never invited.
+    for (const [u, perm] of Object.entries(r.collaborators || {})) {
+      const have = (l.collaborators || {})[u.toLowerCase()];
+      if (have) continue;
+      if (l.unknown_users?.includes(u.toLowerCase())) { notes.push(`${r.name}: GitHub user ${u} not found, not invited`); continue; }
+      actions.push({ action: 'repo.invite_collaborator', target: r.name, user: u, permission: perm });
+    }
     if (r.protect && !l.protected) actions.push({ action: 'repo.protect_branches', target: r.name });
     if (r.cname && l.cname === r.cname && !l.https_enforced) {
       const st = l.cert_state;
@@ -56,7 +64,7 @@ export function plan(org, live) {
   }
   const names = new Set(org.repos.flatMap((r) => [r.name, ...(r.aka || [])]));
   const unlisted = Object.keys(live).filter((n) => !names.has(n));
-  return { pipeline: 'org-apply', org: org.org, actions, unlisted };
+  return { pipeline: 'org-apply', org: org.org, actions, unlisted, notes };
 }
 
 export function seedFiles(dir) {
@@ -83,7 +91,18 @@ export async function liveRepos(org, spec = {}) {
       if (want.seed && dev.status === 200) for (const f of seedFiles(want.seed)) { const c = await gh('GET', `/repos/${org}/${x.name}/contents/${f}?ref=dev`); if (c.status === 404) seed_missing.push(f); }
       const tm = await gh('GET', `/repos/${org}/${x.name}/teams`);
       const teams = Object.fromEntries((Array.isArray(tm.data) ? tm.data : []).map((t) => [t.slug, t.permission]));
-      out[x.name] = { ...x, has_dev: dev.status === 200, cname, seed_missing, teams, https_enforced, cert_state, protected: isProtected };
+      // Collaborators already there or invited, and named logins that do not exist on GitHub.
+      const collaborators = {}, unknown_users = [];
+      for (const u of Object.keys(want.collaborators || {})) {
+        const ul = u.toLowerCase();
+        const c = await gh('GET', `/repos/${org}/${x.name}/collaborators/${u}`);
+        if (c.status === 204) { collaborators[ul] = 'member'; continue; }
+        const inv = await gh('GET', `/repos/${org}/${x.name}/invitations?per_page=100`);
+        if (Array.isArray(inv.data) && inv.data.some((i) => (i.invitee?.login || '').toLowerCase() === ul)) { collaborators[ul] = 'invited'; continue; }
+        const usr = await gh('GET', `/users/${u}`);
+        if (usr.status === 404) unknown_users.push(ul);
+      }
+      out[x.name] = { ...x, has_dev: dev.status === 200, cname, seed_missing, teams, https_enforced, cert_state, protected: isProtected, collaborators, unknown_users };
     }
     if (r.data.length < 100) break;
   }
@@ -92,8 +111,9 @@ export async function liveRepos(org, spec = {}) {
 
 export function markdown(p) {
   const l = [`### Plan for ${p.org} (${p.actions.length} actions)`];
-  for (const a of p.actions) l.push(`- \`${a.action}\` ${a.target}${a.fields ? ` (${a.fields.join(', ')})` : a.files ? ` (${a.files.join(', ')})` : a.team ? ` (${a.team})` : a.state ? ` (certificate ${a.state})` : a.to ? ` to ${a.to}` : ''}`);
+  for (const a of p.actions) l.push(`- \`${a.action}\` ${a.target}${a.fields ? ` (${a.fields.join(', ')})` : a.files ? ` (${a.files.join(', ')})` : a.team ? ` (${a.team})` : a.state ? ` (certificate ${a.state})` : a.to ? ` to ${a.to}` : a.user ? ` (${a.user}, ${a.permission})` : ''}`);
   if (!p.actions.length) l.push('- nothing to do');
+  for (const n of p.notes || []) l.push(`- note: ${n}`);
   if (p.unlisted?.length) l.push(`\nNot in org/repos.json (reported, never deleted): ${p.unlisted.join(', ')}`);
   return l.join('\n');
 }

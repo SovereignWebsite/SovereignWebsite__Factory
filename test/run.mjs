@@ -137,6 +137,20 @@ assert.equal(R.repos([{ ...good, label: 'agents', domain: undefined }])[0].name,
 const apy = readFileSync('seed/agent-template/.github/workflows/pages.yml', 'utf8');
 assert.ok(apy.includes('SovereignWebsite__Factory/dev/team/keys.json') && apy.includes('site/key.json'), 'the key is copied from the Factory root at each deploy');
 assert.ok(!seedFiles('seed/agent-template').includes('site/key.json'), 'no hand-written key in the template');
+// A person named in a request is invited with push only; an unknown login is reported, not invited.
+const kc = { label: 'kate-curtis-evans', group: 'founder', title: 'K', description: 'A founder.', kind: 'owner', collaborators: { 'kateandphilce-jpg': 'push' } };
+assert.deepEqual(R.validate(kc, '2026-11-20__kate-curtis-evans'), []);
+assert.ok(R.validate({ ...kc, collaborators: { 'kateandphilce-jpg': 'admin' } }, '2026-11-20__kate-curtis-evans').length, 'push only');
+assert.ok(R.validate({ ...kc, collaborators: { 'not a login': 'push' } }, '2026-11-20__kate-curtis-evans').length, 'a GitHub login');
+const kr = R.repos([kc])[0];
+const kbase = { ...base, description: kr.description, homepage: kr.homepage, cname: kr.cname, seed_missing: [], cert_state: 'approved', https_enforced: true };
+const kp = (l) => plan({ ...org, repos: [kr] }, { [kr.name]: { ...kbase, ...l } });
+assert.deepEqual(kp({ collaborators: {} }).actions.filter((a) => a.action === 'repo.invite_collaborator'), [{ action: 'repo.invite_collaborator', target: 'Site__Founder__Kate-Curtis-Evans', user: 'kateandphilce-jpg', permission: 'push' }]);
+assert.deepEqual(checkActions(p, kp({ collaborators: {} })), [], 'an invitation with push is allowed');
+assert.equal(kp({ collaborators: { 'kateandphilce-jpg': 'invited' } }).actions.filter((a) => a.action === 'repo.invite_collaborator').length, 0, 'not invited twice');
+const ku = kp({ collaborators: {}, unknown_users: ['kateandphilce-jpg'] });
+assert.equal(ku.actions.filter((a) => a.action === 'repo.invite_collaborator').length, 0); assert.ok(ku.notes[0].includes('not found'), 'an unknown login is reported');
+assert.ok(checkActions(p, { pipeline: 'org-apply', actions: [{ action: 'repo.invite_collaborator', target: 'X', user: 'u', permission: 'admin' }] }).length, 'never more than push');
 const st = seedFiles('seed/site-template'); for (const must of ['.github/workflows/pages.yml', 'site/CNAME', 'site/index.html']) assert.ok(st.includes(must));
 // Moves: a request with a from block, transfer-apply, and the moved site handed to Org apply and DNS apply.
 const T = await import('../build/transfer-plan.mjs'), A = await import('../build/transfer-apply.mjs'), { checkTransfer } = await import('../build/abp.mjs');

@@ -52,6 +52,14 @@ export function validate(req, folder = '') {
     if (req.group !== 'agents') e.push(`${folder}: an agent's site is in the agents group`);
     if (req.access !== undefined) e.push(`${folder}: an agent's site is public`);
   }
+  if (req.collaborators !== undefined) {
+    const c = req.collaborators;
+    if (!c || typeof c !== 'object' || Array.isArray(c)) e.push(`${folder}: collaborators is { "<GitHub login>": "push" }`);
+    else for (const [u, perm] of Object.entries(c)) {
+      if (!/^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$/.test(u)) e.push(`${folder}: collaborator ${u} is not a GitHub login`);
+      if (perm !== 'push') e.push(`${folder}: collaborator ${u} may only have push (write)`);
+    }
+  }
   if (req.access !== undefined && !Object.hasOwn(ACCESS, req.access)) e.push(`${folder}: access must be one of ${Object.keys(ACCESS).join(', ')}`);
   if (!['demo', 'owner'].includes(req.kind)) e.push(`${folder}: kind must be "demo" or "owner"`);
   for (const ch of ['—', '–']) if (JSON.stringify(req).includes(ch)) e.push(`${folder}: no em or en dashes`);
@@ -132,6 +140,7 @@ function sites(requests) {
     pages: true,
     cname: host(r),
     ...(r.from ? { transfer_from: `${r.from.owner}/${r.from.repo}` } : { seed: r.agent ? 'seed/agent-template' : ACCESS[r.access || 'public'] }),
+    ...(r.collaborators ? { collaborators: r.collaborators } : {}),
     vars: { label: r.label, repo: repoName(r), host: host(r), title: r.title, description: r.description, kind: r.kind, ...(r.agent ? { agent: r.agent } : {}) },
   }));
 }

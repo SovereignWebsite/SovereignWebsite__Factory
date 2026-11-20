@@ -114,7 +114,8 @@
         "repo.protect_branches",
         "pages.enforce_https",
         "pages.nudge_certificate",
-        "repo.rename"
+        "repo.rename",
+        "repo.invite_collaborator"
       ],
       "refused_always": [
         "repo.delete",
@@ -134,7 +135,8 @@
         "dev": "no deletion, no force push; agents push here, and every push runs Checks including the policy path check"
       },
       "nudge_source": "Dinis, 20 Nov 2026 ~10:20 UTC in the factory.b session: \"you have to run that regularly ... until they are stable\".",
-      "rename_note": "repo.rename only from a name a request lists as aka (its old Site__<label> or Redirect__<label>) to the name the request gives, Site__[<Group>__]<Name> (Dinis, 20 Nov 2026 ~12:28 UTC). GitHub keeps redirecting the old name."
+      "rename_note": "repo.rename only from a name a request lists as aka (its old Site__<label> or Redirect__<label>) to the name the request gives, Site__[<Group>__]<Name> (Dinis, 20 Nov 2026 ~12:28 UTC). GitHub keeps redirecting the old name.",
+      "collaborator_note": "repo.invite_collaborator: only a GitHub login a site request names under \"collaborators\", only with push (write), on that site repository only; a login GitHub does not know is reported, never invited. Never admin or maintain (Dinis, 20 Nov 2026 ~14:44 UTC: \"hi can you add kateandphilce-jpg as the writer to kate's repo\")."
     },
     "dns-apply": {
       "runs_on": [

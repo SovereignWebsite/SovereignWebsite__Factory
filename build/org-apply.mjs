@@ -16,7 +16,11 @@ const must = (r, what, ok = [200, 201, 204]) => { if (!ok.includes(r.status)) th
 
 for (const a of p.actions) {
   const r = spec[a.target], base = `/repos/${p.org}/${a.target}`;
-  if (a.action === 'repo.rename') {
+  if (a.action === 'repo.invite_collaborator') {
+    // Push only, and only a login the repository's request names.
+    if (a.permission !== 'push' || (spec[a.target]?.collaborators || {})[a.user] !== 'push') throw new Error(`invite ${a.user} to ${a.target}: not in its request with push`);
+    must(await gh('PUT', `${base}/collaborators/${a.user}`, { permission: 'push' }), `invite ${a.user} to ${a.target} (push)`, [201, 204]);
+  } else if (a.action === 'repo.rename') {
     // Only from a name the request lists as aka, to the name the request gives.
     if (!(spec[a.to]?.aka || []).includes(a.target)) throw new Error(`rename ${a.target}: not an aka of ${a.to}`);
     must(await gh('PATCH', base, { name: a.to }), `rename ${a.target} to ${a.to}`);
