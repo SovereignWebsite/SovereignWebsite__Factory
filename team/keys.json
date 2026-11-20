@@ -251,6 +251,25 @@
         "fingerprint": "sha256:ce3c9a0ea48f232b",
         "signing_fingerprint": "sha256:af439e6f8231af8d"
       }
+    },
+    {
+      "id": "security-b-sovereignwebsite",
+      "agent": "security.b@SovereignWebsite.dinis",
+      "role": "Security reviews before anything goes live, and security guidelines for every agent. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 20 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
+      "created": "2026-11-20",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwBQqeQAymiagw8BjRY",
+      "fingerprint": "sha256:f3fbcc0fc9c77d70",
+      "signing_fingerprint": "sha256:3d2718588a92518b",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAourgDEei4hpPs0SbgYXJ\n8OK4pNNxhCwk28c/ppyZAEb9cm5Ne0C8dmKCxzoIIUXwusT6CJFWj/J7xAS2Bjy2\nqZn51M+TGbVX+nBJIWUhjthleOepCLFVJMdLZeSkShIX1ZjF2iw1GrV5E3r57iPg\n8Fad+J8M3CvKpG/3jUEb3skDY0ik9cD35atxnjuB04JyGrVDEaSzekoHBjpvLfY+\nrQB3mztIc+ccSND+Udyr9PWUM4KqcBfeakWirKq+C3sz8QSwHLbGoj4ABAkPwJrd\nvqHrldcOxT1JqG/phvDQMdq5DQTb14EwT6GZXVWNcSC59G1/rqtOHUxLBxO4rnvF\nV+QHss8UEk0OrCuJxONBtu/3LQP5AwEXQn6bpaCgYHUsP9aQEHuVgtgl21ch3d27\ngYgVfvon0as45oKXIdZl4YV41nIh2SFzu+t3qapZEYFCsc3zOAwnN9y/A8W7Sfdy\nvCMvGDUideJpu6MN7MZJ5ngLYoTPoch1U08g3Kk52Ph+ABrYrOr8AqRlSfdO9G9J\nUqT+SHGZd5+bZLMq/vQ4jMg31Dy/VN7dzAnCqtf5OyyMUDPor5qJtSyb6pdH4+O7\nKm3V7MtKGa3yplZcpxrcx1WH/A+BRAe029mRKdBcnuDxtnryB59T5pC4H2WTwge0\n7a9jOy2Qf1rGHwcqp7KZKn8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEGQlT/VUQQTJFJ0BoNcuKHuTrI+zU\nH6oOk7lE1huQ96G7au+LR7/3kzzUlaWfsSYIDoXeKXHqNfdJrspRFQDFtw==\n-----END PUBLIC KEY-----\n",
+        "label": "security.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:f3fbcc0fc9c77d70",
+        "signing_fingerprint": "sha256:3d2718588a92518b"
+      }
     }
   ]
 }
