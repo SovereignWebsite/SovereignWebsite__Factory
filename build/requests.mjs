@@ -8,7 +8,7 @@ export const LABEL = /^[a-z0-9](?:[a-z0-9-]{0,38}[a-z0-9])?$/;
 // Organisations a repository may be moved from (the ABP's transfer-apply limits name the repositories).
 export const FROM_OWNERS = ['AgentiCCells'];
 // Groups of sites under their own subdomain: <label>.<group>.sovereignwebsite.site (Dinis, 20 Nov 2026).
-export const GROUPS = ['artists', 'cv', 'invest'];
+export const GROUPS = ['artists', 'cv', 'invest', 'artist', 'company', 'organisation', 'person'];
 // The starting page a request is seeded with: a public starter page, or a gated holding page that opens a vault.
 export const ACCESS = { public: 'seed/site-template', vault: 'seed/gate-template' };
 const RESERVED = new Set(['www', 'hub', 'vault', 'api', 'admin', 'mail', 'factory', ...GROUPS]);

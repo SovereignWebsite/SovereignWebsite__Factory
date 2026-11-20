@@ -80,6 +80,8 @@ const sv = { label: 'sotavento', group: 'invest', domain: 'sovereignweb.site', t
 assert.deepEqual(R.validate(sv, '2026-11-20__sotavento'), [], 'a request on the new domain validates');
 assert.ok(R.validate({ ...sv, domain: 'example.com' }, '2026-11-20__sotavento').length, 'only our domains');
 assert.equal(R.repos([sv])[0].cname, 'sotavento.invest.sovereignweb.site');
+assert.equal(R.repos([{ ...sv, label: 'perspace', group: 'company' }])[0].cname, 'perspace.company.sovereignweb.site');
+for (const g of ['artist', 'company', 'organisation', 'person']) assert.ok(R.validate({ ...good, label: g }, `2026-11-19__${g}`).length, `${g} is reserved as a label`);
 assert.equal(R.repos([good])[0].cname, 'pipeline-demo.sovereignwebsite.site', 'no domain: sovereignwebsite.site');
 const { addRequests, ZONE_VAR } = await import('../build/dns-plan.mjs');
 const dz = addRequests({ zones: [{ zone: 'sovereignwebsite.site', records: [] }] }, R.dnsRecords([sv, good]));
