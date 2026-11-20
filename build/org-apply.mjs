@@ -16,7 +16,11 @@ const must = (r, what, ok = [200, 201, 204]) => { if (!ok.includes(r.status)) th
 
 for (const a of p.actions) {
   const r = spec[a.target], base = `/repos/${p.org}/${a.target}`;
-  if (a.action === 'repo.create') must(await gh('POST', `/orgs/${p.org}/repos`, { name: r.name, visibility: r.visibility, auto_init: true, ...settings(r) }), `create ${a.target}`);
+  if (a.action === 'repo.rename') {
+    // Only from a name the request lists as aka, to the name the request gives.
+    if (!(spec[a.to]?.aka || []).includes(a.target)) throw new Error(`rename ${a.target}: not an aka of ${a.to}`);
+    must(await gh('PATCH', base, { name: a.to }), `rename ${a.target} to ${a.to}`);
+  } else if (a.action === 'repo.create') must(await gh('POST', `/orgs/${p.org}/repos`, { name: r.name, visibility: r.visibility, auto_init: true, ...settings(r) }), `create ${a.target}`);
   else if (a.action === 'repo.update_settings') must(await gh('PATCH', base, settings(r)), `settings ${a.target}`);
   else if (a.action === 'branch.create_dev') {
     const repo = await gh('GET', base); const ref = await gh('GET', `${base}/git/ref/heads/${repo.data.default_branch}`);

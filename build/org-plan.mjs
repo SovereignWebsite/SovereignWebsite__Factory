@@ -22,6 +22,9 @@ export function plan(org, live) {
   const actions = [];
   for (const r of wanted(org)) {
     const l = live[r.name];
+    // Renamed (Site__<label> to Site__<Group>__<Name>): rename it this run; the next run converges its settings.
+    const was = !l && (r.aka || []).find((n) => live[n]);
+    if (was) { actions.push({ action: 'repo.rename', target: was, to: r.name }); continue; }
     if (!l && r.transfer_from) continue; // a moved site: transfer-apply brings it, Org apply never creates it
     if (!l) {
       actions.push({ action: 'repo.create', target: r.name });
@@ -51,7 +54,7 @@ export function plan(org, live) {
       else if ((process.env.NUDGE_MISSING === 'true' && !st) || ['errored', 'bad_authz', 'authorization_revoked', 'dns_changed', 'destroy_pending'].includes(st)) actions.push({ action: 'pages.nudge_certificate', target: r.name, state: st || 'none' });
     }
   }
-  const names = new Set(org.repos.map((r) => r.name));
+  const names = new Set(org.repos.flatMap((r) => [r.name, ...(r.aka || [])]));
   const unlisted = Object.keys(live).filter((n) => !names.has(n));
   return { pipeline: 'org-apply', org: org.org, actions, unlisted };
 }
@@ -89,7 +92,7 @@ export async function liveRepos(org, spec = {}) {
 
 export function markdown(p) {
   const l = [`### Plan for ${p.org} (${p.actions.length} actions)`];
-  for (const a of p.actions) l.push(`- \`${a.action}\` ${a.target}${a.fields ? ` (${a.fields.join(', ')})` : a.files ? ` (${a.files.join(', ')})` : a.team ? ` (${a.team})` : a.state ? ` (certificate ${a.state})` : ''}`);
+  for (const a of p.actions) l.push(`- \`${a.action}\` ${a.target}${a.fields ? ` (${a.fields.join(', ')})` : a.files ? ` (${a.files.join(', ')})` : a.team ? ` (${a.team})` : a.state ? ` (certificate ${a.state})` : a.to ? ` to ${a.to}` : ''}`);
   if (!p.actions.length) l.push('- nothing to do');
   if (p.unlisted?.length) l.push(`\nNot in org/repos.json (reported, never deleted): ${p.unlisted.join(', ')}`);
   return l.join('\n');

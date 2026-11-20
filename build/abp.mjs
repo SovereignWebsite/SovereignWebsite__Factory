@@ -45,13 +45,13 @@ export function checkActions(p, plan) {
   return e;
 }
 
-// A transfer is allowed only from the named owner, for a repository on the explicit list, to the named owner as Site__<label>.
+// A transfer is allowed only from the named owner, for a repository on the explicit list, to the named owner as Site__[<Group>__]<Name>.
 export function checkTransfer(l, a) {
   const e = [], [fo, fr] = String(a.target).split('/'), [to, tn] = String(a.to || '').split('/');
   if (fo !== l.from_owner) e.push(`repo.transfer_in ${a.target}: only from ${l.from_owner}`);
   if (!(l.repositories || []).includes(fr)) e.push(`repo.transfer_in ${a.target}: not on the policy's repository list`);
   if (to !== l.to_owner) e.push(`repo.transfer_in ${a.target}: only to ${l.to_owner}`);
-  if (!/^Site__[a-z0-9-]{1,40}$/.test(tn || '')) e.push(`repo.transfer_in ${a.target}: new name must be Site__<label>`);
+  if (!/^Site__(?:[A-Z][A-Za-z]*__)?[A-Za-z0-9][A-Za-z0-9-]{0,39}$/.test(tn || '')) e.push(`repo.transfer_in ${a.target}: new name must be Site__[<Group>__]<Name>`);
   const owners = l.controlled_owners || [], domains = l.controlled_domains || [];
   if (!owners.includes(fo) || !owners.includes(to)) e.push(`repo.transfer_in ${a.target}: an owner outside our control (a separate flow)`);
   for (const d of [a.address_from, a.address_to].filter(Boolean)) if (!domains.some((z) => d === z || d.endsWith(`.${z}`))) e.push(`repo.transfer_in ${a.target}: ${d} is not a domain we control (a separate flow)`);

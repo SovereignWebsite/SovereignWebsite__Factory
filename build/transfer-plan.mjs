@@ -5,7 +5,7 @@
 import { writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { gh } from './github.mjs';
-import { load, host } from './requests.mjs';
+import { load, host, repoName } from './requests.mjs';
 
 export const TO_OWNER = 'SovereignWebsite';
 
@@ -21,7 +21,7 @@ export function planFor(r) {
     request: r.folder,
     apply: r.apply,
     from: r.from,
-    actions: [{ action: 'repo.transfer_in', target: `${r.from.owner}/${r.from.repo}`, to: `${TO_OWNER}/Site__${r.label}`, address_from: r.from.address, address_to: host(r) }],
+    actions: [{ action: 'repo.transfer_in', target: `${r.from.owner}/${r.from.repo}`, to: `${TO_OWNER}/${repoName(r)}`, address_from: r.from.address, address_to: host(r) }],
     address: host(r),
     signed: r.signed === true,
     findings: [],

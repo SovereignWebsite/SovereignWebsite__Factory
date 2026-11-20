@@ -10,7 +10,7 @@ assert.ok(glob('board/**', 'board/a/b.md')); assert.ok(!glob('board/**', 'build/
 assert.ok(validate({ ...p, agents: { 'x@Y.z': { may_change: ['**'], branches: ['main'] } } }).some((e) => e.includes('main')), 'main refused');
 assert.deepEqual(checkActions(p, { pipeline: 'org-apply', actions: [{ action: 'repo.create', target: 'X' }] }), []);
 assert.equal(checkActions(p, { pipeline: 'org-apply', actions: [{ action: 'repo.delete', target: 'X' }] }).length, 1, 'delete refused');
-assert.equal(checkActions(p, { pipeline: 'org-apply', actions: [{ action: 'repo.rename', target: 'X' }] }).length, 1, 'unlisted refused');
+assert.equal(checkActions(p, { pipeline: 'org-apply', actions: [{ action: 'repo.change_visibility', target: 'X' }] }).length, 1, 'unlisted refused');
 const org = JSON.parse(readFileSync('org/repos.json', 'utf8'));
 const fresh = plan(org, {});
 assert.ok(fresh.actions.some((a) => a.action === 'pages.enable' && a.target === 'SovereignWebsite__Website'));
@@ -52,17 +52,17 @@ assert.ok(R.validate({ ...good, label: 'hub' }, '2026-11-19__hub').length, 'rese
 assert.ok(R.validate(good, '2026-11-19__other').length, 'folder must match label');
 assert.ok(R.validate({ ...good, kind: 'customer' }, '2026-11-19__pipeline-demo').length, 'kind is demo or owner');
 const rr = R.repos([good]);
-assert.equal(rr[0].name, 'Site__pipeline-demo'); assert.equal(rr[0].cname, 'pipeline-demo.sovereignwebsite.site');
+assert.equal(rr[0].name, 'Site__Pipeline-Demo'); assert.equal(rr[0].cname, 'pipeline-demo.sovereignwebsite.site');
 const rp = plan({ ...org, repos: [...org.repos, ...rr] }, {});
 assert.deepEqual(checkActions(p, rp), [], 'a request plan is allowed by the policy');
-assert.deepEqual(R.dnsRecords([good])[0], { zone: 'sovereignwebsite.site', name: 'pipeline-demo.sovereignwebsite.site', type: 'CNAME', values: ['sovereignwebsite.github.io'], for: 'Site__pipeline-demo' });
+assert.deepEqual(R.dnsRecords([good])[0], { zone: 'sovereignwebsite.site', name: 'pipeline-demo.sovereignwebsite.site', type: 'CNAME', values: ['sovereignwebsite.github.io'], for: 'Site__Pipeline-Demo' });
 const ec = { label: 'emily-cruz', group: 'artists', domain: 'sovereignwebsite.site', title: 'Emily Cruz', description: 'Actor-musician.', kind: 'owner' };
 assert.deepEqual(R.validate(ec, '2026-11-20__emily-cruz'), [], 'a grouped request validates');
 assert.ok(R.validate({ ...ec, group: 'shops' }, '2026-11-20__emily-cruz').length, 'only known groups');
 assert.ok(R.validate({ ...ec, group: 'person' }, '2026-11-20__emily-cruz').length, 'person is not an official group');
 assert.ok(R.validate({ ...good, label: 'artists' }, '2026-11-19__artists').length, 'a group name is reserved as a label');
 const er = R.repos([ec])[0];
-assert.equal(er.name, 'Site__emily-cruz'); assert.equal(er.cname, 'emily-cruz.artists.sovereignwebsite.site'); assert.equal(er.vars.host, 'emily-cruz.artists.sovereignwebsite.site');
+assert.equal(er.name, 'Site__Artist__Emily-Cruz'); assert.equal(er.cname, 'emily-cruz.artists.sovereignwebsite.site'); assert.equal(er.vars.host, 'emily-cruz.artists.sovereignwebsite.site');
 assert.equal(R.dnsRecords([ec])[0].name, 'emily-cruz.artists.sovereignwebsite.site');
 assert.equal(dnsPlan({ zones: [{ zone: 'sovereignwebsite.site', records: R.dnsRecords([ec]) }] }).errors.length, 0, 'a grouped name is inside the .site zone');
 assert.equal(R.repos([good])[0].vars.host, 'pipeline-demo.sovereignwebsite.site', 'no group: the address is unchanged');
@@ -98,7 +98,7 @@ assert.ok(R.validate({ ...em, previous: ['emily.example.com'] }, '2026-11-20__em
 assert.ok(R.validate({ ...em, previous: ['emily-cruz.artist.sovereignweb.site'] }, '2026-11-20__emily-cruz').length, 'an old address is not the new one');
 assert.ok(R.validate({ ...em, previous: 'x' }, '2026-11-20__emily-cruz').length, 'previous is a list');
 const mr2 = R.repos([em, good]);
-assert.deepEqual(mr2.map((x) => x.name), ['Site__emily-cruz', 'Site__pipeline-demo', 'Redirect__emily-cruz'], 'redirects come after every site');
+assert.deepEqual(mr2.map((x) => x.name), ['Site__Artist__Emily-Cruz', 'Site__Pipeline-Demo', 'Redirect__Artist__Emily-Cruz'], 'redirects come after every site');
 assert.equal(mr2[0].cname, 'emily-cruz.artist.sovereignweb.site');
 assert.equal(mr2[2].cname, 'emily-cruz.artists.sovereignwebsite.site'); assert.equal(mr2[2].seed, 'seed/redirect-template'); assert.equal(mr2[2].vars.to, 'emily-cruz.artist.sovereignweb.site');
 const md = R.dnsRecords([em]);
@@ -109,6 +109,20 @@ const rt = seedFiles('seed/redirect-template');
 for (const must of ['.github/workflows/pages.yml', 'CLAUDE.md', 'site/CNAME', 'site/index.html', 'site/404.html']) assert.ok(rt.includes(must), `redirect template seeds ${must}`);
 const rh = readFileSync('seed/redirect-template/site/index.html', 'utf8');
 assert.ok(rh.includes("location.replace('https://{{to}}' + location.pathname + location.search + location.hash)") && rh.includes('rel="canonical"') && rh.includes('noindex'), 'the redirect keeps the path and the #fragment');
+// Names indexed by type and capitalised; the old name is renamed, never recreated.
+assert.equal(R.repoName({ label: 'algarve-evolution', group: 'organisation' }), 'Site__Organisation__Algarve-Evolution');
+assert.equal(R.repoName({ label: 'emily-cruz', group: 'artist' }), 'Site__Artist__Emily-Cruz');
+assert.equal(R.repoName({ label: 'silvio-switha', group: 'cv' }), 'Site__CV__Silvio-Switha');
+assert.equal(R.repoName({ label: '33n-ventures', group: 'invest' }), 'Site__Invest__33n-Ventures');
+assert.equal(R.repoName({ label: 'weather-demo' }), 'Site__Weather-Demo');
+const ren = R.repos([em])[0];
+assert.deepEqual(ren.aka, ['Site__emily-cruz']);
+const rp2 = plan({ ...org, repos: [...org.repos, ...R.repos([em])] }, { 'Site__emily-cruz': { ...base }, 'Redirect__emily-cruz': { ...base } });
+assert.deepEqual(rp2.actions.filter((a) => a.action === 'repo.rename').map((a) => [a.target, a.to]), [['Site__emily-cruz', 'Site__Artist__Emily-Cruz'], ['Redirect__emily-cruz', 'Redirect__Artist__Emily-Cruz']], 'the old names are renamed');
+assert.ok(!rp2.actions.some((a) => a.action === 'repo.create' && /Emily-Cruz/.test(a.target)), 'never a second copy');
+assert.ok(!rp2.unlisted.includes('Site__emily-cruz'), 'an old name is not reported as unlisted');
+assert.deepEqual(checkActions(p, rp2), [], 'a rename is allowed for Org apply');
+assert.ok((await import('../build/abp.mjs')).checkTransfer(p.pipelines['transfer-apply'].limits, { action: 'repo.transfer_in', target: 'AgentiCCells/AgentiCCells__Site__Weather-Demo', to: 'SovereignWebsite/Site__Weather-Demo', address_to: 'weather-demo.sovereignweb.site' }).length === 0, 'a transfer to Site__<Name>');
 const st = seedFiles('seed/site-template'); for (const must of ['.github/workflows/pages.yml', 'site/CNAME', 'site/index.html']) assert.ok(st.includes(must));
 // Moves: a request with a from block, transfer-apply, and the moved site handed to Org apply and DNS apply.
 const T = await import('../build/transfer-plan.mjs'), A = await import('../build/transfer-apply.mjs'), { checkTransfer } = await import('../build/abp.mjs');
@@ -123,10 +137,10 @@ const waiting = { ...mv, folder: F, moved: false }, moved = { ...waiting, moved:
 assert.deepEqual(R.repos([waiting]), [], 'Org apply leaves a move alone until it is recorded');
 assert.deepEqual(R.dnsRecords([waiting]), [], 'no CNAME until the move is recorded');
 const mr = R.repos([moved]);
-assert.equal(mr[0].name, 'Site__transfer-test'); assert.equal(mr[0].seed, undefined, 'a moved repository is never seeded'); assert.ok(mr[0].transfer_from);
-assert.ok(!plan({ ...org, repos: [...org.repos, ...mr] }, {}).actions.some((a) => a.target === 'Site__transfer-test'), 'Org apply never creates a moved repository');
+assert.equal(mr[0].name, 'Site__Transfer-Test'); assert.equal(mr[0].seed, undefined, 'a moved repository is never seeded'); assert.ok(mr[0].transfer_from);
+assert.ok(!plan({ ...org, repos: [...org.repos, ...mr] }, {}).actions.some((a) => a.target === 'Site__Transfer-Test'), 'Org apply never creates a moved repository');
 const tp = T.planFor(waiting);
-assert.deepEqual(tp.actions, [{ action: 'repo.transfer_in', target: 'AgentiCCells/AgentiCCells__Site__Transfer-Test', to: 'SovereignWebsite/Site__transfer-test', address_from: 'transfer-test.agenticcells.site', address_to: 'transfer-test.sovereignwebsite.site' }]);
+assert.deepEqual(tp.actions, [{ action: 'repo.transfer_in', target: 'AgentiCCells/AgentiCCells__Site__Transfer-Test', to: 'SovereignWebsite/Site__Transfer-Test', address_from: 'transfer-test.agenticcells.site', address_to: 'transfer-test.sovereignwebsite.site' }]);
 assert.ok(checkActions(p, { pipeline: 'transfer-apply', actions: [{ ...tp.actions[0], address_from: 'shop.example.com' }] }).some((x) => x.includes('not a domain we control')), 'a domain outside our control is refused');
 assert.ok(checkActions(p, { pipeline: 'transfer-apply', actions: [{ ...tp.actions[0], address_from: 'evilagenticcells.site' }] }).length, 'a look-alike domain is refused');
 const { ownKeyChanged } = await import('../build/abp.mjs');
@@ -151,12 +165,12 @@ assert.ok(A.refusals(p, checked).some((e) => e.includes('dry-run')), 'a dry run 
 assert.deepEqual(A.refusals(p, { ...checked, apply: 'real' }), [], 'a real, checked move is allowed');
 assert.ok(A.refusals(p, { ...checked, apply: 'real', blockers: ['1 open pull request(s): mid-round'] }).length, 'a blocker stops the move');
 assert.ok(A.refusals(p, { ...tp, apply: 'real' }).length, 'no move without a live preflight');
-assert.deepEqual(A.body(tp), { path: '/repos/AgentiCCells/AgentiCCells__Site__Transfer-Test/transfer', data: { new_owner: 'SovereignWebsite', new_name: 'Site__transfer-test' } });
+assert.deepEqual(A.body(tp), { path: '/repos/AgentiCCells/AgentiCCells__Site__Transfer-Test/transfer', data: { new_owner: 'SovereignWebsite', new_name: 'Site__Transfer-Test' } });
 // Preflight against a fake GitHub: what stops a move.
 const fake = (over = {}) => async (o, path) => {
   const base = {
     '/repos/AgentiCCells/AgentiCCells__Site__Transfer-Test': { status: 200, data: { full_name: 'AgentiCCells/AgentiCCells__Site__Transfer-Test', private: false, archived: false, fork: false, default_branch: 'dev' } },
-    '/repos/SovereignWebsite/Site__transfer-test': { status: 404, data: {} },
+    '/repos/SovereignWebsite/Site__Transfer-Test': { status: 404, data: {} },
   };
   const k = path.split('?')[0];
   return over[k] ?? base[k] ?? (k.endsWith('/pulls') ? { status: 200, data: [] } : k.endsWith('/runs') ? { status: 200, data: { total_count: 0 } } : { status: 404, data: null });
@@ -164,7 +178,7 @@ const fake = (over = {}) => async (o, path) => {
 globalThis.fetch = async () => ({ ok: false });
 const ok = await T.preflight(T.planFor(waiting), fake());
 assert.deepEqual(ok.blockers, [], 'a clean source passes');
-const taken = await T.preflight(T.planFor(waiting), fake({ '/repos/SovereignWebsite/Site__transfer-test': { status: 200, data: {} } }));
+const taken = await T.preflight(T.planFor(waiting), fake({ '/repos/SovereignWebsite/Site__Transfer-Test': { status: 200, data: {} } }));
 assert.ok(taken.blockers.some((b) => b.includes('already answers')), 'an existing target stops the move');
 const pr = await T.preflight(T.planFor(waiting), fake({ '/repos/AgentiCCells/AgentiCCells__Site__Transfer-Test/pulls': { status: 200, data: [{}] } }));
 assert.ok(pr.blockers.some((b) => b.includes('mid-round')), 'an open pull request stops the move');

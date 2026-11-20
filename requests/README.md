@@ -2,7 +2,7 @@
 
 The official guidance for every new Sovereign Website (SWS) site. One folder per site: `requests/<date>__<label>/site.json`. A request is committed to dev only with Dinis's yes for that site (policy/abp.json lists requests/** as needing his merge; factory.b commits requests sent by other agents, naming on whose behalf). It becomes:
 
-- the repository `SovereignWebsite/Site__<label>`, Pages on, the agents' team with push, rulesets main-locked and dev-safe (Org apply);
+- the repository `SovereignWebsite/Site__<Group>__<Name>` (see Repository names), Pages on, the agents' team with push, rulesets main-locked and dev-safe (Org apply);
 - the address `https://<label>.<group>.sovereignweb.site`, with a CNAME in Route 53 (DNS apply) and HTTPS enforced once GitHub issues the certificate (Org apply, hourly; a missing certificate is nudged every sixth hour).
 
 ```json
@@ -30,7 +30,11 @@ sovereignweb.site is the domain for new sites (Dinis, 20 November 2026: "a bette
 
 More groups will be added as we go; adding one is a change to `GROUPS` in build/requests.mjs and to this table. A demo of the pipeline itself may have no group (`<name>.sovereignweb.site`).
 
-Rules: the repository is always `Site__<label>`, so a label is unique across all groups, and a group name cannot be a label. A site still on the old domain names it: `"domain": "sovereignwebsite.site"` (and `artists`, the old group, is kept only until emily-cruz moves).
+Rules: a label is unique across all groups, and a group name cannot be a label.
+
+## Repository names: `Site__<Group>__<Name>`
+
+Repositories are indexed by type, with capitalised names (Dinis, 20 November 2026: "the repo should be Site__Organisation__Algarve-Evolution, Site__Artist__Emily-Cruz (note the capitalisation on the names)"). The group is capitalised (`cv` is `CV`), and each word of the label starts with a capital: `emily-cruz` in `artist` is `Site__Artist__Emily-Cruz`; a site with no group is `Site__<Name>`, for example `Site__Weather-Demo`. A redirect site is `Redirect__<Group>__<Name>`. A repository made under an older name is renamed by Org apply, never made again; GitHub keeps redirecting the old name. A site still on the old domain names it: `"domain": "sovereignwebsite.site"` (and `artists`, the old group, is kept only until emily-cruz moves).
 
 ## Moving a site to a new address
 
@@ -40,7 +44,7 @@ Change the request's address (its group, or drop `"domain": "sovereignwebsite.si
 "previous": ["emily-cruz.artists.sovereignwebsite.site"]
 ```
 
-Org apply moves `Site__<label>` to the new address and makes `Redirect__<label>`, a one-page site at the old address that sends every visitor, with the same path, query and `#fragment` (so a vault key still opens), to the new one. DNS apply keeps a CNAME for both names. Old addresses never vanish. Check the site's own content for the old address after a move.
+Org apply moves the site's repository to the new address and makes `Redirect__<Group>__<Name>`, a one-page site at the old address that sends every visitor, with the same path, query and `#fragment` (so a vault key still opens), to the new one. DNS apply keeps a CNAME for both names. Old addresses never vanish. Check the site's own content for the old address after a move.
 
 ## Public or private
 

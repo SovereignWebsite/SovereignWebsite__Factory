@@ -82,7 +82,14 @@ export function load(dir = 'requests') {
   return { requests: out, errors };
 }
 
-const repoName = (label) => `Site__${label}`;
+// Repository names are indexed by type, capitalised (Dinis, 20 Nov 2026 ~12:28 UTC: "the repo should be
+// Site__Organisation__Algarve-Evolution, Site__Artist__Emily-Cruz (note the capitalisation on the names)").
+// A site without a group is Site__<Name>. The old name, Site__<label>, is kept as aka so Org apply renames it.
+export const GROUP_NAMES = { artist: 'Artist', cv: 'CV', company: 'Company', organisation: 'Organisation', invest: 'Invest', artists: 'Artist' };
+export const cap = (label) => label.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join('-');
+const suffix = (r) => `${r.group ? `${GROUP_NAMES[r.group]}__` : ''}${cap(r.label)}`;
+export const repoName = (r) => `Site__${suffix(r)}`;
+const aka = (name, old) => (name === old ? {} : { aka: [old] });
 
 // The sites Org apply and DNS apply look after: new ones, and moved ones once the move is recorded.
 export const live = (requests) => requests.filter((r) => !r.from || r.moved);
@@ -91,12 +98,16 @@ export const live = (requests) => requests.filter((r) => !r.from || r.moved);
 // (and its query and #fragment, so a vault key still opens) to the new address. Listed after every site, so Org apply
 // frees the old custom domain on Site__<label> before it gives it to the redirect.
 export function redirects(requests) {
-  return live(requests).flatMap((r) => (r.previous || []).map((from, i) => ({ from, to: host(r), label: r.label, name: `Redirect__${r.label}${i ? `-${i + 1}` : ''}` })));
+  return live(requests).flatMap((r) => (r.previous || []).map((from, i) => {
+    const n = i ? `-${i + 1}` : '';
+    return { from, to: host(r), label: r.label, name: `Redirect__${suffix(r)}${n}`, old: `Redirect__${r.label}${n}` };
+  }));
 }
 
 export function repos(requests) {
   return [...sites(requests), ...redirects(requests).map((x) => ({
     name: x.name,
+    ...aka(x.name, x.old),
     description: `${x.from}: moved to https://${x.to}`,
     homepage: `https://${x.to}`,
     pages: true,
@@ -108,7 +119,8 @@ export function repos(requests) {
 
 function sites(requests) {
   return live(requests).map((r) => ({
-    name: repoName(r.label),
+    name: repoName(r),
+    ...aka(repoName(r), `Site__${r.label}`),
     description: `${host(r)}: ${r.description}`.slice(0, 350),
     homepage: `https://${host(r)}`,
     pages: true,
@@ -120,7 +132,7 @@ function sites(requests) {
 
 export function dnsRecords(requests) {
   return [
-    ...live(requests).map((r) => ({ zone: domain(r), name: host(r), type: 'CNAME', values: ['sovereignwebsite.github.io'], for: repoName(r.label) })),
+    ...live(requests).map((r) => ({ zone: domain(r), name: host(r), type: 'CNAME', values: ['sovereignwebsite.github.io'], for: repoName(r) })),
     ...redirects(requests).map((x) => ({ zone: zoneOf(x.from), name: x.from, type: 'CNAME', values: ['sovereignwebsite.github.io'], for: x.name })),
   ];
 }
