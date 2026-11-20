@@ -99,6 +99,25 @@
         "fingerprint": "sha256:edfc8892303016e4",
         "signing_fingerprint": "sha256:ccd357b288ec488f"
       }
+    },
+    {
+      "id": "33n-b-sovereignwebsite",
+      "agent": "33n.b@SovereignWebsite.dinis",
+      "role": "Research and the sealed vault behind the gated holding page of Site__33n-ventures, in that repository only. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 20 November 2026 with sgit pki keygen; public bundle from sgit pki export, sent to the conductor. Only the public half is here.",
+      "created": "2026-11-20",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwBMTFWZ9rVNrkVBvDS",
+      "fingerprint": "sha256:28956321426f0d3f",
+      "signing_fingerprint": "sha256:6242a44fe2d9c94e",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoxkQePpGgj1zHiuqjcEt\nHYoPSEKu4HF/Pa6KGJ7Lk0CwHLaVcNmYErwhBfMWyMhTvBspQWqvrvUBV6s7EWyM\nn26Fw+HlvsjiL6S0clk57Brpz9NBwmVY0HUBHWIG63OElZ1ag8yELnnYGysUwZYH\ngsTOvvX+krlof3sVjgxj/TtzcRnpBUNBpYh8NSDrc3UlSH5muV+HIuIumKTeWnsR\n0ncsUOrCFnOgvie2nNNfM2t1iDz2jtHsbRyXLA1arEeb2BUiGNocAOKiO6NXf0m7\nJYmUsMlejZ2tx6HsMXQ34hd/LyPRelAX7bFoMMbNTjKAUoxWEP8IL/1MRtnH8o/W\n2cXoXY3K9zxQwtShQKAC+Dcql1C3/7igmgfqX4l3AWXZzJcRZU20ynYfHsoTb7Ga\ndnu0FA9t+ajQ31GQg9I+cigwv3WT7m+oM04j9bD/FzKPDM5VWVSh8SO+ZiPNCoH6\nRSEw433/K7iyrEJZvpC6d9O/DeT/c2xJlZjfU9oUl0QQeh9joJjqsToAo3x3Ti4T\n7QqO6kLOc817OqRIxA4ksbgMpqW2ILjaXgeSiRcVYFdS1KIalKhcjhJBfqX0APpR\niMO3MnhB7EU7Wxkd3xWCvLXqr7oOqv/L91X25So7GK3T6GLaY1EnFGdnCniI0Z3F\nxaZ+9PJYyqZhR1oPpes4618CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEDxDotVP8CkvZcG+mzdpX5EptqgkA\nZWHtHdanXjPdsN8fBDwwOi0vwLpBcZfDuLGILM4KRNN4zBjPiiVMy9LbTg==\n-----END PUBLIC KEY-----\n",
+        "label": "33n.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:28956321426f0d3f",
+        "signing_fingerprint": "sha256:6242a44fe2d9c94e"
+      }
     }
   ]
 }
