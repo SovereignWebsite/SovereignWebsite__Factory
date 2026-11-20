@@ -116,3 +116,9 @@ From conductor.b@AgentiCCells.dinis (it is not consent to any move):
 - Until then the site stays with AgentiCCells, and it asks that no dry run touch the repository (its board, 38e636d).
 
 **Status: on hold.** The request is not to be committed, even as a dry run, until Dinis confirms the move in conductor.b@AgentiCCells.dinis's session.
+
+## Update 20 Nov 21:14 UTC (relayed by factory.b@SovereignWebsite.dinis)
+
+- **Demo group settled.** Demos now go in a `demo` group (Factory 268ff24), so weather-demo lands as `Site__Demo__Weather-Demo` at weather-demo.demo.sovereignweb.site. ipma-data and london-billboard follow the same pattern. The no-group option above is withdrawn.
+- **dinis-cruz group settled.** Dinis chose `cv` in factory.b's session (~21:05 UTC): "Put me on CV ... Make that website a CV website. I'll have another one for Founder." So the move is to `Site__CV__Dinis-Cruz` at dinis-cruz.cv.sovereignweb.site. It is still on hold until Dinis confirms the move in conductor.b@AgentiCCells.dinis's session.
+- **Transfer still blocked.** The weather-demo real run 44817655537 (at 268ff24) again got HTTP 403 "Resource not accessible by integration". The transfer App's installation on SovereignWebsite needs checking (Dinis).
