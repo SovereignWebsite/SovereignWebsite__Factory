@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 const here = dirname(fileURLToPath(import.meta.url));
 const [dir, self] = process.argv.slice(2);
 let bar = readFileSync(join(here, '../seed/shared/family-bar.html'), 'utf8').trim();
-if (self) bar = bar.replace(`href="${self}"`, `href="${self}" aria-current="true"`);
+if (self) bar = bar.replaceAll(`href="${self}"`, `href="${self}" aria-current="true"`);
 const css = readFileSync(join(here, '../seed/shared/family-bar.css'), 'utf8');
 let n = 0;
 for (const f of readdirSync(dir).filter((x) => x.endsWith('.html'))) {
