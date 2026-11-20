@@ -1,0 +1,13 @@
+{
+  "label": "weather-demo",
+  "title": "Weather, from our data",
+  "description": "A demonstration site: Portugal's weather from the public data PrompTugal.news collects, how it was built by an agentic team, and how to use the raw data.",
+  "kind": "demo",
+  "from": {
+    "owner": "AgentiCCells",
+    "repo": "AgentiCCells__Site__Weather-Demo",
+    "address": "weather-demo.agenticcells.site"
+  },
+  "signed": false,
+  "apply": "dry-run"
+}
