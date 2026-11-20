@@ -403,6 +403,44 @@
         "fingerprint": "sha256:db2a342e98327e61",
         "signing_fingerprint": "sha256:0034e2e8c4fe2c59"
       }
+    },
+    {
+      "id": "swarm-mistral-sovereignwebsite",
+      "agent": "swarm.mistral@SovereignWebsite.dinis",
+      "role": "Runs the Swarm and cells on Mistral, replayed, in Site__Provider__Mistral (site/swarm/, site/data/swarm/); started by conductor.mistral. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 20 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
+      "created": "2026-11-20",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwDawRYTw5NXQBHJX5V",
+      "fingerprint": "sha256:fa8453d5f6820b1e",
+      "signing_fingerprint": "sha256:1a3dc9810a93695b",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwZuKngmoMZSm6ckCvV/X\nkGofSPJrQo7tBOQG0XF5XnoWonCEY221w9OLQAxw7LrozOPVe89Rsz5+qpH/+5Cx\ngHn5oEYTMOllJTRw3PRc19LM85S9s4BgzqSR94xjqN0aLXvvCnFJRz3j5z5w5YiB\nXX8UInBBc347LDosVD8RZ6teBp1OvRd6moHiiUqA3AsQAzSkP9km3W2oWNii1h84\n0fp1GB0M0xkLKBMoOPE47Bb6cG3vuIBO8Nio2yVUw0ul/Hmm7BMb1OZ6E7kCNO7t\nLInzQ/RMTbUYHjcP0KSstde+8kALuZptXjmXIFuEn/v//fl8MP4nzoYSr1r3WLRv\nEaD30Sj0huAgr9RrHaK2Cof332moDuIb9450Lf+JYlO6Xp3ByjcWRUw37OP9APL+\n5Pu1m6/rHw0rO9Z80e7CWneMii95gRfc4OyIeqwzwVfOoMsfk2WjNwYRCazfiSjF\nSJsFHS+FexK9pROyTNV8yHrnXmF9OnfcqiiWZ6UNVqdLLdU26J0P7/AvC9WCzVRp\nr7gWmYBWFwhon1hT/4L0S5mw20L7+0tT7bQlOX6ZWwrK3H0KhDO+Y+6sxi9YZCnT\n0yESqefckVMfzvCm2yBdF83EOhTQ+zCuOsftC700wxzqlR7OxeIZUTo3Eb7HUYG0\nts/oHGaJpG5Xc9ouv9pYGTUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEAkXT3WoUmHJY5Fk1H38sXjWNUVOG\nyN+cNm41nGjNsTXkCa0H7GktRcMYKg+jKmTLFqZ0vqFpciiPxAafA8MvLQ==\n-----END PUBLIC KEY-----\n",
+        "label": "swarm.mistral@SovereignWebsite.dinis",
+        "fingerprint": "sha256:fa8453d5f6820b1e",
+        "signing_fingerprint": "sha256:1a3dc9810a93695b"
+      }
+    },
+    {
+      "id": "team-mistral-sovereignwebsite",
+      "agent": "team.mistral@SovereignWebsite.dinis",
+      "role": "The team inside the site, live on Mistral in the browser, in Site__Provider__Mistral (site/team/, site/data/team/); started by conductor.mistral. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 20 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
+      "created": "2026-11-20",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwDNQcEyBYK4Ac6k9Zz",
+      "fingerprint": "sha256:42acfd209bf46457",
+      "signing_fingerprint": "sha256:629459a0f6fc41c2",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoer9hmgLezfjttiRXxYf\nbA0H1y5z/3ov1IvRmkYPDVd3yJx06lHUIpUczZUnGULqN1rzp94Uv68IsnCOq5ut\nodxnS40xFb/ceR1n4/CvsHr8uFMTJp+bR3VENaYONqhu8DlGhDVkspirZq01FpYN\nH3CUiAh+wS/zpumnTw15Gx0ohyvSdb8NkythtbviAVi3n8jn3PYhqnUQRS7abYrQ\n/nmJJY8RDzQ+4CRtHJlwtE20UJ2rFxOgQ1X5+L1fWbgqzwU9AF5nVhUEEUyzP7Z/\nRD0tGp7grHor/8xSjml4wKM3ob9vaqQRCCyfO+h1mQ8eIBMhrWk9uykjVGejsd4H\nFs7NaSlk9DEwqXDzcgSxLCbpHmeS77qmoDUMX98DjlTBld6dUKAmq7o9xZI7va1A\nxXPTDdqmvpmWSJthGk3URoizdSwfcy3g9gZlg1U//AKM0hVVs60cgRQBkbbvPtTF\n3tLTwHUN/eoxc68h16w7dVwHAk05C6wAzpGawn6Qjz/NX1lU0gjVpexWit9GBcMB\nxZLKo/WVeWpvh0RLYvxwOWtSFRK59Y7kzWn9O8a/a9oQ+jelpDtwB4LL4dnc3VuH\nqxBkNL811FEnmEd2N24AdtYudlOSWiQT+Lehc+TPk1WJXTk8hQ0xtvSbIRv45gwX\nXzgrCxt5+qr4D8ZLWTergb8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEcDimK1kMEnL+O9fYmaBb/VHnmf07\nV6LIiiDSg0dG3HqFeEcUr5MJr+5xe2ZPQIIpjE8qLD7DMTION+ryYB6+/A==\n-----END PUBLIC KEY-----\n",
+        "label": "team.mistral@SovereignWebsite.dinis",
+        "fingerprint": "sha256:42acfd209bf46457",
+        "signing_fingerprint": "sha256:629459a0f6fc41c2"
+      }
     }
   ]
 }
