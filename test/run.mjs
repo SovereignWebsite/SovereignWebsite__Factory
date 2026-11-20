@@ -337,6 +337,17 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   w(d + '/private/v.zip', zip([['manifest.json', Buffer.from('{"v":1}')], ['objects/ab', randomBytes(4096)]]));
   w(d + '/data.bin', zip([['k.txt', Buffer.from('-----BEGIN RSA PRIVATE' + ' KEY-----')]]));
   assert.equal(q(), 1, 'a zip under another name is found by its content and opened');
+  w(d + '/data.bin', Buffer.from('x')); w(d + '/k.js', 'const k = "sgit_' + 'vk1_' + 'abcd1234efgh5678";');
+  assert.equal(q(), 1, 'an sgit vault key in a page or script fails');
+  w(d + '/k.js', 'const k = "abcdefgh1234ijkl5678mnop' + ':' + 'qrst9876";');
+  assert.equal(q(), 1, 'a bare sgit vault key (passphrase:vault_id) fails');
+  w(d + '/k.js', 'const t = "ey' + 'JhbGciOiJIUzI1NiJ9.ey' + 'JzdWIiOiIxMjM0NTYifQ.abcdefghijklmnop";');
+  assert.equal(q(), 1, 'a JSON Web Token fails');
+  w(d + '/k.js', 'const ok = "sha256:01baa0ccc31e0120";');
+  assert.equal(q(), 0, 'a fingerprint is not a vault key');
+  w(d + '/elsewhere.zip', zip([['manifest.json', Buffer.from('{}')], ['objects/x', Buffer.from('plain words here. '.repeat(100))]]));
+  assert.equal(q(), 1, 'a vault outside private/ is held to ciphertext too');
+  w(d + '/elsewhere.zip', zip([['manifest.json', Buffer.from('{}')], ['objects/x', randomBytes(2048)]]));
   const big = Buffer.alloc(9 * 1024 * 1024, 0x61); Buffer.from('-----BEGIN EC PRIVATE' + ' KEY-----').copy(big, 4 * 1024 * 1024 - 10);
   w(d + '/data.bin', big);
   assert.equal(q(), 1, 'a file over 5 MB is scanned, across its piece boundaries');
@@ -345,4 +356,6 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   execFileSync('node', ['build/family-bar.mjs', s, '--credit']);
   assert.ok(r(s + '/designs/a.html', 'utf8').includes('class="family-credit"'), 'family-bar.mjs reaches designs/*.html');
 }
+{ const t = readFileSync('seed/site-template/.github/ci/quality.mjs', 'utf8'), l = readFileSync('build/leak-scan.mjs', 'utf8');
+  for (const m of l.matchAll(/^\s+\['[^']+', (\/.*\/[a-z]*)\],$/gm)) assert.ok(t.includes(m[1]), `the site leak scan has the Factory shape ${m[1].slice(0, 30)}`); }
 console.log('OK (tests)');
