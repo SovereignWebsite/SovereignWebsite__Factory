@@ -219,4 +219,24 @@ assert.ok((await T.preflight(T.planFor(waiting), signedRepo)).blockers.some((b) 
 assert.deepEqual((await T.preflight(T.planFor({ ...waiting, signed: true }), signedRepo)).blockers, [], 'a signed repository the request expects passes');
 assert.ok(R.validate({ ...mv, signed: 'yes' }, F).length, 'signed is a boolean');
 assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secret that stays behind stops the move');
+// The family links: the bar on our own sites, the small top-right pop-up credit on customers' sites (never both, never twice).
+{
+  const { mkdtempSync, writeFileSync: w, readFileSync: r } = await import('node:fs');
+  const { execFileSync } = await import('node:child_process');
+  const { tmpdir } = await import('node:os');
+  const d = mkdtempSync(tmpdir() + '/fam-');
+  w(d + '/index.html', '<html><body><a class="skip" href="#m">Skip</a>\n<nav class="family"><ul></ul></nav><main id="m"></main><footer>Owner</footer></body></html>');
+  const run = (...a) => execFileSync('node', ['build/family-bar.mjs', d, ...a]);
+  run('--credit'); run('--credit');
+  const c = r(d + '/index.html', 'utf8');
+  assert.ok(!c.includes('<nav class="family"'), 'the credit replaces the bar at the top');
+  assert.equal(c.split('class="family-credit"').length, 2, 'one credit after two runs');
+  assert.ok(c.indexOf('family-credit') > c.indexOf('class="skip"') && c.indexOf('family-credit') < c.indexOf('<main'), 'the credit comes before the content, after the skip link');
+  run('https://sovereignwebsite.site/');
+  const b = r(d + '/index.html', 'utf8');
+  assert.ok(b.includes('<nav class="family"') && !b.includes('family-credit"'), 'the bar replaces the credit on our own sites');
+  const t = r('seed/site-template/site/index.html', 'utf8');
+  assert.ok(t.includes('class="family-credit"') && !t.includes('<nav class="family"'), 'new sites start with the credit, not the bar');
+  assert.ok(r('seed/shared/family-credit.css', 'utf8').includes('[data-family-credit="off"]'), 'the owner can turn the credit off with one attribute');
+}
 console.log('OK (tests)');
