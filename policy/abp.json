@@ -7,33 +7,11 @@
     "conductor.b@SovereignWebsite.dinis": {
       "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
       "may_change": [
-        "README.md",
-        "REALITY.md",
-        "CLAUDE.md",
         "status.json",
-        "board/**",
-        "docs/**",
-        "requests/**",
-        "org/**",
-        "team/**",
-        "test/**",
-        "build/**",
-        "policy/**",
-        ".github/**",
-        "LICENSE",
-        "LICENSE-TEXT",
-        ".gitignore",
-        "seed/**"
+        "REALITY.md",
+        "board/**"
       ],
-      "needs_dinis_merge": [
-        "policy/**",
-        ".github/**",
-        "build/**",
-        "org/**",
-        "team/keys.json",
-        "seed/**",
-        "requests/**"
-      ],
+      "needs_dinis_merge": [],
       "branches": [
         "dev"
       ],
@@ -42,7 +20,8 @@
         "print or commit a key or token",
         "name a private prospect"
       ],
-      "seed_paths_source": "Dinis, 19 Nov 2026 ~16:30 UTC in the conductor session, answering the proposal to add seed/** to may_change and needs_dinis_merge: \"yes\"."
+      "seed_paths_source": "Dinis, 19 Nov 2026 ~16:30 UTC in the conductor session, answering the proposal to add seed/** to may_change and needs_dinis_merge: \"yes\".",
+      "scope_source": "Dinis, 20 Nov 2026 ~10:04 UTC in the conductor session: \"Yes agreed\", to the conductor proposing factory.b as the only agent that writes the Factory pipeline, policy, org, requests and DNS files; sites.b out of the Factory, sending requests to factory.b by message; the conductor narrowed to status.json, REALITY.md and board/**."
     },
     "migration.b@SovereignWebsite.dinis": {
       "session": "https://claude.ai/code/session_01Kw9UwDKiseUFyqtG1xyVaG",
@@ -61,25 +40,6 @@
       ],
       "source": "Dinis, 20 Nov 2026 ~09:45 UTC in the conductor session: \"yes to adding migration.b to the policy, limited to board/migration/**\"."
     },
-    "sites.b@SovereignWebsite.dinis": {
-      "session": "https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67",
-      "may_change": [
-        "requests/**"
-      ],
-      "needs_dinis_merge": [
-        "requests/**"
-      ],
-      "branches": [
-        "dev"
-      ],
-      "never": [
-        "push to main",
-        "print or commit a key or token",
-        "name a private person without their consent",
-        "push a request before Dinis says yes to that site"
-      ],
-      "source": "Dinis, 20 Nov 2026 ~10:10 UTC in the conductor session: \"Yes to those policy changes\"."
-    },
     "factory.b@SovereignWebsite.dinis": {
       "session": "https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
       "may_change": [
@@ -90,14 +50,16 @@
         "seed/**",
         "docs/aws-oidc.md",
         ".gitignore",
-        "policy/**"
+        "policy/**",
+        "requests/**"
       ],
       "needs_dinis_merge": [
         "policy/**",
         ".github/**",
         "build/**",
         "org/**",
-        "seed/**"
+        "seed/**",
+        "requests/**"
       ],
       "branches": [
         "dev"
@@ -108,7 +70,9 @@
         "name a private prospect"
       ],
       "source": "Dinis, 20 Nov 2026 ~10:10 UTC in the conductor session: \"Yes to those policy changes\".",
-      "note": "policy/** is for proposals: a change there takes effect only when Dinis merges it."
+      "note": "policy/** is for proposals: a change there takes effect only when Dinis merges it.",
+      "requests_note": "Requests from other agents arrive by message quoting Dinis's yes for that site; factory.b checks them against requests/README.md and commits them signed, naming on whose behalf.",
+      "scope_source": "Dinis, 20 Nov 2026 ~10:04 UTC in the conductor session: \"Yes agreed\", to the conductor proposing factory.b as the only agent that writes the Factory pipeline, policy, org, requests and DNS files; sites.b out of the Factory, sending requests to factory.b by message; the conductor narrowed to status.json, REALITY.md and board/**."
     }
   },
   "pipelines": {
