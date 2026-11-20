@@ -77,6 +77,7 @@ const gt = seedFiles('seed/gate-template');
 for (const must of ['.github/workflows/pages.yml', 'CLAUDE.md', 'site/CNAME', 'site/index.html', 'site/open.js', 'site/robots.txt', 'site/vendor/jsqr-1.4.0/jsQR.js', 'site/vendor/jsqr-1.4.0/LICENSE']) assert.ok(gt.includes(must), `gate template seeds ${must}`);
 const gi = readFileSync('seed/gate-template/site/index.html', 'utf8');
 for (const id of ['key', 'open', 'file', 'status', 'loading', 'loading-msg', 'dropping', 'viewer', 'tabs', 'close', 'frame', 'viewer-title', 'viewer-meta']) assert.ok(gi.includes(`id="${id}"`), `gate page keeps #${id} for open.js`);
+assert.ok(gi.includes('id="forget"') && gi.includes("localStorage.getItem('sv-saved:'"), 'gate page: the key is brought once, and can be forgotten');
 assert.ok(gi.includes('data-vault-zip=""') && gi.includes('<script src="open.js">') && gi.includes('noindex'), 'gate page: no vault yet, open.js beside it, not indexed');
 const sv = { label: 'sotavento', group: 'invest', domain: 'sovereignweb.site', title: 'A firm', description: 'A private preview.', kind: 'owner', access: 'vault' };
 assert.deepEqual(R.validate(sv, '2026-11-20__sotavento'), [], 'a request on the new domain validates');
