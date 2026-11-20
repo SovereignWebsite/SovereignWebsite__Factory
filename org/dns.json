@@ -77,7 +77,7 @@
           "values": [
             "sovereignwebsite.github.io"
           ],
-          "for": "SovereignWebsite__Hub"
+          "for": "Redirect__Hub: the old hub address, redirecting to hub.sovereignweb.site"
         },
         {
           "name": "vault.sovereignwebsite.site",
@@ -89,6 +89,19 @@
         }
       ],
       "note": "hosted sites add one CNAME each, <label>.sovereignwebsite.site to sovereignwebsite.github.io"
+    },
+    {
+      "zone": "sovereignweb.site",
+      "records": [
+        {
+          "name": "hub.sovereignweb.site",
+          "type": "CNAME",
+          "values": [
+            "sovereignwebsite.github.io"
+          ],
+          "for": "SovereignWebsite__Hub, the showroom of SWS sites"
+        }
+      ]
     }
   ]
 }

@@ -48,11 +48,12 @@
     },
     {
       "name": "SovereignWebsite__Hub",
-      "description": "hub.sovereignwebsite.site: the gallery of sovereign websites, each with its owner, team, address, repository, vault, licence and versions.",
-      "homepage": "https://hub.sovereignwebsite.site",
+      "description": "hub.sovereignweb.site: the gallery of sovereign websites, each with its owner, team, address, repository, vault, licence and versions.",
+      "homepage": "https://hub.sovereignweb.site",
       "pages": true,
-      "cname": "hub.sovereignwebsite.site",
-      "seed": "seed/SovereignWebsite__Hub"
+      "cname": "hub.sovereignweb.site",
+      "seed": "seed/SovereignWebsite__Hub",
+      "moved_from": "hub.sovereignwebsite.site (Dinis, 20 Nov 2026 ~12:54 UTC: \"https://hub.sovereignweb.site/ (currently at https://hub.sovereignwebsite.site/ but needs to move)\")"
     },
     {
       "name": "SovereignWebsite__Vault",
@@ -61,6 +62,19 @@
       "pages": true,
       "cname": "vault.sovereignwebsite.site",
       "seed": "seed/SovereignWebsite__Vault"
+    },
+    {
+      "name": "Redirect__Hub",
+      "description": "hub.sovereignwebsite.site: moved to https://hub.sovereignweb.site",
+      "homepage": "https://hub.sovereignweb.site",
+      "pages": true,
+      "cname": "hub.sovereignwebsite.site",
+      "seed": "seed/redirect-template",
+      "vars": {
+        "from": "hub.sovereignwebsite.site",
+        "to": "hub.sovereignweb.site",
+        "label": "hub"
+      }
     }
   ]
 }
