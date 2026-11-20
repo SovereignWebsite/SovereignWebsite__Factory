@@ -327,6 +327,25 @@
         "fingerprint": "sha256:ddfbf8335c123e5e",
         "signing_fingerprint": "sha256:0a773143f2975585"
       }
+    },
+    {
+      "id": "feedback-b-sovereignwebsite",
+      "agent": "feedback.b@SovereignWebsite.dinis",
+      "role": "The feedback box on every site: the QR code, the vault inbox, the replies, and the relay to each site's agent. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 20 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
+      "created": "2026-11-20",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwBiG9d5KHvFjdtiP69",
+      "fingerprint": "sha256:49306a2fb0ef3470",
+      "signing_fingerprint": "sha256:13aac12622d54a95",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA6UMJcxZiLH5VshixgbYc\nCPVdpypXhcP+FP/G72bZ1RCNr8jl+nsRR38JoRsL/1LywK8z6+uGeHLszbIDbaKi\nbOY85qg99+5GRbaiwvA85vN8qQkaX4RHNNk8kU+Dl4U4kF1Kte+O0wf46x460Ff5\n0vWfzPQWWmwUS1MYoao4ML0KG4G7iW5DkRNgv/uOtap3v3uZiw5y4BuNX3HPt3qM\nrl33ZXapbOEhutwwxfNoJtaYsqy4gTrmvVPUSWTCl8gCog23WYUC7BWNzxW2Hy7T\n3lFBrWcR0IMCNNPIdtKjnw6O6IDIwoeKueTC+sz90fDp+MD0Z/0jsxgAGTKv8klo\nIYNGSvVGwFLBB+oDDbEY0C3AYXTQcibIKJ0LZyU/moddP9v5u7LJGH/HvSQBIgO+\nwxoBIzINuLCKnOXbk/icQppFHnOOaZGH7G2mnqKcbWdywXKgySUmxUTAfNg/Z24d\nOFKY8ErSeNZ9YPkhQm8Spz5N4NDxhAaxhxuoWXKTgCiKu3m8cVRiPPIQfEqrFhUv\n2//atjoISh63j821hmGaSbrLEnIUG5rS6BiBhHIpdJZoxny0wIxWKwAmRKFwv6Uq\nRA87TYlUZktvF8vaYPFxdrz+eoNShFY65XXmOpPNTKbWveR326cbcnCmMxsSuK2a\nHiicsHi4/bpYhr7fG/t0wqsCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdoFLzTvjknJjit8AXq8TNxabQZqf\nRLstdMey2o/XE8OuXoTnTDBC4Dlo6zates+86rMS45S1XClPw/L+RE7rxw==\n-----END PUBLIC KEY-----\n",
+        "label": "feedback.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:49306a2fb0ef3470",
+        "signing_fingerprint": "sha256:13aac12622d54a95"
+      }
     }
   ]
 }
