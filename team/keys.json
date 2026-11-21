@@ -618,6 +618,29 @@
         "fingerprint": "sha256:4a4dabd62c22260e",
         "signing_fingerprint": "sha256:2b8c79b7d9ae18da"
       }
+    },
+    {
+      "id": "sites-d-sovereignwebsite",
+      "agent": "sites.d@SovereignWebsite.dinis",
+      "role": "New sites and their content on account D, the twin of sites.b, working alongside it. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 21 November 2026 with sgit pki keygen; public bundle from sgit pki export, sent to conductor.d. Only the public half is here.",
+      "created": "2026-11-21",
+      "status": "active",
+      "session": "https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf",
+      "fingerprint": "sha256:cc86449925b69007",
+      "signing_fingerprint": "sha256:a536d718392ee6bb",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAkKVPE2cYvQ5r81DvRt8U\nsNDyLdiGd/3tpGL6x5sE5brPPD/eo7KIonjsLqNz2os/N5+AUSUQpElbjHWkIHJr\nTEplVL9bPHR4GeH0Ak4jrNNyOqlW/5OdLFrtdqiNf75rhD1yPY02BTMFkUW7pFbM\niqAIah+CGe8fgcwvV2K6+3LgDWdmbj5GrvLDeqsDPvQXPste2lrz44jBKoaLBi/O\nD4ij+Ntqo4JxtpcxxguYoVg7CyrKkFJDVYEvVY5Xi8pivH9xKegdm7TYTNS/EPZf\nGaqoGrarUUJdosHmjHnhzR/srvp89bGjFoGgFRB6QxPIuMzECSoNl97/c9Z8sIEz\ndBUNum6orzo5YstKhb2LLUkCmFqm6tHsJRTA/0Z0Rjgc1FWmoWWdV4DVSzoRVY6Z\nU/P8Ds24zdI5pazvGjZMKsGDedh0UApP3QTllHFSv4Sy0oXFB4elNbN5Yc3qEOhK\nz4Wbh54ii9ToQ3h3bGwsBMmnTo5zCjOLvlMYj1Z4aaIfXHdR2KYKFrnGxYghvEM8\ntqCYkTYZPRe1Ou814XH6Oz9lcA2LPc+DmKHc7fV4TQirgj2oFPD7EB/Ejlyu7PgU\niMdjJ5460zDt06YELpYKhIp1Lr68vi8JxchV3P/9O6uJwq1KoC8tJlGc+Y8oFoyy\nMSDnhuAo69qtmMuqvIr754cCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZdRLvpGNo9M9I7xQ/9wGheI79RmT\njaFTHXhvXpP3/8TWZDKjp0cWVPU1oBVLrSL1T02RSQ87XvCsRKGp2mBpjA==\n-----END PUBLIC KEY-----\n",
+        "label": "sites-d-sovereignwebsite",
+        "fingerprint": "sha256:cc86449925b69007",
+        "signing_fingerprint": "sha256:a536d718392ee6bb"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
