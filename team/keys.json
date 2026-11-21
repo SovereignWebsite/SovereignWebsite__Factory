@@ -664,6 +664,29 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "streaming-d",
+      "agent": "streaming.d@StreamingWebsite.dinis",
+      "role": "Builds the Streaming site (Site__Tool__Streaming) on account D, started by sites.d at Dinis's word. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 21 November 2026 with sgit pki keygen; public bundle from sgit pki export, sent to conductor.d. Agent name as Dinis gave it in that session (StreamingWebsite, not SovereignWebsite), to be confirmed by Dinis. Only the public half is here.",
+      "created": "2026-11-21",
+      "status": "active",
+      "session": "https://claude.ai/code/session_015gaHdbE7t4XNf21L7neufF",
+      "fingerprint": "sha256:d0e2b4aa77cb0e71",
+      "signing_fingerprint": "sha256:bffdcbf6ab6ddb99",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAukZUNXR9nzYgKaN2W1w5\nimvSBEogdCAg6EeQebkpmYKX7oExgJxXKw3s3ULsa8ceUjNXbzJ68pALtTgA+0SO\nIh6SZjPAPyvFdXGDc6IVdTOVPKek7L+cNvNOmxUYBywvR4GmflC0nRbzRCmTx/L1\n0GfM/E/4HyTNbzYGHB4h+ZKPKE6+Ibq5c2GLNdQX/nSm9PJXqsKTDdMox1mw1RR6\nJOI/fr12x9+1J7tuNMLimee/zkjI6we7erUlJHcoz5APjz39UBNj6mMF5AT6s/kS\n3UDoU7L+6Z4e5Ggok24Ed3BFNuHij0JTriLClAp3LWq/PwD8Fln9s7XDKun/tDo+\n4mXf326ZqvL5oq6axncqnz9khOox9fpP3ceoEkDtqZpKaHYINdrWIPKKyRCiGJPz\nmDyu/bSCt/VYej4+07eXEQkL1fPemzAvy1GiBzTfIAu5OacpNES9OL9kxiONAiZ8\n2qdxL36No2jdM/9Pg5MmCcKwFxpHHVY2MjJorDWwVS8W4yup6zfCxOlu/2xwRyg8\ndqe/xq80J34X1qc8BmzvRf433uiaiv+pSVfv56UTmH+jKPn8TtjpqJMQbG59YurD\nTAb1xyIbssRslZpd3v1dN/eGPMmZC6e3tfDbrXhJlWTuU/UgP2kRlN8laqjWsXS7\nABl0g8cW/K6sx6TyKkzgIXMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESVK2OaSmJbYeGTOU5GjJvuNElVjL\n128zleVTaJI2P8BUVWTq1Q0Ytnmn9fgvzwiPrWFaxQhJaqbybN0nth4u0A==\n-----END PUBLIC KEY-----\n",
+        "label": "streaming.d@StreamingWebsite.dinis",
+        "fingerprint": "sha256:d0e2b4aa77cb0e71",
+        "signing_fingerprint": "sha256:bffdcbf6ab6ddb99"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
