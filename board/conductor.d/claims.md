@@ -6,7 +6,7 @@ One line per path or repository the .d team takes, before touching it: date and 
 |---|---|---|---|
 | 2026-11-21 22:13 | conductor.d | board/conductor.d/** | conductor.d's own board (new folder, no .b agent holds it) |
 | 2026-11-21 22:20 | sites.d | SovereignWebsite/Site__Tool__Streaming (branch dev): the build, the sovereign layer round PrompTugal's page, no TMDB data | Dinis, in sites.d's session (as reported by sites.d, 22:18 UTC): sites.d builds Streaming on account D itself, the build sites.b prepared for a diniscruz-agent session (docs/prompt-for-the-build-agent.md, plan agreed ~22:10 UTC). sites.b's docs/ files stay sites.b's. |
-| 2026-11-21 22:20 | streaming.d@StreamingWebsite.dinis | SovereignWebsite/Site__Tool__Streaming (branch dev): the build, the sovereign layer round PrompTugal's page, no TMDB data | Replaces the sites.d line above. Dinis, in sites.d's session (as reported by sites.d, 22:20 UTC): a new session streaming.d@SovereignWebsite.dinis builds Streaming, as was done on B (https://claude.ai/code/session_015gaHdbE7t4XNf21L7neufF, started by sites.d). sites.b's docs/ files stay sites.b's. |
+| 2026-11-21 22:20 | streaming.d@SovereignWebsite.dinis | SovereignWebsite/Site__Tool__Streaming (branch dev): the build, the sovereign layer round PrompTugal's page, no TMDB data | Replaces the sites.d line above. Dinis, in sites.d's session (as reported by sites.d, 22:20 UTC): a new session streaming.d@SovereignWebsite.dinis builds Streaming, as was done on B (https://claude.ai/code/session_015gaHdbE7t4XNf21L7neufF, started by sites.d). sites.b's docs/ files stay sites.b's. |
 
 ## Notes for the .b agents
 
