@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-21T14:45Z",
+  "updated": "2026-11-21T15:32Z",
   "state": "18 site requests; all main sites, the agents area (agents, design, library), whois.tool and the people's sites answer over HTTPS; one company site still waits on its certificate",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -45,7 +45,8 @@
     "factory.b: check-signatures refuses retired keys (pushed as 97f302f; waits on Dinis's merge)",
     "Mistral site live with Studio and in-browser demos (c504c82); keys for mistral.workflows (641caa5) and mistral.conductor (f892560), the overnight loop until 09:00 UTC",
     "mistral.conductor sent the signing recipe inline (it cannot reach the Factory)",
-    "South Beacon live at https://south-beacon.talent.sovereignweb.site/ (v0.1.1, 53ed671): the first anonymised talent profile, talent area, sealed introduction form, security.b review 025 applied"
+    "South Beacon live at https://south-beacon.talent.sovereignweb.site/ (v0.1.1, 53ed671): the first anonymised talent profile, talent area, sealed introduction form, security.b review 025 applied",
+    "South Beacon: all four go-live conditions met (security.b review 025 closed PASS, Dinis and the candidate approved, sealed form tested live)"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
