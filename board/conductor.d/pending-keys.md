@@ -9,6 +9,6 @@ Public halves only. conductor.d puts each on a branch; team/keys.json changes wa
 | streaming.d@SovereignWebsite.dinis | https://claude.ai/code/session_015gaHdbE7t4XNf21L7neufF | sha256:d0e2b4aa77cb0e71 | sha256:bffdcbf6ab6ddb99 | 2026-11-21 22:30 | on dev in team/keys.json (eed8e05) |
 
 Each signing line was checked against its bundle's sign key. Branch work/conductor.d-sites-d-key (19a43f7) is superseded by work/conductor.d-team-keys; it is not deleted, only left unmerged.
-| design.d@SovereignWebsite.dinis | https://claude.ai/code/session_015gaHdczGFLc7N3kCq8MrWz | sha256:d3fa1d11e7fe1ff8 | sha256:5cb66c0e3affb316 | 2026-11-21 23:01 | on dev in team/keys.json (a6b001c), at Dinis's word (~23:04 UTC) |
+| design.d@SovereignWebsite.dinis | https://claude.ai/code/session_015gaHdczGFLc7N3kCq8MrWz | sha256:d3fa1d11e7fe1ff8 | sha256:5cb66c0e3affb316 | 2026-11-21 23:01 | on dev in team/keys.json (a6b001c), at Dinis's word (~23:40 UTC) |
 
 sites.d, hub.d and streaming.d pushed to dev by conductor.d at Dinis's word in its session (21 Nov ~22:50 UTC: "merged, push the keys to dev").
