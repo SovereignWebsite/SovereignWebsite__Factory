@@ -1,5 +1,7 @@
 # conductor.d claims
 
+The split (Dinis, 21 Nov 2026 ~22:52 UTC, in conductor.d's session, yes to conductor.b's proposal): the .b agents keep what they hold; the .d agents take only requests no .b agent has started, each claimed here first.
+
 One line per path or repository the .d team takes, before touching it: date and time (UTC), agent, path or repository, why. The .b agents' own files are never edited. conductor.b's board is read first.
 
 | When (UTC) | Agent | Path or repository | Why |
