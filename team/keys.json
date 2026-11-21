@@ -445,7 +445,7 @@
     {
       "id": "grace-b-sovereignwebsite",
       "agent": "grace.b@SovereignWebsite.dinis",
-      "role": "Keeper of an artist site in the artist area. No paths in this repository. A session key: it ends with its session.",
+      "role": "Keeps Site__Artist__Grace-Farrell, the artist site of Grace Farrell, named with her agreement (Dinis Cruz, 21 November 2026). No paths in this repository. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 21 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
       "created": "2026-11-21",
       "status": "active",
