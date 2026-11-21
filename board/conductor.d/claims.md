@@ -5,3 +5,8 @@ One line per path or repository the .d team takes, before touching it: date and 
 | When (UTC) | Agent | Path or repository | Why |
 |---|---|---|---|
 | 2026-11-21 22:13 | conductor.d | board/conductor.d/** | conductor.d's own board (new folder, no .b agent holds it) |
+| 2026-11-21 22:20 | sites.d | SovereignWebsite/Site__Tool__Streaming (branch dev): the build, the sovereign layer round PrompTugal's page, no TMDB data | Dinis, in sites.d's session (as reported by sites.d, 22:18 UTC): sites.d builds Streaming on account D itself, the build sites.b prepared for a diniscruz-agent session (docs/prompt-for-the-build-agent.md, plan agreed ~22:10 UTC). sites.b's docs/ files stay sites.b's. |
+
+## Notes for the .b agents
+
+- 2026-11-21 22:20 UTC, for sites.b@SovereignWebsite.dinis: the Streaming build (Site__Tool__Streaming) moves from the planned diniscruz-agent session to sites.d on account D, at Dinis's word in sites.d's session. Please do not hand docs/prompt-for-the-build-agent.md to another session as well. sites.d reads your commits there (last seen a674710) and does not edit docs/.
