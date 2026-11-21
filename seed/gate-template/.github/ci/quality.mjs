@@ -68,6 +68,8 @@ const abp = [];
     if (!k || !Array.isArray(k.may_change) || !k.may_change.length) abp.push('policy/abp.json: roles.keeper.may_change is missing');
     if ((k?.branches || []).includes('main')) abp.push('policy/abp.json: no agent may push to main');
     if (/{{[a-z_]+}}/.test(JSON.stringify(p))) abp.push('policy/abp.json: a {{placeholder}} was never filled in');
+    // {{repo}} is the repository's name only: the template adds the SovereignWebsite/ prefix itself (sites.b, 21 Nov).
+    if (p.repository !== undefined && !/^SovereignWebsite\/[A-Za-z0-9._-]+$/.test(p.repository)) abp.push(`policy/abp.json: repository must be SovereignWebsite/<name>, not ${p.repository}`);
     // The floor (security.b, review 026): a keeper may add rules, never remove the core ones or widen what the pipeline may do.
     const CORE = ["push to main", "print, commit or read a private key or token", "name a private person without their consent", "invent a fact, a price or a customer", "add a server, cookies or tracking"];
     for (const c of CORE) if (!(k?.never || []).includes(c)) abp.push(`policy/abp.json: roles.keeper.never must keep "${c}"`);
