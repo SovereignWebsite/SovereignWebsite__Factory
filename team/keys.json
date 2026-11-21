@@ -599,6 +599,25 @@
         "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEEBAs6LB0733DOVltTqdDZp5eE8iI\ndktuQB6dfCoSQ+jyEKXbkoApqPpMyJ1AWh7sKkXX5bLhIrSteBh1a08Gtw==\n-----END PUBLIC KEY-----\n",
         "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArzZSViqWhEdeTboFAoWf\n8EQ3us6RZvEao9pqT2Qjj57QZvH7G8Ew3v4xZwoixIjL5B4JkBQW6EyJQzt6gPcY\n+M8zPlHXVCTyY23D9NKuQIsdKdahkjHIf9gX1+wtu/DGXyF97xfyt+hitx8jrba3\nbh2eNhgPpG7QCY99gKyW3om8WGbLTSJ3Y9LN+RejPP2w6uxtuAxPBM+UqlHHL1lR\ngolvbqTMgqiRWC/qTSz+aAjyCHc75xIeRcOpICMwtnH5aBCLJwxXuCkNvPrEKTS1\nC13pKNQYD+J2dwNV+8y/6J2M9uAa/OBkZyP8HcJMhyTARSAKxR8CX1TsuCzUZu3j\nWy0JbyDxVZ7+xhHfKxJ2+PiMI4AZ6OzBWW0kA8MYnoI5v6r3CkZGAB+Q9ekXy9Zn\nFZvDQsD9OXvuhtLBL7GiDjk5e9fnHaO7nUp6wQZn2wDThVT6+qjARejwPokb6u18\nwIlK9cimmRlaPY2nMSJggicDwEVoC6thxl9uNqIyOHm1i1tBotwECO0cf8almrgw\nw20ORYxAM/Wr68hEMNojDcMUkr+VkB6GjCr43GgmmdCb+qofulk5T0zSkwpXTD4Z\nafKXF90pWkJjo9TVGiUbkXzadNn9s/aK3t0w6GlE0pkt0Kyjsga64Ayk2YLJ9vH0\nSgNHMGKS0uTrY7V/xoPS/DcCAwEAAQ==\n-----END PUBLIC KEY-----\n"
       }
+    },
+    {
+      "id": "conductor-d-sovereignwebsite",
+      "agent": "conductor.d@SovereignWebsite.dinis",
+      "role": "Conductor of the Sovereign Agentic Website team on account D, the twin of conductor.b, working alongside it. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 21 November 2026 with sgit pki keygen; public bundle from sgit pki export, sent to maestro.d (account-d), who added it here for Dinis to merge (keys_rule). Only the public half is here.",
+      "created": "2026-11-21",
+      "status": "active",
+      "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
+      "fingerprint": "sha256:4a4dabd62c22260e",
+      "signing_fingerprint": "sha256:2b8c79b7d9ae18da",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAxzLpdnDJWfhL1csfnEjp\nO0mQx/SWUST4z3toRze9vaJYzFhAnI3XJMhXSB/8wbv235k7hsEt7iUpKFsbIg8i\nEB3WkXgTV7dWAZrxlMRL83ZjXnj5vpZ0SPh+GQiWDssbQpkw6NOxHRFQEvLnOQqm\n6FJO/O8SkgaESmC/mzIZ79cIvqZ2ibJFHiJUZfucxRrIULeF7ndjpjWkxLfLjcJK\n7rMWeAr/XQk5HDjCPUzJeHv9Td/ls9L0JRqMJovXC5FQg2afu1k0FX3aqUwrOaf3\n77+2UPxoElG39Wo/ahWyue8fuLcTp4p0Ht4jdlKQmCem8wPtXUMgdIXInufD+Hlb\nDFMBw/+tRYOFENXFLhOIm+/DTTQOA9fElibn5e4lovXi+n8m0T05wXMXT+SYPNYp\nYhAoftsgyAZcLeRthcoC+CSmTFmAvzn8oRhYPxzhbSd5nUTdwX/T5C+KferumkaW\nA/nQwcuY8uGQJqEt7/gXAduQT0JOb3r3w94z4NynmMV02oH7TA0OxHAfBJRiuk3l\nB/YdDnzC6PT2cBVCSRB3PJ7xxLqX4+C7+Rxs7qn074Q55Yhso6JwYZ+bSVu6R8vT\nvus52zXPOYcJtgaT/awSvUoYO7g7sKUFBC00yNue0Tezf5A8ViK6YYQzNb3LAlGx\nihoc1NZkt1Pa8x6qXeyAQAcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEbTVpH2ThlpOI/eTyCRQCyphlSgcb\nRZyxINM5rSbtR0j9rruI3n2c1tFlSLYxo/smRhWQt66XjKLsOEgYJfMGJw==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor-d-sovereignwebsite",
+        "fingerprint": "sha256:4a4dabd62c22260e",
+        "signing_fingerprint": "sha256:2b8c79b7d9ae18da"
+      }
     }
   ]
 }
