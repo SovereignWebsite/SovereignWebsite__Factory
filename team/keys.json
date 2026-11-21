@@ -580,6 +580,25 @@
         "fingerprint": "sha256:8b2e1f520d6133f3",
         "signing_fingerprint": "sha256:b1dfdedfff9dc7eb"
       }
+    },
+    {
+      "id": "outreach-b-sovereignwebsite",
+      "agent": "outreach.b@SovereignWebsite.dinis",
+      "role": "Works with Dinis on outreach: drafts posts and replies he sends himself, fact-checks claims, turns enquiries into site requests (Dinis, 21 Nov 2026). No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 21 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
+      "created": "2026-11-21",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwBGcnXLQ9m2BqD1Dwj",
+      "fingerprint": "sha256:21c60ecba7728375",
+      "signing_fingerprint": "sha256:61d67c95dd534293",
+      "bundle": {
+        "v": 1,
+        "label": "outreach.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:21c60ecba7728375",
+        "signing_fingerprint": "sha256:61d67c95dd534293",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEEBAs6LB0733DOVltTqdDZp5eE8iI\ndktuQB6dfCoSQ+jyEKXbkoApqPpMyJ1AWh7sKkXX5bLhIrSteBh1a08Gtw==\n-----END PUBLIC KEY-----\n",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArzZSViqWhEdeTboFAoWf\n8EQ3us6RZvEao9pqT2Qjj57QZvH7G8Ew3v4xZwoixIjL5B4JkBQW6EyJQzt6gPcY\n+M8zPlHXVCTyY23D9NKuQIsdKdahkjHIf9gX1+wtu/DGXyF97xfyt+hitx8jrba3\nbh2eNhgPpG7QCY99gKyW3om8WGbLTSJ3Y9LN+RejPP2w6uxtuAxPBM+UqlHHL1lR\ngolvbqTMgqiRWC/qTSz+aAjyCHc75xIeRcOpICMwtnH5aBCLJwxXuCkNvPrEKTS1\nC13pKNQYD+J2dwNV+8y/6J2M9uAa/OBkZyP8HcJMhyTARSAKxR8CX1TsuCzUZu3j\nWy0JbyDxVZ7+xhHfKxJ2+PiMI4AZ6OzBWW0kA8MYnoI5v6r3CkZGAB+Q9ekXy9Zn\nFZvDQsD9OXvuhtLBL7GiDjk5e9fnHaO7nUp6wQZn2wDThVT6+qjARejwPokb6u18\nwIlK9cimmRlaPY2nMSJggicDwEVoC6thxl9uNqIyOHm1i1tBotwECO0cf8almrgw\nw20ORYxAM/Wr68hEMNojDcMUkr+VkB6GjCr43GgmmdCb+qofulk5T0zSkwpXTD4Z\nafKXF90pWkJjo9TVGiUbkXzadNn9s/aK3t0w6GlE0pkt0Kyjsga64Ayk2YLJ9vH0\nSgNHMGKS0uTrY7V/xoPS/DcCAwEAAQ==\n-----END PUBLIC KEY-----\n"
+      }
     }
   ]
 }
