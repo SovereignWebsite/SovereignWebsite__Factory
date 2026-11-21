@@ -378,4 +378,5 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   const want = { ...org.defaults, name: 'R', description: 'd' }; const have = { ...org.defaults, description: 'd', default_branch: 'dev', has_dev: true, teams: { 'sovereignwebsite-agents-ci': 'push' }, protected: true };
   assert.ok(!plan({ ...org, repos: [want] }, { R: have }).actions.some((a) => a.action === 'repo.update_settings'), 'settings that match are not applied again'); }
 { const S = await import('../build/check-signatures.mjs'); assert.equal(S.usable({ status: 'active' }), true); assert.equal(S.usable({}), true); assert.equal(S.usable({ status: 'retired', retired: '2026-11-21' }), false); assert.equal(S.usable({ status: 'superseded' }), false); }
+{ const R = await import('../build/requests.mjs'); const t = { label: 'south-beacon', group: 'talent', title: 'South Beacon', description: 'A profile.', kind: 'owner' }; assert.equal(R.repoName(t), 'Site__Talent__South-Beacon'); assert.equal(R.host(t), 'south-beacon.talent.sovereignweb.site'); }
 console.log('OK (tests)');
