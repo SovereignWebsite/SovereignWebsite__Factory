@@ -9,7 +9,7 @@
 // For each commit in before..after (merges and side branches included) that is not the commit that added this
 // file or older than it:
 //   1. it carries a git SSH signature that verifies against a key in its (first) PARENT's team/keys.json (status not
-//      "superseded"), never the keys in the commit itself: a new or rotated key is added by a commit signed with a
+//      "superseded" or "retired"), never the keys in the commit itself: a new or rotated key is added by a commit signed with a
 //      key already listed, or by a person (the commit that adds this check is reviewed and merged by Dinis);
 //   2. the key's agent is the commit's one Agent: trailer;
 //   3. its one Claude-Session: trailer is the session recorded with that key.
@@ -27,6 +27,10 @@ import { fileURLToPath } from 'node:url';
 
 export const SELF = 'build/check-signatures.mjs';
 const AGENT = /^[a-z0-9]+(?:[.-][a-z0-9]+)*@[a-z0-9.-]+$/i;
+// A key signs new commits only while it is live. A retired key (its session finished) is refused for every commit whose
+// parent already lists it as retired; commits made before that keep verifying against their own parent's keys. This uses
+// the parent's tree, not a date, because commit dates are set by whoever makes the commit.
+export const usable = (k) => k.status !== 'superseded' && k.status !== 'retired';
 const lines = (s) => (s ? s.split('\n').map((x) => x.trim()).filter(Boolean) : []);
 
 export function checkSignatures({ cwd = process.cwd(), before, after = 'HEAD' } = {}) {
@@ -52,7 +56,7 @@ export function checkSignatures({ cwd = process.cwd(), before, after = 'HEAD' } 
     const signers = [], sessionOf = new Map();
     for (const k of keys) {
       const agent = k.agent, pemText = k.bundle?.sign ?? k.public_key?.sign;
-      if (!agent || !AGENT.test(agent) || !pemText || k.status === 'superseded') continue;
+      if (!agent || !AGENT.test(agent) || !pemText || !usable(k)) continue;
       const pem = join(dir, `${cache.size}-${signers.length}.pem`); writeFileSync(pem, pemText);
       const ssh = execFileSync('ssh-keygen', ['-i', '-m', 'PKCS8', '-f', pem], { encoding: 'utf8' }).trim().split(' ').slice(0, 2).join(' ');
       signers.push(`${agent} namespaces="git" ${ssh}`);

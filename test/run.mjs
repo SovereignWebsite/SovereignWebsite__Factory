@@ -377,4 +377,5 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   assert.ok(/gh\('GET', `\/repos\/\$\{org\}\/\$\{listed\.name\}`\)/.test(src), "liveRepos fetches each repository's full record");
   const want = { ...org.defaults, name: 'R', description: 'd' }; const have = { ...org.defaults, description: 'd', default_branch: 'dev', has_dev: true, teams: { 'sovereignwebsite-agents-ci': 'push' }, protected: true };
   assert.ok(!plan({ ...org, repos: [want] }, { R: have }).actions.some((a) => a.action === 'repo.update_settings'), 'settings that match are not applied again'); }
+{ const S = await import('../build/check-signatures.mjs'); assert.equal(S.usable({ status: 'active' }), true); assert.equal(S.usable({}), true); assert.equal(S.usable({ status: 'retired', retired: '2026-11-21' }), false); assert.equal(S.usable({ status: 'superseded' }), false); }
 console.log('OK (tests)');
