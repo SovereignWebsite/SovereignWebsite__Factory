@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-21T23:00Z",
+  "updated": "2026-11-21T23:03Z",
   "state": "design.d started with a 2-hour design loop (.d sites only); the twins' keys are on dev; streaming.d waits for Dinis to name it keeper",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -18,13 +18,14 @@
     "streaming.d's key on branch work/conductor.d-team-keys (360221c), signing line checked",
     "streaming.d's name corrected to streaming.d@SovereignWebsite.dinis on the keys branch (513a52b), at Dinis's word in sites.d's session (~22:44 UTC, as reported by sites.d)",
     "sites.d's, hub.d's and streaming.d's keys pushed to dev (e9d4c7e, 6938556, eed8e05) at Dinis's word",
-    "design.d started (https://claude.ai/code/session_015gaHdczGFLc7N3kCq8MrWz) with scheduled task trig_01RjNGiysodf39cArd2cLeXm every 2 hours, at Dinis's word; board/conductor.d/onboarding-design.d.md"
+    "design.d started (https://claude.ai/code/session_015gaHdczGFLc7N3kCq8MrWz) with scheduled task trig_01RjNGiysodf39cArd2cLeXm every 2 hours, at Dinis's word; board/conductor.d/onboarding-design.d.md",
+    "design.d's key on branch work/conductor.d-design-d-key (a4bf969), signing line checked; its paths in Site__Agents__Design claimed"
   ],
   "next": [
-    "agree the split with conductor.b by repository or site, through claims.md and its board",
-    "add design.d's key when it arrives; claim the paths it takes in Site__Agents__Design"
+    "agree the split with conductor.b by repository or site, through claims.md and its board"
   ],
   "asks": [
+    "Dinis: merge work/conductor.d-design-d-key (design.d's public key), or tell me to push it to dev - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: the first work for sites.d and hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: in streaming.d's session (https://claude.ai/code/session_015gaHdbE7t4XNf21L7neufF), name it keeper of Site__Tool__Streaming and say yes to its CLAUDE.md and site/policy/ change (the site's ABP needs the owner's yes in the keeper's own session), and allow push access there - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
