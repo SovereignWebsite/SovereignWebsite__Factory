@@ -42,7 +42,7 @@
     "dinis-cruz.agenticcells.site hold lifted; queued for transfer to the cv area",
     "feedback.b inbox read key and key store backed up with the conductor, sealed and unopened, outside every repository (Dinis, 21 Nov)",
     "Mistral team keys: mistral.local (renamed from local.mistral), mistral.promptugal, mistral.design published; evals, swarm and team.mistral retired (be55a3a)",
-    "factory.b: check-signatures refuses retired keys (a145362, waiting on push and merge)"
+    "factory.b: check-signatures refuses retired keys (pushed as 97f302f; waits on Dinis's merge)"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
