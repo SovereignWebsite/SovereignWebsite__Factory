@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-21T00:32Z",
+  "updated": "2026-11-21T01:32Z",
   "state": "18 site requests; all main sites, the agents area (agents, design, library), whois.tool and the people's sites answer over HTTPS; one company site still waits on its certificate",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -39,7 +39,8 @@
     "startups area and its five sites (a49005f)",
     "Chiswick demo made public at Dinis's word, with a 'not the official site' note",
     "grace.b key published (d3a59df); Site__Artist__Grace-Farrell made by Org apply (b99f5a5); her name cleared (9fe303f)",
-    "dinis-cruz.agenticcells.site hold lifted; queued for transfer to the cv area"
+    "dinis-cruz.agenticcells.site hold lifted; queued for transfer to the cv area",
+    "feedback.b inbox read key and key store backed up with the conductor, sealed and unopened, outside every repository (Dinis, 21 Nov)"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
@@ -53,7 +54,8 @@
     "Dinis: check the Algarve Evolution vault, the go-ahead to retire the old site - https://algarve-evolution.organisation.sovereignweb.site",
     "Dinis: install the sovereignwebsite-transfer App on SovereignWebsite (every transfer gets 403) - https://github.com/organizations/SovereignWebsite/settings/installations",
     "Dinis: say \"push\" for 544ecbc - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
-    "Dinis: Grace's photos, Spotlight links, and whether photos credited to Jennie Scott may be used - https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67"
+    "Dinis: Grace's photos, Spotlight links, and whether photos credited to Jennie Scott may be used - https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67",
+    "Dinis: the DC Vault manager session or public key, and whether every agent backs up its private key - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu"
   ],
   "decisions": [
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",
@@ -62,7 +64,8 @@
     "Dinis, 20 Nov 2026 ~08:40 UTC: the principles and all content we create here are CC BY (applied as CC BY 4.0)",
     "Dinis, 20 Nov 2026 ~08:40 UTC: keep the wake hourly",
     "Dinis, 21 Nov 2026 ~00:22 UTC: \"Grace Farrell\" is her full name and she has agreed",
-    "Dinis, 21 Nov 2026 ~00:19 UTC (AgentiCCells session): yes, move dinis-cruz to SovereignWebsite"
+    "Dinis, 21 Nov 2026 ~00:19 UTC (AgentiCCells session): yes, move dinis-cruz to SovereignWebsite",
+    "Dinis, 21 Nov 2026 ~01:20 UTC: the conductor keeps a copy of all keys used here, to send on to his main DC Vault manager"
   ],
   "team": {
     "conductor.b": "coordinates, keeps status.json, board/, REALITY.md and team keys; briefs Dinis - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
