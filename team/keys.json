@@ -391,7 +391,7 @@
       "role": "Evaluates Mistral for a sovereign website's jobs, in Site__Provider__Mistral (site/evals/, site/data/evals/); started by conductor.mistral. No paths in this repository. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 20 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
       "created": "2026-11-20",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_01Kw9UwE2tPJDuHKuufXi7gF",
       "fingerprint": "sha256:db2a342e98327e61",
       "signing_fingerprint": "sha256:0034e2e8c4fe2c59",
@@ -402,7 +402,9 @@
         "label": "evals.mistral@SovereignWebsite.dinis",
         "fingerprint": "sha256:db2a342e98327e61",
         "signing_fingerprint": "sha256:0034e2e8c4fe2c59"
-      }
+      },
+      "retired": "2026-11-21",
+      "retired_note": "Work finished and session archived by conductor.mistral; old signatures stay valid, no new ones."
     },
     {
       "id": "swarm-mistral-sovereignwebsite",
@@ -410,7 +412,7 @@
       "role": "Runs the Swarm and cells on Mistral, replayed, in Site__Provider__Mistral (site/swarm/, site/data/swarm/); started by conductor.mistral. No paths in this repository. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 20 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
       "created": "2026-11-20",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_01Kw9UwDawRYTw5NXQBHJX5V",
       "fingerprint": "sha256:fa8453d5f6820b1e",
       "signing_fingerprint": "sha256:1a3dc9810a93695b",
@@ -421,7 +423,9 @@
         "label": "swarm.mistral@SovereignWebsite.dinis",
         "fingerprint": "sha256:fa8453d5f6820b1e",
         "signing_fingerprint": "sha256:1a3dc9810a93695b"
-      }
+      },
+      "retired": "2026-11-21",
+      "retired_note": "Work finished and session archived by conductor.mistral; old signatures stay valid, no new ones."
     },
     {
       "id": "team-mistral-sovereignwebsite",
@@ -429,7 +433,7 @@
       "role": "The team inside the site, live on Mistral in the browser, in Site__Provider__Mistral (site/team/, site/data/team/); started by conductor.mistral. No paths in this repository. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 20 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
       "created": "2026-11-20",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_01Kw9UwDNQcEyBYK4Ac6k9Zz",
       "fingerprint": "sha256:42acfd209bf46457",
       "signing_fingerprint": "sha256:629459a0f6fc41c2",
@@ -440,7 +444,9 @@
         "label": "team.mistral@SovereignWebsite.dinis",
         "fingerprint": "sha256:42acfd209bf46457",
         "signing_fingerprint": "sha256:629459a0f6fc41c2"
-      }
+      },
+      "retired": "2026-11-21",
+      "retired_note": "Work finished and session archived by conductor.mistral; old signatures stay valid, no new ones."
     },
     {
       "id": "grace-b-sovereignwebsite",
