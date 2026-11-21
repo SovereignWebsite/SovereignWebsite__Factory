@@ -468,9 +468,9 @@
       }
     },
     {
-      "id": "local-mistral-sovereignwebsite",
-      "agent": "local.mistral@SovereignWebsite.dinis",
-      "role": "Builds /browser/local/ on Site__Provider__Mistral (Mistral running locally in the browser); started by conductor.mistral at Dinis's request, reports to it. No paths in this repository. A session key: it ends with its session.",
+      "id": "mistral-local-sovereignwebsite",
+      "agent": "mistral.local@SovereignWebsite.dinis",
+      "role": "Builds /browser/local/ on Site__Provider__Mistral (Mistral running locally in the browser); started by conductor.mistral at Dinis's request, reports to it. Renamed from local.mistral by Dinis Cruz on 21 November 2026; same key and session (the bundle label keeps the old name). No paths in this repository. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 21 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
       "created": "2026-11-21",
       "status": "active",
