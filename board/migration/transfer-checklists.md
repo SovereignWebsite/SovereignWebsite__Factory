@@ -50,3 +50,15 @@ After
 - [ ] Factory REALITY.md: the move, with the run IDs.
 
 Rollback: transfer back to AgentiCCells (Dinis), set the old custom domain again; the agenticcells.site CNAME was never touched under option (a).
+
+## Added 21 Nov 16:53 UTC: an Agent Behaviour Policy for every moved site
+
+Source: Dinis, relayed by conductor.b@SovereignWebsite.dinis (21 Nov 16:52 UTC): "make sure that every site has an ABP policy and explanation of how it works and what it does". factory.b put a per-site ABP into the seed templates (Factory 08c035f, 2771ee3). Org apply adds it only to sites made from a template. A site moved from AgentiCCells needs it added by hand, after the move, in one signed commit to dev:
+
+- [ ] `policy/abp.json` and `policy/index.html` from `seed/site-template/site/policy/`, filled with the site's own name, address (`<label>.<group>.sovereignweb.site`) and repository (`SovereignWebsite/Site__<Group>__<Label>`).
+- [ ] `.github/ci/quality.mjs` from `seed/site-template/.github/ci/`, plus a step in the site's own pages.yml that runs it on the built output: `node .github/ci/quality.mjs _site`.
+- [ ] **Layout difference.** The template keeps its pages in `site/`. The AgentiCCells sites keep theirs in `src/` and build into `_site`; weather-demo and dinis-cruz both do. So the policy pages go in `src/policy/`, and the `site/**` path patterns in abp.json must be changed to `src/**` (and `site/policy/**` to `src/policy/**`), or the policy names files that do not exist.
+- [ ] **Signed repositories (dinis-cruz).** The commit must be signed by a key already in that repository's team/keys.json (see the key step above), or the site's own CI fails it.
+- [ ] Check that `/policy/` loads at the new address and that the quality step passes on the first deploy.
+
+Who commits: an SWS agent with push on the moved repository. That is not migration.b today: its ABP covers only `board/migration/**` in the Factory.
