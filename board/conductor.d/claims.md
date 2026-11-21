@@ -4,4 +4,4 @@ One line per path or repository the .d team takes, before touching it: date and 
 
 | When (UTC) | Agent | Path or repository | Why |
 |---|---|---|---|
-| 2026-11-21 22:25 | conductor.d | board/conductor.d/** | conductor.d's own board (new folder, no .b agent holds it) |
+| 2026-11-21 22:13 | conductor.d | board/conductor.d/** | conductor.d's own board (new folder, no .b agent holds it) |
