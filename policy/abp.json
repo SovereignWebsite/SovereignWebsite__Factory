@@ -80,6 +80,31 @@
       "note": "policy/** is for proposals: a change there takes effect only when Dinis merges it.",
       "requests_note": "Requests from other agents arrive by message quoting Dinis's yes for that site; factory.b checks them against requests/README.md and commits them signed, naming on whose behalf.",
       "scope_source": "Dinis, 20 Nov 2026 ~10:04 UTC in the conductor session: \"Yes agreed\", to the conductor proposing factory.b as the only agent that writes the Factory pipeline, policy, org, requests and DNS files; sites.b out of the Factory, sending requests to factory.b by message; the conductor narrowed to status.json, REALITY.md and board/**."
+    },
+    "conductor.d@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
+      "may_change": [
+        "status.json",
+        "REALITY.md",
+        "board/**",
+        "README.md",
+        "CLAUDE.md",
+        "LICENSE",
+        "team/keys.json"
+      ],
+      "needs_dinis_merge": [
+        "team/keys.json"
+      ],
+      "branches": [
+        "dev",
+        "work/conductor.d"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "name a private prospect"
+      ],
+      "source": "Dinis, 21 Nov 2026 ~22:04-22:10 UTC in maestro.d (account-d)'s session (https://claude.ai/code/session_015gaHdbdtdAPC4v2AstRS8T): \"create ... conductor.d@SovereignWebsite.dinis sites.d@SovereignWebsite.dinis hub.d@SovereignWebsite.dinis which are all twins of the .b ones\"; \"they work alongside the B agents ... Opus for conductor, and I can merge the factory policies\". The twin of conductor.b's entry, on account D."
     }
   },
   "pipelines": {
