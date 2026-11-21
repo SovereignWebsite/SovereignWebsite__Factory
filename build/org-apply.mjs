@@ -6,6 +6,7 @@ import { load, checkActions } from './abp.mjs';
 import { wanted, seedFiles, withRequests } from './org-plan.mjs';
 const TEXT = /(\.(html?|css|m?js|json|md|txt|ya?ml|xml|svg|webmanifest)|(^|\/)CNAME)$/i;
 import { join } from 'node:path';
+import { fill } from './fill.mjs';
 
 const p = JSON.parse(readFileSync(process.argv[2], 'utf8'));
 const refused = checkActions(load(), p);
@@ -47,7 +48,7 @@ for (const a of p.actions) {
       for (const f of files) {
         let buf = readFileSync(join(r.seed, f));
         // Fill {{vars}} in text files only: a JPEG or PNG passed through utf8 would be corrupted.
-        if (r.vars && TEXT.test(f)) { let t = buf.toString('utf8'); for (const [k, v] of Object.entries(r.vars)) t = t.split(`{{${k}}}`).join(String(v).replace(/[<>&"]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' })[c])); buf = Buffer.from(t); }
+        if (r.vars && TEXT.test(f)) buf = Buffer.from(fill(buf.toString('utf8'), r.vars, f));
         const b = await gh('POST', `${base}/git/blobs`, { content: buf.toString('base64'), encoding: 'base64' });
         must(b, `blob ${a.target}/${f}`, [201]); tree.push({ path: f, mode: '100644', type: 'blob', sha: b.data.sha });
       }
