@@ -561,6 +561,25 @@
         "fingerprint": "sha256:2c675802836de675",
         "signing_fingerprint": "sha256:7898a3e8aa6792d5"
       }
+    },
+    {
+      "id": "south-beacon-b-sovereignwebsite",
+      "agent": "south-beacon.b@SovereignWebsite.dinis",
+      "role": "Keeps South Beacon, an anonymised talent profile in the talent area (Dinis, 21 Nov 2026). No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 21 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
+      "created": "2026-11-21",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwDJPFyYWmBHRfqYodU",
+      "fingerprint": "sha256:8b2e1f520d6133f3",
+      "signing_fingerprint": "sha256:b1dfdedfff9dc7eb",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAy6ruk4m+pAKcph0QbnIK\nlm6WKtMiA96FBQt/434QU9WQWS16BmAg1Fcv22InVENd/fo/l5igFStfUIBqCb2A\nJyt3oW3G0bgyl52viQ5EUQS5oZUFncD+O/NbBNzq0OJyeVCR+C9f5GHEWW5NzLTi\naJ86qbkcwjSL9K4vZNToR5F1b0Tg9uxSk0n8AoptC2lp40ipJJ4mzSNiXLtbJfCb\nzhUvyCSaUIimESLcSSKLFTgzkJEoyu/hgoJm2PKnIkx6nRgWfGwnnNZyEqTFEtax\nEfKlruH2P1yPO5KJ8snrS+YzIykPasDtO4fzzkZ71+z+w9lKscPRS11ypG8/eIea\nqjGh4TASN8aJaid+7YSzNQkOQ3ApQurk8V7QPTOyGDwHS4LzCtVZuJNAbvu6y2EN\npcyvzhhg4PolbQQCmts+CfLVA7kbCAw2LsFL+fhxn3Yr8xISKJBEz53NooYVpvx6\njw5lnGCnSdDKAavbc+jFegBRpjhjkDVag23MMER8JHDjoHBVbXmWFBnU0vofGd7J\nTOpWmp5IZxfgjgoTxP/sEeOg8uvio64mJDViWXraj7zYHvbOPvlDEX0Xy93dIyDs\npKMXC/2L6TzVCQgIfF18klGKtbieZXup5NUHFHMtsK6W3Q+YcERmiN15bGNnMwWr\nc8uv9phv4RjbjJxJirnAid8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYxFja/OuOvwmZG9B2R4cD0wFE1Qu\nwqzEqwLykcG99LteDsp1J92PG22BsGkTuC2iAqgmQ1krbA0nSFxjN/42Yg==\n-----END PUBLIC KEY-----\n",
+        "label": "south-beacon.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:8b2e1f520d6133f3",
+        "signing_fingerprint": "sha256:b1dfdedfff9dc7eb"
+      }
     }
   ]
 }
