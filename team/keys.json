@@ -441,6 +441,25 @@
         "fingerprint": "sha256:42acfd209bf46457",
         "signing_fingerprint": "sha256:629459a0f6fc41c2"
       }
+    },
+    {
+      "id": "grace-b-sovereignwebsite",
+      "agent": "grace.b@SovereignWebsite.dinis",
+      "role": "Keeper of an artist site in the artist area. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 21 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
+      "created": "2026-11-21",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwEvVSFTfxAZrfYFYkE",
+      "fingerprint": "sha256:7dbf8be3a2dff08c",
+      "signing_fingerprint": "sha256:fa1cdf60401e5e69",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAkXCeCWu4gSZHRGs5pYMe\nEW8h93e1VrlcK6by5wNWhJD5xuqj7BnZlkm3sR2SlqA81+i/AL4ghVDGtGIwcuD0\nxlNe+ILR1aXJpLWSLlVmxb73jVWLBt5BLwAy1B4qGOtOnYSlzb3aLb0VYDb/6r2D\nF2ce5RQCdOD8ne2gLtE9w5MN8pDpntOUvdfi+wVQzoREBZfEXEwJA4x/DPg+MySH\n8QY+gP8iJ20faqHos0xZcUOz6ar8/zK+qaoIUjYmzwBaMPrPwYEH6TUBN7/uOhry\nQlKmfUORd32tE3fGs2Hv7CrrZIdQfAv1hGhtH5iDKtWZNblTyhBK42oP6gPUG/f9\nWFKugTeA9uYscIcS1vDZFJUeFe2XI+fl2Jlbrm6Scnfz5T6sMtAtE4RgcL5cIBoI\ngGDqgDK0mE6oORjz2mDKf9kaQnsU4AqvzyF+Q/P8OMP52Mszki8zhTQQU/wZb1WY\nKIogRlw0mla8/YkLTFWdakFLMhL+7tn2Q0ZUN7QZW12IeWgeborfovVsAe9k5ucb\nVYpVTByO9b/+fOSj70Qhuj99Uwb9OqZ3VLEsUwRjqvfJIZbCNG4S4exo7ZUpzrzT\nA+v7OlI5/moloNzkBrMqVEU6gy18fxq4vN1wMtIhx4incFF9SjTrlMBNlQtCLFKc\nZcd+eMu8ZlUk9wshYl/z+ucCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEIOwd2wEjMN/Vgt2plXbnQwYYZO43\nJhaSXUSvjAhf9ysiYlKxR6BA/hO0QpbD0rGbF8Q71D44ER5V0OO7rnhtqA==\n-----END PUBLIC KEY-----\n",
+        "label": "grace.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:7dbf8be3a2dff08c",
+        "signing_fingerprint": "sha256:fa1cdf60401e5e69"
+      }
     }
   ]
 }
