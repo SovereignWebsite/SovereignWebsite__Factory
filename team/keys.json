@@ -485,6 +485,25 @@
         "fingerprint": "sha256:8215363a85206dfa",
         "signing_fingerprint": "sha256:029d03679ae013a3"
       }
+    },
+    {
+      "id": "mistral-promptugal-sovereignwebsite",
+      "agent": "mistral.promptugal@SovereignWebsite.dinis",
+      "role": "Builds /promptugal/ (PrompTugal demos on Mistral) on Site__Provider__Mistral; started by conductor.mistral at Dinis's request, reports to it. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 21 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
+      "created": "2026-11-21",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwDyA9BERjrFpsR4B8K",
+      "fingerprint": "sha256:aabb90072551f379",
+      "signing_fingerprint": "sha256:66c0821d237d5168",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAq1f25fPLsRHvIjvBdMMt\ngQIMuM4rCo50FfLyW4N4X2zRBr+r0gqd76ASoj2HnYJbJrVdlnz+l5d5NmxU/p9Y\nsTHJCah0kCto9IG7zTiFAPcOQsp99nlcYx2K2/KoR4BIcdabYBbH/L/NHqqh7hyO\nW0rkVSYcZm9zC2FVACVo6Bd/j6zuFKkaMnSVJqTccxa1jGFzlN/TAtPzgwWW28dd\nlCPsaEjbQa4C4UXZUeSHTEirxa+Y+TWStaiVteMHDL3Vnb8gREpOMITsI2aCfP4D\nFTkiOShdhOvPuwd1aXN1LPekcwNPGHsZeXvKjIW7IfV4XYZwqk+gmsNV0bVzypjc\ngVAbdmmQoHgRbgpJLhBqfMGoWhmTeWzEImQ+5ELpLrxiWvf+j/H/FjxRhyJcQBvc\n682o1dexdbIDBatiU5CgSDLpyOsyRyUUFx/k+s1gZjT1zW9opxbnj/SZfsWUkQrh\npCQ88S6BXuZxbMjZdIz52dnsmTGdBrdDGyxH87vOcGu4ZzxTpECupxyodYj/0Qhw\nDtFl1UrTEHCJIvBJsD2iXJcQDyvo4bO2g+HJR/xfvVoiD4Pgk1sYg+7JK+rwBdZ3\ngiKr+s7cf3/IjQT0IcMqNhkQrkd0q/57srVXONgLJHq1IAKhuBtZELnlbmrX1x5y\nrzRVkotrSk6wlnkayJEFi0UCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEnKgH2UbLyoJyb6UHGW6RR2ymOJlA\nhS0x//yMBTLYiPvWozrlqp51M7navOujhyVJMfYfm7QPSh8Gja6xDXIdAg==\n-----END PUBLIC KEY-----\n",
+        "label": "mistral.promptugal@SovereignWebsite.dinis",
+        "fingerprint": "sha256:aabb90072551f379",
+        "signing_fingerprint": "sha256:66c0821d237d5168"
+      }
     }
   ]
 }
