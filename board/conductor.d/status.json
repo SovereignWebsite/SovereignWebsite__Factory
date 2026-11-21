@@ -3,8 +3,8 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-21T22:52Z",
-  "state": "the twins' keys (sites.d, hub.d, streaming.d) are in team/keys.json on dev; streaming.d waits for Dinis to name it keeper of Site__Tool__Streaming in its own session",
+  "updated": "2026-11-21T23:00Z",
+  "state": "design.d started with a 2-hour design loop (.d sites only); the twins' keys are on dev; streaming.d waits for Dinis to name it keeper",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
     "sgit key conductor-d-sovereignwebsite: fingerprint sha256:4a4dabd62c22260e, signing sha256:2b8c79b7d9ae18da; commits signed with its ECDSA P-256 half (what check-signatures trusts)",
@@ -17,10 +17,12 @@
     "passed conductor.b's material (onboarding prompts; split: .b keep what they hold, .d take only unstarted requests, claimed first) to sites.d and hub.d; no tasks given without Dinis",
     "streaming.d's key on branch work/conductor.d-team-keys (360221c), signing line checked",
     "streaming.d's name corrected to streaming.d@SovereignWebsite.dinis on the keys branch (513a52b), at Dinis's word in sites.d's session (~22:44 UTC, as reported by sites.d)",
-    "sites.d's, hub.d's and streaming.d's keys pushed to dev (e9d4c7e, 6938556, eed8e05) at Dinis's word"
+    "sites.d's, hub.d's and streaming.d's keys pushed to dev (e9d4c7e, 6938556, eed8e05) at Dinis's word",
+    "design.d started (https://claude.ai/code/session_015gaHdczGFLc7N3kCq8MrWz) with scheduled task trig_01RjNGiysodf39cArd2cLeXm every 2 hours, at Dinis's word; board/conductor.d/onboarding-design.d.md"
   ],
   "next": [
-    "agree the split with conductor.b by repository or site, through claims.md and its board"
+    "agree the split with conductor.b by repository or site, through claims.md and its board",
+    "add design.d's key when it arrives; claim the paths it takes in Site__Agents__Design"
   ],
   "asks": [
     "Dinis: the first work for sites.d and hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
@@ -31,11 +33,13 @@
   "decisions": [
     "Dinis, 21 Nov 2026 ~22:15 UTC in this session: \"you can push to dev if you need to\"; then chose that conductor.d pushes maestro.d's policy and key commits with its own to dev, accepting one red Checks run on that push",
     "Dinis, 21 Nov 2026 ~22:50 UTC in this session: \"merged, push the keys to dev\"",
-    "Dinis, 21 Nov 2026 ~22:52 UTC in this session: \"yes to conductor.b's split\": the .b agents keep what they hold; the .d agents take only requests no .b agent has started, each claimed first in board/conductor.d/claims.md"
+    "Dinis, 21 Nov 2026 ~22:52 UTC in this session: \"yes to conductor.b's split\": the .b agents keep what they hold; the .d agents take only requests no .b agent has started, each claimed first in board/conductor.d/claims.md",
+    "Dinis, 21 Nov 2026 ~22:55 UTC in this session: start the designer on a schedule; design.d covers the .d sites only, every 2 hours, committing to Site__Agents__Design"
   ],
   "team": {
     "sites.d": "https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf",
     "hub.d": "https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N",
-    "streaming.d": "streaming.d@SovereignWebsite.dinis, the Streaming site, started by sites.d - https://claude.ai/code/session_015gaHdbE7t4XNf21L7neufF"
+    "streaming.d": "streaming.d@SovereignWebsite.dinis, the Streaming site, started by sites.d - https://claude.ai/code/session_015gaHdbE7t4XNf21L7neufF",
+    "design.d": "design rounds for the .d sites, every 2 hours - https://claude.ai/code/session_015gaHdczGFLc7N3kCq8MrWz"
   }
 }
