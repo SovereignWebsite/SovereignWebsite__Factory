@@ -618,6 +618,52 @@
         "fingerprint": "sha256:4a4dabd62c22260e",
         "signing_fingerprint": "sha256:2b8c79b7d9ae18da"
       }
+    },
+    {
+      "id": "sites-d-sovereignwebsite",
+      "agent": "sites.d@SovereignWebsite.dinis",
+      "role": "New sites and their content on account D, the twin of sites.b, working alongside it. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 21 November 2026 with sgit pki keygen; public bundle from sgit pki export, sent to conductor.d. Only the public half is here.",
+      "created": "2026-11-21",
+      "status": "active",
+      "session": "https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf",
+      "fingerprint": "sha256:cc86449925b69007",
+      "signing_fingerprint": "sha256:a536d718392ee6bb",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAkKVPE2cYvQ5r81DvRt8U\nsNDyLdiGd/3tpGL6x5sE5brPPD/eo7KIonjsLqNz2os/N5+AUSUQpElbjHWkIHJr\nTEplVL9bPHR4GeH0Ak4jrNNyOqlW/5OdLFrtdqiNf75rhD1yPY02BTMFkUW7pFbM\niqAIah+CGe8fgcwvV2K6+3LgDWdmbj5GrvLDeqsDPvQXPste2lrz44jBKoaLBi/O\nD4ij+Ntqo4JxtpcxxguYoVg7CyrKkFJDVYEvVY5Xi8pivH9xKegdm7TYTNS/EPZf\nGaqoGrarUUJdosHmjHnhzR/srvp89bGjFoGgFRB6QxPIuMzECSoNl97/c9Z8sIEz\ndBUNum6orzo5YstKhb2LLUkCmFqm6tHsJRTA/0Z0Rjgc1FWmoWWdV4DVSzoRVY6Z\nU/P8Ds24zdI5pazvGjZMKsGDedh0UApP3QTllHFSv4Sy0oXFB4elNbN5Yc3qEOhK\nz4Wbh54ii9ToQ3h3bGwsBMmnTo5zCjOLvlMYj1Z4aaIfXHdR2KYKFrnGxYghvEM8\ntqCYkTYZPRe1Ou814XH6Oz9lcA2LPc+DmKHc7fV4TQirgj2oFPD7EB/Ejlyu7PgU\niMdjJ5460zDt06YELpYKhIp1Lr68vi8JxchV3P/9O6uJwq1KoC8tJlGc+Y8oFoyy\nMSDnhuAo69qtmMuqvIr754cCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZdRLvpGNo9M9I7xQ/9wGheI79RmT\njaFTHXhvXpP3/8TWZDKjp0cWVPU1oBVLrSL1T02RSQ87XvCsRKGp2mBpjA==\n-----END PUBLIC KEY-----\n",
+        "label": "sites-d-sovereignwebsite",
+        "fingerprint": "sha256:cc86449925b69007",
+        "signing_fingerprint": "sha256:a536d718392ee6bb"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "hub-d-sovereignwebsite",
+      "agent": "hub.d@SovereignWebsite.dinis",
+      "role": "The hub gallery and vault sites on account D, the twin of hub.b, working alongside it. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 21 November 2026 with sgit pki keygen; public bundle from sgit pki export, sent to conductor.d. Only the public half is here.",
+      "created": "2026-11-21",
+      "status": "active",
+      "session": "https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N",
+      "fingerprint": "sha256:3936cd62f64798c5",
+      "signing_fingerprint": "sha256:57e671d29fd124cc",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAqNd9eYBZlaeCmcbui/50\nptZwQAr5nsYtWcmYpSxU45Tca1teA7sz8Sw7TQiETsC5Yg58BzSp/9ebd7qK1mBf\n15rIYyqV2xhj9rjpizfYUXjUX2XorvKtG7ZdInzqm7clyp81p5TWPv0wjuAueEEm\nS2y+BRmW9LB+yuNAujH1w/GTtrEbDQMqDxcraj0pOhxyGNKaghATesjd53y9srrZ\nl6kOQlpvey5IAmaRg35L53YlW0WN3aXOrhIXGjdWCphTZBAcm5gwiTBhHCwEaSMA\n/UP9Rp/ycEkEaR9Q/9XG3djSyl8g8n452rb63bYSh4ktYmwIvTF80ahMt36WT/Hz\naHF39S84+VsZMewWUbbXdxgKMEzkkspBopji42WI0jaDDjVn+lH85aqsww6qyWlb\nrmzX9CScl7xNt46rzAuhLTm7gm5wMqc1fTZ1iyHo0riNyLW01BVUULQq34STN1S5\nM4gDg27L0h5IByKLfoZL64wR/aEFnKWDn6uNXl5vGhnyC5cbSdEH5Zu+XyhI7qMC\njOy94rRgMRJRMT57aXy0Iuf/n1l5c6wu5wMm4bNtfibsXY+zs6YHD1KWYby38HEq\nTATxh6YpzlHWgUircf1RgPrmH74UtSOSS228oDdBQUT7OsDMdayX2hS8JnSB0o8Q\n4wATLrFZ3TM6j5sHkMp18WECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAELekDHbgCmajwMOiSjMflOcGcW2iR\nsMmaiTCqCGm+a7sgdvEg2PPvCHzj/a2ueJDhBEnuhspos6MplqCqW1mFFA==\n-----END PUBLIC KEY-----\n",
+        "label": "hub-d-sovereignwebsite",
+        "fingerprint": "sha256:3936cd62f64798c5",
+        "signing_fingerprint": "sha256:57e671d29fd124cc"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
