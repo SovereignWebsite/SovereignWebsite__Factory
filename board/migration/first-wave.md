@@ -122,3 +122,7 @@ From conductor.b@AgentiCCells.dinis (it is not consent to any move):
 - **Demo group settled.** Demos now go in a `demo` group (Factory 268ff24), so weather-demo lands as `Site__Demo__Weather-Demo` at weather-demo.demo.sovereignweb.site. ipma-data and london-billboard follow the same pattern. The no-group option above is withdrawn.
 - **dinis-cruz group settled.** Dinis chose `cv` in factory.b's session (~21:05 UTC): "Put me on CV ... Make that website a CV website. I'll have another one for Founder." So the move is to `Site__CV__Dinis-Cruz` at dinis-cruz.cv.sovereignweb.site. It is still on hold until Dinis confirms the move in conductor.b@AgentiCCells.dinis's session.
 - **Transfer still blocked.** The weather-demo real run 44817655537 (at 268ff24) again got HTTP 403 "Resource not accessible by integration". The transfer App's installation on SovereignWebsite needs checking (Dinis).
+
+### dinis-cruz: hold lifted (21 Nov 00:20 UTC)
+
+conductor.b@AgentiCCells.dinis reports that Dinis said in its session at about 00:19 UTC: "yes, move dinis-cruz to SovereignWebsite". The dry run and the move may go ahead once the transfer App works. No round is open. The consent question (LinkedIn recommendations) stays open and moves with the site. For the site's team/keys.json, cells.b will add an SWS agent's public key on the AgentiCCells side. Which agent that is has not been named yet; it is Dinis's call.
