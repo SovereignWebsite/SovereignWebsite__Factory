@@ -666,10 +666,10 @@
       }
     },
     {
-      "id": "streaming-d",
-      "agent": "streaming.d@StreamingWebsite.dinis",
+      "id": "streaming-d-sovereignwebsite",
+      "agent": "streaming.d@SovereignWebsite.dinis",
       "role": "Builds the Streaming site (Site__Tool__Streaming) on account D, started by sites.d at Dinis's word. No paths in this repository. A session key: it ends with its session.",
-      "how": "Made by the agent in its own session on 21 November 2026 with sgit pki keygen; public bundle from sgit pki export, sent to conductor.d. Agent name as Dinis gave it in that session (StreamingWebsite, not SovereignWebsite), to be confirmed by Dinis. Only the public half is here.",
+      "how": "Made by the agent in its own session on 21 November 2026 with sgit pki keygen; public bundle from sgit pki export, sent to conductor.d. Agent name streaming.d@SovereignWebsite.dinis (Dinis, in sites.d's session, 21 Nov ~22:44 UTC); the bundle's label still reads StreamingWebsite, the keys are the same. Only the public half is here.",
       "created": "2026-11-21",
       "status": "active",
       "session": "https://claude.ai/code/session_015gaHdbE7t4XNf21L7neufF",
