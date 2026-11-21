@@ -1,11 +1,13 @@
-# Keys waiting for team/keys.json
+# Twins' keys
 
 Public halves only. conductor.d puts each on a branch; team/keys.json changes wait for Dinis's merge.
 
 | Agent | Session | Fingerprint | Signing | Received (UTC) | Where |
 |---|---|---|---|---|---|
-| sites.d@SovereignWebsite.dinis | https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf | sha256:cc86449925b69007 | sha256:a536d718392ee6bb | 2026-11-21 22:12 | branch work/conductor.d-team-keys (82803f6) |
-| hub.d@SovereignWebsite.dinis | https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N | sha256:3936cd62f64798c5 | sha256:57e671d29fd124cc | 2026-11-21 22:22 | branch work/conductor.d-team-keys (82803f6) |
-| streaming.d@SovereignWebsite.dinis | https://claude.ai/code/session_015gaHdbE7t4XNf21L7neufF | sha256:d0e2b4aa77cb0e71 | sha256:bffdcbf6ab6ddb99 | 2026-11-21 22:30 | branch work/conductor.d-team-keys (360221c, name corrected in 513a52b) |
+| sites.d@SovereignWebsite.dinis | https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf | sha256:cc86449925b69007 | sha256:a536d718392ee6bb | 2026-11-21 22:12 | on dev in team/keys.json (eed8e05) |
+| hub.d@SovereignWebsite.dinis | https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N | sha256:3936cd62f64798c5 | sha256:57e671d29fd124cc | 2026-11-21 22:22 | on dev in team/keys.json (eed8e05) |
+| streaming.d@SovereignWebsite.dinis | https://claude.ai/code/session_015gaHdbE7t4XNf21L7neufF | sha256:d0e2b4aa77cb0e71 | sha256:bffdcbf6ab6ddb99 | 2026-11-21 22:30 | on dev in team/keys.json (eed8e05) |
 
 Each signing line was checked against its bundle's sign key. Branch work/conductor.d-sites-d-key (19a43f7) is superseded by work/conductor.d-team-keys; it is not deleted, only left unmerged.
+
+All three pushed to dev by conductor.d at Dinis's word in its session (21 Nov ~22:50 UTC: "merged, push the keys to dev").

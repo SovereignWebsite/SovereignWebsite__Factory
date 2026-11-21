@@ -3,8 +3,8 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-21T22:45Z",
-  "state": "all three twins' keys (sites.d, hub.d, streaming.d) on branch work/conductor.d-team-keys for Dinis's merge; streaming.d builds Streaming locally",
+  "updated": "2026-11-21T22:51Z",
+  "state": "the twins' keys (sites.d, hub.d, streaming.d) are in team/keys.json on dev; streaming.d waits for Dinis to name it keeper of Site__Tool__Streaming in its own session",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
     "sgit key conductor-d-sovereignwebsite: fingerprint sha256:4a4dabd62c22260e, signing sha256:2b8c79b7d9ae18da; commits signed with its ECDSA P-256 half (what check-signatures trusts)",
@@ -16,21 +16,21 @@
     "sites.d's and hub.d's keys on branch work/conductor.d-team-keys (82803f6) for Dinis's merge, each signing line checked against its bundle",
     "passed conductor.b's material (onboarding prompts; split: .b keep what they hold, .d take only unstarted requests, claimed first) to sites.d and hub.d; no tasks given without Dinis",
     "streaming.d's key on branch work/conductor.d-team-keys (360221c), signing line checked",
-    "streaming.d's name corrected to streaming.d@SovereignWebsite.dinis on the keys branch (513a52b), at Dinis's word in sites.d's session (~22:44 UTC, as reported by sites.d)"
+    "streaming.d's name corrected to streaming.d@SovereignWebsite.dinis on the keys branch (513a52b), at Dinis's word in sites.d's session (~22:44 UTC, as reported by sites.d)",
+    "sites.d's, hub.d's and streaming.d's keys pushed to dev (e9d4c7e, 6938556, eed8e05) at Dinis's word"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board"
   ],
   "asks": [
-    "Dinis: merge branch work/conductor.d-team-keys (sites.d's, hub.d's and streaming.d's public keys into team/keys.json); ignore work/conductor.d-sites-d-key - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
-    "Dinis: the route for the twins' keys. conductor.b proposes each twin's bundle goes in as a Factory issue and into team/keys.json only after you confirm in conductor.b's session; mine waits on branch work/conductor.d-team-keys for your merge. Which do you want? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: yes or no to conductor.b's split (.b agents keep what they hold; .d agents take only requests no .b agent has started, claimed first), and the first work for sites.d and hub.d - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
-    "Dinis: a CLAUDE.md line in SovereignWebsite/Site__Tool__Streaming naming streaming.d@SovereignWebsite.dinis as keeper, and push access there for its session - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
+    "Dinis: in streaming.d's session (https://claude.ai/code/session_015gaHdbE7t4XNf21L7neufF), name it keeper of Site__Tool__Streaming and say yes to its CLAUDE.md and site/policy/ change (the site's ABP needs the owner's yes in the keeper's own session), and allow push access there - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: let hub.d (https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N) read SovereignWebsite__Vault, Site__Agents__Hub and the Factory: its permission check refused add_repo and git clone - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL"
   ],
   "decisions": [
-    "Dinis, 21 Nov 2026 ~22:15 UTC in this session: \"you can push to dev if you need to\"; then chose that conductor.d pushes maestro.d's policy and key commits with its own to dev, accepting one red Checks run on that push"
+    "Dinis, 21 Nov 2026 ~22:15 UTC in this session: \"you can push to dev if you need to\"; then chose that conductor.d pushes maestro.d's policy and key commits with its own to dev, accepting one red Checks run on that push",
+    "Dinis, 21 Nov 2026 ~22:50 UTC in this session: \"merged, push the keys to dev\""
   ],
   "team": {
     "sites.d": "https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf",
