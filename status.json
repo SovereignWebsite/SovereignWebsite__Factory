@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-21T12:32Z",
+  "updated": "2026-11-21T14:45Z",
   "state": "18 site requests; all main sites, the agents area (agents, design, library), whois.tool and the people's sites answer over HTTPS; one company site still waits on its certificate",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -44,13 +44,14 @@
     "Mistral team keys: mistral.local (renamed from local.mistral), mistral.promptugal, mistral.design published; evals, swarm and team.mistral retired (be55a3a)",
     "factory.b: check-signatures refuses retired keys (pushed as 97f302f; waits on Dinis's merge)",
     "Mistral site live with Studio and in-browser demos (c504c82); keys for mistral.workflows (641caa5) and mistral.conductor (f892560), the overnight loop until 09:00 UTC",
-    "mistral.conductor sent the signing recipe inline (it cannot reach the Factory)"
+    "mistral.conductor sent the signing recipe inline (it cannot reach the Factory)",
+    "South Beacon live at https://south-beacon.talent.sovereignweb.site/ (v0.1.1, 53ed671): the first anonymised talent profile, talent area, sealed introduction form, security.b review 025 applied"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
     "the vault as the approval step before a site goes live (Dinis, in sites.b's session), when he says build it",
     "transfers, once TRANSFER_USER_TOKEN is set",
-    "talent area: anonymous profiles of senior people looking for work, introductions through a talent agent (Dinis, 21 Nov), on his yes to the area and talent.b"
+    "South Beacon: beacon share card, a live test of the form, security.b final look, the candidate's own approval, a vouches section after Dinis's web-of-trust memo"
   ],
   "asks": [
     "Dinis: yes to accountant.agents.sovereignweb.site - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
@@ -61,8 +62,7 @@
     "Dinis: say \"push\" for 544ecbc - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: Grace's photos, Spotlight links, and whether photos credited to Jennie Scott may be used - https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67",
     "Dinis: the DC Vault manager session or public key, and whether every agent backs up its private key - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-    "Dinis: yes in mistral.conductor's session to its signing key file, or conductor.mistral pushes its stashed roster update - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT",
-    "Dinis: yes to a talent area and a talent.b agent for anonymous profiles - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu"
+    "Dinis: yes in mistral.conductor's session to its signing key file, or conductor.mistral pushes its stashed roster update - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT"
   ],
   "decisions": [
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",
