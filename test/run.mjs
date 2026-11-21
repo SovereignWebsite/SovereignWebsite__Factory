@@ -271,7 +271,7 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
 // The site pipeline: build makes version.json and the chip on every page; quality fails on a broken internal link,
 // an em dash in visible text, the family strip or a leaked key; pages.yml versions from tags, then deploys, then tags.
 {
-  const { mkdtempSync, cpSync, writeFileSync: w, readFileSync: r, readdirSync: ls } = await import('node:fs');
+  const { mkdtempSync, cpSync, rmSync, writeFileSync: w, readFileSync: r, readdirSync: ls } = await import('node:fs');
   const { execFileSync } = await import('node:child_process');
   const { tmpdir } = await import('node:os');
   const wf = r('seed/site-template/.github/workflows/pages.yml', 'utf8');
@@ -288,13 +288,14 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   { const h = r(d + '/_site/index.html', 'utf8'), i = h.indexOf('class="sws-version"'); assert.ok(h.lastIndexOf('<footer', i) > h.lastIndexOf('</footer>', i), 'the chip sits inside a footer landmark'); }
   assert.ok(r('seed/site-template/.github/ci/axe.mjs', 'utf8').includes("'best-practice'"), 'axe runs the best-practice rules too');
   const local = (f) => { const s = r(f, 'utf8').replace(/ href="https?:[^"]*"/g, ' href="/"'); w(f, s); };
-  for (const p of ['index.html', 'start/index.html', 'agents/index.html', 'admin/index.html']) local(d + '/_site/' + p);
+  for (const p of ['index.html', 'start/index.html', 'agents/index.html', 'admin/index.html', 'policy/index.html']) local(d + '/_site/' + p);
   assert.equal(run('.github/ci/quality.mjs', '_site'), 0, 'a fresh site passes the quality checks');
   const home = d + '/_site/index.html'; const ok = r(home, 'utf8');
   w(home, ok.replace('</main>', '<a href="/missing/">x</a></main>')); assert.equal(run('.github/ci/quality.mjs', '_site'), 1, 'a broken internal link fails');
   w(home, ok.replace('</main>', '<p>a \u2014 b</p></main>')); assert.equal(run('.github/ci/quality.mjs', '_site'), 1, 'an em dash fails');
   w(home, ok.replace('<main', '<nav class="family"></nav><main')); assert.equal(run('.github/ci/quality.mjs', '_site'), 1, 'the family strip fails');
   w(home, ok.replace('</main>', '<p>-----BEGIN OPENSSH PRIVATE' + ' KEY-----</p></main>')); assert.equal(run('.github/ci/quality.mjs', '_site'), 1, 'a private key fails');
+  w(home, ok); { const pf = d + '/_site/policy/abp.json', pol = r(pf, 'utf8'); w(pf, pol.replace('"dev"', '"main"')); assert.equal(run('.github/ci/quality.mjs', '_site'), 1, 'a policy that lets an agent push to main fails'); rmSync(pf); assert.equal(run('.github/ci/quality.mjs', '_site'), 1, 'a site with no policy fails'); w(pf, pol); }
 }
 // A gated (vault) site runs the same pipeline, but publishes nothing about the private site beyond its holding page.
 {
@@ -329,6 +330,7 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   const d = mkdtempSync(tmpdir() + '/zip-'); mkdirSync(d + '/private');
   const q = () => { try { execFileSync('node', ['seed/gate-template/.github/ci/quality.mjs', d], { stdio: 'pipe' }); return 0; } catch (e) { return e.status; } };
   w(d + '/index.html', '<html><body><main>x</main></body></html>');
+  mkdirSync(d + '/policy'); w(d + '/policy/index.html', '<html><body><main>p</main></body></html>'); w(d + '/policy/abp.json', r('seed/gate-template/site/policy/abp.json', 'utf8').replace(/{{[a-z]+}}/g, 'x'));
   w(d + '/private/v.zip', zip([['manifest.json', Buffer.from('{"v":1}')], ['objects/ab', randomBytes(4096)]]));
   assert.equal(q(), 0, 'a sealed vault (ciphertext entries) passes the leak scan');
   w(d + '/private/v.zip', zip([['notes.txt', Buffer.from('-----BEGIN OPENSSH PRIVATE' + ' KEY-----')]]));
