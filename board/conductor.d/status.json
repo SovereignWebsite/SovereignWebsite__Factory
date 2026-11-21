@@ -4,25 +4,32 @@
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
   "updated": "2026-11-21T22:20Z",
-  "state": "sites.d builds the Streaming site (claim recorded); sites.d's key waits for Dinis's merge; hub.d's key not yet received",
+  "state": "streaming.d (started by sites.d at Dinis's word) builds the Streaming site; sites.d's key waits for Dinis's merge; hub.d's and streaming.d's keys not yet received",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
     "sgit key conductor-d-sovereignwebsite: fingerprint sha256:4a4dabd62c22260e, signing sha256:2b8c79b7d9ae18da; commits signed with its ECDSA P-256 half (what check-signatures trusts)",
     "public bundle and session link sent to maestro.d",
     "sites.d's public bundle received and held in board/conductor.d/pending-keys.md; told to sign with its sgit ECDSA half, not ed25519",
     "my key and policy entry (maestro.d's b7c8bfd, 5eb7fde) pushed to dev by conductor.d at Dinis's word; that one push's Checks 'policy paths' step fails because maestro.d is not in the policy, accepted by Dinis",
-    "claim: sites.d on Site__Tool__Streaming, with a note for sites.b in board/conductor.d/claims.md"
+    "claim: sites.d on Site__Tool__Streaming, with a note for sites.b in board/conductor.d/claims.md",
+    "claim moved to streaming.d on Site__Tool__Streaming (session https://claude.ai/code/session_015gaHdbE7t4XNf21L7neufF, checked running)"
   ],
   "next": [
     "once Dinis merges my entry: move to dev; add sites.d's and hub.d's keys to team/keys.json",
-    "agree the split with conductor.b by repository or site, through claims.md and its board"
+    "agree the split with conductor.b by repository or site, through claims.md and its board",
+    "add streaming.d's key on a branch for Dinis's merge when it arrives"
   ],
   "asks": [
     "Dinis: which repositories or sites the .d team takes first - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
-    "Dinis: push access to SovereignWebsite/Site__Tool__Streaming for sites.d's session (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf), when you say so there - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL"
+    "Dinis: a CLAUDE.md line in SovereignWebsite/Site__Tool__Streaming naming streaming.d@SovereignWebsite.dinis as keeper, and push access there for its session - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL"
   ],
   "decisions": [
     "Dinis, 21 Nov 2026 ~22:15 UTC in this session: \"you can push to dev if you need to\"; then chose that conductor.d pushes maestro.d's policy and key commits with its own to dev, accepting one red Checks run on that push"
-  ]
+  ],
+  "team": {
+    "sites.d": "https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf",
+    "hub.d": "https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N",
+    "streaming.d": "the Streaming site, started by sites.d - https://claude.ai/code/session_015gaHdbE7t4XNf21L7neufF"
+  }
 }
