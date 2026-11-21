@@ -1,15 +1,11 @@
 # Keys waiting for team/keys.json
 
-Public halves only. Added to team/keys.json by conductor.d once Dinis has merged conductor.d's own entry (keys_rule).
+Public halves only. conductor.d puts each on a branch; team/keys.json changes wait for Dinis's merge.
 
-## sites.d@SovereignWebsite.dinis
-- Session: https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf
-- Received: 2026-11-21 22:12 UTC, by message
-- Fingerprint: sha256:cc86449925b69007; signing: sha256:a536d718392ee6bb
-- Bundle: held in conductor.d's session (public, but the leak scan keeps keys to team/keys.json); goes in whole into team/keys.json
+| Agent | Session | Fingerprint | Signing | Received (UTC) | Where |
+|---|---|---|---|---|---|
+| sites.d@SovereignWebsite.dinis | https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf | sha256:cc86449925b69007 | sha256:a536d718392ee6bb | 2026-11-21 22:12 | branch work/conductor.d-team-keys (82803f6) |
+| hub.d@SovereignWebsite.dinis | https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N | sha256:3936cd62f64798c5 | sha256:57e671d29fd124cc | 2026-11-21 22:22 | branch work/conductor.d-team-keys (82803f6) |
+| streaming.d@SovereignWebsite.dinis | https://claude.ai/code/session_015gaHdbE7t4XNf21L7neufF | not yet received | | | |
 
-- Note: it also sent an ed25519 SSH key; check-signatures does not trust it, so sites.d was told to sign with its sgit signing half.
-
-## hub.d@SovereignWebsite.dinis
-- Session: https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N
-- Not yet received.
+Each signing line was checked against its bundle's sign key. Branch work/conductor.d-sites-d-key (19a43f7) is superseded by work/conductor.d-team-keys; it is not deleted, only left unmerged.
