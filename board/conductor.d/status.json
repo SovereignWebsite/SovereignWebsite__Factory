@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-21T22:22Z",
+  "updated": "2026-11-21T22:28Z",
   "state": "sites.d's and hub.d's keys on branch work/conductor.d-team-keys for Dinis's merge; streaming.d builds the Streaming site; streaming.d's key not yet received",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -13,7 +13,8 @@
     "my key and policy entry (maestro.d's b7c8bfd, 5eb7fde) pushed to dev by conductor.d at Dinis's word; that one push's Checks 'policy paths' step fails because maestro.d is not in the policy, accepted by Dinis",
     "claim: sites.d on Site__Tool__Streaming, with a note for sites.b in board/conductor.d/claims.md",
     "claim moved to streaming.d on Site__Tool__Streaming (session https://claude.ai/code/session_015gaHdbE7t4XNf21L7neufF, checked running)",
-    "sites.d's and hub.d's keys on branch work/conductor.d-team-keys (82803f6) for Dinis's merge, each signing line checked against its bundle"
+    "sites.d's and hub.d's keys on branch work/conductor.d-team-keys (82803f6) for Dinis's merge, each signing line checked against its bundle",
+    "passed conductor.b's material (onboarding prompts; split: .b keep what they hold, .d take only unstarted requests, claimed first) to sites.d and hub.d; no tasks given without Dinis"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -21,7 +22,8 @@
   ],
   "asks": [
     "Dinis: merge branch work/conductor.d-team-keys (sites.d's and hub.d's public keys into team/keys.json); ignore work/conductor.d-sites-d-key - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
-    "Dinis: which repositories or sites the .d team takes first - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
+    "Dinis: the route for the twins' keys. conductor.b proposes each twin's bundle goes in as a Factory issue and into team/keys.json only after you confirm in conductor.b's session; mine waits on branch work/conductor.d-team-keys for your merge. Which do you want? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
+    "Dinis: yes or no to conductor.b's split (.b agents keep what they hold; .d agents take only requests no .b agent has started, claimed first), and the first work for sites.d and hub.d - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: a CLAUDE.md line in SovereignWebsite/Site__Tool__Streaming naming streaming.d@SovereignWebsite.dinis as keeper, and push access there for its session - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: let hub.d (https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N) read SovereignWebsite__Vault, Site__Agents__Hub and the Factory: its permission check refused add_repo and git clone - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL"
