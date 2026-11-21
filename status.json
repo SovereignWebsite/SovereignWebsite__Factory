@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-21T03:32Z",
+  "updated": "2026-11-21T04:32Z",
   "state": "18 site requests; all main sites, the agents area (agents, design, library), whois.tool and the people's sites answer over HTTPS; one company site still waits on its certificate",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -43,7 +43,8 @@
     "feedback.b inbox read key and key store backed up with the conductor, sealed and unopened, outside every repository (Dinis, 21 Nov)",
     "Mistral team keys: mistral.local (renamed from local.mistral), mistral.promptugal, mistral.design published; evals, swarm and team.mistral retired (be55a3a)",
     "factory.b: check-signatures refuses retired keys (pushed as 97f302f; waits on Dinis's merge)",
-    "Mistral site live with Studio and in-browser demos (c504c82); keys for mistral.workflows (641caa5) and mistral.conductor (f892560), the overnight loop until 09:00 UTC"
+    "Mistral site live with Studio and in-browser demos (c504c82); keys for mistral.workflows (641caa5) and mistral.conductor (f892560), the overnight loop until 09:00 UTC",
+    "mistral.conductor sent the signing recipe inline (it cannot reach the Factory)"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
