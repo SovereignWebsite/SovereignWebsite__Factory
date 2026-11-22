@@ -384,4 +384,14 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
 { const g = readFileSync('seed/gate-template/site/policy/abp.json', 'utf8') + readFileSync('seed/gate-template/site/policy/index.html', 'utf8'); const gp = JSON.parse(readFileSync('seed/gate-template/site/policy/abp.json', 'utf8')); assert.ok(!g.includes('{{repo}}') && !('site' in gp) && !('repository' in gp), 'a gated site\'s policy names neither its repository nor its address'); }
 { const { fill } = await import('../build/fill.mjs'); assert.equal(JSON.parse(fill('{"t":"{{title}}"}', { title: 'A "B" & <C>' }, 'x.json')).t, 'A "B" & <C>', 'JSON values are exact'); assert.equal(fill('<p>{{title}}</p>', { title: 'A & B' }, 'x.html'), '<p>A &amp; B</p>', 'HTML values are escaped'); }
 { const { readdirSync: ls } = await import('node:fs'); for (const t of ls('seed').filter((x) => /-template$|^SovereignWebsite__/.test(x))) { const f = `seed/${t}/site/policy/index.html`; let h; try { h = readFileSync(f, 'utf8'); } catch { continue; } assert.ok(!/<style|\sstyle=/.test(h) && h.includes('href="/policy/policy.css"'), `${f}: no inline style, so a strict CSP site can carry it`); readFileSync(`seed/${t}/site/policy/policy.css`, 'utf8'); } }
+{ const X = await import('../build/external-collaborators.mjs'); const list = X.loadList(); const g = list.grants[0];
+  assert.deepEqual(X.validateList(list), [], 'external collaborators list is well formed'); assert.deepEqual(checkActions(p, X.allActions(list)), [], 'every external grant is in the policy');
+  const act = (x) => checkActions(p, { pipeline: X.PIPELINE, actions: [{ action: 'repo.add_collaborator', target: g.repository, user: g.user, permission: 'push', ...x }] });
+  assert.equal(act({ permission: 'admin' }).length, 1, 'admin refused'); assert.equal(act({ permission: 'maintain' }).length, 1, 'maintain refused');
+  assert.equal(act({ user: 'someone-else' }).length, 1, 'an unlisted login refused'); assert.equal(act({ target: 'PrompTugal/Other' }).length, 1, 'an unlisted repository refused');
+  assert.equal(checkActions(p, { pipeline: X.PIPELINE, actions: [{ action: 'repo.remove_collaborator', target: g.repository, user: g.user }] }).length, 1, 'removal refused');
+  assert.ok(X.validateList({ grants: [{ ...g, repository: 'SovereignWebsite/Site__X' }] }).length, 'a SovereignWebsite repository uses its request');
+  assert.ok(X.validateList({ grants: [{ ...g, permission: 'admin' }] }).length && X.validateList({ grants: [{ ...g, source: '' }] }).length, 'push only, with a source');
+  const wf = readFileSync('.github/workflows/org-apply.yml', 'utf8'); const owners = [...new Set(list.grants.map((x) => x.repository.split('/')[0]))];
+  for (const o of owners) assert.ok(wf.includes(`owner: ${o}`) && wf.includes(`external-collaborators.mjs apply ${o}`), `Org apply mints a token and applies for ${o}`); }
 console.log('OK (tests)');

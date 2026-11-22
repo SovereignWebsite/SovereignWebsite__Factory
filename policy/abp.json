@@ -195,6 +195,35 @@
       "rename_note": "repo.rename only from a name a request lists as aka (its old Site__<label> or Redirect__<label>) to the name the request gives, Site__[<Group>__]<Name> (Dinis, 20 Nov 2026 ~12:28 UTC). GitHub keeps redirecting the old name.",
       "collaborator_note": "repo.invite_collaborator: only a GitHub login a site request names under \"collaborators\", only with push (write), on that site repository only; a login GitHub does not know is reported, never invited. Never admin or maintain (Dinis, 20 Nov 2026 ~14:44 UTC: \"hi can you add kateandphilce-jpg as the writer to kate's repo\")."
     },
+    "external-collaborators": {
+      "runs_on": [
+        "with Org apply: push to dev that changes org/ or policy/, the hourly schedule, by hand"
+      ],
+      "environment": "apply",
+      "allowed": [
+        "repo.add_collaborator"
+      ],
+      "refused_always": [
+        "repo.remove_collaborator",
+        "repo.grant_admin",
+        "repo.grant_maintain",
+        "repo.delete",
+        "repo.transfer",
+        "member.change",
+        "app.change"
+      ],
+      "limits": {
+        "grants": [
+          {
+            "repository": "PrompTugal/PrompTugal__News__Bulletins",
+            "user": "diniscruz-agent",
+            "permission": "push"
+          }
+        ]
+      },
+      "note": "Only a grant listed both here and in org/external-collaborators.json: that repository, that login, push (write) only. It adds a missing collaborator or raises read or triage to push; a pending invitation, or push or more, is left as it is. It never removes anyone. One token per owner, limited to the listed repositories (.github/workflows/org-apply.yml).",
+      "source": "Dinis, 22 Nov 2026 ~01:11 UTC in factory.d's session: \"can you make sure the GH user diniscruz-agent is a writer on the repo PrompTugal/PrompTugal__News__Bulletins\"; ~01:16 UTC: \"App was already installed but needed updates permissions (which I did) So can you build it\"."
+    },
     "dns-apply": {
       "runs_on": [
         "push to dev that changes org/dns.json"
@@ -348,6 +377,13 @@
       "permission": "metadata, contents, actions and pull requests: read, on the AgentiCCells installation",
       "why": "transfer-apply plan: read-only preflight of the source repository",
       "state": "needed; not yet checked"
+    },
+    {
+      "holder": "github-app:agenticcells-site-factory",
+      "permission": "administration:write and metadata:read on PrompTugal/PrompTugal__News__Bulletins (PrompTugal installation)",
+      "why": "external-collaborators: add diniscruz-agent with push, the one grant listed for that repository",
+      "state": "installed; Dinis reports the permissions updated, 22 Nov 2026 ~01:16 UTC; not yet checked by a run",
+      "source": "Dinis, 22 Nov 2026 ~01:11 UTC in factory.d's session: \"can you make sure the GH user diniscruz-agent is a writer on the repo PrompTugal/PrompTugal__News__Bulletins\"; ~01:16 UTC: \"App was already installed but needed updates permissions (which I did) So can you build it\"."
     }
   ],
   "keys_rule": "No agent may change its own entry in team/keys.json (build/abp.mjs paths refuses it). The conductor adds and retires its team's keys; only Dinis changes the conductor's key."

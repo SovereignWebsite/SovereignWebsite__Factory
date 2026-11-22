@@ -52,3 +52,26 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.app.outputs.token }}
         run: node build/org-apply.mjs plan.json | tee -a "$GITHUB_STEP_SUMMARY"
+  # Collaborators on repositories outside the organisation (org/external-collaborators.json), each also listed in
+  # policy/abp.json (pipeline external-collaborators). One token per owner, limited to the listed repositories.
+  # A separate job, so a problem here never stops the organisation's own apply.
+  external-collaborators:
+    runs-on: ubuntu-latest
+    environment: apply
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node test/run.mjs && node build/abp.mjs validate && node build/external-collaborators.mjs check
+      - id: promptugal
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.FACTORY_APP_ID }}
+          private-key: ${{ secrets.FACTORY_APP_PRIVATE_KEY }}
+          owner: PrompTugal
+          repositories: PrompTugal__News__Bulletins
+      - name: PrompTugal
+        env:
+          GH_TOKEN: ${{ steps.promptugal.outputs.token }}
+        run: node build/external-collaborators.mjs apply PrompTugal | tee -a "$GITHUB_STEP_SUMMARY"

@@ -41,9 +41,18 @@ export function checkActions(p, plan) {
     else if (!pipe.allowed.includes(a.action)) e.push(`${a.action} on ${a.target}: not allowed for ${plan.pipeline}`);
     else if (a.action === 'repo.transfer_in') e.push(...checkTransfer(pipe.limits || {}, a));
     else if (a.action === 'repo.invite_collaborator' && a.permission !== 'push') e.push(`repo.invite_collaborator ${a.user} on ${a.target}: push only`);
+    else if (a.action === 'repo.add_collaborator') e.push(...checkGrant(pipe.limits || {}, a));
   }
   if (pipe.limits?.per_run && (plan.actions || []).length > pipe.limits.per_run) e.push(`${plan.pipeline}: at most ${pipe.limits.per_run} action per run`);
   return e;
+}
+
+// A collaborator outside the organisation is allowed only as the policy lists it: that repository, that login, push only.
+export function checkGrant(l, a) {
+  if (a.permission !== 'push') return [`repo.add_collaborator ${a.user} on ${a.target}: push only`];
+  const same = (x, y) => String(x || '').toLowerCase() === String(y || '').toLowerCase();
+  const ok = (l.grants || []).some((g) => same(g.repository, a.target) && same(g.user, a.user) && g.permission === 'push');
+  return ok ? [] : [`repo.add_collaborator ${a.user} on ${a.target}: not on the policy's grants list`];
 }
 
 // A transfer is allowed only from the named owner, for a repository on the explicit list, to the named owner as Site__[<Group>__]<Name>.
