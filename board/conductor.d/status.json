@@ -84,7 +84,8 @@
     "observability.d published its key (f487ee3) and made an account D vault; observability.b's capture design is in no SovereignWebsite repository it can read; every site policy and the design guidelines say no tracking, so capture needs a policy change per site (Dinis's call); lane tokens cannot be minted yet (configure endpoint 404 for this account)",
     "factory.d asked to rename agent homes to Site__Agent__<Name> and reshape the platform names; design.d, streaming.d, synthetic-users.d and sites.d told the two-way-door rule; design.d to ask Dinis in its session for the chip line",
     "cheese market: a third keeper session on another account, chiswick-cheese-market.c (key on Factory dev), pushed /send/ with the site's own inbox lane (vault yz81s4s9), banner and share card at Dinis's word (17:30 to 17:51 UTC); chiswick-cheese-market.d pushed brand guidelines (8aabbef) and a briefing (198eecb) with recorded owner overrides, its key still not on Factory dev; the signer check lists them as overrides",
-    "claims moved: WordPress to wordpress.d (https://claude.ai/code/session_015gaHda1bnbqASo1ed8VUdY), Donna Freed to donna-freed.d (https://claude.ai/code/session_015gaHdeh6Sh45Ef2fZFAhLi), both started by sites.d at Dinis's word; both told to publish their own keys"
+    "claims moved: WordPress to wordpress.d (https://claude.ai/code/session_015gaHda1bnbqASo1ed8VUdY), Donna Freed to donna-freed.d (https://claude.ai/code/session_015gaHdeh6Sh45Ef2fZFAhLi), both started by sites.d at Dinis's word; both told to publish their own keys",
+    "claim: PyBot tool site (Site__Tool__Pybot), sites.d's third, request via factory.d; its own agent once the repository exists; licence open"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
