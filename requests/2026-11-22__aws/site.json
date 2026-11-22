@@ -1,6 +1,7 @@
 {
   "label": "aws",
   "group": "platform",
+  "repo_label": "AWS",
   "title": "AWS Platform Sovereign Website",
   "description": "What Amazon Web Services offers and a set of automations for it, run in the browser with the owner's own short-lived tokens. An unofficial site, not made or endorsed by Amazon Web Services.",
   "kind": "owner"
