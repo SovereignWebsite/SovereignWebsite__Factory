@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T01:00Z",
+  "updated": "2026-11-22T01:01Z",
   "state": "Streaming live at v0.1.7 (3eac181), kept by streaming.d; design.d and synthetic-users.d review the .d sites; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -31,7 +31,8 @@
     "library.d's key on branch work/conductor.d-library-d-key (dee995a), signing line checked; its pieces (a) to (d) claimed",
     "library.d run 1, piece (a): reading lists for the seven .d agents from newsroom v0.14.201 (432 articles mapped by script, 16 new or changed since librarian.b's v0.14.187); in its session only. Observed: about 3 minutes, 0 articles read in full, about 60k to 80k tokens for the session so far (its estimate)",
     "library.d's (d) briefs prepared, none sent (conductor.d, sites.d, hub.d, streaming.d, design.d, synthetic-users.d); its publishing prefix site/library/d/** in Site__Agents__Library claimed. Observed: about 85k to 100k tokens, 9 minutes (its estimate)",
-    "library.d pushed d22a363 to Site__Agents__Library dev (both twins as keepers) at 00:59 UTC, before its key was on Factory dev; it had said it would hold. Recorded as a deviation from that site's policy (key published before first commit); cured when its key lands"
+    "library.d pushed d22a363 to Site__Agents__Library dev (both twins as keepers) at 00:59 UTC, before its key was on Factory dev; it had said it would hold. Recorded as a deviation from that site's policy (key published before first commit); cured when its key lands",
+    "library.d (b) and (c), first pass, in its session only: draft reading-list profiles for 14 agents, for librarian.b to take or leave; contradictions over 432 articles at newsroom v0.14.201 (a-european-brain corrected in v0.14.190; website cell \u00a3500 anchor, \u00a3250 published launch price, \u00a350 or \u20ac50 a proposal; RiskMandate prices consistent; appliance entry stands). Observed: about 140k to 170k tokens, 15 minutes (its estimate)"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
