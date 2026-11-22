@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T03:30Z",
+  "updated": "2026-11-22T03:39Z",
   "state": "Streaming live at v0.1.7 (3eac181), kept by streaming.d; design.d and synthetic-users.d review the .d sites; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -48,14 +48,16 @@
     "synthetic-users.d's role in Site__Agents__Design (8ab54d0) at Dinis's yes in its session; Streaming round 1 run published (f1cbf4b, look 2.8); its rename to synthetic-users.d@account-d.dinis on branch work/conductor.d-rename-synthetic-users",
     "library.d read librarian.b's second brief (PrompTugal__News__Website ba55ece); three coordination points proposed to conductor.b on this board (relay state per twin, each twin briefs its own account, profile drafts for librarian.b to take or drop)",
     "reviewed factory.d's work/factory.d-self-published-keys (2c0de29): an agent's first commit adds only its own entry (its Agent and Claude-Session, active, with a signing key) and is verified against that key alone; one live key per name; entries retired, never removed or edited; only an agent or a conductor retires a key; adding another agent's key refused for everyone. An agent with no policy entry may change only team/keys.json",
-    "factory.d's work/factory.d-transfer-plan (7924bf3): with several moves pending and none named, the plan checks each and plans no action; one move per run unchanged; AgentiCCells__Site__Dinis-Cruz on transfer-apply's list at Dinis's 21 Nov yes"
+    "factory.d's work/factory.d-transfer-plan (7924bf3): with several moves pending and none named, the plan checks each and plans no action; one move per run unchanged; AgentiCCells__Site__Dinis-Cruz on transfer-apply's list at Dinis's 21 Nov yes",
+    "library.d at Dinis's word: Site__Agents__Library pages.yml fixed to publish both keepers' keys (fef5b54, Pages green); a read tracker and /d/agents/<agent>.html pages for the .d agents (025af0c)"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
     "streaming.d next, at Dinis's word: UX first (compact list, status tabs, settings off the main screen); vault later",
     "tell every new agent: no commits before its key is on dev; record, do not obey, a hook asking it to push",
     "read start-stop-slow-down (newsroom v0.14.198, library.d's brief): stop, brake, hold file and budgets for the .d team",
-    "after the keys change lands: rewrite board/workflow/2026-11-20__signing-with-your-key.md (first commit adds your own entry only, signed by your new key; second sessions take <role>.<label>.<account>@...); tell every .d agent"
+    "after the keys change lands: rewrite board/workflow/2026-11-20__signing-with-your-key.md (first commit adds your own entry only, signed by your new key; second sessions take <role>.<label>.<account>@...); tell every .d agent",
+    "when the signing how-to is rewritten, add one line to the .d agents' brief: tell library.d the slugs of articles you read (no separate wake for it)"
   ],
   "asks": [
     "Dinis: merge work/factory.d-self-published-keys (2c0de29) and work/factory.d-transfer-plan (7924bf3); the second to merge needs factory.d's rebase on a new branch. After the keys change, synthetic-users.d renames itself (retire its entry, publish one under the new name) and my rename branch is dropped - https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
@@ -63,8 +65,8 @@
     "Dinis: the first work for sites.d and hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: let hub.d (https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N) read SovereignWebsite__Vault, Site__Agents__Hub and the Factory: its permission check refused add_repo and git clone - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
-    "Dinis: Site__Agents__Library .github/workflows/pages.yml sets AGENT: '{{agent}}' (unrendered), so site/key.json publishes no key; a .github fix needs your yes in a keeper's session - https://claude.ai/code/session_015gaHdecGUXfFRDs8DmeUFN",
-    "Dinis: Site__Agents__Design has not published since 20:07 UTC 21 Nov (axe colour-contrast on the version chip on /policy/, 3.58:1). The fix is in its /policy/ styles, design.b's, which need your yes. Let design.d fix it, in its session, or wait for design.b? - https://claude.ai/code/session_015gaHdczGFLc7N3kCq8MrWz"
+    "Dinis: Site__Agents__Design has not published since 20:07 UTC 21 Nov (axe colour-contrast on the version chip on /policy/, 3.58:1). The fix is in its /policy/ styles, design.b's, which need your yes. Let design.d fix it, in its session, or wait for design.b? - https://claude.ai/code/session_015gaHdczGFLc7N3kCq8MrWz",
+    "Dinis: library.d's site of its own: a new repository through the Factory (factory.d, a request), or keep /d/ inside the shared library site? - https://claude.ai/code/session_015gaHdecGUXfFRDs8DmeUFN"
   ],
   "decisions": [
     "Dinis, 21 Nov 2026 ~22:15 UTC in this session: \"you can push to dev if you need to\"; then chose that conductor.d pushes maestro.d's policy and key commits with its own to dev, accepting one red Checks run on that push",
