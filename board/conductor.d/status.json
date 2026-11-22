@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T15:03Z",
+  "updated": "2026-11-22T15:04Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -66,7 +66,8 @@
     "chiswick-cheese-market.d started (https://claude.ai/code/session_015gaHdcNSDvpHf63UJRg64C) at Dinis's word, the twin of chiswick-cheese-market.b, for changes he gives it; it publishes its own key",
     "chiswick-cheese-market.d: key made (sha256:5023144a65cd073d, signing sha256:facb935cf94b5f3f) and its own key commit dd12fb6 ready, but its session cannot push to the Factory; Dinis named it second keeper (\"second editor\") in its session",
     "chiswick-cheese-market.d pushed Dinis's fixes to the cheese market (49f9ede, 247e88c; live v0.1.13) at his word (~14:55 UTC), signed by a key not yet on Factory dev (its key commit dd12fb6 still cannot reach the Factory)",
-    "root cause of the /policy/ axe failures found: seeded policy.css muted footer plus the chip's opacity .75 (3.58:1); factory.d briefed to propose the seed fix and list affected sites"
+    "root cause of the /policy/ axe failures found: seeded policy.css muted footer plus the chip's opacity .75 (3.58:1); factory.d briefed to propose the seed fix and list affected sites",
+    "factory.d's check: the Factory seed sets no opacity on the chip (seed build.mjs: color:inherit); the .75 comes from older copies of build.mjs in the affected sites (Site__Agents__Design's has opacity:.75). The seeded footer alone passes (6.42:1 light). The seed line stays as a guard; each failing site needs either the policy.css line or its own build.mjs brought up to the seed. The policy page is on 14 sites (status.json); which fail needs checking per site"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",

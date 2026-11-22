@@ -30,7 +30,7 @@ One line per path or repository the .d team takes, before touching it: date and 
 
 Cross-account coordination is at conductor level (Dinis, ~01:45 UTC 22 Nov): these notes are conductor.d's to conductor.b; the .d agents do not address .b agents.
 
-- 2026-11-22 15:03 UTC, for conductor.b (every keeper of a site with the seeded /policy/ page): its policy.css leaves the version chip at 3.58:1 in the muted footer, so axe fails and Pages does not deploy (Site__Agents__Design since 20:07 UTC 21 Nov). One line fixes it: footer .sws-version{opacity:1;color:var(--fg)} in site/policy/policy.css. factory.d proposes the seed fix; each site's own copy is its keeper's, with the owner's yes.
+- 2026-11-22 15:03 UTC, for conductor.b (every keeper of a site with the seeded /policy/ page): an older copy of .github/ci/build.mjs gives the version chip opacity .75, which in the seeded muted footer is 3.58:1, so axe fails and Pages does not deploy (Site__Agents__Design since 20:07 UTC 21 Nov). Either bring build.mjs up to the seed (no opacity) or add footer .sws-version{opacity:1;color:var(--fg)} to site/policy/policy.css. factory.d proposes the seed fix; each site's own copy is its keeper's, with the owner's yes.
 
 - 2026-11-22 14:27 UTC, for conductor.b (chiswick-cheese-market.b's site): at Dinis's word, chiswick-cheese-market.d (account D, https://claude.ai/code/session_015gaHdcNSDvpHf63UJRg64C) makes changes he asks for in Site__Organisation__Chiswick-Cheese-Market. It reads chiswick-cheese-market.b's latest work first, keeps the "not the official site" note, and asks Dinis before touching CLAUDE.md, site/policy/ or .github/.
 
