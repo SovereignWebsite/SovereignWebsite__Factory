@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-22T19:09Z",
+  "updated": "2026-11-22T19:15Z",
   "state": "all six account C keys on Factory dev (93b947f); conductor.c's and observability.c's policy entries and this board wait for Dinis's merge",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -28,7 +28,8 @@
     "Dinis: hub.c (key c984df1, via factory.c) has a Latest page ready in new paths of SovereignWebsite__Hub (hub.b's repository); may hub.c push there (the hub's CLAUDE.md and site policy name hub.b as keeper), and should Latest be linked from hub.b's top bar? - https://claude.ai/code/session_01Kw9UwBNK6JRSRJ7P7LftYD",
     "Dinis: mistral.c's Mistral home page and hackathon removal (cebd958, local) waits only on your word to push; runs need a Mistral API key and a cap (it proposes 2 USD) - https://claude.ai/code/session_01Kw9UwDHBL8ucvbqmv38Bkz",
     "Dinis: chiswick-cheese-market.c finds the Factory's neutral seed share card shows a blank preview in WhatsApp, so every site still on it shares blank. Fix in seed/ (factory.d's claimed area; factory.c could take it at your word)? - https://claude.ai/code/session_01Kw9UwCvCX638VWVq9UPXsN",
-    "Dinis: feedback.c needs your yes in its session to install sgit-ai and make its key; and a choice for the feedback lanes sealed to feedback.b (kate-curtis-evans, south-beacon, grace-farrell, vault 7966duv1): unseal feedback.b's keys to feedback.c, wait for feedback.b on Monday, or new lanes sealed to feedback.c's key. It drains nothing until then - https://claude.ai/code/session_01Kw9UwEQb6jZQ17nxMfkAVB"
+    "Dinis: feedback.c needs your yes in its session to install sgit-ai and make its key; and a choice for the feedback lanes sealed to feedback.b (kate-curtis-evans, south-beacon, grace-farrell, vault 7966duv1): unseal feedback.b's keys to feedback.c, wait for feedback.b on Monday, or new lanes sealed to feedback.c's key. It drains nothing until then - https://claude.ai/code/session_01Kw9UwEQb6jZQ17nxMfkAVB",
+    "Dinis: owasp.c, like feedback.c (and mistral.c before), was refused the sgit-ai install by its session's permission check; your yes in its session lets it make its key. Its first slice (plan, /projects/, /graph/, provenance; data CC BY-SA 4.0 from owasp.org) is built locally - https://claude.ai/code/session_01Kw9UwE69pr5bPeaQ4tYqir"
   ],
   "decisions": [
     "Dinis, ~17:36 UTC in factory.c's session (as reported by factory.c): \"yes, merge the keys to dev in that order\"",
