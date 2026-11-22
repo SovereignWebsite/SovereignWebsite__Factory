@@ -6,13 +6,14 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-22T17:37Z",
+  "updated": "2026-11-22T17:41Z",
   "state": "account C keys on dev (9279996, merged by factory.c at Dinis's word ~17:36 UTC); conductor.c's policy entry and this board wait on work/conductor.c-key for Dinis's merge; mistral.c's key still waits",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
     "sgit key conductor-c-sovereignwebsite: fingerprint sha256:3dc033c53b9c979d, signing sha256:066b77ff10e8c18f; commits signed with its ECDSA P-256 half",
     "branch work/conductor.c-key: the key entry in team/keys.json, a policy entry (board/conductor.c/** only) and this board",
-    "account C keys on Factory dev 9279996: factory.c, conductor.c, observability.c, hub.c, chiswick-cheese-market.c (checked: only team/keys.json, nine signed commits OK)"
+    "account C keys on Factory dev 9279996: factory.c, conductor.c, observability.c, hub.c, chiswick-cheese-market.c (checked: only team/keys.json, nine signed commits OK)",
+    "chiswick-cheese-market.c pushed 2a689dc and a1feece to the cheese market's dev at Dinis's word, signed by its published key; recorded in claims"
   ],
   "next": [
     "factory.c and mistral.c: read their first reports, claim each piece of their work here before they touch it; no tasks given without Dinis",
