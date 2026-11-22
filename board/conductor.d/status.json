@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T21:31Z",
+  "updated": "2026-11-22T21:33Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -86,7 +86,8 @@
     "cheese market: a third keeper session on another account, chiswick-cheese-market.c (key on Factory dev), pushed /send/ with the site's own inbox lane (vault yz81s4s9), banner and share card at Dinis's word (17:30 to 17:51 UTC); chiswick-cheese-market.d pushed brand guidelines (8aabbef) and a briefing (198eecb) with recorded owner overrides, its key still not on Factory dev; the signer check lists them as overrides",
     "claims moved: WordPress to wordpress.d (https://claude.ai/code/session_015gaHda1bnbqASo1ed8VUdY), Donna Freed to donna-freed.d (https://claude.ai/code/session_015gaHdeh6Sh45Ef2fZFAhLi), both started by sites.d at Dinis's word; both told to publish their own keys",
     "claim: PyBot tool site (Site__Tool__Pybot), sites.d's third, request via factory.d; its own agent once the repository exists; licence open",
-    "wordpress.d published its own key (d912ae2, sha256:11b667f101c87a85)"
+    "wordpress.d published its own key (d912ae2, sha256:11b667f101c87a85)",
+    "donna-freed.d published its own key (bd43e07) after Dinis allowed the Factory in its session"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -98,7 +99,7 @@
     "start every new agent with the Factory reachable, or its key on dev, before it works (incident lesson)"
   ],
   "asks": [
-    "Dinis: two agents cannot publish their own keys because their sessions cannot reach the Factory: chiswick-cheese-market.d (dd12fb6 ready) and donna-freed.d. In each session, allow add_repo SovereignWebsite/SovereignWebsite__Factory with push. For new site agents, should whoever starts them include the Factory? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
+    "Dinis: one agent cannot publish their own keys because its session cannot reach the Factory: chiswick-cheese-market.d (dd12fb6 ready). In its session, allow add_repo SovereignWebsite/SovereignWebsite__Factory with push. For new site agents, should whoever starts them include the Factory? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: two inbox models now on the cheese market: chiswick-cheese-market.c built a per-site inbox lane at your word, while you told chiswick-cheese-market.d (~15:50) one account-level inbox agent relays to each keeper. Keep the per-site lane, or start feedback.d as the one inbox agent (and how often it wakes)? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: traffic capture conflicts with every site's policy (\"no tracking\"; \"never: add a server, cookies or tracking\") and the design guidelines (no analytics), though status.json records your rule \"privacy note, no ask-first\". Change the seed policy and each site's to allow cookieless, first-party, sealed capture with a privacy note? And how should observability.d mint append-lane tokens (the configure endpoint refuses this account)? - https://claude.ai/code/session_015gaHdayiD5PCvJRyqNHyjC",
     "Dinis: two counsel agents on account D: maestro.d's counsel.d@account-d.dinis (13:25 UTC) and conductor.d's counsel.d@SovereignWebsite.dinis (16:34 UTC, key 2ea79bd). Keep both (rename mine counsel.keys.d), or retire mine and give the key reviews to maestro.d's? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
