@@ -1074,6 +1074,52 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "instagram-c-sovereignwebsite",
+      "agent": "instagram.c@SovereignWebsite.dinis",
+      "role": "Instagram agent on account C: the Instagram platform site (instagram.platform.sovereignweb.site, unofficial) and posting through Instagram's official API from CI, only with Dinis's word for each post or a rule he gives. Started by sites.c at Dinis Cruz's word; conductor conductor.c. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-22",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwBf2gRkufCCnZs335u",
+      "fingerprint": "sha256:0eaad92d29e01de5",
+      "signing_fingerprint": "sha256:031134f52f906ab6",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAsqFvBstQkyBBSkSUBG9O\nC25jBgs4svd4i0BBS7RrkSAxSBWlKdxCIqgAV5Jd0Ga3R9M4vT0NlxJ/4srC2cMO\nWMl6Ax9JOOVSEbP0+yOuOFGXbYEN537vgqe2ZU5nJifbQzBBpUEEVwplJtuYDqAK\nTNtkLrb3BrDpkUTGLCqpc6mozpTVOxM7EVPJ4I68KhvdnYwjoGcyjiPrYLyicBVZ\n64+L7fd1QYVkiYquEHDgo8oG2xkuxtq/1f//6rHv6AIgG4ziiYxt+mDQ4F4wQfEw\nioxC8q+lxxowCuhfQ1KKcTIVdcxKxIsMohaAT3IsYWnHyQiTNtg64at5GFJqRZXa\nv2r899lrE/iGT8Zj2ROLs7x3WM2aH80T+zgm7CN7QaokkqNLzVC74Nk0M+D21dJg\nGq8lrVkkHQ6tBsplEEHXfweIaA6XK4PQ3tU8uEXbhTOfyeFp0fKjGi2XxPayCCsm\nsje+tTC9DzP1OoqtWECO6Ann8uB58Q9HwjT6qXIZToS1tvQfWfEJQy5+jblvWyUs\nuIVormBVl51M6AQkerF/QPlHCaMEa9YCFFsiGl411609s5P58HdCrldtWiEyOJJP\n1vo3csaGEcpGf8RG8wqgTPva283bH1HF4ePKuKFROZV+AU7fGJCeF6yLodE6NuTN\nnYRDfX1i1wufwNSz6T3BOhkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE82e1BZQ53KJ69su6QRI3qRC5GABL\n8TmUAd1OKkluDtxYyi11v3KQfrOBxWLaGvTPGnx0Y7s0BrRUXMkS1H8cWw==\n-----END PUBLIC KEY-----\n",
+        "label": "instagram-c-sovereignwebsite",
+        "fingerprint": "sha256:0eaad92d29e01de5",
+        "signing_fingerprint": "sha256:031134f52f906ab6"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "suno-c-sovereignwebsite",
+      "agent": "suno.c@SovereignWebsite.dinis",
+      "role": "Suno agent on account C: music made with Suno's official API for the team's Instagram posts, only with Dinis's word and a spend cap he sets",
+      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-22",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwEP7o4BBLqwrqdReHq",
+      "fingerprint": "sha256:e9609b3d7219fe72",
+      "signing_fingerprint": "sha256:51ca59f4542fa455",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzm7dyNGtIxEwXi6pmR6J\nY03o+twU7SfhLXL1JF++bTIXo6Pj8I1fAAqA/mXjjzSIY2TEkNqrHjvEHxMZTjLw\n9fPnMO/+Cy1pJgV6dt0PD1ycaHk8LRixFcN5s5mHCU4kkR0ypU1yztn/7Qza67LJ\nkGqupKkKeV4dyFuTmFVJd9FspeFVLa7m869NZ7dTI68wK0+MjSd6qhasaLWScnp2\ntBBOYMSwC6MpMT7qcCJPyKrU3V72H+38qEpXJO7EQlZKsYE67I5WFP8DD6H24FSb\nPydiqW8KtPM7JM5e3qEzZszoXS+cSOG/ByRO1Kcfp0xv4RlOWnt+QrVWIsNKX5zB\nl5eS73MNcsmuIEGZva80RlC/Dll1U0NtNobrB1oa1Be3HI+SyxDrIzOnn1lsnLjt\ne2EeW/6y6ypraPi949InmPYnjpdnqAaYSVkpRNI0bgfki2wyGVp2cqeWz5NwNvFd\n3Pt4lITLLSAaX4ZPH256JjzdyPvmaDa2r6xipNF4sHEIetROhFhHlezgUgPEEpVD\n+yWUPyZ77ZWOhQ5f5u4ZGMqKaA/mscYe+3L/tXFw45wLeR2ZN1qwgM6AExs4piDB\nvB8bmQm6pY8OqZqELBWViXnGR566oJpEOR5XSR5RjyS9LJtIdgjkcCTIBQbLLSVH\n0NoeHGBdc3ZChz1lbnKGFx8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFdR2q4bmWNEor0tCkhd5smg50yAx\nB3aHnVhYeQo0jYuNPO44rhWNqJpPww/WM5SVtC47hOukFkqbVqOHUlhFag==\n-----END PUBLIC KEY-----\n",
+        "label": "suno-c-sovereignwebsite",
+        "fingerprint": "sha256:e9609b3d7219fe72",
+        "signing_fingerprint": "sha256:51ca59f4542fa455"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
