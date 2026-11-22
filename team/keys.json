@@ -959,6 +959,29 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "mistral-c-sovereignwebsite",
+      "agent": "mistral.c@SovereignWebsite.dinis",
+      "role": "The Mistral agent on account C, for Site__Provider__Mistral: moves the team's workflows to Mistral, at Dinis Cruz's word in its session. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-22",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwDHBL8ucvbqmv38Bkz",
+      "fingerprint": "sha256:539cec825647f6b7",
+      "signing_fingerprint": "sha256:24995422c3972508",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwuVhSky45vQf8AgZ5OhJ\nq8nCz6jk3DOhGSOdkvabDYLAjAHtbYZg3YgkBc6Bjr/1dB7Lc24bcY5h7o5PGDvc\nEwF7E3roDBHXqW51A9rk+2NjAAkERoUwzDt+LjJ/g+pyhUUsftV1HrnSmMYicZQv\n3o/dPgWA3rb1fHyQxmqkCU//lTL5T2Ju0m9du81JxPCT5RUoumivCOtyuZ9c+j6M\nG6Bzxht5nA9Zdg8zZTmJviGjETUxG9nUtFdK+jQeyrQEcPGrGwSn1dz641M4wKD7\nCm5amPEeMj1/ZvECiSrLv4W1euhlIgucL3IJIDrubFeyPifO4KidFIpn9kJ00rFP\nZ/SIMvCdjMrmp8Wr++eL8q4JdEMMJSWdUI5Ci8M6Na0YzcFqv+WqdLGNhwR2nbt0\nRETIHY7Z4h0/CxfMLOIsoWE0HFTInrydyCwaRbMyhf/kcndWAstQVyyJi0c45PNV\ndu3nDyybh79N7gvngEpqIXLhYGhWDBXul/oOPg733dC0UUZABOwZHxzJOs5mBob4\nPoHttkIvUhmWpZ70Ny3CkC3789yu6LOTKj2kfsFKlfqjDBr3GlG30GkNEfNpJ7Rp\n/CLCGvmzkAa/PMwM/Ypie7fLp0+WgrJjpMn2IqCT45JRQ7n2GLL2eYDEkUNRZdVd\nZgIFPV96ouw9KC57pIdFLkcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEtSHACGH3J/2XuOLEMxdJJVYIyK8l\nDcOGnWH2k0j28IB6zRQcbnHOSj1csEtFONPjF5pMN3yVH3SvR8MCSKZJBQ==\n-----END PUBLIC KEY-----\n",
+        "label": "mistral.c",
+        "fingerprint": "sha256:539cec825647f6b7",
+        "signing_fingerprint": "sha256:24995422c3972508"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
