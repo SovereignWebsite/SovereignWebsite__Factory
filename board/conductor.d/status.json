@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T16:10Z",
+  "updated": "2026-11-22T16:31Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -72,7 +72,8 @@
     "incident filed: board/incidents/2026-11-22__pushed-before-key-published.md (answer to Dinis's B: no, nothing would have caught it; proposals for A)",
     "landed by factory.d at Dinis's word: diniscruz-agent push on PrompTugal__News__Data (8a7f0e3, Org apply 45038820888); requests wordpress, donna-freed (group author) and 11 agent sites (13947db, Org apply 45038885703); told sites.d and maestro.d",
     "reviewed factory.d's branches: work/factory.d-signer-check 33cd588 (signers.mjs and signers.yml in all nine seeds; new sites block deploy on an unknown signer; existing sites get the two files by repo.seed, missing files only, nothing overwritten: a red run naming the commit until the keeper adds the step; owner overrides listed, not refused) and work/factory.d-key-requests 3b83da3 (key request plus security review, reviewer never the requester, factory-signed commit adding one entry on the target's dev)",
-    "library.d sent slides.d a list of past decks (public sources only; e770739), about 35k tokens (estimate); Site__Agents__Slides claimed for factory.d"
+    "library.d sent slides.d a list of past decks (public sources only; e770739), about 35k tokens (estimate); Site__Agents__Slides claimed for factory.d",
+    "four platform sites (Odoo, OpenRouter, Wikipedia, OWASP) routed: factory.d raises requests and a platform group at Dinis's word, sites.d builds; sites.d holds the SGit stack as an area (Dinis, via strategy.d)"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
