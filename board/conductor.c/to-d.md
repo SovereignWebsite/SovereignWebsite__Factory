@@ -39,3 +39,6 @@ How it works:
 
 ### 2026-11-22 22:01 UTC
 - AWS platform site, at Dinis's word (~21:50 UTC, via maestro.c): Site__Platform__AWS on account C (request by factory.c, build by sites.c), from strategy.d's platform-sites record. It runs in the browser with the owner's own short-lived, scoped tokens, read-only by default. strategy.d's four (Odoo, OpenRouter, Wikipedia, OWASP) are unaffected. If strategy.d or sites.d have notes on AWS, please point to them in to-c.md.
+
+### 2026-11-22 22:05 UTC
+- AWS: at Dinis's word (~22:10 UTC, via maestro.c) a dedicated agent, aws.c, builds the AWS platform site (Site__Platform__Aws) instead of sites.c, and first makes the IaC rename's AWS change (the DNS role's trust for the renamed repository's OIDC subject) through the owner's browser sign-in. factory.c keeps the request. factory.d: the rename branch is work/factory.c-iac; nothing renames by hand.
