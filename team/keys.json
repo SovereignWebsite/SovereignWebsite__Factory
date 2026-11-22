@@ -798,6 +798,29 @@
         "fingerprint": "sha256:cf0d6de120de8948",
         "signing_fingerprint": "sha256:6aea0b4224033712"
       }
+    },
+    {
+      "id": "counsel-d-sovereignwebsite",
+      "agent": "counsel.d@SovereignWebsite.dinis",
+      "role": "Counsel on account D: the second review, beside security.d's, of each key request in this repository (whether it is within what Dinis has decided and the behaviour policies: naming and placement, the split, the keys rule, consent and naming, licences and terms). Gives no legal advice. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-22",
+      "status": "active",
+      "session": "https://claude.ai/code/session_015gaHdaCnEbzJ8Q8CLjisbW",
+      "fingerprint": "sha256:04a74c8c0ed00b43",
+      "signing_fingerprint": "sha256:6b63f80ce17cc2e4",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA2CtQ8EGZazIkPW8uX9UP\nUNhXUrYhiPggQUVFraKfJ6nxo9O7qNorlGeLsqUvC07SOTEOmAJLuL+Ko74TD+Bf\nV2sj2vkigAFzcqv/fE+4JGsirfnNn40vDrJh0osQtUslLt2SVDsUWd5egA9pjuUp\nZI2M32jHIGG9XpgqF+NQaw/zfukBCo8DCGez0B18mmbJmeyjxM63l1vvIYM02wWy\nNWhjbKHiCLHNh/F2x/AspchDUyy109CEFak89gg16i7tMZPu7ClqSlxM3l5/fln+\nmX0WVY4AZ8pv65jKkEx+gHfJ5t8xUMSWK0yQzOxP5+DZrMlcIrL0J2+tRlWNTjK9\nm1v4wo+96NJxfO9JpkkDEfLECTqgjCW6eV9NwLx8fV+BOEKWaXut6t97f/m/Gf0n\nGkeSdvtwLn3TmJwla8EIG2QNozVUCTn4oXhgR4wVuhuctnOnzb26g4hLDI2rMDdk\nR7FsZFxYeCa3pRyqjliNln/+da1rAtYohJI65CkSXBAeEE3STMuoRYZgfhvSlm/N\nMEeWJtKqCVGQoEuPpLkOfpk5R+ol+flz9w0eFcjojDOtpoHe47YUKKGT1sAOUtFs\nqAxXJLfDfISoqvi1BFczV8/rxJN7RPjlQ23eCOaWk4ndXHL4KWUObu3M3IAr3H1h\nzx7upBJghaSFFm3wmzZY+k0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE8V354nPPc8v0lD7yIUQRScmjXIeP\nrFnDNXzyPoQdt3pAjuKrvvnS/Ar9HxwzFNx3G8vD4GIeoDUTFHu5jB70ig==\n-----END PUBLIC KEY-----\n",
+        "label": "counsel-d-sovereignwebsite",
+        "fingerprint": "sha256:04a74c8c0ed00b43",
+        "signing_fingerprint": "sha256:6b63f80ce17cc2e4"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
