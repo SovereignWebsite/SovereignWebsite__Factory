@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-22T17:32Z",
+  "updated": "2026-11-22T17:35Z",
   "state": "account C key bundle on branches for Dinis's merge: conductor.c 05e36d4, observability.c 788d3b9, factory.c f539558, hub.c c984df1, chiswick-cheese-market.c cbcdddc (each checked signed by its own key, one entry each); mistral.c waits on Dinis; nothing on dev",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -22,9 +22,9 @@
   "asks": [
     "Dinis: merge work/conductor.c-key (conductor.c's key in team/keys.json and its policy entry, board/conductor.c/** only) - https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj",
     "Dinis: observability.c's key commit 788d3b9 (branch work/observability.c, team/keys.json only, checks OK): merge it, or say it may push it to dev itself under the self-publish keys rule (CLAUDE.md says team/keys.json waits for your merge); and paths for it (board/observability.c/**) - https://claude.ai/code/session_01Kw9UwBmqCafJ2NtqhQPQwu",
-    "Dinis: mistral.c asks for new paths docs/mistral-c/ and site/data/mistral-c/ in Site__Provider__Mistral, held by account B's Mistral team: an exception to the split, yes or no? It also needs a Mistral API key in its session (401 now) and a spend cap (it proposes 2 USD, for accountant.c) - https://claude.ai/code/session_01Kw9UwDHBL8ucvbqmv38Bkz",
     "Dinis: the account C keys (conductor.c 05e36d4, observability.c 788d3b9, factory.c f539558) each append to team/keys.json and conflict textually; factory.c proposes fast-forwarding dev to one key branch, then merging the others with merge commits signed by a key already on dev, so every signature stays valid - https://claude.ai/code/session_01Kw9UwFQ86g2ZeXQ2edTAjh",
-    "Dinis: hub.c (key c984df1, via factory.c) has a Latest page ready in new paths of SovereignWebsite__Hub (hub.b's repository); may hub.c push there (the hub's CLAUDE.md and site policy name hub.b as keeper), and should Latest be linked from hub.b's top bar? - https://claude.ai/code/session_01Kw9UwBNK6JRSRJ7P7LftYD"
+    "Dinis: hub.c (key c984df1, via factory.c) has a Latest page ready in new paths of SovereignWebsite__Hub (hub.b's repository); may hub.c push there (the hub's CLAUDE.md and site policy name hub.b as keeper), and should Latest be linked from hub.b's top bar? - https://claude.ai/code/session_01Kw9UwBNK6JRSRJ7P7LftYD",
+    "Dinis: mistral.c's Mistral home page and hackathon removal (cebd958, local) waits on its key (it cannot install sgit-ai or reach the Factory: your yes in its session) and your word to push; it also needs a Mistral API key and a cap (it proposes 2 USD) for runs - https://claude.ai/code/session_01Kw9UwDHBL8ucvbqmv38Bkz"
   ],
   "decisions": [],
   "team": {
