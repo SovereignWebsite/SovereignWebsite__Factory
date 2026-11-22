@@ -11,6 +11,9 @@
 //   1. it carries a git SSH signature that verifies against a key in its (first) PARENT's team/keys.json (status not
 //      "superseded" or "retired"), never the keys in the commit itself: a new or rotated key is added by a commit signed with a
 //      key already listed, or by a person (the commit that adds this check is reviewed and merged by Dinis);
+//      or, the one exception, a commit by which an agent publishes its own key (policy/abp.json keys_rule: it adds exactly
+//      one entry, its own, and changes nothing else in team/keys.json, checked by keysChange in build/abp.mjs) verifies
+//      against that one new key only (Dinis, 22 Nov 2026: "it is the agents (when they start) that need to push their key");
 //   2. the key's agent is the commit's one Agent: trailer;
 //   3. its one Claude-Session: trailer is the session recorded with that key.
 // No commit is exempt by its author or committer, which anyone can set. The factory's own workflow commits are on
@@ -24,6 +27,7 @@ import { writeFileSync, mkdtempSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
+import { keysChange } from './abp.mjs';
 
 export const SELF = 'build/check-signatures.mjs';
 const AGENT = /^[a-z0-9]+(?:[.-][a-z0-9]+)*@[a-z0-9.-]+$/i;
@@ -52,20 +56,24 @@ export function checkSignatures({ cwd = process.cwd(), before, after = 'HEAD' } 
     if (!blob) return null;
     if (cache.has(blob)) return cache.get(blob);
     const doc = JSON.parse(git('cat-file', 'blob', blob));
-    const keys = Array.isArray(doc) ? doc : doc.keys || [];
+    const r = signersFor(Array.isArray(doc) ? doc : doc.keys || []); cache.set(blob, r); return r;
+  };
+  // The allowed signers for a list of keys: { file, sessionOf }.
+  const signersFor = (keys) => {
     const signers = [], sessionOf = new Map();
     for (const k of keys) {
       const agent = k.agent, pemText = k.bundle?.sign ?? k.public_key?.sign;
       if (!agent || !AGENT.test(agent) || !pemText || !usable(k)) continue;
-      const pem = join(dir, `${cache.size}-${signers.length}.pem`); writeFileSync(pem, pemText);
+      const pem = join(dir, `${seq}-${signers.length}.pem`); writeFileSync(pem, pemText);
       const ssh = execFileSync('ssh-keygen', ['-i', '-m', 'PKCS8', '-f', pem], { encoding: 'utf8' }).trim().split(' ').slice(0, 2).join(' ');
       signers.push(`${agent} namespaces="git" ${ssh}`);
       if (!sessionOf.has(agent)) sessionOf.set(agent, new Set());
       if (k.session) sessionOf.get(agent).add(k.session);
     }
-    const file = join(dir, `allowed_signers_${cache.size}`); writeFileSync(file, signers.join('\n') + '\n');
-    const r = { file, sessionOf }; cache.set(blob, r); return r;
+    const file = join(dir, `allowed_signers_${seq++}`); writeFileSync(file, signers.join('\n') + '\n');
+    return { file, sessionOf };
   };
+  let seq = 0;
 
   try {
     const errors = []; let checked = 0;
@@ -77,11 +85,18 @@ export function checkSignatures({ cwd = process.cwd(), before, after = 'HEAD' } 
       if (!parent) { errors.push(`${c.slice(0, 7)} ${subject}: its parent has no team/keys.json`); continue; }
       const agents = lines(git('log', '-1', '--format=%(trailers:key=Agent,valueonly)', c));
       const sessions = lines(git('log', '-1', '--format=%(trailers:key=Claude-Session,valueonly)', c));
-      const v = spawnSync('git', ['-c', 'gpg.format=ssh', '-c', 'gpg.ssh.program=ssh-keygen', '-c', `gpg.ssh.allowedSignersFile=${parent.file}`, 'verify-commit', c], { cwd, encoding: 'utf8' });
-      if (v.status !== 0) { errors.push(`${c.slice(0, 7)} ${subject}: no valid signature by a key in its parent's team/keys.json`); continue; }
+      const verify = (file) => spawnSync('git', ['-c', 'gpg.format=ssh', '-c', 'gpg.ssh.program=ssh-keygen', '-c', `gpg.ssh.allowedSignersFile=${file}`, 'verify-commit', c], { cwd, encoding: 'utf8' });
+      let v = verify(parent.file), signers = parent;
+      if (v.status !== 0) {
+        // The one exception: the commit by which an agent publishes its own key, verified against that key alone.
+        const show = (rev) => tryGit('show', `${rev}:team/keys.json`) || '{}';
+        const own = agents.length === 1 && keysChange({ agent: agents[0], session: sessions[0], before: show(`${c}^1`), after: show(c) });
+        if (own && !own.errors.length && own.added) { try { signers = signersFor([own.added]); v = verify(signers.file); } catch { /* an unreadable key verifies nothing */ } }
+      }
+      if (v.status !== 0) { errors.push(`${c.slice(0, 7)} ${subject}: no valid signature by a key in its parent's team/keys.json, nor by the one key it publishes for itself`); continue; }
       const principal = (`${v.stdout}\n${v.stderr}`.match(/Good "git" signature for (\S+)/) || [])[1];
       if (!principal || agents.length !== 1 || agents[0] !== principal) { errors.push(`${c.slice(0, 7)} ${subject}: signed by ${principal || 'unknown'}, Agent: ${agents.join(', ') || 'none'}`); continue; }
-      if (sessions.length !== 1 || !(parent.sessionOf.get(principal) || new Set()).has(sessions[0])) errors.push(`${c.slice(0, 7)} ${subject}: Claude-Session: missing or not the session published with ${principal}'s key`);
+      if (sessions.length !== 1 || !(signers.sessionOf.get(principal) || new Set()).has(sessions[0])) errors.push(`${c.slice(0, 7)} ${subject}: Claude-Session: missing or not the session published with ${principal}'s key`);
     }
     return { errors, checked, skipped: range.length - checked };
   } finally { rmSync(dir, { recursive: true, force: true }); }

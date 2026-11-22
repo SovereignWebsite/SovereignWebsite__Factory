@@ -76,21 +76,63 @@ export function checkPaths(p, { base, head = 'HEAD', cwd = process.cwd() }) {
   for (const c of commits) {
     const agent = git('log', '-1', '--format=%(trailers:key=Agent,valueonly)', c).split('\n').map((s) => s.trim()).filter(Boolean)[0];
     const rule = agent && p.agents[agent];
-    if (!rule) { e.push(`${c.slice(0, 7)}: Agent ${agent || 'none'} is not in the policy`); continue; }
     const files = git('diff-tree', '--no-commit-id', '--name-only', '-r', '--root', c).split('\n').filter(Boolean);
-    for (const f of files)
+    // team/keys.json follows the keys rule (keysChange), whoever the agent is: an agent publishes its own key when it starts.
+    if (files.includes('team/keys.json')) {
+      const session = git('log', '-1', '--format=%(trailers:key=Claude-Session,valueonly)', c).split('\n').map((s) => s.trim()).filter(Boolean)[0];
+      const canRetireOthers = !!rule && rule.may_change.some((g) => glob(g, 'team/keys.json'));
+      for (const x of keysChange({ agent, session, before: show(git, `${c}^`, 'team/keys.json'), after: show(git, c, 'team/keys.json'), canRetireOthers }).errors) e.push(`${c.slice(0, 7)}: ${x}`);
+    }
+    const rest = files.filter((f) => f !== 'team/keys.json');
+    if (!rule) { if (rest.length || !agent) e.push(`${c.slice(0, 7)}: Agent ${agent || 'none'} is not in the policy`); continue; }
+    for (const f of rest)
       if (!rule.may_change.some((g) => glob(g, f))) e.push(`${c.slice(0, 7)}: ${agent} may not change ${f}`);
-    if (files.includes('team/keys.json') && ownKeyChanged(agent, show(git, `${c}^`, 'team/keys.json'), show(git, c, 'team/keys.json'))) e.push(`${c.slice(0, 7)}: ${agent} may not change its own key in team/keys.json (Dinis does)`);
   }
   return { errors: e, checked: commits.length };
 }
 
 const show = (git, rev, f) => { try { return git('show', `${rev}:${f}`); } catch { return '{}'; } };
 
-// True when the entries for this agent in team/keys.json differ between two versions of the file.
-export function ownKeyChanged(agent, before, after) {
-  const mine = (t) => { try { return JSON.stringify((JSON.parse(t).keys || []).filter((k) => k.agent === agent)); } catch { return 'unreadable'; } };
-  return mine(before) !== mine(after);
+// The keys rule (policy/abp.json keys_rule). What one commit, made by `agent` in `session`, may change in team/keys.json:
+//   - add exactly one entry: its own (agent and session as the commit's trailers), active, with a signing key, and only when
+//     no live entry already has that agent name (one live key per name; a second session of a role takes its own name);
+//   - retire its own entry (status to "retired", optionally adding "retired" and "retired_note"); an agent whose policy
+//     entry lists team/keys.json (a conductor) may also retire another agent's entry the same way;
+//   - nothing else: no entry removed, no key, name or session edited, no other agent's key added, the rest of the file unchanged.
+// Returns { errors, added }: added is the new entry, which build/check-signatures.mjs then verifies the commit against.
+const LIVE = (k) => k.status !== 'superseded' && k.status !== 'retired';
+const RETIRE_FIELDS = new Set(['status', 'retired', 'retired_note']);
+export function keysChange({ agent, session, before, after, canRetireOthers = false }) {
+  const parse = (t) => { try { const d = JSON.parse(t); return Array.isArray(d) ? { keys: d } : d; } catch { return null; } };
+  const b = parse(before) || { keys: [] }, a = parse(after);
+  if (!a) return { errors: ['team/keys.json is not valid JSON'], added: null };
+  const e = [], bk = b.keys || [], ak = a.keys || [];
+  const id = (k) => k.id || `${k.agent}#${k.signing_fingerprint || k.fingerprint}`;
+  const { keys: _b, ...bRest } = b, { keys: _a, ...aRest } = a;
+  if (JSON.stringify(bRest) !== JSON.stringify(aRest)) e.push('team/keys.json: only its keys may change');
+  const ids = ak.map(id);
+  if (new Set(ids).size !== ids.length) e.push('team/keys.json: two entries share an id');
+  const bm = new Map(bk.map((k) => [id(k), k])), am = new Map(ak.map((k) => [id(k), k]));
+  for (const [i, k] of bm) if (!am.has(i)) e.push(`team/keys.json: ${i} (${k.agent}) removed; entries are retired, never removed`);
+  for (const [i, k] of bm) {
+    const n = am.get(i);
+    if (!n || JSON.stringify(n) === JSON.stringify(k)) continue;
+    const keysOf = (o) => Object.keys(o).filter((x) => !RETIRE_FIELDS.has(x));
+    const same = keysOf(k).length === keysOf(n).length && keysOf(k).every((x) => JSON.stringify(k[x]) === JSON.stringify(n[x]));
+    const retire = same && LIVE(k) && n.status === 'retired';
+    if (!retire) e.push(`team/keys.json: ${i} (${k.agent}) changed; the only change allowed is retiring it`);
+    else if (k.agent !== agent && !canRetireOthers) e.push(`team/keys.json: ${agent} may not retire ${k.agent}'s key (its own, or a conductor's call)`);
+  }
+  const added = ak.filter((k) => !bm.has(id(k)));
+  if (added.length > 1) e.push(`team/keys.json: ${added.length} keys added; a commit adds at most one, its own`);
+  for (const k of added) {
+    if (k.agent !== agent) { e.push(`team/keys.json: adds a key for ${k.agent}; each agent publishes its own (Agent: ${agent || 'none'})`); continue; }
+    if (!session || k.session !== session) e.push(`team/keys.json: ${agent}'s new key names session ${k.session || 'none'}, the commit says ${session || 'none'}`);
+    if (k.status !== 'active') e.push(`team/keys.json: ${agent}'s new key must be active`);
+    if (!(k.bundle?.sign || k.public_key?.sign)) e.push(`team/keys.json: ${agent}'s new key has no signing key (bundle.sign)`);
+    if (bk.some((x) => x.agent === agent && LIVE(x))) e.push(`team/keys.json: ${agent} already has a live key; a second session of a role takes its own name (<role>.<label>.<account>@...)`);
+  }
+  return { errors: e, added: added.length === 1 && added[0].agent === agent ? added[0] : null };
 }
 
 export function needsDinis(p, files) {
