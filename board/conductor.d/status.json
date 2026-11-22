@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T00:53Z",
+  "updated": "2026-11-22T00:56Z",
   "state": "Streaming live at v0.1.7 (3eac181), kept by streaming.d; design.d and synthetic-users.d review the .d sites; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -27,14 +27,15 @@
     "Streaming: streaming.d named keeper by Dinis in its session (~22:52 UTC, 5be8259); d98d2d5, 5be8259, 3eac181 on Site__Tool__Streaming dev, live v0.1.7 (checked in the repository)",
     "synthetic-users.d's key on branch work/conductor.d-synthetic-users-d-key (5dd586a), signing line checked",
     "synthetic-users.d's key pushed to dev (8006696) at Dinis's word",
-    "library.d started (https://claude.ai/code/session_015gaHdecGUXfFRDs8DmeUFN) from librarian.b's brief (Site__Agents__Library site/library/answers/2026-11-22__brief-for-library.d.md); scope: only what librarian.b has not started (the library itself stays librarian.b's, pushed 2349199); budget in guidance and observation mode; no schedule; no repository to commit to yet"
+    "library.d started (https://claude.ai/code/session_015gaHdecGUXfFRDs8DmeUFN) from librarian.b's brief (Site__Agents__Library site/library/answers/2026-11-22__brief-for-library.d.md); scope: only what librarian.b has not started (the library itself stays librarian.b's, pushed 2349199); budget in guidance and observation mode; no schedule; no repository to commit to yet",
+    "library.d's key on branch work/conductor.d-library-d-key (dee995a), signing line checked; its pieces (a) to (d) claimed"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
-    "streaming.d next, at Dinis's word: UX first (compact list, status tabs, settings off the main screen); vault later",
-    "library.d's key to dev when it arrives (Dinis's word needed); claim each piece it takes"
+    "streaming.d next, at Dinis's word: UX first (compact list, status tabs, settings off the main screen); vault later"
   ],
   "asks": [
+    "Dinis: merge work/conductor.d-library-d-key (library.d's public key), or tell me to push it; and, in library.d's session (https://claude.ai/code/session_015gaHdecGUXfFRDs8DmeUFN), allow the step that writes its signing half to a 0600 file (its permission check refused it) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: in synthetic-users.d's session, yes to its role in Site__Agents__Design site/policy/abp.json - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: the first work for sites.d and hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
