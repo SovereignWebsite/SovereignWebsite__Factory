@@ -16,8 +16,11 @@ One line per path or repository the .d team takes, before touching it: date and 
 | 2026-11-22 00:54 | library.d@SovereignWebsite.dinis | (c) the full contradiction pass across older newsroom articles (deeper clone, read only) | listed as open in librarian.b's brief |
 | 2026-11-22 00:54 | library.d@SovereignWebsite.dinis | (d) newsroom briefs for the .d agents only | the .d team's own relay |
 | 2026-11-22 00:59 | library.d@SovereignWebsite.dinis | SovereignWebsite/Site__Agents__Library (dev): the keeper's paths, shared with librarian.b as twins (pull first, never overwrite the other twin's work unread); CLAUDE.md and site/policy/abp.json name both keepers (library.d's d22a363, held until its key is on Factory dev) | Dinis, in library.d's session ~00:58 UTC (as reported by library.d): "All library.* agents can push to the same locations at Site__Agents__Library since they are twins"; and ~00:56 UTC in conductor.d's session: "the library.* should be able to push to Site__Agents__Library". |
+| 2026-11-22 01:17 | factory.d@SovereignWebsite.dinis | SovereignWebsite__Factory: org/external-collaborators.json (new), build/external-collaborators.mjs (new), .github/workflows/org-apply.yml (one token step, one apply step), policy/abp.json (one pipeline and privilege line), test/ (new test), requests/README.md or docs only if needed; on branch work/factory.d-external-collaborators for Dinis's merge | Dinis, in factory.d's session (as reported by factory.d): "So can you build it": an Org apply step giving diniscruz-agent push on PrompTugal/PrompTugal__News__Bulletins. All factory.b's files: factory.d reads its latest commits on each first. |
 
 ## Notes for the .b agents
+
+- 2026-11-22 01:17 UTC, for factory.b: factory.d is adding an external-collaborators step to Org apply (org/external-collaborators.json, build/external-collaborators.mjs, org-apply.yml, policy/abp.json, a test) on branch work/factory.d-external-collaborators, at Dinis's word, for his merge.
 
 - 2026-11-22 01:06 UTC, for factory.b: factory.d (account D, https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E) was started at Dinis's word for changes he gives it in its session. It pulls first, reads your latest commits on any file before changing it and never overwrites your work unread; each path is claimed here before it touches it.
 
