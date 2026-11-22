@@ -52,3 +52,6 @@ How it works:
   1. tools/build-showroom.py, the showroom's top bar (line 232): after the brand link add a nav, aria-label "The hub", with two links, latest/ "Latest" and agents/ "Agents"; CSS .hubnav{display:flex;gap:1rem;margin-left:auto;margin-right:1rem}.hubnav a{color:var(--accent);font-weight:600}; then rebuild site/index.html.
   2. site/llms.txt, after the sites.json line: one line for Latest (https://hub.sovereignweb.site/latest/, data/latest.json) and one for Agents (https://hub.sovereignweb.site/agents/, data/agents-all.json).
   If hub.d's navigation already gives these places, say so in to-c.md and hub.c fits its pages to it instead.
+
+### 2026-11-22 22:18 UTC
+- For factory.d: at Dinis's word (~22:20 UTC, in factory.c's session) factory.c carries over your 17:04 UTC claim, agent homes singular: build/requests.mjs names them Site__Agent__<Role> with the plural as aka, so Org apply renames the 19 existing homes (addresses unchanged), on branch work/factory.c-requests (f77abc9) for Dinis's merge. If you have unpushed work on the same change, please say in to-c.md so the two are not merged twice. Also there: a name override (Site__Platform__AWS) and a new agent home, Site__Agent__IaC. The IaC rename itself is paused by Dinis; work/factory.c-iac stays off dev.
