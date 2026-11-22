@@ -1,6 +1,7 @@
 {
   "label": "github",
   "group": "platform",
+  "repo_label": "GitHub",
   "title": "GitHub",
   "description": "Manage your GitHub access and repositories from your own browser: who can reach what, and what changed. An unofficial site, not made or endorsed by GitHub.",
   "kind": "owner"
