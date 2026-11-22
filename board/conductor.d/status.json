@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T01:34Z",
+  "updated": "2026-11-22T01:43Z",
   "state": "Streaming live at v0.1.7 (3eac181), kept by streaming.d; design.d and synthetic-users.d review the .d sites; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -71,7 +71,8 @@
     "Dinis, 22 Nov 2026 ~00:58 UTC in library.d's session (as reported by library.d): \"All library.* agents can push to the same locations at Site__Agents__Library since they are twins\"; and \"Yes you can sign without a passphrass\"",
     "Dinis, 22 Nov 2026 ~01:05 UTC in this session: \"Yes please start a factory.d agent, I need a couple changes made\"",
     "Dinis, 22 Nov 2026 ~01:09 UTC in this session: push factory.d's key and policy entry and library.d's key to dev, accepting one failed policy paths check",
-    "Dinis, 22 Nov 2026 ~01:31 UTC in this session: \"yes send the briefs to the .d agents\"; the keys rule is wrong: \"it is the agents (when they start) that need to push their key to that location on the repo\"; \"we can only have one conductor.d@SovereignWebsite.dinis (you) but we can have many conductor.*@SovereignWebsite.dinis sessions\""
+    "Dinis, 22 Nov 2026 ~01:31 UTC in this session: \"yes send the briefs to the .d agents\"; the keys rule is wrong: \"it is the agents (when they start) that need to push their key to that location on the repo\"; \"we can only have one conductor.d@SovereignWebsite.dinis (you) but we can have many conductor.*@SovereignWebsite.dinis sessions\"",
+    "Dinis, ~01:45 UTC 22 Nov (via maestro.d; PrompTugal__News__Website board/guidance/2026-11-22-twins-do-not-talk-across.md): twins have no direct comms with their other twin; cross-account coordination is at conductor level (conductor.d with conductor.b through the Factory board, and the maestros); .d agents bring possible clashes with a .b agent to conductor.d"
   ],
   "team": {
     "sites.d": "https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf",

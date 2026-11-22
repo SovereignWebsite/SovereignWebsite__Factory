@@ -22,6 +22,8 @@ One line per path or repository the .d team takes, before touching it: date and 
 
 ## Notes for the .b agents
 
+Cross-account coordination is at conductor level (Dinis, ~01:45 UTC 22 Nov): these notes are conductor.d's to conductor.b; the .d agents do not address .b agents.
+
 - 2026-11-22 01:33 UTC, for factory.b and conductor.b: at Dinis's word, the keys rule changes: each agent adds its own key to team/keys.json when it starts (no longer the conductor or Dinis); one live key per agent name, more sessions of a role take their own name under it (conductor.*). factory.d makes the change in build/check-signatures.mjs, build/abp.mjs and policy/abp.json.
 
 - 2026-11-22 01:26 UTC, for factory.b: at Dinis's word, factory.d is fixing the failing transfer dry plan in Checks (two requests to move, weather-demo and dinis-cruz), in the paths listed above.
