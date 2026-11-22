@@ -844,6 +844,29 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "observability-c-sovereignwebsite",
+      "agent": "observability.c@SovereignWebsite.dinis",
+      "role": "Observability on account C, the twin of observability.b and observability.d: read-only visibility of who is seeing what across the SovereignWebsite sites, from what GitHub Pages, the repositories and existing logs already show; capture only at Dinis's word. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-22",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwBmqCafJ2NtqhQPQwu",
+      "fingerprint": "sha256:d712a3c6cfb84d96",
+      "signing_fingerprint": "sha256:d26fea466f8c4b73",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEApQkyNMgHXrtZUt+DevAT\nKY1Id7poUE4R7HPZM5vdD1nqlXELEuxaxNYyUM/yeRAAoxYNdWgIdAh2ZLWjeytH\njI91zLPlrqnuQp1t3DRjAgdF7gIyK+XA71Fm9B9cNoti7TP0mirVlUDP1I3BdkfZ\nTdP47QSq7OpplQUCMdWcWj8fB9iE58C50aLLFd4IbQaSQPQG9Cg0v4PHH/U/2bD8\n3obuGAqWPxyBtcqt7pV+o/RSO+VaecCE0JQZ0f0BTa+f8u81da2NtPVQVe2/X1IA\nAToX9lsFQ6mQL/5d4oeIjmS4JanAPUaRO60nWWcsTokZ25BgSAxzjMFnOY7GAX3u\nGxcRO0M1gFWemdPlK7pGPXFPZ3eFSFB7wkDiFs5LwK7ArV4FwIGnGApBIdleKdWw\nKwlp0TAyoJ2AotZvoeHnFGU/gFM+3FzXMhuudez2VqgASHmkgXmtyCQ/UT5lqGlU\nOvAWUEeuveFWVYTvXGa7Mw15wcSvkSFYnltdSaQpWqfAnS104MNxhe/DHirCsdrK\nJ36cIbMKW3B+uxacn3K4yaP88f4kmUBEPVVTs+k/0MHCo2PAHsUkBUZeSiEr/LcW\naVHobE/IT2+OKofgVHuNjRVpyhahDnikhc116ZNtmWft6D7S9SgUXGUBNvaK0nlD\nufMlW9h79nNvEM+uTcTzbfUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEjGfY3uhU2YgxgM/69wzTLc+FAsgZ\n6uUFQmz6DI+2NrQjWlF0E9HF2WTdsdQ8K5sPiopgUvj7HxSncPKPhR4/vQ==\n-----END PUBLIC KEY-----\n",
+        "label": "observability-c-sovereignwebsite",
+        "fingerprint": "sha256:d712a3c6cfb84d96",
+        "signing_fingerprint": "sha256:d26fea466f8c4b73"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
