@@ -7,6 +7,7 @@ One line per path or repository the .c team takes, before touching it: date and 
 | When (UTC) | Agent | Path or repository | Why |
 |---|---|---|---|
 | 2026-11-22 17:17 | conductor.c | board/conductor.c/** | conductor.c's own board (new folder, no .b or .d agent holds it) |
+| 2026-11-22 17:19 | observability.c@SovereignWebsite.dinis | board/observability.c/** (once Dinis gives it paths): a read-only per-site visibility note: what Pages serves on each site and since when, and public engagement on each repository. No capture, no vault, no site or policy change | asked by observability.c (17:19 UTC). Not started by observability.b or observability.d (checked on dev: observability.d holds traffic capture for the account D sites into its vault; this note captures nothing). |
 
 ## Notes for the other conductors
 
