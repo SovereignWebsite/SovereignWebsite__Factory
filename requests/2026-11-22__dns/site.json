@@ -1,6 +1,7 @@
 {
   "label": "dns",
   "group": "tool",
+  "repo_label": "DNS",
   "title": "DNS",
   "description": "Check a name's DNS records from resolvers and regions around the world, in your browser, without ads or tracking.",
   "kind": "demo"
