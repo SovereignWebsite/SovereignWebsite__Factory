@@ -982,6 +982,52 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "wordpress-d-sovereignwebsite",
+      "agent": "wordpress.d@SovereignWebsite.dinis",
+      "role": "Keeper of the WordPress tool site (Site__Tool__Wordpress, wordpress.tool.sovereignweb.site), started by sites.d at Dinis Cruz's word. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-22",
+      "status": "active",
+      "session": "https://claude.ai/code/session_015gaHda1bnbqASo1ed8VUdY",
+      "fingerprint": "sha256:11b667f101c87a85",
+      "signing_fingerprint": "sha256:fe0264a0dcd09093",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAubf7ZNw0I4cblYi+m3e2\njEAxBZHNSjUlDJSqyXs1EixcmIWc+H63RYojc7VzhEQ6LVLQuVdE4YQCAJCiOTfZ\niV/VBnA+rkRsnDMD1Fa5VDp+ZkSc8IgdcytvISL2RxaIr4/tRmPQ1tFBeThZrbJJ\n9s2AW9xAs3958WAK8qmbieRA2mc7O7p7cCeOWDs0ALT7eNq0ezKwgmShjUxzGSlW\nvLk8UvbG8xCxPrRNHNKfieEOUM94LN/V4fFNwxBO3X6DfSYY9oUFqzCi/3IdW+Ft\ntrZiQDEkqdC2Ga0i8NiRPz39Tj4FgkA4WzCIyHZ9L6CFF0Z/Y/+rlrlKqXR/x2ik\nKE9tK4u9+3p69NBLGL8QNmLcgtW57dY8iqU98czZ4UYHWJvl6NukzucR9bo/n9Kc\nVIBgyWnzcpEdthHGK2d1hmgvWCFHedXOJ8BMum32WG2vZrE+FybxQQa2vySa3nkq\n9RaI8FR/YOSB07R8kF0Nwu+iv3meisbfQnBVU9nwBD4fOVZk1SIp0uImriImaYbo\nTDl8gWuxMpqoEx56zY1PeY11qPgcRXqKGASNkNgvNqughgOHR5pMqTve+auryfZv\nhf3AqEXvD/MWKXChaJ3BwcJOkLNm6cmmjwvOO0k0p1pdG772HToo5Yt/7T4eKmUj\noFtsDYyxJCxO1GPqoY5hs6kCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEIC3Z0tubK/WJ8M296eTfiOHHLguG\nu6phKj+/CjxR3YI34JrsO/sHVwO/Yb9Fmf5CcMGolhm3ZTpz+vIrq+rO3g==\n-----END PUBLIC KEY-----\n",
+        "label": "wordpress-d-sovereignwebsite",
+        "fingerprint": "sha256:11b667f101c87a85",
+        "signing_fingerprint": "sha256:fe0264a0dcd09093"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "donna-freed-d-sovereignwebsite",
+      "agent": "donna-freed.d@SovereignWebsite.dinis",
+      "role": "Keeper of the author site for Donna Freed (Site__Author__Donna-Freed, donna-freed.author.sovereignweb.site), started by sites.d at Dinis Cruz's word. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-22",
+      "status": "active",
+      "session": "https://claude.ai/code/session_015gaHdeh6Sh45Ef2fZFAhLi",
+      "fingerprint": "sha256:3291e2c1624fa5c8",
+      "signing_fingerprint": "sha256:fb7a98b5717d05dd",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoep5QO3tkVh0HFXiXxKd\nA6QUDOOaypUOnTF+n4HTsM8dipiPfJtqLJ36MGrgg044gBMz+UjCSQTuWRPQ28gV\n1kIFZdgsglGx66bX5WVodfwirg6IvA6OWUCkIaYkq7M5U70nCt2xc1nfL9CJ+5GE\nHi2eR2n5Q0PSH86bU0L3ATqXNq08dDL5SYqMJQ7PYxYAFo0tc9WiXdqES6SmBess\n3YP3aKQmbhOSI3VN89TAfk0msdo3AetFQhL1Cg2FPEFem4H5iJ02CnVq7QIzuZ9M\n7Vs9DfKfRAbWrdGD7ut/+GqBZ3p8fVyIMCOIBFTtM9Oo4RszZZL8qm6DmnUAP4mm\n1vYm56kdLBZ3SZ5Gi2NlF20YawvrZdC24ZucQa2Iq028KX7CSgW82lRmathz39Sj\nezo+aRfkxGBw3jvW78gPnzzdLptPEH02RQR5czvTKpfi9h1/l9PsPoasYrKJl+Y1\nfMZhL4se+8z+QoWPiTR8Q/9OecnEc9tuBYJxcn/j7tlmGk254eog3tOzHfyN2LKy\nfq4jnjjc9rw6P8aUHSATEpuYZlaNwBpyAATXkQm0S3DHRpqc/Ti/oSOQ3hOE/waJ\no6rOyWDX4V17GlnsfcNLOUjm7lSzUF7QZ1JzJHqjGz2SIqZCIDcN4xnO5r6402kU\nEtn0cbQCInwMjUjd5/Mtm2UCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEsvenoTTrNmFOZLgJEyyWAVUEWwXn\nC6HDBVlUF5eX7CqgL5d/zPDRVHMceHwtHO7u2tbvTBHfOc8xkwowJJUFmQ==\n-----END PUBLIC KEY-----\n",
+        "label": "donna-freed-d-sovereignwebsite",
+        "fingerprint": "sha256:3291e2c1624fa5c8",
+        "signing_fingerprint": "sha256:fb7a98b5717d05dd"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
