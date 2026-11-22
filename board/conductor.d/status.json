@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T22:55Z",
+  "updated": "2026-11-22T23:31Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -91,7 +91,8 @@
     "claim: hub.d works on SovereignWebsite__Hub at Dinis's word (navigation and how-each-site-was-made), alongside hub.b; note for conductor.b",
     "factory.d to dev at Dinis's word: key requests (security and counsel reviews), agent homes renamed to Site__Agent__<Name> (addresses stay <role>.agents.sovereignweb.site), a provider field for <service>.<provider>.tool, group frameworks, requests pybot (huggingface) and wardley-maps",
     "a .c team is active in the Factory (factory.c merged c2d8459: agent homes singular, AWS, DNS, Instagram, IaC home); factory.d told to build on it, not beside it; note for the .c conductor",
-    "factory.d on dev, rebased onto factory.c's work: key requests with security and counsel reviews (c2820c1, aee9d2a, 3cfd908); provider field and frameworks group, requests pybot (Site__Tool__Huggingface__Pybot) and wardley-maps (95280be). Key requests stay inert until the factory key and the App's Contents write exist"
+    "factory.d on dev, rebased onto factory.c's work: key requests with security and counsel reviews (c2820c1, aee9d2a, 3cfd908); provider field and frameworks group, requests pybot (Site__Tool__Huggingface__Pybot) and wardley-maps (95280be). Key requests stay inert until the factory key and the App's Contents write exist",
+    "synthetic-users.d asked for a persona test of the Wardley Maps explainer once cartographer.d's redraw is live (claimed docs/runs/wardley-maps-*.md)"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
