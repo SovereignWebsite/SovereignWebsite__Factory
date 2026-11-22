@@ -733,6 +733,29 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "factory-d-sovereignwebsite",
+      "agent": "factory.d@SovereignWebsite.dinis",
+      "role": "The account D twin of factory.b: the Factory changes Dinis gives it in its own session (pipeline, policy, organisation, requests, DNS), reading factory.b's work first and never overwriting it unread. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export, sent to conductor.d. Only the public half is here.",
+      "created": "2026-11-22",
+      "status": "active",
+      "session": "https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
+      "fingerprint": "sha256:a57016d7ebfb9e8e",
+      "signing_fingerprint": "sha256:99a552597f7bccff",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAjtiwCD2ibNaPyPTWqpyG\nt9yeVkepdYJWWu2tWfkBSr+NIpalGJlyj9Pp9gFDjWYabZzECubiqbaG6KjYZZ03\nlnwf+CPgOk5liHMPT4Q89vQoALKqdcRaEHvSru8OHaBZXSdtRpnDWQn0iECyZXFJ\nI1QMmPICL1PjYby6U9GxAju7xw1qslFx8M4jtxKEAd7AM94tFHgGRqdE3zyY3fLH\ny/u+3154ejWEToc1TZQOesnWiJkYWRal8702Yt5ZtlW2qwx8HsW6gffSL29M8kad\n3Kq57KpuINd8x/H82yd4mNuV1+TWjK8l8dBRSXFB5DdDeegUP8OqJZRtreQJ8YxR\ndakMChjvNORdqErmJz0L3ReypjU9Us0CkPPVlXU0nEoH3tNBPbZ4t2iqKJopUNqx\npe3MGV3yRib/zNpIDIhutrKkr9BYVVpIPjwO6X/349nq8JlIcUQqxyfoCxESG10M\n50CNWHM9TipzlHqCcExf/7FO4+7CnGneQFBJkEpwJKKylVZLjBxCvmoCyIeBYNQh\naTd/4OadPIPFc1UbNLefm3sE7cBtCJ4YXd4Icr0QpC3c8gHV/KRZby2Ukmwz9z13\nK1ShZpwHcC235OwM3gs+UWdp/rTSN6mASKNm5nICR1g1vWSZ85nZ88MT4g4L04Ka\na3UAT7AFpj3XkByiwXl/dNUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEOcau5+HVNOC3/yGdmplF0gPJVRPJ\nNOG2kvQZe7cbDgN5mPq2W6kNkdHmLP1hZc4wEH2uZ3IVmaV2LioT7XMO9Q==\n-----END PUBLIC KEY-----\n",
+        "label": "factory-d-sovereignwebsite",
+        "fingerprint": "sha256:a57016d7ebfb9e8e",
+        "signing_fingerprint": "sha256:99a552597f7bccff"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
