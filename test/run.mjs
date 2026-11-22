@@ -394,4 +394,9 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   assert.ok(X.validateList({ grants: [{ ...g, permission: 'admin' }] }).length && X.validateList({ grants: [{ ...g, source: '' }] }).length, 'push only, with a source');
   const wf = readFileSync('.github/workflows/org-apply.yml', 'utf8'); const owners = [...new Set(list.grants.map((x) => x.repository.split('/')[0]))];
   for (const o of owners) assert.ok(wf.includes(`owner: ${o}`) && wf.includes(`external-collaborators.mjs apply ${o}`), `Org apply mints a token and applies for ${o}`); }
+{ const { spawnSync } = await import('node:child_process'); const { mkdtempSync } = await import('node:fs'); const { tmpdir } = await import('node:os'); const T = await import('../build/transfer-plan.mjs'); const { load: loadReq } = await import('../build/requests.mjs');
+  const todo = T.pending(loadReq('requests').requests); for (const r of todo) assert.deepEqual(checkActions(p, T.planFor(r)), [], `the move ${r.folder} is allowed by the policy`);
+  const out = `${mkdtempSync(`${tmpdir()}/tp-`)}/plan.json`, run = spawnSync(process.execPath, ['build/transfer-plan.mjs', out], { encoding: 'utf8' });
+  assert.equal(run.status, 0, `the dry move plan passes: ${run.stderr}`); const tp = JSON.parse(readFileSync(out, 'utf8'));
+  assert.ok(tp.actions.length <= 1, 'one move per run'); if (todo.length > 1) assert.equal(tp.actions.length, 0, 'several pending and none named: nothing moves'); }
 console.log('OK (tests)');

@@ -289,7 +289,8 @@
           "AgentiCCells__Site__Transfer-Test",
           "AgentiCCells__Site__Weather-Demo",
           "AgentiCCells__Site__IPMA-Data",
-          "AgentiCCells__Site__London-Billboard"
+          "AgentiCCells__Site__London-Billboard",
+          "AgentiCCells__Site__Dinis-Cruz"
         ],
         "controlled_owners": [
           "AgentiCCells",
@@ -320,7 +321,9 @@
       "note": "The plan job is read-only (the factory App on AgentiCCells, read). Only the apply job, in the transfer environment, holds the user token, and it makes one call: POST /repos/AgentiCCells/<repo>/transfer with new_owner SovereignWebsite and new_name Site__<label>. Without TRANSFER_USER_TOKEN it prints that call for Dinis to make. The repository list is explicit; adding one is a policy change Dinis merges. Org apply keeps repo.transfer refused.",
       "controlled_source": "Dinis, 20 Nov 2026 ~10:20 UTC in the factory.b session: \"you can only do transfers for domains that we control. So you can never do a transfer for a domain outside of our control. That is going to be a separate flow\". A move from or to an owner or domain we do not control is refused here; it will be its own pipeline, with a shorter-lived token.",
       "after_the_move": "migration.b@SovereignWebsite.dinis commits the moved-to-SovereignWebsite update in each moved repository, under that repository's own rules (Dinis, 20 Nov 2026 ~10:20 UTC in the factory.b session).",
-      "reviewer_source": "Dinis, 20 Nov 2026 ~12:25 UTC in the factory.b session: \"I didn't check the required reviewer so let's see if this works end to end automatically\". So a real move runs once its second commit (apply \"real\") lands on dev; the dry run first, the explicit repository list and the controlled owners and domains still apply."
+      "reviewer_source": "Dinis, 20 Nov 2026 ~12:25 UTC in the factory.b session: \"I didn't check the required reviewer so let's see if this works end to end automatically\". So a real move runs once its second commit (apply \"real\") lands on dev; the dry run first, the explicit repository list and the controlled owners and domains still apply.",
+      "dinis_cruz_source": "Dinis, 21 Nov 2026 00:20 UTC in conductor.b@AgentiCCells.dinis's session: \"yes, move dinis-cruz to SovereignWebsite\" (requests/2026-11-21__dinis-cruz/NOTES.md); added to the list at his word in factory.d's session, 22 Nov 2026 ~03:25 UTC: \"Add it\".",
+      "several_pending_note": "With several moves pending and none named, the plan checks each against this policy and plans no action: nothing moves until a run names one request (Transfer apply by hand). One move per run stays."
     }
   },
   "privileges": [
