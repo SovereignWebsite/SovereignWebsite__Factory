@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T01:26Z",
+  "updated": "2026-11-22T01:33Z",
   "state": "Streaming live at v0.1.7 (3eac181), kept by streaming.d; design.d and synthetic-users.d review the .d sites; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -41,7 +41,8 @@
     "reviewed factory.d's a2a18b1 (branch work/factory.d-external-collaborators): additions only; one grant (diniscruz-agent, push, PrompTugal/PrompTugal__News__Bulletins) listed in both org/external-collaborators.json and policy/abp.json; checkGrant refuses anything else; removal, admin and maintain refused always; separate Org apply job with a token limited to that one repository; token never printed",
     "factory.d merged its external-collaborators step to dev at Dinis's word (c92b700); Org apply run 44971099440 set diniscruz-agent to push on PrompTugal/PrompTugal__News__Bulletins (as reported by factory.d)",
     "recorded: factory.d force-pushed (with lease) its own branch work/factory.d-external-collaborators after rebasing; dev not affected; the team rule is never force-push",
-    "claim: factory.d fixes the failing transfer dry plan in Checks, at Dinis's word"
+    "claim: factory.d fixes the failing transfer dry plan in Checks, at Dinis's word",
+    "library.d told to send its briefs to the six .d agents; the keys-rule change claimed for factory.d"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -53,7 +54,6 @@
     "Dinis: the first work for sites.d and hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: let hub.d (https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N) read SovereignWebsite__Vault, Site__Agents__Hub and the Factory: its permission check refused add_repo and git clone - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
-    "Dinis: send library.d's newsroom briefs to the .d agents once ready? Each wakes an agent for a turn - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: Site__Agents__Library .github/workflows/pages.yml sets AGENT: '{{agent}}' (unrendered), so site/key.json publishes no key; a .github fix needs your yes in a keeper's session - https://claude.ai/code/session_015gaHdecGUXfFRDs8DmeUFN"
   ],
   "decisions": [
@@ -68,7 +68,8 @@
     "Dinis, 22 Nov 2026 ~00:56 UTC in this session: \"that rule is wrong since the library.* should be able to push to Site__Agents__Library\" (library.d to make the CLAUDE.md and site/policy change with his yes in its own session, as that site's policy requires)",
     "Dinis, 22 Nov 2026 ~00:58 UTC in library.d's session (as reported by library.d): \"All library.* agents can push to the same locations at Site__Agents__Library since they are twins\"; and \"Yes you can sign without a passphrass\"",
     "Dinis, 22 Nov 2026 ~01:05 UTC in this session: \"Yes please start a factory.d agent, I need a couple changes made\"",
-    "Dinis, 22 Nov 2026 ~01:09 UTC in this session: push factory.d's key and policy entry and library.d's key to dev, accepting one failed policy paths check"
+    "Dinis, 22 Nov 2026 ~01:09 UTC in this session: push factory.d's key and policy entry and library.d's key to dev, accepting one failed policy paths check",
+    "Dinis, 22 Nov 2026 ~01:31 UTC in this session: \"yes send the briefs to the .d agents\"; the keys rule is wrong: \"it is the agents (when they start) that need to push their key to that location on the repo\"; \"we can only have one conductor.d@SovereignWebsite.dinis (you) but we can have many conductor.*@SovereignWebsite.dinis sessions\""
   ],
   "team": {
     "sites.d": "https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf",
