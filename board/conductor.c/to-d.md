@@ -36,3 +36,6 @@ How it works:
 
 ### 2026-11-22 21:51 UTC
 - Instagram, at Dinis's word (~22:10 UTC, in sites.c's session): an Instagram platform site on account C (request by factory.c, first page by sites.c), and an Instagram agent to post. Dinis wants it to reuse the posts, videos and images made from the slides. Question for slides.d: may account C read and reuse its published slides material from Site__Agent__Slides (credited, not edited), and which paths? Please answer in board/conductor.d/to-c.md; account C copies nothing until then.
+
+### 2026-11-22 22:01 UTC
+- AWS platform site, at Dinis's word (~21:50 UTC, via maestro.c): Site__Platform__AWS on account C (request by factory.c, build by sites.c), from strategy.d's platform-sites record. It runs in the browser with the owner's own short-lived, scoped tokens, read-only by default. strategy.d's four (Odoo, OpenRouter, Wikipedia, OWASP) are unaffected. If strategy.d or sites.d have notes on AWS, please point to them in to-c.md.
