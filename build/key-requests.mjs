@@ -7,13 +7,16 @@
 // every time you do here, you should also do a security check and role-based security checks".
 //
 // keys/<date>__<id>/request.json  { agent, account, session, bundle: { sign }, targets: ["Owner/Repo"], source }
-// keys/<date>__<id>/review.json   { reviewer, verdict: "pass" | "fail", request_commit, checks: [...], notes }
+// keys/<date>__<id>/review.<role>.json, one per required review (policy limits.reviews: security and counsel):
+//                                 { reviewer, verdict: "pass" | "fail" | "needs-a-person", request_commit,
+//                                   checks: [...], actions: [...what the reviewer did or asks, or "none"], notes }
 //
 // Rules (policy/abp.json pipelines.key-apply), all checked here and again before anything is written:
 //   - the request is well formed: an agent name, a claude.ai session, a public signing key that parses, targets on
 //     the policy's list, the requester's quote of Dinis or the agent's conductor as source;
 //   - roles: request.json last changed by a commit signed by an agent whose role is in requester_roles (factory);
-//     review.json by one whose role is in reviewer_roles (security); never the same agent or the same role;
+//     each review.<role>.json by an agent of that role (security, counsel); the requester and every reviewer are
+//     different agents in different roles; "needs-a-person" stops it until Dinis (or a lawyer) answers in a new review;
 //   - the review names the exact commit of the request it reviewed, and the request has not changed since;
 //   - verdict "pass"; the target has no live key under that agent name; the commit only adds that one entry.
 // Usage: node build/key-requests.mjs check            offline: every request and review well formed and signed
@@ -62,12 +65,13 @@ export function validateRequest(req, folder, limits) {
   return e;
 }
 
-export function validateReview(rev, folder) {
-  const e = [], at = (m) => e.push(`${folder}: review: ${m}`);
+export function validateReview(rev, folder, role = '') {
+  const e = [], at = (m) => e.push(`${folder}: review.${role}: ${m}`);
   if (!AGENT.test(rev.reviewer || '')) at('reviewer is an agent name');
-  if (!['pass', 'fail'].includes(rev.verdict)) at('verdict is "pass" or "fail"');
+  if (!['pass', 'fail', 'needs-a-person'].includes(rev.verdict)) at('verdict is "pass", "fail" or "needs-a-person"');
   if (!/^[0-9a-f]{40}$/.test(rev.request_commit || '')) at('request_commit is the full commit of the request it reviewed');
   if (!Array.isArray(rev.checks) || !rev.checks.length) at('checks: what was checked, one line each');
+  if (!Array.isArray(rev.actions) || !rev.actions.length) at('actions: what the reviewer did or asks, one line each, or ["none"]');
   return e;
 }
 
@@ -85,7 +89,7 @@ export function provenance(cwd, file) {
 export function checkRequest({ cwd = process.cwd(), r, policy = loadPolicy() }) {
   const limits = policy.pipelines?.[PIPELINE]?.limits || {};
   const errors = [];
-  const rf = join(r.dir, 'request.json'), vf = join(r.dir, 'review.json');
+  const rf = join(r.dir, 'request.json');
   if (!existsSync(rf)) return { errors: [`${r.folder}: no request.json`], ready: false };
   let req; try { req = read(rf); } catch { return { errors: [`${r.folder}: request.json is not valid JSON`], ready: false }; }
   errors.push(...validateRequest(req, r.folder, limits));
@@ -93,25 +97,37 @@ export function checkRequest({ cwd = process.cwd(), r, policy = loadPolicy() }) 
   if (pr.error) return { errors: [...errors, pr.error], ready: false, req };
   if (!pr.signed) errors.push(`${r.folder}: request.json's commit ${pr.commit.slice(0, 7)} is not signed by a published key: ${pr.errors.join('; ')}`);
   if (!(limits.requester_roles || []).includes(roleOf(pr.agent))) errors.push(`${r.folder}: requested by ${pr.agent}; only roles ${(limits.requester_roles || []).join(', ')} may request a key`);
-  if (!existsSync(vf)) return { errors, ready: false, req, request_commit: pr.commit };
-  let rev; try { rev = read(vf); } catch { return { errors: [...errors, `${r.folder}: review.json is not valid JSON`], ready: false, req }; }
-  errors.push(...validateReview(rev, r.folder));
-  const pv = provenance(cwd, vf);
-  if (pv.error) return { errors: [...errors, pv.error], ready: false, req };
-  if (!pv.signed) errors.push(`${r.folder}: review.json's commit ${pv.commit.slice(0, 7)} is not signed by a published key: ${pv.errors.join('; ')}`);
-  if (pv.agent !== rev.reviewer) errors.push(`${r.folder}: review.json names ${rev.reviewer} but was committed by ${pv.agent}`);
-  if (!(limits.reviewer_roles || []).includes(roleOf(pv.agent))) errors.push(`${r.folder}: reviewed by ${pv.agent}; only roles ${(limits.reviewer_roles || []).join(', ')} may review a key request`);
-  if (pv.agent === pr.agent || roleOf(pv.agent) === roleOf(pr.agent)) errors.push(`${r.folder}: the reviewer and the requester must be different agents in different roles`);
-  if (rev.request_commit !== pr.commit) errors.push(`${r.folder}: the review is of ${String(rev.request_commit).slice(0, 7)}, but request.json was last changed in ${pr.commit.slice(0, 7)}: review it again`);
-  return { errors, ready: !errors.length && rev.verdict === 'pass', req, rev, request_commit: pr.commit, review_commit: pv.commit };
+  // Every required review, each by its own role; requester and reviewers all different agents in different roles.
+  const reviews = [], agents = [pr.agent], roles = [roleOf(pr.agent)];
+  let complete = true;
+  for (const role of limits.reviews || []) {
+    const vf = join(r.dir, `review.${role}.json`);
+    if (!existsSync(vf)) { complete = false; continue; }
+    let rev; try { rev = read(vf); } catch { errors.push(`${r.folder}: review.${role}.json is not valid JSON`); continue; }
+    errors.push(...validateReview(rev, r.folder, role));
+    const pv = provenance(cwd, vf);
+    if (pv.error) { errors.push(pv.error); continue; }
+    if (!pv.signed) errors.push(`${r.folder}: review.${role}.json's commit ${pv.commit.slice(0, 7)} is not signed by a published key: ${pv.errors.join('; ')}`);
+    if (pv.agent !== rev.reviewer) errors.push(`${r.folder}: review.${role}.json names ${rev.reviewer} but was committed by ${pv.agent}`);
+    if (roleOf(pv.agent) !== role) errors.push(`${r.folder}: review.${role}.json committed by ${pv.agent}; only the ${role} role may give it`);
+    if (agents.includes(pv.agent) || roles.includes(roleOf(pv.agent))) errors.push(`${r.folder}: ${pv.agent} already acts in this request; the requester and each reviewer must be different agents in different roles`);
+    agents.push(pv.agent); roles.push(roleOf(pv.agent));
+    if (rev.request_commit !== pr.commit) errors.push(`${r.folder}: the ${role} review is of ${String(rev.request_commit).slice(0, 7)}, but request.json was last changed in ${pr.commit.slice(0, 7)}: review it again`);
+    reviews.push({ role, ...rev, commit: pv.commit });
+  }
+  const ready = !errors.length && complete && reviews.length === (limits.reviews || []).length && reviews.every((v) => v.verdict === 'pass');
+  return { errors, ready, complete, req, reviews, request_commit: pr.commit };
 }
+
+// What each review checked and what it did or asks, for the run summary.
+export const reviewReport = (c) => (c.reviews || []).map((v) => `${v.role} (${v.reviewer}, ${v.verdict}, ${v.commit.slice(0, 7)}): checked ${v.checks.join('; ')}; actions ${v.actions.join('; ')}`);
 
 // The one entry to add in a target's team/keys.json, and the refusal if that agent already has a live key there.
 export function addEntry(doc, req, folder) {
   const keys = Array.isArray(doc) ? doc : doc.keys || [];
   if (keys.some((k) => k.agent === req.agent && k.status !== 'retired' && k.status !== 'superseded')) return { skip: `${req.agent} already has a live key` };
   const entry = { id: req.agent.split('@')[0].replace(/\./g, '-'), agent: req.agent, account: req.account, status: 'active', session: req.session, created: folder.slice(0, 10),
-    how: `Published by the SovereignWebsite Factory from key request keys/${folder}, after a security review.`, ...(req.fingerprint ? { fingerprint: req.fingerprint } : {}), ...(req.signing_fingerprint ? { signing_fingerprint: req.signing_fingerprint } : {}), bundle: req.bundle };
+    how: `Published by the SovereignWebsite Factory from key request keys/${folder}, after its security and counsel reviews.`, ...(req.fingerprint ? { fingerprint: req.fingerprint } : {}), ...(req.signing_fingerprint ? { signing_fingerprint: req.signing_fingerprint } : {}), bundle: req.bundle };
   const next = Array.isArray(doc) ? [...keys, entry] : { ...doc, keys: [...keys, entry] };
   return { next, entry };
 }
@@ -125,7 +141,8 @@ export async function apply(owner, { cwd = process.cwd(), policy = loadPolicy() 
   for (const r of listRequests(join(cwd, 'keys'))) {
     const c = checkRequest({ cwd, r, policy });
     if (c.errors.length) { console.log(`${r.folder}: not applied: ${c.errors.join('; ')}`); continue; }
-    if (!c.ready) { console.log(`${r.folder}: waiting for a passing review`); continue; }
+    for (const line of reviewReport(c)) console.log(`${r.folder}: review ${line}`);
+    if (!c.ready) { console.log(`${r.folder}: not applied: ${c.complete ? 'not every review passed' : 'waiting for every required review'} (${(policy.pipelines?.[PIPELINE]?.limits?.reviews || []).join(', ')})`); continue; }
     for (const t of c.req.targets.filter((x) => x.split('/')[0].toLowerCase() === owner.toLowerCase())) {
       const cur = await gh('GET', `/repos/${t}/contents/team/keys.json?ref=dev`);
       if (cur.status !== 200) { console.log(`${t}: cannot read team/keys.json on dev (HTTP ${cur.status})`); continue; }
@@ -142,7 +159,7 @@ export async function apply(owner, { cwd = process.cwd(), policy = loadPolicy() 
         net('clone', ['clone', '-q', '--depth', '1', '--branch', 'dev', `https://github.com/${t}.git`, dir]);
         writeFileSync(join(dir, 'team/keys.json'), JSON.stringify(a.next, null, 2) + '\n');
         g('add', 'team/keys.json');
-        const msg = `team/keys.json: ${c.req.agent}'s public key, from the Factory\n\nKey request: https://github.com/SovereignWebsite/SovereignWebsite__Factory/tree/${head}/keys/${r.folder}\nRequested in ${c.request_commit}; reviewed by ${c.rev.reviewer} in ${c.review_commit} (verdict pass).\n\nAgent: ${factory}\nKey-Request: keys/${r.folder}`;
+        const msg = `team/keys.json: ${c.req.agent}'s public key, from the Factory\n\nKey request: https://github.com/SovereignWebsite/SovereignWebsite__Factory/tree/${head}/keys/${r.folder}\nRequested in ${c.request_commit}.\n${reviewReport(c).map((l) => `Review: ${l}`).join('\n')}\n\nAgent: ${factory}\nKey-Request: keys/${r.folder}`;
         g('-c', 'user.name=SovereignWebsite Factory', '-c', 'user.email=factory@sovereignwebsite.invalid', '-c', 'gpg.format=ssh', '-c', 'gpg.ssh.program=ssh-keygen', '-c', `user.signingkey=${keyFile}`, 'commit', '-q', '-S', '-m', msg);
         net('push', ['push', '-q', 'origin', 'HEAD:dev'], { cwd: dir });
         console.log(`done: ${c.req.agent}'s key added to ${t} (${g('rev-parse', 'HEAD').slice(0, 7)}), signed by the factory key`);
