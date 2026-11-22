@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T00:58Z",
+  "updated": "2026-11-22T00:59Z",
   "state": "Streaming live at v0.1.7 (3eac181), kept by streaming.d; design.d and synthetic-users.d review the .d sites; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -37,13 +37,13 @@
     "streaming.d next, at Dinis's word: UX first (compact list, status tabs, settings off the main screen); vault later"
   ],
   "asks": [
-    "Dinis: say \"push library.d's key\" (branch work/conductor.d-library-d-key, dee995a; this session's permission check needs your explicit word); and, in library.d's session (https://claude.ai/code/session_015gaHdecGUXfFRDs8DmeUFN), allow the step that writes its signing half to a 0600 file (its permission check refused it) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
-    "Dinis: in library.d's session, yes to its CLAUDE.md change (library.* agents commit to Site__Agents__Library) and a library_d role in site/policy/abp.json - https://claude.ai/code/session_015gaHdecGUXfFRDs8DmeUFN",
+    "Dinis: say \"push library.d's key\" here (branch work/conductor.d-library-d-key, dee995a); library.d then pushes d22a363 to Site__Agents__Library - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: in synthetic-users.d's session, yes to its role in Site__Agents__Design site/policy/abp.json - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: the first work for sites.d and hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: let hub.d (https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N) read SovereignWebsite__Vault, Site__Agents__Hub and the Factory: its permission check refused add_repo and git clone - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
-    "Dinis: send library.d's newsroom briefs to the .d agents once ready? Each wakes an agent for a turn - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL"
+    "Dinis: send library.d's newsroom briefs to the .d agents once ready? Each wakes an agent for a turn - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
+    "Dinis: Site__Agents__Library .github/workflows/pages.yml sets AGENT: '{{agent}}' (unrendered), so site/key.json publishes no key; a .github fix needs your yes in a keeper's session - https://claude.ai/code/session_015gaHdecGUXfFRDs8DmeUFN"
   ],
   "decisions": [
     "Dinis, 21 Nov 2026 ~22:15 UTC in this session: \"you can push to dev if you need to\"; then chose that conductor.d pushes maestro.d's policy and key commits with its own to dev, accepting one red Checks run on that push",
@@ -54,7 +54,8 @@
     "Dinis, 22 Nov 2026 ~00:30 UTC in this session: \"Can you start a synthetic users session\"; \"Can you tell those sessions that info?\"",
     "Dinis, 22 Nov 2026 ~00:50 UTC in this session: \"Yes can you push it\" (synthetic-users.d's key)",
     "Dinis, 22 Nov 2026 ~00:52 UTC in this session: \"Yes start the agent, but the budget should start as guidance and observation mode only\" (library.d)",
-    "Dinis, 22 Nov 2026 ~00:56 UTC in this session: \"that rule is wrong since the library.* should be able to push to Site__Agents__Library\" (library.d to make the CLAUDE.md and site/policy change with his yes in its own session, as that site's policy requires)"
+    "Dinis, 22 Nov 2026 ~00:56 UTC in this session: \"that rule is wrong since the library.* should be able to push to Site__Agents__Library\" (library.d to make the CLAUDE.md and site/policy change with his yes in its own session, as that site's policy requires)",
+    "Dinis, 22 Nov 2026 ~00:58 UTC in library.d's session (as reported by library.d): \"All library.* agents can push to the same locations at Site__Agents__Library since they are twins\"; and \"Yes you can sign without a passphrass\""
   ],
   "team": {
     "sites.d": "https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf",
