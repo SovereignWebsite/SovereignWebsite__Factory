@@ -137,6 +137,27 @@
       ],
       "source": "Dinis, 22 Nov 2026 ~01:05 UTC in conductor.d's session (https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL): \"Yes please start a factory.d agent, I need a couple changes made\". The twin of factory.b's entry, on account D.",
       "note": "policy/** is for proposals: a change there takes effect only when Dinis merges it. factory.d makes only the changes Dinis gives it in its own session, pulls first and never overwrites factory.b's work unread."
+    },
+    "conductor.c@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj",
+      "may_change": [
+        "board/conductor.c/**"
+      ],
+      "needs_dinis_merge": [
+        "team/keys.json"
+      ],
+      "branches": [
+        "dev",
+        "work/conductor.c-key",
+        "work/conductor.c"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "name a private prospect",
+        "edit another conductor's files"
+      ],
+      "source": "Dinis, 22 Nov 2026 ~17:15 UTC in maestro.c (account-c)'s session (https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp): \"can you start conductor.c@SovereignWebsite.dinis\"; ~01:31 UTC in conductor.d's session: \"we can have many conductor.*@SovereignWebsite.dinis sessions\". A third conductor on account C, while B and D are at their usage limits; its own board only, proposed by conductor.c for Dinis's merge."
     }
   },
   "pipelines": {
