@@ -1,0 +1,7 @@
+{
+  "label": "slides",
+  "group": "agents",
+  "title": "Slides",
+  "description": "The Slides agents' own site: their pages and published keys, each account's pages under /accounts/<x>/. No slides agent has a key in the Factory's team/keys.json yet.",
+  "kind": "owner"
+}
