@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T16:53Z",
+  "updated": "2026-11-22T17:06Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -81,7 +81,8 @@
     "platform sites on hold (Dinis via strategy.d and helm.d, ~16:30 UTC: another agent may already be on this work; OpenRouter first when they go; a sixth, AWS, proposed); sites.d told. strategy.d's ask for 'the vault' answered: no keys, tokens or vault contents by message; it is Dinis's to arrange",
     "observability.d started (https://claude.ai/code/session_015gaHdayiD5PCvJRyqNHyjC): own vault and lanes on account D, the .d sites first through their keepers; .b sites listed for Dinis to decide site by site; no schedule until Dinis says",
     "Wardley Maps website (cartographer.d via helm.d) routed: factory.d raises the request at Dinis's word once the umbrella word sets its name and group; design.d for the look; keeper cartographer.d or sites.d as Dinis says",
-    "observability.d published its key (f487ee3) and made an account D vault; observability.b's capture design is in no SovereignWebsite repository it can read; every site policy and the design guidelines say no tracking, so capture needs a policy change per site (Dinis's call); lane tokens cannot be minted yet (configure endpoint 404 for this account)"
+    "observability.d published its key (f487ee3) and made an account D vault; observability.b's capture design is in no SovereignWebsite repository it can read; every site policy and the design guidelines say no tracking, so capture needs a policy change per site (Dinis's call); lane tokens cannot be minted yet (configure endpoint 404 for this account)",
+    "factory.d asked to rename agent homes to Site__Agent__<Name> and reshape the platform names; design.d, streaming.d, synthetic-users.d and sites.d told the two-way-door rule; design.d to ask Dinis in its session for the chip line"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -129,7 +130,8 @@
     "Dinis, 22 Nov 2026 ~14:26 UTC in this session: start an agent for the cheese market for a couple of changes (an exception to the split at his word)",
     "Dinis, ~15:40 UTC 22 Nov in factory.d's session (as reported): yes to the signer check, to Org apply adding it to sites already there, to the WordPress and Donna Freed requests and the author group, to pushing the News__Data grant, to the 12 agent site requests, and to building the factory key",
     "Dinis, 16:33 UTC 22 Nov in factory.d's session (verified in its transcript): yes to the platform group, the slides site, merging the signer check to dev, the version-chip fix, security and counsel reviews of key requests, and starting security.d and counsel.d with keys",
-    "Dinis, 22 Nov 2026 ~16:46 UTC in this session: start an observability agent on account D; capture into account D's own vault and append lanes now, merge with account B's vault later; \"I really want to start visibility now and who's seeing what\""
+    "Dinis, 22 Nov 2026 ~16:46 UTC in this session: start an observability agent on account D; capture into account D's own vault and append lanes now, merge with account B's vault later; \"I really want to start visibility now and who's seeing what\"",
+    "Dinis, ~17:05 UTC 22 Nov in maestro.d's session (relayed): agent homes are always singular, Site__Agent__<Name> (conductor.d had wrongly passed on the plural); platform tool sites <service>.<provider>.tool.sovereignweb.site, ours under one of our own names; two-way doors go ahead, one-way doors come to him; no private pages: briefings publish on the agents' own sites"
   ],
   "team": {
     "sites.d": "https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf",
