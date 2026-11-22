@@ -844,6 +844,29 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "factory-c-sovereignwebsite",
+      "agent": "factory.c@SovereignWebsite.dinis",
+      "role": "The account C twin of factory.b and factory.d: the Factory changes Dinis gives it in its own session (pipeline, policy, keys, workflows), reading factory.b's and factory.d's work first and never overwriting it unread. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-22",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwFQ86g2ZeXQ2edTAjh",
+      "fingerprint": "sha256:f936154a58deb1d0",
+      "signing_fingerprint": "sha256:7a5a011fa58224cd",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwIbZoUzI8xnLv8fgJ+Io\nr7YfvPgiXA69upNBMSXeHILRr86noMou6xvK1nri9rBvTD0phoiXIeRpCra6wRrH\n3tkLDIZDCHABX0HdzJGrnUhcZagJmtdOCbD9/Smkh7T6ujQD2EGeATMJ1+WCivl6\nsUrRXEIopZN1z4NxIdoD7OPtAk9SudWI5TJxhkT1iI9TXWWWklDBwXvY6z3OAYmi\nodgXkByEUn9xV/+wgZg2lHDaZi5iahml/FR9fYnndcpa1bKAcMSmqpVPL3wTNVwf\nEfyHKjdp/qB/x5Xva4EAYsuUt0E3dmJQNe6fT/JjxMwHict5/n/bS02+Ee1pG4hr\nOnqXicppmYqqVhW5hSrARoqKouucDWrtpL0HIObJpoe5eUtwaj6XbnplcOWhRMU+\nH3UfnYw+se6gLfgByOJvzs+X8yZ+XUURTQDfmVKkF++3sqLa062x78i7ekNBvjkq\ntXOaAuZDwHef7XLJR/HByCwkt6W3FeziWjuOuFWv0ES7KdWyyTyGb4kUGrWLNs3i\nCB6znBqRicGkWzOXNP31IMtlu8JyRWLOSi+fYnYn/z5hVBrk2k6bFJxMT+q6e/uH\n29Rfn+Rn4z/KjZdQwXR/nArkwJnjayFlqA+6WftmCboeFf7jxYVtylMjzciYsicp\ncuQLfJIjDFMKdFlKBQtaU20CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/UEn/a4mOFWYGrV10Of3DSA5vwoQ\nGvMpmz451oCL+9IdmCz04frV+PDpCf8TFi3GvGMXRbfGUQKf2al9jhNodA==\n-----END PUBLIC KEY-----\n",
+        "label": "factory-c-sovereignwebsite",
+        "fingerprint": "sha256:f936154a58deb1d0",
+        "signing_fingerprint": "sha256:7a5a011fa58224cd"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
