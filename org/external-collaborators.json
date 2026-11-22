@@ -6,6 +6,12 @@
       "user": "diniscruz-agent",
       "permission": "push",
       "source": "Dinis, 22 Nov 2026 ~01:11 UTC in factory.d's session: \"can you make sure the GH user diniscruz-agent is a writer on the repo PrompTugal/PrompTugal__News__Bulletins\"; ~01:16 UTC: \"App was already installed but needed updates permissions (which I did) So can you build it\"."
+    },
+    {
+      "repository": "PrompTugal/PrompTugal__News__Data",
+      "user": "diniscruz-agent",
+      "permission": "push",
+      "source": "Dinis, 22 Nov 2026 ~03:53 UTC in factory.d's session: \"can you add dinisCruz-agent push access to PrompTugal/PrompTugal__News__Data\"."
     }
   ]
 }

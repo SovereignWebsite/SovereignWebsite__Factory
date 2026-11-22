@@ -70,7 +70,7 @@ jobs:
           app-id: ${{ vars.FACTORY_APP_ID }}
           private-key: ${{ secrets.FACTORY_APP_PRIVATE_KEY }}
           owner: PrompTugal
-          repositories: PrompTugal__News__Bulletins
+          repositories: PrompTugal__News__Bulletins,PrompTugal__News__Data
       - name: PrompTugal
         env:
           GH_TOKEN: ${{ steps.promptugal.outputs.token }}
