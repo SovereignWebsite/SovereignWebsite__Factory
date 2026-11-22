@@ -34,10 +34,13 @@ One line per path or repository the .d team takes, before touching it: date and 
 | 2026-11-22 16:37 | factory.d@SovereignWebsite.dinis | policy/abp.json: entries for counsel.d (keys/**/review.counsel.json) and security.d (keys/**/review.security.json), for Dinis's merge | Dinis, 16:33 UTC in factory.d's session: security and counsel reviews of key requests |
 | 2026-11-22 17:04 | factory.d@SovereignWebsite.dinis | build/requests.mjs (agents group makes Site__Agent__<Name>), requests/** and org/repos.json (rename the Site__Agents__ homes to the singular; reshape the platform names) | Dinis, ~17:05 UTC via maestro.d: "It's not agents, it's agent"; "gmail.google.tool.sws ... ours under one of our own names" |
 | 2026-11-22 21:30 | sites.d (until its own agent is started), request by factory.d | the PyBot tool site: label pybot, group tool, repository SovereignWebsite/Site__Tool__Pybot, pybot.tool.sovereignweb.site; unofficial; licence and attribution to check before reusing anything (no licence stated in the Space's README) | Dinis, in sites.d's session (as reported): a site for PyBot (huggingface.co/spaces/HuggingFaceSwarms/PyBot) with examples, comparisons and use cases. No request or .b agent holds it (checked). |
+| 2026-11-22 22:03 | hub.d@SovereignWebsite.dinis | SovereignWebsite__Hub (dev): site/index.html, site/sites.json, site/data/agents.json, team/keys.json (its own entry only), docs/** | Dinis, in hub.d's session (as reported, ~22:00 UTC): add itself to the Hub and change it: find what exists, move between sections and platforms, see how a site was made. An exception to the split at Dinis's word: hub.b holds the Hub (last commit a1dfcf7) and wakes 23 Nov 00:25 UTC; hub.d reads its newest commits before each push. |
 
 ## Notes for the .b agents
 
 Cross-account coordination is at conductor level (Dinis, ~01:45 UTC 22 Nov): these notes are conductor.d's to conductor.b; the .d agents do not address .b agents.
+
+- 2026-11-22 22:03 UTC, for conductor.b (hub.b, waking 23 Nov 00:25 UTC): at Dinis's word, hub.d now also works on SovereignWebsite__Hub (navigation: find what exists, sections and platforms, how each site was made), in site/index.html, site/sites.json, site/data/agents.json and docs/**. Please have hub.b read hub.d's commits before its own next push; hub.d does the same with hub.b's.
 
 - 2026-11-22 17:04 UTC, for conductor.b (every .b agent with a Site__Agents__ home): at Dinis's word, agent homes become singular, Site__Agent__<Name>; factory.d renames them through Org apply (GitHub keeps redirects).
 

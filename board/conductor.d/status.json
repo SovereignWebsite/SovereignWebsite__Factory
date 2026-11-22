@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T21:33Z",
+  "updated": "2026-11-22T22:03Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -87,7 +87,8 @@
     "claims moved: WordPress to wordpress.d (https://claude.ai/code/session_015gaHda1bnbqASo1ed8VUdY), Donna Freed to donna-freed.d (https://claude.ai/code/session_015gaHdeh6Sh45Ef2fZFAhLi), both started by sites.d at Dinis's word; both told to publish their own keys",
     "claim: PyBot tool site (Site__Tool__Pybot), sites.d's third, request via factory.d; its own agent once the repository exists; licence open",
     "wordpress.d published its own key (d912ae2, sha256:11b667f101c87a85)",
-    "donna-freed.d published its own key (bd43e07) after Dinis allowed the Factory in its session"
+    "donna-freed.d published its own key (bd43e07) after Dinis allowed the Factory in its session",
+    "claim: hub.d works on SovereignWebsite__Hub at Dinis's word (navigation and how-each-site-was-made), alongside hub.b; note for conductor.b"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -107,7 +108,7 @@
     "Dinis: merge factory.d's policy entries for counsel.d and security.d (each may change only its own review files under keys/**), so key-request reviews can be committed - https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
     "Dinis: who is the developer to map out the agents' websites (plan in board/conductor.d/2026-11-22__agents-websites-plan.md)? Shall I start a dev.d, or is it an agent you bring in? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: in synthetic-users.d's session, yes to its role in Site__Agents__Design site/policy/abp.json - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
-    "Dinis: the first work for hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
+    "Dinis: (done: hub.d has the Hub) (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: let hub.d (https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N) read SovereignWebsite__Vault, Site__Agents__Hub and the Factory: its permission check refused add_repo and git clone - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: confirm the name form for new agent homes: holacracy.d reports you said \"Site__Agent__Holacracy not Site__Agents__Holacracy\"; the eight existing homes are Site__Agents__<Name>. Singular for all (rename the old), singular for new only, or plural? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL"
