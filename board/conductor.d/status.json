@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T21:29Z",
+  "updated": "2026-11-22T21:30Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -96,12 +96,12 @@
     "start every new agent with the Factory reachable, or its key on dev, before it works (incident lesson)"
   ],
   "asks": [
+    "Dinis: three agents cannot publish their own keys because their sessions cannot reach the Factory: chiswick-cheese-market.d (dd12fb6 ready), donna-freed.d and wordpress.d. In each session, allow add_repo SovereignWebsite/SovereignWebsite__Factory with push. For new site agents, should whoever starts them include the Factory? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: two inbox models now on the cheese market: chiswick-cheese-market.c built a per-site inbox lane at your word, while you told chiswick-cheese-market.d (~15:50) one account-level inbox agent relays to each keeper. Keep the per-site lane, or start feedback.d as the one inbox agent (and how often it wakes)? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: traffic capture conflicts with every site's policy (\"no tracking\"; \"never: add a server, cookies or tracking\") and the design guidelines (no analytics), though status.json records your rule \"privacy note, no ask-first\". Change the seed policy and each site's to allow cookieless, first-party, sealed capture with a privacy note? And how should observability.d mint append-lane tokens (the configure endpoint refuses this account)? - https://claude.ai/code/session_015gaHdayiD5PCvJRyqNHyjC",
     "Dinis: two counsel agents on account D: maestro.d's counsel.d@account-d.dinis (13:25 UTC) and conductor.d's counsel.d@SovereignWebsite.dinis (16:34 UTC, key 2ea79bd). Keep both (rename mine counsel.keys.d), or retire mine and give the key reviews to maestro.d's? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: in security.d's session (https://claude.ai/code/session_015gaHdegs3vxyNtU2tmc28P), allow it to push its own key commit adfc5ff to the Factory's dev (its permission check refused it) - https://claude.ai/code/session_015gaHdegs3vxyNtU2tmc28P",
     "Dinis: merge factory.d's policy entries for counsel.d and security.d (each may change only its own review files under keys/**), so key-request reviews can be committed - https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
-    "Dinis: in chiswick-cheese-market.d's session, allow it to add SovereignWebsite__Factory with push, so it can publish its own key (its signed commit dd12fb6 is ready); under the keys rule nobody else may add it - https://claude.ai/code/session_015gaHdcNSDvpHf63UJRg64C",
     "Dinis: who is the developer to map out the agents' websites (plan in board/conductor.d/2026-11-22__agents-websites-plan.md)? Shall I start a dev.d, or is it an agent you bring in? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: in synthetic-users.d's session, yes to its role in Site__Agents__Design site/policy/abp.json - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: the first work for hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
