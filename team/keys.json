@@ -1051,6 +1051,29 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "aws-c-sovereignwebsite",
+      "agent": "aws.c@SovereignWebsite.dinis",
+      "role": "AWS platform agent on account C: browser sign-in to AWS with no long-lived key, the AWS platform site (aws.platform.sovereignweb.site, domain for Dinis to confirm) and AWS changes as IaC through plans Dinis approves. Started by maestro.c at Dinis Cruz's word; conductor conductor.c. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-22",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwAzhau7Us55PugP2V2",
+      "fingerprint": "sha256:2a0c9b8aa2082dbf",
+      "signing_fingerprint": "sha256:81dd1755a1a8d418",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAq1d3kP9BmkRXRO/VYlgo\nPDc2ymQ22Y4+XqxBwvtCJunPAX9K7XjV5nZ31LQ7+Jj4rA1EK+T0A06l4jkLCGXe\n2/bJh/x7Zt+hrFC3grgYNV/NcEF9yIK0au822CUMpuzN/u+O8pslB8pxZpqjlfwe\nkeUkDrpZR3DSDrf45PSpM9UcxnH4pGgM/XICWu+jKt6hrVHkoXw/9HHslpJ2iPpR\nXkNOqDL/8+j47OOG+VPSeZlaLdnoTK6+rPlmyIP0VwCf/sJhWoNl0qSEQp7G4Whp\nGjQdHLvMBjbb888gINZxDdGUVzlSGg05qO4n6Pj9LZQe0vxl2c86wRO9dkvf0yTe\nnuMyeqP2dUI23hQanwhCA91c5siiC7J5eucRItY39CGXVsfbYQNHfBtdPPy3YAlY\nEbEzeGsuWGrjEN160+u0xb1KPlrU6Mrtk+fnnJEpq4p82WKTt63g/QUZKq1HdpRi\n82fWqqyVSZ4J/iMmyw0zm5C6/IUZUmdbbYJPEjZQV4XSzfmU51YWQ6np7S0ivPT/\n0oNOb9rGcwAAS4Gggw7ebKMDknr6hLlTD50I6TF8YACOXtZY7JW0klnAGwACCwep\nu1iv93tVDrrpH3R/sFcnKbwP9hRsHsiy+vdqOrAj+m6ULfOlZgDttXWRTBTvLAh+\n82OpaAiPZNYk3pdjiXJgZTUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEH+C+Y5q9Cfiw+b3KWkoMmxS67g6G\nv91qZdFeT69+TsvYPv/pJoiBFNK0YSyQmBNTgr6JO+0KpxO3qUQXarANaQ==\n-----END PUBLIC KEY-----\n",
+        "label": "aws.c@SovereignWebsite.dinis",
+        "fingerprint": "sha256:2a0c9b8aa2082dbf",
+        "signing_fingerprint": "sha256:81dd1755a1a8d418"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
