@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-22T17:25Z",
+  "updated": "2026-11-22T17:29Z",
   "state": "key and policy entry on work/conductor.c-key for Dinis's merge (factory.c to bundle the account C keys); conducting observability.c, factory.c, mistral.c; nothing pushed to dev",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -24,7 +24,8 @@
     "Dinis: the cheese market's account C session: one live key per name and chiswick-cheese-market.d is already account D's session, so should the account C one be chiswick-cheese-market.c@SovereignWebsite.dinis? - https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj",
     "Dinis: observability.c's key commit 788d3b9 (branch work/observability.c, team/keys.json only, checks OK): merge it, or say it may push it to dev itself under the self-publish keys rule (CLAUDE.md says team/keys.json waits for your merge); and paths for it (board/observability.c/**) - https://claude.ai/code/session_01Kw9UwBmqCafJ2NtqhQPQwu",
     "Dinis: mistral.c asks for new paths docs/mistral-c/ and site/data/mistral-c/ in Site__Provider__Mistral, held by account B's Mistral team: an exception to the split, yes or no? It also needs a Mistral API key in its session (401 now) and a spend cap (it proposes 2 USD, for accountant.c) - https://claude.ai/code/session_01Kw9UwDHBL8ucvbqmv38Bkz",
-    "Dinis: the account C keys (conductor.c 05e36d4, observability.c 788d3b9, factory.c f539558) each append to team/keys.json and conflict textually; factory.c proposes fast-forwarding dev to one key branch, then merging the others with merge commits signed by a key already on dev, so every signature stays valid - https://claude.ai/code/session_01Kw9UwFQ86g2ZeXQ2edTAjh"
+    "Dinis: the account C keys (conductor.c 05e36d4, observability.c 788d3b9, factory.c f539558) each append to team/keys.json and conflict textually; factory.c proposes fast-forwarding dev to one key branch, then merging the others with merge commits signed by a key already on dev, so every signature stays valid - https://claude.ai/code/session_01Kw9UwFQ86g2ZeXQ2edTAjh",
+    "Dinis: hub.c (key c984df1, via factory.c) has a Latest page ready in new paths of SovereignWebsite__Hub (hub.b's repository); may hub.c push there (the hub's CLAUDE.md and site policy name hub.b as keeper), and should Latest be linked from hub.b's top bar? - https://claude.ai/code/session_01Kw9UwBNK6JRSRJ7P7LftYD"
   ],
   "decisions": [],
   "team": {
