@@ -821,6 +821,29 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "observability-d-sovereignwebsite",
+      "agent": "observability.d@SovereignWebsite.dinis",
+      "role": "Observability on account D, the twin of observability.b: traffic capture for every site into an account D sgit vault (sealed events through an append lane), aggregates per site and for Dinis. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-22",
+      "status": "active",
+      "session": "https://claude.ai/code/session_015gaHdayiD5PCvJRyqNHyjC",
+      "fingerprint": "sha256:8ad87c640ff2b82c",
+      "signing_fingerprint": "sha256:a34a998f1607b73b",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAo0gSAmNNkIRLFp28VbC7\na90y70sJlNeSXzA89MDRrgLF8IeOjZnvwcMDCDVbRs6N4RfxmOuVLpuYwsh7v642\nu+UiYnqGksSzSu0rNSh4wdFZYv1VM/Bs6fmeaLJxtMlmcXmvUl/y44aeY1SwelrW\n0q1tdXt3gvDknQ3yQZP9opcvI4Ovx8NUPJWQosIU7ykzOYkpAUafEaht3Pop6x/c\nRh/g5i4AH1pk6LDHSCR/NBoyapI8kZURJhfrsNw0yr7493EbCXSdjFieqz/PrUrS\nP0rcOXQgLLsv2omrNSFJ0/9Z6+1IWVbMnJqLO3AlbSGeyAN81PnJjcHlpWgGEzbU\nkdVJnBLEvQ88KFDWBghBE20FOeKigvmFOYZXBjCmzpG2+Wju9n48qVmTuzwVZB10\nrQOOX3h09inkGCovD2uzDd42TzrDPUkGZhuibAsrh2S3U1EBLpyFEdMUCvnBfCFp\nPKDE19Y5bNE64BDF8J+DiMQF2CPP5EVI1J8hke7HAc7p1Ks9tWNKl4nOCH63gJeE\nZx72/9eDcK+MempI9VckxWUZKsWXDhimb1cwfyAaKC/YJqqLq32h37EccZy9nMyZ\nfjKP4IcNrB9oXQ2LDqUXr9DVljt7XIf0Y1kQHmZmCc7iqBULVcTKhxi3uCurwge8\ncAnRlLpDcJXsYHqZ85OoCIECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEfqM+LFcUkZbf1oOduX5pVYI7XEMO\nSoTNHK8lBrV30LwwmF2ArlVgWG4TyLFBkxSqQCSHBmpOqr9fUEvOGT5i7w==\n-----END PUBLIC KEY-----\n",
+        "label": "observability-d-sovereignwebsite",
+        "fingerprint": "sha256:8ad87c640ff2b82c",
+        "signing_fingerprint": "sha256:a34a998f1607b73b"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
