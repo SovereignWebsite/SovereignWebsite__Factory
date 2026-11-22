@@ -488,4 +488,9 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   const a = K.addEntry({ keys: [keys[0]] }, req, R.folder); assert.equal(a.next.keys.length, 2); assert.equal(a.entry.agent, req.agent); assert.ok(K.addEntry(a.next, req, R.folder).skip, 'a live key under that name is not added twice');
   fs.rmSync(d, { recursive: true, force: true }); }
 { const { glob } = await import('../build/abp.mjs'); for (const [a, role] of [['security.d@SovereignWebsite.dinis', 'security'], ['counsel.d@SovereignWebsite.dinis', 'counsel']]) { const m = p.agents[a].may_change; assert.deepEqual(m, [`keys/**/review.${role}.json`], `${a} writes only its own reviews`); assert.ok(!m.some((g) => glob(g, 'keys/2026-11-22__x/request.json')), `${a} cannot change a request`); } }
+{ const R = await import('../build/requests.mjs'); const pb = { label: 'pybot', group: 'tool', provider: 'huggingface', title: 'PyBot', description: 'x', kind: 'owner' };
+  assert.equal(R.host(pb), 'pybot.huggingface.tool.sovereignweb.site', '<service>.<provider>.tool'); assert.equal(R.repoName(pb), 'Site__Tool__Huggingface__Pybot'); assert.deepEqual(R.validate(pb, '2026-11-22__pybot'), []);
+  assert.ok(R.validate({ ...pb, group: 'artist' }, '2026-11-22__pybot').some((e) => e.includes('provider')), 'provider is for tool sites only');
+  assert.ok(R.validate({ ...pb, provider: 'Hugging Face' }, '2026-11-22__pybot').some((e) => e.includes('provider')), 'provider is a lower-case name');
+  assert.equal(R.host({ label: 'whois', group: 'tool' }), 'whois.tool.sovereignweb.site', 'a tool with no provider is unchanged'); }
 console.log('OK (tests)');

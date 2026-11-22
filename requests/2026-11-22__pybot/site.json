@@ -1,0 +1,8 @@
+{
+  "label": "pybot",
+  "group": "tool",
+  "provider": "huggingface",
+  "title": "PyBot",
+  "description": "An unofficial look at PyBot, a chatbot made of plain Python rules that runs in your browser. Examples, comparisons and uses.",
+  "kind": "owner"
+}
