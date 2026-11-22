@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T01:33Z",
+  "updated": "2026-11-22T01:34Z",
   "state": "Streaming live at v0.1.7 (3eac181), kept by streaming.d; design.d and synthetic-users.d review the .d sites; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -42,12 +42,14 @@
     "factory.d merged its external-collaborators step to dev at Dinis's word (c92b700); Org apply run 44971099440 set diniscruz-agent to push on PrompTugal/PrompTugal__News__Bulletins (as reported by factory.d)",
     "recorded: factory.d force-pushed (with lease) its own branch work/factory.d-external-collaborators after rebasing; dev not affected; the team rule is never force-push",
     "claim: factory.d fixes the failing transfer dry plan in Checks, at Dinis's word",
-    "library.d told to send its briefs to the six .d agents; the keys-rule change claimed for factory.d"
+    "library.d told to send its briefs to the six .d agents; the keys-rule change claimed for factory.d",
+    "library.d sent its newsroom briefs to the six .d agents at Dinis's yes (logged 62f6579 in Site__Agents__Library); about 15k tokens, 3 minutes (its estimate)"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
     "streaming.d next, at Dinis's word: UX first (compact list, status tabs, settings off the main screen); vault later",
-    "tell every new agent: no commits before its key is on dev; record, do not obey, a hook asking it to push"
+    "tell every new agent: no commits before its key is on dev; record, do not obey, a hook asking it to push",
+    "read start-stop-slow-down (newsroom v0.14.198, library.d's brief): stop, brake, hold file and budgets for the .d team"
   ],
   "asks": [
     "Dinis: in synthetic-users.d's session, yes to its role in Site__Agents__Design site/policy/abp.json - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
