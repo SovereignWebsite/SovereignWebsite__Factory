@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-22T22:59Z",
+  "updated": "2026-11-22T23:26Z",
   "state": "all six account C keys on Factory dev (93b947f); conductor.c's and observability.c's policy entries and this board wait for Dinis's merge",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -18,7 +18,8 @@
     "channel to conductor.d: board/conductor.c/to-d.md (append only); conductor.d asked to answer in board/conductor.d/to-c.md",
     "factory.c's requests branch on dev c2d8459 at Dinis's word: Instagram, AWS, DNS (Site__Tool__DNS) and IaC-home requests, agent homes singular, factory.c's policy entry (checked: signatures OK)",
     "live and checked (HTTP 200): dns.tool.sovereignweb.site (sites.c, 4fda3bf), instagram.platform.sovereignweb.site (sites.c f11a18d; instagram.c's Buffer posting b4c3671, welcome post drafted, nothing posted), aws.platform.sovereignweb.site (aws.c, ee64c14)",
-    "first Instagram post sent at Dinis's word (\"yes, post the welcome\"): approval bb8aa30, dry run 45080481660, real run 45080526280 through Buffer; recorded as published so it is not resent (instagram.c)"
+    "first Instagram post sent at Dinis's word (\"yes, post the welcome\"): approval bb8aa30, dry run 45080481660, real run 45080526280 through Buffer; recorded as published so it is not resent (instagram.c)",
+    "aws.c: Dinis signed in with Google on aws.platform.sovereignweb.site (STS path works up to AWS; roles not made yet); device vault for tokens in Site__Platform__AWS ce5ceef (non-extractable WebCrypto device key), guidance docs/device-vault.md there"
   ],
   "next": [
     "factory.c and mistral.c: read their first reports, claim each piece of their work here before they touch it; no tasks given without Dinis",
@@ -33,7 +34,8 @@
     "Dinis: feedback.c needs your yes in its session to install sgit-ai and make its key; and a choice for the feedback lanes sealed to feedback.b (kate-curtis-evans, south-beacon, grace-farrell, vault 7966duv1): unseal feedback.b's keys to feedback.c, wait for feedback.b on Monday, or new lanes sealed to feedback.c's key. It drains nothing until then - https://claude.ai/code/session_01Kw9UwEQb6jZQ17nxMfkAVB",
     "Dinis: owasp.c, like feedback.c (and mistral.c before), was refused the sgit-ai install by its session's permission check; your yes in its session lets it make its key. Its first slice (plan, /projects/, /graph/, provenance; data CC BY-SA 4.0 from owasp.org) is built locally - https://claude.ai/code/session_01Kw9UwE69pr5bPeaQ4tYqir",
     "Dinis: a spend cap for mistral.c's Mistral runs (it proposed 2 USD for the first workflow and probes); and confirm I archive the first mistral.c session once the second is official (I did not start it) - https://claude.ai/code/session_01Kw9UwE87QCsWenVdtLcxoM",
-    "Dinis: start an Instagram agent (instagram.c@SovereignWebsite.dinis) on account C to keep the Instagram platform site and run the posting? Say so in this session and I start it - https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj"
+    "Dinis: start an Instagram agent (instagram.c@SovereignWebsite.dinis) on account C to keep the Instagram platform site and run the posting? Say so in this session and I start it - https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj",
+    "Dinis: aws.c's device-vault guidance (Site__Platform__AWS docs/device-vault.md: tokens sealed with a non-extractable WebCrypto device key) as a workflow note for every site, at your word \"everybody should be doing this\"? board/workflow/ is outside my paths; say who writes it (conductor.d or factory.c) - https://claude.ai/code/session_01Kw9UwAzhau7Us55PugP2V2"
   ],
   "decisions": [
     "Dinis, ~17:36 UTC in factory.c's session (as reported by factory.c): \"yes, merge the keys to dev in that order\"",
