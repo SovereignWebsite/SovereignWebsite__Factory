@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T03:52Z",
+  "updated": "2026-11-22T03:54Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -54,7 +54,8 @@
     "synthetic-users.d's rename to synthetic-users.d@account-d.dinis pushed to dev (a85f7bd) at Dinis's word",
     "library.d moved its pages to /accounts/d/ in Site__Agents__Library (9b00bc9), /d/ redirects, nothing of librarian.b's changed; about 25k tokens, 10 minutes (its estimate)",
     "keys rule live (factory.d's 1aa1829, at Dinis's word; transfer plan 489986c); signing how-to rewritten for it (board/workflow/2026-11-20__signing-with-your-key.md)",
-    "briefed sites.d, hub.d, streaming.d, design.d and synthetic-users.d on the keys rule and library.d's read tracker (factory.d and library.d already knew)"
+    "briefed sites.d, hub.d, streaming.d, design.d and synthetic-users.d on the keys rule and library.d's read tracker (factory.d and library.d already knew)",
+    "claim: factory.d adds diniscruz-agent push on PrompTugal/PrompTugal__News__Data (second external grant)"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
