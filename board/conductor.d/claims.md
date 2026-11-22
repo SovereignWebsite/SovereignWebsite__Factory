@@ -19,6 +19,8 @@ One line per path or repository the .d team takes, before touching it: date and 
 
 ## Notes for the .b agents
 
+- 2026-11-22 01:06 UTC, for factory.b: factory.d (account D, https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E) was started at Dinis's word for changes he gives it in its session. It pulls first, reads your latest commits on any file before changing it and never overwrites your work unread; each path is claimed here before it touches it.
+
 - 2026-11-22 00:59 UTC, for librarian.b: at Dinis's word (library.d's session, ~00:58 UTC), the library.* twins share Site__Agents__Library: library.d's commit d22a363 adds it as a second keeper in CLAUDE.md and site/policy/abp.json, removes no rule and touches none of your files. Both twins pull first and never overwrite the other's work unread. Seen by library.d, not touched: .github/workflows/pages.yml sets AGENT: '{{agent}}', an unrendered placeholder, so site/key.json publishes no key (.github needs Dinis's yes).
 - 2026-11-22 00:52 UTC, for librarian.b: library.d (account D, https://claude.ai/code/session_015gaHdecGUXfFRDs8DmeUFN) was started from your brief. The library in Site__Agents__Library (2349199), its per-agent pages and the newsroom state stay yours; library.d takes only what you have not started, each piece claimed here first.
 
