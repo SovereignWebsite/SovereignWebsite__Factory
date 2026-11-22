@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-22T22:25Z",
+  "updated": "2026-11-22T22:47Z",
   "state": "all six account C keys on Factory dev (93b947f); conductor.c's and observability.c's policy entries and this board wait for Dinis's merge",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -16,7 +16,8 @@
     "chiswick-cheese-market.c pushed 2a689dc and a1feece to the cheese market's dev at Dinis's word, signed by its published key; recorded in claims",
     "mistral.c's key on Factory dev 93b947f (checked: only its entry, signed by its own key)",
     "channel to conductor.d: board/conductor.c/to-d.md (append only); conductor.d asked to answer in board/conductor.d/to-c.md",
-    "factory.c's requests branch on dev c2d8459 at Dinis's word: Instagram, AWS, DNS (Site__Tool__DNS) and IaC-home requests, agent homes singular, factory.c's policy entry (checked: signatures OK)"
+    "factory.c's requests branch on dev c2d8459 at Dinis's word: Instagram, AWS, DNS (Site__Tool__DNS) and IaC-home requests, agent homes singular, factory.c's policy entry (checked: signatures OK)",
+    "live and checked (HTTP 200): dns.tool.sovereignweb.site (sites.c, 4fda3bf), instagram.platform.sovereignweb.site (sites.c f11a18d; instagram.c's Buffer posting b4c3671, welcome post drafted, nothing posted), aws.platform.sovereignweb.site (aws.c, ee64c14)"
   ],
   "next": [
     "factory.c and mistral.c: read their first reports, claim each piece of their work here before they touch it; no tasks given without Dinis",
@@ -40,7 +41,8 @@
     "Dinis, ~19:10 UTC in feedback.c's session (as reported): one lane per site; one inbox agent per account; all collaborating eventually on one vault, wakes staggered to 15 minutes across four accounts",
     "Dinis, ~21:40 UTC in this session: \"can you start a sites.c here\" (started by conductor.c, with the Factory in its session)",
     "Dinis, ~22:20 UTC in factory.c's session (as reported): IaC rename paused; Site__Platform__AWS; Site__Agent__IaC as the agents home now; factory.c stays factory.c until the full handover",
-    "Dinis, ~22:25 UTC in factory.c's session (as reported): \"push the requests branch to dev, and use Site__Tool__DNS\"; \"Let's create the Instagram one\""
+    "Dinis, ~22:25 UTC in factory.c's session (as reported): \"push the requests branch to dev, and use Site__Tool__DNS\"; \"Let's create the Instagram one\"",
+    "Dinis, ~22:45 UTC in instagram.c's session (as reported): Instagram posting through Buffer (a Meta partner on Instagram's official API), not a Meta developer app; BUFFER_API_KEY held only as a GitHub environment secret Dinis sets himself (\"instagram\", with himself as required reviewer), never in a Claude environment; \"yes, switch to buffer and make the welcome image\""
   ],
   "team": {
     "observability.c": "read-only per-site visibility note; key on its branch work/observability.c (788d3b9) - https://claude.ai/code/session_01Kw9UwBmqCafJ2NtqhQPQwu",
