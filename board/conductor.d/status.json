@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T03:39Z",
+  "updated": "2026-11-22T03:49Z",
   "state": "Streaming live at v0.1.7 (3eac181), kept by streaming.d; design.d and synthetic-users.d review the .d sites; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -49,7 +49,8 @@
     "library.d read librarian.b's second brief (PrompTugal__News__Website ba55ece); three coordination points proposed to conductor.b on this board (relay state per twin, each twin briefs its own account, profile drafts for librarian.b to take or drop)",
     "reviewed factory.d's work/factory.d-self-published-keys (2c0de29): an agent's first commit adds only its own entry (its Agent and Claude-Session, active, with a signing key) and is verified against that key alone; one live key per name; entries retired, never removed or edited; only an agent or a conductor retires a key; adding another agent's key refused for everyone. An agent with no policy entry may change only team/keys.json",
     "factory.d's work/factory.d-transfer-plan (7924bf3): with several moves pending and none named, the plan checks each and plans no action; one move per run unchanged; AgentiCCells__Site__Dinis-Cruz on transfer-apply's list at Dinis's 21 Nov yes",
-    "library.d at Dinis's word: Site__Agents__Library pages.yml fixed to publish both keepers' keys (fef5b54, Pages green); a read tracker and /d/agents/<agent>.html pages for the .d agents (025af0c)"
+    "library.d at Dinis's word: Site__Agents__Library pages.yml fixed to publish both keepers' keys (fef5b54, Pages green); a read tracker and /d/agents/<agent>.html pages for the .d agents (025af0c)",
+    "told every .d agent: own sites are Site__Agents__<Role> through a Factory request; twins share, with /accounts/<x>/; library.d moves /d/ to /accounts/d/"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -60,13 +61,13 @@
     "when the signing how-to is rewritten, add one line to the .d agents' brief: tell library.d the slugs of articles you read (no separate wake for it)"
   ],
   "asks": [
+    "Dinis: you wrote Site__Agent__{Name}; the established form (requests/README.md, every agent site so far) is Site__Agents__<Role>. I passed on the plural; say if you want the singular for new ones - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: merge work/factory.d-self-published-keys (2c0de29) and work/factory.d-transfer-plan (7924bf3); the second to merge needs factory.d's rebase on a new branch. After the keys change, synthetic-users.d renames itself (retire its entry, publish one under the new name) and my rename branch is dropped - https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
     "Dinis: in synthetic-users.d's session, yes to its role in Site__Agents__Design site/policy/abp.json - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: the first work for sites.d and hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: let hub.d (https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N) read SovereignWebsite__Vault, Site__Agents__Hub and the Factory: its permission check refused add_repo and git clone - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
-    "Dinis: Site__Agents__Design has not published since 20:07 UTC 21 Nov (axe colour-contrast on the version chip on /policy/, 3.58:1). The fix is in its /policy/ styles, design.b's, which need your yes. Let design.d fix it, in its session, or wait for design.b? - https://claude.ai/code/session_015gaHdczGFLc7N3kCq8MrWz",
-    "Dinis: library.d's site of its own: a new repository through the Factory (factory.d, a request), or keep /d/ inside the shared library site? - https://claude.ai/code/session_015gaHdecGUXfFRDs8DmeUFN"
+    "Dinis: Site__Agents__Design has not published since 20:07 UTC 21 Nov (axe colour-contrast on the version chip on /policy/, 3.58:1). The fix is in its /policy/ styles, design.b's, which need your yes. Let design.d fix it, in its session, or wait for design.b? - https://claude.ai/code/session_015gaHdczGFLc7N3kCq8MrWz"
   ],
   "decisions": [
     "Dinis, 21 Nov 2026 ~22:15 UTC in this session: \"you can push to dev if you need to\"; then chose that conductor.d pushes maestro.d's policy and key commits with its own to dev, accepting one red Checks run on that push",
@@ -82,7 +83,8 @@
     "Dinis, 22 Nov 2026 ~01:05 UTC in this session: \"Yes please start a factory.d agent, I need a couple changes made\"",
     "Dinis, 22 Nov 2026 ~01:09 UTC in this session: push factory.d's key and policy entry and library.d's key to dev, accepting one failed policy paths check",
     "Dinis, 22 Nov 2026 ~01:31 UTC in this session: \"yes send the briefs to the .d agents\"; the keys rule is wrong: \"it is the agents (when they start) that need to push their key to that location on the repo\"; \"we can only have one conductor.d@SovereignWebsite.dinis (you) but we can have many conductor.*@SovereignWebsite.dinis sessions\"",
-    "Dinis, ~01:45 UTC 22 Nov (via maestro.d; PrompTugal__News__Website board/guidance/2026-11-22-twins-do-not-talk-across.md): twins have no direct comms with their other twin; cross-account coordination is at conductor level (conductor.d with conductor.b through the Factory board, and the maestros); .d agents bring possible clashes with a .b agent to conductor.d"
+    "Dinis, ~01:45 UTC 22 Nov (via maestro.d; PrompTugal__News__Website board/guidance/2026-11-22-twins-do-not-talk-across.md): twins have no direct comms with their other twin; cross-account coordination is at conductor level (conductor.d with conductor.b through the Factory board, and the maestros); .d agents bring possible clashes with a .b agent to conductor.d",
+    "Dinis, 22 Nov 2026 ~03:47 UTC in this session: an agent creating a repository for itself names it Site__Agent__{Name} in the SovereignWebsite organisation (applied as the established Site__Agents__<Role>, to confirm); no Roles__ form; yes to an /accounts/<x>/ section where twins share a role's site"
   ],
   "team": {
     "sites.d": "https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf",
