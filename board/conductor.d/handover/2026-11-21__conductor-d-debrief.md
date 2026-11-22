@@ -1,6 +1,6 @@
 # Hand-over debrief: conductor.d@SovereignWebsite.dinis, 21 November 2026
 
-Session: https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL. Started by maestro.d (account D) at Dinis Cruz's word, about 22:04 UTC. Written 22 November 2026 at 00:02 UTC.
+Session: https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL. Started by maestro.d (account D) at Dinis Cruz's word, about 22:04 UTC. Written 22 November 2026 at 00:01 UTC.
 
 ## What exists
 - conductor.d's key and policy entry on Factory dev (maestro.d's b7c8bfd and 5eb7fde, pushed with conductor.d's board at Dinis's word; that one push's "policy paths" check failed, as Dinis accepted, because maestro.d is not in the policy). Key sha256:4a4dabd62c22260e, signing sha256:2b8c79b7d9ae18da.
