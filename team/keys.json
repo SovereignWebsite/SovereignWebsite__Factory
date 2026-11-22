@@ -846,6 +846,29 @@
       }
     },
     {
+      "id": "factory-c-sovereignwebsite",
+      "agent": "factory.c@SovereignWebsite.dinis",
+      "role": "The account C twin of factory.b and factory.d: the Factory changes Dinis gives it in its own session (pipeline, policy, keys, workflows), reading factory.b's and factory.d's work first and never overwriting it unread. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-22",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwFQ86g2ZeXQ2edTAjh",
+      "fingerprint": "sha256:f936154a58deb1d0",
+      "signing_fingerprint": "sha256:7a5a011fa58224cd",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwIbZoUzI8xnLv8fgJ+Io\nr7YfvPgiXA69upNBMSXeHILRr86noMou6xvK1nri9rBvTD0phoiXIeRpCra6wRrH\n3tkLDIZDCHABX0HdzJGrnUhcZagJmtdOCbD9/Smkh7T6ujQD2EGeATMJ1+WCivl6\nsUrRXEIopZN1z4NxIdoD7OPtAk9SudWI5TJxhkT1iI9TXWWWklDBwXvY6z3OAYmi\nodgXkByEUn9xV/+wgZg2lHDaZi5iahml/FR9fYnndcpa1bKAcMSmqpVPL3wTNVwf\nEfyHKjdp/qB/x5Xva4EAYsuUt0E3dmJQNe6fT/JjxMwHict5/n/bS02+Ee1pG4hr\nOnqXicppmYqqVhW5hSrARoqKouucDWrtpL0HIObJpoe5eUtwaj6XbnplcOWhRMU+\nH3UfnYw+se6gLfgByOJvzs+X8yZ+XUURTQDfmVKkF++3sqLa062x78i7ekNBvjkq\ntXOaAuZDwHef7XLJR/HByCwkt6W3FeziWjuOuFWv0ES7KdWyyTyGb4kUGrWLNs3i\nCB6znBqRicGkWzOXNP31IMtlu8JyRWLOSi+fYnYn/z5hVBrk2k6bFJxMT+q6e/uH\n29Rfn+Rn4z/KjZdQwXR/nArkwJnjayFlqA+6WftmCboeFf7jxYVtylMjzciYsicp\ncuQLfJIjDFMKdFlKBQtaU20CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/UEn/a4mOFWYGrV10Of3DSA5vwoQ\nGvMpmz451oCL+9IdmCz04frV+PDpCf8TFi3GvGMXRbfGUQKf2al9jhNodA==\n-----END PUBLIC KEY-----\n",
+        "label": "factory-c-sovereignwebsite",
+        "fingerprint": "sha256:f936154a58deb1d0",
+        "signing_fingerprint": "sha256:7a5a011fa58224cd"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
       "id": "conductor-c-sovereignwebsite",
       "agent": "conductor.c@SovereignWebsite.dinis",
       "role": "Conductor of the SovereignWebsite sessions on account C, the twin of conductor.b (account B) and conductor.d (account D); takes only work no .b or .d agent holds, each piece claimed in board/conductor.c/claims.md first. A session key: it ends with its session.",
@@ -862,6 +885,75 @@
         "label": "conductor-c-sovereignwebsite",
         "fingerprint": "sha256:3dc033c53b9c979d",
         "signing_fingerprint": "sha256:066b77ff10e8c18f"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "observability-c-sovereignwebsite",
+      "agent": "observability.c@SovereignWebsite.dinis",
+      "role": "Observability on account C, the twin of observability.b and observability.d: read-only visibility of who is seeing what across the SovereignWebsite sites, from what GitHub Pages, the repositories and existing logs already show; capture only at Dinis's word. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-22",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwBmqCafJ2NtqhQPQwu",
+      "fingerprint": "sha256:d712a3c6cfb84d96",
+      "signing_fingerprint": "sha256:d26fea466f8c4b73",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEApQkyNMgHXrtZUt+DevAT\nKY1Id7poUE4R7HPZM5vdD1nqlXELEuxaxNYyUM/yeRAAoxYNdWgIdAh2ZLWjeytH\njI91zLPlrqnuQp1t3DRjAgdF7gIyK+XA71Fm9B9cNoti7TP0mirVlUDP1I3BdkfZ\nTdP47QSq7OpplQUCMdWcWj8fB9iE58C50aLLFd4IbQaSQPQG9Cg0v4PHH/U/2bD8\n3obuGAqWPxyBtcqt7pV+o/RSO+VaecCE0JQZ0f0BTa+f8u81da2NtPVQVe2/X1IA\nAToX9lsFQ6mQL/5d4oeIjmS4JanAPUaRO60nWWcsTokZ25BgSAxzjMFnOY7GAX3u\nGxcRO0M1gFWemdPlK7pGPXFPZ3eFSFB7wkDiFs5LwK7ArV4FwIGnGApBIdleKdWw\nKwlp0TAyoJ2AotZvoeHnFGU/gFM+3FzXMhuudez2VqgASHmkgXmtyCQ/UT5lqGlU\nOvAWUEeuveFWVYTvXGa7Mw15wcSvkSFYnltdSaQpWqfAnS104MNxhe/DHirCsdrK\nJ36cIbMKW3B+uxacn3K4yaP88f4kmUBEPVVTs+k/0MHCo2PAHsUkBUZeSiEr/LcW\naVHobE/IT2+OKofgVHuNjRVpyhahDnikhc116ZNtmWft6D7S9SgUXGUBNvaK0nlD\nufMlW9h79nNvEM+uTcTzbfUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEjGfY3uhU2YgxgM/69wzTLc+FAsgZ\n6uUFQmz6DI+2NrQjWlF0E9HF2WTdsdQ8K5sPiopgUvj7HxSncPKPhR4/vQ==\n-----END PUBLIC KEY-----\n",
+        "label": "observability-c-sovereignwebsite",
+        "fingerprint": "sha256:d712a3c6cfb84d96",
+        "signing_fingerprint": "sha256:d26fea466f8c4b73"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "hub-c-sovereignwebsite",
+      "agent": "hub.c@SovereignWebsite.dinis",
+      "role": "The hub on account C, the twin of hub.b and hub.d: the hub as the map of the whole family (Latest, every site, the agents), in new paths its conductor claims. No paths in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export, sent to factory.c through conductor.c. Only the public half is here.",
+      "created": "2026-11-22",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwBNK6JRSRJ7P7LftYD",
+      "fingerprint": "sha256:e26f627f8132037d",
+      "signing_fingerprint": "sha256:0519a9f1e36c8ce5",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA7opk2SwXbD/mDFW9zBLE\n+JaUvtBMKyp0189NbhrXcaz0zWuGt9BGRbS3ofAJ1paP2dDNkr3mPTXIg+R5qW8l\niHRG5lfiq5Jr2Yq2ynZI7sQ+dagZSVTSEbAjeypff+CfJEe+WZtbvZrv+PR/nVWX\nOiDFfcMsu7BtIz5+VT88pXyudgD+CUEWDRgQd2AFSOxhBGo/zt8bKnS7941YArtk\n41jIloyUbaZOgtFR5HfW4TfTHEEoz1IDoc94gJkGs+Pe4K8YpBzafCkIpei6/FAP\nAbEQj5WoKsD95Q1uzRj76nQaeajmlqg7giVCKO4l/Rif7aTqs7Tz/SgrzazLmWCO\ntCNDMi7R8QB59HC42nFFtnFhBz0/tz0m1iocz5k+/TzXEeFOUuaHcImKOkvexkAd\nUULvtUdd8DbVrx5p8CyKZLZmDms2Uz9imGntCqTQNSqIpXGMlihsZb6tqkiq+Ng+\nV6CRP6ieSyKaT7BQOCRu+GSVyUtf2zTOnkqp4ME6qWjWYm6XoNGCd8y8T8Q+IUAU\nKdg0sT32++OpZupEncEOPbVEOvuKDs9/U7EoQYISmaeJAt0Dz14RL8bel0Ns/3MU\ngV2/wLgvQCIRfOAheDfer/EM+bnsmG3xTf4AdO7b0+9xwcyp3iJ+DcULqs504Kaw\nX1N7+m96dktlfpCve/N6Em0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE7jLyWv+7NphmhdK/hh92bLJD50AZ\ntO5BS/yZ8jCTmusdf7qfMv93Y1D7eW9QYEiamSjZjvALAQIeV/4Cor5I4g==\n-----END PUBLIC KEY-----\n",
+        "label": "hub.c@SovereignWebsite.dinis",
+        "fingerprint": "sha256:e26f627f8132037d",
+        "signing_fingerprint": "sha256:0519a9f1e36c8ce5"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "chiswick-cheese-market-c-sovereignwebsite",
+      "agent": "chiswick-cheese-market.c@SovereignWebsite.dinis",
+      "role": "Keeps Site__Organisation__Chiswick-Cheese-Market on dev, on account C: only the changes Dinis Cruz gives it in its session. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-22",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwCvCX638VWVq9UPXsN",
+      "fingerprint": "sha256:e620416035b19490",
+      "signing_fingerprint": "sha256:a42b1df7fcf0727c",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzFcDgZZTAQzXuFfCrcPZ\n7DYMrdYWG/GqqD5dnZCTK2S2a7tPt9k+hQbQhv0kf3JWt9gcwvHA72YLE2uJW4H2\nHOBNTlGcuvmuqutMJeKkPU863ucU5bLtoWdk/seD4lxbA8426HxovrZt1pDaC96L\n07oPjkzwBBaCiiVTWR2aUbxo9OMHITWgUb7DWqNF033cycivLH6xW5DDS66vGOgX\nGGIpM4cifvtcT3cWG9NAGjB84tgJLp/JrBqCSnMUJ81amGmIo0cANXllE7cS/rcg\nHy2yhvxE71cvL+1k8C2F2F1+V0b6t/s23PunHei6MRI+M+3p5SEbYXDPUu5maNCM\nqRI1vB0ZkzKd43SKfx1DhPQaOPbvRMJZlLbSMvHUVrr/fBuMrhLiUNvU1O7Ci1QD\nUjokKKy6UTsKbZhffjnx4VxB3fKmbY0C7ZzvZ5p5NYLVLo8jOn3bGq/iWj3BP7pS\nBBqL7lV9oWnm6Myytq+gK6M1As2RHlwRnNsiHrLaeSLGccUpLhWWrHNNAOUcO46K\nXbTp5v0PbndtpDcG3JCjQIa56xYMFqjyFA/xsCtv3UFsIzjOv+/5NL8UvyZRrqPc\nSZ2PQxGCrsqZ66V6odUtu025RzbqSTStnZXOcX+pltgx6D+J1KUli4c3uyCZtHWP\nDUvOmYl3erKRx3Mn46k3n18CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE11FU4UCvIgZh4xLKeJKAQGx3sCwm\nU+hViUl6/4puiRvDoz0XONRO+QgNZgOimiupoDV43DLthDbGv/9mW+wAbw==\n-----END PUBLIC KEY-----\n",
+        "label": "chiswick-cheese-market.c",
+        "fingerprint": "sha256:e620416035b19490",
+        "signing_fingerprint": "sha256:a42b1df7fcf0727c"
       },
       "ssh_signing": {
         "from": "bundle.sign",
