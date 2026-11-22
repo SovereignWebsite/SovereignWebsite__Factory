@@ -117,7 +117,8 @@
         "docs/aws-oidc.md",
         ".gitignore",
         "policy/**",
-        "requests/**"
+        "requests/**",
+        "keys/**"
       ],
       "needs_dinis_merge": [
         "policy/**",
@@ -136,7 +137,8 @@
         "name a private prospect"
       ],
       "source": "Dinis, 22 Nov 2026 ~01:05 UTC in conductor.d's session (https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL): \"Yes please start a factory.d agent, I need a couple changes made\". The twin of factory.b's entry, on account D.",
-      "note": "policy/** is for proposals: a change there takes effect only when Dinis merges it. factory.d makes only the changes Dinis gives it in its own session, pulls first and never overwrites factory.b's work unread."
+      "note": "policy/** is for proposals: a change there takes effect only when Dinis merges it. factory.d makes only the changes Dinis gives it in its own session, pulls first and never overwrites factory.b's work unread.",
+      "keys_note": "keys/** (key requests and their reviews) is pushed to dev by factory.d without Dinis's merge, after the reviews the key-apply pipeline checks. Dinis, 22 Nov 2026 13:39 UTC on the Decision Desk (relayed by conductor.d from maestro.d's session): \"I like factory doing it because that leaves a full track record and if infrastructure as code, but the factory agent should merge it after a security review. For tasks like this I should not be the bottleneck\"; in factory.d's session ~15:30 UTC: \"build the factory [signed] key ... every time you do here, you should also do a security check and role-based security checks\"."
     },
     "factory.c@SovereignWebsite.dinis": {
       "session": "https://claude.ai/code/session_01Kw9UwFQ86g2ZeXQ2edTAjh",
@@ -263,6 +265,41 @@
       },
       "note": "Only a grant listed both here and in org/external-collaborators.json: that repository, that login, push (write) only. It adds a missing collaborator or raises read or triage to push; a pending invitation, or push or more, is left as it is. It never removes anyone. One token per owner, limited to the listed repositories (.github/workflows/org-apply.yml).",
       "source": "Dinis, 22 Nov 2026 ~01:11 UTC in factory.d's session: \"can you make sure the GH user diniscruz-agent is a writer on the repo PrompTugal/PrompTugal__News__Bulletins\"; ~01:16 UTC: \"App was already installed but needed updates permissions (which I did) So can you build it\". PrompTugal__News__Data: Dinis, 22 Nov 2026 ~03:53 UTC in factory.d's session: \"can you add dinisCruz-agent push access to PrompTugal/PrompTugal__News__Data\"."
+    },
+    "key-apply": {
+      "runs_on": [
+        "push to dev that changes keys/**",
+        "by hand"
+      ],
+      "environment": "apply",
+      "allowed": [
+        "repo.add_key"
+      ],
+      "refused_always": [
+        "repo.edit_key",
+        "repo.remove_key",
+        "repo.retire_key",
+        "repo.add_key_without_review"
+      ],
+      "factory_agent": "factory.pipeline@SovereignWebsite.dinis",
+      "factory_key": {
+        "state": "not made yet: Dinis makes the key pair, keeps the private half only as the secret FACTORY_SIGNING_KEY in the apply environment, and its public half is added here and to each target's team/keys.json as factory.pipeline@SovereignWebsite.dinis",
+        "public": ""
+      },
+      "limits": {
+        "targets": [
+          "PrompTugal/PrompTugal__News__Data",
+          "PrompTugal/PrompTugal__News__Bulletins"
+        ],
+        "requester_roles": [
+          "factory"
+        ],
+        "reviewer_roles": [
+          "security"
+        ]
+      },
+      "note": "A key request is keys/<date>__<id>/request.json, committed signed by a requester role; review.json, committed signed by a reviewer role (never the same agent or role), names the exact request commit it reviewed and gives a verdict. factory.d pushes both to dev without Dinis's merge; build/key-requests.mjs checks every rule, then adds the one entry to each target's team/keys.json on dev, in a commit signed by the factory key, citing the request and review commits. It never edits, retires or removes a key and skips an agent that already has a live key there. Each target's own signature check must accept a key-adding commit signed by the factory key (a one-off change in that repository, by a key already listed there or by Dinis).",
+      "source": "Dinis, 22 Nov 2026 13:39 UTC on the Decision Desk (relayed by conductor.d from maestro.d's session): \"I like factory doing it because that leaves a full track record and if infrastructure as code, but the factory agent should merge it after a security review. For tasks like this I should not be the bottleneck\"; in factory.d's session ~15:30 UTC: \"build the factory [signed] key ... every time you do here, you should also do a security check and role-based security checks\"."
     },
     "dns-apply": {
       "runs_on": [
@@ -427,6 +464,20 @@
       "why": "external-collaborators: add diniscruz-agent with push, the one grant listed for each of those repositories",
       "state": "installed; Dinis reports the permissions updated, 22 Nov 2026 ~01:16 UTC; PrompTugal__News__Bulletins checked by Org apply run 44971099440 (22 Nov 01:22 UTC: role set to push); PrompTugal__News__Data added 22 Nov 2026 ~03:55 UTC, the App's access to it not yet checked by a run",
       "source": "Dinis, 22 Nov 2026 ~01:11 UTC in factory.d's session: \"can you make sure the GH user diniscruz-agent is a writer on the repo PrompTugal/PrompTugal__News__Bulletins\"; ~01:16 UTC: \"App was already installed but needed updates permissions (which I did) So can you build it\". Dinis, 22 Nov 2026 ~03:53 UTC in factory.d's session: \"can you add dinisCruz-agent push access to PrompTugal/PrompTugal__News__Data\"."
+    },
+    {
+      "holder": "github-app:agenticcells-site-factory",
+      "permission": "contents:write on PrompTugal/PrompTugal__News__Data and PrompTugal/PrompTugal__News__Bulletins (PrompTugal installation)",
+      "why": "key-apply: push the one factory-signed commit that adds a reviewed agent key to team/keys.json on dev",
+      "state": "not yet granted: Dinis adds Contents read and write to the App's PrompTugal installation",
+      "source": "Dinis, 22 Nov 2026 13:39 UTC on the Decision Desk (relayed by conductor.d from maestro.d's session): \"I like factory doing it because that leaves a full track record and if infrastructure as code, but the factory agent should merge it after a security review. For tasks like this I should not be the bottleneck\"; in factory.d's session ~15:30 UTC: \"build the factory [signed] key ... every time you do here, you should also do a security check and role-based security checks\"."
+    },
+    {
+      "holder": "secret:FACTORY_SIGNING_KEY (apply environment)",
+      "permission": "signs key-adding commits in the key-apply targets",
+      "why": "key-apply: the targets trust this key for key additions only",
+      "state": "not made yet (Dinis)",
+      "source": "Dinis, 22 Nov 2026 13:39 UTC on the Decision Desk (relayed by conductor.d from maestro.d's session): \"I like factory doing it because that leaves a full track record and if infrastructure as code, but the factory agent should merge it after a security review. For tasks like this I should not be the bottleneck\"; in factory.d's session ~15:30 UTC: \"build the factory [signed] key ... every time you do here, you should also do a security check and role-based security checks\"."
     }
   ],
   "keys_rule": "Each agent publishes its own key when it starts: its first commit to this repository adds one entry to team/keys.json, its own (agent and session as the commit's Agent: and Claude-Session: trailers, status active, with bundle.sign), changes nothing else there, and is signed by that new key; build/check-signatures.mjs verifies that one commit against the key it adds, and every later commit against its parent's keys. One live key per agent name: a second session of a role takes its own name, <role>.<label>.<account>@SovereignWebsite.dinis (for example conductor.keys.d@SovereignWebsite.dinis), while there is only one <role>.<account>. An agent may retire its own entry; a conductor (an agent whose may_change lists team/keys.json) may also retire another agent's entry. No commit adds another agent's key, edits a key, name or session in place, or removes an entry; changing another agent's key is Dinis's. build/abp.mjs keysChange enforces this. Trade-off, accepted by Dinis: anyone with push on dev can publish a key under an unused name, so the trust rests on the team's GitHub write access and the session trailer.",
