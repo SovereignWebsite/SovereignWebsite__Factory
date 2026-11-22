@@ -173,6 +173,40 @@
       ],
       "source": "Started by maestro.c (account-c) at Dinis's word, 22 Nov 2026 ~17:25 UTC in its session (https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp): \"we will also need the factory.c@SovereignWebsite.dinis since that one is doing key changes and workflows at the moment\". The twin of factory.d's entry, on account C; proposed with the IaC rename Dinis asked factory.c to get ready (~21:16 UTC in its session).",
       "note": "policy/** is for proposals: a change there takes effect only when Dinis merges it. factory.c makes only the changes Dinis gives it in its own session, pulls first and never overwrites factory.b's or factory.d's work unread."
+    },
+    "security.d@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_015gaHdegs3vxyNtU2tmc28P",
+      "may_change": [
+        "keys/**/review.security.json"
+      ],
+      "branches": [
+        "dev"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "change a key request it reviews",
+        "review a request it made"
+      ],
+      "note": "The security reviewer of key requests (identity, keys and targets): it writes only its own review files, signed with its own key, naming the exact request commit it reviewed. Verdicts pass, fail or needs-a-person; changes it asks for are listed under actions with verdict fail.",
+      "source": "Dinis, 22 Nov 2026 ~16:33 UTC in factory.d's session: \"yes, to starting security [.d] and [counsel.d] with keys. Absolutely, they need to be signing the stuff they do\"; started by conductor.d."
+    },
+    "counsel.d@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_015gaHdaCnEbzJ8Q8CLjisbW",
+      "may_change": [
+        "keys/**/review.counsel.json"
+      ],
+      "branches": [
+        "dev"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "change a key request it reviews",
+        "review a request it made"
+      ],
+      "note": "The counsel reviewer of key requests (policy, consent, privacy, third parties' names and terms, and licences): it writes only its own review files, signed with its own key, naming the exact request commit it reviewed. Verdicts pass, fail or needs-a-person; changes it asks for are listed under actions with verdict fail.",
+      "source": "Dinis, 22 Nov 2026 ~16:33 UTC in factory.d's session: \"yes, to starting security [.d] and [counsel.d] with keys. Absolutely, they need to be signing the stuff they do\"; started by conductor.d."
     }
   },
   "pipelines": {

@@ -487,4 +487,5 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   assert.ok(K.validateRequest({ ...req, note: ['-----BEGIN', 'PRIVATE', 'KEY-----'].join(' ') }, R.folder, lim).some((e) => e.includes('private key')), 'a private key is refused');
   const a = K.addEntry({ keys: [keys[0]] }, req, R.folder); assert.equal(a.next.keys.length, 2); assert.equal(a.entry.agent, req.agent); assert.ok(K.addEntry(a.next, req, R.folder).skip, 'a live key under that name is not added twice');
   fs.rmSync(d, { recursive: true, force: true }); }
+{ const { glob } = await import('../build/abp.mjs'); for (const [a, role] of [['security.d@SovereignWebsite.dinis', 'security'], ['counsel.d@SovereignWebsite.dinis', 'counsel']]) { const m = p.agents[a].may_change; assert.deepEqual(m, [`keys/**/review.${role}.json`], `${a} writes only its own reviews`); assert.ok(!m.some((g) => glob(g, 'keys/2026-11-22__x/request.json')), `${a} cannot change a request`); } }
 console.log('OK (tests)');
