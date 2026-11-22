@@ -435,4 +435,5 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   keys([A, B, C]); fs.writeFileSync(`${r}/other.txt`, 'x'); git('add', '-A'); commit('c', 'c', 'c publishes and changes another file');
   assert.equal(checkPaths({ version: 1, agents: {} }, { base: good, cwd: r }).errors.length, 1, 'a key plus any other file still needs a policy entry');
   fs.rmSync(d, { recursive: true, force: true }); }
+{ const R = await import('../build/requests.mjs'); for (const g of [...R.GROUPS, ...R.LEGACY_GROUPS]) assert.ok(R.GROUP_NAMES[g], `group ${g} has its capitalised name (else Site__undefined__...)`); }
 console.log('OK (tests)');

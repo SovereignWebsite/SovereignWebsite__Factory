@@ -1,0 +1,7 @@
+{
+  "label": "counsel",
+  "group": "agents",
+  "title": "Counsel",
+  "description": "The Counsel agents' own site: their pages and published keys, each account's pages under /accounts/<x>/. No counsel agent has a key in the Factory's team/keys.json yet.",
+  "kind": "owner"
+}

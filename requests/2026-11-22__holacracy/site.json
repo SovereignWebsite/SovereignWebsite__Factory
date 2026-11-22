@@ -1,0 +1,7 @@
+{
+  "label": "holacracy",
+  "group": "agents",
+  "title": "Holacracy",
+  "description": "The Holacracy agents' own site: their pages and published keys, each account's pages under /accounts/<x>/. No holacracy agent has a key in the Factory's team/keys.json yet.",
+  "kind": "owner"
+}

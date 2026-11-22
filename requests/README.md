@@ -34,6 +34,7 @@ sovereignweb.site is the domain for new sites (Dinis, 20 November 2026: "a bette
 | `demo` | demonstrations of the pipeline and of what a site can do | pipeline-demo.demo.sovereignweb.site |
 | `provider` | AI model providers a sovereign website can choose | mistral.provider.sovereignweb.site |
 | `talent` | anonymised talent profiles, under code names | south-beacon.talent.sovereignweb.site |
+| `author` | writers and their work (Dinis, 22 November 2026, for donna-freed: "put her as an author") | donna-freed.author.sovereignweb.site |
 | `agents` | the SWS agents' own sites | factory.agents.sovereignweb.site |
 
 More groups will be added as we go; adding one is a change to `GROUPS` in build/requests.mjs and to this table. Every site has a group (Dinis, 20 November 2026: "Everything should have a group for now"; demos go in `demo`). The only exceptions are listed in `NO_GROUP` in build/requests.mjs: the agents area's own index page, and google-maps, held at its old address until its Maps key lists the new one.
