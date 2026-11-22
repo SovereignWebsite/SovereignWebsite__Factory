@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T11:35Z",
+  "updated": "2026-11-22T11:48Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -58,7 +58,8 @@
     "claim: factory.d adds diniscruz-agent push on PrompTugal/PrompTugal__News__Data (second external grant)",
     "reviewed factory.d's 7c755a8 (work/factory.d-news-data-collaborator): one grant added, push only, the PrompTugal token now lists both repositories; risk: if the App is not installed on PrompTugal__News__Data, the shared token step fails and the Bulletins grant stops being applied too",
     "claim: sites.d's first site, the WordPress tool site (Site__Tool__Wordpress, wordpress.tool.sovereignweb.site), given by Dinis in sites.d's session",
-    "holacracy.d's list of missing Site__Agents__<Name> homes received (Holacracy, Maestro, Synthetic-Users, Newsroom, Bulletins, ABP, Security, Code, UX, Writing, Streaming, Cell-Email); sorted against the split: Security is security.b's role (a .b agent holds it); Newsroom, Bulletins, Cell-Email, ABP, Code, UX and Writing belong to other teams or have no .d agent; .d candidates are Synthetic-Users and Streaming, plus Holacracy and Maestro (maestro.d's 'first')"
+    "holacracy.d's list of missing Site__Agents__<Name> homes received (Holacracy, Maestro, Synthetic-Users, Newsroom, Bulletins, ABP, Security, Code, UX, Writing, Streaming, Cell-Email); sorted against the split: Security is security.b's role (a .b agent holds it); Newsroom, Bulletins, Cell-Email, ABP, Code, UX and Writing belong to other teams or have no .d agent; .d candidates are Synthetic-Users and Streaming, plus Holacracy and Maestro (maestro.d's 'first')",
+    "factory.d briefed to write options for keys in other repositories (A: factory-signed key requests; B: port the self-published rule; C: both), claimed as policy/proposals/2026-11-22__keys-in-other-repositories.md"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -74,7 +75,8 @@
     "Dinis: the first work for hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: let hub.d (https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N) read SovereignWebsite__Vault, Site__Agents__Hub and the Factory: its permission check refused add_repo and git clone - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
-    "Dinis: Site__Agents__Design has not published since 20:07 UTC 21 Nov (axe colour-contrast on the version chip on /policy/, 3.58:1). The fix is in its /policy/ styles, design.b's, which need your yes. Let design.d fix it, in its session, or wait for design.b? - https://claude.ai/code/session_015gaHdczGFLc7N3kCq8MrWz"
+    "Dinis: Site__Agents__Design has not published since 20:07 UTC 21 Nov (axe colour-contrast on the version chip on /policy/, 3.58:1). The fix is in its /policy/ styles, design.b's, which need your yes. Let design.d fix it, in its session, or wait for design.b? - https://claude.ai/code/session_015gaHdczGFLc7N3kCq8MrWz",
+    "Dinis: confirm the name form for new agent homes: holacracy.d reports you said \"Site__Agent__Holacracy not Site__Agents__Holacracy\"; the eight existing homes are Site__Agents__<Name>. Singular for all (rename the old), singular for new only, or plural? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL"
   ],
   "decisions": [
     "Dinis, 21 Nov 2026 ~22:15 UTC in this session: \"you can push to dev if you need to\"; then chose that conductor.d pushes maestro.d's policy and key commits with its own to dev, accepting one red Checks run on that push",
