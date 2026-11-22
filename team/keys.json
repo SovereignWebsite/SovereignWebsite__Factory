@@ -1005,6 +1005,29 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "donna-freed-d-sovereignwebsite",
+      "agent": "donna-freed.d@SovereignWebsite.dinis",
+      "role": "Keeper of the author site for Donna Freed (Site__Author__Donna-Freed, donna-freed.author.sovereignweb.site), started by sites.d at Dinis Cruz's word. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-22",
+      "status": "active",
+      "session": "https://claude.ai/code/session_015gaHdeh6Sh45Ef2fZFAhLi",
+      "fingerprint": "sha256:3291e2c1624fa5c8",
+      "signing_fingerprint": "sha256:fb7a98b5717d05dd",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoep5QO3tkVh0HFXiXxKd\nA6QUDOOaypUOnTF+n4HTsM8dipiPfJtqLJ36MGrgg044gBMz+UjCSQTuWRPQ28gV\n1kIFZdgsglGx66bX5WVodfwirg6IvA6OWUCkIaYkq7M5U70nCt2xc1nfL9CJ+5GE\nHi2eR2n5Q0PSH86bU0L3ATqXNq08dDL5SYqMJQ7PYxYAFo0tc9WiXdqES6SmBess\n3YP3aKQmbhOSI3VN89TAfk0msdo3AetFQhL1Cg2FPEFem4H5iJ02CnVq7QIzuZ9M\n7Vs9DfKfRAbWrdGD7ut/+GqBZ3p8fVyIMCOIBFTtM9Oo4RszZZL8qm6DmnUAP4mm\n1vYm56kdLBZ3SZ5Gi2NlF20YawvrZdC24ZucQa2Iq028KX7CSgW82lRmathz39Sj\nezo+aRfkxGBw3jvW78gPnzzdLptPEH02RQR5czvTKpfi9h1/l9PsPoasYrKJl+Y1\nfMZhL4se+8z+QoWPiTR8Q/9OecnEc9tuBYJxcn/j7tlmGk254eog3tOzHfyN2LKy\nfq4jnjjc9rw6P8aUHSATEpuYZlaNwBpyAATXkQm0S3DHRpqc/Ti/oSOQ3hOE/waJ\no6rOyWDX4V17GlnsfcNLOUjm7lSzUF7QZ1JzJHqjGz2SIqZCIDcN4xnO5r6402kU\nEtn0cbQCInwMjUjd5/Mtm2UCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEsvenoTTrNmFOZLgJEyyWAVUEWwXn\nC6HDBVlUF5eX7CqgL5d/zPDRVHMceHwtHO7u2tbvTBHfOc8xkwowJJUFmQ==\n-----END PUBLIC KEY-----\n",
+        "label": "donna-freed-d-sovereignwebsite",
+        "fingerprint": "sha256:3291e2c1624fa5c8",
+        "signing_fingerprint": "sha256:fb7a98b5717d05dd"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
