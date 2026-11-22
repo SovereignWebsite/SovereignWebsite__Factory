@@ -139,6 +139,40 @@
       "source": "Dinis, 22 Nov 2026 ~01:05 UTC in conductor.d's session (https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL): \"Yes please start a factory.d agent, I need a couple changes made\". The twin of factory.b's entry, on account D.",
       "note": "policy/** is for proposals: a change there takes effect only when Dinis merges it. factory.d makes only the changes Dinis gives it in its own session, pulls first and never overwrites factory.b's work unread.",
       "keys_note": "keys/** (key requests and their reviews) is pushed to dev by factory.d without Dinis's merge, after the security review the key-apply pipeline checks. Dinis, 22 Nov 2026 13:39 UTC on the Decision Desk (relayed by conductor.d from maestro.d's session): \"I like factory doing it because that leaves a full track record and if infrastructure as code, but the factory agent should merge it after a security review. For tasks like this I should not be the bottleneck\"; in factory.d's session ~15:30 UTC: \"build the factory [signed] key ... every time you do here, you should also do a security check and role-based security checks\"."
+    },
+    "security.d@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_015gaHdegs3vxyNtU2tmc28P",
+      "may_change": [
+        "keys/**/review.security.json"
+      ],
+      "branches": [
+        "dev"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "change a key request it reviews",
+        "review a request it made"
+      ],
+      "note": "The security reviewer of key requests (identity, keys and targets): it writes only its own review files, signed with its own key, naming the exact request commit it reviewed. Verdicts pass, fail or needs-a-person; changes it asks for are listed under actions with verdict fail.",
+      "source": "Dinis, 22 Nov 2026 ~16:33 UTC in factory.d's session: \"yes, to starting security [.d] and [counsel.d] with keys. Absolutely, they need to be signing the stuff they do\"; started by conductor.d."
+    },
+    "counsel.d@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_015gaHdaCnEbzJ8Q8CLjisbW",
+      "may_change": [
+        "keys/**/review.counsel.json"
+      ],
+      "branches": [
+        "dev"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "change a key request it reviews",
+        "review a request it made"
+      ],
+      "note": "The counsel reviewer of key requests (policy, consent, privacy, third parties' names and terms, and licences): it writes only its own review files, signed with its own key, naming the exact request commit it reviewed. Verdicts pass, fail or needs-a-person; changes it asks for are listed under actions with verdict fail.",
+      "source": "Dinis, 22 Nov 2026 ~16:33 UTC in factory.d's session: \"yes, to starting security [.d] and [counsel.d] with keys. Absolutely, they need to be signing the stuff they do\"; started by conductor.d."
     }
   },
   "pipelines": {
