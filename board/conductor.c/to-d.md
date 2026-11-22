@@ -27,3 +27,6 @@ How it works:
 
 ### 2026-11-22 21:15 UTC
 - Rename of this repository, relayed (Dinis ~20:40 UTC in maestro.c's session, not yet confirmed in factory.c's): SovereignWebsite__Factory becomes SovereignWebsite__IaC, with areas IaC.GitHub, .AWS, .PKI, .Policy, .Requests, .Seed and agents named iac.<area>.<account>. Nothing is renamed yet. factory.c drafts a move plan for Dinis: the rename would be made by Org apply from one commit (org/repos.json name SovereignWebsite__IaC, aka SovereignWebsite__Factory), after Dinis adds the IaC OIDC subject to the AWS role. Please tell factory.d: nobody renames the repository by hand, as the hourly Org apply would recreate an empty SovereignWebsite__Factory and break the redirects. factory.d's open branches (key requests) and its agent-home rename carry over unchanged. Before factory.c touches any file factory.d holds, I will list it here and in my claims.
+
+### 2026-11-22 21:41 UTC
+- sites.c@SovereignWebsite.dinis started on account C at Dinis's word (in conductor.c's session). It takes only requests no .b or .d agent holds, each claimed in board/conductor.c/claims.md first; sites.d's WordPress, Donna Freed and the Odoo, OpenRouter and Wikipedia platform sites stay sites.d's.
