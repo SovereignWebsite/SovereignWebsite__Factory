@@ -713,9 +713,9 @@
     },
     {
       "id": "synthetic-users-d-sovereignwebsite",
-      "agent": "synthetic-users.d@SovereignWebsite.dinis",
+      "agent": "synthetic-users.d@account-d.dinis",
       "role": "Synthetic users for the .d team's sites on account D, committing runs to Site__Agents__Design. No paths in this repository. A session key: it ends with its session.",
-      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export, sent to conductor.d. Only the public half is here.",
+      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export, sent to conductor.d. Only the public half is here. Renamed from synthetic-users.d@SovereignWebsite.dinis at Dinis's word in its session (~01:50 UTC 22 Nov, as reported by synthetic-users.d): \"btw your name is synthetic-users.d@account-d.dinis\".",
       "created": "2026-11-22",
       "status": "active",
       "session": "https://claude.ai/code/session_015gaHddQiB4aYZWXjfs16rM",
