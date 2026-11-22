@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T13:37Z",
+  "updated": "2026-11-22T13:42Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -61,7 +61,8 @@
     "holacracy.d's list of missing Site__Agents__<Name> homes received (Holacracy, Maestro, Synthetic-Users, Newsroom, Bulletins, ABP, Security, Code, UX, Writing, Streaming, Cell-Email); sorted against the split: Security is security.b's role (a .b agent holds it); Newsroom, Bulletins, Cell-Email, ABP, Code, UX and Writing belong to other teams or have no .d agent; .d candidates are Synthetic-Users and Streaming, plus Holacracy and Maestro (maestro.d's 'first')",
     "factory.d briefed to write options for keys in other repositories (A: factory-signed key requests; B: port the self-published rule; C: both), claimed as policy/proposals/2026-11-22__keys-in-other-repositories.md",
     "factory.d drafted the keys-in-other-repositories proposal in its session (recommends B now) and asked Dinis there before committing. Finding: the SovereignWebsite seeds carry no signature check; the PrompTugal checks come from PrompTugal's own template, which factory.d cannot read; every option needs one bootstrap commit per repository by an already listed key or by Dinis",
-    "helm.d (central circle, started by maestro.d) asked for role homes: Site__Agents__Helm, __Strategy, __Cartographer, __Sherpa, __Decisions, __Counsel, __Studio, __Landscape, __Maestro, and Site__Agent__Holacracy (singular, Dinis's word to holacracy.d); held until Dinis approves the list and the name form"
+    "helm.d (central circle, started by maestro.d) asked for role homes: Site__Agents__Helm, __Strategy, __Cartographer, __Sherpa, __Decisions, __Counsel, __Studio, __Landscape, __Maestro, and Site__Agent__Holacracy (singular, Dinis's word to holacracy.d); held until Dinis approves the list and the name form",
+    "factory.d briefed on the twin-keys decision (key requests, security review, factory.d merges, pipeline signs with a factory key)"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -71,6 +72,7 @@
     "when holacracy.d's list arrives: claim each Site__Agents__<Name> request for factory.d, after checking no .b agent holds it"
   ],
   "asks": [
+    "Dinis: key requests need a security review before factory.d merges, and account D has no security agent (security.b is on account B, paused). Start security.d@SovereignWebsite.dinis, the twin of security.b? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: role homes for factory.d to request (each then waits for your merge): Holacracy (Site__Agent__, your word), Maestro, Helm, Strategy, Cartographer, Sherpa, Decisions, Counsel, Studio, Landscape (helm.d), Synthetic-Users and Streaming (.d roles). Yes to all, or which? And singular or plural for the new ones? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: merge work/factory.d-news-data-collaborator (7c755a8): diniscruz-agent push on PrompTugal/PrompTugal__News__Data. First make sure the App is installed on that repository with Administration, or the PrompTugal token step fails for both repositories - https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
     "Dinis: in synthetic-users.d's session, yes to its role in Site__Agents__Design site/policy/abp.json - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
@@ -97,7 +99,8 @@
     "Dinis, ~01:45 UTC 22 Nov (via maestro.d; PrompTugal__News__Website board/guidance/2026-11-22-twins-do-not-talk-across.md): twins have no direct comms with their other twin; cross-account coordination is at conductor level (conductor.d with conductor.b through the Factory board, and the maestros); .d agents bring possible clashes with a .b agent to conductor.d",
     "Dinis, 22 Nov 2026 ~03:47 UTC in this session: an agent creating a repository for itself names it Site__Agent__{Name} in the SovereignWebsite organisation (applied as the established Site__Agents__<Role>, to confirm); no Roles__ form; yes to an /accounts/<x>/ section where twins share a role's site",
     "Dinis, 22 Nov 2026 ~03:50 UTC in this session: \"can you approve the rename request\" (synthetic-users.d)",
-    "Dinis, ~09:00 UTC 22 Nov in maestro.d's session (relayed): every agent role's home is SovereignWebsite/Site__Agents__<Name> on the sovereign website domain, with an area per account inside (accounts/a, b, c, d); the Roles repositories were a mistake. holacracy.d sends the list of missing Site__Agents__<Name> repositories (Holacracy and Maestro first); factory.d raises the requests for Dinis's approval"
+    "Dinis, ~09:00 UTC 22 Nov in maestro.d's session (relayed): every agent role's home is SovereignWebsite/Site__Agents__<Name> on the sovereign website domain, with an area per account inside (accounts/a, b, c, d); the Roles repositories were a mistake. holacracy.d sends the list of missing Site__Agents__<Name> repositories (Holacracy and Maestro first); factory.d raises the requests for Dinis's approval",
+    "Dinis, Decision Desk 13:39 UTC 22 Nov, confirmed in maestro.d's session (relayed): twin keys by option C, factory-signed key requests: \"the factory agent should merge it after a security review. For tasks like this I should not be the bottleneck\""
   ],
   "team": {
     "sites.d": "https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf",
