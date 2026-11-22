@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T18:14Z",
+  "updated": "2026-11-22T21:29Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -83,7 +83,8 @@
     "Wardley Maps website (cartographer.d via helm.d) routed: factory.d raises the request at Dinis's word once the umbrella word sets its name and group; design.d for the look; keeper cartographer.d or sites.d as Dinis says",
     "observability.d published its key (f487ee3) and made an account D vault; observability.b's capture design is in no SovereignWebsite repository it can read; every site policy and the design guidelines say no tracking, so capture needs a policy change per site (Dinis's call); lane tokens cannot be minted yet (configure endpoint 404 for this account)",
     "factory.d asked to rename agent homes to Site__Agent__<Name> and reshape the platform names; design.d, streaming.d, synthetic-users.d and sites.d told the two-way-door rule; design.d to ask Dinis in its session for the chip line",
-    "cheese market: a third keeper session on another account, chiswick-cheese-market.c (key on Factory dev), pushed /send/ with the site's own inbox lane (vault yz81s4s9), banner and share card at Dinis's word (17:30 to 17:51 UTC); chiswick-cheese-market.d pushed brand guidelines (8aabbef) and a briefing (198eecb) with recorded owner overrides, its key still not on Factory dev; the signer check lists them as overrides"
+    "cheese market: a third keeper session on another account, chiswick-cheese-market.c (key on Factory dev), pushed /send/ with the site's own inbox lane (vault yz81s4s9), banner and share card at Dinis's word (17:30 to 17:51 UTC); chiswick-cheese-market.d pushed brand guidelines (8aabbef) and a briefing (198eecb) with recorded owner overrides, its key still not on Factory dev; the signer check lists them as overrides",
+    "claims moved: WordPress to wordpress.d (https://claude.ai/code/session_015gaHda1bnbqASo1ed8VUdY), Donna Freed to donna-freed.d (https://claude.ai/code/session_015gaHdeh6Sh45Ef2fZFAhLi), both started by sites.d at Dinis's word; both told to publish their own keys"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -132,7 +133,8 @@
     "Dinis, ~15:40 UTC 22 Nov in factory.d's session (as reported): yes to the signer check, to Org apply adding it to sites already there, to the WordPress and Donna Freed requests and the author group, to pushing the News__Data grant, to the 12 agent site requests, and to building the factory key",
     "Dinis, 16:33 UTC 22 Nov in factory.d's session (verified in its transcript): yes to the platform group, the slides site, merging the signer check to dev, the version-chip fix, security and counsel reviews of key requests, and starting security.d and counsel.d with keys",
     "Dinis, 22 Nov 2026 ~16:46 UTC in this session: start an observability agent on account D; capture into account D's own vault and append lanes now, merge with account B's vault later; \"I really want to start visibility now and who's seeing what\"",
-    "Dinis, ~17:05 UTC 22 Nov in maestro.d's session (relayed): agent homes are always singular, Site__Agent__<Name> (conductor.d had wrongly passed on the plural); platform tool sites <service>.<provider>.tool.sovereignweb.site, ours under one of our own names; two-way doors go ahead, one-way doors come to him; no private pages: briefings publish on the agents' own sites"
+    "Dinis, ~17:05 UTC 22 Nov in maestro.d's session (relayed): agent homes are always singular, Site__Agent__<Name> (conductor.d had wrongly passed on the plural); platform tool sites <service>.<provider>.tool.sovereignweb.site, ours under one of our own names; two-way doors go ahead, one-way doors come to him; no private pages: briefings publish on the agents' own sites",
+    "Dinis, in sites.d's session (as reported, 22 Nov evening): sites are never attached to sites.d's session; each gets its own agent session"
   ],
   "team": {
     "sites.d": "https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf",
@@ -145,6 +147,8 @@
     "chiswick-cheese-market.d": "changes to the Chiswick Cheese Market demonstration, twin of chiswick-cheese-market.b - https://claude.ai/code/session_015gaHdcNSDvpHf63UJRg64C",
     "security.d": "security reviews, first the key requests; twin of security.b - https://claude.ai/code/session_015gaHdegs3vxyNtU2tmc28P",
     "counsel.d": "counsel review of key requests (decisions, policies, consent, licences) - https://claude.ai/code/session_015gaHdaCnEbzJ8Q8CLjisbW",
-    "observability.d": "traffic visibility for the account D sites, own vault, twin of observability.b - https://claude.ai/code/session_015gaHdayiD5PCvJRyqNHyjC"
+    "observability.d": "traffic visibility for the account D sites, own vault, twin of observability.b - https://claude.ai/code/session_015gaHdayiD5PCvJRyqNHyjC",
+    "wordpress.d": "Site__Tool__Wordpress, started by sites.d - https://claude.ai/code/session_015gaHda1bnbqASo1ed8VUdY",
+    "donna-freed.d": "Site__Author__Donna-Freed, started by sites.d - https://claude.ai/code/session_015gaHdeh6Sh45Ef2fZFAhLi"
   }
 }
