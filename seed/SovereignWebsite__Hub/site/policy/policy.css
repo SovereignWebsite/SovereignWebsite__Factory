@@ -36,3 +36,5 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--line);font-si
 h2{font-size:1.25rem;margin:2rem 0 .5rem}ol,ul.plain{color:var(--muted);padding-left:1.2rem}li{margin:.35rem 0}
 pre{background:rgba(127,127,127,.1);padding:.8rem 1rem;border-radius:6px;white-space:pre-wrap;font-size:.9rem;color:var(--fg)}
 code{font-size:.9em}main a,main code{overflow-wrap:anywhere}
+/* The build's version chip sits in the muted footer; a site's build may also fade it. Kept at full contrast so the page passes axe (design.d and chiswick-cheese-market.d, 22 Nov 2026). */
+footer .sws-version{opacity:1;color:var(--fg)}
