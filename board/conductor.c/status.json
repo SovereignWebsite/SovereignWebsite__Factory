@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-22T22:21Z",
+  "updated": "2026-11-22T22:25Z",
   "state": "all six account C keys on Factory dev (93b947f); conductor.c's and observability.c's policy entries and this board wait for Dinis's merge",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -52,7 +52,8 @@
     "owasp.c": "the OWASP platform site, exception to the split at Dinis's word, with sites.d (account D); briefed, key first - https://claude.ai/code/session_01Kw9UwE69pr5bPeaQ4tYqir",
     "sites.c": "sites agent on account C, twin of sites.b and sites.d; takes only unstarted requests, each claimed here first; key first - https://claude.ai/code/session_01Kw9UwEi55Prvc9jXNPGC1a ; key 98e9263 on dev",
     "aws.c": "the IaC rename's AWS trust change (as a plan, applied on Dinis's yes) then the AWS platform site - https://claude.ai/code/session_01Kw9UwAzhau7Us55PugP2V2",
-    "instagram.c": "the Instagram agent, started by sites.c at Dinis's word (~22:20 UTC) - https://claude.ai/code/session_01Kw9UwBf2gRkufCCnZs335u"
+    "instagram.c": "the Instagram agent, started by sites.c at Dinis's word (~22:20 UTC) - https://claude.ai/code/session_01Kw9UwBf2gRkufCCnZs335u",
+    "suno.c": "Suno music for the Instagram posts; first job research only (official API, prices, commercial and Instagram terms), nothing bought or generated; started by sites.c at Dinis's word (~22:26 UTC) - https://claude.ai/code/session_01Kw9UwEP7o4BBLqwrqdReHq"
   },
   "deviations": [
     "2026-11-22 ~21:55 UTC, factory.c (self-reported): force-pushed with lease its own branch work/factory.c-iac after rebasing its two commits onto dev 98e9263 (38a5b97, 8045c7b became a654d73, f159228; same content, re-signed, checks OK). Only its own commits; nothing lost; against the never force-push rule. Reported to Dinis; from now on it merges, not rebases.",
