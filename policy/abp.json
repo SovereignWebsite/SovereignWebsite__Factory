@@ -137,6 +137,40 @@
       ],
       "source": "Dinis, 22 Nov 2026 ~01:05 UTC in conductor.d's session (https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL): \"Yes please start a factory.d agent, I need a couple changes made\". The twin of factory.b's entry, on account D.",
       "note": "policy/** is for proposals: a change there takes effect only when Dinis merges it. factory.d makes only the changes Dinis gives it in its own session, pulls first and never overwrites factory.b's work unread."
+    },
+    "factory.c@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_01Kw9UwFQ86g2ZeXQ2edTAjh",
+      "may_change": [
+        ".github/**",
+        "build/**",
+        "test/**",
+        "org/**",
+        "seed/**",
+        "docs/aws-oidc.md",
+        ".gitignore",
+        "policy/**",
+        "requests/**"
+      ],
+      "needs_dinis_merge": [
+        "policy/**",
+        ".github/**",
+        "build/**",
+        "org/**",
+        "seed/**",
+        "requests/**"
+      ],
+      "branches": [
+        "dev",
+        "work/factory.c",
+        "work/factory.c-iac"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "name a private prospect"
+      ],
+      "source": "Started by maestro.c (account-c) at Dinis's word, 22 Nov 2026 ~17:25 UTC in its session (https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp): \"we will also need the factory.c@SovereignWebsite.dinis since that one is doing key changes and workflows at the moment\". The twin of factory.d's entry, on account C; proposed with the IaC rename Dinis asked factory.c to get ready (~21:16 UTC in its session).",
+      "note": "policy/** is for proposals: a change there takes effect only when Dinis merges it. factory.c makes only the changes Dinis gives it in its own session, pulls first and never overwrites factory.b's or factory.d's work unread."
     }
   },
   "pipelines": {
