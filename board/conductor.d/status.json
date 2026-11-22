@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T14:41Z",
+  "updated": "2026-11-22T15:03Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -64,7 +64,9 @@
     "helm.d (central circle, started by maestro.d) asked for role homes: Site__Agents__Helm, __Strategy, __Cartographer, __Sherpa, __Decisions, __Counsel, __Studio, __Landscape, __Maestro, and Site__Agent__Holacracy (singular, Dinis's word to holacracy.d); held until Dinis approves the list and the name form",
     "factory.d briefed on the twin-keys decision (key requests, security review, factory.d merges, pipeline signs with a factory key)",
     "chiswick-cheese-market.d started (https://claude.ai/code/session_015gaHdcNSDvpHf63UJRg64C) at Dinis's word, the twin of chiswick-cheese-market.b, for changes he gives it; it publishes its own key",
-    "chiswick-cheese-market.d: key made (sha256:5023144a65cd073d, signing sha256:facb935cf94b5f3f) and its own key commit dd12fb6 ready, but its session cannot push to the Factory; Dinis named it second keeper (\"second editor\") in its session"
+    "chiswick-cheese-market.d: key made (sha256:5023144a65cd073d, signing sha256:facb935cf94b5f3f) and its own key commit dd12fb6 ready, but its session cannot push to the Factory; Dinis named it second keeper (\"second editor\") in its session",
+    "chiswick-cheese-market.d pushed Dinis's fixes to the cheese market (49f9ede, 247e88c; live v0.1.13) at his word (~14:55 UTC), signed by a key not yet on Factory dev (its key commit dd12fb6 still cannot reach the Factory)",
+    "root cause of the /policy/ axe failures found: seeded policy.css muted footer plus the chip's opacity .75 (3.58:1); factory.d briefed to propose the seed fix and list affected sites"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -76,6 +78,7 @@
   ],
   "asks": [
     "Dinis: in chiswick-cheese-market.d's session, allow it to add SovereignWebsite__Factory with push, so it can publish its own key (its signed commit dd12fb6 is ready); under the keys rule nobody else may add it - https://claude.ai/code/session_015gaHdcNSDvpHf63UJRg64C",
+    "Dinis: one line in each site's site/policy/policy.css (footer .sws-version{opacity:1;color:var(--fg)}) unblocks every site whose Pages fails on /policy/ (Site__Agents__Design among them). Yes for factory.d to fix the seed, and for each site's keeper (design.d for the design site) to add the line? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: who is the developer to map out the agents' websites (plan in board/conductor.d/2026-11-22__agents-websites-plan.md)? Shall I start a dev.d, or is it an agent you bring in? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: key requests need a security review before factory.d merges, and account D has no security agent (security.b is on account B, paused). Start security.d@SovereignWebsite.dinis, the twin of security.b? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: merge work/factory.d-news-data-collaborator (7c755a8): diniscruz-agent push on PrompTugal/PrompTugal__News__Data. First make sure the App is installed on that repository with Administration, or the PrompTugal token step fails for both repositories - https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
@@ -83,7 +86,6 @@
     "Dinis: the first work for hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: let hub.d (https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N) read SovereignWebsite__Vault, Site__Agents__Hub and the Factory: its permission check refused add_repo and git clone - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
-    "Dinis: Site__Agents__Design has not published since 20:07 UTC 21 Nov (axe colour-contrast on the version chip on /policy/, 3.58:1). The fix is in its /policy/ styles, design.b's, which need your yes. Let design.d fix it, in its session, or wait for design.b? - https://claude.ai/code/session_015gaHdczGFLc7N3kCq8MrWz",
     "Dinis: confirm the name form for new agent homes: holacracy.d reports you said \"Site__Agent__Holacracy not Site__Agents__Holacracy\"; the eight existing homes are Site__Agents__<Name>. Singular for all (rename the old), singular for new only, or plural? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL"
   ],
   "decisions": [
