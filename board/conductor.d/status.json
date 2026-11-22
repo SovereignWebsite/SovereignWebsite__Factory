@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T16:38Z",
+  "updated": "2026-11-22T16:41Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -77,7 +77,8 @@
     "security.d (https://claude.ai/code/session_015gaHdegs3vxyNtU2tmc28P) and counsel.d (https://claude.ai/code/session_015gaHdaCnEbzJ8Q8CLjisbW) started with the Factory checked out, to review key requests; each publishes its own key",
     "on dev at Dinis's word (factory.d): signer check in all nine seeds (26793f8), version chip at full contrast in the seeded policy.css (260db1e), platform group with odoo, openrouter, wikipedia, owasp and the slides agent site (aa4fa20); security and counsel reviews on work/factory.d-key-requests (8fff668). sites.d and design.d told",
     "counsel.d published its own key (2ea79bd), the first agent under the self-published keys rule; factory.d asked for narrow policy entries for counsel.d and security.d (their review files only)",
-    "security.d made its key (sha256:b6deca711c3a4073) and its own key commit adfc5ff; its push to dev was refused by its session's permission check, not worked around"
+    "security.d made its key (sha256:b6deca711c3a4073) and its own key commit adfc5ff; its push to dev was refused by its session's permission check, not worked around",
+    "platform sites on hold (Dinis via strategy.d and helm.d, ~16:30 UTC: another agent may already be on this work; OpenRouter first when they go; a sixth, AWS, proposed); sites.d told. strategy.d's ask for 'the vault' answered: no keys, tokens or vault contents by message; it is Dinis's to arrange"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
