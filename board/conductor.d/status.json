@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T01:43Z",
+  "updated": "2026-11-22T01:44Z",
   "state": "Streaming live at v0.1.7 (3eac181), kept by streaming.d; design.d and synthetic-users.d review the .d sites; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -43,7 +43,8 @@
     "recorded: factory.d force-pushed (with lease) its own branch work/factory.d-external-collaborators after rebasing; dev not affected; the team rule is never force-push",
     "claim: factory.d fixes the failing transfer dry plan in Checks, at Dinis's word",
     "library.d told to send its briefs to the six .d agents; the keys-rule change claimed for factory.d",
-    "library.d sent its newsroom briefs to the six .d agents at Dinis's yes (logged 62f6579 in Site__Agents__Library); about 15k tokens, 3 minutes (its estimate)"
+    "library.d sent its newsroom briefs to the six .d agents at Dinis's yes (logged 62f6579 in Site__Agents__Library); about 15k tokens, 3 minutes (its estimate)",
+    "design.d: Streaming round 1 on Site__Agents__Design dev (6f58228, 62eb980), rated 0 (sideways scroll on /agents/ at 390 px); streaming.d pushed v0.1.8 and v0.1.9 with fixes; round 2 at 02:59 UTC"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -56,7 +57,8 @@
     "Dinis: the first work for sites.d and hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: let hub.d (https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N) read SovereignWebsite__Vault, Site__Agents__Hub and the Factory: its permission check refused add_repo and git clone - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
-    "Dinis: Site__Agents__Library .github/workflows/pages.yml sets AGENT: '{{agent}}' (unrendered), so site/key.json publishes no key; a .github fix needs your yes in a keeper's session - https://claude.ai/code/session_015gaHdecGUXfFRDs8DmeUFN"
+    "Dinis: Site__Agents__Library .github/workflows/pages.yml sets AGENT: '{{agent}}' (unrendered), so site/key.json publishes no key; a .github fix needs your yes in a keeper's session - https://claude.ai/code/session_015gaHdecGUXfFRDs8DmeUFN",
+    "Dinis: Site__Agents__Design has not published since 20:07 UTC 21 Nov (axe colour-contrast on the version chip on /policy/, 3.58:1). The fix is in its /policy/ styles, design.b's, which need your yes. Let design.d fix it, in its session, or wait for design.b? - https://claude.ai/code/session_015gaHdczGFLc7N3kCq8MrWz"
   ],
   "decisions": [
     "Dinis, 21 Nov 2026 ~22:15 UTC in this session: \"you can push to dev if you need to\"; then chose that conductor.d pushes maestro.d's policy and key commits with its own to dev, accepting one red Checks run on that push",

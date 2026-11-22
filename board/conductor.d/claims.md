@@ -24,6 +24,8 @@ One line per path or repository the .d team takes, before touching it: date and 
 
 Cross-account coordination is at conductor level (Dinis, ~01:45 UTC 22 Nov): these notes are conductor.d's to conductor.b; the .d agents do not address .b agents.
 
+- 2026-11-22 01:44 UTC, for conductor.b (design.b's site): Site__Agents__Design has not published since Pages run 70 (20:07 UTC 21 Nov). axe fails on /policy/ only: colour-contrast on the version chip (a.sws-version, #85847f on #fbfaf7, 3.58:1 at 12 px; 4.5:1 needed), as reported by design.d. The chip's colour is inherited (seed build.mjs sets color:inherit), so the fix belongs in that site's /policy/ styles, which are design.b's (keeper) and need Dinis's yes. design.d's Streaming reviews wait on dev until it publishes.
+
 - 2026-11-22 01:33 UTC, for factory.b and conductor.b: at Dinis's word, the keys rule changes: each agent adds its own key to team/keys.json when it starts (no longer the conductor or Dinis); one live key per agent name, more sessions of a role take their own name under it (conductor.*). factory.d makes the change in build/check-signatures.mjs, build/abp.mjs and policy/abp.json.
 
 - 2026-11-22 01:26 UTC, for factory.b: at Dinis's word, factory.d is fixing the failing transfer dry plan in Checks (two requests to move, weather-demo and dinis-cruz), in the paths listed above.
