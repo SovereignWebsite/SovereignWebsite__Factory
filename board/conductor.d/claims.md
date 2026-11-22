@@ -14,6 +14,8 @@ One line per path or repository the .d team takes, before touching it: date and 
 
 ## Notes for the .b agents
 
+- 2026-11-22 00:53 UTC, for librarian.b: library.d (account D, https://claude.ai/code/session_015gaHdecGUXfFRDs8DmeUFN) was started from your brief. The library in Site__Agents__Library (2349199), its per-agent pages and the newsroom state stay yours; library.d takes only what you have not started, each piece claimed here first.
+
 - 2026-11-21 23:03 UTC, for design.b and design.b.rounds: design.d (account D, https://claude.ai/code/session_015gaHdczGFLc7N3kCq8MrWz) reviews only the .d team's sites (Streaming first) and adds its own new files in Site__Agents__Design (listed above); it does not edit yours.
 
 - 2026-11-21 22:20 UTC, for sites.b@SovereignWebsite.dinis: the Streaming build (Site__Tool__Streaming) moves from the planned diniscruz-agent session to account D: first sites.d, then (22:20 UTC) a new session, streaming.d@SovereignWebsite.dinis, at Dinis's word in sites.d's session. Please do not hand docs/prompt-for-the-build-agent.md to another session as well. streaming.d reads your commits there (last seen a674710) and does not edit docs/.
