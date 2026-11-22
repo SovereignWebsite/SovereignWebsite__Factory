@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-22T17:24Z",
+  "updated": "2026-11-22T17:25Z",
   "state": "key and policy entry on work/conductor.c-key for Dinis's merge (factory.c to bundle the account C keys); conducting observability.c, factory.c, mistral.c; nothing pushed to dev",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -30,6 +30,7 @@
   "team": {
     "observability.c": "read-only per-site visibility note; key on its branch work/observability.c (788d3b9) - https://claude.ai/code/session_01Kw9UwBmqCafJ2NtqhQPQwu",
     "factory.c": "key changes and workflows on account C; prepares the account C keys (conductor.c's, observability.c's) for Dinis to merge in one go - https://claude.ai/code/session_01Kw9UwFQ86g2ZeXQ2edTAjh ; key f539558 on work/factory.c",
-    "mistral.c": "Mistral workflows (Dinis's Mistral credits) - https://claude.ai/code/session_01Kw9UwDHBL8ucvbqmv38Bkz"
+    "mistral.c": "Mistral workflows (Dinis's Mistral credits) - https://claude.ai/code/session_01Kw9UwDHBL8ucvbqmv38Bkz",
+    "hub.c": "the hub as the way to navigate every site and agent, with a Latest list (Dinis, ~17:30 UTC via maestro.c); SovereignWebsite__Hub is hub.b's, so paths are claimed here first - https://claude.ai/code/session_01Kw9UwBNK6JRSRJ7P7LftYD"
   }
 }
