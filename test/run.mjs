@@ -457,31 +457,34 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   assert.equal(res.people.length, 1, "a person's verified commit is listed"); assert.equal(res.overrides.length, 1, 'an owner override is listed, not refused');
   assert.equal((await checkSigners({ cwd: r, before: 'f'.repeat(40), after: good, keys: [A], personVerified: async () => null })).checked, 1, 'an unknown old head (a force push) checks only the new head');
   fs.rmSync(d, { recursive: true, force: true }); }
-// Key requests: roles, signatures and the review bound to the exact request (build/key-requests.mjs).
+// Key requests: roles, signatures, a security and a counsel review each bound to the exact request (build/key-requests.mjs).
 { const fs = await import('node:fs'); const { execFileSync: x } = await import('node:child_process'); const { tmpdir } = await import('node:os');
   const K = await import('../build/key-requests.mjs'); const lim = p.pipelines['key-apply'].limits;
-  assert.deepEqual(lim.requester_roles, ['factory']); assert.deepEqual(lim.reviewer_roles, ['security']); assert.ok(p.pipelines['key-apply'].refused_always.includes('repo.remove_key'));
+  assert.deepEqual(lim.requester_roles, ['factory']); assert.deepEqual(lim.reviews, ['security', 'counsel']); assert.ok(p.pipelines['key-apply'].refused_always.includes('repo.remove_key'));
   const d = fs.mkdtempSync(`${tmpdir()}/keyreq-`), r = `${d}/r`, git = (...a) => x('git', ['-C', r, '-c', 'user.name=t', '-c', 'user.email=t@t', '-c', 'gpg.format=ssh', '-c', 'gpg.ssh.program=ssh-keygen', ...a], { encoding: 'utf8' }).trim();
   const key = (n) => { x('ssh-keygen', ['-q', '-t', 'ecdsa', '-b', '256', '-N', '', '-f', `${d}/${n}`]); return { id: n, agent: `${n}@X.y`, status: 'active', session: `https://claude.ai/code/session_${n.replace(/\W/g, '')}`, bundle: { sign: x('ssh-keygen', ['-e', '-m', 'PKCS8', '-f', `${d}/${n}.pub`], { encoding: 'utf8' }) } }; };
-  const F = key('factory.d'), S = key('security.d'), O = key('factory.e'), N = key('data.d');
+  const keys = ['factory.d', 'security.d', 'counsel.d', 'security.e', 'factory.e'].map(key), N = key('data.d');
   fs.mkdirSync(`${r}/build`, { recursive: true }); fs.mkdirSync(`${r}/team`); x('git', ['init', '-q', r]);
   for (const f of ['check-signatures.mjs', 'abp.mjs']) fs.copyFileSync(`build/${f}`, `${r}/build/${f}`);
-  fs.writeFileSync(`${r}/team/keys.json`, JSON.stringify({ keys: [F, S, O] })); git('add', '-A'); git('-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'init');
+  fs.writeFileSync(`${r}/team/keys.json`, JSON.stringify({ keys })); git('add', '-A'); git('-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'init');
   const commit = (who, msg) => { git('add', '-A'); git('-c', `user.signingkey=${d}/${who}`, 'commit', '-q', '-S', '-m', msg, '-m', `Agent: ${who}@X.y\nClaude-Session: https://claude.ai/code/session_${who.replace(/\W/g, '')}`); return git('rev-parse', 'HEAD'); };
-  const pol = { pipelines: { 'key-apply': { limits: lim } } }, R = { folder: '2026-11-22__data-d', dir: `${r}/keys/2026-11-22__data-d` };
+  const pol = { pipelines: { 'key-apply': { limits: lim } } }, R = { folder: '2026-11-22__data-d', dir: `${r}/keys/2026-11-22__data-d` }, chk = () => K.checkRequest({ cwd: r, r: R, policy: pol });
   const req = { agent: 'data.d@PrompTugal.dinis', account: 'D', session: 'https://claude.ai/code/session_abc', bundle: { sign: N.bundle.sign }, targets: ['PrompTugal/PrompTugal__News__Data'], source: 'test' };
-  fs.mkdirSync(R.dir, { recursive: true }); fs.writeFileSync(`${R.dir}/request.json`, JSON.stringify(req)); const rc = commit('factory.d', 'request');
-  let c = K.checkRequest({ cwd: r, r: R, policy: pol }); assert.deepEqual(c.errors, []); assert.equal(c.ready, false, 'no review: not ready');
-  const review = (who, o = {}) => { fs.writeFileSync(`${R.dir}/review.json`, JSON.stringify({ reviewer: `${who}@X.y`, verdict: 'pass', request_commit: rc, checks: ['key parses', 'targets listed'], ...o })); return commit(who, 'review'); };
-  review('security.d'); c = K.checkRequest({ cwd: r, r: R, policy: pol }); assert.deepEqual(c.errors, []); assert.equal(c.ready, true, 'a passing review by the security role: ready');
-  review('factory.e'); assert.ok(K.checkRequest({ cwd: r, r: R, policy: pol }).errors.some((e) => e.includes('only roles security')), 'a reviewer outside the security role is refused');
-  review('security.d', { verdict: 'fail' }); assert.equal(K.checkRequest({ cwd: r, r: R, policy: pol }).ready, false, 'a failing review applies nothing');
-  review('security.d', { reviewer: 'other.d@X.y' }); assert.ok(K.checkRequest({ cwd: r, r: R, policy: pol }).errors.some((e) => e.includes('but was committed by')), 'the review must be committed by the reviewer it names');
-  review('security.d'); fs.writeFileSync(`${R.dir}/request.json`, JSON.stringify({ ...req, targets: ['PrompTugal/PrompTugal__News__Bulletins'] })); commit('factory.d', 'request changed after review');
-  assert.ok(K.checkRequest({ cwd: r, r: R, policy: pol }).errors.some((e) => e.includes('review it again')), 'a request changed after its review needs a new review');
+  fs.mkdirSync(R.dir, { recursive: true }); fs.writeFileSync(`${R.dir}/request.json`, JSON.stringify(req)); let rc = commit('factory.d', 'request');
+  assert.deepEqual(chk().errors, []); assert.equal(chk().ready, false, 'no reviews: not ready');
+  const review = (role, who, o = {}) => { fs.writeFileSync(`${R.dir}/review.${role}.json`, JSON.stringify({ reviewer: `${who}@X.y`, verdict: 'pass', request_commit: rc, checks: ['key parses'], actions: ['none'], ...o })); return commit(who, `${role} review`); };
+  review('security', 'security.d'); assert.equal(chk().ready, false, 'security alone is not enough');
+  review('counsel', 'counsel.d', { actions: ['asked data.d to confirm the licence of its notes'] }); let c = chk(); assert.deepEqual(c.errors, []); assert.equal(c.ready, true, 'security and counsel both pass: ready');
+  assert.ok(K.reviewReport(c).some((l) => l.startsWith('counsel') && l.includes('asked data.d')), 'the run reports each review and its actions');
+  review('counsel', 'counsel.d', { verdict: 'needs-a-person' }); assert.equal(chk().ready, false, 'needs-a-person stops it');
+  review('counsel', 'security.e'); assert.ok(chk().errors.some((e) => e.includes('only the counsel role')), 'a counsel review by another role is refused');
+  review('counsel', 'counsel.d', { reviewer: 'other.d@X.y' }); assert.ok(chk().errors.some((e) => e.includes('but was committed by')), 'a review must be committed by the reviewer it names');
+  review('counsel', 'counsel.d', { actions: undefined }); assert.ok(chk().errors.some((e) => e.includes('actions')), 'a review must report its actions');
+  review('counsel', 'counsel.d'); fs.writeFileSync(`${R.dir}/request.json`, JSON.stringify({ ...req, account: 'B' })); commit('factory.d', 'request changed after review');
+  assert.ok(chk().errors.some((e) => e.includes('review it again')), 'a request changed after its reviews needs new reviews');
   assert.ok(K.validateRequest({ ...req, targets: ['Evil/Repo'] }, R.folder, lim).some((e) => e.includes('not on the policy')), 'an unlisted target is refused');
   assert.ok(K.validateRequest({ ...req, bundle: { sign: 'nope' } }, R.folder, lim).length, 'a key that does not parse is refused');
   assert.ok(K.validateRequest({ ...req, note: ['-----BEGIN', 'PRIVATE', 'KEY-----'].join(' ') }, R.folder, lim).some((e) => e.includes('private key')), 'a private key is refused');
-  const a = K.addEntry({ keys: [F] }, req, R.folder); assert.equal(a.next.keys.length, 2); assert.equal(a.entry.agent, req.agent); assert.ok(K.addEntry(a.next, req, R.folder).skip, 'a live key under that name is not added twice');
+  const a = K.addEntry({ keys: [keys[0]] }, req, R.folder); assert.equal(a.next.keys.length, 2); assert.equal(a.entry.agent, req.agent); assert.ok(K.addEntry(a.next, req, R.folder).skip, 'a live key under that name is not added twice');
   fs.rmSync(d, { recursive: true, force: true }); }
 console.log('OK (tests)');
