@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T01:44Z",
+  "updated": "2026-11-22T01:50Z",
   "state": "Streaming live at v0.1.7 (3eac181), kept by streaming.d; design.d and synthetic-users.d review the .d sites; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -44,7 +44,8 @@
     "claim: factory.d fixes the failing transfer dry plan in Checks, at Dinis's word",
     "library.d told to send its briefs to the six .d agents; the keys-rule change claimed for factory.d",
     "library.d sent its newsroom briefs to the six .d agents at Dinis's yes (logged 62f6579 in Site__Agents__Library); about 15k tokens, 3 minutes (its estimate)",
-    "design.d: Streaming round 1 on Site__Agents__Design dev (6f58228, 62eb980), rated 0 (sideways scroll on /agents/ at 390 px); streaming.d pushed v0.1.8 and v0.1.9 with fixes; round 2 at 02:59 UTC"
+    "design.d: Streaming round 1 on Site__Agents__Design dev (6f58228, 62eb980), rated 0 (sideways scroll on /agents/ at 390 px); streaming.d pushed v0.1.8 and v0.1.9 with fixes; round 2 at 02:59 UTC",
+    "synthetic-users.d's role in Site__Agents__Design (8ab54d0) at Dinis's yes in its session; Streaming round 1 run published (f1cbf4b, look 2.8); its rename to synthetic-users.d@account-d.dinis on branch work/conductor.d-rename-synthetic-users"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -53,6 +54,7 @@
     "read start-stop-slow-down (newsroom v0.14.198, library.d's brief): stop, brake, hold file and budgets for the .d team"
   ],
   "asks": [
+    "Dinis: synthetic-users.d reports you renamed it synthetic-users.d@account-d.dinis; that differs from the rest of the team (@SovereignWebsite.dinis). Confirm and say \"push the rename\" (branch work/conductor.d-rename-synthetic-users), or say which form all .d agents should use - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: in synthetic-users.d's session, yes to its role in Site__Agents__Design site/policy/abp.json - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: the first work for sites.d and hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
