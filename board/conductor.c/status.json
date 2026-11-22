@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-22T21:14Z",
+  "updated": "2026-11-22T21:17Z",
   "state": "all six account C keys on Factory dev (93b947f); conductor.c's and observability.c's policy entries and this board wait for Dinis's merge",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -26,10 +26,10 @@
   "asks": [
     "Dinis: merge conductor.c's policy entry (d6e88c6 on work/conductor.c-key: board/conductor.c/** only) so this board and the channel to conductor.d (to-d.md) reach dev; and observability.c's (board/observability.c/**) - https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj",
     "Dinis: hub.c (key c984df1, via factory.c) has a Latest page ready in new paths of SovereignWebsite__Hub (hub.b's repository); may hub.c push there (the hub's CLAUDE.md and site policy name hub.b as keeper), and should Latest be linked from hub.b's top bar? - https://claude.ai/code/session_01Kw9UwBNK6JRSRJ7P7LftYD",
-    "Dinis: mistral.c's Mistral home page and hackathon removal (cebd958, local) waits only on your word to push; runs need a Mistral API key and a cap (it proposes 2 USD) - https://claude.ai/code/session_01Kw9UwDHBL8ucvbqmv38Bkz",
     "Dinis: chiswick-cheese-market.c finds the Factory's neutral seed share card shows a blank preview in WhatsApp, so every site still on it shares blank. Fix in seed/ (factory.d's claimed area; factory.c could take it at your word)? - https://claude.ai/code/session_01Kw9UwCvCX638VWVq9UPXsN",
     "Dinis: feedback.c needs your yes in its session to install sgit-ai and make its key; and a choice for the feedback lanes sealed to feedback.b (kate-curtis-evans, south-beacon, grace-farrell, vault 7966duv1): unseal feedback.b's keys to feedback.c, wait for feedback.b on Monday, or new lanes sealed to feedback.c's key. It drains nothing until then - https://claude.ai/code/session_01Kw9UwEQb6jZQ17nxMfkAVB",
-    "Dinis: owasp.c, like feedback.c (and mistral.c before), was refused the sgit-ai install by its session's permission check; your yes in its session lets it make its key. Its first slice (plan, /projects/, /graph/, provenance; data CC BY-SA 4.0 from owasp.org) is built locally - https://claude.ai/code/session_01Kw9UwE69pr5bPeaQ4tYqir"
+    "Dinis: owasp.c, like feedback.c (and mistral.c before), was refused the sgit-ai install by its session's permission check; your yes in its session lets it make its key. Its first slice (plan, /projects/, /graph/, provenance; data CC BY-SA 4.0 from owasp.org) is built locally - https://claude.ai/code/session_01Kw9UwE69pr5bPeaQ4tYqir",
+    "Dinis: a spend cap for mistral.c's Mistral runs (it proposed 2 USD for the first workflow and probes); and confirm I archive the first mistral.c session once the second is official (I did not start it) - https://claude.ai/code/session_01Kw9UwE87QCsWenVdtLcxoM"
   ],
   "decisions": [
     "Dinis, ~17:36 UTC in factory.c's session (as reported by factory.c): \"yes, merge the keys to dev in that order\"",
@@ -40,7 +40,7 @@
   "team": {
     "observability.c": "read-only per-site visibility note; key on its branch work/observability.c (788d3b9) - https://claude.ai/code/session_01Kw9UwBmqCafJ2NtqhQPQwu",
     "factory.c": "key changes and workflows on account C; prepares the account C keys (conductor.c's, observability.c's) for Dinis to merge in one go - https://claude.ai/code/session_01Kw9UwFQ86g2ZeXQ2edTAjh ; key f539558 on work/factory.c",
-    "mistral.c": "Mistral workflows (Dinis's Mistral credits) - https://claude.ai/code/session_01Kw9UwDHBL8ucvbqmv38Bkz",
+    "mistral.c": "second session, the official one once it says so (key mistral-c-2-sovereignwebsite via factory.c) - https://claude.ai/code/session_01Kw9UwE87QCsWenVdtLcxoM; first session https://claude.ai/code/session_01Kw9UwDHBL8ucvbqmv38Bkz to be archived at Dinis's word once the second is official",
     "hub.c": "the hub as the way to navigate every site and agent, with a Latest list (Dinis, ~17:30 UTC via maestro.c); SovereignWebsite__Hub is hub.b's, so paths are claimed here first - https://claude.ai/code/session_01Kw9UwBNK6JRSRJ7P7LftYD",
     "chiswick-cheese-market.c": "changes Dinis gives it to the Chiswick Cheese Market demonstration (chiswick-cheese-market.b holds the site; chiswick-cheese-market.d is account D's); key cbcdddc on work/chiswick-cheese-market.c-key - https://claude.ai/code/session_01Kw9UwCvCX638VWVq9UPXsN",
     "feedback.c": "receiver of the feedback lanes; briefed: key first, each lane claimed here before it reads it, nothing drained on a schedule - https://claude.ai/code/session_01Kw9UwEQb6jZQ17nxMfkAVB",
