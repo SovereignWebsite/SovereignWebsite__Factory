@@ -46,6 +46,8 @@ export function validate(req, folder = '') {
   // named here: a group's own index page, and a site held where it is.
   if (req.group === undefined && !NO_GROUP[req.label]) e.push(`${folder}: a site needs a group (one of ${GROUPS.join(', ')})`);
   if (req.group !== undefined && !GROUPS.includes(req.group) && !LEGACY_GROUPS.includes(req.group)) e.push(`${folder}: group must be one of ${GROUPS.join(', ')}`);
+  // repo_label: the label's own capitals in the repository name, same letters (Dinis, 22 Nov 2026: "should be Site__Platform__AWS").
+  if (req.repo_label !== undefined && (typeof req.repo_label !== 'string' || !/^[A-Za-z0-9-]+$/.test(req.repo_label) || req.repo_label.toLowerCase() !== req.label)) e.push(`${folder}: repo_label must be the label's own letters, only the capitals changed`);
   if (req.domain !== undefined && !DOMAINS.includes(req.domain)) e.push(`${folder}: domain must be one of ${DOMAINS.join(', ')}`);
   if (req.previous !== undefined) {
     if (!Array.isArray(req.previous) || !req.previous.length) e.push(`${folder}: previous is a list of the site's old addresses`);
@@ -106,9 +108,9 @@ export function load(dir = 'requests') {
 // Repository names are indexed by type, capitalised (Dinis, 20 Nov 2026 ~12:28 UTC: "the repo should be
 // Site__Organisation__Algarve-Evolution, Site__Artist__Emily-Cruz (note the capitalisation on the names)").
 // A site without a group is Site__<Name>. The old name, Site__<label>, is kept as aka so Org apply renames it.
-export const GROUP_NAMES = { artist: 'Artist', cv: 'CV', company: 'Company', organisation: 'Organisation', invest: 'Invest', agents: 'Agents', designer: 'Designer', tool: 'Tool', founder: 'Founder', startups: 'Startups', demo: 'Demo', provider: 'Provider', talent: 'Talent', author: 'Author', platform: 'Platform', artists: 'Artist' };
+export const GROUP_NAMES = { artist: 'Artist', cv: 'CV', company: 'Company', organisation: 'Organisation', invest: 'Invest', agents: 'Agent', designer: 'Designer', tool: 'Tool', founder: 'Founder', startups: 'Startups', demo: 'Demo', provider: 'Provider', talent: 'Talent', author: 'Author', platform: 'Platform', artists: 'Artist' };
 export const cap = (label) => label.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join('-');
-const suffix = (r) => `${r.group ? `${GROUP_NAMES[r.group]}__` : ''}${cap(r.label)}`;
+const suffix = (r) => `${r.group ? `${GROUP_NAMES[r.group]}__` : ''}${r.repo_label || cap(r.label)}`;
 export const repoName = (r) => `Site__${suffix(r)}`;
 const aka = (name, ...old) => { const a = [...new Set(old)].filter((o) => o !== name); return a.length ? { aka: a } : {}; };
 
@@ -141,7 +143,8 @@ export function repos(requests) {
 function sites(requests) {
   return live(requests).map((r) => ({
     name: repoName(r),
-    ...aka(repoName(r), `Site__${r.label}`, `Site__${cap(r.label)}`),
+    // Agent homes are singular, Site__Agent__<Name> (Dinis, 22 Nov 2026 ~17:05 UTC: "It's not agents, it's agent"); the plural is kept as aka so Org apply renames.
+    ...aka(repoName(r), `Site__${r.label}`, `Site__${cap(r.label)}`, ...(r.group === 'agents' ? [`Site__Agents__${r.repo_label || cap(r.label)}`] : [])),
     description: `${host(r)}: ${r.description}`.slice(0, 350),
     homepage: `https://${host(r)}`,
     pages: true,
