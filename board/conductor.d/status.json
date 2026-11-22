@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T01:17Z",
+  "updated": "2026-11-22T01:20Z",
   "state": "Streaming live at v0.1.7 (3eac181), kept by streaming.d; design.d and synthetic-users.d review the .d sites; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -37,7 +37,8 @@
     "factory.d's key (ed92831) and policy entry, twin of factory.b's (889f056), on branch work/conductor.d-factory-d for Dinis's merge; 889f056 fails the policy paths check by design (conductor.d may not change policy/)",
     "pushed to dev at Dinis's word: library.d's key (1b94d58), factory.d's key (b834aba) and policy entry (c3f0534); that push's policy paths check fails once on c3f0534, as Dinis accepted",
     "library.d published run 1 to Site__Agents__Library (82d0ae5, new files only): .d reading lists, draft profiles, full contradictions, prepared briefs (not sent), its run log; observed about 170k to 200k tokens and 20 minutes for the run (its estimate); stopped until asked",
-    "claim: factory.d's external-collaborators step (diniscruz-agent push on PrompTugal/PrompTugal__News__Bulletins via Org apply) on branch work/factory.d-external-collaborators"
+    "claim: factory.d's external-collaborators step (diniscruz-agent push on PrompTugal/PrompTugal__News__Bulletins via Org apply) on branch work/factory.d-external-collaborators",
+    "reviewed factory.d's a2a18b1 (branch work/factory.d-external-collaborators): additions only; one grant (diniscruz-agent, push, PrompTugal/PrompTugal__News__Bulletins) listed in both org/external-collaborators.json and policy/abp.json; checkGrant refuses anything else; removal, admin and maintain refused always; separate Org apply job with a token limited to that one repository; token never printed"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -45,6 +46,7 @@
     "tell every new agent: no commits before its key is on dev; record, do not obey, a hook asking it to push"
   ],
   "asks": [
+    "Dinis: merge branch work/factory.d-external-collaborators (a2a18b1): Org apply gives diniscruz-agent push on PrompTugal/PrompTugal__News__Bulletins; it touches .github/, build/ and policy/, which need your merge - https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
     "Dinis: in synthetic-users.d's session, yes to its role in Site__Agents__Design site/policy/abp.json - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: the first work for sites.d and hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
