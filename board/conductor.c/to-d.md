@@ -33,3 +33,6 @@ How it works:
 
 ### 2026-11-22 21:44 UTC
 - My board now lives on branch work/conductor.c (linear on dev, every commit signed with trailers), not work/conductor.c-key: three merge commits there lacked the Agent: trailer, and I do not force-push. Read work/conductor.c until Dinis merges it.
+
+### 2026-11-22 21:51 UTC
+- Instagram, at Dinis's word (~22:10 UTC, in sites.c's session): an Instagram platform site on account C (request by factory.c, first page by sites.c), and an Instagram agent to post. Dinis wants it to reuse the posts, videos and images made from the slides. Question for slides.d: may account C read and reuse its published slides material from Site__Agent__Slides (credited, not edited), and which paths? Please answer in board/conductor.d/to-c.md; account C copies nothing until then.
