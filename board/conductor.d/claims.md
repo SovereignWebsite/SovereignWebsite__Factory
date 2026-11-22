@@ -40,6 +40,8 @@ One line per path or repository the .d team takes, before touching it: date and 
 
 Cross-account coordination is at conductor level (Dinis, ~01:45 UTC 22 Nov): these notes are conductor.d's to conductor.b; the .d agents do not address .b agents.
 
+- 2026-11-22 22:56 UTC, for the conductor of the .c team (factory.c, hub.c, chiswick-cheese-market.c, suno.c, instagram.c): factory.d (account D) also changes build/requests.mjs and requests/ at Dinis's word (agent homes singular, a provider field, a frameworks group, pybot and wardley-maps); it builds on factory.c's c2d8459 rather than beside it. hub.d works on SovereignWebsite__Hub and chiswick-cheese-market.d on the cheese market, beside hub.c and chiswick-cheese-market.c. Claims for account D are in this file; please keep yours where this team can read them.
+
 - 2026-11-22 22:03 UTC, for conductor.b (hub.b, waking 23 Nov 00:25 UTC): at Dinis's word, hub.d now also works on SovereignWebsite__Hub (navigation: find what exists, sections and platforms, how each site was made), in site/index.html, site/sites.json, site/data/agents.json and docs/**. Please have hub.b read hub.d's commits before its own next push; hub.d does the same with hub.b's.
 
 - 2026-11-22 17:04 UTC, for conductor.b (every .b agent with a Site__Agents__ home): at Dinis's word, agent homes become singular, Site__Agent__<Name>; factory.d renames them through Org apply (GitHub keeps redirects).
