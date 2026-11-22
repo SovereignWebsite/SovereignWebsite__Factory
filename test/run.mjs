@@ -172,11 +172,27 @@ const tp = T.planFor(waiting);
 assert.deepEqual(tp.actions, [{ action: 'repo.transfer_in', target: 'AgentiCCells/AgentiCCells__Site__Transfer-Test', to: 'SovereignWebsite/Site__Demo__Transfer-Test', address_from: 'transfer-test.agenticcells.site', address_to: 'transfer-test.demo.sovereignwebsite.site' }]);
 assert.ok(checkActions(p, { pipeline: 'transfer-apply', actions: [{ ...tp.actions[0], address_from: 'shop.example.com' }] }).some((x) => x.includes('not a domain we control')), 'a domain outside our control is refused');
 assert.ok(checkActions(p, { pipeline: 'transfer-apply', actions: [{ ...tp.actions[0], address_from: 'evilagenticcells.site' }] }).length, 'a look-alike domain is refused');
-const { ownKeyChanged } = await import('../build/abp.mjs');
-const kj = (ks) => JSON.stringify({ keys: ks });
-assert.ok(ownKeyChanged('a@X.y', kj([{ agent: 'a@X.y', fingerprint: '1' }]), kj([{ agent: 'a@X.y', fingerprint: '2' }])), 'an agent changing its own key is caught');
-assert.ok(!ownKeyChanged('a@X.y', kj([{ agent: 'a@X.y', fingerprint: '1' }]), kj([{ agent: 'a@X.y', fingerprint: '1' }, { agent: 'b@X.y', fingerprint: '3' }])), 'adding a team key is not');
-assert.ok(ownKeyChanged('a@X.y', kj([]), kj([{ agent: 'a@X.y' }])), 'adding its own key is caught');
+{ const { keysChange } = await import('../build/abp.mjs');
+  const kj = (ks, extra = {}) => JSON.stringify({ about: 'x', ...extra, keys: ks });
+  const S = 'https://claude.ai/code/session_A', k = (agent, o = {}) => ({ id: agent.split('@')[0], agent, status: 'active', session: S, bundle: { sign: 'PEM' }, ...o });
+  const kc = (before, after, agent = 'a.d@X.y', session = S, canRetireOthers = false) => keysChange({ agent, session, before: kj(before), after: kj(after), canRetireOthers });
+  const base = [k('b.d@X.y', { session: 'https://claude.ai/code/session_B' })];
+  assert.deepEqual(kc(base, [...base, k('a.d@X.y')]).errors, [], 'an agent publishes its own key'); assert.equal(kc(base, [...base, k('a.d@X.y')]).added.agent, 'a.d@X.y');
+  assert.ok(kc(base, [...base, k('c.d@X.y')]).errors.length, "adding another agent's key is refused");
+  assert.ok(kc(base, [...base, k('a.d@X.y'), k('a2.d@X.y', { agent: 'a.d@X.y' })]).errors.length, 'at most one key per commit');
+  assert.ok(kc(base, [...base, k('a.d@X.y', { session: 'https://claude.ai/code/session_Z' })]).errors.length, "the new key's session must be the commit's");
+  assert.ok(kc(base, [...base, k('a.d@X.y', { status: 'retired' })]).errors.length, 'a new key is active');
+  assert.ok(kc(base, [...base, k('a.d@X.y', { bundle: {} })]).errors.length, 'a new key has a signing key');
+  assert.ok(kc([k('a.d@X.y')], [k('a.d@X.y'), k('a.d.2', { agent: 'a.d@X.y' })]).errors.length, 'one live key per agent name');
+  assert.deepEqual(kc([k('a.d@X.y', { status: 'retired' })], [k('a.d@X.y', { status: 'retired' }), k('a.d.2', { agent: 'a.d@X.y' })]).errors, [], 'a retired name may publish a new key');
+  assert.deepEqual(kc([k('a.d@X.y')], [k('a.d@X.y', { status: 'retired', retired: '2026-11-22' })]).errors, [], 'an agent retires its own key');
+  assert.ok(kc([k('a.d@X.y')], [k('a.d@X.y', { bundle: { sign: 'OTHER' } })]).errors.length, 'an agent may not edit its key in place');
+  assert.ok(kc(base, [k('b.d@X.y', { session: 'https://claude.ai/code/session_B', status: 'retired' })]).errors.length, "retiring another agent's key is refused");
+  assert.deepEqual(kc(base, [k('b.d@X.y', { session: 'https://claude.ai/code/session_B', status: 'retired' })], 'conductor.d@X.y', S, true).errors, [], "a conductor may retire another agent's key");
+  assert.ok(kc(base, [k('b.d@X.y', { session: 'https://claude.ai/code/session_Z' })], 'conductor.d@X.y', S, true).errors.length, "nobody edits another agent's key");
+  assert.ok(kc(base, []).errors.length, 'entries are never removed');
+  assert.ok(keysChange({ agent: 'a.d@X.y', session: S, before: kj(base), after: kj(base, { about: 'changed' }) }).errors.length, 'the rest of the file is unchanged');
+  assert.ok(p.keys_rule.includes('own key'), 'the keys rule text says agents publish their own key'); }
 assert.deepEqual(checkActions(p, tp), [], 'a listed move is allowed');
 assert.deepEqual(T.pending([waiting, moved, { ...good, folder: 'x', moved: false }]).map((r) => r.folder), [F], 'only unmoved requests with from are pending');
 const L = p.pipelines['transfer-apply'].limits;
@@ -399,4 +415,24 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   const out = `${mkdtempSync(`${tmpdir()}/tp-`)}/plan.json`, run = spawnSync(process.execPath, ['build/transfer-plan.mjs', out], { encoding: 'utf8' });
   assert.equal(run.status, 0, `the dry move plan passes: ${run.stderr}`); const tp = JSON.parse(readFileSync(out, 'utf8'));
   assert.ok(tp.actions.length <= 1, 'one move per run'); if (todo.length > 1) assert.equal(tp.actions.length, 0, 'several pending and none named: nothing moves'); }
+// End to end: an agent publishes its own key and is verified against it; a key for another name, or a second live key, is not.
+{ const { execFileSync: x } = await import('node:child_process'); const fs = await import('node:fs'); const { tmpdir } = await import('node:os');
+  const { checkSignatures } = await import('../build/check-signatures.mjs'); const { checkPaths } = await import('../build/abp.mjs');
+  const d = fs.mkdtempSync(`${tmpdir()}/keys-`), r = `${d}/r`, git = (...a) => x('git', ['-C', r, '-c', 'user.name=t', '-c', 'user.email=t@t', '-c', 'gpg.format=ssh', '-c', 'gpg.ssh.program=ssh-keygen', ...a], { encoding: 'utf8' }).trim();
+  const key = (n) => { x('ssh-keygen', ['-q', '-t', 'ecdsa', '-b', '256', '-N', '', '-f', `${d}/${n}`]); return { id: n, agent: `${n}@X.y`, status: 'active', session: `https://claude.ai/code/session_${n}`, bundle: { sign: x('ssh-keygen', ['-e', '-m', 'PKCS8', '-f', `${d}/${n}.pub`], { encoding: 'utf8' }) } }; };
+  const [A, B, C] = ['a', 'b', 'c'].map(key); fs.mkdirSync(`${r}/build`, { recursive: true }); fs.mkdirSync(`${r}/team`); x('git', ['init', '-q', r]);
+  for (const f of ['check-signatures.mjs', 'abp.mjs']) fs.copyFileSync(`build/${f}`, `${r}/build/${f}`);
+  const keys = (ks) => { fs.writeFileSync(`${r}/team/keys.json`, JSON.stringify({ keys: ks }, null, 1)); git('add', '-A'); };
+  keys([A]); git('-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'init'); const init = git('rev-parse', 'HEAD');
+  const commit = (signer, agent, msg) => git('-c', `user.signingkey=${d}/${signer}`, 'commit', '-q', '-S', '-m', msg, '-m', `Agent: ${agent}@X.y\nClaude-Session: https://claude.ai/code/session_${agent}`);
+  keys([A, B]); commit('b', 'b', 'b publishes its key'); const good = git('rev-parse', 'HEAD');
+  assert.deepEqual(checkSignatures({ cwd: r, before: init }).errors, [], 'a commit that publishes its own key verifies against it');
+  assert.deepEqual(checkPaths({ version: 1, agents: {} }, { base: init, head: good, cwd: r }).errors, [], 'publishing its own key needs no policy entry');
+  keys([A, B, { ...C, agent: 'z@X.y', id: 'z' }]); commit('c', 'c', 'c adds a key named z');
+  assert.equal(checkSignatures({ cwd: r, before: good }).errors.length, 1, 'a key for another name does not verify'); git('reset', '-q', '--hard', good);
+  keys([A, B, { ...C, agent: 'b@X.y', id: 'b2', session: B.session }]); commit('c', 'b', 'a second live key for b');
+  assert.equal(checkSignatures({ cwd: r, before: good }).errors.length, 1, 'a second live key under one name does not verify'); git('reset', '-q', '--hard', good);
+  keys([A, B, C]); fs.writeFileSync(`${r}/other.txt`, 'x'); git('add', '-A'); commit('c', 'c', 'c publishes and changes another file');
+  assert.equal(checkPaths({ version: 1, agents: {} }, { base: good, cwd: r }).errors.length, 1, 'a key plus any other file still needs a policy entry');
+  fs.rmSync(d, { recursive: true, force: true }); }
 console.log('OK (tests)');
