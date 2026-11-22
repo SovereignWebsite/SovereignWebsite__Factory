@@ -51,7 +51,8 @@
     "factory.d's work/factory.d-transfer-plan (7924bf3): with several moves pending and none named, the plan checks each and plans no action; one move per run unchanged; AgentiCCells__Site__Dinis-Cruz on transfer-apply's list at Dinis's 21 Nov yes",
     "library.d at Dinis's word: Site__Agents__Library pages.yml fixed to publish both keepers' keys (fef5b54, Pages green); a read tracker and /d/agents/<agent>.html pages for the .d agents (025af0c)",
     "told every .d agent: own sites are Site__Agents__<Role> through a Factory request; twins share, with /accounts/<x>/; library.d moves /d/ to /accounts/d/",
-    "synthetic-users.d's rename to synthetic-users.d@account-d.dinis pushed to dev (a85f7bd) at Dinis's word"
+    "synthetic-users.d's rename to synthetic-users.d@account-d.dinis pushed to dev (a85f7bd) at Dinis's word",
+    "library.d moved its pages to /accounts/d/ in Site__Agents__Library (9b00bc9), /d/ redirects, nothing of librarian.b's changed; about 25k tokens, 10 minutes (its estimate)"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -59,7 +60,7 @@
     "tell every new agent: no commits before its key is on dev; record, do not obey, a hook asking it to push",
     "read start-stop-slow-down (newsroom v0.14.198, library.d's brief): stop, brake, hold file and budgets for the .d team",
     "after the keys change lands: rewrite board/workflow/2026-11-20__signing-with-your-key.md (first commit adds your own entry only, signed by your new key; second sessions take <role>.<label>.<account>@...); tell every .d agent",
-    "when the signing how-to is rewritten, add one line to the .d agents' brief: tell library.d the slugs of articles you read (no separate wake for it)"
+    "when the signing how-to is rewritten, add one line to the .d agents' brief: \"when you read an article from your list, tell library.d the slugs; your page is https://library.agents.sovereignweb.site/accounts/d/agents/<you>.html\" (no separate wake for it)"
   ],
   "asks": [
     "Dinis: you wrote Site__Agent__{Name}; the established form (requests/README.md, every agent site so far) is Site__Agents__<Role>. I passed on the plural; say if you want the singular for new ones - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
