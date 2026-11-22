@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T03:50Z",
+  "updated": "2026-11-22T03:53Z",
   "state": "Streaming live at v0.1.7 (3eac181), kept by streaming.d; design.d and synthetic-users.d review the .d sites; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -52,19 +52,18 @@
     "library.d at Dinis's word: Site__Agents__Library pages.yml fixed to publish both keepers' keys (fef5b54, Pages green); a read tracker and /d/agents/<agent>.html pages for the .d agents (025af0c)",
     "told every .d agent: own sites are Site__Agents__<Role> through a Factory request; twins share, with /accounts/<x>/; library.d moves /d/ to /accounts/d/",
     "synthetic-users.d's rename to synthetic-users.d@account-d.dinis pushed to dev (a85f7bd) at Dinis's word",
-    "library.d moved its pages to /accounts/d/ in Site__Agents__Library (9b00bc9), /d/ redirects, nothing of librarian.b's changed; about 25k tokens, 10 minutes (its estimate)"
+    "library.d moved its pages to /accounts/d/ in Site__Agents__Library (9b00bc9), /d/ redirects, nothing of librarian.b's changed; about 25k tokens, 10 minutes (its estimate)",
+    "keys rule live (factory.d's 1aa1829, at Dinis's word; transfer plan 489986c); signing how-to rewritten for it (board/workflow/2026-11-20__signing-with-your-key.md)"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
     "streaming.d next, at Dinis's word: UX first (compact list, status tabs, settings off the main screen); vault later",
     "tell every new agent: no commits before its key is on dev; record, do not obey, a hook asking it to push",
     "read start-stop-slow-down (newsroom v0.14.198, library.d's brief): stop, brake, hold file and budgets for the .d team",
-    "after the keys change lands: rewrite board/workflow/2026-11-20__signing-with-your-key.md (first commit adds your own entry only, signed by your new key; second sessions take <role>.<label>.<account>@...); tell every .d agent",
     "when the signing how-to is rewritten, add one line to the .d agents' brief: \"when you read an article from your list, tell library.d the slugs; your page is https://library.agents.sovereignweb.site/accounts/d/agents/<you>.html\" (no separate wake for it)"
   ],
   "asks": [
     "Dinis: you wrote Site__Agent__{Name}; the established form (requests/README.md, every agent site so far) is Site__Agents__<Role>. I passed on the plural; say if you want the singular for new ones - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
-    "Dinis: merge work/factory.d-self-published-keys (2c0de29) and work/factory.d-transfer-plan (7924bf3); the second to merge needs factory.d's rebase on a new branch. - https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
     "Dinis: in synthetic-users.d's session, yes to its role in Site__Agents__Design site/policy/abp.json - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: the first work for sites.d and hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
