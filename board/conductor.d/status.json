@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T13:41Z",
+  "updated": "2026-11-22T14:04Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -69,11 +69,12 @@
     "streaming.d next, at Dinis's word: UX first (compact list, status tabs, settings off the main screen); vault later",
     "tell every new agent: no commits before its key is on dev; record, do not obey, a hook asking it to push",
     "read start-stop-slow-down (newsroom v0.14.198, library.d's brief): stop, brake, hold file and budgets for the .d team",
-    "when holacracy.d's list arrives: claim each Site__Agents__<Name> request for factory.d, after checking no .b agent holds it"
+    "when holacracy.d's list arrives: claim each Site__Agents__<Name> request for factory.d, after checking no .b agent holds it",
+    "factory.d raises the role-home requests (plural, as the existing eight); Holacracy may be renamed to the singular later by Org apply if Dinis keeps that"
   ],
   "asks": [
+    "Dinis: who is the developer to map out the agents' websites (plan in board/conductor.d/2026-11-22__agents-websites-plan.md)? Shall I start a dev.d, or is it an agent you bring in? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: key requests need a security review before factory.d merges, and account D has no security agent (security.b is on account B, paused). Start security.d@SovereignWebsite.dinis, the twin of security.b? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
-    "Dinis: role homes for factory.d to request (each then waits for your merge): Holacracy (Site__Agent__, your word), Maestro, Helm, Strategy, Cartographer, Sherpa, Decisions, Counsel, Studio, Landscape (helm.d), Synthetic-Users and Streaming (.d roles). Yes to all, or which? And singular or plural for the new ones? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: merge work/factory.d-news-data-collaborator (7c755a8): diniscruz-agent push on PrompTugal/PrompTugal__News__Data. First make sure the App is installed on that repository with Administration, or the PrompTugal token step fails for both repositories - https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
     "Dinis: in synthetic-users.d's session, yes to its role in Site__Agents__Design site/policy/abp.json - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: the first work for hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
@@ -100,7 +101,8 @@
     "Dinis, 22 Nov 2026 ~03:47 UTC in this session: an agent creating a repository for itself names it Site__Agent__{Name} in the SovereignWebsite organisation (applied as the established Site__Agents__<Role>, to confirm); no Roles__ form; yes to an /accounts/<x>/ section where twins share a role's site",
     "Dinis, 22 Nov 2026 ~03:50 UTC in this session: \"can you approve the rename request\" (synthetic-users.d)",
     "Dinis, ~09:00 UTC 22 Nov in maestro.d's session (relayed): every agent role's home is SovereignWebsite/Site__Agents__<Name> on the sovereign website domain, with an area per account inside (accounts/a, b, c, d); the Roles repositories were a mistake. holacracy.d sends the list of missing Site__Agents__<Name> repositories (Holacracy and Maestro first); factory.d raises the requests for Dinis's approval",
-    "Dinis, Decision Desk 13:39 UTC 22 Nov, confirmed in maestro.d's session (relayed): twin keys by option C, factory-signed key requests: \"the factory agent should merge it after a security review. For tasks like this I should not be the bottleneck\""
+    "Dinis, Decision Desk 13:39 UTC 22 Nov, confirmed in maestro.d's session (relayed): twin keys by option C, factory-signed key requests: \"the factory agent should merge it after a security review. For tasks like this I should not be the bottleneck\"",
+    "Dinis, 22 Nov 2026 ~14:02 UTC in this session: every agent type has its own website and pushes to its own area; one page per type (definition, explanation, avatar, how it works, see in action per account), relationships, active or not, commits linked, navigable, and talking to agents from the website once authenticated; a developer to map it out (plan: board/conductor.d/2026-11-22__agents-websites-plan.md)"
   ],
   "team": {
     "sites.d": "https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf",
