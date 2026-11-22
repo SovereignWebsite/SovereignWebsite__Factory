@@ -1,0 +1,45 @@
+name: Key apply
+# Publishes a reviewed agent key in another repository's team/keys.json (keys/<date>__<id>/), signed by the factory
+# key, under policy/abp.json pipelines.key-apply. build/key-requests.mjs checks every rule (well formed, signed by a
+# requester role, reviewed and signed by a different reviewer role, the review bound to the exact request commit)
+# before it writes anything; it only adds an entry, never edits or removes one.
+on:
+  push:
+    branches: [dev]
+    paths: ['keys/**']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency: key-apply
+defaults:
+  run:
+    shell: bash
+jobs:
+  promptugal:
+    runs-on: ubuntu-latest
+    environment: apply
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node test/run.mjs && node build/abp.mjs validate && node build/key-requests.mjs check
+      - id: app
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.FACTORY_APP_ID }}
+          private-key: ${{ secrets.FACTORY_APP_PRIVATE_KEY }}
+          owner: PrompTugal
+          repositories: PrompTugal__News__Data,PrompTugal__News__Bulletins
+          permission-contents: write
+      - name: PrompTugal
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          FACTORY_SIGNING_KEY: ${{ secrets.FACTORY_SIGNING_KEY }}
+        run: |
+          if [ -z "$FACTORY_SIGNING_KEY" ]; then echo "The factory key is not in the apply environment yet: nothing applied." | tee -a "$GITHUB_STEP_SUMMARY"; exit 0; fi
+          umask 077; key="$RUNNER_TEMP/factory-signing"; printf '%s\n' "$FACTORY_SIGNING_KEY" > "$key"
+          trap 'rm -f "$key"' EXIT
+          FACTORY_SIGNING_KEY_FILE="$key" node build/key-requests.mjs apply PrompTugal | tee -a "$GITHUB_STEP_SUMMARY"
