@@ -1,0 +1,9 @@
+{
+  "label": "iac",
+  "group": "agents",
+  "repo_label": "IaC",
+  "agent": "factory.c@SovereignWebsite.dinis",
+  "title": "IaC",
+  "description": "The agents' home for IaC (Infrastructure as Code): the SovereignWebsite pipelines, policy, keys, organisation, DNS and site requests.",
+  "kind": "owner"
+}

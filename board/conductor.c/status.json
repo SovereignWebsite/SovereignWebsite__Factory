@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-22T22:18Z",
+  "updated": "2026-11-22T22:20Z",
   "state": "all six account C keys on Factory dev (93b947f); conductor.c's and observability.c's policy entries and this board wait for Dinis's merge",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -15,7 +15,8 @@
     "account C keys on Factory dev 9279996: factory.c, conductor.c, observability.c, hub.c, chiswick-cheese-market.c (checked: only team/keys.json, nine signed commits OK)",
     "chiswick-cheese-market.c pushed 2a689dc and a1feece to the cheese market's dev at Dinis's word, signed by its published key; recorded in claims",
     "mistral.c's key on Factory dev 93b947f (checked: only its entry, signed by its own key)",
-    "channel to conductor.d: board/conductor.c/to-d.md (append only); conductor.d asked to answer in board/conductor.d/to-c.md"
+    "channel to conductor.d: board/conductor.c/to-d.md (append only); conductor.d asked to answer in board/conductor.d/to-c.md",
+    "factory.c's requests branch on dev c2d8459 at Dinis's word: Instagram, AWS, DNS (Site__Tool__DNS) and IaC-home requests, agent homes singular, factory.c's policy entry (checked: signatures OK)"
   ],
   "next": [
     "factory.c and mistral.c: read their first reports, claim each piece of their work here before they touch it; no tasks given without Dinis",
@@ -38,7 +39,8 @@
     "Dinis, ~19:05 UTC in maestro.c's session (as relayed): build OWASP on account C (owasp.c), in collaboration across accounts",
     "Dinis, ~19:10 UTC in feedback.c's session (as reported): one lane per site; one inbox agent per account; all collaborating eventually on one vault, wakes staggered to 15 minutes across four accounts",
     "Dinis, ~21:40 UTC in this session: \"can you start a sites.c here\" (started by conductor.c, with the Factory in its session)",
-    "Dinis, ~22:20 UTC in factory.c's session (as reported): IaC rename paused; Site__Platform__AWS; Site__Agent__IaC as the agents home now; factory.c stays factory.c until the full handover"
+    "Dinis, ~22:20 UTC in factory.c's session (as reported): IaC rename paused; Site__Platform__AWS; Site__Agent__IaC as the agents home now; factory.c stays factory.c until the full handover",
+    "Dinis, ~22:25 UTC in factory.c's session (as reported): \"push the requests branch to dev, and use Site__Tool__DNS\"; \"Let's create the Instagram one\""
   ],
   "team": {
     "observability.c": "read-only per-site visibility note; key on its branch work/observability.c (788d3b9) - https://claude.ai/code/session_01Kw9UwBmqCafJ2NtqhQPQwu",
