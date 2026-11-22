@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T00:34Z",
+  "updated": "2026-11-22T00:37Z",
   "state": "Streaming live at v0.1.7 (3eac181), kept by streaming.d; design.d and synthetic-users.d review the .d sites; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -24,14 +24,15 @@
     "daily debrief: board/conductor.d/handover/2026-11-21__conductor-d-debrief.md; passed the account B pause (until Mon 23 Nov 00:25 UTC) to sites.d and hub.d",
     "synthetic-users.d started (https://claude.ai/code/session_015gaHddQiB4aYZWXjfs16rM), runs on design.d's request, no schedule; docs/runs/streaming-*.md claimed for it",
     "told streaming.d, hub.d, sites.d and design.d exactly what each must ask Dinis for in its own session",
-    "Streaming: streaming.d named keeper by Dinis in its session (~22:52 UTC, 5be8259); d98d2d5, 5be8259, 3eac181 on Site__Tool__Streaming dev, live v0.1.7 (checked in the repository)"
+    "Streaming: streaming.d named keeper by Dinis in its session (~22:52 UTC, 5be8259); d98d2d5, 5be8259, 3eac181 on Site__Tool__Streaming dev, live v0.1.7 (checked in the repository)",
+    "synthetic-users.d's key on branch work/conductor.d-synthetic-users-d-key (5dd586a), signing line checked"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
-    "add synthetic-users.d's key when it arrives",
     "streaming.d next, at Dinis's word: UX first (compact list, status tabs, settings off the main screen); vault later"
   ],
   "asks": [
+    "Dinis: merge work/conductor.d-synthetic-users-d-key (synthetic-users.d's public key), or tell me to push it to dev; and, in synthetic-users.d's session, yes to its role in Site__Agents__Design site/policy/abp.json - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: the first work for sites.d and hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: let hub.d (https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N) read SovereignWebsite__Vault, Site__Agents__Hub and the Factory: its permission check refused add_repo and git clone - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL"
