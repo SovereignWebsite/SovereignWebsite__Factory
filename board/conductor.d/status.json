@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T15:32Z",
+  "updated": "2026-11-22T15:34Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -69,7 +69,8 @@
     "root cause of the /policy/ axe failures found: seeded policy.css muted footer plus the chip's opacity .75 (3.58:1); factory.d briefed to propose the seed fix and list affected sites",
     "factory.d's check: the Factory seed sets no opacity on the chip (seed build.mjs: color:inherit); the .75 comes from older copies of build.mjs in the affected sites (Site__Agents__Design's has opacity:.75). The seeded footer alone passes (6.42:1 light). The seed line stays as a guard; each failing site needs either the policy.css line or its own build.mjs brought up to the seed. The policy page is on 14 sites (status.json); which fail needs checking per site",
     "claim: sites.d's second site, a public author site for Donna Freed (consent per Dinis), Site__Author__Donna-Freed, donna-freed.author.sovereignweb.site, off the hub; needs a new group \"author\"",
-    "incident filed: board/incidents/2026-11-22__pushed-before-key-published.md (answer to Dinis's B: no, nothing would have caught it; proposals for A)"
+    "incident filed: board/incidents/2026-11-22__pushed-before-key-published.md (answer to Dinis's B: no, nothing would have caught it; proposals for A)",
+    "landed by factory.d at Dinis's word: diniscruz-agent push on PrompTugal__News__Data (8a7f0e3, Org apply 45038820888); requests wordpress, donna-freed (group author) and 11 agent sites (13947db, Org apply 45038885703); told sites.d and maestro.d"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
