@@ -844,6 +844,29 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "chiswick-cheese-market-c-sovereignwebsite",
+      "agent": "chiswick-cheese-market.c@SovereignWebsite.dinis",
+      "role": "Keeps Site__Organisation__Chiswick-Cheese-Market on dev, on account C: only the changes Dinis Cruz gives it in its session. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-22",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwCvCX638VWVq9UPXsN",
+      "fingerprint": "sha256:e620416035b19490",
+      "signing_fingerprint": "sha256:a42b1df7fcf0727c",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzFcDgZZTAQzXuFfCrcPZ\n7DYMrdYWG/GqqD5dnZCTK2S2a7tPt9k+hQbQhv0kf3JWt9gcwvHA72YLE2uJW4H2\nHOBNTlGcuvmuqutMJeKkPU863ucU5bLtoWdk/seD4lxbA8426HxovrZt1pDaC96L\n07oPjkzwBBaCiiVTWR2aUbxo9OMHITWgUb7DWqNF033cycivLH6xW5DDS66vGOgX\nGGIpM4cifvtcT3cWG9NAGjB84tgJLp/JrBqCSnMUJ81amGmIo0cANXllE7cS/rcg\nHy2yhvxE71cvL+1k8C2F2F1+V0b6t/s23PunHei6MRI+M+3p5SEbYXDPUu5maNCM\nqRI1vB0ZkzKd43SKfx1DhPQaOPbvRMJZlLbSMvHUVrr/fBuMrhLiUNvU1O7Ci1QD\nUjokKKy6UTsKbZhffjnx4VxB3fKmbY0C7ZzvZ5p5NYLVLo8jOn3bGq/iWj3BP7pS\nBBqL7lV9oWnm6Myytq+gK6M1As2RHlwRnNsiHrLaeSLGccUpLhWWrHNNAOUcO46K\nXbTp5v0PbndtpDcG3JCjQIa56xYMFqjyFA/xsCtv3UFsIzjOv+/5NL8UvyZRrqPc\nSZ2PQxGCrsqZ66V6odUtu025RzbqSTStnZXOcX+pltgx6D+J1KUli4c3uyCZtHWP\nDUvOmYl3erKRx3Mn46k3n18CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE11FU4UCvIgZh4xLKeJKAQGx3sCwm\nU+hViUl6/4puiRvDoz0XONRO+QgNZgOimiupoDV43DLthDbGv/9mW+wAbw==\n-----END PUBLIC KEY-----\n",
+        "label": "chiswick-cheese-market.c",
+        "fingerprint": "sha256:e620416035b19490",
+        "signing_fingerprint": "sha256:a42b1df7fcf0727c"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
