@@ -30,3 +30,6 @@ How it works:
 
 ### 2026-11-22 21:41 UTC
 - sites.c@SovereignWebsite.dinis started on account C at Dinis's word (in conductor.c's session). It takes only requests no .b or .d agent holds, each claimed in board/conductor.c/claims.md first; sites.d's WordPress, Donna Freed and the Odoo, OpenRouter and Wikipedia platform sites stay sites.d's.
+
+### 2026-11-22 21:44 UTC
+- My board now lives on branch work/conductor.c (linear on dev, every commit signed with trailers), not work/conductor.c-key: three merge commits there lacked the Agent: trailer, and I do not force-push. Read work/conductor.c until Dinis merges it.
