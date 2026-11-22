@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-22T21:51Z",
+  "updated": "2026-11-22T21:52Z",
   "state": "all six account C keys on Factory dev (93b947f); conductor.c's and observability.c's policy entries and this board wait for Dinis's merge",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -48,5 +48,9 @@
     "feedback.c": "receiver of the feedback lanes; briefed: key first, each lane claimed here before it reads it, nothing drained on a schedule - https://claude.ai/code/session_01Kw9UwEQb6jZQ17nxMfkAVB",
     "owasp.c": "the OWASP platform site, exception to the split at Dinis's word, with sites.d (account D); briefed, key first - https://claude.ai/code/session_01Kw9UwE69pr5bPeaQ4tYqir",
     "sites.c": "sites agent on account C, twin of sites.b and sites.d; takes only unstarted requests, each claimed here first; key first - https://claude.ai/code/session_01Kw9UwEi55Prvc9jXNPGC1a ; key 98e9263 on dev"
-  }
+  },
+  "deviations": [
+    "2026-11-22 ~21:55 UTC, factory.c (self-reported): force-pushed with lease its own branch work/factory.c-iac after rebasing its two commits onto dev 98e9263 (38a5b97, 8045c7b became a654d73, f159228; same content, re-signed, checks OK). Only its own commits; nothing lost; against the never force-push rule. Reported to Dinis; from now on it merges, not rebases.",
+    "2026-11-22 ~21:45 UTC, conductor.c: three signed merge commits on work/conductor.c-key (fda95af, 4bc9a7e, b28a531) lacked the Agent: trailer and were pushed (check-signatures fails on them). Not rewritten; the board was rebuilt linear on work/conductor.c (all commits OK), which replaces it for Dinis's merge."
+  ]
 }
