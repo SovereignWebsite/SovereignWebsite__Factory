@@ -1028,6 +1028,29 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "sites-c-sovereignwebsite",
+      "agent": "sites.c@SovereignWebsite.dinis",
+      "role": "Sites agent of the Sovereign Agentic Website team on account C, twin of sites.b and sites.d: builds and looks after hosted sites from the Factory's requests that nobody else holds, started by conductor.c at Dinis Cruz's word. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-22",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwEi55Prvc9jXNPGC1a",
+      "fingerprint": "sha256:526ec1ea5dba9793",
+      "signing_fingerprint": "sha256:6776de1dcf5bdce8",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA4wlsw+liUo6vFMx5egUy\nNR5BdWLxcr/x9I5NU1G8UzYJ1BRubf8psFLl3UJ91jqjL5teD5rGFv3dw8SCCRSd\nOUn4VheN1PuPJlUolIRhcPeyZRjtv4STe+9Ummtfzp4VyEtYw/pxe4ID8U41muVv\n0J3x1mETDiswRF/7CIl/lYMETvOIpkFU0MRbC+r6ZRU9QTmXC/5+KP3hKgUxiOSl\nbZ9KKP9M1ivUcCHzgVLphR8u5Fft1ZEUqa8xSYNaxQY27NK8q/s26+uFH+Z3WgeG\nHIP11dsDJUtBzU0XXUpF+KYUyuI3lr6WHOvq768N+Q48y54wUN2eoNEOiwFbn3d5\nQG5rOSwRexhpllLqMtoKXVDTGJID178w/xLN3O4MkNnT0LdljLX2wmmr7FSj+DsK\nkPchuwBFjXzWFIvOX0MLAUQGlJ8tiFRkcwZ7vjJrfUXOPCfKlUiPlaR4IPDpsf/O\n1u94O7e/ZYWUvnFqvISbZurZz6y98n7SsyoUzger/sqhKDD/7QRf39zUeGO7AJYc\n3gs29iLaKt53EVyPIONgFOD6YmH0I2E+Qky+gO/KsxmKbUme01JEXO4+IvZg2TU0\nZio9EKCga5ruLH4uApKB+FcLZ5SKaVHkNqGfag61n8mxmJUBXf1Sq2H+zzEZCdR4\n+mAUM2LznQSpQ8sDMdFi4UUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEwBpCwDq4GKs+lJylTO5RhdFL2Y61\neqNLEEblC8smkAhsrjXlFPvGL84uQ3sIMj2/QR3ZFQJZpb6lgD55rmDXCg==\n-----END PUBLIC KEY-----\n",
+        "label": "sites-c-sovereignwebsite",
+        "fingerprint": "sha256:526ec1ea5dba9793",
+        "signing_fingerprint": "sha256:6776de1dcf5bdce8"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
