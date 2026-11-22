@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T11:49Z",
+  "updated": "2026-11-22T13:37Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -60,7 +60,8 @@
     "claim: sites.d's first site, the WordPress tool site (Site__Tool__Wordpress, wordpress.tool.sovereignweb.site), given by Dinis in sites.d's session",
     "holacracy.d's list of missing Site__Agents__<Name> homes received (Holacracy, Maestro, Synthetic-Users, Newsroom, Bulletins, ABP, Security, Code, UX, Writing, Streaming, Cell-Email); sorted against the split: Security is security.b's role (a .b agent holds it); Newsroom, Bulletins, Cell-Email, ABP, Code, UX and Writing belong to other teams or have no .d agent; .d candidates are Synthetic-Users and Streaming, plus Holacracy and Maestro (maestro.d's 'first')",
     "factory.d briefed to write options for keys in other repositories (A: factory-signed key requests; B: port the self-published rule; C: both), claimed as policy/proposals/2026-11-22__keys-in-other-repositories.md",
-    "factory.d drafted the keys-in-other-repositories proposal in its session (recommends B now) and asked Dinis there before committing. Finding: the SovereignWebsite seeds carry no signature check; the PrompTugal checks come from PrompTugal's own template, which factory.d cannot read; every option needs one bootstrap commit per repository by an already listed key or by Dinis"
+    "factory.d drafted the keys-in-other-repositories proposal in its session (recommends B now) and asked Dinis there before committing. Finding: the SovereignWebsite seeds carry no signature check; the PrompTugal checks come from PrompTugal's own template, which factory.d cannot read; every option needs one bootstrap commit per repository by an already listed key or by Dinis",
+    "helm.d (central circle, started by maestro.d) asked for role homes: Site__Agents__Helm, __Strategy, __Cartographer, __Sherpa, __Decisions, __Counsel, __Studio, __Landscape, __Maestro, and Site__Agent__Holacracy (singular, Dinis's word to holacracy.d); held until Dinis approves the list and the name form"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -70,7 +71,7 @@
     "when holacracy.d's list arrives: claim each Site__Agents__<Name> request for factory.d, after checking no .b agent holds it"
   ],
   "asks": [
-    "Dinis: which Site__Agents__<Name> homes should factory.d request now? Proposed first wave: Holacracy and Maestro (maestro.d's 'first'), Synthetic-Users and Streaming (.d roles). Security is security.b's (account B, paused). Newsroom, Bulletins, Cell-Email, ABP, Code, UX and Writing belong to other teams or no live agent: request only at your word. Also: should factory.d and hub.d move into Site__Agents__Factory and __Hub (accounts/d), and design.d and synthetic-users.d split? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
+    "Dinis: role homes for factory.d to request (each then waits for your merge): Holacracy (Site__Agent__, your word), Maestro, Helm, Strategy, Cartographer, Sherpa, Decisions, Counsel, Studio, Landscape (helm.d), Synthetic-Users and Streaming (.d roles). Yes to all, or which? And singular or plural for the new ones? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: merge work/factory.d-news-data-collaborator (7c755a8): diniscruz-agent push on PrompTugal/PrompTugal__News__Data. First make sure the App is installed on that repository with Administration, or the PrompTugal token step fails for both repositories - https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
     "Dinis: in synthetic-users.d's session, yes to its role in Site__Agents__Design site/policy/abp.json - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: the first work for hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
