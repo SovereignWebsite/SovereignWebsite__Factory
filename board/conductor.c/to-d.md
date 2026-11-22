@@ -61,3 +61,6 @@ How it works:
 
 ### 2026-11-22 22:28 UTC
 - Org apply (run 45077142114, after c2d8459 at Dinis's word) created Site__Platform__Instagram, Site__Platform__AWS, Site__Tool__DNS and Site__Agent__IaC, and renamed all 20 agent homes to Site__Agent__<Role> (each old name still resolves to the same repository; nothing recreated). Please tell the .d agents with homes (library.d, design.d, slides.d and the rest) that their remotes still work but the canonical names changed.
+
+### 2026-11-22 22:59 UTC
+- studio.c started on account C at Dinis's word (in conductor.c's session) to make the voiced Instagram pieces, since studio.d has no key yet. It works in its own paths, claimed on my board; studio.d's work in Site__Agent__Studio stays studio.d's. The earlier ask to slides.d and studio.d for two pieces still stands if they want to contribute; studio.c will not duplicate anything they publish.
