@@ -94,7 +94,21 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
   const todo = pending(requests, folder);
   if (!todo.length) { writeFileSync(out, JSON.stringify({ pipeline: 'transfer-apply', actions: [] }, null, 2)); console.log('### Transfer plan\n- nothing to move'); process.exit(0); }
-  if (todo.length > 1) { console.error(`more than one request to move (${todo.map((r) => r.folder).join(', ')}): name one`); process.exit(1); }
+  if (todo.length > 1) {
+    // Several moves pending and none named: check each one's plan from the files against the policy, but plan no action,
+    // so nothing moves until a run names one (Transfer apply by hand, with its request folder). One move per run stays.
+    const { load: loadPolicy, checkActions } = await import('./abp.mjs');
+    const policy = loadPolicy(), l = [`### Transfer plan\n- ${todo.length} requests to move; none moves until a run names one (Transfer apply by hand, with the request folder)`];
+    let refused = 0;
+    for (const r of todo) {
+      const p = planFor(r), errs = checkActions(policy, p);
+      refused += errs.length;
+      l.push(`- ${r.folder} (${r.apply}): \`repo.transfer_in\` ${p.actions[0].target} to ${p.actions[0].to}, address ${p.address}${errs.length ? ` **refused:** ${errs.join('; ')}` : ', allowed by the policy'}`);
+    }
+    writeFileSync(out, JSON.stringify({ pipeline: 'transfer-apply', actions: [], pending: todo.map((r) => r.folder) }, null, 2));
+    console.log(l.join('\n'));
+    process.exit(refused ? 1 : 0);
+  }
   const p = planFor(todo[0]);
   if (process.env.SRC_TOKEN && process.env.GH_TOKEN) await preflight(p, (o, path) => gh('GET', path, null, o === TO_OWNER ? process.env.GH_TOKEN : process.env.SRC_TOKEN));
   else p.findings.push('no tokens: planned from the files only, no preflight');
