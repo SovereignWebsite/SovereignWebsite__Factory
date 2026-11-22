@@ -30,7 +30,7 @@ export function dnsPlan(dns, env = {}) {
       actions.push({ action: 'route53.upsert_record', target: `${r.name} ${r.type}` });
       Changes.push({ Action: 'UPSERT', ResourceRecordSet: { Name: r.name, Type: r.type, TTL: r.ttl ?? 300, ResourceRecords: r.values.map((Value) => ({ Value })) } });
     }
-    if (Changes.length) batches.push({ zone: z.zone, idVar, zoneId: env[idVar] || null, batch: { Comment: 'SovereignWebsite__Factory dns-apply', Changes } });
+    if (Changes.length) batches.push({ zone: z.zone, idVar, zoneId: env[idVar] || null, batch: { Comment: 'SovereignWebsite__IaC dns-apply', Changes } });
   }
   return { plan: { pipeline: 'dns-apply', actions }, batches, errors };
 }

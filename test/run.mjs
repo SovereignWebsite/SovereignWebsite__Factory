@@ -15,9 +15,13 @@ const org = JSON.parse(readFileSync('org/repos.json', 'utf8'));
 const fresh = plan(org, {});
 assert.ok(fresh.actions.some((a) => a.action === 'pages.enable' && a.target === 'SovereignWebsite__Website'));
 assert.deepEqual(checkActions(p, fresh), [], 'a fresh plan is allowed');
-const live = { SovereignWebsite__Factory: { ...org.defaults, description: org.repos[0].description, default_branch: 'dev', has_dev: true, teams: { 'sovereignwebsite-agents-ci': 'push' }, protected: true }, Stray: {} };
+const live = { SovereignWebsite__IaC: { ...org.defaults, description: org.repos[0].description, default_branch: 'dev', has_dev: true, teams: { 'sovereignwebsite-agents-ci': 'push' }, protected: true }, Stray: {} };
 const pl = plan({ ...org, repos: [org.repos[0]] }, live);
 assert.deepEqual(pl.actions, [], 'factory as Dinis made it needs nothing'); assert.deepEqual(pl.unlisted, ['Stray']);
+// The Factory becomes IaC (Dinis, 22 Nov 2026): while GitHub still has the old name, Org apply renames it and creates nothing.
+const before = plan({ ...org, repos: [org.repos[0]] }, { SovereignWebsite__Factory: live.SovereignWebsite__IaC });
+assert.deepEqual(before.actions, [{ action: 'repo.rename', target: 'SovereignWebsite__Factory', to: 'SovereignWebsite__IaC' }], 'the old name is renamed, never recreated');
+assert.deepEqual(checkActions(p, before), [], 'the rename is allowed');
 for (const n of ['SovereignWebsite__Website', 'SovereignWebsite__Org', 'SovereignWebsite__Site']) {
   const f = seedFiles(`seed/${n}`);
   for (const must of ['.github/workflows/pages.yml', 'site/CNAME', 'site/index.html']) assert.ok(f.includes(must), `${n} seeds ${must}`);
@@ -136,7 +140,7 @@ const agr = R.repos([ag])[0];
 assert.equal(agr.name, 'Site__Agents__Factory'); assert.equal(agr.cname, 'factory.agents.sovereignweb.site'); assert.equal(agr.seed, 'seed/agent-template'); assert.equal(agr.vars.agent, 'factory.b@SovereignWebsite.dinis');
 assert.equal(R.repos([{ ...good, label: 'agents', domain: undefined }])[0].name, 'Site__Agents');
 const apy = readFileSync('seed/agent-template/.github/workflows/pages.yml', 'utf8');
-assert.ok(apy.includes('SovereignWebsite__Factory/dev/team/keys.json') && apy.includes('site/key.json'), 'the key is copied from the Factory root at each deploy');
+assert.ok(apy.includes('SovereignWebsite__IaC/dev/team/keys.json') && apy.includes('site/key.json'), 'the key is copied from the Factory root at each deploy');
 assert.ok(!seedFiles('seed/agent-template').includes('site/key.json'), 'no hand-written key in the template');
 // A person named in a request is invited with push only; an unknown login is reported, not invited.
 const kc = { label: 'kate-curtis-evans', group: 'founder', title: 'K', description: 'A founder.', kind: 'owner', collaborators: { 'kateandphilce-jpg': 'push' } };

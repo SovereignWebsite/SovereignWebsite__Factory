@@ -1,4 +1,4 @@
-// Who signed each new commit. Seeded by SovereignWebsite__Factory (incident 2026-11-22__pushed-before-key-published:
+// Who signed each new commit. Seeded by SovereignWebsite__IaC (incident 2026-11-22__pushed-before-key-published:
 // a site went live from commits signed by a key not yet published; nothing refused it).
 // Dinis Cruz, 22 Nov 2026, in factory.d's session: "Yes to the sign check. Yes to the org apply to the sites already there."
 //
@@ -17,7 +17,7 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
 
-export const KEYS_URL = 'https://raw.githubusercontent.com/SovereignWebsite/SovereignWebsite__Factory/dev/team/keys.json';
+export const KEYS_URL = 'https://raw.githubusercontent.com/SovereignWebsite/SovereignWebsite__IaC/dev/team/keys.json';
 const AGENT = /^[a-z0-9]+(?:[.-][a-z0-9]+)*@[a-z0-9.-]+$/i;
 const live = (k) => k.status !== 'superseded' && k.status !== 'retired';
 const lines = (s) => (s ? s.split('\n').map((x) => x.trim()).filter(Boolean) : []);

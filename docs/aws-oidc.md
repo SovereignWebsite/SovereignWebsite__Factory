@@ -10,7 +10,7 @@ Already in account 745506449035 (the AgentiCCells role uses it): `token.actions.
 ## 2. The role
 Name: `sovereignwebsite-factory-dns`. Maximum session: 1 hour. Then set its ARN as `SW_AWS_ROLE_ARN` in this repository's `apply` environment.
 
-**Trust policy** (only this repository's `apply` environment). Both subject forms are listed: the one with numeric IDs (organisation 358722364, repository 1464324035) is the form GitHub sent for AgentiCCells, and it stops a deleted and recreated repository of the same name from matching. The `DNS apply` workflow prints the subject it actually sends. Run 44559783507 (19 Nov 15:53 UTC) printed the form with numeric IDs, so the name-only line can be removed from the trust policy.
+**Trust policy** (only this repository's `apply` environment). Both subject forms are listed: the one with numeric IDs (organisation 358722364, repository 1464324035) is the form GitHub sent for AgentiCCells, and it stops a deleted and recreated repository of the same name from matching. The `DNS apply` workflow prints the subject it actually sends. Run 44559783507 (19 Nov 15:53 UTC) printed the form with numeric IDs, so the name-only line can be removed from the trust policy. The repository becomes SovereignWebsite__IaC (Dinis, 22 Nov 2026): add the IaC line before the rename (IAM accepts a subject no repository sends yet), keep the Factory lines until DNS apply has run once under the new name, then remove them (policy/proposals/2026-11-22__iac-rename-plan.md).
 
 ```json
 {
@@ -23,6 +23,7 @@ Name: `sovereignwebsite-factory-dns`. Maximum session: 1 hour. Then set its ARN 
       "StringEquals": { "token.actions.githubusercontent.com:aud": "sts.amazonaws.com" },
       "ForAnyValue:StringEquals": {
         "token.actions.githubusercontent.com:sub": [
+          "repo:SovereignWebsite@358722364/SovereignWebsite__IaC@1464324035:environment:apply",
           "repo:SovereignWebsite@358722364/SovereignWebsite__Factory@1464324035:environment:apply",
           "repo:SovereignWebsite/SovereignWebsite__Factory:environment:apply"
         ]

@@ -1,6 +1,6 @@
 // Quality checks on the built site, before anything is deployed. Any error fails the run.
 // node .github/ci/quality.mjs _site   Writes a table of the checks to $GITHUB_STEP_SUMMARY.
-// Seeded by SovereignWebsite__Factory. No dependencies (HTML validity and axe run as their own steps).
+// Seeded by SovereignWebsite__IaC. No dependencies (HTML validity and axe run as their own steps).
 import { readFileSync, readdirSync, existsSync, statSync, appendFileSync } from 'node:fs';
 import { join, relative, dirname, posix } from 'node:path';
 import { inflateRawSync } from 'node:zlib';
