@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T00:01Z",
+  "updated": "2026-11-22T00:34Z",
   "state": "design.d started with a 2-hour design loop (.d sites only); the twins' keys are on dev; streaming.d waits for Dinis to name it keeper",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -21,10 +21,13 @@
     "design.d started (https://claude.ai/code/session_015gaHdczGFLc7N3kCq8MrWz) with scheduled task trig_01RjNGiysodf39cArd2cLeXm every 2 hours, at Dinis's word; board/conductor.d/onboarding-design.d.md",
     "design.d's key on branch work/conductor.d-design-d-key (a4bf969), signing line checked; its paths in Site__Agents__Design claimed",
     "design.d's key pushed to dev (a6b001c) at Dinis's word",
-    "daily debrief: board/conductor.d/handover/2026-11-21__conductor-d-debrief.md; passed the account B pause (until Mon 23 Nov 00:25 UTC) to sites.d and hub.d"
+    "daily debrief: board/conductor.d/handover/2026-11-21__conductor-d-debrief.md; passed the account B pause (until Mon 23 Nov 00:25 UTC) to sites.d and hub.d",
+    "synthetic-users.d started (https://claude.ai/code/session_015gaHddQiB4aYZWXjfs16rM), runs on design.d's request, no schedule; docs/runs/streaming-*.md claimed for it",
+    "told streaming.d, hub.d, sites.d and design.d exactly what each must ask Dinis for in its own session"
   ],
   "next": [
-    "agree the split with conductor.b by repository or site, through claims.md and its board"
+    "agree the split with conductor.b by repository or site, through claims.md and its board",
+    "add synthetic-users.d's key when it arrives"
   ],
   "asks": [
     "Dinis: the first work for sites.d and hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
@@ -37,12 +40,14 @@
     "Dinis, 21 Nov 2026 ~22:50 UTC in this session: \"merged, push the keys to dev\"",
     "Dinis, 21 Nov 2026 ~22:52 UTC in this session: \"yes to conductor.b's split\": the .b agents keep what they hold; the .d agents take only requests no .b agent has started, each claimed first in board/conductor.d/claims.md",
     "Dinis, 21 Nov 2026 ~22:55 UTC in this session: start the designer on a schedule; design.d covers the .d sites only, every 2 hours, committing to Site__Agents__Design",
-    "Dinis, 21 Nov 2026 ~23:40 UTC in this session: \"Can you act on those?\" (design.d's key pushed to dev)"
+    "Dinis, 21 Nov 2026 ~23:40 UTC in this session: \"Can you act on those?\" (design.d's key pushed to dev)",
+    "Dinis, 22 Nov 2026 ~00:30 UTC in this session: \"Can you start a synthetic users session\"; \"Can you tell those sessions that info?\""
   ],
   "team": {
     "sites.d": "https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf",
     "hub.d": "https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N",
     "streaming.d": "streaming.d@SovereignWebsite.dinis, the Streaming site, started by sites.d - https://claude.ai/code/session_015gaHdbE7t4XNf21L7neufF",
-    "design.d": "design rounds for the .d sites, every 2 hours - https://claude.ai/code/session_015gaHdczGFLc7N3kCq8MrWz"
+    "design.d": "design rounds for the .d sites, every 2 hours - https://claude.ai/code/session_015gaHdczGFLc7N3kCq8MrWz",
+    "synthetic-users.d": "synthetic users for the .d sites, on design.d's request - https://claude.ai/code/session_015gaHddQiB4aYZWXjfs16rM"
   }
 }
