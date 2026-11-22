@@ -436,4 +436,22 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   assert.equal(checkPaths({ version: 1, agents: {} }, { base: good, cwd: r }).errors.length, 1, 'a key plus any other file still needs a policy entry');
   fs.rmSync(d, { recursive: true, force: true }); }
 { const R = await import('../build/requests.mjs'); for (const g of [...R.GROUPS, ...R.LEGACY_GROUPS]) assert.ok(R.GROUP_NAMES[g], `group ${g} has its capitalised name (else Site__undefined__...)`); }
+// The signer check seeded into every site (incident 2026-11-22__pushed-before-key-published).
+{ const fs = await import('node:fs'); const { execFileSync: x } = await import('node:child_process'); const { tmpdir } = await import('node:os');
+  const seeds = ['site-template', 'gate-template', 'agent-template', 'redirect-template', 'SovereignWebsite__Website', 'SovereignWebsite__Org', 'SovereignWebsite__Site', 'SovereignWebsite__Hub', 'SovereignWebsite__Vault'];
+  const one = readFileSync('seed/site-template/.github/ci/signers.mjs', 'utf8');
+  for (const t of seeds) { assert.equal(readFileSync(`seed/${t}/.github/ci/signers.mjs`, 'utf8'), one, `${t} carries the same signer check`); assert.ok(readFileSync(`seed/${t}/.github/workflows/signers.yml`, 'utf8').includes('node .github/ci/signers.mjs "$BEFORE" "$AFTER"'), `${t} runs it on every push`); }
+  for (const t of ['site-template', 'gate-template', 'agent-template']) { const y = readFileSync(`seed/${t}/.github/workflows/pages.yml`, 'utf8'); assert.ok(y.indexOf('signers.mjs') > 0 && y.indexOf('signers.mjs') < y.indexOf('.github/ci/build.mjs'), `${t}: the signer check runs before the build, so a refused commit is not deployed`); }
+  const { checkSigners } = await import('../seed/site-template/.github/ci/signers.mjs');
+  const d = fs.mkdtempSync(`${tmpdir()}/signers-`), r = `${d}/r`, git = (...a) => x('git', ['-C', r, '-c', 'user.name=t', '-c', 'user.email=t@t', '-c', 'gpg.format=ssh', '-c', 'gpg.ssh.program=ssh-keygen', ...a], { encoding: 'utf8' }).trim();
+  const key = (n) => { x('ssh-keygen', ['-q', '-t', 'ecdsa', '-b', '256', '-N', '', '-f', `${d}/${n}`]); return { agent: `${n}@X.y`, status: 'active', session: `https://claude.ai/code/session_${n}`, bundle: { sign: x('ssh-keygen', ['-e', '-m', 'PKCS8', '-f', `${d}/${n}.pub`], { encoding: 'utf8' }) } }; };
+  const A = key('a'); key('b'); x('git', ['init', '-q', r]); fs.writeFileSync(`${r}/f`, '0'); git('add', '-A'); git('-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'init'); const base = git('rev-parse', 'HEAD');
+  const c = (signer, msg, agent) => { fs.writeFileSync(`${r}/f`, msg); git('add', '-A'); git(...(signer ? ['-c', `user.signingkey=${d}/${signer}`] : ['-c', 'commit.gpgsign=false']), 'commit', '-q', ...(signer ? ['-S'] : []), '-m', msg, ...(agent ? ['-m', `Agent: ${agent}@X.y\nClaude-Session: https://claude.ai/code/session_${agent}`] : [])); return git('rev-parse', 'HEAD'); };
+  const good = c('a', 'by a, published', 'a'), early = c('b', 'by b, key not published', 'b'), person = c(null, 'an owner edits on GitHub'), anon = c(null, 'unsigned, no trailer'), ov = c('b', 'by b\n\nOwner override: "make this live", the owner\'s session', 'b');
+  const res = await checkSigners({ cwd: r, before: base, after: ov, keys: [A], personVerified: async (sha) => ({ verified: sha === person, login: 'owner' }) });
+  assert.equal(res.checked, 5); assert.deepEqual(res.ok.map((s) => s.slice(0, 7)), [good.slice(0, 7)], 'a published key passes');
+  assert.deepEqual(res.refused.map((s) => s.slice(0, 7)).sort(), [early.slice(0, 7), anon.slice(0, 7)].sort(), 'an unpublished key and an unverified commit are refused');
+  assert.equal(res.people.length, 1, "a person's verified commit is listed"); assert.equal(res.overrides.length, 1, 'an owner override is listed, not refused');
+  assert.equal((await checkSigners({ cwd: r, before: 'f'.repeat(40), after: good, keys: [A], personVerified: async () => null })).checked, 1, 'an unknown old head (a force push) checks only the new head');
+  fs.rmSync(d, { recursive: true, force: true }); }
 console.log('OK (tests)');

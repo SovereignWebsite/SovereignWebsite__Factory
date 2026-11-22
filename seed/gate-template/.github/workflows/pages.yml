@@ -30,6 +30,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Who signed the new commits (published agent keys, or a person's verified commit)
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: node .github/ci/signers.mjs "$BEFORE" "$AFTER"
       - id: version
         name: Work out the next version from the tags
         run: |
