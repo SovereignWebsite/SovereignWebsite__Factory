@@ -105,6 +105,38 @@
         "name a private prospect"
       ],
       "source": "Dinis, 21 Nov 2026 ~22:04-22:10 UTC in maestro.d (account-d)'s session (https://claude.ai/code/session_015gaHdbdtdAPC4v2AstRS8T): \"create ... conductor.d@SovereignWebsite.dinis sites.d@SovereignWebsite.dinis hub.d@SovereignWebsite.dinis which are all twins of the .b ones\"; \"they work alongside the B agents ... Opus for conductor, and I can merge the factory policies\". The twin of conductor.b's entry, on account D."
+    },
+    "factory.d@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
+      "may_change": [
+        ".github/**",
+        "build/**",
+        "test/**",
+        "org/**",
+        "seed/**",
+        "docs/aws-oidc.md",
+        ".gitignore",
+        "policy/**",
+        "requests/**"
+      ],
+      "needs_dinis_merge": [
+        "policy/**",
+        ".github/**",
+        "build/**",
+        "org/**",
+        "seed/**",
+        "requests/**"
+      ],
+      "branches": [
+        "dev"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "name a private prospect"
+      ],
+      "source": "Dinis, 22 Nov 2026 ~01:05 UTC in conductor.d's session (https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL): \"Yes please start a factory.d agent, I need a couple changes made\". The twin of factory.b's entry, on account D.",
+      "note": "policy/** is for proposals: a change there takes effect only when Dinis merges it. factory.d makes only the changes Dinis gives it in its own session, pulls first and never overwrites factory.b's work unread."
     }
   },
   "pipelines": {
