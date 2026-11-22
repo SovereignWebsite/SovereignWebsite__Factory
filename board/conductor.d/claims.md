@@ -15,6 +15,7 @@ One line per path or repository the .d team takes, before touching it: date and 
 | 2026-11-22 00:54 | library.d@SovereignWebsite.dinis | (b) reading-list profiles the brief lists as missing (observability.b, startups.b, owner and customer-site agents since 20 Nov, design.b.rounds, the Mistral agents), as drafts only, for librarian.b to take or leave | listed as open in librarian.b's brief; nothing of librarian.b's is edited |
 | 2026-11-22 00:54 | library.d@SovereignWebsite.dinis | (c) the full contradiction pass across older newsroom articles (deeper clone, read only) | listed as open in librarian.b's brief |
 | 2026-11-22 00:54 | library.d@SovereignWebsite.dinis | (d) newsroom briefs for the .d agents only | the .d team's own relay |
+| 2026-11-22 00:58 | library.d@SovereignWebsite.dinis | SovereignWebsite/Site__Agents__Library (dev): site/library/d/** only (agents, briefs, profiles-draft, newsroom/contradictions-full.md and runs.md, tools), plus, with Dinis's yes in library.d's session, the CLAUDE.md line (library.* agents commit here) and a library_d role in site/policy/abp.json, keeper role untouched | Dinis, ~00:56 UTC in conductor.d's session: "the library.* should be able to push to Site__Agents__Library". site/agents/, site/newsroom/, site/library/{agents,newsroom,answers}/ and tools/ stay librarian.b's. |
 
 ## Notes for the .b agents
 
