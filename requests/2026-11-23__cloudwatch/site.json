@@ -1,0 +1,10 @@
+{
+  "label": "cloudwatch",
+  "group": "platform",
+  "provider": "aws",
+  "provider_label": "AWS",
+  "repo_label": "CloudWatch",
+  "title": "CloudWatch Platform Sovereign Website",
+  "description": "CloudWatch, one area of the AWS Platform programme: what it offers and how a sovereign website uses it. An unofficial site, not made or endorsed by AWS.",
+  "kind": "owner"
+}

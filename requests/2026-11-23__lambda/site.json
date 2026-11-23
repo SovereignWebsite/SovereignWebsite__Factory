@@ -1,0 +1,10 @@
+{
+  "label": "lambda",
+  "group": "platform",
+  "provider": "aws",
+  "provider_label": "AWS",
+  "repo_label": "Lambda",
+  "title": "Lambda Platform Sovereign Website",
+  "description": "Lambda, one area of the AWS Platform programme: what it offers and how a sovereign website uses it. An unofficial site, not made or endorsed by AWS.",
+  "kind": "owner"
+}

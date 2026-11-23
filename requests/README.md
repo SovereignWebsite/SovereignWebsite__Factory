@@ -43,7 +43,7 @@ More groups will be added as we go; adding one is a change to `GROUPS` in build/
 
 Rules: a label is unique across all groups, and a group name cannot be a label.
 
-A `tool` site about a third party's service names that party: `"provider": "huggingface"` gives `pybot.huggingface.tool.sovereignweb.site` and `Site__Tool__Huggingface__Pybot` (Dinis, 22 November 2026: "gmail.google.tool"; "use pybot.huggingface.tool"). The label stays unique across all groups.
+A `tool` site about a third party's service names that party: `"provider": "huggingface"` gives `pybot.huggingface.tool.sovereignweb.site` and `Site__Tool__Huggingface__Pybot` (Dinis, 22 November 2026: "gmail.google.tool"; "use pybot.huggingface.tool"). A `platform` site may do the same for an area of a platform: `"provider": "aws"` with `"provider_label": "AWS"` gives `s3.aws.platform.sovereignweb.site` and `Site__Platform__AWS__S3` (Dinis, 23 November 2026, in aws.c's session: "Yes to the 9 areas"). The label stays unique across all groups.
 
 ## Repository names: `Site__<Group>__<Name>`
 

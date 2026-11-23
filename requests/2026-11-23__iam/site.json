@@ -1,0 +1,10 @@
+{
+  "label": "iam",
+  "group": "platform",
+  "provider": "aws",
+  "provider_label": "AWS",
+  "repo_label": "IAM",
+  "title": "IAM Platform Sovereign Website",
+  "description": "IAM, one area of the AWS Platform programme: what it offers and how a sovereign website uses it. An unofficial site, not made or endorsed by AWS.",
+  "kind": "owner"
+}

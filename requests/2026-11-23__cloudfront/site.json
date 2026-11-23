@@ -1,0 +1,10 @@
+{
+  "label": "cloudfront",
+  "group": "platform",
+  "provider": "aws",
+  "provider_label": "AWS",
+  "repo_label": "CloudFront",
+  "title": "CloudFront Platform Sovereign Website",
+  "description": "CloudFront, one area of the AWS Platform programme: what it offers and how a sovereign website uses it. An unofficial site, not made or endorsed by AWS.",
+  "kind": "owner"
+}
