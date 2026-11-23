@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
-  "updated": "2026-11-23T23:30Z",
+  "updated": "2026-11-23T23:31Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -135,7 +135,7 @@
     "Dinis: re-enable feedback.b's inbox round (trig_01FsUjtCGwD9w9i3eBWJVoY3) and say so in its session (\"Turn the inbox back on\", 23:22 UTC) - https://claude.ai/code/session_01Kw9UwBiG9d5KHvFjdtiP69",
     "Dinis: start a fresh sites.b session with docs/handover.md (24275ef) as its first read; it leads the shared wayfinder (ask 40) and takes the hourly wake - https://github.com/SovereignWebsite/Site__Agent__Sites/blob/dev/docs/handover.md",
     "Dinis: do the vaults you wanted kept to yourself also go to the maestro under the vault-keys rule? Until you say, they stay as they are",
-    "Dinis: yes in factory.b's session to two always-ask changes: 6c668e8 names two known-bad Factory commits (b7c8bfd, 5eb7fde) so the checker passes all 444, and f421bad lets each site's Signers check read agents' keys from site/keys/<name>.json in its own repository - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+    "Dinis: yes in factory.b's session to two always-ask changes: 6c668e8 names two known-bad Factory commits (b7c8bfd, 5eb7fde) so the checker passes all 444, and fbc1bc4 lets each site's Signers check read agents' keys from site/keys/<name>.json in its own repository, each vouched for by a pki.sgit.ai link from Dinis or the Factory's team/keys.json (security.b 029) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: Emily's GitHub username for her org invite (Member, write on Site__Artist__Emily-Cruz), and whether Emily and her Claude must sign commits after hand-over - https://claude.ai/code/session_01Kw9UwBvXb8qAME1TexsQss",
     "Dinis: yes in factory.b's session to 0048389, a wording fix to policy/abp.json saying sovereignweb.site is already on the DNS role (its docs fix is pushed, 97b0452) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: a pki.sgit.ai operates link from your anchor to b.maestro's key (sha256:3fa8f0c3e915cf6d), so vault keys can be sealed to it; until then agents hold them (security.b review 030)"
