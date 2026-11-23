@@ -23,6 +23,8 @@ jobs:
           node-version: 22
       - run: node test/run.mjs
       - run: node build/abp.mjs validate
+      - name: Key requests (well formed, signed, roles, review bound to the request)
+        run: node build/key-requests.mjs check
       - run: node build/leak-scan.mjs
       - name: Signed commits and policy paths (pull requests)
         if: github.event_name == 'pull_request'

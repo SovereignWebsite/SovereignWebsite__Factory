@@ -123,6 +123,9 @@ assert.equal(R.repoName({ label: 'emily-cruz', group: 'artist' }), 'Site__Artist
 assert.equal(R.repoName({ label: 'silvio-switha', group: 'cv' }), 'Site__CV__Silvio-Switha');
 assert.equal(R.repoName({ label: '33n-ventures', group: 'invest' }), 'Site__Invest__33n-Ventures');
 assert.equal(R.repoName({ label: 'weather-demo' }), 'Site__Weather-Demo');
+assert.equal(R.repoName({ label: 'aws', group: 'platform', repo_label: 'AWS' }), 'Site__Platform__AWS', 'repo_label keeps its capitals');
+assert.equal(R.host({ label: 'aws', group: 'platform', repo_label: 'AWS' }), 'aws.platform.sovereignweb.site', 'repo_label leaves the address');
+assert.ok(R.validate({ label: 'aws', group: 'platform', repo_label: 'AWX', title: 'x', description: 'x' }).some((e) => e.includes('repo_label')), 'repo_label must be the same letters');
 const ren = R.repos([em])[0];
 assert.deepEqual(ren.aka, ['Site__emily-cruz', 'Site__Emily-Cruz']);
 const rp2 = plan({ ...org, repos: [...org.repos, ...R.repos([em])] }, { 'Site__emily-cruz': { ...base }, 'Redirect__emily-cruz': { ...base } });
@@ -131,13 +134,13 @@ assert.ok(!rp2.actions.some((a) => a.action === 'repo.create' && /Emily-Cruz/.te
 assert.ok(!rp2.unlisted.includes('Site__emily-cruz'), 'an old name is not reported as unlisted');
 assert.deepEqual(checkActions(p, rp2), [], 'a rename is allowed for Org apply');
 assert.ok((await import('../build/abp.mjs')).checkTransfer(p.pipelines['transfer-apply'].limits, { action: 'repo.transfer_in', target: 'AgentiCCells/AgentiCCells__Site__Weather-Demo', to: 'SovereignWebsite/Site__Weather-Demo', address_to: 'weather-demo.sovereignweb.site' }).length === 0, 'a transfer to Site__<Name>');
-// Agents' own sites: Site__Agents__<Role>, seeded with a page whose key is copied from team/keys.json at each deploy.
+// Agents' own sites: Site__Agent__<Role> (renamed from Site__Agents__<Role>), seeded with a page whose key is copied from team/keys.json at each deploy.
 const ag = { label: 'factory', group: 'agents', agent: 'factory.b@SovereignWebsite.dinis', title: 'factory.b', description: 'An agent.', kind: 'owner' };
 assert.deepEqual(R.validate(ag, '2026-11-20__factory'), []);
 assert.ok(R.validate({ ...ag, group: 'company' }, '2026-11-20__factory').length, 'an agent site is in the agents group');
 assert.ok(R.validate({ ...ag, agent: 'not an agent' }, '2026-11-20__factory').length, 'agent is <role>@<Project>.<owner>');
 const agr = R.repos([ag])[0];
-assert.equal(agr.name, 'Site__Agents__Factory'); assert.equal(agr.cname, 'factory.agents.sovereignweb.site'); assert.equal(agr.seed, 'seed/agent-template'); assert.equal(agr.vars.agent, 'factory.b@SovereignWebsite.dinis');
+assert.equal(agr.name, 'Site__Agent__Factory'); assert.ok(agr.aka.includes('Site__Agents__Factory'), 'the plural home is renamed, not made again'); assert.equal(agr.cname, 'factory.agents.sovereignweb.site'); assert.equal(agr.seed, 'seed/agent-template'); assert.equal(agr.vars.agent, 'factory.b@SovereignWebsite.dinis');
 assert.equal(R.repos([{ ...good, label: 'agents', domain: undefined }])[0].name, 'Site__Agents');
 const apy = readFileSync('seed/agent-template/.github/workflows/pages.yml', 'utf8');
 assert.ok(apy.includes('SovereignWebsite__IaC/dev/team/keys.json') && apy.includes('site/key.json'), 'the key is copied from the Factory root at each deploy');
@@ -458,4 +461,40 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   assert.equal(res.people.length, 1, "a person's verified commit is listed"); assert.equal(res.overrides.length, 1, 'an owner override is listed, not refused');
   assert.equal((await checkSigners({ cwd: r, before: 'f'.repeat(40), after: good, keys: [A], personVerified: async () => null })).checked, 1, 'an unknown old head (a force push) checks only the new head');
   fs.rmSync(d, { recursive: true, force: true }); }
+// Key requests: roles, signatures, a security and a counsel review each bound to the exact request (build/key-requests.mjs).
+{ const fs = await import('node:fs'); const { execFileSync: x } = await import('node:child_process'); const { tmpdir } = await import('node:os');
+  const K = await import('../build/key-requests.mjs'); const lim = p.pipelines['key-apply'].limits;
+  assert.deepEqual(lim.requester_roles, ['factory']); assert.deepEqual(lim.reviews, ['security', 'counsel']); assert.ok(p.pipelines['key-apply'].refused_always.includes('repo.remove_key'));
+  const d = fs.mkdtempSync(`${tmpdir()}/keyreq-`), r = `${d}/r`, git = (...a) => x('git', ['-C', r, '-c', 'user.name=t', '-c', 'user.email=t@t', '-c', 'gpg.format=ssh', '-c', 'gpg.ssh.program=ssh-keygen', ...a], { encoding: 'utf8' }).trim();
+  const key = (n) => { x('ssh-keygen', ['-q', '-t', 'ecdsa', '-b', '256', '-N', '', '-f', `${d}/${n}`]); return { id: n, agent: `${n}@X.y`, status: 'active', session: `https://claude.ai/code/session_${n.replace(/\W/g, '')}`, bundle: { sign: x('ssh-keygen', ['-e', '-m', 'PKCS8', '-f', `${d}/${n}.pub`], { encoding: 'utf8' }) } }; };
+  const keys = ['factory.d', 'security.d', 'counsel.d', 'security.e', 'factory.e'].map(key), N = key('data.d');
+  fs.mkdirSync(`${r}/build`, { recursive: true }); fs.mkdirSync(`${r}/team`); x('git', ['init', '-q', r]);
+  for (const f of ['check-signatures.mjs', 'abp.mjs']) fs.copyFileSync(`build/${f}`, `${r}/build/${f}`);
+  fs.writeFileSync(`${r}/team/keys.json`, JSON.stringify({ keys })); git('add', '-A'); git('-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'init');
+  const commit = (who, msg) => { git('add', '-A'); git('-c', `user.signingkey=${d}/${who}`, 'commit', '-q', '-S', '-m', msg, '-m', `Agent: ${who}@X.y\nClaude-Session: https://claude.ai/code/session_${who.replace(/\W/g, '')}`); return git('rev-parse', 'HEAD'); };
+  const pol = { pipelines: { 'key-apply': { limits: lim } } }, R = { folder: '2026-11-22__data-d', dir: `${r}/keys/2026-11-22__data-d` }, chk = () => K.checkRequest({ cwd: r, r: R, policy: pol });
+  const req = { agent: 'data.d@PrompTugal.dinis', account: 'D', session: 'https://claude.ai/code/session_abc', bundle: { sign: N.bundle.sign }, targets: ['PrompTugal/PrompTugal__News__Data'], source: 'test' };
+  fs.mkdirSync(R.dir, { recursive: true }); fs.writeFileSync(`${R.dir}/request.json`, JSON.stringify(req)); let rc = commit('factory.d', 'request');
+  assert.deepEqual(chk().errors, []); assert.equal(chk().ready, false, 'no reviews: not ready');
+  const review = (role, who, o = {}) => { fs.writeFileSync(`${R.dir}/review.${role}.json`, JSON.stringify({ reviewer: `${who}@X.y`, verdict: 'pass', request_commit: rc, checks: ['key parses'], actions: ['none'], ...o })); return commit(who, `${role} review`); };
+  review('security', 'security.d'); assert.equal(chk().ready, false, 'security alone is not enough');
+  review('counsel', 'counsel.d', { actions: ['asked data.d to confirm the licence of its notes'] }); let c = chk(); assert.deepEqual(c.errors, []); assert.equal(c.ready, true, 'security and counsel both pass: ready');
+  assert.ok(K.reviewReport(c).some((l) => l.startsWith('counsel') && l.includes('asked data.d')), 'the run reports each review and its actions');
+  review('counsel', 'counsel.d', { verdict: 'needs-a-person' }); assert.equal(chk().ready, false, 'needs-a-person stops it');
+  review('counsel', 'security.e'); assert.ok(chk().errors.some((e) => e.includes('only the counsel role')), 'a counsel review by another role is refused');
+  review('counsel', 'counsel.d', { reviewer: 'other.d@X.y' }); assert.ok(chk().errors.some((e) => e.includes('but was committed by')), 'a review must be committed by the reviewer it names');
+  review('counsel', 'counsel.d', { actions: undefined }); assert.ok(chk().errors.some((e) => e.includes('actions')), 'a review must report its actions');
+  review('counsel', 'counsel.d'); fs.writeFileSync(`${R.dir}/request.json`, JSON.stringify({ ...req, account: 'B' })); commit('factory.d', 'request changed after review');
+  assert.ok(chk().errors.some((e) => e.includes('review it again')), 'a request changed after its reviews needs new reviews');
+  assert.ok(K.validateRequest({ ...req, targets: ['Evil/Repo'] }, R.folder, lim).some((e) => e.includes('not on the policy')), 'an unlisted target is refused');
+  assert.ok(K.validateRequest({ ...req, bundle: { sign: 'nope' } }, R.folder, lim).length, 'a key that does not parse is refused');
+  assert.ok(K.validateRequest({ ...req, note: ['-----BEGIN', 'PRIVATE', 'KEY-----'].join(' ') }, R.folder, lim).some((e) => e.includes('private key')), 'a private key is refused');
+  const a = K.addEntry({ keys: [keys[0]] }, req, R.folder); assert.equal(a.next.keys.length, 2); assert.equal(a.entry.agent, req.agent); assert.ok(K.addEntry(a.next, req, R.folder).skip, 'a live key under that name is not added twice');
+  fs.rmSync(d, { recursive: true, force: true }); }
+{ const { glob } = await import('../build/abp.mjs'); for (const [a, role] of [['security.d@SovereignWebsite.dinis', 'security'], ['counsel.d@SovereignWebsite.dinis', 'counsel']]) { const m = p.agents[a].may_change; assert.deepEqual(m, [`keys/**/review.${role}.json`], `${a} writes only its own reviews`); assert.ok(!m.some((g) => glob(g, 'keys/2026-11-22__x/request.json')), `${a} cannot change a request`); } }
+{ const R = await import('../build/requests.mjs'); const pb = { label: 'pybot', group: 'tool', provider: 'huggingface', title: 'PyBot', description: 'x', kind: 'owner' };
+  assert.equal(R.host(pb), 'pybot.huggingface.tool.sovereignweb.site', '<service>.<provider>.tool'); assert.equal(R.repoName(pb), 'Site__Tool__Huggingface__Pybot'); assert.deepEqual(R.validate(pb, '2026-11-22__pybot'), []);
+  assert.ok(R.validate({ ...pb, group: 'artist' }, '2026-11-22__pybot').some((e) => e.includes('provider')), 'provider is for tool sites only');
+  assert.ok(R.validate({ ...pb, provider: 'Hugging Face' }, '2026-11-22__pybot').some((e) => e.includes('provider')), 'provider is a lower-case name');
+  assert.equal(R.host({ label: 'whois', group: 'tool' }), 'whois.tool.sovereignweb.site', 'a tool with no provider is unchanged'); }
 console.log('OK (tests)');

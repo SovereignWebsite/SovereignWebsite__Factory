@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-22T21:33Z",
+  "updated": "2026-11-22T23:31Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -87,7 +87,12 @@
     "claims moved: WordPress to wordpress.d (https://claude.ai/code/session_015gaHda1bnbqASo1ed8VUdY), Donna Freed to donna-freed.d (https://claude.ai/code/session_015gaHdeh6Sh45Ef2fZFAhLi), both started by sites.d at Dinis's word; both told to publish their own keys",
     "claim: PyBot tool site (Site__Tool__Pybot), sites.d's third, request via factory.d; its own agent once the repository exists; licence open",
     "wordpress.d published its own key (d912ae2, sha256:11b667f101c87a85)",
-    "donna-freed.d published its own key (bd43e07) after Dinis allowed the Factory in its session"
+    "donna-freed.d published its own key (bd43e07) after Dinis allowed the Factory in its session",
+    "claim: hub.d works on SovereignWebsite__Hub at Dinis's word (navigation and how-each-site-was-made), alongside hub.b; note for conductor.b",
+    "factory.d to dev at Dinis's word: key requests (security and counsel reviews), agent homes renamed to Site__Agent__<Name> (addresses stay <role>.agents.sovereignweb.site), a provider field for <service>.<provider>.tool, group frameworks, requests pybot (huggingface) and wardley-maps",
+    "a .c team is active in the Factory (factory.c merged c2d8459: agent homes singular, AWS, DNS, Instagram, IaC home); factory.d told to build on it, not beside it; note for the .c conductor",
+    "factory.d on dev, rebased onto factory.c's work: key requests with security and counsel reviews (c2820c1, aee9d2a, 3cfd908); provider field and frameworks group, requests pybot (Site__Tool__Huggingface__Pybot) and wardley-maps (95280be). Key requests stay inert until the factory key and the App's Contents write exist",
+    "synthetic-users.d asked for a persona test of the Wardley Maps explainer once cartographer.d's redraw is live (claimed docs/runs/wardley-maps-*.md)"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -99,15 +104,16 @@
     "start every new agent with the Factory reachable, or its key on dev, before it works (incident lesson)"
   ],
   "asks": [
+    "Dinis: key requests are built but inert until you create the factory signing key (a secret in the apply environment) and give the App Contents write on the target repositories (PrompTugal__News__Data, __Bulletins first) - https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
+    "Dinis: three teams now write to the Factory and the same sites (.b paused, .c and .d active: factory.c and factory.d, hub.c and hub.d, chiswick-cheese-market.c and .d). Who is the .c team's conductor, and should one factory agent own build/requests.mjs while the others send it requests? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: one agent cannot publish their own keys because its session cannot reach the Factory: chiswick-cheese-market.d (dd12fb6 ready). In its session, allow add_repo SovereignWebsite/SovereignWebsite__Factory with push. For new site agents, should whoever starts them include the Factory? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: two inbox models now on the cheese market: chiswick-cheese-market.c built a per-site inbox lane at your word, while you told chiswick-cheese-market.d (~15:50) one account-level inbox agent relays to each keeper. Keep the per-site lane, or start feedback.d as the one inbox agent (and how often it wakes)? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: traffic capture conflicts with every site's policy (\"no tracking\"; \"never: add a server, cookies or tracking\") and the design guidelines (no analytics), though status.json records your rule \"privacy note, no ask-first\". Change the seed policy and each site's to allow cookieless, first-party, sealed capture with a privacy note? And how should observability.d mint append-lane tokens (the configure endpoint refuses this account)? - https://claude.ai/code/session_015gaHdayiD5PCvJRyqNHyjC",
     "Dinis: two counsel agents on account D: maestro.d's counsel.d@account-d.dinis (13:25 UTC) and conductor.d's counsel.d@SovereignWebsite.dinis (16:34 UTC, key 2ea79bd). Keep both (rename mine counsel.keys.d), or retire mine and give the key reviews to maestro.d's? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: in security.d's session (https://claude.ai/code/session_015gaHdegs3vxyNtU2tmc28P), allow it to push its own key commit adfc5ff to the Factory's dev (its permission check refused it) - https://claude.ai/code/session_015gaHdegs3vxyNtU2tmc28P",
-    "Dinis: merge factory.d's policy entries for counsel.d and security.d (each may change only its own review files under keys/**), so key-request reviews can be committed - https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
     "Dinis: who is the developer to map out the agents' websites (plan in board/conductor.d/2026-11-22__agents-websites-plan.md)? Shall I start a dev.d, or is it an agent you bring in? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: in synthetic-users.d's session, yes to its role in Site__Agents__Design site/policy/abp.json - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
-    "Dinis: the first work for hub.d (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
+    "Dinis: (done: hub.d has the Hub) (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: let hub.d (https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N) read SovereignWebsite__Vault, Site__Agents__Hub and the Factory: its permission check refused add_repo and git clone - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: confirm the name form for new agent homes: holacracy.d reports you said \"Site__Agent__Holacracy not Site__Agents__Holacracy\"; the eight existing homes are Site__Agents__<Name>. Singular for all (rename the old), singular for new only, or plural? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL"
@@ -137,7 +143,8 @@
     "Dinis, 16:33 UTC 22 Nov in factory.d's session (verified in its transcript): yes to the platform group, the slides site, merging the signer check to dev, the version-chip fix, security and counsel reviews of key requests, and starting security.d and counsel.d with keys",
     "Dinis, 22 Nov 2026 ~16:46 UTC in this session: start an observability agent on account D; capture into account D's own vault and append lanes now, merge with account B's vault later; \"I really want to start visibility now and who's seeing what\"",
     "Dinis, ~17:05 UTC 22 Nov in maestro.d's session (relayed): agent homes are always singular, Site__Agent__<Name> (conductor.d had wrongly passed on the plural); platform tool sites <service>.<provider>.tool.sovereignweb.site, ours under one of our own names; two-way doors go ahead, one-way doors come to him; no private pages: briefings publish on the agents' own sites",
-    "Dinis, in sites.d's session (as reported, 22 Nov evening): sites are never attached to sites.d's session; each gets its own agent session"
+    "Dinis, in sites.d's session (as reported, 22 Nov evening): sites are never attached to sites.d's session; each gets its own agent session",
+    "Dinis, ~21:30 UTC 22 Nov in factory.d's session (as reported): PyBot at pybot.huggingface.tool; yes to Site__Agent__<Name>; yes to reversible changes going ahead; Wardley Maps in a frameworks group; no separate site for the Streaming agents; key requests merged to dev; Site__Agent__Studio"
   ],
   "team": {
     "sites.d": "https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf",

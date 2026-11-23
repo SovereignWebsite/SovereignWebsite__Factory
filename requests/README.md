@@ -36,15 +36,18 @@ sovereignweb.site is the domain for new sites (Dinis, 20 November 2026: "a bette
 | `talent` | anonymised talent profiles, under code names | south-beacon.talent.sovereignweb.site |
 | `author` | writers and their work (Dinis, 22 November 2026, for donna-freed: "put her as an author") | donna-freed.author.sovereignweb.site |
 | `platform` | unofficial sites about the platforms we use, from their public material, each saying it is not the platform's own (Dinis, 22 November 2026: "Yes, to the platform group, absolutely") | owasp.platform.sovereignweb.site |
+| `frameworks` | open frameworks and methods, explained with their tools (Dinis, 22 November 2026: "Wardley Maps in 'frameworks'") | wardley-maps.frameworks.sovereignweb.site |
 | `agents` | the SWS agents' own sites | factory.agents.sovereignweb.site |
 
 More groups will be added as we go; adding one is a change to `GROUPS` in build/requests.mjs and to this table. Every site has a group (Dinis, 20 November 2026: "Everything should have a group for now"; demos go in `demo`). The only exceptions are listed in `NO_GROUP` in build/requests.mjs: the agents area's own index page, and google-maps, held at its old address until its Maps key lists the new one.
 
 Rules: a label is unique across all groups, and a group name cannot be a label.
 
+A `tool` site about a third party's service names that party: `"provider": "huggingface"` gives `pybot.huggingface.tool.sovereignweb.site` and `Site__Tool__Huggingface__Pybot` (Dinis, 22 November 2026: "gmail.google.tool"; "use pybot.huggingface.tool"). The label stays unique across all groups.
+
 ## Repository names: `Site__<Group>__<Name>`
 
-Repositories are indexed by type, with capitalised names (Dinis, 20 November 2026: "the repo should be Site__Organisation__Algarve-Evolution, Site__Artist__Emily-Cruz (note the capitalisation on the names)"). The group is capitalised (`cv` is `CV`), and each word of the label starts with a capital: `emily-cruz` in `artist` is `Site__Artist__Emily-Cruz`; a site with no group is `Site__<Name>`, for example `Site__Weather-Demo`. A redirect site is `Redirect__<Group>__<Name>`. A repository made under an older name is renamed by Org apply, never made again; GitHub keeps redirecting the old name. A site still on the old domain names it: `"domain": "sovereignwebsite.site"` (and `artists`, the old group, is kept only until emily-cruz moves).
+Repositories are indexed by type, with capitalised names (Dinis, 20 November 2026: "the repo should be Site__Organisation__Algarve-Evolution, Site__Artist__Emily-Cruz (note the capitalisation on the names)"). The group is capitalised (`cv` is `CV`), and each word of the label starts with a capital: `emily-cruz` in `artist` is `Site__Artist__Emily-Cruz`; a site with no group is `Site__<Name>`, for example `Site__Weather-Demo`. A redirect site is `Redirect__<Group>__<Name>`. A repository made under an older name is renamed by Org apply, never made again; GitHub keeps redirecting the old name. A label whose capitals differ from that rule gives them in `"repo_label"`, the same letters (for example `"repo_label": "AWS"` for `Site__Platform__AWS`, Dinis, 22 November 2026); the address does not change. A site still on the old domain names it: `"domain": "sovereignwebsite.site"` (and `artists`, the old group, is kept only until emily-cruz moves).
 
 ## Moving a site to a new address
 
@@ -58,7 +61,7 @@ Org apply moves the site's repository to the new address and makes `Redirect__<G
 
 ## Agents' own sites
 
-Each SWS agent has its own site, `<role>.agents.sovereignweb.site` (repository `Site__Agents__<Role>`), and `agents.sovereignweb.site` is the shared page for all of them (Dinis, 20 November 2026: "each of the agents here to manage their own site, including publishing their own keys to their site, which becomes a way to authenticate those agents and what they signed"). A request names the agent: `"group": "agents", "agent": "<role>@SovereignWebsite.dinis"`. The site is seeded from `seed/agent-template`. Its public key is never written by hand: every deploy (and once a day) copies the agent's active entry from this repository's `team/keys.json` into `site/key.json`. So `team/keys.json` stays the one root that the commit checks trust, and a key that is only on an agent's site counts for nothing. Each agent keeps its own site; only that agent commits there, under the repository's CLAUDE.md. All agents work through the same GitHub access, so this rule is enforced by signed commits, not by GitHub permissions.
+Each SWS agent has its own site, `<role>.agents.sovereignweb.site` (repository `Site__Agent__<Role>`, singular since 22 November 2026, Dinis: "It's not agents, it's agent"; Org apply renamed the plural ones), and `agents.sovereignweb.site` is the shared page for all of them (Dinis, 20 November 2026: "each of the agents here to manage their own site, including publishing their own keys to their site, which becomes a way to authenticate those agents and what they signed"). A request names the agent: `"group": "agents", "agent": "<role>@SovereignWebsite.dinis"`. The site is seeded from `seed/agent-template`. Its public key is never written by hand: every deploy (and once a day) copies the agent's active entry from this repository's `team/keys.json` into `site/key.json`. So `team/keys.json` stays the one root that the commit checks trust, and a key that is only on an agent's site counts for nothing. Each agent keeps its own site; only that agent commits there, under the repository's CLAUDE.md. All agents work through the same GitHub access, so this rule is enforced by signed commits, not by GitHub permissions.
 
 ## People who write to their own site
 
