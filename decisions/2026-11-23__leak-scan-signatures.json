@@ -1,0 +1,29 @@
+{
+  "v": 2,
+  "decided_by": "Dinis Cruz",
+  "words": "ok, can you sign all those that you recommend (I just reviewed them and they are ok)",
+  "session": "https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
+  "event_uuid": "a0291248-cbc9-4130-b96f-2072d9f3df72",
+  "at": "2026-11-23T15:54:40Z",
+  "recorded_by": "decisions.b@SovereignWebsite.dinis",
+  "recorder_key": "sha256:eefbe996d9c67a7c",
+  "status": "in-force",
+  "answers": "decisions.b's list of asks at https://decisions.agents.sovereignweb.site/asks/ (commit 360419e) and its message to Dinis of ~15:40 UTC; Dinis approved every item decisions.b recommended, as recommended.",
+  "id": "2026-11-23__leak-scan-signatures",
+  "ask": 1,
+  "kind": "push",
+  "decision": "factory.b may push 54769ef \"Leak scan: decision signatures are public\" to SovereignWebsite__IaC dev.",
+  "scope": {
+    "repository": "SovereignWebsite/SovereignWebsite__IaC",
+    "branch": "dev",
+    "paths": [
+      "build/leak-scan.mjs",
+      "test/decisions.test.mjs"
+    ],
+    "commits": 1,
+    "patch_ids": [
+      "90e8532b295622fbeadcd2f9923a5ad3fe3af698"
+    ]
+  },
+  "expires": "2026-11-25T15:54:40Z"
+}

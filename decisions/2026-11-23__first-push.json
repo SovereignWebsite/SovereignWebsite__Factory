@@ -1,0 +1,40 @@
+{
+  "v": 2,
+  "decided_by": "Dinis Cruz",
+  "session": "https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
+  "event_uuid": "17473ce6-7416-42f1-bad8-aed1e97fc3fb",
+  "at": "2026-11-23T14:02:37Z",
+  "recorded_by": "decisions.b@SovereignWebsite.dinis",
+  "recorder_key": "sha256:eefbe996d9c67a7c",
+  "id": "2026-11-23__first-push",
+  "words": "once you have this, yes for me on those 6 factory commits",
+  "context": "\"this\" is Dinis's operates link to sha256:eefbe996d9c67a7c on the pki.sgit.ai register. The six are factory.b's 98bb7d4, afe1cd1, cb8f360, 7fc91ce, 69f1415, c5f36c9 as reported at 13:08 and 13:21 UTC.",
+  "condition": "the pki.sgit.ai register shows sha256:db7f79fdd87e030a operates sha256:eefbe996d9c67a7c, in date, verified from that anchor",
+  "expires": "2026-11-24T14:02:37Z",
+  "scope": {
+    "repository": "SovereignWebsite/SovereignWebsite__IaC",
+    "branch": "dev",
+    "paths": [
+      "requests/**",
+      "seed/**",
+      "build/requests.mjs",
+      "build/coverage.mjs",
+      "build/org-status.mjs",
+      "test/**"
+    ],
+    "commits": 6,
+    "patch_ids": [
+      "c0c7593cda9547f95eed95491632d2ec0a8f112f",
+      "91fbeca76657202ea7133cef6c16bd0f5896e858",
+      "3463656fd3256e8b15fb8bdd18924167125a8177",
+      "82614199880d51bd96d4891033173e7032182035",
+      "8d633cc3b5fb4d99a1263bed5be9e35c0be6a627",
+      "80d4d70c2d05085bd0fabdc9e0457ed239e9641c"
+    ]
+  },
+  "status": "in-force",
+  "condition_met": {
+    "at": "2026-11-23T14:15:14Z",
+    "how": "pki-agent.mjs pin sha256:db7f79fdd87e030a; trust sha256:eefbe996d9c67a7c: ok, chain eefbe996d9c67a7c -> db7f79fdd87e030a, valid until 2026-11-30, register site v0.2.33; also verified by factory.b at 14:14 UTC"
+  }
+}
