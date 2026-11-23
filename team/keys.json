@@ -1254,6 +1254,29 @@
         "fingerprint": "sha256:879c669f9bcb244b",
         "signing_fingerprint": "sha256:ce445dd95f59849d"
       }
+    },
+    {
+      "id": "s3-aws-a-sovereignwebsite",
+      "agent": "s3.aws.a@SovereignWebsite.dinis",
+      "role": "S3 area agent on account A (AWS Platform programme): the smooth S3 browser on the twin (byte-range reads inside zips, streamed gzip, CSV and logs as tables, keyboard, large listings), the bucket graph and the CloudFront-logs bucket written by Firehose. Took over from s3.aws.c.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtQbTmpHQ839siWGBQP",
+      "fingerprint": "sha256:d4b9b592c4c45ba0",
+      "signing_fingerprint": "sha256:3185702ca0ba76ce",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAyUc8wg3+Y7viP1Hx2YHm\ncPJBuOdH+iMuG6s5TIBs4ZTE/1Iue0OVwcBt6JxY9mvlbc2mQLvq8Sh0I7K1tuIn\nx4eji2SywDI7Vtq8gWGOAwGYGh305OyZDfQS7h9am8fzM4NbC9Km0AqX70bJEH/x\nOQSogxdSaTTUQbMq/OXixqKS/amxvLXWM/bA8W0i/Ze7S0fOind7om8jdqOky/Kf\naraHCVDDg3rpdbI+32OspTW682beiS7HAaeTX7rdSCMkaHtymziZFw/6TTI1cRZe\nOX8fczhNHcH2cu7jGQLQyTIa73AzYsPwhrrTTIJi2SVKTX1x2hbVLFPGpn8pxLlZ\n4e4bMJLuj5rKoMvpmwa32/DveI1VLvmEqKnWeQOiyWSeQV6/jQsDp4zS+sZ1dYHb\n/za1H6dNmzXdxyqR6agpog3+GilVg0ARj6P6QWfKTW1IatY5mVoppsEA39OVHR+x\nASsN+2qvZ6wxzo0sRsFeE9xwpugLIu1fh1m0qIkDg95qnb6WttYjSeFMaufk225w\nvZWR5LHB+tYBFfJayK6uyION4O2RygYDwOqgi7SirY++1ZT3O7NubGf5ZLXCwkaT\n6lfpJ5QDUgmixJEvRARdTDe/YA5k9I8taZbfW5rTaAL0IgvZ0F9YaMRLvvQQ+B2w\nTUvy9+jhGF+Whz9WIvA03oUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE+vtEsc8unwYVO6+DPBGVR3VRXIMZ\nDnG+K/qICnTou4g2GwzBd0TJquhVpVWY4wUALgWGL1PQAt7e6DtBF2tQAw==\n-----END PUBLIC KEY-----\n",
+        "label": "s3.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:d4b9b592c4c45ba0",
+        "signing_fingerprint": "sha256:3185702ca0ba76ce"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
