@@ -1189,6 +1189,29 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "conductor-aws-c-sovereignwebsite",
+      "agent": "conductor.aws.c@SovereignWebsite.dinis",
+      "role": "Conductor of the AWS Platform programme on account C: starts and schedules the aws.c team in stages, keeps docs/team/ in Site__Platform__AWS, reports to maestro.c",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwDiqvoswkZCuHe5GTt",
+      "fingerprint": "sha256:39dfb8b271359661",
+      "signing_fingerprint": "sha256:1bdfe32b60be2fa2",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAuTq6MjRQT7Ubg20TOT7O\n64AIG+ap6CZU0L898I3Pmf3VGziHde0g+MsPspxG7R/aulwobGzwXRSuWKKNiAxf\nrXoYT9VrnUF8BaE+VAlRgx9OQPp4SVc+82RaloX7o55/lgfF/1KwDl3+/8uAhEXo\nvOwstZqhMoFANEm8CYBQkP5JaOTVXPreyf3QXaCWHE25oWP3FsDCs5h1ULrSAQ2v\nfuUJZwDci2Hf5E1mWJi8USZJI6r8SuP/qwoiH7vVQ0qgmgHJ0+JbxpGmzY2wkgud\ntBmjkYeREDTcNnHt+HNdmjsaZ4L7g+xS1IyzcFHpGQ2X1n0MziAq3kMTMYXe1FR4\nqx5xvEYBt4Feejh1EwiudIyad3Ub9xUKlREqEt2Lfd2fRdTiYcyxvQ3CePyDJm1w\nbxT5ZCRp3OCiQp5wyT7DXLDZYk8BZMx5Hsyjedtc+3xS5G5ccS4btZxLmbEwp5UW\nyZNDhzOY1MIkGhl+uaZhDqTQ0XK/2X9L+kg7gAnaaQI65w08LtE2Ff3rPPFjYWyj\nQZLI0HGrWpOLsn6FUDzf1FPdEpKk3mYUHNa0ENBfDt1YVubtNhBGf5CxHzqIYC9Q\n2NiuGOvr+LEkOtLI5W75WMGBccTSi7RwYYDVWn22ZoNbGci0KCeRrQGvRSvuECQW\nGCx/EDhrrExYr5Q5nTBuuN0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESkSzjpD7kJjYObjN+h+QMNYLRPA8\nOHSRSjLoiEhb1Kupk9P+uMobAlSLK0J2FU4aqZsidf3xKOuQoidsdkZCCw==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor.aws.c@SovereignWebsite.dinis",
+        "fingerprint": "sha256:39dfb8b271359661",
+        "signing_fingerprint": "sha256:1bdfe32b60be2fa2"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
