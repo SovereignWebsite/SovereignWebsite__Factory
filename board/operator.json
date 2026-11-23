@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-23T16:00Z",
+  "updated": "2026-11-23T16:16Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
@@ -17,7 +17,6 @@
     "Dinis: one yes to start the decisions system: factory.b pushes 8ee995a, 68565f8, 933d92a and the checker 90677bb, with decisions.b's policy entry - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
   ],
   "done_recent": [
-    "Hub alternative design The Street live at https://hub.sovereignweb.site/street/ (v0.1.21)",
     "Hub: all five designs live (Register, Gallery, Contact Sheet, Street, Line at /line/, v0.1.22; count fix v0.1.23). Startup brochures' design score up from 3.2 to 3.5",
     "Hub v0.1.24 to v0.1.31: /start/, /agents/ and /admin/ live, Get one, WebP, phone pages cut from up to 27,078 px to about 8,000 px; design score 3",
     "Startups design round 6: 3.6 overall, AgentiCCells 4; dark mode and phone screenshots fixed",
@@ -31,7 +30,8 @@
     "Dinis signed 12 decision records via decisions.b (15:54 UTC), incl. segment A leads with B as proof; records usable once committed in IaC decisions/",
     "sovereignwebsite.ai: decided launch offer on home and all designs; address and agent-policy lines made accurate (Website 7773632, 7303c87)",
     "The workflow in one page, nine steps with Car Buyer as the example: https://pipeline-demo.demo.sovereignweb.site/workflow/ (461a834)",
-    "design.agents.sovereignweb.site /policy/ live (v0.1.29); every listed site now publishes its policy"
+    "design.agents.sovereignweb.site /policy/ live (v0.1.29); every listed site now publishes its policy",
+    "Suno platform site live: https://suno.platform.sovereignweb.site/ (v0.1.1, record 2026-11-23__suno-site)"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
