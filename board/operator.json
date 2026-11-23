@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-23T23:01Z",
+  "updated": "2026-11-23T23:02Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
@@ -15,7 +15,8 @@
     "Dinis: IaC repository access for strategy.b (and strategy.d), so its key and plan pages can be pushed - https://claude.ai/code/session_01Kw9UwDF1rJD6h9xEsVg5bx",
     "Dinis: one yes to start the decisions system: factory.b pushes 8ee995a, 68565f8, 933d92a and the checker 90677bb, with decisions.b's policy entry - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: add SovereignWebsite__Website to the fresh conductor.b session; add_repo was refused by the permission check - https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
-    "Dinis: the go-to-market wakes (ask 24): four scheduled tasks to set up or allow, all ending before 22:00 UTC, and the old conductor task to switch off - board/2026-11-23__wake-schedule.md"
+    "Dinis: the go-to-market wakes (ask 24): four scheduled tasks to set up or allow, all ending before 22:00 UTC, and the old conductor task to switch off - board/2026-11-23__wake-schedule.md",
+    "Dinis: start the weather-demo transfer: Actions, Transfer apply, Run workflow, request 2026-11-20__weather-demo, then approve the apply job in the transfer environment (factory.b reads the run) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
   ],
   "done_recent": [
     "decisions.b online, key published (c42c612); waits on its policy entry",
@@ -37,7 +38,7 @@
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
     "the vault as the approval step before a site goes live (Dinis, in sites.b's session), when he says build it",
-    "transfers, once TRANSFER_USER_TOKEN is set",
+    "transfers: weather-demo (real, Dinis's yes given) needs Dinis to start Transfer apply for request 2026-11-20__weather-demo and approve the apply job; dinis-cruz stays dry-run until his yes and the consent question in its NOTES.md",
     "South Beacon: beacon share card, a live test of the form, security.b final look, the candidate's own approval, a vouches section after Dinis's web-of-trust memo",
     "strategy.b plan (proposals): A founders and small teams wanting the agentic workflow (lead), B personal sites (proof: 11 people's sites, 1 handed over), C web freelancers and agencies (maintain, do not replace), D local businesses later. Sites need: a \"Want one?\" page on the hub, the own-versus-rent market page, a workflow page for A, three consented examples for B"
   ]
