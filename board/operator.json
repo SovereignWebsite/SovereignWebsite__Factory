@@ -27,7 +27,6 @@
     "Dinis: a pki.sgit.ai operates link from your anchor to b.maestro's key (sha256:3fa8f0c3e915cf6d), so vault keys can be sealed to it; until then agents hold them (security.b review 030)"
   ],
   "done_recent": [
-    "Hub: every \"I want one\" now leads to /start/#get-one with the offer and \"To take it up, email agent@withmandate.ai\"; no Stripe link (hub.b)",
     "Offboarding draft reviewed by security.b (review 028, pass with changes) and updated: a fast stop now contains the session first, then retires, then revokes",
     "Dinis split his list in two (record 2026-11-23__navigation-and-review, 23:17 UTC): decisions that block agents, and sites for him to look at; a review item never blocks an agent. design.b set the navigation guideline (\"the wayfinder\", 19fc4b5)",
     "Hub: email route live (v0.1.52); the first handed-over site listed as \"A founder's site, handed over\", unnamed and without pictures (ask 31); ask 6 note sent to decisions.b (no public form; email stays); hand-over written (docs/HANDOVER.md, v0.1.53)",
@@ -41,7 +40,8 @@
     "Emily Cruz's site: docs/owner.md lists what Dinis, then Emily, can do directly (c826878, Pages and Signers green)",
     "Startups: RiskMandate v0.1.37 now says the brochure is on Dinis's list to review, no approval claimed (f8e6372); the first handed-over site is off the Sovereign Website showroom, since its address names its owner (v0.1.41, da9d5d0)",
     "docs/aws-oidc.md now records that sovereignweb.site is on the DNS role (factory.b, 97b0452, record 2026-11-23__aws-doc-fix)",
-    "security.b review 029 on keys in a site's own repository: pass with changes; a self-published key vouches for nothing alone, so it needs a pki.sgit.ai link from Dinis or an active entry in the Factory's team/keys.json"
+    "security.b review 029 on keys in a site's own repository: pass with changes; a self-published key vouches for nothing alone, so it needs a pki.sgit.ai link from Dinis or an active entry in the Factory's team/keys.json",
+    "Vault keys: sotavento.b sealed one vault key to b.maestro, but its session's permission check blocked the send; the sealed copy stays in its session and nothing has left it, pending the pki link (security.b 030)"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
