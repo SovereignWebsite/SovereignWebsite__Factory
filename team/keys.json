@@ -1388,6 +1388,29 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "data-aws-a-sovereignwebsite",
+      "agent": "data.aws.a@SovereignWebsite.dinis",
+      "role": "Data scientist on account A (AWS Platform programme): the CloudFront-logs bucket written by Firehose, the extract-transform-move workflow, visibility of the sites behind S3 including vault usage, time lapse and client-side data (pipeline P5). Took over from data.aws.c.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtNsU9Ax9WMn2h6EhHU",
+      "fingerprint": "sha256:15d499328e99ebe7",
+      "signing_fingerprint": "sha256:2606e63a9873ac4f",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA1N9Brt0X4Qs+SJKXFF5v\nDCsXw2JfvlF31VFs8UlXo33MpW/rxAD4qaHWHy6Uq0GydCwt/Ovu2eqM9ivASJNM\nzKdrCO2awCDQ8F1mDvLl3DP/VVWeh/dVgQRqZKUhY2cEEVeCfA8MhI4B5ZijFUk4\nAJSjrAKDPqgHHPwW4tphkrBoWBh6+lAjQwfei1y/V63R5BIaZUSuIZ0j/QlBOggD\nMKE0k/DGc7mV/A16scuCb0sZmG33a6R3jv3mFxHczMBEHzFUNutS3g8NF7STXLjA\nYIqa3E5LHCVU8DzVWxLHWZcZcN1DHjfhzTd+gZeGGxkgLeDQ1XI7A9PaDHs5PoHx\n1qUoca8bmoLcXMGKEER27msoFhNvyTbZNZ68YBipVeWn0zyUkrGR3CjNpQR8IC6v\nLwIxNLtVC4R43mOcJZZ1Ny+D24l94Wuxr+B0859z4jrH6CDQpoXABu0ISdlLR7c8\na/c7tX4bP32rdSjMuHfDI9lnTp6iC3vhmVT8WUnaqZLllnxRsdW/dsbgNnHjXu/G\n5gZekTXVlDX0oaK8PuZ+NADo8xYx1bgEg9+Awjlz7Re/2STc5IslOD8tKgYsLjzL\nScU15NMZh1LtzzRNnoJcqVGL8+DdWTBGvIWV+S9BqR30wqiy2crql6Sw6sjHz9xL\nKDZwRVE+TReoZQGFIafxBFECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEO5prYRVhScYfBEI9uSTFLE+szKKp\nu/dXDwhpKU696CS1qDGqdxK2G1Q7ESQ/qNCVlb0DoDSHBKHqXVG+nLDCXQ==\n-----END PUBLIC KEY-----\n",
+        "label": "data.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:15d499328e99ebe7",
+        "signing_fingerprint": "sha256:2606e63a9873ac4f"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
