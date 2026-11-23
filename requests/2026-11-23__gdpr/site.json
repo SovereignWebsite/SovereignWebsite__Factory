@@ -1,0 +1,10 @@
+{
+  "label": "gdpr",
+  "group": "standards",
+  "provider": "eu",
+  "provider_label": "EU",
+  "repo_label": "GDPR",
+  "title": "GDPR",
+  "description": "The EU General Data Protection Regulation as data you can navigate: articles, recitals, obligations and how they map to other standards. An unofficial site, not made or endorsed by the European Union.",
+  "kind": "demo"
+}

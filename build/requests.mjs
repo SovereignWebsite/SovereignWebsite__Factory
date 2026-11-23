@@ -9,7 +9,7 @@ export const LABEL = /^[a-z0-9](?:[a-z0-9-]{0,38}[a-z0-9])?$/;
 export const FROM_OWNERS = ['AgentiCCells'];
 // Groups of sites under their own subdomain: <label>.<group>.sovereignweb.site. The official list (requests/README.md),
 // agreed by Dinis on 20 Nov 2026 ~12:02 UTC: "I agree with, can you put that on our official guidance"; more will be added.
-export const GROUPS = ['artist', 'cv', 'company', 'organisation', 'invest', 'agents', 'designer', 'tool', 'founder', 'startups', 'demo', 'provider', 'talent', 'author', 'platform', 'frameworks', 'presentations'];
+export const GROUPS = ['artist', 'cv', 'company', 'organisation', 'invest', 'agents', 'designer', 'tool', 'founder', 'startups', 'demo', 'provider', 'talent', 'author', 'platform', 'frameworks', 'presentations', 'standards'];
 // Kept only while a live site still uses it, until that site moves.
 export const LEGACY_GROUPS = ['artists'];
 export const NO_GROUP = {
@@ -32,7 +32,7 @@ export const domain = (r) => r.domain || DEFAULT_DOMAIN;
 export const zoneOf = (h) => DOMAINS.find((d) => h.endsWith(`.${d}`)) || null;
 
 // The address of a hosted site.
-// A third-party tool or platform names its provider: <service>.<provider>.tool (Dinis, 22 Nov 2026: "gmail.google.tool"; "use pybot.huggingface.tool"), <area>.<provider>.platform (23 Nov 2026: "Yes to the 9 areas", s3.aws.platform).
+// A third-party tool or platform names its provider: <service>.<provider>.tool (Dinis, 22 Nov 2026: "gmail.google.tool"; "use pybot.huggingface.tool"), <area>.<provider>.platform (23 Nov 2026: "Yes to the 9 areas", s3.aws.platform); <standard>.<region>.standards (23 Nov 2026: "Yes gdpr.eu.standards.sovereignweb.site").
 export const host = (r) => `${r.label}.${r.provider ? `${r.provider}.` : ''}${r.group ? `${r.group}.` : ''}${domain(r)}`;
 
 export function validate(req, folder = '') {
@@ -52,7 +52,7 @@ export function validate(req, folder = '') {
   // provider_label: the provider's own capitals in the repository name (Site__Platform__AWS__S3), same letters.
   if (req.provider_label !== undefined && (req.provider === undefined || typeof req.provider_label !== 'string' || !/^[A-Za-z0-9-]+$/.test(req.provider_label) || req.provider_label.toLowerCase() !== req.provider)) e.push(`${folder}: provider_label must be the provider's own letters, only the capitals changed`);
   if (req.repo_label !== undefined && (typeof req.repo_label !== 'string' || !/^[A-Za-z0-9-]+$/.test(req.repo_label) || req.repo_label.toLowerCase() !== req.label)) e.push(`${folder}: repo_label must be the label's own letters, only the capitals changed`);
-  if (req.provider !== undefined && (!['tool', 'platform'].includes(req.group) || typeof req.provider !== 'string' || !/^[a-z0-9](?:[a-z0-9-]{0,38}[a-z0-9])?$/.test(req.provider) || RESERVED.has(req.provider))) e.push(`${folder}: provider is the third party's name in lower case (letters, digits, hyphens), for a tool or platform site only`);
+  if (req.provider !== undefined && (!['tool', 'platform', 'standards'].includes(req.group) || typeof req.provider !== 'string' || !/^[a-z0-9](?:[a-z0-9-]{0,38}[a-z0-9])?$/.test(req.provider) || RESERVED.has(req.provider))) e.push(`${folder}: provider is the third party's name in lower case (letters, digits, hyphens), for a tool, platform or standards site only`);
   if (req.domain !== undefined && !DOMAINS.includes(req.domain)) e.push(`${folder}: domain must be one of ${DOMAINS.join(', ')}`);
   if (req.previous !== undefined) {
     if (!Array.isArray(req.previous) || !req.previous.length) e.push(`${folder}: previous is a list of the site's old addresses`);
@@ -120,7 +120,7 @@ export function load(dir = 'requests') {
 // Repository names are indexed by type, capitalised (Dinis, 20 Nov 2026 ~12:28 UTC: "the repo should be
 // Site__Organisation__Algarve-Evolution, Site__Artist__Emily-Cruz (note the capitalisation on the names)").
 // A site without a group is Site__<Name>. The old name, Site__<label>, is kept as aka so Org apply renames it.
-export const GROUP_NAMES = { artist: 'Artist', cv: 'CV', company: 'Company', organisation: 'Organisation', invest: 'Invest', agents: 'Agent', designer: 'Designer', tool: 'Tool', founder: 'Founder', startups: 'Startups', demo: 'Demo', provider: 'Provider', talent: 'Talent', author: 'Author', platform: 'Platform', frameworks: 'Frameworks', artists: 'Artist' , presentations: 'Presentations' };
+export const GROUP_NAMES = { artist: 'Artist', cv: 'CV', company: 'Company', organisation: 'Organisation', invest: 'Invest', agents: 'Agent', designer: 'Designer', tool: 'Tool', founder: 'Founder', startups: 'Startups', demo: 'Demo', provider: 'Provider', talent: 'Talent', author: 'Author', platform: 'Platform', frameworks: 'Frameworks', artists: 'Artist' , presentations: 'Presentations', standards: 'Standards' };
 export const cap = (label) => label.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join('-');
 const suffix = (r) => `${r.group ? `${GROUP_NAMES[r.group]}__` : ''}${r.provider ? `${r.provider_label || cap(r.provider)}__` : ''}${r.repo_label || cap(r.label)}`;
 export const repoName = (r) => `Site__${suffix(r)}`;

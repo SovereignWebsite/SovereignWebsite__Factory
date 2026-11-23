@@ -1,0 +1,10 @@
+{
+  "label": "ai-act",
+  "group": "standards",
+  "provider": "eu",
+  "provider_label": "EU",
+  "repo_label": "AI-Act",
+  "title": "EU AI Act",
+  "description": "The EU Artificial Intelligence Act as data you can navigate: articles, risk levels, obligations and how they map to other standards. An unofficial site, not made or endorsed by the European Union.",
+  "kind": "demo"
+}

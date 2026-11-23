@@ -124,6 +124,9 @@ assert.equal(R.repoName({ label: 'silvio-switha', group: 'cv' }), 'Site__CV__Sil
 assert.equal(R.repoName({ label: '33n-ventures', group: 'invest' }), 'Site__Invest__33n-Ventures');
 assert.equal(R.repoName({ label: 'weather-demo' }), 'Site__Weather-Demo');
 assert.equal(R.repoName({ label: 'aws', group: 'platform', repo_label: 'AWS' }), 'Site__Platform__AWS', 'repo_label keeps its capitals');
+{ const g = { label: 'gdpr', group: 'standards', provider: 'eu', provider_label: 'EU', repo_label: 'GDPR', title: 'GDPR', description: 'x', kind: 'demo' };
+  assert.equal(R.repoName(g), 'Site__Standards__EU__GDPR'); assert.equal(R.host(g), 'gdpr.eu.standards.sovereignweb.site');
+  assert.deepEqual(R.validate(g), [], 'a standards site names its region'); }
 { const s3 = { label: 's3', group: 'platform', provider: 'aws', provider_label: 'AWS', repo_label: 'S3', title: 'S3', description: 'x', kind: 'owner' };
   assert.equal(R.repoName(s3), 'Site__Platform__AWS__S3'); assert.equal(R.host(s3), 's3.aws.platform.sovereignweb.site');
   assert.deepEqual(R.validate(s3), [], 'a platform area names its provider');
