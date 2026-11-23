@@ -124,7 +124,7 @@ assert.equal(R.repoName({ label: 'silvio-switha', group: 'cv' }), 'Site__CV__Sil
 assert.equal(R.repoName({ label: '33n-ventures', group: 'invest' }), 'Site__Invest__33n-Ventures');
 assert.equal(R.repoName({ label: 'weather-demo' }), 'Site__Weather-Demo');
 assert.equal(R.repoName({ label: 'aws', group: 'platform', repo_label: 'AWS' }), 'Site__Platform__AWS', 'repo_label keeps its capitals');
-{ const s3 = { label: 's3', group: 'platform', provider: 'aws', provider_label: 'AWS', repo_label: 'S3', title: 'S3', description: 'x' };
+{ const s3 = { label: 's3', group: 'platform', provider: 'aws', provider_label: 'AWS', repo_label: 'S3', title: 'S3', description: 'x', kind: 'owner' };
   assert.equal(R.repoName(s3), 'Site__Platform__AWS__S3'); assert.equal(R.host(s3), 's3.aws.platform.sovereignweb.site');
   assert.deepEqual(R.validate(s3), [], 'a platform area names its provider');
   assert.ok(R.validate({ ...s3, provider_label: 'AWZ' }).some((e) => e.includes('provider_label')), 'provider_label is the same letters');
