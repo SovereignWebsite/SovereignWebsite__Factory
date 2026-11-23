@@ -497,4 +497,5 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   assert.ok(R.validate({ ...pb, group: 'artist' }, '2026-11-22__pybot').some((e) => e.includes('provider')), 'provider is for tool sites only');
   assert.ok(R.validate({ ...pb, provider: 'Hugging Face' }, '2026-11-22__pybot').some((e) => e.includes('provider')), 'provider is a lower-case name');
   assert.equal(R.host({ label: 'whois', group: 'tool' }), 'whois.tool.sovereignweb.site', 'a tool with no provider is unchanged'); }
+await import('./decisions.test.mjs');
 console.log('OK (tests)');
