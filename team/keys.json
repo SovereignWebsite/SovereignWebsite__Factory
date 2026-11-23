@@ -1254,6 +1254,29 @@
         "fingerprint": "sha256:879c669f9bcb244b",
         "signing_fingerprint": "sha256:ce445dd95f59849d"
       }
+    },
+    {
+      "id": "swarm-aws-a-sovereignwebsite",
+      "agent": "swarm.aws.a@SovereignWebsite.dinis",
+      "role": "The swarm on account A (AWS Platform programme): the AWS team itself as a story, a replay of the agents as a graph from public sources only (git history, the team log, the schedule, the lanes). Takes over from swarm.aws.c, whose key was never published.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtMJYhTXmX6uJHBKqgJ",
+      "fingerprint": "sha256:9fa7c7b11069f06c",
+      "signing_fingerprint": "sha256:7433ffc4c0d5be0e",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAw4fvY+bk1fP9E81Yp5U+\nGfY1Mfl5a4hh1aqPWWJ8EgoTpsmIpOFfVtHEBc1+XYpFnagsgEiWlZrw63TG0jN6\nejtVLC1F0Iu+gKQUIeEVvRVx7UWrf+vqq+UlwHQKsRSg2k0lXjZeqjYQuqe17ETS\nAv5gV7w/hS15k+8BGs+HY+AAj8UQLpygfj/oQI56HblkpkB6+gkAwRkFrTC5+xKY\n2PxcbFnznPMs7OG9Bv8WNsuUU4/tVmz35+84V0J3GqOo6oUzV/cg5q4+I+mi5Wj7\nhJYYu1p5HUgCKzvrkFHspu+FGMMfPiyEBciD4FaIX0/YP/lbWjvz/Ad4rPEdcLSq\n4GCgVsYYCRjTR6uy+uOiyPaZt/uBLtows3jLyrWP6mFYCSHWoRM6SYjVp1NiNHBG\n/eeP5u7p+kimJLFgVhyI7FYkK5Ibm9ve8000jJIF8VYrOMlGSxNDXqJxABvdS5dp\nxtsuYHMQolnH87MqUFYPJChk2QRUoGRQ1NKhuggipeFSxUARsQ2WP+zB7NQkOiXM\nmI/qXU/fWaIMehBT5pz5o2zLkil68qsbnfbh6HrbKJcEtfsjceuqlYlvATZZFHDR\nx4PmVCJGitfYhepRNoWgYAMf+0S4YhHJPD8hM5d4XQriP9h3Iql74aHiklk6Qa/L\nNg1M3kdjP/2m4I8CRLs/avsCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdrqB7y9pyxB6JJskYoHPaAAdTPmL\n2lXsVwuRVYHDBJnTfvPPsIV7aTGrY7trO124aO1YI3SO9Mk+VcfXjK3i/Q==\n-----END PUBLIC KEY-----\n",
+        "label": "swarm.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:9fa7c7b11069f06c",
+        "signing_fingerprint": "sha256:7433ffc4c0d5be0e"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
