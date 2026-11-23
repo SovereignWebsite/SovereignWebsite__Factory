@@ -1,7 +1,7 @@
 // Build _site from site/: copy it, write version.json, and put the version chip on every page.
 // node .github/ci/build.mjs   (env: SITE_VERSION, GITHUB_SHA, GITHUB_SERVER_URL, GITHUB_REPOSITORY, GITHUB_RUN_ID)
 // The version is made by this pipeline from the git tags, never typed by hand. The chip's CSS is a file
-// (/assets/sws-version.css), not inline, so a strict style-src 'self' policy needs no exception (security.b, review 001). Seeded by SovereignWebsite__Factory.
+// (/assets/sws-version.css), not inline, so a strict style-src 'self' policy needs no exception (security.b, review 001). Seeded by SovereignWebsite__IaC.
 import { cpSync, rmSync, readdirSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 const e = process.env;

@@ -1,5 +1,5 @@
 name: Pages
-# Deploys site/ to GitHub Pages on every push to dev. Seeded by SovereignWebsite__Factory.
+# Deploys site/ to GitHub Pages on every push to dev. Seeded by SovereignWebsite__IaC.
 on:
   push:
     branches: [dev]

@@ -53,7 +53,7 @@ for (const a of p.actions) {
         must(b, `blob ${a.target}/${f}`, [201]); tree.push({ path: f, mode: '100644', type: 'blob', sha: b.data.sha });
       }
       const t = await gh('POST', `${base}/git/trees`, { base_tree: commit.data.tree.sha, tree }); must(t, `tree ${a.target}`, [201]);
-      const c = await gh('POST', `${base}/git/commits`, { message: `Seed ${files.length} files from SovereignWebsite__Factory (org-apply)`, tree: t.data.sha, parents: [head] }); must(c, `commit ${a.target}`, [201]);
+      const c = await gh('POST', `${base}/git/commits`, { message: `Seed ${files.length} files from SovereignWebsite__IaC (org-apply)`, tree: t.data.sha, parents: [head] }); must(c, `commit ${a.target}`, [201]);
       must(await gh('PATCH', `${base}/git/refs/heads/dev`, { sha: c.data.sha }), `seed ${a.target}: ${files.join(', ')}`);
     }
   } else if (a.action === 'pages.set_cname') must(await gh('PUT', `${base}/pages`, { cname: r.cname, build_type: 'workflow' }), `custom domain ${r.cname} on ${a.target}`);

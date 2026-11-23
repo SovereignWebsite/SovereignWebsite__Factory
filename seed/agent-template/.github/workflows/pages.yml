@@ -1,5 +1,5 @@
 name: Pages
-# On every push to dev: build, check, version, deploy, tag. Seeded by SovereignWebsite__Factory, after the
+# On every push to dev: build, check, version, deploy, tag. Seeded by SovereignWebsite__IaC, after the
 # AgentiCCells site pipeline. Any failed check stops the run before anything is deployed or tagged.
 # Agent sites only: each run (and once a day) also copies the agent's entry from the Factory's team/keys.json
 # (the root that check-signatures trusts) into site/key.json, so the published key is never written by hand.
@@ -53,10 +53,10 @@ jobs:
         env:
           AGENT: '{{agent}}'
         run: |
-          curl -fsS https://raw.githubusercontent.com/SovereignWebsite/SovereignWebsite__Factory/dev/team/keys.json -o keys.json
+          curl -fsS https://raw.githubusercontent.com/SovereignWebsite/SovereignWebsite__IaC/dev/team/keys.json -o keys.json
           node -e '
             const ks = require("./keys.json").keys.filter((k) => k.agent === process.env.AGENT && k.status === "active");
-            const out = { agent: process.env.AGENT, source: "https://github.com/SovereignWebsite/SovereignWebsite__Factory/blob/dev/team/keys.json", copied: new Date().toISOString(),
+            const out = { agent: process.env.AGENT, source: "https://github.com/SovereignWebsite/SovereignWebsite__IaC/blob/dev/team/keys.json", copied: new Date().toISOString(),
               keys: ks.map((k) => ({ fingerprint: k.fingerprint, signing_fingerprint: k.signing_fingerprint, session: k.session, sign: k.bundle.sign, encrypt: k.bundle.encrypt })) };
             require("fs").writeFileSync("site/key.json", JSON.stringify(out, null, 2) + "\n");
             console.log(ks.length ? `published ${ks.length} key(s) for ${process.env.AGENT}` : `no active key in team/keys.json for ${process.env.AGENT}`);'

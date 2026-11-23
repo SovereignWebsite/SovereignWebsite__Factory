@@ -1,6 +1,6 @@
 // Fails the deploy when a page has no link preview: every HTML page under site/ needs its Open Graph and Twitter
 // tags, and a 1200x630 JPEG share card under 300 KB, served from this site. node .github/ci/share-check.mjs _site
-// Seeded by SovereignWebsite__Factory. No dependencies.
+// Seeded by SovereignWebsite__IaC. No dependencies.
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 const dir = process.argv[2] || 'site';
@@ -43,7 +43,7 @@ for (const p of pages) {
   if (!s) errors.push(`${m[2]}: not a JPEG`);
   else if (s.w !== 1200 || s.h !== 630) errors.push(`${m[2]}: ${s.w}x${s.h}, must be 1200x630`);
   if (statSync(file).size > 300 * 1024) errors.push(`${m[2]}: ${Math.round(statSync(file).size / 1024)} KB, must be under 300 KB`);
-  if (b.includes(SEED_CARD)) notes.push(`${m[2]} is still the seed's neutral card: make the owner's own with build/share-card.mjs in SovereignWebsite__Factory`);
+  if (b.includes(SEED_CARD)) notes.push(`${m[2]} is still the seed's neutral card: make the owner's own with build/share-card.mjs in SovereignWebsite__IaC`);
 }
 for (const n of notes) console.log(`::warning::${n}`);
 if (errors.length) { for (const e of errors) console.log(`::error::${e}`); process.exit(1); }

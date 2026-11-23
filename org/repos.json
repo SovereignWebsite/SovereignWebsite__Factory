@@ -17,7 +17,11 @@
   },
   "repos": [
     {
-      "name": "SovereignWebsite__Factory",
+      "name": "SovereignWebsite__IaC",
+      "aka": [
+        "SovereignWebsite__Factory"
+      ],
+      "renamed_by": "Dinis, 22 Nov 2026 ~20:40 UTC (in maestro.c's session) and ~21:16 UTC in factory.c's session: the Factory becomes IaC; Org apply renames it from this aka, so no one renames it by hand and the hourly run never recreates the old name.",
       "description": "Control repository: the organisation as code, and requests for hosted sovereign websites on sovereignwebsite.site. Driven by CI under an Agent Behaviour Policy.",
       "exists_by": "Dinis, 19 Nov 2026",
       "pages": false
