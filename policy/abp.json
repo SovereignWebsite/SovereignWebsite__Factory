@@ -493,7 +493,7 @@
       "holder": "aws-role:sovereignwebsite-factory-dns",
       "permission": "route53:ChangeResourceRecordSets (UPSERT; A, AAAA, CNAME, TXT) on the three sovereignwebsite zones and the sovereignweb.site zone; route53:ListResourceRecordSets, route53:GetHostedZone, route53:GetChange",
       "why": "dns-apply: write org/dns.json to Route 53",
-      "state": "active for the three sovereignwebsite zones; sovereignweb.site to be added to the role by Dinis (docs/aws-oidc.md)"
+      "state": "active for all four zones, sovereignweb.site included (DNS apply run 45211861879, 23 Nov 2026)"
     },
     {
       "holder": "github-app:agenticcells-site-factory",
