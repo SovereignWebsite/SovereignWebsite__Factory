@@ -1,0 +1,27 @@
+{
+  "v": 2,
+  "id": "2026-11-23__site-keys-self-published",
+  "decided_by": "Dinis Cruz",
+  "words": "The keys, right? Which I think is important to take into account, right? Is that each agent can only push to a particular Git repo, right? That's a lot of the times the moment authorization. So do we need those keys to know that it was that agent that can push to that repo? That's the point of that key, right? Let's not overbake this too much, right? So basically, in a way, the agent should kind of always be able to push to their repo because they're supposed to be managing that repo. Yes, there might be some changes, and maybe there's some parts of the repo that require you or a security to take a look at or sign it. But the whole point of that key is to authenticate that agent, is to identify that agent as the one that owns that repo, and also because it can be checked by others. Remember that the repo is publicly available, which basically is the one that provides that authentication and. verification.",
+  "session": "https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
+  "event_uuid": "d78416bf-e101-479f-b622-40108be6f805",
+  "at": "2026-11-23T23:30:10Z",
+  "recorded_by": "decisions.b@SovereignWebsite.dinis",
+  "recorder_key": "sha256:eefbe996d9c67a7c",
+  "scope": {
+    "repository": "SovereignWebsite/SovereignWebsite__IaC",
+    "branch": "dev",
+    "paths": [
+      "seed/**/.github/ci/signers.mjs",
+      "test/run.mjs"
+    ],
+    "commits": 1,
+    "patch_ids": [
+      "f261091fd23e72e0ed14de0722b8bd39b033f5cb"
+    ]
+  },
+  "expires": "2026-11-30T23:30:10Z",
+  "status": "in-force",
+  "ask": 46,
+  "about": "Ask 46: factory.b's f421bad, each site's signer check also trusts keys the site publishes itself (site/keys/<name>.json), with the one self-vouching case of a commit that only adds its own agent's key file. Dinis: push access to the agent's own repository is the authorisation; the key identifies the agent as that repository's owner and can be checked by anyone, since the repository is public. 'Let's not overbake this.' No extra operates link is required. Parts of a repository may still need decisions.b's or security's signature."
+}
