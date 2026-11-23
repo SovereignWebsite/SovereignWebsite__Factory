@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-23T16:55Z",
+  "updated": "2026-11-23T17:53Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -107,7 +107,8 @@
     "16:53 UTC 23 Nov: all 15 open asks sent to d.decisions in that form (harness H1-H4, decisions D1-D9); the workflow passed to sites.d (for streaming.d, wordpress.d, donna-freed.d, pybot.d), hub.d, design.d, synthetic-users.d, library.d, factory.d, chiswick-cheese-market.d, security.d (asked to review the six checks), counsel.d and observability.d",
     "16:54 UTC 23 Nov: pybot.d published its own key on dev (2347066, signing sha256:745eca03a5062d8e) at Dinis's word in its session; taken off the Factory-access ask. security.d (its session refused PrompTugal__News__Website read) sent the b.decisions relay brief text (sha256 prefix f50c011446f3582c) to review against its seven questions: where the yes lives, record signer, scope binding, one use and replay, whether d.decisions checks asks, one-way doors as refusals, refused session actions",
     "16:54 UTC 23 Nov: library.d took up the decisions workflow (its ask on the repository-name update sent to d.decisions) and corrected its budget reporting: about 33.82 USD API-equivalent since 22 Nov 00:52 UTC by get_session, above its earlier per-run estimates; per-run before/after figures from now (Site__Agent__Library c079ecc)",
-    "16:55 UTC 23 Nov: security.d's draft review of the decisions relay checks recorded (board/conductor.d/2026-11-23__security-d-review-of-decisions-relay.md): fail, sound core, 11 changes; passed to d.maestro for the maestros. Until the maestros answer, conductor.d acts on no record for always-ask paths without Dinis's word in this session"
+    "16:55 UTC 23 Nov: security.d's draft review of the decisions relay checks recorded (board/conductor.d/2026-11-23__security-d-review-of-decisions-relay.md): fail, sound core, 11 changes; passed to d.maestro for the maestros. Until the maestros answer, conductor.d acts on no record for always-ask paths without Dinis's word in this session",
+    "17:53 UTC 23 Nov: landscape.d sent its updated positionings and designer briefs for Sovereign Website variants (PrompTugal__News__Website board/team/landscape.d/jobs/2026-11-22-sovereign-website/05-positionings.md, 06-designer-briefs.md, 'Update, 23 Nov'): visitor variant first; owner variant must not promise 'no technical skill' or a quick start while /start/ is an eight-step GitHub hand-over; each variant live only with a named, consented example and a settled price line (Dinis's). No variant build is assigned to the .d team; held for Dinis"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -133,7 +134,8 @@
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: let hub.d (https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N) read SovereignWebsite__Vault, Site__Agents__Hub and the Factory: its permission check refused add_repo and git clone - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: confirm the name form for new agent homes: holacracy.d reports you said \"Site__Agent__Holacracy not Site__Agents__Holacracy\"; the eight existing homes are Site__Agents__<Name>. Singular for all (rename the old), singular for new only, or plural? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
-    "Dinis: OpenRouter site - whether to write to OpenRouter before launch (counsel.d recommends it; red-teaming models through it needs its written approval) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL"
+    "Dinis: OpenRouter site - whether to write to OpenRouter before launch (counsel.d recommends it; red-teaming models through it needs its written approval) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
+    "Dinis: Sovereign Website variants (landscape.d's positionings and briefs): build them, and who (design.d with sites.d?)? Each needs a named, consented example and a settled price line from you - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL"
   ],
   "decisions": [
     "Dinis, 21 Nov 2026 ~22:15 UTC in this session: \"you can push to dev if you need to\"; then chose that conductor.d pushes maestro.d's policy and key commits with its own to dev, accepting one red Checks run on that push",
