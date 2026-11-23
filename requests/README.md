@@ -37,13 +37,14 @@ sovereignweb.site is the domain for new sites (Dinis, 20 November 2026: "a bette
 | `author` | writers and their work (Dinis, 22 November 2026, for donna-freed: "put her as an author") | donna-freed.author.sovereignweb.site |
 | `platform` | unofficial sites about the platforms we use, from their public material, each saying it is not the platform's own (Dinis, 22 November 2026: "Yes, to the platform group, absolutely") | owasp.platform.sovereignweb.site |
 | `frameworks` | open frameworks and methods, explained with their tools (Dinis, 22 November 2026: "Wardley Maps in 'frameworks'") | wardley-maps.frameworks.sovereignweb.site |
+| `presentations` | presentations, one repository per person, the repository the source of truth (Dinis, 23 November 2026: "presentations cover the whole remit") | dinis-cruz.presentations.sovereignweb.site |
 | `agents` | the SWS agents' own sites | factory.agents.sovereignweb.site |
 
 More groups will be added as we go; adding one is a change to `GROUPS` in build/requests.mjs and to this table. Every site has a group (Dinis, 20 November 2026: "Everything should have a group for now"; demos go in `demo`). The only exceptions are listed in `NO_GROUP` in build/requests.mjs: the agents area's own index page, and google-maps, held at its old address until its Maps key lists the new one.
 
-Rules: a label is unique across all groups, and a group name cannot be a label.
+Rules: a label may be used in more than one group, so one label finds all of a person's sites (Dinis, 23 November 2026: "allow labels to be used in different groups"); each site's address and repository name must still be unique, and a group name cannot be a label (except a group's own home, listed in `NO_GROUP`). When a label is shared, its bare old names (`Site__<label>`, `Redirect__<label>`) are not used to rename anything.
 
-A `tool` site about a third party's service names that party: `"provider": "huggingface"` gives `pybot.huggingface.tool.sovereignweb.site` and `Site__Tool__Huggingface__Pybot` (Dinis, 22 November 2026: "gmail.google.tool"; "use pybot.huggingface.tool"). A `platform` site may do the same for an area of a platform: `"provider": "aws"` with `"provider_label": "AWS"` gives `s3.aws.platform.sovereignweb.site` and `Site__Platform__AWS__S3` (Dinis, 23 November 2026, in aws.c's session: "Yes to the 9 areas"). The label stays unique across all groups.
+A `tool` site about a third party's service names that party: `"provider": "huggingface"` gives `pybot.huggingface.tool.sovereignweb.site` and `Site__Tool__Huggingface__Pybot` (Dinis, 22 November 2026: "gmail.google.tool"; "use pybot.huggingface.tool"). A `platform` site may do the same for an area of a platform: `"provider": "aws"` with `"provider_label": "AWS"` gives `s3.aws.platform.sovereignweb.site` and `Site__Platform__AWS__S3` (Dinis, 23 November 2026, in aws.c's session: "Yes to the 9 areas").
 
 ## Repository names: `Site__<Group>__<Name>`
 

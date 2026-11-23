@@ -18,3 +18,4 @@
 .family-credit .family-gap{border-bottom:1px solid rgba(127,127,127,.25);padding-bottom:.3rem;margin-bottom:.3rem}
 [data-family-credit="off"] .family-credit{display:none}
 @media print{.family-credit{display:none}}
+@media (max-width:599px){footer,.family-credit,.family,.site-links{font-size:15px}}

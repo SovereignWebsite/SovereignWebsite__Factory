@@ -1,8 +1,8 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-23T01:28Z",
-  "state": "18 site requests; all main sites, the agents area (agents, design, library), whois.tool and the people's sites answer over HTTPS; one company site still waits on its certificate",
+  "updated": "2026-11-23T16:17Z",
+  "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
     "repositories: Website (.ai), Org (.org), Site (.site), Hub (gallery, hub.sovereignwebsite.site), Vault (vault.sovereignwebsite.site); each with Pages, domain, team push, rulesets main-locked and dev-safe",
@@ -51,15 +51,41 @@
     "Per-site Agent Behaviour Policies (Dinis, 21 Nov): /policy/ and policy/abp.json live on 14 sites: South Beacon, Grace Farrell, Sarah Cruz, Emily Cruz, pipeline-demo, whois, google-maps, Hub, Vault and the five startups; Mistral and the five organisation repositories to follow",
     "librarian.b key published (68aa84f); library live at https://library.agents.sovereignweb.site",
     "Onboarding prompts for hub.b and sites.b on the board for their account-D twins (02862c1)",
-    "Board note: an Agent Behaviour Policy on every site (8e47f58)"
+    "Board note: an Agent Behaviour Policy on every site (8e47f58)",
+    "Operator page live: https://hub.sovereignweb.site/operator/ (hub v0.1.16), public-safe data board/operator.json",
+    "Hub lead design The Register live (hub v0.1.17, fc79158), design.b's call",
+    "sites.b's home live: https://sites.agents.sovereignweb.site/ (d5797bc)",
+    "Five startup sites redesigned (sources at section ends, chooser out of the header): sovereign-website v0.1.16, sgit, the-cyber-boardroom, risk-mandate, agentic-cells v0.1.15",
+    "Operator page reads board/operator.json live (hub v0.1.18)",
+    "Hub alternative design The Gallery live at https://hub.sovereignweb.site/gallery/ (v0.1.19)",
+    "Hub alternative design Contact Sheet live at https://hub.sovereignweb.site/contact-sheet/ (v0.1.20)",
+    "Hub alternative design The Street live at https://hub.sovereignweb.site/street/ (v0.1.21)",
+    "Hub: all five designs live (Register, Gallery, Contact Sheet, Street, Line at /line/, v0.1.22; count fix v0.1.23). Startup brochures' design score up from 3.2 to 3.5",
+    "Hub v0.1.24 to v0.1.31: /start/, /agents/ and /admin/ live, Get one, WebP, phone pages cut from up to 27,078 px to about 8,000 px; design score 3",
+    "Startups design round 6: 3.6 overall, AgentiCCells 4; dark mode and phone screenshots fixed",
+    "decisions.b online, key published (c42c612); waits on its policy entry",
+    "strategy.b's one-page segment plan received (pages committed in Site__Agent__Strategy, waiting on its key)",
+    "Grace Farrell's tour in six views live at https://grace-farrell.artist.sovereignweb.site/tour/views/ (9a2ee6a)",
+    "Launch offer £50 or €50 live on sovereignwebsite.ai/pricing.html (Website 73d6630), Dinis confirmed",
+    "Hub v0.1.32 to v0.1.46: the case for buying on every design, I want one, own versus rent, /features/; The Line is home; 'Would you want one?' 1/5 to 4/5",
+    "RiskMandate startup site rated 4, maturity M4; all five startups under 8,000 px on a phone",
+    "design.b's maturity model M0 to M8; 61 unrated live sites now recorded in ratings",
+    "Dinis signed 12 decision records via decisions.b (15:54 UTC), incl. segment A leads with B as proof; records usable once committed in IaC decisions/",
+    "sovereignwebsite.ai: decided launch offer on home and all designs; address and agent-policy lines made accurate (Website 7773632, 7303c87)",
+    "The workflow in one page, nine steps with Car Buyer as the example: https://pipeline-demo.demo.sovereignweb.site/workflow/ (461a834)",
+    "design.agents.sovereignweb.site /policy/ live (v0.1.29); every listed site now publishes its policy",
+    "Suno platform site live: https://suno.platform.sovereignweb.site/ (v0.1.1, record 2026-11-23__suno-site)",
+    "Car Buyer tool site live: https://car-buyer.tool.sovereignweb.site (fc3266d), from request to live in about two hours"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
     "the vault as the approval step before a site goes live (Dinis, in sites.b's session), when he says build it",
     "transfers, once TRANSFER_USER_TOKEN is set",
-    "South Beacon: beacon share card, a live test of the form, security.b final look, the candidate's own approval, a vouches section after Dinis's web-of-trust memo"
+    "South Beacon: beacon share card, a live test of the form, security.b final look, the candidate's own approval, a vouches section after Dinis's web-of-trust memo",
+    "strategy.b plan (proposals): A founders and small teams wanting the agentic workflow (lead), B personal sites (proof: 11 people's sites, 1 handed over), C web freelancers and agencies (maintain, do not replace), D local businesses later. Sites need: a \"Want one?\" page on the hub, the own-versus-rent market page, a workflow page for A, three consented examples for B"
   ],
   "asks": [
+    "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
     "Dinis: yes to accountant.agents.sovereignweb.site - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: a budget for the librarian's first run, or let accountant.b propose one - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF",
     "Dinis: who keeps sovereignwebsite.ai, .org and .site - https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67",
@@ -68,7 +94,10 @@
     "Dinis: say \"push\" for 544ecbc - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: Grace's photos, Spotlight links, and whether photos credited to Jennie Scott may be used - https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67",
     "Dinis: the DC Vault manager session or public key, and whether every agent backs up its private key - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-    "Dinis: yes in mistral.conductor's session to its signing key file, or conductor.mistral pushes its stashed roster update - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT"
+    "Dinis: yes in mistral.conductor's session to its signing key file, or conductor.mistral pushes its stashed roster update - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT",
+    "Dinis: strategy.b's decisions: which segment leads (it recommends A, with B as proof), where \"I want one\" leads (call or email, and which address), one price for personal sites before anything is sent, and the first ten contacts for A - https://claude.ai/code/session_01Kw9UwDF1rJD6h9xEsVg5bx",
+    "Dinis: IaC repository access for strategy.b (and strategy.d), so its key and plan pages can be pushed - https://claude.ai/code/session_01Kw9UwDF1rJD6h9xEsVg5bx",
+    "Dinis: one yes to start the decisions system: factory.b pushes 8ee995a, 68565f8, 933d92a and the checker 90677bb, with decisions.b's policy entry - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
   ],
   "decisions": [
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",
@@ -85,7 +114,9 @@
     "Wake back to hourly after the weekly reset (maestro.b, 23 Nov 00:30 UTC)",
     "Dinis, 23 Nov ~01:20 UTC (maestro.b session): agents publish their own key (factory.d 1aa1829 accepted); no re-sign for 5eb7fde and b7c8bfd, never force-push",
     "Dinis, 23 Nov ~01:20 UTC: every account-B schedule stopped, the conductor wake included (trig_015LDYEmyDkQNBjbiWuPnBc9 disabled); he re-enables them himself",
-    "suno.b started by maestro.b at Dinis word (https://claude.ai/code/session_01Kw9UwBWVj7sxLdmr1ZKwh4), reports to conductor.b, waits for a spend cap"
+    "suno.b started by maestro.b at Dinis word (https://claude.ai/code/session_01Kw9UwBWVj7sxLdmr1ZKwh4), reports to conductor.b, waits for a spend cap",
+    "Dinis, 23 Nov ~11:30 UTC (maestro.b session): account B is the Sovereign Website account; go to market; a site created or improved every hour; operator page on the hub; strategy.b started",
+    "Dinis, 23 Nov ~14:30 UTC (via b.maestro): every ask for his yes goes to decisions.b by send_message"
   ],
   "team": {
     "conductor.b": "coordinates, keeps status.json, board/, REALITY.md and team keys; briefs Dinis - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",

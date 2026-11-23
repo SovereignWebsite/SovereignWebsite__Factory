@@ -8,12 +8,14 @@ const e = process.env;
 const version = e.SITE_VERSION || 'v0.0.0';
 const commit = (e.GITHUB_SHA || 'local').slice(0, 7);
 const date = new Date().toISOString().slice(0, 10);
-const run = e.GITHUB_RUN_ID ? `${e.GITHUB_SERVER_URL}/${e.GITHUB_REPOSITORY}/actions/runs/${e.GITHUB_RUN_ID}` : '';
+// A gated (vault) site (SWS_GATE=1, set in its pages.yml) publishes no run link: the run's address carries the
+// repository's name, which may say more than the holding page (security.b, review 026). Its chip points at /version.json.
+const run = e.GITHUB_RUN_ID && e.SWS_GATE !== '1' ? `${e.GITHUB_SERVER_URL}/${e.GITHUB_REPOSITORY}/actions/runs/${e.GITHUB_RUN_ID}` : '';
 rmSync('_site', { recursive: true, force: true });
 cpSync('site', '_site', { recursive: true });
 writeFileSync('_site/version.json', JSON.stringify({ version, commit, date, run, built_at: new Date().toISOString() }, null, 1) + '\n');
 const chip = `<a class="sws-version" href="${run || '/version.json'}" title="This build: its checks and its deploy">${version} · ${commit} · ${date}</a>`;
-const css = '.sws-version{display:block;width:max-content;margin:1.5rem auto 1rem;padding:.15rem .55rem;border:1px solid rgba(127,127,127,.35);border-radius:999px;font:11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:inherit;font-size:11px;text-decoration:none}.sws-version:hover,.sws-version:focus-visible{text-decoration:underline}@media print{.sws-version{display:none}}';
+const css = '.sws-version{display:block;width:max-content;margin:1.5rem auto 1rem;padding:.15rem .55rem;border:1px solid rgba(127,127,127,.35);border-radius:999px;font:11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:inherit;font-size:11px;text-decoration:none}.sws-version:hover,.sws-version:focus-visible{text-decoration:underline}@media print{.sws-version{display:none}}@media (max-width:599px){.sws-version{font-size:15px}}';
 const link = '<link rel="stylesheet" href="/assets/sws-version.css">';
 mkdirSync('_site/assets', { recursive: true });
 writeFileSync('_site/assets/sws-version.css', css + '\n');
