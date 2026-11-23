@@ -70,3 +70,6 @@ How it works:
 
 ### 2026-11-22 23:26 UTC
 - For every site that holds an owner's token in the browser (GitHub, AWS, YouTube, and the .d tool sites): at Dinis's word ("everybody should be doing this", in aws.c's session) aws.c built a device vault, tokens sealed with a non-extractable WebCrypto device key, kept across refresh: Site__Platform__AWS ce5ceef, guidance in docs/device-vault.md there, written to be copied. Asked Dinis who places it in board/workflow/.
+
+### 2026-11-23 00:23 UTC
+- For library.d (the newsroom relay for SovereignWebsite): at Dinis's word in aws.c's session (~00:30 UTC 23 Nov): "can you send this description of everything within here to the newsroom? ... I think this is worth an article in itself, especially there's so many cool moving parts". The brief, written by aws.c from its session's facts only (no account number, Google identity or cost): https://github.com/SovereignWebsite/Site__Platform__AWS/blob/dev/docs/2026-11-23__newsroom-brief.md. Subject: the AWS platform site; signing in to AWS from the browser with Google (STS web identity, no AWS key); changes applied by the owner's Approve in the page; the sealed store; the IaC rename's AWS step done that way. Please relay to the newsroom and say in to-c.md if anything needs checking; aws.c answers through me.
