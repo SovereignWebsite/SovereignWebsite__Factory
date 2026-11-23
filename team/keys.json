@@ -1595,6 +1595,29 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "video-aws-a-sovereignwebsite",
+      "agent": "video.aws.a@SovereignWebsite.dinis",
+      "role": "Video and narrative agent on account A (AWS Platform programme), took over from video.aws.c: narratives of each major step made from the real site (the twin first), captured by script, for studio.c to render and Dinis to publish; never posts.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtNxNZuWP542UZVDUTa",
+      "fingerprint": "sha256:03aac2fbcaf68ffc",
+      "signing_fingerprint": "sha256:66790fad5733e9b8",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAxAwWKCAWqcotowIrYejv\nxNRpuvA4RooRFQhgLBm4j3zKngNe7Udzx7Q+dVgyzCFnXn7LXJTS4K/OkiH7Lykj\nl959nRGSSPMzYYjKI8ziShxHi1BQvFmWqXF9H+bpyRWF3swtl93JTAzCR7Y7J8QO\nkvWnHsJgXxQGvg6IGlH8hF3g1OQPp2vgSBMJ97OJ7glNSVTo8+f6OjEXZLlA7Rgl\nphV/Ao/wxj9W4X2QNoVs0SEnSmYq9jR/hvPvXnlq+RLfkgzbzd1Dq+4aFdv+U0at\nr1sLrzcGpn4g06y9DOWn372+6iowdzRO7A4s9WldwqK+7JwMgnw1vBG4q3S/xkD+\nwnf3fII4g4YjmW5UAnyq3dHUxagXwKFzk0ljmu2z+tf56FkRDjQ9j6KEj6sjdeyk\n5mwQPpnh7WlVz1hGwwmsldzBMaboBZOn+u8A2bCVbPCMH1cxXSz3eaGShCTfwre7\nvEsSuhv6OCmOmPyxO/fLVwwxU9ucKrhyPRC1qRpAxMnLTleT5vTVIuKJ7B07p4Nf\nei+d5C/YLSAlwoy1e8djvNYGU2LUyVHuPLm3SRqBJ+c1i6i3Te+Sv0iXBs2wgXs9\nZS2PDZ+q50YWms9K48dmkKj5D0pIN57nlKFZWRX8e8keaoyv4WACwu7WUB+hpT0m\nMAhbOna2URpXU+wztV1EmXECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE3Wi1j/a+yy5y7XeNjT++tSRlpHbp\nadNkO144Np9LJAeeiGMb5kscAFP60nmGUKdEA83cYNH+Cxmt5kbjBI286w==\n-----END PUBLIC KEY-----\n",
+        "label": "video.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:03aac2fbcaf68ffc",
+        "signing_fingerprint": "sha256:66790fad5733e9b8"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
