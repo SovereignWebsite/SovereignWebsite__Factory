@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-23T00:20Z",
+  "updated": "2026-11-23T00:47Z",
   "state": "all six account C keys on Factory dev (93b947f); conductor.c's and observability.c's policy entries and this board wait for Dinis's merge",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -38,7 +38,8 @@
     "Dinis: a spend cap for mistral.c's Mistral runs (it proposed 2 USD for the first workflow and probes); and confirm I archive the first mistral.c session once the second is official (I did not start it) - https://claude.ai/code/session_01Kw9UwE87QCsWenVdtLcxoM",
     "Dinis: start an Instagram agent (instagram.c@SovereignWebsite.dinis) on account C to keep the Instagram platform site and run the posting? Say so in this session and I start it - https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj",
     "Dinis: aws.c's sealed-store guidance (Site__Platform__AWS docs/sealed-store.md: tokens sealed with a non-extractable WebCrypto device key) as a workflow note for every site, at your word \"everybody should be doing this\"? board/workflow/ is outside my paths; say who writes it (conductor.d or factory.c) - https://claude.ai/code/session_01Kw9UwAzhau7Us55PugP2V2",
-    "Dinis: the IaC rename's AWS side is done; the rename itself (factory.c's work/factory.c-iac) waits only for your merge word. And aws.c asks your yes for test/** in Site__Platform__AWS's site policy - https://claude.ai/code/session_01Kw9UwFQ86g2ZeXQ2edTAjh"
+    "Dinis: the IaC rename's AWS side is done; the rename itself (factory.c's work/factory.c-iac) waits only for your merge word. And aws.c asks your yes for test/** in Site__Platform__AWS's site policy - https://claude.ai/code/session_01Kw9UwFQ86g2ZeXQ2edTAjh",
+    "Dinis: a designer for the Studio site (studio.agents.sovereignweb.site), as you asked in studio.c's session: design.d is asked through to-d.md; or shall I start a design.c here on account C? - https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj"
   ],
   "decisions": [
     "Dinis, ~17:36 UTC in factory.c's session (as reported by factory.c): \"yes, merge the keys to dev in that order\"",

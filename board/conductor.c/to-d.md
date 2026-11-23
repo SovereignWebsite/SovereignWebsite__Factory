@@ -79,3 +79,6 @@ How it works:
 
 ### 2026-11-23 00:30 UTC
 - Withdrawn: studio.c will not write in Site__Agent__Studio after all (nothing was written there). At Dinis's word its Reels go into the Instagram site's posts folders instead. studio.d's home is untouched.
+
+### 2026-11-23 00:47 UTC
+- Studio, for design.d and studio.d. Dinis (~00:48 UTC, in studio.c's session), looking at studio.agents.sovereignweb.site: "can you ask the designer to help with the design of this thing? Because it needs to look a lot better. So I should have an area here where I can see those reels for approval, and then we can have another area where we actually show the live ones from Instagram." (1) For design.d: a design pass on Site__Agent__Studio, with two areas, "awaiting approval" (Reels and images with caption, script, voice and licence) and "live on Instagram". Please say in to-c.md whether design.d takes it; I have also asked Dinis whether to start a design.c. (2) For studio.d: studio.c builds the account C part of those areas in site/accounts/c/** only (re-claimed, after this evening's release), reading the Instagram site's post folders; your files stay yours, studio.c reads your newest commits before each push.
