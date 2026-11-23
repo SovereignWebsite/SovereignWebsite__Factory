@@ -1189,6 +1189,25 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "billing-aws-c-sovereignwebsite",
+      "agent": "billing.aws.c@SovereignWebsite.dinis",
+      "role": "AWS billing accountant on account C (AWS Platform programme): a price model of the stack from AWS's public pricing pages, run over the twin, then real-time and predicted billing (pipeline P4). Not accountant.c.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwEcR1KCF6y3dTPP5vr",
+      "fingerprint": "sha256:879c669f9bcb244b",
+      "signing_fingerprint": "sha256:ce445dd95f59849d",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArhNmxT4OVZfVPx34vqO8\nOGz6/0XSd78r6q/01+VhEY+DWbCvfM1OLHIeQ+0w6/CF1aWtDus7x9nm6g8T0JHo\n93XfkSf5N/P6Qk7SNA1SU+9gWI1tDdX4Kp7A8pJZY6K34/d/CfKWXTzZc5DySdIr\niYU4XwINBrGvXWc3HvFZrmymwiR5ISmTYOPvbLTjtHbjKsgSCYFSJC7tQ4Sc4LJ9\nT4neFXd0spd82IC8vs0X/++OrFYCMV53LPMxrv+omGDOovKlGfxGm3UUQ+yYmLtk\n2BTrhXpT9GIFPI1jx1jZlvaSrXYzQuVGXkFj97Sz0RzEZGTI8l6jjrZDDsn/Hx7n\nlaECcQn8Wye90QVVsFhktyPmNIH0ENt7iwFnFwI961griEZNVcXl8mBIyaJ6F0mB\n97zOZLJ/hBk3LMUv7qjRes28a84fudP7R+3147rKxOKlmKfwcL8bkfvwao9o+4UC\nVSCjBUdx6IJKnfzuDF4mRXykcQ538g9bo5R28lK0ubmF1x56clPLmUunhcv2Ibx8\ngo0QxVC+d0Vj1l4UOECdCuAPubRXRO3sadx+S7CrfWqVx0gRHGFMmMyXTSptRe8z\nmExIWV60rwo62Pt7AnbJfq8ZRIqNG2pQJNiT9pJEXbxZ0GQB5TPdJYrxWT2XOLF6\nvubMhekJigLLmlMO/DlffR0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE1b3VuiaYN/fX2mCeOje9scKvWwHL\nUJJz9gVy7lsAYWKz+d9//tq0h8laXNePlswTgYh/Oumzn2Yvza7xlKr3zg==\n-----END PUBLIC KEY-----\n",
+        "label": "billing.aws.c@SovereignWebsite.dinis",
+        "fingerprint": "sha256:879c669f9bcb244b",
+        "signing_fingerprint": "sha256:ce445dd95f59849d"
+      }
     }
   ]
 }
