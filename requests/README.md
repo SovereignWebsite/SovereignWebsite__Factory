@@ -37,6 +37,7 @@ sovereignweb.site is the domain for new sites (Dinis, 20 November 2026: "a bette
 | `author` | writers and their work (Dinis, 22 November 2026, for donna-freed: "put her as an author") | donna-freed.author.sovereignweb.site |
 | `platform` | unofficial sites about the platforms we use, from their public material, each saying it is not the platform's own (Dinis, 22 November 2026: "Yes, to the platform group, absolutely") | owasp.platform.sovereignweb.site |
 | `frameworks` | open frameworks and methods, explained with their tools (Dinis, 22 November 2026: "Wardley Maps in 'frameworks'") | wardley-maps.frameworks.sovereignweb.site |
+| `presentations` | presentations, one repository per person, the repository the source of truth (Dinis, 23 November 2026: "presentations cover the whole remit") | dinis-cruz.presentations.sovereignweb.site |
 | `agents` | the SWS agents' own sites | factory.agents.sovereignweb.site |
 
 More groups will be added as we go; adding one is a change to `GROUPS` in build/requests.mjs and to this table. Every site has a group (Dinis, 20 November 2026: "Everything should have a group for now"; demos go in `demo`). The only exceptions are listed in `NO_GROUP` in build/requests.mjs: the agents area's own index page, and google-maps, held at its old address until its Maps key lists the new one.
