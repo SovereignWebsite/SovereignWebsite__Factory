@@ -1,8 +1,8 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-23T01:28Z",
-  "state": "18 site requests; all main sites, the agents area (agents, design, library), whois.tool and the people's sites answer over HTTPS; one company site still waits on its certificate",
+  "updated": "2026-11-23T11:42Z",
+  "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
     "repositories: Website (.ai), Org (.org), Site (.site), Hub (gallery, hub.sovereignwebsite.site), Vault (vault.sovereignwebsite.site); each with Pages, domain, team push, rulesets main-locked and dev-safe",
@@ -85,7 +85,8 @@
     "Wake back to hourly after the weekly reset (maestro.b, 23 Nov 00:30 UTC)",
     "Dinis, 23 Nov ~01:20 UTC (maestro.b session): agents publish their own key (factory.d 1aa1829 accepted); no re-sign for 5eb7fde and b7c8bfd, never force-push",
     "Dinis, 23 Nov ~01:20 UTC: every account-B schedule stopped, the conductor wake included (trig_015LDYEmyDkQNBjbiWuPnBc9 disabled); he re-enables them himself",
-    "suno.b started by maestro.b at Dinis word (https://claude.ai/code/session_01Kw9UwBWVj7sxLdmr1ZKwh4), reports to conductor.b, waits for a spend cap"
+    "suno.b started by maestro.b at Dinis word (https://claude.ai/code/session_01Kw9UwBWVj7sxLdmr1ZKwh4), reports to conductor.b, waits for a spend cap",
+    "Dinis, 23 Nov ~11:30 UTC (maestro.b session): account B is the Sovereign Website account; go to market; a site created or improved every hour; operator page on the hub; strategy.b started"
   ],
   "team": {
     "conductor.b": "coordinates, keeps status.json, board/, REALITY.md and team keys; briefs Dinis - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
