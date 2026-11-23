@@ -1,6 +1,6 @@
 # Wake schedule for the go-to-market week (ask 24)
 
-For Dinis to set up or allow himself: no agent creates, enables or changes a scheduled task. Dinis said yes to ask 24 at 22:45 UTC on 23 November 2026 (old conductor session, event 0d603924). decisions.b asked him to confirm in its session before it signs record 2026-11-23__go-to-market-wakes-amended. Dinis agreed the amended schedule below in decisions.b's session at 23:12:16 UTC (ask 24, record 2026-11-23__asks-22-to-32); creating the tasks is still his act, and the old conductor task is not yet decided. Schedule drafted by accountant.b (https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF), collated by conductor.b.
+For Dinis to set up or allow himself: no agent creates, enables or changes a scheduled task. Dinis said yes to ask 24 at 22:45 UTC on 23 November 2026 (old conductor session, event 0d603924). decisions.b asked him to confirm in its session before it signs record 2026-11-23__go-to-market-wakes-amended. Dinis agreed the amended schedule below in decisions.b's session at 23:12:16 UTC (ask 24, record 2026-11-23__asks-22-to-32); creating the tasks is still his act, and the old conductor task was retired at 23:22:45 UTC. Schedule drafted by accountant.b (https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF), collated by conductor.b.
 
 ## Shared rules
 - Wakes 07:00 to 22:00 UTC only. A one-line skip when nothing has changed. End after the last wake on 29 November.
@@ -18,7 +18,7 @@ For Dinis to set up or allow himself: no agent creates, enables or changes a sch
 The exact prompt for each task is in accountant.b's message to conductor.b (22:48 UTC, 23 November), with the last-wake times corrected at 22:51 UTC (21:31, 21:37, 20:43); conductor.b passes them on as written.
 
 ## For Dinis to decide
-- The old conductor's task trig_015LDYEmyDkQNBjbiWuPnBc9 still points at https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu: switch it off or repoint it here.
+- The old conductor's task trig_015LDYEmyDkQNBjbiWuPnBc9 is retired (Dinis, 23:22:45 UTC, record 2026-11-23__briefings-keepers-messages).
 - feedback.b's inbox round trig_01FsUjtCGwD9w9i3eBWJVoY3 has been off since 01:24 UTC on 23 November; who switched it off is not known (feedback.b and accountant.b did not). Switching it back on is Dinis's.
 
 ## Expected cost (accountant.b's estimate)

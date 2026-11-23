@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
-  "updated": "2026-11-23T23:23Z",
+  "updated": "2026-11-23T23:24Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -91,10 +91,13 @@
     "Hub: every \"I want one\" now leads to /start/#get-one with the offer and \"To take it up, email agent@withmandate.ai\"; no Stripe link (hub.b)",
     "Offboarding draft reviewed by security.b (review 028, pass with changes) and updated: a fast stop now contains the session first, then retires, then revokes",
     "Dinis split his list in two (record 2026-11-23__navigation-and-review, 23:17 UTC): decisions that block agents, and sites for him to look at; a review item never blocks an agent. design.b set the navigation guideline (\"the wayfinder\", 08c179c)",
-    "Hub: email route live (v0.1.52); the first handed-over site listed as \"A founder's site, handed over\", unnamed and without pictures (ask 31); ask 6 note sent to decisions.b (no public form; email stays); hand-over written (docs/HANDOVER.md, v0.1.53)"
+    "Hub: email route live (v0.1.52); the first handed-over site listed as \"A founder's site, handed over\", unnamed and without pictures (ask 31); ask 6 note sent to decisions.b (no public form; email stays); hand-over written (docs/HANDOVER.md, v0.1.53)",
+    "Dinis answered 47, 40, 19, 24, 30, 26 and 37 (record 2026-11-23__briefings-keepers-messages, 23:22 UTC): briefings on the presentations website; every site leads to its agents (provenance and graphs); a keeper agent per domain; six WordPress reference sites agreed; the docs/aws-oidc.md fix covered. Routed, and relayed to every maestro"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
+    "Ask 47 (Dinis, 23:22 UTC): a regular brief, daily or every 12 hours, as pages on the presentations website: all sites created, decisions taken and debriefs, with agents contributing; sites.b proposes where and the format, decisions.b writes the decisions part",
+    "Ask 19: a keeper agent per domain (sovereignwebsite.ai, .org, and each .site site), each a project with its repository, mapped as a tree; sites.b proposes the .ai and .org keepers",
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
     "the vault as the approval step before a site goes live (Dinis, in sites.b's session), when he says build it",
     "transfers: weather-demo (real, Dinis's yes given) needs Dinis to start Transfer apply for request 2026-11-20__weather-demo and approve the apply job; dinis-cruz stays dry-run until his yes and the consent question in its NOTES.md",
@@ -115,10 +118,11 @@
     "Dinis: start the weather-demo transfer: Actions, Transfer apply, Run workflow, request 2026-11-20__weather-demo, then approve the apply job in the transfer environment (factory.b reads the run) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: save the Algarve Evolution vault read key and QR, check they open the site, and say so in algarve-evolution.b's session (move done; it keeps its key copies until then) - https://algarve-evolution.organisation.sovereignweb.site",
     "Dinis: yes in factory.b's session to 0048389, a wording fix to policy/abp.json saying sovereignweb.site is already on the DNS role (docs fix 7ce3f14 goes with it) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
-    "Dinis: create the four agreed wake tasks (ask 24 agreed 23:12 UTC), and decide the old conductor task trig_015LDYEmyDkQNBjbiWuPnBc9 - board/2026-11-23__wake-schedule.md",
     "Dinis: allow mistral.conductor to write its signing key file in its own session (ask 5 agreed; its safety check refused the step) - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT",
     "Dinis: approve or change the offboarding process (ask 39; security.b review 028 passed with changes, all made) - board/workflow/2026-11-23__offboarding-draft.md",
-    "Dinis: start a fresh hub.b session from its hand-over (docs/HANDOVER.md, v0.1.53, plus the later ask 31 commit) before its wake is created - https://claude.ai/code/session_01Kw9UwB7XboTsnbPPWaMr2d"
+    "Dinis: start a fresh hub.b session from its hand-over (docs/HANDOVER.md, v0.1.53, plus the later ask 31 commit) before its wake is created - https://claude.ai/code/session_01Kw9UwB7XboTsnbPPWaMr2d",
+    "Dinis: create the four agreed wake tasks (ask 24); the old conductor task is retired - board/2026-11-23__wake-schedule.md",
+    "Dinis: re-enable feedback.b's inbox round (trig_01FsUjtCGwD9w9i3eBWJVoY3) and say so in its session (\"Turn the inbox back on\", 23:22 UTC) - https://claude.ai/code/session_01Kw9UwBiG9d5KHvFjdtiP69"
   ],
   "decisions": [
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",
