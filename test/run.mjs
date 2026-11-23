@@ -460,6 +460,26 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   assert.deepEqual(res.refused.map((s) => s.slice(0, 7)).sort(), [early.slice(0, 7), anon.slice(0, 7)].sort(), 'an unpublished key and an unverified commit are refused');
   assert.equal(res.people.length, 1, "a person's verified commit is listed"); assert.equal(res.overrides.length, 1, 'an owner override is listed, not refused');
   assert.equal((await checkSigners({ cwd: r, before: 'f'.repeat(40), after: good, keys: [A], personVerified: async () => null })).checked, 1, 'an unknown old head (a force push) checks only the new head');
+  // Keys the site publishes itself, one file per agent at site/keys/<name>.json (Dinis, 23 Nov 2026, record 2026-11-23__asks-2-8-31-revised).
+  const G = key('g'), H = key('h'), none = async () => null, run = (b, a) => checkSigners({ cwd: r, before: b, after: a, keys: [A], personVerified: none });
+  const put = (files, signer, agent, extra) => { fs.mkdirSync(`${r}/site/keys`, { recursive: true }); for (const [n, k] of Object.entries(files)) fs.writeFileSync(`${r}/site/keys/${n}.json`, JSON.stringify(k)); if (extra) fs.writeFileSync(`${r}/f`, extra); git('add', '-A'); git('-c', `user.signingkey=${d}/${signer}`, 'commit', '-q', '-S', '-m', 'keys', '-m', `Agent: ${agent}@X.y\nClaude-Session: https://claude.ai/code/session_${agent}`); return git('rev-parse', 'HEAD'); };
+  const top = git('rev-parse', 'HEAD');
+  const pub = put({ g: G }, 'g', 'g');
+  assert.deepEqual((await run(top, pub)).refused, [], 'an agent publishes its own key in the site (site/keys/g.json), signed by that key');
+  const byG = c('g', 'by g, key in the site', 'g');
+  assert.deepEqual((await run(pub, byG)).refused, [], 'a later commit by that key passes');
+  git('reset', '-q', '--hard', top);
+  const sneak = put({ g: G }, 'g', 'g', 'and another change');
+  assert.equal((await run(top, sneak)).refused.length, 1, 'a key added together with any other change does not vouch for itself');
+  git('reset', '-q', '--hard', pub);
+  const other = put({ h: H }, 'g', 'h');
+  assert.equal((await run(pub, other)).refused.length, 1, 'an agent cannot publish a key for someone else and sign as them');
+  git('reset', '-q', '--hard', pub);
+  const misfiled = put({ x: H }, 'h', 'h');
+  assert.equal((await run(pub, misfiled)).refused.length, 1, 'a key whose file name is not its agent does not count');
+  git('reset', '-q', '--hard', pub);
+  const swap = put({ g: { ...G, bundle: H.bundle } }, 'h', 'g');
+  assert.equal((await run(pub, swap)).refused.length, 1, 'changing an existing key file is not a self-publication');
   fs.rmSync(d, { recursive: true, force: true }); }
 // Key requests: roles, signatures, a security and a counsel review each bound to the exact request (build/key-requests.mjs).
 { const fs = await import('node:fs'); const { execFileSync: x } = await import('node:child_process'); const { tmpdir } = await import('node:os');

@@ -4,9 +4,15 @@
 //
 // Usage: node .github/ci/signers.mjs <before> <after>     (a push's range; before all zeros: just <after>)
 // For each new commit (merges skipped):
-//   - with an Agent: trailer: it must carry a git SSH signature by that agent's live key in the Factory's
-//     team/keys.json (fetched from its dev branch now, so a key not yet published fails), and its Claude-Session:
-//     must be the session published with that key;
+//   - with an Agent: trailer: it must carry a git SSH signature by that agent's live key, and its Claude-Session:
+//     must be the session published with that key. A key counts if it is live in the Factory's team/keys.json
+//     (fetched from its dev branch now, so a key not yet published fails), or published by this repository
+//     itself, one file per agent at site/keys/<name>.json (<name> is the agent id before the @, e.g.
+//     site/keys/strategy.b.json), as the files were BEFORE the commit (its first parent), so a commit cannot
+//     vouch for itself. Dinis, 23 Nov 2026 (record 2026-11-23__asks-2-8-31-revised): agents publish their keys
+//     in their own repositories. The one exception, as the Factory's keys rule: a commit that only adds one new
+//     file site/keys/<name>.json, for the agent named in its own Agent: trailer, verifies against that key alone
+//     (an agent publishing its own key);
 //   - without one: a person's commit (an owner editing on GitHub, or the Factory's own seeding). It must be signed
 //     and verified by GitHub (asked through the API with the workflow's token); it is listed in the summary;
 //   - "Owner override: <quote>, <where>" in the message lets a commit through that would otherwise fail; it is listed.
@@ -18,6 +24,8 @@ import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
 
 export const KEYS_URL = 'https://raw.githubusercontent.com/SovereignWebsite/SovereignWebsite__IaC/dev/team/keys.json';
+export const SITE_KEYS = 'site/keys';
+const keyFile = (agent) => `${SITE_KEYS}/${agent.split('@')[0]}.json`;
 const AGENT = /^[a-z0-9]+(?:[.-][a-z0-9]+)*@[a-z0-9.-]+$/i;
 const live = (k) => k.status !== 'superseded' && k.status !== 'retired';
 const lines = (s) => (s ? s.split('\n').map((x) => x.trim()).filter(Boolean) : []);
@@ -30,20 +38,37 @@ export async function checkSigners({ cwd = process.cwd(), before, after, keys, p
   const range = before && !/^0+$/.test(before) ? (known(before) ? `${before}..${after}` : `${after}^!`) : after;
   const commits = lines(git('rev-list', '--no-merges', range));
   const dir = mkdtempSync(join(tmpdir(), 'signers-'));
-  try {
-    const signers = [], sessionOf = new Map();
-    for (const k of keys.filter(live)) {
+  const tryGit = (...a) => { try { return execFileSync('git', a, { cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim(); } catch { return null; } };
+  // The keys this repository publishes at a revision: every site/keys/<name>.json whose agent matches its file name.
+  const keysAt = (rev) => {
+    const names = lines(tryGit('ls-tree', '--name-only', `${rev}:${SITE_KEYS}`) || '').filter((f) => /^[a-z0-9.-]+\.json$/.test(f));
+    return names.flatMap((f) => { try { const k = JSON.parse(tryGit('show', `${rev}:${SITE_KEYS}/${f}`)); return k && k.agent && keyFile(k.agent) === `${SITE_KEYS}/${f}` ? [k] : []; } catch { return []; } });
+  };
+  let n = 0;
+  // An allowed-signers file and the sessions published with each key, for one list of keys.
+  const signersFor = (list) => {
+    const rows = [], sessionOf = new Map();
+    for (const k of list.filter(live)) {
       const pem = k.bundle?.sign ?? k.public_key?.sign;
       if (!k.agent || !AGENT.test(k.agent) || !pem) continue;
       try {
-        const f = join(dir, `${signers.length}.pem`); writeFileSync(f, pem);
+        const f = join(dir, `${n++}.pem`); writeFileSync(f, pem);
         const ssh = execFileSync('ssh-keygen', ['-i', '-m', 'PKCS8', '-f', f], { encoding: 'utf8' }).trim().split(' ').slice(0, 2).join(' ');
-        signers.push(`${k.agent} namespaces="git" ${ssh}`);
+        rows.push(`${k.agent} namespaces="git" ${ssh}`);
         if (!sessionOf.has(k.agent)) sessionOf.set(k.agent, new Set());
         if (k.session) sessionOf.get(k.agent).add(k.session);
       } catch { /* an unreadable key verifies nothing */ }
     }
-    const allowed = join(dir, 'allowed_signers'); writeFileSync(allowed, signers.join('\n') + '\n');
+    const file = join(dir, `allowed-${n++}`); writeFileSync(file, rows.join('\n') + '\n');
+    return { file, sessionOf };
+  };
+  // An agent publishing its own key: the commit only adds one new file, site/keys/<name>.json, for the trailer's agent.
+  const selfPublished = (c, agent) => {
+    const changes = lines(git('diff-tree', '--no-commit-id', '--name-status', '-r', c));
+    if (changes.length !== 1 || changes[0] !== `A\t${keyFile(agent)}`) return null;
+    try { const k = JSON.parse(git('show', `${c}:${keyFile(agent)}`)); return k.agent === agent ? k : null; } catch { return null; }
+  };
+  try {
     const ok = [], people = [], overrides = [], refused = [];
     for (const c of commits) {
       const short = c.slice(0, 7), subject = git('log', '-1', '--format=%s', c), body = git('log', '-1', '--format=%B', c);
@@ -52,9 +77,11 @@ export async function checkSigners({ cwd = process.cwd(), before, after, keys, p
       const override = (body.match(/^Owner override:\s*(.+)$/m) || [])[1];
       let why = null;
       if (agents.length) {
+        const own = agents.length === 1 ? selfPublished(c, agents[0]) : null;
+        const { file: allowed, sessionOf } = signersFor(own ? [own] : [...keys, ...keysAt(`${c}^`)]);
         const v = spawnSync('git', ['-c', 'gpg.format=ssh', '-c', 'gpg.ssh.program=ssh-keygen', '-c', `gpg.ssh.allowedSignersFile=${allowed}`, 'verify-commit', c], { cwd, encoding: 'utf8' });
         const principal = (`${v.stdout}\n${v.stderr}`.match(/Good "git" signature for (\S+)/) || [])[1];
-        if (v.status !== 0) why = `Agent: ${agents.join(', ')}, but not signed by a key published in the Factory's team/keys.json`;
+        if (v.status !== 0) why = `Agent: ${agents.join(', ')}, but not signed by a key published in the Factory's team/keys.json or this repository's ${SITE_KEYS}/`;
         else if (agents.length !== 1 || agents[0] !== principal) why = `signed by ${principal}, Agent: ${agents.join(', ')}`;
         else if (sessions.length !== 1 || !(sessionOf.get(principal) || new Set()).has(sessions[0])) why = `Claude-Session: missing or not the session published with ${principal}'s key`;
         else { ok.push(`${short} ${principal}`); continue; }
@@ -76,7 +103,7 @@ export function summary(r) {
   for (const x of r.people) l.push(`- a person's commit, verified by GitHub: ${x}`);
   for (const x of r.overrides) l.push(`- **owner override:** ${x}`);
   for (const x of r.refused) l.push(`- **refused:** ${x}`);
-  if (r.refused.length) l.push('\nNot deployed. Publish the agent\'s key in the Factory first (team/keys.json), or record the owner\'s override in the commit message: "Owner override: <their words>, <where>".');
+  if (r.refused.length) l.push('\nNot deployed. Publish the agent\'s key first (in this repository, alone in its own commit, at site/keys/<name>.json; or in the Factory\'s team/keys.json), or record the owner\'s override in the commit message: "Owner override: <their words>, <where>".');
   return l.join('\n');
 }
 
