@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
-  "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-23T16:17Z",
+  "session": "https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
+  "updated": "2026-11-23T22:49Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -75,7 +75,8 @@
     "The workflow in one page, nine steps with Car Buyer as the example: https://pipeline-demo.demo.sovereignweb.site/workflow/ (461a834)",
     "design.agents.sovereignweb.site /policy/ live (v0.1.29); every listed site now publishes its policy",
     "Suno platform site live: https://suno.platform.sovereignweb.site/ (v0.1.1, record 2026-11-23__suno-site)",
-    "Car Buyer tool site live: https://car-buyer.tool.sovereignweb.site (fc3266d), from request to live in about two hours"
+    "Car Buyer tool site live: https://car-buyer.tool.sovereignweb.site (fc3266d), from request to live in about two hours",
+    "conductor.b handed over to a fresh session at Dinis's word (22:45 UTC 23 Nov): old key retired (34e2b08), new key published (14e9243)"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
@@ -97,7 +98,8 @@
     "Dinis: yes in mistral.conductor's session to its signing key file, or conductor.mistral pushes its stashed roster update - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT",
     "Dinis: strategy.b's decisions: which segment leads (it recommends A, with B as proof), where \"I want one\" leads (call or email, and which address), one price for personal sites before anything is sent, and the first ten contacts for A - https://claude.ai/code/session_01Kw9UwDF1rJD6h9xEsVg5bx",
     "Dinis: IaC repository access for strategy.b (and strategy.d), so its key and plan pages can be pushed - https://claude.ai/code/session_01Kw9UwDF1rJD6h9xEsVg5bx",
-    "Dinis: one yes to start the decisions system: factory.b pushes 8ee995a, 68565f8, 933d92a and the checker 90677bb, with decisions.b's policy entry - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
+    "Dinis: one yes to start the decisions system: factory.b pushes 8ee995a, 68565f8, 933d92a and the checker 90677bb, with decisions.b's policy entry - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+    "Dinis: add SovereignWebsite__Website to the fresh conductor.b session; add_repo was refused by the permission check - https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD"
   ],
   "decisions": [
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",

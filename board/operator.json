@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-23T16:17Z",
+  "updated": "2026-11-23T22:49Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
@@ -14,10 +14,10 @@
     "Dinis: yes in mistral.conductor's session to its signing key file, or conductor.mistral pushes its stashed roster update - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT",
     "Dinis: strategy.b's decisions: which segment leads (it recommends A, with B as proof), where \"I want one\" leads (call or email, and which address), one price for personal sites before anything is sent, and the first ten contacts for A - https://claude.ai/code/session_01Kw9UwDF1rJD6h9xEsVg5bx",
     "Dinis: IaC repository access for strategy.b (and strategy.d), so its key and plan pages can be pushed - https://claude.ai/code/session_01Kw9UwDF1rJD6h9xEsVg5bx",
-    "Dinis: one yes to start the decisions system: factory.b pushes 8ee995a, 68565f8, 933d92a and the checker 90677bb, with decisions.b's policy entry - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
+    "Dinis: one yes to start the decisions system: factory.b pushes 8ee995a, 68565f8, 933d92a and the checker 90677bb, with decisions.b's policy entry - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+    "Dinis: add SovereignWebsite__Website to the fresh conductor.b session; add_repo was refused by the permission check - https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD"
   ],
   "done_recent": [
-    "Hub v0.1.24 to v0.1.31: /start/, /agents/ and /admin/ live, Get one, WebP, phone pages cut from up to 27,078 px to about 8,000 px; design score 3",
     "Startups design round 6: 3.6 overall, AgentiCCells 4; dark mode and phone screenshots fixed",
     "decisions.b online, key published (c42c612); waits on its policy entry",
     "strategy.b's one-page segment plan received (pages committed in Site__Agent__Strategy, waiting on its key)",
@@ -31,7 +31,8 @@
     "The workflow in one page, nine steps with Car Buyer as the example: https://pipeline-demo.demo.sovereignweb.site/workflow/ (461a834)",
     "design.agents.sovereignweb.site /policy/ live (v0.1.29); every listed site now publishes its policy",
     "Suno platform site live: https://suno.platform.sovereignweb.site/ (v0.1.1, record 2026-11-23__suno-site)",
-    "Car Buyer tool site live: https://car-buyer.tool.sovereignweb.site (fc3266d), from request to live in about two hours"
+    "Car Buyer tool site live: https://car-buyer.tool.sovereignweb.site (fc3266d), from request to live in about two hours",
+    "conductor.b handed over to a fresh session at Dinis's word (22:45 UTC 23 Nov): old key retired (34e2b08), new key published (14e9243)"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
