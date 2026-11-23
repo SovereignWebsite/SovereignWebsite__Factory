@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-23T01:42Z",
+  "updated": "2026-11-23T01:43Z",
   "state": "all six account C keys on Factory dev (93b947f); conductor.c's and observability.c's policy entries and this board wait for Dinis's merge",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -38,8 +38,7 @@
     "Dinis: owasp.c, like feedback.c (and mistral.c before), was refused the sgit-ai install by its session's permission check; your yes in its session lets it make its key. Its first slice (plan, /projects/, /graph/, provenance; data CC BY-SA 4.0 from owasp.org) is built locally - https://claude.ai/code/session_01Kw9UwE69pr5bPeaQ4tYqir",
     "Dinis: a spend cap for mistral.c's Mistral runs (it proposed 2 USD for the first workflow and probes); and confirm I archive the first mistral.c session once the second is official (I did not start it) - https://claude.ai/code/session_01Kw9UwE87QCsWenVdtLcxoM",
     "Dinis: start an Instagram agent (instagram.c@SovereignWebsite.dinis) on account C to keep the Instagram platform site and run the posting? Say so in this session and I start it - https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj",
-    "Dinis: aws.c's sealed-store guidance (Site__Platform__AWS docs/sealed-store.md: tokens sealed with a non-extractable WebCrypto device key) as a workflow note for every site, at your word \"everybody should be doing this\"? board/workflow/ is outside my paths; say who writes it (conductor.d or factory.c) - https://claude.ai/code/session_01Kw9UwAzhau7Us55PugP2V2",
-    "Dinis: start a design.c on account C? Wanted twice now: the Studio site's look (studio.c) and five versions of the Instagram site and its agent home (instagram.c). Say so in this session - https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj"
+    "Dinis: aws.c's sealed-store guidance (Site__Platform__AWS docs/sealed-store.md: tokens sealed with a non-extractable WebCrypto device key) as a workflow note for every site, at your word \"everybody should be doing this\"? board/workflow/ is outside my paths; say who writes it (conductor.d or factory.c) - https://claude.ai/code/session_01Kw9UwAzhau7Us55PugP2V2"
   ],
   "decisions": [
     "Dinis, ~17:36 UTC in factory.c's session (as reported by factory.c): \"yes, merge the keys to dev in that order\"",
@@ -50,7 +49,8 @@
     "Dinis, ~22:20 UTC in factory.c's session (as reported): IaC rename paused; Site__Platform__AWS; Site__Agent__IaC as the agents home now; factory.c stays factory.c until the full handover",
     "Dinis, ~22:25 UTC in factory.c's session (as reported): \"push the requests branch to dev, and use Site__Tool__DNS\"; \"Let's create the Instagram one\"",
     "Dinis, ~22:45 UTC in instagram.c's session (as reported): Instagram posting through Buffer (a Meta partner on Instagram's official API), not a Meta developer app; BUFFER_API_KEY held only as a GitHub environment secret Dinis sets himself (\"instagram\", with himself as required reviewer), never in a Claude environment; \"yes, switch to buffer and make the welcome image\"",
-    "Dinis, ~23:00 UTC in this session: \"yes, start a studio.c here. Note that there's an open router key here, so you can use it to create nice voice descriptions\""
+    "Dinis, ~23:00 UTC in this session: \"yes, start a studio.c here. Note that there's an open router key here, so you can use it to create nice voice descriptions\"",
+    "Dinis, ~01:45 UTC 23 Nov in this session: a designer agent here on an hourly loop, sending change updates to all the websites; every website matches the standard and has 5 designs"
   ],
   "team": {
     "observability.c": "read-only per-site visibility note; key on its branch work/observability.c (788d3b9) - https://claude.ai/code/session_01Kw9UwBmqCafJ2NtqhQPQwu",
@@ -64,7 +64,8 @@
     "aws.c": "the IaC rename's AWS trust change (as a plan, applied on Dinis's yes) then the AWS platform site - https://claude.ai/code/session_01Kw9UwAzhau7Us55PugP2V2",
     "instagram.c": "the Instagram agent, started by sites.c at Dinis's word (~22:20 UTC) - https://claude.ai/code/session_01Kw9UwBf2gRkufCCnZs335u",
     "suno.c": "idle: Suno work moves to account B at Dinis's word (~01:18 UTC 23 Nov); key 2518904 to retire once the account B agent works - https://claude.ai/code/session_01Kw9UwEP7o4BBLqwrqdReHq",
-    "studio.c": "voiced videos and images for Instagram (welcome, team introduction), handed to instagram.c; OpenRouter key from the environment, never printed, a few USD for the first two pieces - https://claude.ai/code/session_01Kw9UwC3pdjxjDeK5WaZYUD"
+    "studio.c": "voiced videos and images for Instagram (welcome, team introduction), handed to instagram.c; OpenRouter key from the environment, never printed, a few USD for the first two pieces - https://claude.ai/code/session_01Kw9UwC3pdjxjDeK5WaZYUD",
+    "design.c": "designer for account C sites, hourly round (trig_01LJTULyHHB71yYGfiWb5hWt, :43 each hour) - https://claude.ai/code/session_01Kw9UwFAkBTBoUvV1eCnMsY"
   },
   "deviations": [
     "2026-11-22 ~21:55 UTC, factory.c (self-reported): force-pushed with lease its own branch work/factory.c-iac after rebasing its two commits onto dev 98e9263 (38a5b97, 8045c7b became a654d73, f159228; same content, re-signed, checks OK). Only its own commits; nothing lost; against the never force-push rule. Reported to Dinis; from now on it merges, not rebases.",
