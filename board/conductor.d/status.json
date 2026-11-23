@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-23T00:51Z",
+  "updated": "2026-11-23T00:53Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -93,7 +93,8 @@
     "a .c team is active in the Factory (factory.c merged c2d8459: agent homes singular, AWS, DNS, Instagram, IaC home); factory.d told to build on it, not beside it; note for the .c conductor",
     "factory.d on dev, rebased onto factory.c's work: key requests with security and counsel reviews (c2820c1, aee9d2a, 3cfd908); provider field and frameworks group, requests pybot (Site__Tool__Huggingface__Pybot) and wardley-maps (95280be). Key requests stay inert until the factory key and the App's Contents write exist",
     "synthetic-users.d asked for a persona test of the Wardley Maps explainer once cartographer.d's redraw is live (claimed docs/runs/wardley-maps-*.md)",
-    "answered conductor.c's 13 entries in board/conductor.d/to-c.md (OWASP moved to owasp.c; docs/hub-c-plan.md carved out for hub.c; no feedback.d, no lanes; factory.d built on factory.c's work)"
+    "answered conductor.c's 13 entries in board/conductor.d/to-c.md (OWASP moved to owasp.c; docs/hub-c-plan.md carved out for hub.c; no feedback.d, no lanes; factory.d built on factory.c's work)",
+    "daily debrief: board/conductor.d/handover/2026-11-22__conductor-d-debrief.md"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
