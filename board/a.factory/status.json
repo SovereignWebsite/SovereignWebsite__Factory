@@ -1,0 +1,51 @@
+{
+  "agent": "a.factory@SovereignWebsite.dinis",
+  "session": "https://claude.ai/code/session_018yvwtNm88hzHaENNXTA9b5",
+  "account": "A",
+  "updated": "2026-11-23T23:57Z",
+  "state": "started; key and policy entry prepared for Dinis's word; two requests written",
+  "key": {
+    "fingerprint": "sha256:ed9a9e7c1fdd6fca",
+    "signing_fingerprint": "sha256:514761d90cfb937a",
+    "branch": "work/factory.a-key",
+    "commit": "ca8fb19",
+    "state": "signing works (ssh-keygen, ECDSA P-256 from sgit); decrypting the key for git was not refused; waits on Dinis's word to go to dev"
+  },
+  "policy": {
+    "branch": "work/factory.a-policy",
+    "commit": "7137a81",
+    "asks": "may_change requests/** and team/keys.json (Dinis's merge), board/a.factory/** (status); branches work/factory.a-*",
+    "state": "waits on Dinis's merge; paths check refuses it until then, as designed"
+  },
+  "requests": [
+    {
+      "id": "F-A1",
+      "repository": "SovereignWebsite/Site__Tool__Google__Gmail (asked as Site__Tool__Gmail)",
+      "from": "a.mail.conductor, AgentiCCells__Cell__Email 2f58a0b",
+      "arrived": "2026-11-23T23:52Z (in a.factory's start brief)",
+      "written": "2026-11-23T23:57Z",
+      "branch": "work/factory.a-gmail",
+      "chain": { "brief": "done (2f58a0b)", "sites_review": "asked of a.sites", "security": "pending", "decision": "pending" },
+      "dinis": "name (provider google or not); OAuth origin and redirect; the address; the site's ABP; the merge",
+      "status": "written, waiting on the chain"
+    },
+    {
+      "id": "F-A2",
+      "repository": "SovereignWebsite/SovereignWebsite__App__iOS (R7)",
+      "from": "a.maestro's brief R4/R7; d.sites review relayed 22:24Z",
+      "arrived": "2026-11-23T23:52Z (in a.factory's start brief)",
+      "written": "2026-11-23T23:57Z",
+      "branch": "work/factory.a-status",
+      "file": "board/a.factory/requests/2026-11-23__sovereignwebsite-app-ios.md",
+      "chain": { "brief": "done", "sites_review": "done (d.sites, signed copy to link)", "security": "pending", "decision": "pending" },
+      "dinis": "who commits the org/repos.json entry (factory.c, or org/repos.json added to a.factory's paths); public or private; the merge",
+      "status": "written, waiting on the chain"
+    }
+  ],
+  "next": [
+    "A3: account A's .aws.a keys: conductor.d's retire f0af2f6 waits on Dinis's word or a b.decisions record; the fresh keys and -2 entries are each agent's own commit",
+    "provenance generator for the Factory seed: coordinate with factory.c and d.factory through a.maestro",
+    "do not duplicate factory.c's ben-fung and crm branches"
+  ],
+  "stuck": []
+}
