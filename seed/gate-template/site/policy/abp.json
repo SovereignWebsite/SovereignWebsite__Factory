@@ -34,7 +34,7 @@
       ]
     },
     "factory": {
-      "who": "SovereignWebsite__Factory's Org apply pipeline, which created this repository.",
+      "who": "SovereignWebsite__IaC's Org apply pipeline, which created this repository.",
       "may": [
         "create the repository and its dev branch",
         "set Pages and the custom domain",

@@ -1,5 +1,5 @@
 name: Pages
-# On every push to dev: build, check, version, deploy, tag. Seeded by SovereignWebsite__Factory, after the
+# On every push to dev: build, check, version, deploy, tag. Seeded by SovereignWebsite__IaC, after the
 # AgentiCCells site pipeline. Any failed check stops the run before anything is deployed or tagged.
 # The version is made here from the git tags (major and minor below, set by a person; the patch is the
 # last tag's plus one) and shown on every page from version.json. It is never typed by hand.

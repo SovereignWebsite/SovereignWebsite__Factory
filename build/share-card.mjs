@@ -1,6 +1,6 @@
 // Make a site's link-preview card: a 1200x630 JPEG under 300 KB from the owner's own photo, with their name and one line.
 //   node build/share-card.mjs <photo> "<name>" "<one line>" <out.jpg>
-// For the site's own agent, run from a SovereignWebsite__Factory checkout. Uses the Playwright Chromium already present.
+// For the site's own agent, run from a SovereignWebsite__IaC checkout. Uses the Playwright Chromium already present.
 import { readFileSync, writeFileSync, statSync } from 'node:fs';
 import { extname } from 'node:path';
 import { createRequire } from 'node:module';
