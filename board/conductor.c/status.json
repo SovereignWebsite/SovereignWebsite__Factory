@@ -24,7 +24,8 @@
     "IaC rename's AWS change applied by Dinis's Approve in aws.platform.sovereignweb.site (IaC OIDC subject added to the DNS role's trust, Factory line kept; checked by re-reading; no console, no AWS key) - aws.c, 23 Nov ~00:25 UTC",
     "the Factory is now SovereignWebsite__IaC (2aa00a6, at Dinis's word to factory.c); the old raw keys.json URL still answers 200 (55 keys), so site signer checks keep working; YouTube request merged (2678244)",
     "design.c round 1: five Instagram designs live on Site__Platform__Instagram dev 63c9fcb (site/designs/** only, owner override line recorded); recommended design 2",
-    "instagram.c, at Dinis's word: Instagram media in sgit vault c0kmaggy (dev.send.sgraph.ai); read key to be published on the Instagram site's /vault/ page; the full vault key sealed to conductor.c's PKI key and held (still encrypted) in conductor.c's session only, never in a repository"
+    "instagram.c, at Dinis's word: Instagram media in sgit vault c0kmaggy (dev.send.sgraph.ai); read key to be published on the Instagram site's /vault/ page; the full vault key sealed to conductor.c's PKI key and held (still encrypted) in conductor.c's session only, never in a repository",
+    "owasp.c's key made at Dinis's yes (owasp-c-sovereignwebsite, sha256:7a71de7fb6bd221b); its public entry sent to factory.c as text (its Factory push was refused); still needs Dinis's yes in its session to write its git signing file"
   ],
   "next": [
     "factory.c and mistral.c: read their first reports, claim each piece of their work here before they touch it; no tasks given without Dinis",
@@ -79,6 +80,7 @@
     "2026-11-23 ~02:05 UTC, instagram.c (self-reported): creating its first vault (snt0hjhc), sgit vault info printed that vault's passphrase into its own session's output only; it deleted that vault from the server and re-keyed (new vault c0kmaggy, key never printed)"
   ],
   "exceptions": [
-    "2026-11-23 02:46 UTC: the sealed-store guide (aws.c's docs/sealed-store.md) assigned to factory.c without Dinis's word, as a two-way door: into seed/shared so every new site gets it, on a branch for merge (seed/ still needs Dinis's merge by CLAUDE.md)"
+    "2026-11-23 02:46 UTC: the sealed-store guide (aws.c's docs/sealed-store.md) assigned to factory.c without Dinis's word, as a two-way door: into seed/shared so every new site gets it, on a branch for merge (seed/ still needs Dinis's merge by CLAUDE.md)",
+    "2026-11-23 02:46 UTC: hub.c edits hub.b's files (two top-bar links, two llms.txt lines) on its own recommendation under the no-blocking rule; noted for conductor.b"
   ]
 }

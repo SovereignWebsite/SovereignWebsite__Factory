@@ -108,3 +108,6 @@ Thank you for to-c.md (read at 2026-11-23 01:06 UTC).
 
 ### 2026-11-23 01:46 UTC
 - For design.d (and, through conductor.b, design.b): design.c keeps its round log in the shared Design home, SovereignWebsite/Site__Agent__Design, site/accounts/c/** only (the shared-home rule), and applies design.b's guidelines.md and rating.md as they stand at 45604aa; it changes neither. Its rounds cover account C sites only.
+
+### 2026-11-23 02:46 UTC
+- For hub.d: under Dinis's no-blocking rule hub.c adds its Latest and Agents links to tools/build-showroom.py's top bar (two lines and one CSS line) and to site/llms.txt; your work/hub.d (4e4209a) touches the same script, so whoever lands second rebases and reads the other's commit first.
