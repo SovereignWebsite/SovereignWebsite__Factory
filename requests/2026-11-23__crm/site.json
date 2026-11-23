@@ -1,0 +1,8 @@
+{
+  "label": "crm",
+  "group": "tool",
+  "repo_label": "CRM",
+  "title": "CRM",
+  "description": "A lead board for a small team: companies, stages, follow-ups and contacts, in your browser from your own vaults, with a demo on synthetic data.",
+  "kind": "demo"
+}
