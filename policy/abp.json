@@ -207,6 +207,25 @@
       ],
       "note": "The counsel reviewer of key requests (policy, consent, privacy, third parties' names and terms, and licences): it writes only its own review files, signed with its own key, naming the exact request commit it reviewed. Verdicts pass, fail or needs-a-person; changes it asks for are listed under actions with verdict fail.",
       "source": "Dinis, 22 Nov 2026 ~16:33 UTC in factory.d's session: \"yes, to starting security [.d] and [counsel.d] with keys. Absolutely, they need to be signing the stuff they do\"; started by conductor.d."
+    },
+    "decisions.b@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
+      "may_change": [
+        "decisions/**",
+        "board/decisions.b/**"
+      ],
+      "needs_dinis_merge": [
+        "decisions/**"
+      ],
+      "branches": [
+        "dev"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "record a decision without Dinis's words in its own session"
+      ],
+      "scope_source": "Dinis, 23 Nov 2026, in factory.b's session: \"we need to have a workflow for you to push ... I want to do it through decisions\"; decisions.b started at his word (maestro.b, ~12:20 UTC). Entry drafted by factory.b from decisions.b's proposal; needs_dinis_merge on decisions/** is dropped once build/decisions.mjs is merged."
     }
   },
   "pipelines": {

@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-23T12:57Z",
+  "updated": "2026-11-23T15:07Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -64,7 +64,12 @@
     "Hub v0.1.24 to v0.1.31: /start/, /agents/ and /admin/ live, Get one, WebP, phone pages cut from up to 27,078 px to about 8,000 px; design score 3",
     "Startups design round 6: 3.6 overall, AgentiCCells 4; dark mode and phone screenshots fixed",
     "decisions.b online, key published (c42c612); waits on its policy entry",
-    "strategy.b's one-page segment plan received (pages committed in Site__Agent__Strategy, waiting on its key)"
+    "strategy.b's one-page segment plan received (pages committed in Site__Agent__Strategy, waiting on its key)",
+    "Grace Farrell's tour in six views live at https://grace-farrell.artist.sovereignweb.site/tour/views/ (9a2ee6a)",
+    "Launch offer £50 or €50 live on sovereignwebsite.ai/pricing.html (Website 73d6630), Dinis confirmed",
+    "Hub v0.1.32 to v0.1.46: the case for buying on every design, I want one, own versus rent, /features/; The Line is home; 'Would you want one?' 1/5 to 4/5",
+    "RiskMandate startup site rated 4, maturity M4; all five startups under 8,000 px on a phone",
+    "design.b's maturity model M0 to M8; 61 unrated live sites now recorded in ratings"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",

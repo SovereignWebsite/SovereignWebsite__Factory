@@ -520,4 +520,5 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
 { const C = await import('../build/coverage.mjs');
   const c = C.coverage(['a.x.site', 'b.x.site', 'c.x.site'], { sites: { 'a.x.site': {}, 'c.x.site': {} } }, { sites: [{ address: { url: 'https://a.x.site/' } }, { address: {} }] });
   assert.deepEqual(c, { notRated: ['b.x.site'], notOnHub: ['b.x.site', 'c.x.site'] }, 'coverage lists the sites the design ratings and the hub miss'); }
+await import('./decisions.test.mjs');
 console.log('OK (tests)');
