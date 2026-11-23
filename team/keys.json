@@ -1254,6 +1254,29 @@
         "fingerprint": "sha256:879c669f9bcb244b",
         "signing_fingerprint": "sha256:ce445dd95f59849d"
       }
+    },
+    {
+      "id": "cloudformation-aws-a-sovereignwebsite",
+      "agent": "cloudformation.aws.a@SovereignWebsite.dinis",
+      "role": "CloudFormation with Route 53 on account A (AWS Platform programme): every stack mapped to what it made, every zone and record mapped to what it serves, on the twin first. Takes over from cloudformation.aws.c.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtPgweggdc6AykBpQay",
+      "fingerprint": "sha256:7384019c7e4489f8",
+      "signing_fingerprint": "sha256:7ac064b8e547ded1",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArk+xq+S9Eja8fx6n1WNW\n/EgFt4IzC51uccTZleZhv0hTQVIZHOTwnKjOSpMbuee51T0r75Ctac5iYbJIzoMK\nFvxyP83a5Y/FunZTraHkFdsEfHX3CABKz3mHL2kF5qXZA0z2eqUjWOl22yFOxb57\nQmwApdP+P7bdmctJVy+AMTDYR5NVmAJ+AY/D/DevYLPFsbFqhTPzRgPsgLoMphNI\n4C8IVRz1RX5U8eUjuI5zK+uDV6Oqb9O8Bp/QQ6ZXucSbZ3fvc6xenGobzPaYcmUo\nXazl7KCcT8ngwUr8AXmdM2GU+gLefK1AAmsURhqXEuOskcZ5J5VYco7npdprfGEv\nNjMRGKOjpqk43sjXDjkChHYY2ldKbZ/BKXVnkN2X4wneSROysXGjxMqXAuUCfbtz\nB5WJALEss9q4/VUe9OZma7VcWb7t3ND7dIWXPvBgrOUWWBIrMbQatBt3zhXPFgsZ\nXPvOy1p481TDLW6hIJZus554NXMWpltGxX8p0zRP1HkzyBnAOSooCxtfeQ81m6es\nZkCfIk0m9WHPthoUCYiWFKlDdc53KP5KtCX77eht3KSamZH78LE5upn2tlviwHLG\nuYjla3128qNKm64NvvNUoe+q92ZB3n8YuTLbwALWNsudqgVt5fHWew0ltpWcAGx6\nDQbt6/b1ybqjU49OHS9Y0iUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEnhSPKIVOBuMWvKlrckFGqXYZtIw9\nuRYmmORxTG9I/mJeifuvIfd8zO7tVwPTSAUzsoJ5kLLCDBT4SFMutY9dZQ==\n-----END PUBLIC KEY-----\n",
+        "label": "cloudformation.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:7384019c7e4489f8",
+        "signing_fingerprint": "sha256:7ac064b8e547ded1"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
