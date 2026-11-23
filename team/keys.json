@@ -7,7 +7,7 @@
       "role": "Conductor of the Sovereign Agentic Website team. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 19 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
       "created": "2026-11-19",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
       "fingerprint": "sha256:fabd2942df366c5f",
       "signing_fingerprint": "sha256:706a24f8808e02a2",
@@ -22,7 +22,9 @@
       "ssh_signing": {
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
-      }
+      },
+      "retired": "2026-11-23",
+      "retired_note": "Handed over to a fresh session at Dinis word (23 Nov 22:45 UTC); old signatures stay valid."
     },
     {
       "id": "migration-b-sovereignwebsite",
