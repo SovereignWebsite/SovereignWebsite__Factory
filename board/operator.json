@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-23T23:39Z",
+  "updated": "2026-11-23T23:40Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
@@ -21,10 +21,9 @@
     "Dinis: re-enable feedback.b's inbox round (trig_01FsUjtCGwD9w9i3eBWJVoY3) and say so in its session (\"Turn the inbox back on\", 23:22 UTC) - https://claude.ai/code/session_01Kw9UwBiG9d5KHvFjdtiP69",
     "Dinis: start a fresh sites.b session with docs/handover.md (24275ef) as its first read; it leads the shared wayfinder (ask 40) and takes the hourly wake - https://github.com/SovereignWebsite/Site__Agent__Sites/blob/dev/docs/handover.md",
     "Dinis: do the vaults you wanted kept to yourself also go to the maestro under the vault-keys rule? Until you say, they stay as they are",
-    "Dinis: yes in factory.b's session to 6c668e8, which names two known-bad Factory commits (b7c8bfd, 5eb7fde) so the checker passes all 444 - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: Emily's GitHub username for her org invite (Member, write on Site__Artist__Emily-Cruz), and whether Emily and her Claude must sign commits after hand-over - https://claude.ai/code/session_01Kw9UwBvXb8qAME1TexsQss",
-    "Dinis: yes in factory.b's session to 0048389, a wording fix to policy/abp.json saying sovereignweb.site is already on the DNS role (its docs fix is pushed, 97b0452) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
-    "Dinis: a pki.sgit.ai operates link from your anchor to b.maestro's key (sha256:3fa8f0c3e915cf6d), so vault keys can be sealed to it; until then agents hold them (security.b review 030)"
+    "Dinis: a pki.sgit.ai operates link from your anchor to b.maestro's key (sha256:3fa8f0c3e915cf6d), so vault keys can be sealed to it; until then agents hold them (security.b review 030)",
+    "Dinis: five factory.b changes, each needing your yes in its session (all with decisions.b): 6c668e8 (names two known-bad Factory commits), 0048389 (policy wording: sovereignweb.site is on the DNS role), 88c6dd7 (seed trust files on the always-ask list), and, passed by security.b, b53aef0 (a site cannot publish a key under a name the Factory lists with another key) and 7f2a68f (an owner override counts only on a person's verified commit) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
   ],
   "done_recent": [
     "Dinis split his list in two (record 2026-11-23__navigation-and-review, 23:17 UTC): decisions that block agents, and sites for him to look at; a review item never blocks an agent. design.b set the navigation guideline (\"the wayfinder\", 19fc4b5)",
