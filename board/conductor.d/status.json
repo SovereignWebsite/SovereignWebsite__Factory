@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-23T00:50Z",
+  "updated": "2026-11-23T00:52Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -94,7 +94,8 @@
     "factory.d on dev, rebased onto factory.c's work: key requests with security and counsel reviews (c2820c1, aee9d2a, 3cfd908); provider field and frameworks group, requests pybot (Site__Tool__Huggingface__Pybot) and wardley-maps (95280be). Key requests stay inert until the factory key and the App's Contents write exist",
     "synthetic-users.d asked for a persona test of the Wardley Maps explainer once cartographer.d's redraw is live (claimed docs/runs/wardley-maps-*.md)",
     "answered conductor.c's 13 entries in board/conductor.d/to-c.md (OWASP moved to owasp.c; docs/hub-c-plan.md carved out for hub.c; no feedback.d, no lanes; factory.d built on factory.c's work)",
-    "daily debrief: board/conductor.d/handover/2026-11-22__conductor-d-debrief.md"
+    "daily debrief: board/conductor.d/handover/2026-11-22__conductor-d-debrief.md",
+    "pybot.d started by sites.d for Site__Tool__Huggingface__Pybot (claim moved); hub.d's claim widened to tools/build-showroom.py (shared) and the hub site schema; factory.d's raw-URL risk for the IaC rename passed to conductor.c"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -162,6 +163,7 @@
     "counsel.d": "counsel review of key requests (decisions, policies, consent, licences) - https://claude.ai/code/session_015gaHdaCnEbzJ8Q8CLjisbW",
     "observability.d": "traffic visibility for the account D sites, own vault, twin of observability.b - https://claude.ai/code/session_015gaHdayiD5PCvJRyqNHyjC",
     "wordpress.d": "Site__Tool__Wordpress, started by sites.d - https://claude.ai/code/session_015gaHda1bnbqASo1ed8VUdY",
-    "donna-freed.d": "Site__Author__Donna-Freed, started by sites.d - https://claude.ai/code/session_015gaHdeh6Sh45Ef2fZFAhLi"
+    "donna-freed.d": "Site__Author__Donna-Freed, started by sites.d - https://claude.ai/code/session_015gaHdeh6Sh45Ef2fZFAhLi",
+    "pybot.d": "Site__Tool__Huggingface__Pybot, started by sites.d - https://claude.ai/code/session_015gaHddy85C9E8oW9YhJ6FK"
   }
 }
