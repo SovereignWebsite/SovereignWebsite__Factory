@@ -124,6 +124,9 @@ assert.equal(R.repoName({ label: 'silvio-switha', group: 'cv' }), 'Site__CV__Sil
 assert.equal(R.repoName({ label: '33n-ventures', group: 'invest' }), 'Site__Invest__33n-Ventures');
 assert.equal(R.repoName({ label: 'weather-demo' }), 'Site__Weather-Demo');
 assert.equal(R.repoName({ label: 'aws', group: 'platform', repo_label: 'AWS' }), 'Site__Platform__AWS', 'repo_label keeps its capitals');
+{ const { requests, errors } = R.load('requests'); assert.deepEqual(errors, [], 'requests load');
+  const ig = R.repos(requests).filter((x) => /__Instagram$/.test(x.name)).map((x) => x.name).sort();
+  assert.deepEqual(ig, ['Site__Agent__Instagram', 'Site__Platform__Instagram'], 'one label, two groups, two sites'); }
 assert.equal(R.host({ label: 'aws', group: 'platform', repo_label: 'AWS' }), 'aws.platform.sovereignweb.site', 'repo_label leaves the address');
 assert.ok(R.validate({ label: 'aws', group: 'platform', repo_label: 'AWX', title: 'x', description: 'x' }).some((e) => e.includes('repo_label')), 'repo_label must be the same letters');
 const ren = R.repos([em])[0];

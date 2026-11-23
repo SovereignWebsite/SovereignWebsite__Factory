@@ -102,8 +102,10 @@ export function load(dir = 'requests') {
     if (req.from && existsSync(t)) { try { moved = JSON.parse(readFileSync(t, 'utf8')).state === 'moved'; } catch { errors.push(`${f}: transfer.json is not valid JSON`); continue; } }
     out.push({ ...req, folder: f, moved });
   }
+  // One site per address and per repository: the same label may be used in two groups (Dinis, 23 Nov 2026: "you should
+  // have two repos here. There's the Instagram platform and there's the Instagram agent").
   const seen = new Set();
-  for (const r of out) { if (seen.has(r.label)) errors.push(`label ${r.label} requested twice`); seen.add(r.label); }
+  for (const r of out) for (const k of [`address ${host(r)}`, `repository ${repoName(r)}`]) { if (seen.has(k)) errors.push(`${k} requested twice`); seen.add(k); }
   return { requests: out, errors };
 }
 

@@ -1,0 +1,8 @@
+{
+  "label": "instagram",
+  "group": "agents",
+  "agent": "instagram.c@SovereignWebsite.dinis",
+  "title": "instagram.c",
+  "description": "The agent that keeps the Instagram platform site and automates posting to Instagram with the owner's own account.",
+  "kind": "owner"
+}
