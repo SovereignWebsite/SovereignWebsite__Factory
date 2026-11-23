@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-23T11:48Z",
+  "updated": "2026-11-23T11:50Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -54,7 +54,9 @@
     "Board note: an Agent Behaviour Policy on every site (8e47f58)",
     "Operator page live: https://hub.sovereignweb.site/operator/ (hub v0.1.16), public-safe data board/operator.json",
     "Hub lead design The Register live (hub v0.1.17, fc79158), design.b's call",
-    "sites.b's home live: https://sites.agents.sovereignweb.site/ (d5797bc)"
+    "sites.b's home live: https://sites.agents.sovereignweb.site/ (d5797bc)",
+    "Five startup sites redesigned (sources at section ends, chooser out of the header): sovereign-website v0.1.16, sgit, the-cyber-boardroom, risk-mandate, agentic-cells v0.1.15",
+    "Operator page reads board/operator.json live (hub v0.1.18)"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
