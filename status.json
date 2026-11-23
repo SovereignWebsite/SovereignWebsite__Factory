@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
-  "updated": "2026-11-23T23:02Z",
+  "updated": "2026-11-23T23:11Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -77,7 +77,8 @@
     "Suno platform site live: https://suno.platform.sovereignweb.site/ (v0.1.1, record 2026-11-23__suno-site)",
     "Car Buyer tool site live: https://car-buyer.tool.sovereignweb.site (fc3266d), from request to live in about two hours",
     "conductor.b handed over to a fresh session at Dinis's word (22:45 UTC 23 Nov): old key retired (34e2b08), new key published (14e9243)",
-    "Dinis installed the sovereignwebsite-transfer App on SovereignWebsite, so transfers (weather-demo, dinis-cruz) can resume with factory.b (reported by decisions.b, signed note 2026-11-23__transfer-app-installed)"
+    "Dinis installed the sovereignwebsite-transfer App on SovereignWebsite, so transfers (weather-demo, dinis-cruz) can resume with factory.b (reported by decisions.b, signed note 2026-11-23__transfer-app-installed)",
+    "Dinis agreed asks 2, 5, 8, 14, 15, 17, 19, 20 and 21 (record 2026-11-23__asks-2-to-21, 23:08 UTC): RiskMandate brochure approved, the Mistral key file, dinis-cruz.presentations left ready for him, the Algarve Evolution move confirmed; routed to the agents. His principle: leave each site so he can carry it on himself, and never block on him"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
@@ -95,13 +96,12 @@
     "Dinis: say \"push\" for 544ecbc - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: Grace's photos, Spotlight links, and whether photos credited to Jennie Scott may be used - https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67",
     "Dinis: the DC Vault manager session or public key, and whether every agent backs up its private key - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-    "Dinis: yes in mistral.conductor's session to its signing key file, or conductor.mistral pushes its stashed roster update - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT",
     "Dinis: strategy.b's decisions: which segment leads (it recommends A, with B as proof), where \"I want one\" leads (call or email, and which address), one price for personal sites before anything is sent, and the first ten contacts for A - https://claude.ai/code/session_01Kw9UwDF1rJD6h9xEsVg5bx",
-    "Dinis: IaC repository access for strategy.b (and strategy.d), so its key and plan pages can be pushed - https://claude.ai/code/session_01Kw9UwDF1rJD6h9xEsVg5bx",
     "Dinis: one yes to start the decisions system: factory.b pushes 8ee995a, 68565f8, 933d92a and the checker 90677bb, with decisions.b's policy entry - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: add SovereignWebsite__Website to the fresh conductor.b session; add_repo was refused by the permission check - https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
     "Dinis: the go-to-market wakes (ask 24): four scheduled tasks to set up or allow, all ending before 22:00 UTC, and the old conductor task to switch off - board/2026-11-23__wake-schedule.md",
-    "Dinis: start the weather-demo transfer: Actions, Transfer apply, Run workflow, request 2026-11-20__weather-demo, then approve the apply job in the transfer environment (factory.b reads the run) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
+    "Dinis: start the weather-demo transfer: Actions, Transfer apply, Run workflow, request 2026-11-20__weather-demo, then approve the apply job in the transfer environment (factory.b reads the run) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+    "Dinis: make the IaC push grant for strategy.b, grace.b and strategy.d (agreed in ask 2, record 2026-11-23__asks-2-to-21); it is an organisation change only he makes or merges"
   ],
   "decisions": [
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",
