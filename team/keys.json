@@ -1618,6 +1618,29 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "ec2-aws-a-sovereignwebsite",
+      "agent": "ec2.aws.a@SovereignWebsite.dinis",
+      "role": "EC2 for the AWS Platform programme on account A: EC2 in the twin, EC2 read pages and approved plans for our environment, EC2 as a second way to deploy the Vault, and the design of ephemeral deployments and the daily region move.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtNc3CDv5wXAXwfPgXy",
+      "fingerprint": "sha256:c0cc61fb15c902f6",
+      "signing_fingerprint": "sha256:e357bbbcb010517a",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAyUzWYlc57MXR7TUdnD3a\nhcKse8PK1XwOogEgBsIrFSC0goFp8j3+uCgWeRVguYmQaOjTNUVSwuF5GhDWKZId\ncHHO7FL9iBUoLoaO5+Ni+nXvPU75DMeP4Aye4r6T29OA4Lahl1XsA1PNS5dV6jnG\nlV1RFPkM9U3JnCqTlkt/Ad/lZqM8KDLyiDZ9w0uTCTMo8oifIikqdL3ok1W96VYb\nPqY2g0MmttdDvzcQ+rmqcbuFPEO3XoeW+4REbKZa9hGOnWRCHvc2BxmpnqP6gYiG\nggrUOCcFXA57gDZJReKPZHcQs0sXSXqyEjfPmY7WjLOEqWfsbTmn/dWvVOWEuJs/\nngFQghIvcoZu4jY3Rj/Jhc/zyjymOxh2u1MuVJd3HxIh+ElstyPkGFb8YYUPG1T1\nheWwXlcDVCtY0LcqtUYGYJpSPo+lWsR/AX1FWrUS2FDuMq1WmpjdmMYfFlQT13LO\nmRM08V0zRj4NOimERLR3x7f80yJoKAXVz+wFdU3QB1DTKeKf11pCxXyb5lhFKEkW\nmbThWTljvgYbwYePu+zT5aWWhVsOqKoo1VAR0TARnV6N6laKcfiG8kGzctwOJpwR\nTfgdE9pJ8H8ibbPl+MdKaevKSM6tIbgbIpuOWGWqhgKehQFO0mpSQ9apIhZOcLH1\nug6bbJayyjaRTf56srNsjpECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEy9DWPmdjgIiz4dAb0F6horWak07j\nimuMjYq8kuRZ2qhOBLyUXpty/RQd2dD/vEaJ1vf3VWpqPyQIqQRpEm4Vcg==\n-----END PUBLIC KEY-----\n",
+        "label": "ec2.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:c0cc61fb15c902f6",
+        "signing_fingerprint": "sha256:e357bbbcb010517a"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
