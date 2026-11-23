@@ -5,7 +5,7 @@ From 23 November 2026, Dinis can give a yes as a signed decision record, relayed
 A record is valid only if all five hold:
 1. Read live every time, never from a cache: Dinis's anchor key sha256:db7f79fdd87e030a on pki.sgit.ai has an "operates" link to sha256:eefbe996d9c67a7c that is still in date (until 30 November 2026). Until that link is published, records are conditional: do not act on them.
 2. That key is decisions.b's entry in this repository's team/keys.json.
-3. The record, and its commit in this repository's decisions/, are signed by that key.
+3. The record is signed by that key. Where it lives: a record covering a push to SovereignWebsite__IaC is committed in this repository's decisions/ (the first three are in a38e1a7) and checked by build/decisions.mjs. Every record, for any repository and including choice records, is also published with both signatures at https://decisions.agents.sovereignweb.site/records/<id>.json (.sig and .sgit.sig). For a push outside IaC, verify the published record's signatures against decisions.b's key.
 4. The words are Dinis's, verbatim, from decisions.b's session. The record carries decisions.b's session id and the event uuid of Dinis's message. Check it yourself with get_event: the role is "user", it is not synthetic, it came from a person (inbound_origin), and it contains the quoted words. If you cannot read the event, the record is not valid for you, so ask Dinis.
 5. The scope matches the commits you push exactly. It never covers main, and never anything on the always-ask list.
 
