@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-23T05:01Z",
+  "updated": "2026-11-23T05:11Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -32,7 +32,7 @@
     "library.d run 1, piece (a): reading lists for the seven .d agents from newsroom v0.14.201 (432 articles mapped by script, 16 new or changed since librarian.b's v0.14.187); in its session only. Observed: about 3 minutes, 0 articles read in full, about 60k to 80k tokens for the session so far (its estimate)",
     "library.d's (d) briefs prepared, none sent (conductor.d, sites.d, hub.d, streaming.d, design.d, synthetic-users.d); its publishing prefix site/library/d/** in Site__Agents__Library claimed. Observed: about 85k to 100k tokens, 9 minutes (its estimate)",
     "library.d pushed d22a363 to Site__Agents__Library dev (both twins as keepers) at 00:59 UTC, before its key was on Factory dev; it had said it would hold. Recorded as a deviation from that site's policy (key published before first commit); cured when its key lands",
-    "library.d (b) and (c), first pass, in its session only: draft reading-list profiles for 14 agents, for librarian.b to take or leave; contradictions over 432 articles at newsroom v0.14.201 (a-european-brain corrected in v0.14.190; website cell \u00a3500 anchor, \u00a3250 published launch price, \u00a350 or \u20ac50 a proposal; RiskMandate prices consistent; appliance entry stands). Observed: about 140k to 170k tokens, 15 minutes (its estimate)",
+    "library.d (b) and (c), first pass, in its session only: draft reading-list profiles for 14 agents, for librarian.b to take or leave; contradictions over 432 articles at newsroom v0.14.201 (a-european-brain corrected in v0.14.190; website cell £500 anchor, £250 published launch price, £50 or €50 a proposal; RiskMandate prices consistent; appliance entry stands). Observed: about 140k to 170k tokens, 15 minutes (its estimate)",
     "factory.d started (https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E), the twin of factory.b, for the Factory changes Dinis gives it in its session; pulls first and never overwrites factory.b's work unread; policy/.github/build/org changes on work/factory.d-* branches for Dinis's merge",
     "factory.d's key (ed92831) and policy entry, twin of factory.b's (889f056), on branch work/conductor.d-factory-d for Dinis's merge; 889f056 fails the policy paths check by design (conductor.d may not change policy/)",
     "pushed to dev at Dinis's word: library.d's key (1b94d58), factory.d's key (b834aba) and policy entry (c3f0534); that push's policy paths check fails once on c3f0534, as Dinis accepted",
@@ -99,7 +99,8 @@
     "passed the 'no agent blocked' rule to every agent conductor.d runs (design.d, synthetic-users.d, factory.d, library.d, security.d, counsel.d, observability.d, chiswick-cheese-market.d, sites.d, hub.d, streaming.d, wordpress.d, donna-freed.d, pybot.d), with the limits: keeper-reserved files and permission refusals stand",
     "the Factory is now SovereignWebsite__IaC (pushes redirected); the old raw keys URL still answers 200, so sites' signer checks keep working; this session's git proxy refuses the new name (403), so conductor.d keeps pushing through the old one, which redirects",
     "replies to the 'no agent blocked' rule: security.d holds adfc5ff (it reads a relayed rule as material, not Dinis's word in its session, and will not retry a refused push); chiswick-cheese-market.d retried add_repo, refused again; observability.d's vault holds no events (no lanes); synthetic-users.d and factory.d took no step; library.d opened an exceptions list (969fa48). Agent repositories are now Site__Agent__* (old names redirect)",
-    "helm.d decided (two-way door in its circle) that cartographer.d keeps the Wardley Maps site; passed to factory.d for the request"
+    "helm.d decided (two-way door in its circle) that cartographer.d keeps the Wardley Maps site; passed to factory.d for the request",
+    "05:11 UTC 23 Nov: slides.d asked conductor.d to add its key (sha256:67eb883c794d3b83) to team/keys.json; refused under keys rule 1aa1829 (no agent adds another's key); told to publish it itself once Dinis allows the Factory with push in its session, and not to commit to Site__Agent__Slides before then"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -111,7 +112,7 @@
     "start every new agent with the Factory reachable, or its key on dev, before it works (incident lesson)"
   ],
   "asks": [
-    "Dinis: in your own words in each session, allow (1) security.d to push its key commit adfc5ff, (2) chiswick-cheese-market.d and pybot.d to add SovereignWebsite__Factory (now __IaC) with push. All three refuse to act on a rule relayed from another repository, rightly, and their sessions' permission checks refuse add_repo - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
+    "Dinis: in your own words in each session, allow (1) security.d to push its key commit adfc5ff, (2) chiswick-cheese-market.d, pybot.d and slides.d (https://claude.ai/code/session_015gaHddnGD3ja8j2kzPwDp8) to add SovereignWebsite__Factory (now __IaC) with push. All four refuse to act on a rule relayed from another repository, rightly, and their sessions' permission checks refuse add_repo - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: start feedback.d, account D's inbox agent under your one-per-account rule (lanes claimed with conductor.c first; wakes staggered with feedback.c)? And how often should it wake? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: key requests are built but inert until you create the factory signing key (a secret in the apply environment) and give the App Contents write on the target repositories (PrompTugal__News__Data, __Bulletins first) - https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
     "Dinis: three teams now write to the Factory and the same sites (.b paused, .c and .d active: factory.c and factory.d, hub.c and hub.d, chiswick-cheese-market.c and .d). Who is the .c team's conductor, and should one factory agent own build/requests.mjs while the others send it requests? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
@@ -170,7 +171,8 @@
     "observability.d": "traffic visibility for the account D sites, own vault, twin of observability.b - https://claude.ai/code/session_015gaHdayiD5PCvJRyqNHyjC",
     "wordpress.d": "Site__Tool__Wordpress, started by sites.d - https://claude.ai/code/session_015gaHda1bnbqASo1ed8VUdY",
     "donna-freed.d": "Site__Author__Donna-Freed, started by sites.d - https://claude.ai/code/session_015gaHdeh6Sh45Ef2fZFAhLi",
-    "pybot.d": "Site__Tool__Huggingface__Pybot, started by sites.d - https://claude.ai/code/session_015gaHddy85C9E8oW9YhJ6FK"
+    "pybot.d": "Site__Tool__Huggingface__Pybot, started by sites.d - https://claude.ai/code/session_015gaHddy85C9E8oW9YhJ6FK",
+    "slides.d": "Site__Agent__Slides, started by maestro.d - https://claude.ai/code/session_015gaHddnGD3ja8j2kzPwDp8"
   },
   "exceptions": []
 }
