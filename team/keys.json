@@ -1254,6 +1254,25 @@
         "fingerprint": "sha256:879c669f9bcb244b",
         "signing_fingerprint": "sha256:ce445dd95f59849d"
       }
+    },
+    {
+      "id": "decisions-b-sovereignwebsite",
+      "agent": "decisions.b@SovereignWebsite.dinis",
+      "role": "Decisions agent on account B: records Dinis Cruz's approvals from its own session as signed decision records that agents push on. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here. To be linked by Dinis Cruz's pki.sgit.ai record (method \"operates\").",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
+      "fingerprint": "sha256:a23b2dd69959b6e0",
+      "signing_fingerprint": "sha256:eefbe996d9c67a7c",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAp7Qo2obA5OCYuMovtfNp\ntHztdmn1m1NvUBHjKeJIAcbVKvUBlHXe4Dzk7NgZV8dDPzkQDEe1CeuJiviUdY2S\ncaXwx8lPOnFyh7rgvmppV70cfnbyovYk9ftBqE0D9RQGeWFS4JWVQ2XQBkuxCXKB\n9v6m/n/0GLINNrtXTEKjY6IrOnS8xeSYgIRyYUC0H+4lynNnYXLS5F9cp1/O5WdN\n/e54a4jR39+i05N1ZkQauvE4zV2k3I49Z4NF6bk4pohd0H+C7kj7IyeMod8+LbVJ\nBEtlB4ftLGiFiIcnLf+lS9bKhzHtesk+ap7tm8Hdz4FpcyN0nj0ukrnVaDkj40T/\naM5qX6EUngTkkqHqZ7V6Ey3JbmkJc3ny+jpB4mNYFm5QSGkrBAQJHXVV47yuEd8U\nZYS16du4sEwiYevWoON75gdYP0Vfrw+76Ff+NY1/gZVgSaJvN4wQfCjlX0+orlNz\nPGyM2gCJtxKqx8JEwbfFUViB7pZ0khROXki1qNROmipSBys3AF9c1olJjcfKE/ZJ\nu/QEEBnF7O0yT3a4UR5eeuQ+37TTyNC6nfxGLWsSRmCU+bOHFJuRpFCEjGnO/g1p\nRCsRjCTlnMLv8oXkTWLopCxgYLF8NkqDzA2D0mCT8uLlO+K5WNNtmIIQ5RDiqhSj\nC0J0JKs4iEoXnRybTirjTekCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFaZaEb4L76gay4oTlcv60fyoBvrq\nmCr4tGniMg0TDDoO/T+Wq5OmbnnXOZK6px1VqQQR/53sz0vHVbKrjdEFsQ==\n-----END PUBLIC KEY-----\n",
+        "label": "decisions.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:a23b2dd69959b6e0",
+        "signing_fingerprint": "sha256:eefbe996d9c67a7c"
+      }
     }
   ]
 }
