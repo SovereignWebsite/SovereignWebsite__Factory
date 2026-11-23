@@ -1254,6 +1254,29 @@
         "fingerprint": "sha256:879c669f9bcb244b",
         "signing_fingerprint": "sha256:ce445dd95f59849d"
       }
+    },
+    {
+      "id": "cloudtrail-aws-a-sovereignwebsite",
+      "agent": "cloudtrail.aws.a@SovereignWebsite.dinis",
+      "role": "CloudTrail and CloudWatch on account A (AWS Platform programme): the timeline, per-asset activity and alarms views over the twin's CloudTrail records, and drop-in of a user's own CloudTrail dump. Takes over from cloudtrail.aws.c, whose key was never published.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtLsVZvQ5dyyKz8ndG2",
+      "fingerprint": "sha256:9ebb596ab7bd764f",
+      "signing_fingerprint": "sha256:a3949ea817a57566",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzTPwZzzROsCcysW6QiUC\ns7XnWoFSWA+xPFpr56TsYuqRA9466a/dYv4LcsuwZx19uvZ4+higD3nq+XlPkxSF\n/SXk41ZtjxbCGoxaNsul0YTbAIXK1EYb0bM8ICVc9t7zsuWiRe3OENYIDQFghIQz\naiUlraQPNwSI8KP15VXMPyRbIH4uvuZnx8qbxk40RDOQsShw+A1puVME5Jn91mRz\nhBPyrOh/IR/gTHB69HFEgEzSy9xQDN89rip4ZSuC7xt7E6aufwEsCx/6PAO8r3Ts\nZaPiBeOfO3luwBQCWLYqf4U9my2CvW7cHp8JEMSkWy5xzNVWgZFMIAoJkSna67rC\nCRgwZXHfMYZHlznzW1fzPBYIZKdM5LmopU1X0G13gOacYnVPjzRyz4wT5wbsiEZb\nxcVTRKlq2nzfTPocBo3sUKEWGmX9pSgGe5U/5VNiJnWJ4wYYdTua+4yo3Iaoyd2O\nFBoq0YCHvmqEnYQHMnABmHF8Kd6xtbsPDHteJfSDbcMVJn6PcV5wciZ0WYG+T2Gk\nOoJBR1P2JA/5haTXdV4uQ8RbRNF0v7aumkVywok5fnQRFyiLS8NS/7LMdDcmKfwM\nr0jlLtwRDc073YzM4nHwMq6h4EKCmVTkZlmRr0UmzhdoJyoGMAykn9UDSKT4i7De\nBZbQmo9kMrR8CE/ggFj0CXkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEHtuVhesnoN3ATtQdBf0KG/mP/Vtn\nQKlzpMyuYb3CuIWawwjaQp5Zv4NXKoBjUpnVSvCgm+PwL0IgGxOh4sKC9w==\n-----END PUBLIC KEY-----\n",
+        "label": "cloudtrail.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:9ebb596ab7bd764f",
+        "signing_fingerprint": "sha256:a3949ea817a57566"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
