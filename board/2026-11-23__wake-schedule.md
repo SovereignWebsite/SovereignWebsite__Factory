@@ -10,17 +10,16 @@ For Dinis to set up or allow himself: no agent creates, enables or changes a sch
 ## The four tasks
 | Agent | Session | Cron (UTC) | Notes |
 |---|---|---|---|
-| conductor.b | https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD | `31 7-22 * * *` | the fresh conductor session |
-| sites.b | https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67 | `37 7-22 * * *` | at 274k context at 15:57: a fresh session first is better |
-| hub.b | a fresh hub.b session | `43 8,10,12,14,16,18,20,22 * * *` | https://claude.ai/code/session_01Kw9UwB7XboTsnbPPWaMr2d is at 686k: hand it over first |
-| design.b.rounds | https://claude.ai/code/session_01Kw9UwFCJTPWFaTq4TX5vUT | `13 7,9,11,13,15,17,19,21 * * *` | id from the conductor hand-over note |
+| conductor.b | https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD | `31 7-21 * * *` (07:31 to 21:31, 15 a day) | the fresh conductor session |
+| sites.b | https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67 | `37 7-21 * * *` (07:37 to 21:37, 15 a day) | at 274k context at 15:57: a fresh session first is better |
+| hub.b | a fresh hub.b session | `43 8,10,12,14,16,18,20 * * *` (7 a day) | https://claude.ai/code/session_01Kw9UwB7XboTsnbPPWaMr2d is at 686k: hand it over first |
+| design.b.rounds | https://claude.ai/code/session_01Kw9UwFCJTPWFaTq4TX5vUT | `13 7,9,11,13,15,17,19,21 * * *` (8 a day) | id from the conductor hand-over note |
 
-The exact prompt for each task is in accountant.b's message to conductor.b (22:48 UTC, 23 November); conductor.b passes it on as written.
+The exact prompt for each task is in accountant.b's message to conductor.b (22:48 UTC, 23 November), with the last-wake times corrected at 22:51 UTC (21:31, 21:37, 20:43); conductor.b passes them on as written.
 
 ## For Dinis to decide
-- The last wakes at 22:31, 22:37 and 22:43 UTC fall after the decided 22:00 end. Either keep them, or end the hourly crons at hour 21 (`7-21`) and hub.b at 20.
 - The old conductor's task trig_015LDYEmyDkQNBjbiWuPnBc9 still points at https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu: switch it off or repoint it here.
 - feedback.b's inbox round trig_01FsUjtCGwD9w9i3eBWJVoY3 has been off since 01:24 UTC on 23 November; who switched it off is not known (feedback.b and accountant.b did not). Switching it back on is Dinis's.
 
 ## Expected cost (accountant.b's estimate)
-48 wakes a day, about 68 USD a day at the 1.41 USD a round measured on 21 November, about 420 USD to 29 November. A session over 600k context costs several times as much per wake.
+45 wakes a day, about 63 USD a day at the 1.41 USD a round measured on 21 November, about 400 USD to the end of 29 November. A session over 600k context costs several times as much per wake.

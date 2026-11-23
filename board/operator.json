@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-23T22:50Z",
+  "updated": "2026-11-23T22:51Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
@@ -16,7 +16,7 @@
     "Dinis: IaC repository access for strategy.b (and strategy.d), so its key and plan pages can be pushed - https://claude.ai/code/session_01Kw9UwDF1rJD6h9xEsVg5bx",
     "Dinis: one yes to start the decisions system: factory.b pushes 8ee995a, 68565f8, 933d92a and the checker 90677bb, with decisions.b's policy entry - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: add SovereignWebsite__Website to the fresh conductor.b session; add_repo was refused by the permission check - https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
-    "Dinis: the go-to-market wakes (ask 24): four scheduled tasks to set up or allow, the old conductor task to switch off, and whether the last wakes run after 22:00 UTC - board/2026-11-23__wake-schedule.md"
+    "Dinis: the go-to-market wakes (ask 24): four scheduled tasks to set up or allow, all ending before 22:00 UTC, and the old conductor task to switch off - board/2026-11-23__wake-schedule.md"
   ],
   "done_recent": [
     "Startups design round 6: 3.6 overall, AgentiCCells 4; dark mode and phone screenshots fixed",
