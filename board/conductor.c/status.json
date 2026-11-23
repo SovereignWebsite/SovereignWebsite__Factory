@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-23T02:46Z",
+  "updated": "2026-11-23T02:50Z",
   "state": "all six account C keys on Factory dev (93b947f); conductor.c's and observability.c's policy entries and this board wait for Dinis's merge",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -77,7 +77,8 @@
     "2026-11-22 ~21:55 UTC, factory.c (self-reported): force-pushed with lease its own branch work/factory.c-iac after rebasing its two commits onto dev 98e9263 (38a5b97, 8045c7b became a654d73, f159228; same content, re-signed, checks OK). Only its own commits; nothing lost; against the never force-push rule. Reported to Dinis; from now on it merges, not rebases.",
     "2026-11-22 ~21:45 UTC, conductor.c: three signed merge commits on work/conductor.c-key (fda95af, 4bc9a7e, b28a531) lacked the Agent: trailer and were pushed (check-signatures fails on them). Not rewritten; the board was rebuilt linear on work/conductor.c (all commits OK), which replaces it for Dinis's merge.",
     "2026-11-22 ~22:47 UTC, conductor.c: merged dev into work/conductor.c with a conflict in policy/abp.json (my proposed entry beside factory.c's new one) and committed and pushed it with the conflict markers (504ac37) on my branch, not on dev; my checks ran through pipes that hid their failure. Fixed forward in the next commit; from now on each check's exit status is tested, not piped.",
-    "2026-11-23 ~02:05 UTC, instagram.c (self-reported): creating its first vault (snt0hjhc), sgit vault info printed that vault's passphrase into its own session's output only; it deleted that vault from the server and re-keyed (new vault c0kmaggy, key never printed)"
+    "2026-11-23 ~02:05 UTC, instagram.c (self-reported): creating its first vault (snt0hjhc), sgit vault info printed that vault's passphrase into its own session's output only; it deleted that vault from the server and re-keyed (new vault c0kmaggy, key never printed)",
+    "2026-11-23 02:50 UTC (self-reported), chiswick-cheese-market.c: during a test, Dinis's requester key link for the cheese market's inbox was printed into its own session log; it reissued his key (now sha256:00282526ba328d29, the old one marked replaced) and sent him the new QR"
   ],
   "exceptions": [
     "2026-11-23 02:46 UTC: the sealed-store guide (aws.c's docs/sealed-store.md) assigned to factory.c without Dinis's word, as a two-way door: into seed/shared so every new site gets it, on a branch for merge (seed/ still needs Dinis's merge by CLAUDE.md)",
