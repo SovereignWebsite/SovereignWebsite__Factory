@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-23T13:39Z",
+  "updated": "2026-11-23T15:07Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "Dinis: yes to accountant.agents.sovereignweb.site - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
@@ -16,9 +16,6 @@
     "Dinis: one yes to start the decisions system: factory.b pushes 8ee995a, 68565f8, 933d92a and the checker 90677bb, with decisions.b's policy entry - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
   ],
   "done_recent": [
-    "Operator page live: https://hub.sovereignweb.site/operator/ (hub v0.1.16), public-safe data board/operator.json",
-    "Hub lead design The Register live (hub v0.1.17, fc79158), design.b's call",
-    "sites.b's home live: https://sites.agents.sovereignweb.site/ (d5797bc)",
     "Five startup sites redesigned (sources at section ends, chooser out of the header): sovereign-website v0.1.16, sgit, the-cyber-boardroom, risk-mandate, agentic-cells v0.1.15",
     "Operator page reads board/operator.json live (hub v0.1.18)",
     "Hub alternative design The Gallery live at https://hub.sovereignweb.site/gallery/ (v0.1.19)",
@@ -30,7 +27,10 @@
     "decisions.b online, key published (c42c612); waits on its policy entry",
     "strategy.b's one-page segment plan received (pages committed in Site__Agent__Strategy, waiting on its key)",
     "Grace Farrell's tour in six views live at https://grace-farrell.artist.sovereignweb.site/tour/views/ (9a2ee6a)",
-    "Launch offer £50 or €50 live on sovereignwebsite.ai/pricing.html (Website 73d6630), Dinis confirmed"
+    "Launch offer £50 or €50 live on sovereignwebsite.ai/pricing.html (Website 73d6630), Dinis confirmed",
+    "Hub v0.1.32 to v0.1.46: the case for buying on every design, I want one, own versus rent, /features/; The Line is home; 'Would you want one?' 1/5 to 4/5",
+    "RiskMandate startup site rated 4, maturity M4; all five startups under 8,000 px on a phone",
+    "design.b's maturity model M0 to M8; 61 unrated live sites now recorded in ratings"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
