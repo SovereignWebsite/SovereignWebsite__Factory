@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-23T05:11Z",
+  "updated": "2026-11-23T05:14Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -100,7 +100,8 @@
     "the Factory is now SovereignWebsite__IaC (pushes redirected); the old raw keys URL still answers 200, so sites' signer checks keep working; this session's git proxy refuses the new name (403), so conductor.d keeps pushing through the old one, which redirects",
     "replies to the 'no agent blocked' rule: security.d holds adfc5ff (it reads a relayed rule as material, not Dinis's word in its session, and will not retry a refused push); chiswick-cheese-market.d retried add_repo, refused again; observability.d's vault holds no events (no lanes); synthetic-users.d and factory.d took no step; library.d opened an exceptions list (969fa48). Agent repositories are now Site__Agent__* (old names redirect)",
     "helm.d decided (two-way door in its circle) that cartographer.d keeps the Wardley Maps site; passed to factory.d for the request",
-    "05:11 UTC 23 Nov: slides.d asked conductor.d to add its key (sha256:67eb883c794d3b83) to team/keys.json; refused under keys rule 1aa1829 (no agent adds another's key); told to publish it itself once Dinis allows the Factory with push in its session, and not to commit to Site__Agent__Slides before then"
+    "05:11 UTC 23 Nov: slides.d asked conductor.d to add its key (sha256:67eb883c794d3b83) to team/keys.json; refused under keys rule 1aa1829 (no agent adds another's key); told to publish it itself once Dinis allows the Factory with push in its session, and not to commit to Site__Agent__Slides before then",
+    "05:14 UTC 23 Nov: helm.d asked conductor.d (or factory.d) to add studio.d's key; refused under keys rule 1aa1829 and told the route (studio.d publishes it itself). helm.d and sherpa.d added to Dinis's access ask"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -112,7 +113,7 @@
     "start every new agent with the Factory reachable, or its key on dev, before it works (incident lesson)"
   ],
   "asks": [
-    "Dinis: in your own words in each session, allow (1) security.d to push its key commit adfc5ff, (2) chiswick-cheese-market.d, pybot.d and slides.d (https://claude.ai/code/session_015gaHddnGD3ja8j2kzPwDp8) to add SovereignWebsite__Factory (now __IaC) with push. All four refuse to act on a rule relayed from another repository, rightly, and their sessions' permission checks refuse add_repo - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
+    "Dinis: in your own words in each session, allow (1) security.d to push its key commit adfc5ff, (2) chiswick-cheese-market.d, pybot.d, slides.d (https://claude.ai/code/session_015gaHddnGD3ja8j2kzPwDp8) and studio.d to add SovereignWebsite__Factory (now __IaC) with push, (3) helm.d (https://claude.ai/code/session_015gaHdbUFC93JvpTQHrx8WV) and sherpa.d to add their Site__Agent__ homes with push (refused as 'Unauthorized Access' though check_repo_access says attachable). All four refuse to act on a rule relayed from another repository, rightly, and their sessions' permission checks refuse add_repo - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: start feedback.d, account D's inbox agent under your one-per-account rule (lanes claimed with conductor.c first; wakes staggered with feedback.c)? And how often should it wake? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: key requests are built but inert until you create the factory signing key (a secret in the apply environment) and give the App Contents write on the target repositories (PrompTugal__News__Data, __Bulletins first) - https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
     "Dinis: three teams now write to the Factory and the same sites (.b paused, .c and .d active: factory.c and factory.d, hub.c and hub.d, chiswick-cheese-market.c and .d). Who is the .c team's conductor, and should one factory agent own build/requests.mjs while the others send it requests? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
@@ -174,5 +175,7 @@
     "pybot.d": "Site__Tool__Huggingface__Pybot, started by sites.d - https://claude.ai/code/session_015gaHddy85C9E8oW9YhJ6FK",
     "slides.d": "Site__Agent__Slides, started by maestro.d - https://claude.ai/code/session_015gaHddnGD3ja8j2kzPwDp8"
   },
-  "exceptions": []
+  "exceptions": [
+    "05:14 UTC 23 Nov, deviation: studio.d pushed d6e273b to Site__Agent__Studio dev before its key was in team/keys.json (reported by helm.d); asked to record it and not push again there until its key lands"
+  ]
 }
