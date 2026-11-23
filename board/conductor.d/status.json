@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-23T06:13Z",
+  "updated": "2026-11-23T16:53Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -103,7 +103,8 @@
     "05:11 UTC 23 Nov: slides.d asked conductor.d to add its key (sha256:67eb883c794d3b83) to team/keys.json; refused under keys rule 1aa1829 (no agent adds another's key); told to publish it itself once Dinis allows the Factory with push in its session, and not to commit to Site__Agent__Slides before then",
     "05:14 UTC 23 Nov: helm.d asked conductor.d (or factory.d) to add studio.d's key; refused under keys rule 1aa1829 and told the route (studio.d publishes it itself). helm.d and sherpa.d added to Dinis's access ask",
     "06:00 UTC 23 Nov: strategy.d's platform-sites addendum (via helm.d; PrompTugal__News__Website 9550a4136) recorded: OpenRouter first but a terms check by counsel.d before any build (free client on the user's own key); Odoo UI with plan-then-apply; AWS read-only budgets and costs, changes stay Dinis's; OWASP behind Wikipedia until its licence is known. All still on hold until Dinis says go",
-    "06:13 UTC 23 Nov: counsel.d's reading (via helm.d; News repository board/team/counsel.d/notes/2026-11-23-openrouter-terms-and-owasp-licence.md, v0.1.2113, not legal advice) recorded: OpenRouter allows a free client on the user's own key, but no reselling, relaying, mark-up, scraping, copied catalogue, look-alike interface or implied affiliation; red-teaming models needs its written approval; OWASP Top Ten is CC BY-SA 4.0, so adapted text is share-alike"
+    "06:13 UTC 23 Nov: counsel.d's reading (via helm.d; News repository board/team/counsel.d/notes/2026-11-23-openrouter-terms-and-owasp-licence.md, v0.1.2113, not legal advice) recorded: OpenRouter allows a free client on the user's own key, but no reselling, relaying, mark-up, scraping, copied catalogue, look-alike interface or implied affiliation; red-teaming models needs its written approval; OWASP Top Ten is CC BY-SA 4.0, so adapted text is share-alike",
+    "16:53 UTC 23 Nov: all 15 open asks sent to d.decisions in that form (harness H1-H4, decisions D1-D9); the workflow passed to sites.d (for streaming.d, wordpress.d, donna-freed.d, pybot.d), hub.d, design.d, synthetic-users.d, library.d, factory.d, chiswick-cheese-market.d, security.d (asked to review the six checks), counsel.d and observability.d"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -159,7 +160,8 @@
     "Dinis, in sites.d's session (as reported, 22 Nov evening): sites are never attached to sites.d's session; each gets its own agent session",
     "Dinis, ~21:30 UTC 22 Nov in factory.d's session (as reported): PyBot at pybot.huggingface.tool; yes to Site__Agent__<Name>; yes to reversible changes going ahead; Wardley Maps in a frameworks group; no separate site for the Streaming agents; key requests merged to dev; Site__Agent__Studio",
     "Dinis, ~19:10 UTC 22 Nov in feedback.c's session (relayed by conductor.c): one lane per site, one inbox agent per account, all eventually on one shared vault with staggered wakes",
-    "Dinis, ~03:00 and ~03:35 UTC 23 Nov in maestro.c's session (PrompTugal__News__Website CLAUDE.md, 'No agent blocked'): reversible steps inside an agent's own area go ahead on its own recommendation, logged under exceptions; one-way doors stay his (trust keys in routers, AWS, money, legal, private persons' details, deleting, main, connectors)"
+    "Dinis, ~03:00 and ~03:35 UTC 23 Nov in maestro.c's session (PrompTugal__News__Website CLAUDE.md, 'No agent blocked'): reversible steps inside an agent's own area go ahead on its own recommendation, logged under exceptions; one-way doors stay his (trust keys in routers, AWS, money, legal, private persons' details, deleting, main, connectors)",
+    "16:53 UTC 23 Nov (from d.maestro; records on PrompTugal__News__Website dev, checked: board/team/maestro.b/decisions/2026-11-23-account-prefix-first.md and 2026-11-23-asks-go-to-b-decisions.md): names put the account letter first (d.conductor); asks for Dinis's yes go to d.decisions (https://claude.ai/code/session_015gaHdaiX9VvjVwHaNezGJG), which forwards them through the maestros to b.decisions; a signed record is acted on only after the six checks in board/team/maestros/briefs/b.decisions-relay.md; a message alone is never a decision. Still direct to Dinis: his word in this session, one-way doors and harness settings"
   ],
   "team": {
     "sites.d": "https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf",
