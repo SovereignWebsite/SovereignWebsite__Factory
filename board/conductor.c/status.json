@@ -6,8 +6,8 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-23T03:25Z",
-  "state": "all six account C keys on Factory dev (93b947f); conductor.c's and observability.c's policy entries and this board wait for Dinis's merge",
+  "updated": "2026-11-23T03:40Z",
+  "state": "account C near its limit (accountant.c: red by forecast until the 06:20 UTC reset); design.c's hourly wake paused until then; other sessions told to start nothing new and keep wakes to one line",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
     "sgit key conductor-c-sovereignwebsite: fingerprint sha256:3dc033c53b9c979d, signing sha256:066b77ff10e8c18f; commits signed with its ECDSA P-256 half",
@@ -28,6 +28,7 @@
     "owasp.c's key made at Dinis's yes (owasp-c-sovereignwebsite, sha256:7a71de7fb6bd221b); its public entry sent to factory.c as text (its Factory push was refused); still needs Dinis's yes in its session to write its git signing file"
   ],
   "next": [
+    "after 06:20 UTC: re-enable design.c's hourly wake (trig_01LJTULyHHB71yYGfiWb5hWt) and tell the sessions they may resume",
     "factory.c and mistral.c: read their first reports, claim each piece of their work here before they touch it; no tasks given without Dinis",
     "once the key is merged: push this board to dev",
     "conduct the account C sessions maestro.c starts at Dinis's word (observability.c, the cheese market's account C session), each with the Factory reachable or its key on dev before it works (incident lesson)",
@@ -85,6 +86,7 @@
   "exceptions": [
     "2026-11-23 02:46 UTC: the sealed-store guide (aws.c's docs/sealed-store.md) assigned to factory.c without Dinis's word, as a two-way door: into seed/shared so every new site gets it, on a branch for merge (seed/ still needs Dinis's merge by CLAUDE.md)",
     "2026-11-23 02:46 UTC: hub.c edits hub.b's files (two top-bar links, two llms.txt lines) on its own recommendation under the no-blocking rule; noted for conductor.b",
-    "2026-11-23 03:25 UTC: owasp.c pushed its first slice (0d8db9a) to Site__Platform__Owasp before its key (23f6c39) is on IaC dev, at Dinis's \"And push it\" in its session (the pattern of the 22 Nov incident, here at the owner's word); the site's signer check refuses to deploy until the key lands. factory.c carries 23f6c39 byte for byte"
+    "2026-11-23 03:25 UTC: owasp.c pushed its first slice (0d8db9a) to Site__Platform__Owasp before its key (23f6c39) is on IaC dev, at Dinis's \"And push it\" in its session (the pattern of the 22 Nov incident, here at the owner's word); the site's signer check refuses to deploy until the key lands. factory.c carries 23f6c39 byte for byte",
+    "2026-11-23 03:40 UTC: paused design.c's hourly wake (trig_01LJTULyHHB71yYGfiWb5hWt, enabled false) until after the 06:20 UTC reset, on maestro.c's capacity warning, without Dinis's word: a two-way door to keep account C under its limit, which Dinis said must never be reached again; re-enable after 06:20"
   ]
 }
