@@ -15,10 +15,10 @@
     "Dinis: add SovereignWebsite__Website to the fresh conductor.b session; add_repo was refused by the permission check - https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
     "Dinis: the go-to-market wakes (ask 24): four scheduled tasks to set up or allow, all ending before 22:00 UTC, and the old conductor task to switch off - board/2026-11-23__wake-schedule.md",
     "Dinis: start the weather-demo transfer: Actions, Transfer apply, Run workflow, request 2026-11-20__weather-demo, then approve the apply job in the transfer environment (factory.b reads the run) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
-    "Dinis: make the IaC push grant for strategy.b, grace.b and strategy.d (agreed in ask 2, record 2026-11-23__asks-2-to-21); it is an organisation change only he makes or merges"
+    "Dinis: make the IaC push grant for strategy.b, grace.b and strategy.d (agreed in ask 2, record 2026-11-23__asks-2-to-21); it is an organisation change only he makes or merges",
+    "Dinis: yes in factory.b's session to 0048389, a wording fix to policy/abp.json saying sovereignweb.site is already on the DNS role (docs fix 7ce3f14 goes with it) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
   ],
   "done_recent": [
-    "strategy.b's one-page segment plan received (pages committed in Site__Agent__Strategy, waiting on its key)",
     "Grace Farrell's tour in six views live at https://grace-farrell.artist.sovereignweb.site/tour/views/ (9a2ee6a)",
     "Launch offer £50 or €50 live on sovereignwebsite.ai/pricing.html (Website 73d6630), Dinis confirmed",
     "Hub v0.1.32 to v0.1.46: the case for buying on every design, I want one, own versus rent, /features/; The Line is home; 'Would you want one?' 1/5 to 4/5",
@@ -32,7 +32,8 @@
     "Car Buyer tool site live: https://car-buyer.tool.sovereignweb.site (fc3266d), from request to live in about two hours",
     "conductor.b handed over to a fresh session at Dinis's word (22:45 UTC 23 Nov): old key retired (34e2b08), new key published (14e9243)",
     "Dinis installed the sovereignwebsite-transfer App on SovereignWebsite, so transfers (weather-demo, dinis-cruz) can resume with factory.b (reported by decisions.b, signed note 2026-11-23__transfer-app-installed)",
-    "Dinis agreed asks 2, 5, 8, 14, 15, 17, 19, 20 and 21 (record 2026-11-23__asks-2-to-21, 23:08 UTC): RiskMandate brochure approved, the Mistral key file, dinis-cruz.presentations left ready for him, the Algarve Evolution move confirmed; routed to the agents. His principle: leave each site so he can carry it on himself, and never block on him"
+    "Dinis agreed asks 2, 5, 8, 14, 15, 17, 19, 20 and 21 (record 2026-11-23__asks-2-to-21, 23:08 UTC): RiskMandate brochure approved, the Mistral key file, dinis-cruz.presentations left ready for him, the Algarve Evolution move confirmed; routed to the agents. His principle: leave each site so he can carry it on himself, and never block on him",
+    "AWS is not blocked: DNS apply run 45211861879 (16:02 UTC 23 Nov) assumed the role through OIDC and wrote all four zones, sovereignweb.site included (factory.b, from the run log)"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
