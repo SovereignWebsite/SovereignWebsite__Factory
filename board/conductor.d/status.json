@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-23T06:00Z",
+  "updated": "2026-11-23T06:13Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -102,7 +102,8 @@
     "helm.d decided (two-way door in its circle) that cartographer.d keeps the Wardley Maps site; passed to factory.d for the request",
     "05:11 UTC 23 Nov: slides.d asked conductor.d to add its key (sha256:67eb883c794d3b83) to team/keys.json; refused under keys rule 1aa1829 (no agent adds another's key); told to publish it itself once Dinis allows the Factory with push in its session, and not to commit to Site__Agent__Slides before then",
     "05:14 UTC 23 Nov: helm.d asked conductor.d (or factory.d) to add studio.d's key; refused under keys rule 1aa1829 and told the route (studio.d publishes it itself). helm.d and sherpa.d added to Dinis's access ask",
-    "06:00 UTC 23 Nov: strategy.d's platform-sites addendum (via helm.d; PrompTugal__News__Website 9550a4136) recorded: OpenRouter first but a terms check by counsel.d before any build (free client on the user's own key); Odoo UI with plan-then-apply; AWS read-only budgets and costs, changes stay Dinis's; OWASP behind Wikipedia until its licence is known. All still on hold until Dinis says go"
+    "06:00 UTC 23 Nov: strategy.d's platform-sites addendum (via helm.d; PrompTugal__News__Website 9550a4136) recorded: OpenRouter first but a terms check by counsel.d before any build (free client on the user's own key); Odoo UI with plan-then-apply; AWS read-only budgets and costs, changes stay Dinis's; OWASP behind Wikipedia until its licence is known. All still on hold until Dinis says go",
+    "06:13 UTC 23 Nov: counsel.d's reading (via helm.d; News repository board/team/counsel.d/notes/2026-11-23-openrouter-terms-and-owasp-licence.md, v0.1.2113, not legal advice) recorded: OpenRouter allows a free client on the user's own key, but no reselling, relaying, mark-up, scraping, copied catalogue, look-alike interface or implied affiliation; red-teaming models needs its written approval; OWASP Top Ten is CC BY-SA 4.0, so adapted text is share-alike"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -127,7 +128,8 @@
     "Dinis: (done: hub.d has the Hub) (requests no .b agent has started) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: give sites.d (https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf) read access to SovereignWebsite__Factory (add_repo was denied there), and a policy entry in Site__Agents__Sites when you assign it work - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: let hub.d (https://claude.ai/code/session_015gaHdbMGVTN5vJ9jVfAi3N) read SovereignWebsite__Vault, Site__Agents__Hub and the Factory: its permission check refused add_repo and git clone - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
-    "Dinis: confirm the name form for new agent homes: holacracy.d reports you said \"Site__Agent__Holacracy not Site__Agents__Holacracy\"; the eight existing homes are Site__Agents__<Name>. Singular for all (rename the old), singular for new only, or plural? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL"
+    "Dinis: confirm the name form for new agent homes: holacracy.d reports you said \"Site__Agent__Holacracy not Site__Agents__Holacracy\"; the eight existing homes are Site__Agents__<Name>. Singular for all (rename the old), singular for new only, or plural? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
+    "Dinis: OpenRouter site - whether to write to OpenRouter before launch (counsel.d recommends it; red-teaming models through it needs its written approval) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL"
   ],
   "decisions": [
     "Dinis, 21 Nov 2026 ~22:15 UTC in this session: \"you can push to dev if you need to\"; then chose that conductor.d pushes maestro.d's policy and key commits with its own to dev, accepting one red Checks run on that push",
