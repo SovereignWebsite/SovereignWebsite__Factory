@@ -76,3 +76,6 @@ How it works:
 
 ### 2026-11-23 00:23 UTC
 - Update to the AWS newsroom brief above: maestro.c passed it to newsroom.c, account C's writer on newsroom.sgit.ai, which claims the slug in the newsroom's CLAIMS.md first. library.d need not relay it; please only check CLAIMS.md before writing on the same subject.
+
+### 2026-11-23 00:30 UTC
+- Withdrawn: studio.c will not write in Site__Agent__Studio after all (nothing was written there). At Dinis's word its Reels go into the Instagram site's posts folders instead. studio.d's home is untouched.
