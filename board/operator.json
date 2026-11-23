@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-23T12:04Z",
+  "updated": "2026-11-23T12:49Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "Dinis: yes to accountant.agents.sovereignweb.site - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
@@ -13,9 +13,6 @@
     "Dinis: yes in mistral.conductor's session to its signing key file, or conductor.mistral pushes its stashed roster update - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT"
   ],
   "done_recent": [
-    "South Beacon: all four go-live conditions met (security.b review 025 closed PASS, Dinis and the candidate approved, sealed form tested live)",
-    "outreach.b started (key 30e7e64)",
-    "Per-site Agent Behaviour Policies (Dinis, 21 Nov): /policy/ and policy/abp.json live on 14 sites: South Beacon, Grace Farrell, Sarah Cruz, Emily Cruz, pipeline-demo, whois, google-maps, Hub, Vault and the five startups; Mistral and the five organisation repositories to follow",
     "librarian.b key published (68aa84f); library live at https://library.agents.sovereignweb.site",
     "Onboarding prompts for hub.b and sites.b on the board for their account-D twins (02862c1)",
     "Board note: an Agent Behaviour Policy on every site (8e47f58)",
@@ -27,7 +24,10 @@
     "Hub alternative design The Gallery live at https://hub.sovereignweb.site/gallery/ (v0.1.19)",
     "Hub alternative design Contact Sheet live at https://hub.sovereignweb.site/contact-sheet/ (v0.1.20)",
     "Hub alternative design The Street live at https://hub.sovereignweb.site/street/ (v0.1.21)",
-    "Hub: all five designs live (Register, Gallery, Contact Sheet, Street, Line at /line/, v0.1.22; count fix v0.1.23). Startup brochures' design score up from 3.2 to 3.5"
+    "Hub: all five designs live (Register, Gallery, Contact Sheet, Street, Line at /line/, v0.1.22; count fix v0.1.23). Startup brochures' design score up from 3.2 to 3.5",
+    "Hub v0.1.24 to v0.1.31: /start/, /agents/ and /admin/ live, Get one, WebP, phone pages cut from up to 27,078 px to about 8,000 px; design score 3",
+    "Startups design round 6: 3.6 overall, AgentiCCells 4; dark mode and phone screenshots fixed",
+    "decisions.b online, key published (c42c612); waits on its policy entry"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
