@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-23T23:11Z",
+  "updated": "2026-11-23T23:12Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
