@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-23T02:28Z",
+  "updated": "2026-11-23T02:37Z",
   "state": "all six account C keys on Factory dev (93b947f); conductor.c's and observability.c's policy entries and this board wait for Dinis's merge",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -40,8 +40,7 @@
     "Dinis: owasp.c, like feedback.c (and mistral.c before), was refused the sgit-ai install by its session's permission check; your yes in its session lets it make its key. Its first slice (plan, /projects/, /graph/, provenance; data CC BY-SA 4.0 from owasp.org) is built locally - https://claude.ai/code/session_01Kw9UwE69pr5bPeaQ4tYqir",
     "Dinis: a spend cap for mistral.c's Mistral runs (it proposed 2 USD for the first workflow and probes); and confirm I archive the first mistral.c session once the second is official (I did not start it) - https://claude.ai/code/session_01Kw9UwE87QCsWenVdtLcxoM",
     "Dinis: start an Instagram agent (instagram.c@SovereignWebsite.dinis) on account C to keep the Instagram platform site and run the posting? Say so in this session and I start it - https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj",
-    "Dinis: aws.c's sealed-store guidance (Site__Platform__AWS docs/sealed-store.md: tokens sealed with a non-extractable WebCrypto device key) as a workflow note for every site, at your word \"everybody should be doing this\"? board/workflow/ is outside my paths; say who writes it (conductor.d or factory.c) - https://claude.ai/code/session_01Kw9UwAzhau7Us55PugP2V2",
-    "Dinis: the AWS Platform programme (aws.c's memo, Site__Platform__AWS docs/2026-11-23__memo-aws-platform-programme.md, 8d86a05): start the team and schedules of its section 6 here? Say which, in this session - https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj"
+    "Dinis: aws.c's sealed-store guidance (Site__Platform__AWS docs/sealed-store.md: tokens sealed with a non-extractable WebCrypto device key) as a workflow note for every site, at your word \"everybody should be doing this\"? board/workflow/ is outside my paths; say who writes it (conductor.d or factory.c) - https://claude.ai/code/session_01Kw9UwAzhau7Us55PugP2V2"
   ],
   "decisions": [
     "Dinis, ~17:36 UTC in factory.c's session (as reported by factory.c): \"yes, merge the keys to dev in that order\"",
@@ -55,7 +54,8 @@
     "Dinis, ~23:00 UTC in this session: \"yes, start a studio.c here. Note that there's an open router key here, so you can use it to create nice voice descriptions\"",
     "Dinis, ~01:45 UTC 23 Nov in this session: a designer agent here on an hourly loop, sending change updates to all the websites; every website matches the standard and has 5 designs",
     "Dinis, ~02:00 UTC 23 Nov in design.c's session (as reported): \"Yes, you can push it. Also, you should always be pushing designs, right? They should be on the website. Then we review it there.\" Read as a standing yes for design.c to push its claimed designs folders on account C sites, each path still claimed here first",
-    "Dinis, ~01:55 UTC 23 Nov in studio.c's session (as reported): a 4-hourly update video by studio.c, published to Instagram under a standing approval rule, spend cap 2 USD a day, studio.c's own 4-hourly scheduled task"
+    "Dinis, ~01:55 UTC 23 Nov in studio.c's session (as reported): a 4-hourly update video by studio.c, published to Instagram under a standing approval rule, spend cap 2 USD a day, studio.c's own 4-hourly scheduled task",
+    "Dinis, ~02:45 UTC in aws.c's session (memo part 2, a484694, as reported): the AWS Platform programme gets its own conductor (conductor.aws) and a PM; maestro.c creates the whole team and holds the decisions; per-area sites (s3, lambda, iam and others under .aws.platform.sovereignweb.site) as IaC requests. conductor.c coordinates claims with maestro.c and starts none of that team"
   ],
   "team": {
     "observability.c": "read-only per-site visibility note; key on its branch work/observability.c (788d3b9) - https://claude.ai/code/session_01Kw9UwBmqCafJ2NtqhQPQwu",
