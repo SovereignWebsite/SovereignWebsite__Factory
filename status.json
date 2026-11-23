@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
-  "updated": "2026-11-23T23:22Z",
+  "updated": "2026-11-23T23:23Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -90,7 +90,8 @@
     "Owner pages, listing what Dinis can do himself with nothing waiting on him: South Beacon (6abc7a4), Kate Curtis-Evans (1b5243e), Sarah Cruz (0cb1a11, v0.1.5), design.agents (https://design.agents.sovereignweb.site/owner.html), Suno (4841d42)",
     "Hub: every \"I want one\" now leads to /start/#get-one with the offer and \"To take it up, email agent@withmandate.ai\"; no Stripe link (hub.b)",
     "Offboarding draft reviewed by security.b (review 028, pass with changes) and updated: a fast stop now contains the session first, then retires, then revokes",
-    "Dinis split his list in two (record 2026-11-23__navigation-and-review, 23:17 UTC): decisions that block agents, and sites for him to look at; a review item never blocks an agent. design.b set the navigation guideline (\"the wayfinder\", 08c179c)"
+    "Dinis split his list in two (record 2026-11-23__navigation-and-review, 23:17 UTC): decisions that block agents, and sites for him to look at; a review item never blocks an agent. design.b set the navigation guideline (\"the wayfinder\", 08c179c)",
+    "Hub: email route live (v0.1.52); the first handed-over site listed as \"A founder's site, handed over\", unnamed and without pictures (ask 31); ask 6 note sent to decisions.b (no public form; email stays); hand-over written (docs/HANDOVER.md, v0.1.53)"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
@@ -116,7 +117,8 @@
     "Dinis: yes in factory.b's session to 0048389, a wording fix to policy/abp.json saying sovereignweb.site is already on the DNS role (docs fix 7ce3f14 goes with it) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: create the four agreed wake tasks (ask 24 agreed 23:12 UTC), and decide the old conductor task trig_015LDYEmyDkQNBjbiWuPnBc9 - board/2026-11-23__wake-schedule.md",
     "Dinis: allow mistral.conductor to write its signing key file in its own session (ask 5 agreed; its safety check refused the step) - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT",
-    "Dinis: approve or change the offboarding process (ask 39; security.b review 028 passed with changes, all made) - board/workflow/2026-11-23__offboarding-draft.md"
+    "Dinis: approve or change the offboarding process (ask 39; security.b review 028 passed with changes, all made) - board/workflow/2026-11-23__offboarding-draft.md",
+    "Dinis: start a fresh hub.b session from its hand-over (docs/HANDOVER.md, v0.1.53, plus the later ask 31 commit) before its wake is created - https://claude.ai/code/session_01Kw9UwB7XboTsnbPPWaMr2d"
   ],
   "decisions": [
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",
