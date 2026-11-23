@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-23T02:40Z",
+  "updated": "2026-11-23T02:46Z",
   "state": "all six account C keys on Factory dev (93b947f); conductor.c's and observability.c's policy entries and this board wait for Dinis's merge",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -33,14 +33,13 @@
     "claim here only work no .b or .d agent holds"
   ],
   "asks": [
-    "Dinis: merge branch work/conductor.c (conductor.c's policy entry eb940f9, board/conductor.c/** only, then its board; linear on dev, check-signatures OK; it replaces work/conductor.c-key, whose three merge commits lack the Agent: trailer) and observability.c's policy entry - https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj",
+    "Dinis: my board cannot reach dev on my own: its first commit is my policy entry (eb940f9, board/conductor.c/** only), and CLAUDE.md says policy/ changes wait for your merge, so the paths check refuses it; I keep that rule even under the no-blocking rule. Merge work/conductor.c when you can - https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj",
     "Dinis: hub.c (key c984df1, via factory.c) has a Latest page ready in new paths of SovereignWebsite__Hub (hub.b's repository); may hub.c push there (the hub's CLAUDE.md and site policy name hub.b as keeper), and should Latest be linked from hub.b's top bar? - https://claude.ai/code/session_01Kw9UwBNK6JRSRJ7P7LftYD",
     "Dinis: chiswick-cheese-market.c finds the Factory's neutral seed share card shows a blank preview in WhatsApp, so every site still on it shares blank. Fix in seed/ (factory.d's claimed area; factory.c could take it at your word)? - https://claude.ai/code/session_01Kw9UwCvCX638VWVq9UPXsN",
     "Dinis: feedback.c needs your yes in its session to install sgit-ai and make its key; and a choice for the feedback lanes sealed to feedback.b (kate-curtis-evans, south-beacon, grace-farrell, vault 7966duv1): unseal feedback.b's keys to feedback.c, wait for feedback.b on Monday, or new lanes sealed to feedback.c's key. It drains nothing until then - https://claude.ai/code/session_01Kw9UwEQb6jZQ17nxMfkAVB",
     "Dinis: owasp.c, like feedback.c (and mistral.c before), was refused the sgit-ai install by its session's permission check; your yes in its session lets it make its key. Its first slice (plan, /projects/, /graph/, provenance; data CC BY-SA 4.0 from owasp.org) is built locally - https://claude.ai/code/session_01Kw9UwE69pr5bPeaQ4tYqir",
     "Dinis: a spend cap for mistral.c's Mistral runs (it proposed 2 USD for the first workflow and probes); and confirm I archive the first mistral.c session once the second is official (I did not start it) - https://claude.ai/code/session_01Kw9UwE87QCsWenVdtLcxoM",
-    "Dinis: start an Instagram agent (instagram.c@SovereignWebsite.dinis) on account C to keep the Instagram platform site and run the posting? Say so in this session and I start it - https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj",
-    "Dinis: aws.c's sealed-store guidance (Site__Platform__AWS docs/sealed-store.md: tokens sealed with a non-extractable WebCrypto device key) as a workflow note for every site, at your word \"everybody should be doing this\"? board/workflow/ is outside my paths; say who writes it (conductor.d or factory.c) - https://claude.ai/code/session_01Kw9UwAzhau7Us55PugP2V2"
+    "Dinis: start an Instagram agent (instagram.c@SovereignWebsite.dinis) on account C to keep the Instagram platform site and run the posting? Say so in this session and I start it - https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj"
   ],
   "decisions": [
     "Dinis, ~17:36 UTC in factory.c's session (as reported by factory.c): \"yes, merge the keys to dev in that order\"",
@@ -55,7 +54,8 @@
     "Dinis, ~01:45 UTC 23 Nov in this session: a designer agent here on an hourly loop, sending change updates to all the websites; every website matches the standard and has 5 designs",
     "Dinis, ~02:00 UTC 23 Nov in design.c's session (as reported): \"Yes, you can push it. Also, you should always be pushing designs, right? They should be on the website. Then we review it there.\" Read as a standing yes for design.c to push its claimed designs folders on account C sites, each path still claimed here first",
     "Dinis, ~01:55 UTC 23 Nov in studio.c's session (as reported): a 4-hourly update video by studio.c, published to Instagram under a standing approval rule, spend cap 2 USD a day, studio.c's own 4-hourly scheduled task",
-    "Dinis, ~02:45 UTC in aws.c's session (memo part 2, a484694, as reported): the AWS Platform programme gets its own conductor (conductor.aws) and a PM; maestro.c creates the whole team and holds the decisions; per-area sites (s3, lambda, iam and others under .aws.platform.sovereignweb.site) as IaC requests. conductor.c coordinates claims with maestro.c and starts none of that team"
+    "Dinis, ~02:45 UTC in aws.c's session (memo part 2, a484694, as reported): the AWS Platform programme gets its own conductor (conductor.aws) and a PM; maestro.c creates the whole team and holds the decisions; per-area sites (s3, lambda, iam and others under .aws.platform.sovereignweb.site) as IaC requests. conductor.c coordinates claims with maestro.c and starts none of that team",
+    "Dinis, ~03:00 UTC 23 Nov in maestro.c's session (as relayed; PrompTugal__News__Website board/team/maestro.c/decisions/2026-11-23-no-agent-blocked.md): no agent blocked; two-way doors go on the agent's own recommendation, each exception logged; one-way doors (trust keys, AWS changes, money, legal, deleting, main, connectors, private people's details) stay his"
   ],
   "team": {
     "observability.c": "read-only per-site visibility note; key on its branch work/observability.c (788d3b9) - https://claude.ai/code/session_01Kw9UwBmqCafJ2NtqhQPQwu",
@@ -77,5 +77,8 @@
     "2026-11-22 ~21:45 UTC, conductor.c: three signed merge commits on work/conductor.c-key (fda95af, 4bc9a7e, b28a531) lacked the Agent: trailer and were pushed (check-signatures fails on them). Not rewritten; the board was rebuilt linear on work/conductor.c (all commits OK), which replaces it for Dinis's merge.",
     "2026-11-22 ~22:47 UTC, conductor.c: merged dev into work/conductor.c with a conflict in policy/abp.json (my proposed entry beside factory.c's new one) and committed and pushed it with the conflict markers (504ac37) on my branch, not on dev; my checks ran through pipes that hid their failure. Fixed forward in the next commit; from now on each check's exit status is tested, not piped.",
     "2026-11-23 ~02:05 UTC, instagram.c (self-reported): creating its first vault (snt0hjhc), sgit vault info printed that vault's passphrase into its own session's output only; it deleted that vault from the server and re-keyed (new vault c0kmaggy, key never printed)"
+  ],
+  "exceptions": [
+    "2026-11-23 02:46 UTC: the sealed-store guide (aws.c's docs/sealed-store.md) assigned to factory.c without Dinis's word, as a two-way door: into seed/shared so every new site gets it, on a branch for merge (seed/ still needs Dinis's merge by CLAUDE.md)"
   ]
 }
