@@ -24,6 +24,7 @@ sovereignweb.site is the domain for new sites (Dinis, 20 November 2026: "a bette
 |---|---|---|
 | `artist` | creative portfolios | emily-cruz.artist.sovereignweb.site |
 | `cv` | career profiles | silvio-switha.cv.sovereignweb.site |
+| `manager` | managers' career sites, told through their career path (Dinis, 23 November 2026: "Go for .manager. on the url") | ben-fung.manager.sovereignweb.site |
 | `company` | companies | perspace.company.sovereignweb.site |
 | `organisation` | groups that are not companies | algarve-evolution.organisation.sovereignweb.site |
 | `invest` | investment firms | sotavento.invest.sovereignweb.site |
