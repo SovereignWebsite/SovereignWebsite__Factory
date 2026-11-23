@@ -1,0 +1,26 @@
+{
+  "v": 2,
+  "id": "2026-11-23__wordpress-section-demo",
+  "decided_by": "Dinis Cruz",
+  "words": "One of the requests I then have for you in terms of either decisions or briefings, but then again, this can come in multiple places, but it's kind of a decision or a briefing, right? Is that I need to also receive sites like this, presentation like this, which is what I wanted to see on the presentations website, right? Which because then you can have a case here that says, hey, take a look at the briefing for you on the presentations website. And the presentation website should have, for example, everything that was done today, all the stuff, all the websites that were created, all the debriefs, so that you almost like have this sort of daily brief of everything that happened, maybe even 12 hours brief, right? Because there's so much stuff that flies here, right? And that again is a full debrief of all the websites created, all the decisions taken, all that jazz. Almost like agents should be able to contribute to that, and then we map there.\n\n\nRead your comments here. Yes, it's critical to find, but also for every find, I should be able to find the agents. You need to think of these as provenance and graphs, right? At the end of the day, and remember that this is the kind of stuff that you need to relay to every single maestro, right? So you can go across the board. So I think, okay, who keeps the 3 domains? Basically, there should be an agent for it, right? So the sovereign website.ai should have an agent for it that maintains it. And then the .sites, each one of those have an agent that we assign like we do now, right? And then we enable them as enabled. There's and the org too. So basically, there's just an agent that gets created that then we create and maintain, right? And that's a project. Basically, that's a repo, right? That exists, and then we just create a tree of that. And again, that's, I guess, is the sites agents that keep an eye on all of them, right? Because they are all the sites that we have here. So they all conduct a task, just retire it, like 24, 30. So the Carby, the point of this is to understand the art of the possible. So if it's not possible, we don't, right? But ideally, and we have 2 modes to get the data. We can either get the data via API and store it, or which some licenses allow, or we just create a JavaScript, but they need to have cores. And again, if not possible, then some of these websites, maybe we have a go and then we archive it. And then that's a decision. We said, look, actually, it was a good idea, but today is not possible. And then we make a decision where to put it, right? The shared messages section, what's that? Is it the fact that multiple... So to understand the messages, each website should go to a unique append line, but an append line should be listened by the feedback agents, the 4 of them, that should all be working in collaboration. So each one fires up every 15 minutes. So you have round-the-clock coverage. And then they should be related to the correct agents. Yes. Turn the inbox back on. That's the AWS stock fix. On 26, yes, I agree with those sites. They look good, actually.",
+  "session": "https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
+  "event_uuid": "36606995-bfa3-41a3-889c-ce4b356235f1",
+  "at": "2026-11-23T23:22:45Z",
+  "recorded_by": "decisions.b@SovereignWebsite.dinis",
+  "recorder_key": "sha256:eefbe996d9c67a7c",
+  "scope": {
+    "repository": "SovereignWebsite/SovereignWebsite__IaC",
+    "branch": "dev",
+    "paths": [
+      "requests/2026-11-23__wordpress-section/**"
+    ],
+    "commits": 1,
+    "patch_ids": [
+      "43737e2c5643f98dfc5947f453151488124440cc"
+    ]
+  },
+  "expires": "2026-11-30T23:22:45Z",
+  "status": "in-force",
+  "ask": 26,
+  "about": "Ask 26: factory.b's a10ee6b 'Request: wordpress-section (demo)' (replaces 27c9b12), description: built from public WordPress feeds; not affiliated with the sites shown. Dinis: \"On 26, yes, I agree with those sites. They look good, actually.\" (the six sites: WordPress News, Make WordPress Core, NASA, TED Blog, Variety, Rolling Stone)."
+}
