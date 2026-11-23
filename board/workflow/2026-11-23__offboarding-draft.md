@@ -36,8 +36,8 @@ Then the rest of the steps, as far as they still apply.
 - Step 6: none needed: neither fingerprint of the old conductor key (sha256:fabd2942df366c5f, signing sha256:706a24f8808e02a2) appears in the pki.sgit.ai directory index, read at about 23:17 UTC.
 - Steps 7 and 8: open. If the old session confirms its key existed only in its own container, archiving it (after steps 4 and 5 and Dinis's word) ends the key; no separate delete is needed.
 
-## Proposed check (for factory.b, with Dinis's merge)
-A retired key should fail CI for anything new: build/check-signatures.mjs rejects a commit signed by a retired key unless it is the retirement commit itself or was already on the branch when the key was retired. Compare against the branch history at the time of retirement, not the author date, which can be forged (security.b, review 028).
+## Retired keys already fail the check
+security.b (review 028) asked that a retired key fail CI for anything new. factory.b confirms this is already so: build/check-signatures.mjs refuses a commit signed by a key that its first parent's team/keys.json lists as retired or superseded, judged by the parent's tree, not the author date (covered in test/run.mjs, 97f302f). Retiring the entry (step 3) is therefore enough to stop new commits from that key.
 
 ## Open question for Dinis
 - Should a session's own hand-over (case 1) be archived by the conductor without asking each time, once steps 3 to 7 are done?
