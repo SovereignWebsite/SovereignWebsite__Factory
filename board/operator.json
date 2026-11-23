@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-23T23:25Z",
+  "updated": "2026-11-23T23:26Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
@@ -24,7 +24,6 @@
     "Dinis: yes in factory.b's session to a named exemption in build/check-signatures.mjs for two Factory commits signed in maestro.d's session on 21 Nov with a key never published (b7c8bfd, 5eb7fde); no history rewrite - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
   ],
   "done_recent": [
-    "Design: RiskMandate brochure rated (ask 14 later made a review item for Dinis, not an approval: rating back to M4, 08c179c); a site owner placed at M2 from the history, what is unknown said plainly; docs/maturity.md now says \"Never block on the owner\" (design.b, 2e58498)",
     "Dinis answered asks 22 to 32 (record 2026-11-23__asks-22-to-32, 23:12 UTC): wakes agreed; customers pay by Stripe, for now by email to agent@withmandate.ai; 5 or 6 WordPress reference sites first; songs on the existing Suno account within its limits; the Road atlas as a real map first. Routed to the agents",
     "Startups: RiskMandate brochure v0.1.36 live, now for Dinis to review rather than approved (v0.1.36, f0f3143); each of the five startup sites now has docs/owner.md listing what Dinis can do himself, with nothing waiting on him (startups.b)",
     "dinis-cruz.presentations ready for Dinis to add presentations himself: https://dinis-cruz.presentations.sovereignweb.site/add/ (fb6aa33); what he can do on every site sites.b keeps: https://sites.agents.sovereignweb.site/yours/ (sites.b)",
@@ -38,7 +37,8 @@
     "Hub: email route live (v0.1.52); the first handed-over site listed as \"A founder's site, handed over\", unnamed and without pictures (ask 31); ask 6 note sent to decisions.b (no public form; email stays); hand-over written (docs/HANDOVER.md, v0.1.53)",
     "Dinis answered 47, 40, 19, 24, 30, 26 and 37 (record 2026-11-23__briefings-keepers-messages, 23:22 UTC): briefings on the presentations website; every site leads to its agents (provenance and graphs); a keeper agent per domain; six WordPress reference sites agreed; the docs/aws-oidc.md fix covered. Routed, and relayed to every maestro",
     "sites.b: the workflow page now says the price for changes is set after hand-over (dcb06ef); the wayfinder plan is written for a fresh sites.b session (24275ef)",
-    "Cost of round-the-clock feedback (accountant.b, an estimate at 1.41 USD a wake): one of four agents every 15 minutes is about 135 USD a day; each of the four every 15 minutes about 541 USD a day. Its suggestion: a script with no model checks the inboxes and wakes an agent only when a message waits"
+    "Cost of round-the-clock feedback (accountant.b, an estimate at 1.41 USD a wake): one of four agents every 15 minutes is about 135 USD a day; each of the four every 15 minutes about 541 USD a day. Its suggestion: a script with no model checks the inboxes and wakes an agent only when a message waits",
+    "Design guideline 2b \"Agents as provenance\": from every page an Agent step opens a linked graph of the keeper and its chain to Dinis, the agents behind each page, the decision records and the design rounds, with a provenance line in every footer (design.b, 168b471); relayed to every maestro"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",

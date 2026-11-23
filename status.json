@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
-  "updated": "2026-11-23T23:25Z",
+  "updated": "2026-11-23T23:26Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -94,7 +94,8 @@
     "Hub: email route live (v0.1.52); the first handed-over site listed as \"A founder's site, handed over\", unnamed and without pictures (ask 31); ask 6 note sent to decisions.b (no public form; email stays); hand-over written (docs/HANDOVER.md, v0.1.53)",
     "Dinis answered 47, 40, 19, 24, 30, 26 and 37 (record 2026-11-23__briefings-keepers-messages, 23:22 UTC): briefings on the presentations website; every site leads to its agents (provenance and graphs); a keeper agent per domain; six WordPress reference sites agreed; the docs/aws-oidc.md fix covered. Routed, and relayed to every maestro",
     "sites.b: the workflow page now says the price for changes is set after hand-over (dcb06ef); the wayfinder plan is written for a fresh sites.b session (24275ef)",
-    "Cost of round-the-clock feedback (accountant.b, an estimate at 1.41 USD a wake): one of four agents every 15 minutes is about 135 USD a day; each of the four every 15 minutes about 541 USD a day. Its suggestion: a script with no model checks the inboxes and wakes an agent only when a message waits"
+    "Cost of round-the-clock feedback (accountant.b, an estimate at 1.41 USD a wake): one of four agents every 15 minutes is about 135 USD a day; each of the four every 15 minutes about 541 USD a day. Its suggestion: a script with no model checks the inboxes and wakes an agent only when a message waits",
+    "Design guideline 2b \"Agents as provenance\": from every page an Agent step opens a linked graph of the keeper and its chain to Dinis, the agents behind each page, the decision records and the design rounds, with a provenance line in every footer (design.b, 168b471); relayed to every maestro"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
