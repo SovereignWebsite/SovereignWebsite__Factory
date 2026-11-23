@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-23T23:15Z",
+  "updated": "2026-11-23T23:16Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
@@ -20,8 +20,6 @@
     "Dinis: allow mistral.conductor to write its signing key file in its own session (ask 5 agreed; its safety check refused the step) - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT"
   ],
   "done_recent": [
-    "RiskMandate startup site rated 4, maturity M4; all five startups under 8,000 px on a phone",
-    "design.b's maturity model M0 to M8; 61 unrated live sites now recorded in ratings",
     "Dinis signed 12 decision records via decisions.b (15:54 UTC), incl. segment A leads with B as proof; records usable once committed in IaC decisions/",
     "sovereignwebsite.ai: decided launch offer on home and all designs; address and agent-policy lines made accurate (Website 7773632, 7303c87)",
     "The workflow in one page, nine steps with Car Buyer as the example: https://pipeline-demo.demo.sovereignweb.site/workflow/ (461a834)",
@@ -34,7 +32,9 @@
     "AWS is not blocked: DNS apply run 45211861879 (16:02 UTC 23 Nov) assumed the role through OIDC and wrote all four zones, sovereignweb.site included (factory.b, from the run log)",
     "Design: RiskMandate brochure approved and rated M5; a site owner placed at M2 from the history, what is unknown said plainly; docs/maturity.md now says \"Never block on the owner\" (design.b, 2e58498)",
     "Dinis answered asks 22 to 32 (record 2026-11-23__asks-22-to-32, 23:12 UTC): wakes agreed; customers pay by Stripe, for now by email to agent@withmandate.ai; 5 or 6 WordPress reference sites first; songs on the existing Suno account within its limits; the Road atlas as a real map first. Routed to the agents",
-    "Startups: RiskMandate brochure approval live (v0.1.36, f0f3143); each of the five startup sites now has docs/owner.md listing what Dinis can do himself, with nothing waiting on him (startups.b)"
+    "Startups: RiskMandate brochure approval live (v0.1.36, f0f3143); each of the five startup sites now has docs/owner.md listing what Dinis can do himself, with nothing waiting on him (startups.b)",
+    "dinis-cruz.presentations ready for Dinis to add presentations himself: https://dinis-cruz.presentations.sovereignweb.site/add/ (fb6aa33); what he can do on every site sites.b keeps: https://sites.agents.sovereignweb.site/yours/ (sites.b)",
+    "Dinis's principle (never block on him; list what he can do on each site) sent to the whole team"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
