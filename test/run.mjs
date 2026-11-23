@@ -514,4 +514,7 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   put('2026-11-24__ana', { label: 'ana', group: 'cv', title: 'A', description: 'x', kind: 'owner' });
   L = R.load(d); assert.ok(L.errors.some((e) => e.includes('a.cv.sovereignweb.site') || e.includes('ana.cv.sovereignweb.site')), 'the same label in the same group is refused');
   const one = R.repos([{ label: 'bo', group: 'cv', title: 'B', description: 'x', kind: 'owner' }]); assert.ok(one[0].aka.includes('Site__Bo'), 'a label used once keeps its bare old name'); }
+{ const { readdirSync: ls } = await import('node:fs'); const R = '@media (max-width:599px)';
+  for (const t of ['site', 'gate', 'agent']) assert.ok(readFileSync(`seed/${t}-template/.github/ci/build.mjs`, 'utf8').includes(`${R}{.sws-version{font-size:15px}}`), `${t}: the version chip is 15px on a phone (design.b)`);
+  for (const f of ['seed/site-template/site/index.html', 'seed/agent-template/site/index.html', 'seed/site-template/site/policy/policy.css', 'seed/shared/family-credit.css']) assert.ok(readFileSync(f, 'utf8').includes(`${R}{footer,.family-credit,.family,.site-links{font-size:15px}}`), `${f}: footer chrome is 15px on a phone`); }
 console.log('OK (tests)');
