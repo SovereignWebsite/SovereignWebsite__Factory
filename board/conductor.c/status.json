@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-23T14:17Z",
+  "updated": "2026-11-23T19:17:23Z",
   "state": "account C weekly 61% at ~09:40 (amber; red at 75%); design.c every 2 hours (43 */2); no new sessions or scheduled tasks on account C; new work to another account where possible",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -26,14 +26,16 @@
     "design.c round 1: five Instagram designs live on Site__Platform__Instagram dev 63c9fcb (site/designs/** only, owner override line recorded); recommended design 2",
     "instagram.c, at Dinis's word: Instagram media in sgit vault c0kmaggy (dev.send.sgraph.ai); read key to be published on the Instagram site's /vault/ page; the full vault key sealed to conductor.c's PKI key and held (still encrypted) in conductor.c's session only, never in a repository",
     "owasp.c's key made at Dinis's yes (owasp-c-sovereignwebsite, sha256:7a71de7fb6bd221b); its public entry sent to factory.c as text (its Factory push was refused); still needs Dinis's yes in its session to write its git signing file",
-    "design.c round 1 on every claimed account C site: Instagram, Studio accounts/c, DNS, GitHub, YouTube, AWS (OWASP next)"
+    "design.c round 1 on every claimed account C site: Instagram, Studio accounts/c, DNS, GitHub, YouTube, AWS (OWASP next)",
+    "2026-11-23T19:17:23Z: relayed sites.c's six open items (YouTube OAuth client ID and origin; designer line in 3 site policies; home-page design picks DNS 3, GitHub 4, YouTube 1; YouTube videos build-time copy; parked items; suno.c handover to B) to maestro.c as material for account B, at sites.c's report of Dinis's request."
   ],
   "next": [
     "when the weekly figure falls or resets: design.c back to hourly; at 75%: pause design.c and ask studio.c to pause",
     "factory.c and mistral.c: read their first reports, claim each piece of their work here before they touch it; no tasks given without Dinis",
     "once the key is merged: push this board to dev",
     "conduct the account C sessions maestro.c starts at Dinis's word (observability.c, the cheese market's account C session), each with the Factory reachable or its key on dev before it works (incident lesson)",
-    "claim here only work no .b or .d agent holds"
+    "claim here only work no .b or .d agent holds",
+    "Claim sites.c's Broadway/West End productions and box-office site once it sends a request proposal with paths (researching data and licences first)."
   ],
   "asks": [
     "Dinis: my board cannot reach dev on my own: its first commit is my policy entry (eb940f9, board/conductor.c/** only), and CLAUDE.md says policy/ changes wait for your merge, so the paths check refuses it; I keep that rule even under the no-blocking rule. Merge work/conductor.c when you can - https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj",
