@@ -517,4 +517,7 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
 { const { readdirSync: ls } = await import('node:fs'); const R = '@media (max-width:599px)';
   for (const t of ['site', 'gate', 'agent']) assert.ok(readFileSync(`seed/${t}-template/.github/ci/build.mjs`, 'utf8').includes(`${R}{.sws-version{font-size:15px}}`), `${t}: the version chip is 15px on a phone (design.b)`);
   for (const f of ['seed/site-template/site/index.html', 'seed/agent-template/site/index.html', 'seed/site-template/site/policy/policy.css', 'seed/shared/family-credit.css']) assert.ok(readFileSync(f, 'utf8').includes(`${R}{footer,.family-credit,.family,.site-links{font-size:15px}}`), `${f}: footer chrome is 15px on a phone`); }
+{ const C = await import('../build/coverage.mjs');
+  const c = C.coverage(['a.x.site', 'b.x.site', 'c.x.site'], { sites: { 'a.x.site': {}, 'c.x.site': {} } }, { sites: [{ address: { url: 'https://a.x.site/' } }, { address: {} }] });
+  assert.deepEqual(c, { notRated: ['b.x.site'], notOnHub: ['b.x.site', 'c.x.site'] }, 'coverage lists the sites the design ratings and the hub miss'); }
 console.log('OK (tests)');
