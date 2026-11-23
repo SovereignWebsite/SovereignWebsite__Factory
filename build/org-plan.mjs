@@ -7,6 +7,11 @@ import { fileURLToPath } from 'node:url';
 import { gh } from './github.mjs';
 import { load as loadRequests, repos as requestRepos } from './requests.mjs';
 
+// Sites moved from the IaC repository's old name to its new one, in two files only (org/keys-url.json).
+export const KEYS_URL = existsSync('org/keys-url.json') ? JSON.parse(readFileSync('org/keys-url.json', 'utf8')) : { repos: [], files: [] };
+// The new text of a file, or null when it has nothing to move. Only the old repository path changes.
+export const retarget = (text, k = KEYS_URL) => (text.includes(k.from) ? text.split(k.from).join(k.to) : null);
+
 // The organisation as code plus one repository per hosted-site request.
 export function withRequests(org, dir = 'requests') {
   const { requests, errors } = loadRequests(dir);
@@ -56,6 +61,7 @@ export function plan(org, live) {
       actions.push({ action: 'repo.invite_collaborator', target: r.name, user: u, permission: perm });
     }
     if (r.protect && !l.protected) actions.push({ action: 'repo.protect_branches', target: r.name });
+    if (l.keys_url_files?.length) actions.push({ action: 'repo.retarget_keys_url', target: r.name, files: l.keys_url_files });
     if (r.cname && l.cname === r.cname && !l.https_enforced) {
       const st = l.cert_state;
       if (st === 'approved' || st === 'issued') actions.push({ action: 'pages.enforce_https', target: r.name });
@@ -93,6 +99,11 @@ export async function liveRepos(org, spec = {}) {
       const names = new Set((Array.isArray(rs.data) ? rs.data : []).map((q) => q.name));
       const isProtected = names.has('main-locked') && names.has('dev-safe');
       if (want.seed && dev.status === 200) for (const f of seedFiles(want.seed)) { const c = await gh('GET', `/repos/${org}/${x.name}/contents/${f}?ref=dev`); if (c.status === 404) seed_missing.push(f); }
+      const keys_url_files = [];
+      if (KEYS_URL.repos.includes(x.name) && dev.status === 200) for (const f of KEYS_URL.files) {
+        const c = await gh('GET', `/repos/${org}/${x.name}/contents/${f}?ref=dev`);
+        if (c.status === 200 && retarget(Buffer.from(c.data.content, 'base64').toString('utf8')) !== null) keys_url_files.push(f);
+      }
       const tm = await gh('GET', `/repos/${org}/${x.name}/teams`);
       const teams = Object.fromEntries((Array.isArray(tm.data) ? tm.data : []).map((t) => [t.slug, t.permission]));
       // Collaborators already there or invited, and named logins that do not exist on GitHub.
@@ -106,7 +117,7 @@ export async function liveRepos(org, spec = {}) {
         const usr = await gh('GET', `/users/${u}`);
         if (usr.status === 404) unknown_users.push(ul);
       }
-      out[x.name] = { ...x, has_dev: dev.status === 200, cname, seed_missing, teams, https_enforced, cert_state, protected: isProtected, collaborators, unknown_users };
+      out[x.name] = { ...x, has_dev: dev.status === 200, cname, seed_missing, keys_url_files, teams, https_enforced, cert_state, protected: isProtected, collaborators, unknown_users };
     }
     if (r.data.length < 100) break;
   }

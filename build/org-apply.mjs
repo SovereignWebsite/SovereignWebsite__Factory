@@ -3,7 +3,7 @@
 import { readFileSync } from 'node:fs';
 import { gh } from './github.mjs';
 import { load, checkActions } from './abp.mjs';
-import { wanted, seedFiles, withRequests } from './org-plan.mjs';
+import { wanted, seedFiles, withRequests, KEYS_URL, retarget } from './org-plan.mjs';
 const TEXT = /(\.(html?|css|m?js|json|md|txt|ya?ml|xml|svg|webmanifest)|(^|\/)CNAME)$/i;
 import { join } from 'node:path';
 import { fill } from './fill.mjs';
@@ -55,6 +55,25 @@ for (const a of p.actions) {
       const t = await gh('POST', `${base}/git/trees`, { base_tree: commit.data.tree.sha, tree }); must(t, `tree ${a.target}`, [201]);
       const c = await gh('POST', `${base}/git/commits`, { message: `Seed ${files.length} files from SovereignWebsite__IaC (org-apply)`, tree: t.data.sha, parents: [head] }); must(c, `commit ${a.target}`, [201]);
       must(await gh('PATCH', `${base}/git/refs/heads/dev`, { sha: c.data.sha }), `seed ${a.target}: ${files.join(', ')}`);
+    }
+  } else if (a.action === 'repo.retarget_keys_url') {
+    // Only a listed site, only the listed files, only the old repository path: one commit on its dev.
+    if (!KEYS_URL.repos.includes(a.target)) throw new Error(`retarget ${a.target}: not in org/keys-url.json`);
+    const ref = await gh('GET', `${base}/git/ref/heads/dev`); const head = ref.data.object.sha;
+    const commit = await gh('GET', `${base}/git/commits/${head}`);
+    const tree = [];
+    for (const f of a.files) {
+      if (!KEYS_URL.files.includes(f)) throw new Error(`retarget ${a.target}/${f}: not a listed file`);
+      const c = await gh('GET', `${base}/contents/${f}?ref=dev`); must(c, `read ${a.target}/${f}`, [200]);
+      const now = retarget(Buffer.from(c.data.content, 'base64').toString('utf8'));
+      if (now === null) { console.log(`kept: ${a.target}/${f} (nothing to move)`); continue; }
+      const b = await gh('POST', `${base}/git/blobs`, { content: Buffer.from(now).toString('base64'), encoding: 'base64' });
+      must(b, `blob ${a.target}/${f}`, [201]); tree.push({ path: f, mode: '100644', type: 'blob', sha: b.data.sha });
+    }
+    if (tree.length) {
+      const t = await gh('POST', `${base}/git/trees`, { base_tree: commit.data.tree.sha, tree }); must(t, `tree ${a.target}`, [201]);
+      const c = await gh('POST', `${base}/git/commits`, { message: `Keys address: SovereignWebsite__Factory is now SovereignWebsite__IaC (org-apply)\n\n${tree.map((x) => x.path).join(', ')}: only the repository's old name changes.`, tree: t.data.sha, parents: [head] }); must(c, `commit ${a.target}`, [201]);
+      must(await gh('PATCH', `${base}/git/refs/heads/dev`, { sha: c.data.sha }), `keys address moved in ${a.target}: ${tree.map((x) => x.path).join(', ')}`);
     }
   } else if (a.action === 'pages.set_cname') must(await gh('PUT', `${base}/pages`, { cname: r.cname, build_type: 'workflow' }), `custom domain ${r.cname} on ${a.target}`);
   else if (a.action === 'team.grant_push') must(await gh('PUT', `/orgs/${p.org}/teams/${a.team}/repos/${p.org}/${a.target}`, { permission: 'push' }), `team ${a.team} push on ${a.target}`);

@@ -22,6 +22,15 @@ assert.deepEqual(pl.actions, [], 'factory as Dinis made it needs nothing'); asse
 const before = plan({ ...org, repos: [org.repos[0]] }, { SovereignWebsite__Factory: live.SovereignWebsite__IaC });
 assert.deepEqual(before.actions, [{ action: 'repo.rename', target: 'SovereignWebsite__Factory', to: 'SovereignWebsite__IaC' }], 'the old name is renamed, never recreated');
 assert.deepEqual(checkActions(p, before), [], 'the rename is allowed');
+// Sites move from the old keys address to the new one: listed sites only, the old path only (org/keys-url.json).
+{ const P = await import('../build/org-plan.mjs');
+  assert.equal(P.retarget("const KEYS_URL = 'https://raw.githubusercontent.com/SovereignWebsite/SovereignWebsite__Factory/dev/team/keys.json';"), "const KEYS_URL = 'https://raw.githubusercontent.com/SovereignWebsite/SovereignWebsite__IaC/dev/team/keys.json';");
+  assert.equal(P.retarget('// Seeded by SovereignWebsite__Factory'), null, 'text naming the old repository, not its path, is left alone');
+  const name = P.KEYS_URL.repos[0], sp = { ...org, repos: [{ ...org.defaults, name, description: 'x' }] };
+  const lv = { [name]: { ...org.defaults, description: 'x', default_branch: 'dev', has_dev: true, protected: true, teams: { 'sovereignwebsite-agents-ci': 'push' }, keys_url_files: ['.github/ci/signers.mjs'] } };
+  const mv = plan(sp, lv).actions;
+  assert.deepEqual(mv, [{ action: 'repo.retarget_keys_url', target: name, files: ['.github/ci/signers.mjs'] }], 'one move, for the listed site');
+  assert.deepEqual(checkActions(p, { pipeline: 'org-apply', actions: mv }), [], 'the move is allowed'); }
 for (const n of ['SovereignWebsite__Website', 'SovereignWebsite__Org', 'SovereignWebsite__Site']) {
   const f = seedFiles(`seed/${n}`);
   for (const must of ['.github/workflows/pages.yml', 'site/CNAME', 'site/index.html']) assert.ok(f.includes(must), `${n} seeds ${must}`);

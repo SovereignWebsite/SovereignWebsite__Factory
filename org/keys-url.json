@@ -1,0 +1,7 @@
+{
+  "about": "Sites already made whose .github/ci/signers.mjs and .github/workflows/pages.yml still read team/keys.json from SovereignWebsite__Factory, the IaC repository's old name. Org apply rewrites only that name to SovereignWebsite__IaC in those two files, in one commit on the site's dev, and only for the repositories listed here. GitHub's redirect keeps the old address working meanwhile; moving every site lets the old name never matter again. Dinis Cruz, 23 Nov 2026 in factory.c's session: \"let's start moving one. Pick one and let's see how it can work\".",
+  "from": "SovereignWebsite/SovereignWebsite__Factory/",
+  "to": "SovereignWebsite/SovereignWebsite__IaC/",
+  "files": [".github/ci/signers.mjs", ".github/workflows/pages.yml"],
+  "repos": ["Site__Demo__Pipeline-Demo"]
+}
