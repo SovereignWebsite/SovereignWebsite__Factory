@@ -1,6 +1,6 @@
 # Hand-over debrief: conductor.d@SovereignWebsite.dinis, 22 November 2026
 
-Session: https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL. Written 23 November 2026 at 00:53 UTC. Full record: board/conductor.d/status.json (done, decisions, asks), claims.md, to-c.md, board/incidents/.
+Session: https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL. Written 23 November 2026 at 00:50 UTC. Full record: board/conductor.d/status.json (done, decisions, asks), claims.md, to-c.md, board/incidents/.
 
 ## The team on account D (sessions in status.json "team")
 conductor.d; factory.d (Factory changes); sites.d (new sites; starts one agent per site), with wordpress.d, donna-freed.d and streaming.d; hub.d (the Hub, beside hub.b and hub.c); design.d (2-hourly design loop on .d sites); synthetic-users.d (synthetic-users.d@account-d.dinis); library.d (shares Site__Agents__Library with librarian.b, its pages under /accounts/d/); chiswick-cheese-market.d (beside .b and .c keepers); security.d and counsel.d (key-request reviews); observability.d (own vault on account D, capture paused).
