@@ -1143,6 +1143,117 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "suno-b-sovereignwebsite",
+      "agent": "suno.b@SovereignWebsite.dinis",
+      "role": "Suno agent on account B, twin of suno.c: music made with Suno's official API for the team's Instagram posts, only with Dinis's word and a spend cap he sets",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwBWVj7sxLdmr1ZKwh4",
+      "fingerprint": "sha256:e53baca9785b02e6",
+      "signing_fingerprint": "sha256:d69db1d15770f4c6",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAvAM4/I1cgu3TuHeZX4uf\n8OLyXIpn8sx/rLj+tSsO+CfhU8SFzQQIyEnRBeDet3Zc4ELaD9tDSowFodrOi5rn\nUUSave0bp66+fbfwFHQDnZLNrYhl/KapX41AufsXccj7k/u4+U0ux9HIquohJpAL\nZjQ7NL6Hmx+Dpa8KUG3BmRbywyI3m700GNJ36hJwLdpnfy4IpkNOwPP2jmy9dge+\nVphGw0RLA91hwbyC3v5gNB4xitonOe8w7J4QeymCIHboziEW+nWzlVtsYGT5tHzI\nuB2pvAVrHr9SFCRfWz7O6MPh9pF3i7xSxG9YRKVf/DR8p1Y+tZKVyGNzhXNw1PFW\nzcg/362RBThufW8hXkDS+N/vDOKWoB5c4qj+UXuKyajtZKFWymBvMIF9ic1Rr3M6\n21957NXCENvRabOthTvsJ9cSXtOn4UmvFSvG0uaxzFLFQhzz16Xtao7TxIXBX4rI\n1OY/zOlV+P3j+lUBO1UmOqqELCaAX7wsWoXQ7HM62+HbqHj6UZyhGu1eyghb+Z9b\nEjj7OmWMZgt7Le7EcpaFBg1OLb77odpUQ9PwiiRF01dHCMXTTtdLEPVA6dDZeMx4\nc5EBSqffNGtxZfDOJK18xWzPx65eAaKSAcmqNIwQ218X1nA/mm8OkuCykjgrKHtv\nmCo/7X/gxoIAwQ6GW/SVMhcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESSvIryUqfSrFOKiXJ0+WOdYmLf/v\nUXD9NIE8/LaiFWbjEY9t1ImCTqmZjhMWNq3+AnlyHVuRiwiRJ3hbQxhVvg==\n-----END PUBLIC KEY-----\n",
+        "label": "suno.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:e53baca9785b02e6",
+        "signing_fingerprint": "sha256:d69db1d15770f4c6"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "design-c-sovereignwebsite",
+      "agent": "design.c@SovereignWebsite.dinis",
+      "role": "Designer on account C, twin of design.b and design.d: five accessible design versions per account C site, rated against the team's design standard, and hourly change lists for each site's keeper",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwFAkBTBoUvV1eCnMsY",
+      "fingerprint": "sha256:0f7c83027aa52217",
+      "signing_fingerprint": "sha256:fe40ce12f01f28c9",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA5ZhkrvXH8L8XJWtfHuZ0\n7/pdahExNcqrn5lpN7WfpYIcvW8LZ6vUE+Ft/pOmSPe5aqhdqWpBVmnPxHTlO4dO\nvV+BeBptJajXjHvc4jOJPWLVwpRht5Sfr5HcfkmtyJNnne0pRJKPs5HoczXMA36v\nmoov1UpLvDAtafA0EsYcF2YnC+tIjugdaEcMags/dZedZTl2xOg/dPRRS8xAZVsP\nDQ/vhPna0eMrGcs46JG9ErBv3msherVpHNXhpT9CHXqG8QDxHuSRERs9sKtKAs5W\n6f7H3Xbx36pe8uWzk0JMGs9aNuTTbzaufsPd5mjkocCuqsurHcRnEL1PFYnFaVfE\n2VDri0S/U7HE3z9mdFQIpT5r19LTg9ZB/qkczCrxIKCkojq5jcoz6DmbLqIDiZCW\nAuYUkjnRS1Qyw2FjKKKgJusDxtVg7H+h4QuZq6iP3yzPO++7AS8YdbrTKRH1Poqc\nX6RZbWqtACgdBPlUvJdmUkUliSE/QyTboOZGIkpRGV1EVSxvjqMkDaTzi80AYMx0\npv7OqSsM27FBMRwgNHPoxpkx4wkItpg1ueNPOIlHijB2W3ES0hlWeCYDEjZqmPG/\nmaV1KH9QjcrDl5Gog1XVPIjU92Eqz+fMsyV/ojORnuZQchf+CLHsoKJtQST+MYuO\nurPVl9vEaj05qQ/Fk+IjgAsCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEKWZ/6n+1Kodhv3FodJTq9xyc/Hhx\nTS0svmdkDt739VTPOrdTz/S+b4Vg6wN/RbpBADf6cg3I74ZvdfBk8lutOw==\n-----END PUBLIC KEY-----\n",
+        "label": "design-c-sovereignwebsite",
+        "fingerprint": "sha256:0f7c83027aa52217",
+        "signing_fingerprint": "sha256:fe40ce12f01f28c9"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "pm-aws-c-sovereignwebsite",
+      "agent": "pm.aws.c@SovereignWebsite.dinis",
+      "role": "PM of the AWS Platform programme on account C: the board of claimed tasks and the one decisions page for Dinis (Site__Platform__AWS docs/board/). Started by maestro.c at Dinis Cruz's word; conductor conductor.aws.c. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwBZAwm6766jrG94uX1",
+      "fingerprint": "sha256:458ab093835319c5",
+      "signing_fingerprint": "sha256:eab6121b0ce3246b",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAypjaFuSALykckhr1Bzjk\n3+FNUIgpL2u+CeqFjikDFexKuKvZ08HEs3p1JaX6HCBJQMgwP8jQS2ntAOv9WEGn\ngCg/vUmNvtuG7Mi9Mql2ci/hlXUH4sb71TrneEnDb7e6wZp1lxDGEPEdH6g8PzJq\nkdwVIn/kemZVON/Cd2bNW49yAtiZM0zm/EBrhyAw8FK/kefsUZypIcDlMUwu2HjB\nChCRKtI7g5YnaQoQZyzL7iyx2fkhkhCSAssMqnv9uh47J/GpJSkfBtvDPS9qzjpx\nji01chE7vo9GsS4YgpfYIbD5e54WKDBgGmr1zTn1iPNTDjwMfSY+jHDir+NukMoZ\njzpo4LaB1X9cfF23ADvNJyoOvSYrglMCGqZwfMThvFk7LQVzdpQyARpBOQ/hwLHH\nCg084VdgEsxKu/s68jsBQ5Y+CYMsGbR6RMzNEI3RP4sIun6acwpBQSlz55KX2HYX\nrHSHywt4vgmNlSpADfyTXGvnEBzhTD8Q4IofjzPNT89OsN/KbM5kQwDi5ZmkCQg9\nR29sk3NQOS16WZfJOO3MRlPN6l7MVWyt0XreeJ6y6E0dm0liuGxHalLf7troN5JB\nDqtePAX/5/GEzRARo5dItHms7ZrEuMSlXoHUMt9dyjl1ThzPJV2x9TfUilxus5DB\nO33mTPsF/XvNo24hqNJERdkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEE+nfOYygFGhOBXCgHztmq2yVFh1X\npS2J4qjF8wApEafd/9Vevy1xKD/U9AkfZ6aKeMBCDz5qMk5Yn6io0Vn5/g==\n-----END PUBLIC KEY-----\n",
+        "label": "pm.aws.c@SovereignWebsite.dinis",
+        "fingerprint": "sha256:458ab093835319c5",
+        "signing_fingerprint": "sha256:eab6121b0ce3246b"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "conductor-aws-c-sovereignwebsite",
+      "agent": "conductor.aws.c@SovereignWebsite.dinis",
+      "role": "Conductor of the AWS Platform programme on account C: starts and schedules the aws.c team in stages, keeps docs/team/ in Site__Platform__AWS, reports to maestro.c",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwDiqvoswkZCuHe5GTt",
+      "fingerprint": "sha256:39dfb8b271359661",
+      "signing_fingerprint": "sha256:1bdfe32b60be2fa2",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAuTq6MjRQT7Ubg20TOT7O\n64AIG+ap6CZU0L898I3Pmf3VGziHde0g+MsPspxG7R/aulwobGzwXRSuWKKNiAxf\nrXoYT9VrnUF8BaE+VAlRgx9OQPp4SVc+82RaloX7o55/lgfF/1KwDl3+/8uAhEXo\nvOwstZqhMoFANEm8CYBQkP5JaOTVXPreyf3QXaCWHE25oWP3FsDCs5h1ULrSAQ2v\nfuUJZwDci2Hf5E1mWJi8USZJI6r8SuP/qwoiH7vVQ0qgmgHJ0+JbxpGmzY2wkgud\ntBmjkYeREDTcNnHt+HNdmjsaZ4L7g+xS1IyzcFHpGQ2X1n0MziAq3kMTMYXe1FR4\nqx5xvEYBt4Feejh1EwiudIyad3Ub9xUKlREqEt2Lfd2fRdTiYcyxvQ3CePyDJm1w\nbxT5ZCRp3OCiQp5wyT7DXLDZYk8BZMx5Hsyjedtc+3xS5G5ccS4btZxLmbEwp5UW\nyZNDhzOY1MIkGhl+uaZhDqTQ0XK/2X9L+kg7gAnaaQI65w08LtE2Ff3rPPFjYWyj\nQZLI0HGrWpOLsn6FUDzf1FPdEpKk3mYUHNa0ENBfDt1YVubtNhBGf5CxHzqIYC9Q\n2NiuGOvr+LEkOtLI5W75WMGBccTSi7RwYYDVWn22ZoNbGci0KCeRrQGvRSvuECQW\nGCx/EDhrrExYr5Q5nTBuuN0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESkSzjpD7kJjYObjN+h+QMNYLRPA8\nOHSRSjLoiEhb1Kupk9P+uMobAlSLK0J2FU4aqZsidf3xKOuQoidsdkZCCw==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor.aws.c@SovereignWebsite.dinis",
+        "fingerprint": "sha256:39dfb8b271359661",
+        "signing_fingerprint": "sha256:1bdfe32b60be2fa2"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "billing-aws-c-sovereignwebsite",
+      "agent": "billing.aws.c@SovereignWebsite.dinis",
+      "role": "AWS billing accountant on account C (AWS Platform programme): a price model of the stack from AWS's public pricing pages, run over the twin, then real-time and predicted billing (pipeline P4). Not accountant.c.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwEcR1KCF6y3dTPP5vr",
+      "fingerprint": "sha256:879c669f9bcb244b",
+      "signing_fingerprint": "sha256:ce445dd95f59849d",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArhNmxT4OVZfVPx34vqO8\nOGz6/0XSd78r6q/01+VhEY+DWbCvfM1OLHIeQ+0w6/CF1aWtDus7x9nm6g8T0JHo\n93XfkSf5N/P6Qk7SNA1SU+9gWI1tDdX4Kp7A8pJZY6K34/d/CfKWXTzZc5DySdIr\niYU4XwINBrGvXWc3HvFZrmymwiR5ISmTYOPvbLTjtHbjKsgSCYFSJC7tQ4Sc4LJ9\nT4neFXd0spd82IC8vs0X/++OrFYCMV53LPMxrv+omGDOovKlGfxGm3UUQ+yYmLtk\n2BTrhXpT9GIFPI1jx1jZlvaSrXYzQuVGXkFj97Sz0RzEZGTI8l6jjrZDDsn/Hx7n\nlaECcQn8Wye90QVVsFhktyPmNIH0ENt7iwFnFwI961griEZNVcXl8mBIyaJ6F0mB\n97zOZLJ/hBk3LMUv7qjRes28a84fudP7R+3147rKxOKlmKfwcL8bkfvwao9o+4UC\nVSCjBUdx6IJKnfzuDF4mRXykcQ538g9bo5R28lK0ubmF1x56clPLmUunhcv2Ibx8\ngo0QxVC+d0Vj1l4UOECdCuAPubRXRO3sadx+S7CrfWqVx0gRHGFMmMyXTSptRe8z\nmExIWV60rwo62Pt7AnbJfq8ZRIqNG2pQJNiT9pJEXbxZ0GQB5TPdJYrxWT2XOLF6\nvubMhekJigLLmlMO/DlffR0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE1b3VuiaYN/fX2mCeOje9scKvWwHL\nUJJz9gVy7lsAYWKz+d9//tq0h8laXNePlswTgYh/Oumzn2Yvza7xlKr3zg==\n-----END PUBLIC KEY-----\n",
+        "label": "billing.aws.c@SovereignWebsite.dinis",
+        "fingerprint": "sha256:879c669f9bcb244b",
+        "signing_fingerprint": "sha256:ce445dd95f59849d"
+      }
     }
   ]
 }
