@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-23T23:24Z",
+  "updated": "2026-11-23T23:25Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
@@ -19,11 +19,11 @@
     "Dinis: approve or change the offboarding process (ask 39; security.b review 028 passed with changes, all made) - board/workflow/2026-11-23__offboarding-draft.md",
     "Dinis: start a fresh hub.b session from its hand-over (docs/HANDOVER.md, v0.1.53, plus the later ask 31 commit) before its wake is created - https://claude.ai/code/session_01Kw9UwB7XboTsnbPPWaMr2d",
     "Dinis: create the four agreed wake tasks (ask 24); the old conductor task is retired - board/2026-11-23__wake-schedule.md",
-    "Dinis: re-enable feedback.b's inbox round (trig_01FsUjtCGwD9w9i3eBWJVoY3) and say so in its session (\"Turn the inbox back on\", 23:22 UTC) - https://claude.ai/code/session_01Kw9UwBiG9d5KHvFjdtiP69"
+    "Dinis: re-enable feedback.b's inbox round (trig_01FsUjtCGwD9w9i3eBWJVoY3) and say so in its session (\"Turn the inbox back on\", 23:22 UTC) - https://claude.ai/code/session_01Kw9UwBiG9d5KHvFjdtiP69",
+    "Dinis: start a fresh sites.b session with docs/handover.md (24275ef) as its first read; it leads the shared wayfinder (ask 40) and takes the hourly wake - https://github.com/SovereignWebsite/Site__Agent__Sites/blob/dev/docs/handover.md",
+    "Dinis: yes in factory.b's session to a named exemption in build/check-signatures.mjs for two Factory commits signed in maestro.d's session on 21 Nov with a key never published (b7c8bfd, 5eb7fde); no history rewrite - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
   ],
   "done_recent": [
-    "Dinis agreed asks 2, 5, 8, 14, 15, 17, 19, 20 and 21 (record 2026-11-23__asks-2-to-21, 23:08 UTC): RiskMandate brochure (later made a review item), the Mistral key file, dinis-cruz.presentations left ready for him, the Algarve Evolution move confirmed; routed to the agents. His principle: leave each site so he can carry it on himself, and never block on him",
-    "AWS is not blocked: DNS apply run 45211861879 (16:02 UTC 23 Nov) assumed the role through OIDC and wrote all four zones, sovereignweb.site included (factory.b, from the run log)",
     "Design: RiskMandate brochure rated (ask 14 later made a review item for Dinis, not an approval: rating back to M4, 08c179c); a site owner placed at M2 from the history, what is unknown said plainly; docs/maturity.md now says \"Never block on the owner\" (design.b, 2e58498)",
     "Dinis answered asks 22 to 32 (record 2026-11-23__asks-22-to-32, 23:12 UTC): wakes agreed; customers pay by Stripe, for now by email to agent@withmandate.ai; 5 or 6 WordPress reference sites first; songs on the existing Suno account within its limits; the Road atlas as a real map first. Routed to the agents",
     "Startups: RiskMandate brochure v0.1.36 live, now for Dinis to review rather than approved (v0.1.36, f0f3143); each of the five startup sites now has docs/owner.md listing what Dinis can do himself, with nothing waiting on him (startups.b)",
@@ -36,7 +36,9 @@
     "Offboarding draft reviewed by security.b (review 028, pass with changes) and updated: a fast stop now contains the session first, then retires, then revokes",
     "Dinis split his list in two (record 2026-11-23__navigation-and-review, 23:17 UTC): decisions that block agents, and sites for him to look at; a review item never blocks an agent. design.b set the navigation guideline (\"the wayfinder\", 08c179c)",
     "Hub: email route live (v0.1.52); the first handed-over site listed as \"A founder's site, handed over\", unnamed and without pictures (ask 31); ask 6 note sent to decisions.b (no public form; email stays); hand-over written (docs/HANDOVER.md, v0.1.53)",
-    "Dinis answered 47, 40, 19, 24, 30, 26 and 37 (record 2026-11-23__briefings-keepers-messages, 23:22 UTC): briefings on the presentations website; every site leads to its agents (provenance and graphs); a keeper agent per domain; six WordPress reference sites agreed; the docs/aws-oidc.md fix covered. Routed, and relayed to every maestro"
+    "Dinis answered 47, 40, 19, 24, 30, 26 and 37 (record 2026-11-23__briefings-keepers-messages, 23:22 UTC): briefings on the presentations website; every site leads to its agents (provenance and graphs); a keeper agent per domain; six WordPress reference sites agreed; the docs/aws-oidc.md fix covered. Routed, and relayed to every maestro",
+    "sites.b: the workflow page now says the price for changes is set after hand-over (dcb06ef); the wayfinder plan is written for a fresh sites.b session (24275ef)",
+    "Cost of round-the-clock feedback (accountant.b, an estimate at 1.41 USD a wake): one of four agents every 15 minutes is about 135 USD a day; each of the four every 15 minutes about 541 USD a day. Its suggestion: a script with no model checks the inboxes and wakes an agent only when a message waits"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
