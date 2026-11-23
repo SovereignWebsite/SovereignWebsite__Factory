@@ -159,7 +159,7 @@ export async function apply(owner, { cwd = process.cwd(), policy = loadPolicy() 
         net('clone', ['clone', '-q', '--depth', '1', '--branch', 'dev', `https://github.com/${t}.git`, dir]);
         writeFileSync(join(dir, 'team/keys.json'), JSON.stringify(a.next, null, 2) + '\n');
         g('add', 'team/keys.json');
-        const msg = `team/keys.json: ${c.req.agent}'s public key, from the Factory\n\nKey request: https://github.com/SovereignWebsite/SovereignWebsite__Factory/tree/${head}/keys/${r.folder}\nRequested in ${c.request_commit}.\n${reviewReport(c).map((l) => `Review: ${l}`).join('\n')}\n\nAgent: ${factory}\nKey-Request: keys/${r.folder}`;
+        const msg = `team/keys.json: ${c.req.agent}'s public key, from the Factory\n\nKey request: https://github.com/SovereignWebsite/SovereignWebsite__IaC/tree/${head}/keys/${r.folder}\nRequested in ${c.request_commit}.\n${reviewReport(c).map((l) => `Review: ${l}`).join('\n')}\n\nAgent: ${factory}\nKey-Request: keys/${r.folder}`;
         g('-c', 'user.name=SovereignWebsite Factory', '-c', 'user.email=factory@sovereignwebsite.invalid', '-c', 'gpg.format=ssh', '-c', 'gpg.ssh.program=ssh-keygen', '-c', `user.signingkey=${keyFile}`, 'commit', '-q', '-S', '-m', msg);
         net('push', ['push', '-q', 'origin', 'HEAD:dev'], { cwd: dir });
         console.log(`done: ${c.req.agent}'s key added to ${t} (${g('rev-parse', 'HEAD').slice(0, 7)}), signed by the factory key`);
