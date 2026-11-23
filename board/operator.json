@@ -1,0 +1,38 @@
+{
+  "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
+  "updated": "2026-11-23T11:42Z",
+  "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
+  "waiting_on_dinis": [
+    "Dinis: yes to accountant.agents.sovereignweb.site - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+    "Dinis: a budget for the librarian's first run, or let accountant.b propose one - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF",
+    "Dinis: who keeps sovereignwebsite.ai, .org and .site - https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67",
+    "Dinis: install the sovereignwebsite-transfer App on SovereignWebsite (every transfer gets 403) - https://github.com/organizations/SovereignWebsite/settings/installations",
+    "Dinis: say \"push\" for 544ecbc - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+    "Dinis: Grace's photos, Spotlight links, and whether photos credited to Jennie Scott may be used - https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67",
+    "Dinis: the DC Vault manager session or public key, and whether every agent backs up its private key - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
+    "Dinis: yes in mistral.conductor's session to its signing key file, or conductor.mistral pushes its stashed roster update - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT"
+  ],
+  "done_recent": [
+    "Chiswick demo made public at Dinis's word, with a 'not the official site' note",
+    "grace.b key published (d3a59df); Site__Artist__Grace-Farrell made by Org apply (b99f5a5); her name cleared (9fe303f)",
+    "dinis-cruz.agenticcells.site hold lifted; queued for transfer to the cv area",
+    "feedback.b inbox read key and key store backed up with the conductor, sealed and unopened, outside every repository (Dinis, 21 Nov)",
+    "Mistral team keys: mistral.local (renamed from local.mistral), mistral.promptugal, mistral.design published; evals, swarm and team.mistral retired (be55a3a)",
+    "factory.b: check-signatures refuses retired keys (pushed as 97f302f; waits on Dinis's merge)",
+    "Mistral site live with Studio and in-browser demos (c504c82); keys for mistral.workflows (641caa5) and mistral.conductor (f892560), the overnight loop until 09:00 UTC",
+    "mistral.conductor sent the signing recipe inline (it cannot reach the Factory)",
+    "South Beacon live at https://south-beacon.talent.sovereignweb.site/ (v0.1.1, 53ed671): the first anonymised talent profile, talent area, sealed introduction form, security.b review 025 applied",
+    "South Beacon: all four go-live conditions met (security.b review 025 closed PASS, Dinis and the candidate approved, sealed form tested live)",
+    "outreach.b started (key 30e7e64)",
+    "Per-site Agent Behaviour Policies (Dinis, 21 Nov): /policy/ and policy/abp.json live on 14 sites: South Beacon, Grace Farrell, Sarah Cruz, Emily Cruz, pipeline-demo, whois, google-maps, Hub, Vault and the five startups; Mistral and the five organisation repositories to follow",
+    "librarian.b key published (68aa84f); library live at https://library.agents.sovereignweb.site",
+    "Onboarding prompts for hub.b and sites.b on the board for their account-D twins (02862c1)",
+    "Board note: an Agent Behaviour Policy on every site (8e47f58)"
+  ],
+  "next": [
+    "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
+    "the vault as the approval step before a site goes live (Dinis, in sites.b's session), when he says build it",
+    "transfers, once TRANSFER_USER_TOKEN is set",
+    "South Beacon: beacon share card, a live test of the form, security.b final look, the candidate's own approval, a vouches section after Dinis's web-of-trust memo"
+  ]
+}
