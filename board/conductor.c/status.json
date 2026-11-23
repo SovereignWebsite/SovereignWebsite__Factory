@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-23T02:37Z",
+  "updated": "2026-11-23T02:40Z",
   "state": "all six account C keys on Factory dev (93b947f); conductor.c's and observability.c's policy entries and this board wait for Dinis's merge",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -66,7 +66,7 @@
     "feedback.c": "receiver of the feedback lanes; briefed: key first, each lane claimed here before it reads it, nothing drained on a schedule - https://claude.ai/code/session_01Kw9UwEQb6jZQ17nxMfkAVB",
     "owasp.c": "the OWASP platform site, exception to the split at Dinis's word, with sites.d (account D); briefed, key first - https://claude.ai/code/session_01Kw9UwE69pr5bPeaQ4tYqir",
     "sites.c": "sites agent on account C, twin of sites.b and sites.d; takes only unstarted requests, each claimed here first; key first - https://claude.ai/code/session_01Kw9UwEi55Prvc9jXNPGC1a ; key 98e9263 on dev",
-    "aws.c": "the IaC rename's AWS trust change (as a plan, applied on Dinis's yes) then the AWS platform site - https://claude.ai/code/session_01Kw9UwAzhau7Us55PugP2V2",
+    "aws.c": "the IaC rename's AWS trust change (as a plan, applied on Dinis's yes) then the AWS platform site - https://claude.ai/code/session_01Kw9UwAzhau7Us55PugP2V2 ; now within conductor.aws.c's AWS Platform programme",
     "instagram.c": "the Instagram agent, started by sites.c at Dinis's word (~22:20 UTC) - https://claude.ai/code/session_01Kw9UwBf2gRkufCCnZs335u",
     "suno.c": "idle: Suno work moves to account B at Dinis's word (~01:18 UTC 23 Nov); key 2518904 to retire once the account B agent works - https://claude.ai/code/session_01Kw9UwEP7o4BBLqwrqdReHq",
     "studio.c": "voiced videos and images for Instagram (welcome, team introduction), handed to instagram.c; OpenRouter key from the environment, never printed, a few USD for the first two pieces - https://claude.ai/code/session_01Kw9UwC3pdjxjDeK5WaZYUD",
