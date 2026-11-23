@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
-  "updated": "2026-11-23T23:18Z",
+  "updated": "2026-11-23T23:20Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -86,7 +86,10 @@
     "dinis-cruz.presentations ready for Dinis to add presentations himself: https://dinis-cruz.presentations.sovereignweb.site/add/ (fb6aa33); what he can do on every site sites.b keeps: https://sites.agents.sovereignweb.site/yours/ (sites.b)",
     "Dinis's principle (never block on him; list what he can do on each site) sent to the whole team",
     "Dinis revised asks 2, 8 and 31 (record 2026-11-23__asks-2-8-31-revised, 23:14 UTC): no IaC push access for strategy.b, grace.b or strategy.d (keys go in their own repositories); feedback is always driven by QR codes; the first handed-over site may be listed on our website without naming its owner. Routed",
-    "Offboarding process drafted for Dinis (ask 39): board/workflow/2026-11-23__offboarding-draft.md, for security.b's review"
+    "Offboarding process drafted for Dinis (ask 39): board/workflow/2026-11-23__offboarding-draft.md, for security.b's review",
+    "Owner pages, listing what Dinis can do himself with nothing waiting on him: South Beacon (6abc7a4), Kate Curtis-Evans (1b5243e), Sarah Cruz (0cb1a11, v0.1.5), design.agents (https://design.agents.sovereignweb.site/owner.html), Suno (4841d42)",
+    "Hub: every \"I want one\" now leads to /start/#get-one with the offer and \"To take it up, email agent@withmandate.ai\"; no Stripe link (hub.b)",
+    "Offboarding draft reviewed by security.b (review 028, pass with changes) and updated: a fast stop now contains the session first, then retires, then revokes"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
