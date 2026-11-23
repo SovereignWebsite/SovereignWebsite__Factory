@@ -29,7 +29,7 @@ Retire the key entry first (step 3, by the conductor), then ask Dinis to revoke 
 - Step 3: old entry retired by its own key in 34e2b08, before the new one.
 - Step 4: open. The old task trig_015LDYEmyDkQNBjbiWuPnBc9 still points at the old session; Dinis decides.
 - Step 5: open. feedback.b re-seals its backups to the new key once Dinis says yes in its session.
-- Step 6: none needed: neither fingerprint of the old conductor key (sha256:fabd2942df366c5f, signing sha256:706a24f8808e02a2) appears in the pki.sgit.ai directory index, read at 23:21 UTC.
+- Step 6: none needed: neither fingerprint of the old conductor key (sha256:fabd2942df366c5f, signing sha256:706a24f8808e02a2) appears in the pki.sgit.ai directory index, read at about 23:17 UTC.
 - Steps 7 and 8: open. They wait for steps 4 and 5 and for Dinis's word.
 
 ## Open questions for Dinis
