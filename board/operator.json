@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-23T11:42Z",
+  "updated": "2026-11-23T11:48Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "Dinis: yes to accountant.agents.sovereignweb.site - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
@@ -13,9 +13,6 @@
     "Dinis: yes in mistral.conductor's session to its signing key file, or conductor.mistral pushes its stashed roster update - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT"
   ],
   "done_recent": [
-    "Chiswick demo made public at Dinis's word, with a 'not the official site' note",
-    "grace.b key published (d3a59df); Site__Artist__Grace-Farrell made by Org apply (b99f5a5); her name cleared (9fe303f)",
-    "dinis-cruz.agenticcells.site hold lifted; queued for transfer to the cv area",
     "feedback.b inbox read key and key store backed up with the conductor, sealed and unopened, outside every repository (Dinis, 21 Nov)",
     "Mistral team keys: mistral.local (renamed from local.mistral), mistral.promptugal, mistral.design published; evals, swarm and team.mistral retired (be55a3a)",
     "factory.b: check-signatures refuses retired keys (pushed as 97f302f; waits on Dinis's merge)",
@@ -27,7 +24,10 @@
     "Per-site Agent Behaviour Policies (Dinis, 21 Nov): /policy/ and policy/abp.json live on 14 sites: South Beacon, Grace Farrell, Sarah Cruz, Emily Cruz, pipeline-demo, whois, google-maps, Hub, Vault and the five startups; Mistral and the five organisation repositories to follow",
     "librarian.b key published (68aa84f); library live at https://library.agents.sovereignweb.site",
     "Onboarding prompts for hub.b and sites.b on the board for their account-D twins (02862c1)",
-    "Board note: an Agent Behaviour Policy on every site (8e47f58)"
+    "Board note: an Agent Behaviour Policy on every site (8e47f58)",
+    "Operator page live: https://hub.sovereignweb.site/operator/ (hub v0.1.16), public-safe data board/operator.json",
+    "Hub lead design The Register live (hub v0.1.17, fc79158), design.b's call",
+    "sites.b's home live: https://sites.agents.sovereignweb.site/ (d5797bc)"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
