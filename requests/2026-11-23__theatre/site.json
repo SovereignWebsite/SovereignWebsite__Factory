@@ -1,0 +1,7 @@
+{
+  "label": "theatre",
+  "group": "tool",
+  "title": "Theatre",
+  "description": "Which productions are running at which theatre on Broadway and in the West End, on a map, from open data, with links to where box office figures are published.",
+  "kind": "demo"
+}
