@@ -1303,7 +1303,7 @@
       "role": "Architect on account A (AWS Platform programme): one API layer with five UIs over it, the twin (one transport, two back ends) and the semantic graph, as designs in docs/architecture/ that the developers build. Takes over from architect.aws.c.",
       "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
       "created": "2026-11-23",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_018yvwtPuQzTBRoKGD45TYFV",
       "fingerprint": "sha256:8699204a5b3a9875",
       "signing_fingerprint": "sha256:2311c1b95a70ba15",
@@ -1318,7 +1318,9 @@
       "ssh_signing": {
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
-      }
+      },
+      "retired": "2026-11-23",
+      "retired_note": "Replaced at restart; key held by a replaced session. Retired by conductor.d@SovereignWebsite.dinis for A3 (a.maestro via d.maestro); old signatures stay valid, no new ones. The fresh session publishes its own key as architect-aws-a-sovereignwebsite-2."
     },
     {
       "id": "cloudformation-aws-a-sovereignwebsite",
@@ -1349,7 +1351,7 @@
       "role": "CloudTrail and CloudWatch on account A (AWS Platform programme): the timeline, per-asset activity and alarms views over the twin's CloudTrail records, and drop-in of a user's own CloudTrail dump. Takes over from cloudtrail.aws.c, whose key was never published.",
       "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
       "created": "2026-11-23",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_018yvwtLsVZvQ5dyyKz8ndG2",
       "fingerprint": "sha256:9ebb596ab7bd764f",
       "signing_fingerprint": "sha256:a3949ea817a57566",
@@ -1364,7 +1366,9 @@
       "ssh_signing": {
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
-      }
+      },
+      "retired": "2026-11-23",
+      "retired_note": "Replaced at restart; key held by a replaced session. Retired by conductor.d@SovereignWebsite.dinis for A3 (a.maestro via d.maestro); old signatures stay valid, no new ones. The fresh session publishes its own key as cloudtrail-aws-a-sovereignwebsite-2."
     },
     {
       "id": "conductor-aws-a-sovereignwebsite",
@@ -1372,7 +1376,7 @@
       "role": "Conductor of the AWS Platform programme on account A: runs the team schedule and log, routes each agent's asks (paths to aws.c, keys to factory.c, Dinis's decisions to pm). Takes over from conductor.aws.c (wave 2).",
       "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
       "created": "2026-11-23",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_018yvwtPiszBTMHKVD4AuDwn",
       "fingerprint": "sha256:0b6383e56398ab9e",
       "signing_fingerprint": "sha256:85fa5ecd69349cb4",
@@ -1387,7 +1391,9 @@
       "ssh_signing": {
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
-      }
+      },
+      "retired": "2026-11-23",
+      "retired_note": "Replaced at restart; key held by a replaced session. Retired by conductor.d@SovereignWebsite.dinis for A3 (a.maestro via d.maestro); old signatures stay valid, no new ones. The fresh session publishes its own key as conductor-aws-a-sovereignwebsite-2."
     },
     {
       "id": "data-aws-a-sovereignwebsite",
@@ -1441,7 +1447,7 @@
       "role": "Developer 2 on account A (AWS Platform programme): the API layer in site/api/ (S3Api's contract and tests) to architect.aws.c's designs, on the twin. Takes over from dev.2.aws.c.",
       "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
       "created": "2026-11-23",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_018yvwtN79NSkFnwbV7UzFuc",
       "fingerprint": "sha256:a56d8c1b2f8c2c17",
       "signing_fingerprint": "sha256:94ed2eea80dc6550",
@@ -1456,7 +1462,9 @@
       "ssh_signing": {
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
-      }
+      },
+      "retired": "2026-11-23",
+      "retired_note": "Replaced at restart; key held by a replaced session. Retired by conductor.d@SovereignWebsite.dinis for A3 (a.maestro via d.maestro); old signatures stay valid, no new ones. The fresh session publishes its own key as dev-2-aws-a-sovereignwebsite-2."
     },
     {
       "id": "ontology-aws-a-sovereignwebsite",
@@ -1464,7 +1472,7 @@
       "role": "Ontologist on account A (AWS Platform programme): the resource graph and taxonomy of every AWS asset, generated from the twin (pipeline P2). Takes over from ontology.aws.c.",
       "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
       "created": "2026-11-23",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_018yvwtPTqbaais5DzZ2eaws",
       "fingerprint": "sha256:bf28264417a75af7",
       "signing_fingerprint": "sha256:0509fc6d09fb9b50",
@@ -1479,7 +1487,9 @@
       "ssh_signing": {
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
-      }
+      },
+      "retired": "2026-11-23",
+      "retired_note": "Replaced at restart; key held by a replaced session. Retired by conductor.d@SovereignWebsite.dinis for A3 (a.maestro via d.maestro); old signatures stay valid, no new ones. The fresh session publishes its own key as ontology-aws-a-sovereignwebsite-2."
     },
     {
       "id": "pm-aws-a-sovereignwebsite",
