@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-23T16:53Z",
+  "updated": "2026-11-23T16:54Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -104,7 +104,8 @@
     "05:14 UTC 23 Nov: helm.d asked conductor.d (or factory.d) to add studio.d's key; refused under keys rule 1aa1829 and told the route (studio.d publishes it itself). helm.d and sherpa.d added to Dinis's access ask",
     "06:00 UTC 23 Nov: strategy.d's platform-sites addendum (via helm.d; PrompTugal__News__Website 9550a4136) recorded: OpenRouter first but a terms check by counsel.d before any build (free client on the user's own key); Odoo UI with plan-then-apply; AWS read-only budgets and costs, changes stay Dinis's; OWASP behind Wikipedia until its licence is known. All still on hold until Dinis says go",
     "06:13 UTC 23 Nov: counsel.d's reading (via helm.d; News repository board/team/counsel.d/notes/2026-11-23-openrouter-terms-and-owasp-licence.md, v0.1.2113, not legal advice) recorded: OpenRouter allows a free client on the user's own key, but no reselling, relaying, mark-up, scraping, copied catalogue, look-alike interface or implied affiliation; red-teaming models needs its written approval; OWASP Top Ten is CC BY-SA 4.0, so adapted text is share-alike",
-    "16:53 UTC 23 Nov: all 15 open asks sent to d.decisions in that form (harness H1-H4, decisions D1-D9); the workflow passed to sites.d (for streaming.d, wordpress.d, donna-freed.d, pybot.d), hub.d, design.d, synthetic-users.d, library.d, factory.d, chiswick-cheese-market.d, security.d (asked to review the six checks), counsel.d and observability.d"
+    "16:53 UTC 23 Nov: all 15 open asks sent to d.decisions in that form (harness H1-H4, decisions D1-D9); the workflow passed to sites.d (for streaming.d, wordpress.d, donna-freed.d, pybot.d), hub.d, design.d, synthetic-users.d, library.d, factory.d, chiswick-cheese-market.d, security.d (asked to review the six checks), counsel.d and observability.d",
+    "16:54 UTC 23 Nov: pybot.d published its own key on dev (2347066, signing sha256:745eca03a5062d8e) at Dinis's word in its session; taken off the Factory-access ask. security.d (its session refused PrompTugal__News__Website read) sent the b.decisions relay brief text (sha256 prefix f50c011446f3582c) to review against its seven questions: where the yes lives, record signer, scope binding, one use and replay, whether d.decisions checks asks, one-way doors as refusals, refused session actions"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -116,7 +117,7 @@
     "start every new agent with the Factory reachable, or its key on dev, before it works (incident lesson)"
   ],
   "asks": [
-    "Dinis: in your own words in each session, allow (1) security.d to push its key commit adfc5ff, (2) chiswick-cheese-market.d, pybot.d, slides.d (https://claude.ai/code/session_015gaHddnGD3ja8j2kzPwDp8) and studio.d to add SovereignWebsite__Factory (now __IaC) with push, (3) helm.d (https://claude.ai/code/session_015gaHdbUFC93JvpTQHrx8WV) and sherpa.d to add their Site__Agent__ homes with push (refused as 'Unauthorized Access' though check_repo_access says attachable). All four refuse to act on a rule relayed from another repository, rightly, and their sessions' permission checks refuse add_repo - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
+    "Dinis: in your own words in each session, allow (1) security.d to push its key commit adfc5ff, (2) chiswick-cheese-market.d, slides.d (https://claude.ai/code/session_015gaHddnGD3ja8j2kzPwDp8) and studio.d to add SovereignWebsite__Factory (now __IaC) with push, (3) helm.d (https://claude.ai/code/session_015gaHdbUFC93JvpTQHrx8WV) and sherpa.d to add their Site__Agent__ homes with push (refused as 'Unauthorized Access' though check_repo_access says attachable). All four refuse to act on a rule relayed from another repository, rightly, and their sessions' permission checks refuse add_repo - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: start feedback.d, account D's inbox agent under your one-per-account rule (lanes claimed with conductor.c first; wakes staggered with feedback.c)? And how often should it wake? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: key requests are built but inert until you create the factory signing key (a secret in the apply environment) and give the App Contents write on the target repositories (PrompTugal__News__Data, __Bulletins first) - https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
     "Dinis: three teams now write to the Factory and the same sites (.b paused, .c and .d active: factory.c and factory.d, hub.c and hub.d, chiswick-cheese-market.c and .d). Who is the .c team's conductor, and should one factory agent own build/requests.mjs while the others send it requests? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
