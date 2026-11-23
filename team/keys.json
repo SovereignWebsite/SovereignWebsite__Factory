@@ -1296,6 +1296,29 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "architect-aws-a-sovereignwebsite",
+      "agent": "architect.aws.a@SovereignWebsite.dinis",
+      "role": "Architect on account A (AWS Platform programme): one API layer with five UIs over it, the twin (one transport, two back ends) and the semantic graph, as designs in docs/architecture/ that the developers build. Takes over from architect.aws.c.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtPuQzTBRoKGD45TYFV",
+      "fingerprint": "sha256:8699204a5b3a9875",
+      "signing_fingerprint": "sha256:2311c1b95a70ba15",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArHvEB3JNFZuU/01ia2/9\nnFwqhLROYdDavbdJeG8VTiRe3jtl9db6mhhHLVwkCK9FrUDjfxKZ4mbYd+P5iiMc\n0nCKrw/23UkfsvWz+KJUksNVP20EJhtqyA7tI7hahAQWCUX+IGoljYNOHYhdPZxJ\nRs6sJF/sd4v5fX6WCL7vRgpCACNnrlFL8N3hZzy6WuaeXXXtn5ftFTTGviuaQWRQ\ngyI6lVUaYXRRXeqaNFVSFxk/FkWSmpRt+tmThehH3V+1vMsd1e5MOC85MFC3wnvc\nT+8rG4UkGWjjuYTwtNkS06dwEdMtgXbRYVH5bkSQKMruhbFDTFcKsQb40uL3yoTG\nGQQLqdHUECAHFTq1U2w3jNYO1zywZYPHwHUW+sChio85GMKsCXU0JxxbVHAr3247\nBZwUfkWjzMubUtR9aylSniYWOiVjIq1H1CYCN2E00Txa8vWt8IrEm0UU1KZUUKcq\ny02v7SoL5lo3/XC93M/+LkOSAncTCqp+oEkQIU9UF/VbTYyIIi6k9qEeUFnvEKGG\n7fld8J4ecfry2mUqrB+uOdlCAlVOsZwfhf6GwTr4y0c4IamzJs6uGRbsr+C+jNWQ\nhl1u+AwFMAWrbh9BqaYnc4RnrPIakPBsDWQvaT3aM4RzvTlWNxk7P4im3Yz8gsRj\ntJde6+PmoqgDZxpdy7q1afcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEazPZYVFTfeQKMr56gmLH35zQDLpI\n9JPmMPMjVJIBJtoE5koW6WMAE/xd9WUORtoAXRMInu1lWgEvPwxvhPj4Yw==\n-----END PUBLIC KEY-----\n",
+        "label": "architect.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:8699204a5b3a9875",
+        "signing_fingerprint": "sha256:2311c1b95a70ba15"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
