@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-23T02:55Z",
+  "updated": "2026-11-23T03:25Z",
   "state": "all six account C keys on Factory dev (93b947f); conductor.c's and observability.c's policy entries and this board wait for Dinis's merge",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -84,6 +84,7 @@
   ],
   "exceptions": [
     "2026-11-23 02:46 UTC: the sealed-store guide (aws.c's docs/sealed-store.md) assigned to factory.c without Dinis's word, as a two-way door: into seed/shared so every new site gets it, on a branch for merge (seed/ still needs Dinis's merge by CLAUDE.md)",
-    "2026-11-23 02:46 UTC: hub.c edits hub.b's files (two top-bar links, two llms.txt lines) on its own recommendation under the no-blocking rule; noted for conductor.b"
+    "2026-11-23 02:46 UTC: hub.c edits hub.b's files (two top-bar links, two llms.txt lines) on its own recommendation under the no-blocking rule; noted for conductor.b",
+    "2026-11-23 03:25 UTC: owasp.c pushed its first slice (0d8db9a) to Site__Platform__Owasp before its key (23f6c39) is on IaC dev, at Dinis's \"And push it\" in its session (the pattern of the 22 Nov incident, here at the owner's word); the site's signer check refuses to deploy until the key lands. factory.c carries 23f6c39 byte for byte"
   ]
 }
