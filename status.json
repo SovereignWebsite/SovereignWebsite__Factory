@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-23T11:57Z",
+  "updated": "2026-11-23T12:04Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -59,7 +59,8 @@
     "Operator page reads board/operator.json live (hub v0.1.18)",
     "Hub alternative design The Gallery live at https://hub.sovereignweb.site/gallery/ (v0.1.19)",
     "Hub alternative design Contact Sheet live at https://hub.sovereignweb.site/contact-sheet/ (v0.1.20)",
-    "Hub alternative design The Street live at https://hub.sovereignweb.site/street/ (v0.1.21)"
+    "Hub alternative design The Street live at https://hub.sovereignweb.site/street/ (v0.1.21)",
+    "Hub: all five designs live (Register, Gallery, Contact Sheet, Street, Line at /line/, v0.1.22; count fix v0.1.23). Startup brochures' design score up from 3.2 to 3.5"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
