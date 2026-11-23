@@ -1,0 +1,10 @@
+{
+  "label": "dinis-cruz",
+  "group": "cv",
+  "title": "Dinis Cruz",
+  "description": "Dinis Cruz: AI, cyber security and semantic knowledge graphs, built in the open; his CV as a presentation, and what recommendations can do for a career.",
+  "kind": "owner",
+  "from": { "owner": "AgentiCCells", "repo": "AgentiCCells__Site__Dinis-Cruz", "address": "dinis-cruz.agenticcells.site" },
+  "signed": true,
+  "apply": "dry-run"
+}

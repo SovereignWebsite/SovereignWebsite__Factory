@@ -1,0 +1,8 @@
+{
+  "label": "algarve-evolution",
+  "group": "organisation",
+  "title": "Algarve Evolution",
+  "description": "A private preview. Scan, paste or drop the QR code you were given to open it.",
+  "kind": "owner",
+  "access": "vault"
+}

@@ -1,0 +1,8 @@
+{
+  "label": "accountant",
+  "group": "agents",
+  "agent": "accountant.b@SovereignWebsite.dinis",
+  "title": "accountant.b",
+  "description": "What the SWS agents cost and where it is spent: spend per agent, per loop and per image, from counted figures.",
+  "kind": "owner"
+}

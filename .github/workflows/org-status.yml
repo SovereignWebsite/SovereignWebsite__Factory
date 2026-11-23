@@ -1,0 +1,31 @@
+name: Org status
+# After Org apply, or by hand: report each site's Pages state and deploy runs. Changes nothing.
+on:
+  workflow_run:
+    workflows: ['Org apply']
+    types: [completed]
+  workflow_dispatch:
+permissions:
+  contents: read
+# bash with pipefail, so a step piped into tee still fails when its command fails.
+defaults:
+  run:
+    shell: bash
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    environment: apply
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - id: app
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.FACTORY_APP_ID }}
+          private-key: ${{ secrets.FACTORY_APP_PRIVATE_KEY }}
+          owner: SovereignWebsite
+      - env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+        run: node build/org-status.mjs | tee -a "$GITHUB_STEP_SUMMARY"

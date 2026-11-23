@@ -1,0 +1,11 @@
+{
+  "label": "33n-ventures",
+  "group": "invest",
+  "title": "33N Ventures",
+  "description": "A private preview. Scan, paste or drop the QR code you were given to open it.",
+  "kind": "owner",
+  "access": "vault",
+  "previous": [
+    "33n-ventures.invest.sovereignwebsite.site"
+  ]
+}

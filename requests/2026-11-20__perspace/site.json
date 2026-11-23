@@ -1,0 +1,9 @@
+{
+  "label": "perspace",
+  "group": "company",
+  "domain": "sovereignweb.site",
+  "title": "Perspace",
+  "description": "A private preview. Scan, paste or drop the QR code you were given to open it.",
+  "kind": "owner",
+  "access": "vault"
+}

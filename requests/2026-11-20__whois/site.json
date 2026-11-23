@@ -1,0 +1,7 @@
+{
+  "label": "whois",
+  "group": "tool",
+  "title": "Whois",
+  "description": "Who holds a domain or an IP address, from the registries' own RDAP records. No ads, no tracking.",
+  "kind": "demo"
+}

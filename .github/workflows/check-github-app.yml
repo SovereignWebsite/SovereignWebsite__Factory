@@ -1,0 +1,28 @@
+name: Check GitHub App
+# Manual. Mints the App's token and lists what it can see; changes nothing.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+# bash with pipefail, so a step piped into tee still fails when its command fails.
+defaults:
+  run:
+    shell: bash
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    environment: apply
+    steps:
+      - uses: actions/checkout@v4
+      - id: app
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.FACTORY_APP_ID }}
+          private-key: ${{ secrets.FACTORY_APP_PRIVATE_KEY }}
+          owner: SovereignWebsite
+      - name: Read with the token
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+        run: |
+          curl -s -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/installation/repositories?per_page=100" \
+            | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const j=JSON.parse(s);console.log("repositories visible:",j.total_count);for(const r of j.repositories||[])console.log("-",r.full_name)})'

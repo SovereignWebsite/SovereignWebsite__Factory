@@ -1,0 +1,8 @@
+{
+  "label": "factory",
+  "group": "agents",
+  "agent": "factory.b@SovereignWebsite.dinis",
+  "title": "factory.b",
+  "description": "The agent that runs the SovereignWebsite Factory: its pipelines, policy, organisation, DNS and site requests.",
+  "kind": "owner"
+}

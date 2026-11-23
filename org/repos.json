@@ -1,0 +1,84 @@
+{
+  "about": "The SovereignWebsite organisation's repositories, as code. org-apply creates any that are missing and keeps their settings as written here. It never deletes, transfers, archives or makes private (policy/abp.json). Each site repository is seeded with the files in its seed/ folder (only files that are missing are added), Pages on from a workflow on dev, and its apex domain. Every repository gives the teams in defaults.teams their permission (the agents' team gets push, never admin).",
+  "org": "SovereignWebsite",
+  "defaults": {
+    "visibility": "public",
+    "default_branch": "dev",
+    "has_wiki": false,
+    "has_projects": false,
+    "delete_branch_on_merge": true,
+    "allow_merge_commit": true,
+    "allow_squash_merge": false,
+    "allow_rebase_merge": false,
+    "teams": {
+      "sovereignwebsite-agents-ci": "push"
+    },
+    "protect": true
+  },
+  "repos": [
+    {
+      "name": "SovereignWebsite__IaC",
+      "aka": [
+        "SovereignWebsite__Factory"
+      ],
+      "renamed_by": "Dinis, 22 Nov 2026 ~20:40 UTC (in maestro.c's session) and ~21:16 UTC in factory.c's session: the Factory becomes IaC; Org apply renames it from this aka, so no one renames it by hand and the hourly run never recreates the old name.",
+      "description": "Control repository: the organisation as code, and requests for hosted sovereign websites on sovereignwebsite.site. Driven by CI under an Agent Behaviour Policy.",
+      "exists_by": "Dinis, 19 Nov 2026",
+      "pages": false
+    },
+    {
+      "name": "SovereignWebsite__Website",
+      "description": "sovereignwebsite.ai: the Sovereign Agentic Website brand. Built by agents, owned by you.",
+      "homepage": "https://sovereignwebsite.ai",
+      "pages": true,
+      "cname": "sovereignwebsite.ai",
+      "seed": "seed/SovereignWebsite__Website"
+    },
+    {
+      "name": "SovereignWebsite__Org",
+      "description": "sovereignwebsite.org: the open pattern for a Sovereign Agentic Website, free for anyone to use.",
+      "homepage": "https://sovereignwebsite.org",
+      "pages": true,
+      "cname": "sovereignwebsite.org",
+      "seed": "seed/SovereignWebsite__Org"
+    },
+    {
+      "name": "SovereignWebsite__Site",
+      "description": "sovereignwebsite.site: where hosted sovereign websites live, at <name>.sovereignwebsite.site.",
+      "homepage": "https://sovereignwebsite.site",
+      "pages": true,
+      "cname": "sovereignwebsite.site",
+      "seed": "seed/SovereignWebsite__Site"
+    },
+    {
+      "name": "SovereignWebsite__Hub",
+      "description": "hub.sovereignweb.site: the gallery of sovereign websites, each with its owner, team, address, repository, vault, licence and versions.",
+      "homepage": "https://hub.sovereignweb.site",
+      "pages": true,
+      "cname": "hub.sovereignweb.site",
+      "seed": "seed/SovereignWebsite__Hub",
+      "moved_from": "hub.sovereignwebsite.site (Dinis, 20 Nov 2026 ~12:54 UTC: \"https://hub.sovereignweb.site/ (currently at https://hub.sovereignwebsite.site/ but needs to move)\")"
+    },
+    {
+      "name": "SovereignWebsite__Vault",
+      "description": "vault.sovereignwebsite.site: the base for sovereign websites powered by sgit vaults; each site lives in a public repository and an sgit vault holding the same files.",
+      "homepage": "https://vault.sovereignwebsite.site",
+      "pages": true,
+      "cname": "vault.sovereignwebsite.site",
+      "seed": "seed/SovereignWebsite__Vault"
+    },
+    {
+      "name": "Redirect__Hub",
+      "description": "hub.sovereignwebsite.site: moved to https://hub.sovereignweb.site",
+      "homepage": "https://hub.sovereignweb.site",
+      "pages": true,
+      "cname": "hub.sovereignwebsite.site",
+      "seed": "seed/redirect-template",
+      "vars": {
+        "from": "hub.sovereignwebsite.site",
+        "to": "hub.sovereignweb.site",
+        "label": "hub"
+      }
+    }
+  ]
+}

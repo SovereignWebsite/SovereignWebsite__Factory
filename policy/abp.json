@@ -1,0 +1,540 @@
+{
+  "about": "Agent Behaviour Policy (ABP) for SovereignWebsite__IaC. CI reads this file on every run: a pipeline may take only the actions listed for it, an agent's commits may change only the paths listed for it, and every privilege held by the GitHub App or the AWS role is listed here with its reason. Anything not listed is refused. Changes to this file, to .github/ and to build/ take effect only when Dinis merges them.",
+  "version": 1,
+  "owner": "Dinis Cruz",
+  "source": "Dinis, 19 November 2026 ~15:10 UTC in the conductor session recorded in team/keys.json: \"let's take the opportunity to add as much automation (via CI pipelines) as possible, and then use our ABP to control it\"; \"let's try to do this completely from the CI pipeline and if we need to add more privs to the GH App and the AWS Role, we'll add them\".",
+  "agents": {
+    "conductor.b@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
+      "may_change": [
+        "status.json",
+        "REALITY.md",
+        "board/**",
+        "README.md",
+        "CLAUDE.md",
+        "LICENSE",
+        "team/keys.json"
+      ],
+      "needs_dinis_merge": [
+        "team/keys.json"
+      ],
+      "branches": [
+        "dev"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "name a private prospect"
+      ],
+      "seed_paths_source": "Dinis, 19 Nov 2026 ~16:30 UTC in the conductor session, answering the proposal to add seed/** to may_change and needs_dinis_merge: \"yes\".",
+      "scope_source": "Dinis, 20 Nov 2026 ~10:04 UTC in the conductor session: \"Yes agreed\", to the conductor proposing factory.b as the only agent that writes the Factory pipeline, policy, org, requests and DNS files; sites.b out of the Factory, sending requests to factory.b by message; the conductor narrowed to status.json, REALITY.md and board/**.",
+      "keys_source": "Dinis, 20 Nov 2026 ~10:20 UTC in the factory.b session: \"a conductor ... is the only one that should be able to update the keys for its team, and the master should be the only one who can update the key for the conductor\"."
+    },
+    "migration.b@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_01Kw9UwDKiseUFyqtG1xyVaG",
+      "may_change": [
+        "board/migration/**"
+      ],
+      "needs_dinis_merge": [],
+      "branches": [
+        "dev"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "name a private prospect",
+        "transfer, delete or archive a repository"
+      ],
+      "source": "Dinis, 20 Nov 2026 ~09:45 UTC in the conductor session: \"yes to adding migration.b to the policy, limited to board/migration/**\"."
+    },
+    "factory.b@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+      "may_change": [
+        ".github/**",
+        "build/**",
+        "test/**",
+        "org/**",
+        "seed/**",
+        "docs/aws-oidc.md",
+        ".gitignore",
+        "policy/**",
+        "requests/**"
+      ],
+      "needs_dinis_merge": [
+        "policy/**",
+        ".github/**",
+        "build/**",
+        "org/**",
+        "seed/**",
+        "requests/**"
+      ],
+      "branches": [
+        "dev"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "name a private prospect"
+      ],
+      "source": "Dinis, 20 Nov 2026 ~10:10 UTC in the conductor session: \"Yes to those policy changes\".",
+      "note": "policy/** is for proposals: a change there takes effect only when Dinis merges it.",
+      "requests_note": "Requests from other agents arrive by message quoting Dinis's yes for that site; factory.b checks them against requests/README.md and commits them signed, naming on whose behalf.",
+      "scope_source": "Dinis, 20 Nov 2026 ~10:04 UTC in the conductor session: \"Yes agreed\", to the conductor proposing factory.b as the only agent that writes the Factory pipeline, policy, org, requests and DNS files; sites.b out of the Factory, sending requests to factory.b by message; the conductor narrowed to status.json, REALITY.md and board/**."
+    },
+    "conductor.d@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
+      "may_change": [
+        "status.json",
+        "REALITY.md",
+        "board/**",
+        "README.md",
+        "CLAUDE.md",
+        "LICENSE",
+        "team/keys.json"
+      ],
+      "needs_dinis_merge": [
+        "team/keys.json"
+      ],
+      "branches": [
+        "dev",
+        "work/conductor.d"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "name a private prospect"
+      ],
+      "source": "Dinis, 21 Nov 2026 ~22:04-22:10 UTC in maestro.d (account-d)'s session (https://claude.ai/code/session_015gaHdbdtdAPC4v2AstRS8T): \"create ... conductor.d@SovereignWebsite.dinis sites.d@SovereignWebsite.dinis hub.d@SovereignWebsite.dinis which are all twins of the .b ones\"; \"they work alongside the B agents ... Opus for conductor, and I can merge the factory policies\". The twin of conductor.b's entry, on account D."
+    },
+    "factory.d@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
+      "may_change": [
+        ".github/**",
+        "build/**",
+        "test/**",
+        "org/**",
+        "seed/**",
+        "docs/aws-oidc.md",
+        ".gitignore",
+        "policy/**",
+        "requests/**",
+        "keys/**"
+      ],
+      "needs_dinis_merge": [
+        "policy/**",
+        ".github/**",
+        "build/**",
+        "org/**",
+        "seed/**",
+        "requests/**"
+      ],
+      "branches": [
+        "dev"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "name a private prospect"
+      ],
+      "source": "Dinis, 22 Nov 2026 ~01:05 UTC in conductor.d's session (https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL): \"Yes please start a factory.d agent, I need a couple changes made\". The twin of factory.b's entry, on account D.",
+      "note": "policy/** is for proposals: a change there takes effect only when Dinis merges it. factory.d makes only the changes Dinis gives it in its own session, pulls first and never overwrites factory.b's work unread.",
+      "keys_note": "keys/** (key requests and their reviews) is pushed to dev by factory.d without Dinis's merge, after the reviews the key-apply pipeline checks. Dinis, 22 Nov 2026 13:39 UTC on the Decision Desk (relayed by conductor.d from maestro.d's session): \"I like factory doing it because that leaves a full track record and if infrastructure as code, but the factory agent should merge it after a security review. For tasks like this I should not be the bottleneck\"; in factory.d's session ~15:30 UTC: \"build the factory [signed] key ... every time you do here, you should also do a security check and role-based security checks\"."
+    },
+    "factory.c@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_01Kw9UwFQ86g2ZeXQ2edTAjh",
+      "may_change": [
+        ".github/**",
+        "build/**",
+        "test/**",
+        "org/**",
+        "seed/**",
+        "docs/aws-oidc.md",
+        ".gitignore",
+        "policy/**",
+        "requests/**"
+      ],
+      "needs_dinis_merge": [
+        "policy/**",
+        ".github/**",
+        "build/**",
+        "org/**",
+        "seed/**",
+        "requests/**"
+      ],
+      "branches": [
+        "dev",
+        "work/factory.c",
+        "work/factory.c-iac"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "name a private prospect"
+      ],
+      "source": "Started by maestro.c (account-c) at Dinis's word, 22 Nov 2026 ~17:25 UTC in its session (https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp): \"we will also need the factory.c@SovereignWebsite.dinis since that one is doing key changes and workflows at the moment\". The twin of factory.d's entry, on account C; proposed with the IaC rename Dinis asked factory.c to get ready (~21:16 UTC in its session).",
+      "note": "policy/** is for proposals: a change there takes effect only when Dinis merges it. factory.c makes only the changes Dinis gives it in its own session, pulls first and never overwrites factory.b's or factory.d's work unread."
+    },
+    "security.d@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_015gaHdegs3vxyNtU2tmc28P",
+      "may_change": [
+        "keys/**/review.security.json"
+      ],
+      "branches": [
+        "dev"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "change a key request it reviews",
+        "review a request it made"
+      ],
+      "note": "The security reviewer of key requests (identity, keys and targets): it writes only its own review files, signed with its own key, naming the exact request commit it reviewed. Verdicts pass, fail or needs-a-person; changes it asks for are listed under actions with verdict fail.",
+      "source": "Dinis, 22 Nov 2026 ~16:33 UTC in factory.d's session: \"yes, to starting security [.d] and [counsel.d] with keys. Absolutely, they need to be signing the stuff they do\"; started by conductor.d."
+    },
+    "counsel.d@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_015gaHdaCnEbzJ8Q8CLjisbW",
+      "may_change": [
+        "keys/**/review.counsel.json"
+      ],
+      "branches": [
+        "dev"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "change a key request it reviews",
+        "review a request it made"
+      ],
+      "note": "The counsel reviewer of key requests (policy, consent, privacy, third parties' names and terms, and licences): it writes only its own review files, signed with its own key, naming the exact request commit it reviewed. Verdicts pass, fail or needs-a-person; changes it asks for are listed under actions with verdict fail.",
+      "source": "Dinis, 22 Nov 2026 ~16:33 UTC in factory.d's session: \"yes, to starting security [.d] and [counsel.d] with keys. Absolutely, they need to be signing the stuff they do\"; started by conductor.d."
+    },
+    "decisions.b@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
+      "may_change": [
+        "decisions/**",
+        "board/decisions.b/**"
+      ],
+      "needs_dinis_merge": [
+        "decisions/**"
+      ],
+      "branches": [
+        "dev"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "record a decision without Dinis's words in its own session"
+      ],
+      "scope_source": "Dinis, 23 Nov 2026, in factory.b's session: \"we need to have a workflow for you to push ... I want to do it through decisions\"; decisions.b started at his word (maestro.b, ~12:20 UTC). Entry drafted by factory.b from decisions.b's proposal; needs_dinis_merge on decisions/** is dropped once build/decisions.mjs is merged."
+    }
+  },
+  "pipelines": {
+    "checks": {
+      "runs_on": [
+        "pull_request to dev",
+        "push to dev"
+      ],
+      "allowed": [
+        "read repository"
+      ],
+      "github_token": {
+        "contents": "read"
+      }
+    },
+    "org-apply": {
+      "runs_on": [
+        "push to dev that changes org/ or policy/",
+        "hourly schedule (converges: HTTPS once certificates are issued; every sixth hour it also nudges a domain with no certificate)",
+        "by hand"
+      ],
+      "environment": "apply",
+      "allowed": [
+        "repo.create",
+        "repo.update_settings",
+        "branch.create_dev",
+        "repo.set_default_branch",
+        "pages.enable",
+        "repo.seed",
+        "pages.set_cname",
+        "team.grant_push",
+        "repo.protect_branches",
+        "pages.enforce_https",
+        "pages.nudge_certificate",
+        "repo.rename",
+        "repo.invite_collaborator"
+      ],
+      "refused_always": [
+        "repo.delete",
+        "repo.transfer",
+        "repo.archive",
+        "repo.make_private",
+        "member.change",
+        "app.change",
+        "team.grant_admin",
+        "team.grant_maintain",
+        "ruleset.delete",
+        "ruleset.weaken"
+      ],
+      "note": "A repository that exists but is not in org/repos.json is reported, never deleted. repo.seed only adds files that are missing on dev, never overwrites. pages.nudge_certificate re-sets the same custom domain only when Pages has no certificate or a failed one, so GitHub retries issuing it; it never runs while a certificate is pending.",
+      "protection": {
+        "main": "no deletion, no force push, no direct update; only organisation admins (Dinis) bypass, so main moves only when Dinis merges a release",
+        "dev": "no deletion, no force push; agents push here, and every push runs Checks including the policy path check"
+      },
+      "nudge_source": "Dinis, 20 Nov 2026 ~10:20 UTC in the factory.b session: \"you have to run that regularly ... until they are stable\".",
+      "rename_note": "repo.rename only from a name a request lists as aka (its old Site__<label> or Redirect__<label>) to the name the request gives, Site__[<Group>__]<Name> (Dinis, 20 Nov 2026 ~12:28 UTC). GitHub keeps redirecting the old name. One more: SovereignWebsite__Factory to SovereignWebsite__IaC, the aka in org/repos.json (Dinis, 22 Nov 2026 ~21:16 UTC in factory.c's session: \"can you create everything and then get everything ready\"; the rename is Org apply's, so the hourly run never recreates the old name).",
+      "collaborator_note": "repo.invite_collaborator: only a GitHub login a site request names under \"collaborators\", only with push (write), on that site repository only; a login GitHub does not know is reported, never invited. Never admin or maintain (Dinis, 20 Nov 2026 ~14:44 UTC: \"hi can you add kateandphilce-jpg as the writer to kate's repo\").",
+      "signers_note": "Every seed carries .github/ci/signers.mjs and .github/workflows/signers.yml: each new commit on a site's dev is checked against the agent keys live in this repository's team/keys.json (an Agent: commit), or must be a commit GitHub verified (a person's); an \"Owner override: <quote>, <where>\" line is listed, not refused. New sites run it in pages.yml before the build, so a refused commit is not deployed. Sites already made get the two files from repo.seed (missing files only, nothing overwritten): there it turns the run red and names the commit; it blocks the deploy only once the keeper adds the step to the site's own pages.yml. Sites moved in by transfer are not seeded and do not get it. Source: incident board/incidents/2026-11-22__pushed-before-key-published.md, proposal 1; Dinis, 22 Nov 2026 ~15:30 UTC in factory.d's session: \"Yes to the sign check. Yes to the org apply to the sites already there.\""
+    },
+    "external-collaborators": {
+      "runs_on": [
+        "with Org apply: push to dev that changes org/ or policy/, the hourly schedule, by hand"
+      ],
+      "environment": "apply",
+      "allowed": [
+        "repo.add_collaborator"
+      ],
+      "refused_always": [
+        "repo.remove_collaborator",
+        "repo.grant_admin",
+        "repo.grant_maintain",
+        "repo.delete",
+        "repo.transfer",
+        "member.change",
+        "app.change"
+      ],
+      "limits": {
+        "grants": [
+          {
+            "repository": "PrompTugal/PrompTugal__News__Bulletins",
+            "user": "diniscruz-agent",
+            "permission": "push"
+          },
+          {
+            "repository": "PrompTugal/PrompTugal__News__Data",
+            "user": "diniscruz-agent",
+            "permission": "push"
+          }
+        ]
+      },
+      "note": "Only a grant listed both here and in org/external-collaborators.json: that repository, that login, push (write) only. It adds a missing collaborator or raises read or triage to push; a pending invitation, or push or more, is left as it is. It never removes anyone. One token per owner, limited to the listed repositories (.github/workflows/org-apply.yml).",
+      "source": "Dinis, 22 Nov 2026 ~01:11 UTC in factory.d's session: \"can you make sure the GH user diniscruz-agent is a writer on the repo PrompTugal/PrompTugal__News__Bulletins\"; ~01:16 UTC: \"App was already installed but needed updates permissions (which I did) So can you build it\". PrompTugal__News__Data: Dinis, 22 Nov 2026 ~03:53 UTC in factory.d's session: \"can you add dinisCruz-agent push access to PrompTugal/PrompTugal__News__Data\"."
+    },
+    "key-apply": {
+      "runs_on": [
+        "push to dev that changes keys/**",
+        "by hand"
+      ],
+      "environment": "apply",
+      "allowed": [
+        "repo.add_key"
+      ],
+      "refused_always": [
+        "repo.edit_key",
+        "repo.remove_key",
+        "repo.retire_key",
+        "repo.add_key_without_review"
+      ],
+      "factory_agent": "factory.pipeline@SovereignWebsite.dinis",
+      "factory_key": {
+        "state": "not made yet: Dinis makes the key pair, keeps the private half only as the secret FACTORY_SIGNING_KEY in the apply environment, and its public half is added here and to each target's team/keys.json as factory.pipeline@SovereignWebsite.dinis",
+        "public": ""
+      },
+      "limits": {
+        "targets": [
+          "PrompTugal/PrompTugal__News__Data",
+          "PrompTugal/PrompTugal__News__Bulletins"
+        ],
+        "requester_roles": [
+          "factory"
+        ],
+        "reviews": [
+          "security",
+          "counsel"
+        ]
+      },
+      "note": "A key request is keys/<date>__<id>/request.json, committed signed by a requester role; a security review and a counsel review (reviews_note). factory.d pushes both to dev without Dinis's merge; build/key-requests.mjs checks every rule, then adds the one entry to each target's team/keys.json on dev, in a commit signed by the factory key, citing the request and review commits. It never edits, retires or removes a key and skips an agent that already has a live key there. Each target's own signature check must accept a key-adding commit signed by the factory key (a one-off change in that repository, by a key already listed there or by Dinis).",
+      "source": "Dinis, 22 Nov 2026 13:39 UTC on the Decision Desk (relayed by conductor.d from maestro.d's session): \"I like factory doing it because that leaves a full track record and if infrastructure as code, but the factory agent should merge it after a security review. For tasks like this I should not be the bottleneck\"; in factory.d's session ~15:30 UTC: \"build the factory [signed] key ... every time you do here, you should also do a security check and role-based security checks\".",
+      "reviews_note": "Each key request needs one review per role listed in limits.reviews, as keys/<date>__<id>/review.<role>.json: committed and signed by an agent of that role, naming the exact request commit, with its verdict (pass, fail or needs-a-person), what it checked and what it did or asks (actions). The requester and every reviewer are different agents in different roles. Only all-pass applies; needs-a-person waits for Dinis or a lawyer, recorded in a new review. Each review's checks and actions are printed in the run summary and quoted in the commit that adds the key. Counsel checks, one line each: licences of what is used; consent of anyone named; personal data and privacy; third parties' names and terms; our own policies. Counsel flags and records; it does not decide the law. Dinis, 22 Nov 2026 ~16:35 UTC in factory.d's session: \"Yes, you should have reviews for those key requests where you should have security and counsel. I agree. And then report if there was any actions.\"; earlier: \"we always want a position where we never knowingly break a law or break a requirement or break a license\"."
+    },
+    "dns-apply": {
+      "runs_on": [
+        "push to dev that changes org/dns.json"
+      ],
+      "environment": "apply",
+      "allowed": [
+        "route53.upsert_record"
+      ],
+      "refused_always": [
+        "route53.delete_record",
+        "route53.delete_zone",
+        "route53.create_zone",
+        "route53domains.transfer",
+        "route53domains.update_nameservers"
+      ],
+      "status": "active once the apply environment has SW_AWS_ROLE_ARN (a role for this repository) and the three SW_ZONE_ID_* variables",
+      "note": "UPSERT only, records named in org/dns.json, only in the three sovereignwebsite zones; the AWS role enforces the same limits (docs/aws-oidc.md).",
+      "zones": [
+        "sovereignwebsite.ai",
+        "sovereignwebsite.org",
+        "sovereignwebsite.site",
+        "sovereignweb.site"
+      ],
+      "zones_source": "Dinis, 20 Nov 2026 ~11:38 UTC in the sites.b session: \"we are going to be using sovereignweb.site since that is a better domain (which I just wired up to AWS Hosted Zone)\". Its records are written only once SW_ZONE_ID_WEB_SITE is set and the AWS role allows the zone (docs/aws-oidc.md)."
+    },
+    "org-status": {
+      "runs_on": [
+        "after org-apply",
+        "by hand"
+      ],
+      "environment": "apply",
+      "allowed": [
+        "read repository",
+        "read pages",
+        "read workflow runs"
+      ],
+      "note": "Reports; changes nothing."
+    },
+    "transfer-apply": {
+      "runs_on": [
+        "push to dev that changes a request with a from block",
+        "by hand"
+      ],
+      "environment": "transfer",
+      "environment_rules": {
+        "required_reviewers": [],
+        "deployment_branches": [
+          "dev"
+        ],
+        "secrets": [
+          "TRANSFER_USER_TOKEN"
+        ]
+      },
+      "allowed": [
+        "repo.transfer_in"
+      ],
+      "limits": {
+        "from_owner": "AgentiCCells",
+        "to_owner": "SovereignWebsite",
+        "to_name": "Site__<label>",
+        "per_run": 1,
+        "repositories": [
+          "AgentiCCells__Site__Transfer-Test",
+          "AgentiCCells__Site__Weather-Demo",
+          "AgentiCCells__Site__IPMA-Data",
+          "AgentiCCells__Site__London-Billboard",
+          "AgentiCCells__Site__Dinis-Cruz"
+        ],
+        "controlled_owners": [
+          "AgentiCCells",
+          "SovereignWebsite"
+        ],
+        "controlled_domains": [
+          "agenticcells.site",
+          "sovereignwebsite.site",
+          "sovereignweb.site"
+        ]
+      },
+      "needs": [
+        "requests/<id>/site.json with a from block and apply \"dry-run\", merged by Dinis",
+        "a dry run whose preflight passed",
+        "a second commit setting apply to \"real\", merged by Dinis"
+      ],
+      "refused_always": [
+        "repo.transfer_out",
+        "repo.delete",
+        "repo.archive",
+        "repo.make_private",
+        "repo.update_settings",
+        "repo.create",
+        "member.change",
+        "app.change",
+        "repo.transfer_outside_our_control"
+      ],
+      "note": "The plan job is read-only (the factory App on AgentiCCells, read). Only the apply job, in the transfer environment, holds the user token, and it makes one call: POST /repos/AgentiCCells/<repo>/transfer with new_owner SovereignWebsite and new_name Site__<label>. Without TRANSFER_USER_TOKEN it prints that call for Dinis to make. The repository list is explicit; adding one is a policy change Dinis merges. Org apply keeps repo.transfer refused.",
+      "controlled_source": "Dinis, 20 Nov 2026 ~10:20 UTC in the factory.b session: \"you can only do transfers for domains that we control. So you can never do a transfer for a domain outside of our control. That is going to be a separate flow\". A move from or to an owner or domain we do not control is refused here; it will be its own pipeline, with a shorter-lived token.",
+      "after_the_move": "migration.b@SovereignWebsite.dinis commits the moved-to-SovereignWebsite update in each moved repository, under that repository's own rules (Dinis, 20 Nov 2026 ~10:20 UTC in the factory.b session).",
+      "reviewer_source": "Dinis, 20 Nov 2026 ~12:25 UTC in the factory.b session: \"I didn't check the required reviewer so let's see if this works end to end automatically\". So a real move runs once its second commit (apply \"real\") lands on dev; the dry run first, the explicit repository list and the controlled owners and domains still apply.",
+      "dinis_cruz_source": "Dinis, 21 Nov 2026 00:20 UTC in conductor.b@AgentiCCells.dinis's session: \"yes, move dinis-cruz to SovereignWebsite\" (requests/2026-11-21__dinis-cruz/NOTES.md); added to the list at his word in factory.d's session, 22 Nov 2026 ~03:25 UTC: \"Add it\".",
+      "several_pending_note": "With several moves pending and none named, the plan checks each against this policy and plans no action: nothing moves until a run names one request (Transfer apply by hand). One move per run stays."
+    }
+  },
+  "privileges": [
+    {
+      "holder": "github-app:agenticcells-site-factory",
+      "permission": "metadata:read",
+      "why": "required by GitHub for any App",
+      "state": "expected"
+    },
+    {
+      "holder": "github-app:agenticcells-site-factory",
+      "permission": "administration:write",
+      "why": "org-apply: create repositories and set their settings from org/repos.json",
+      "state": "expected"
+    },
+    {
+      "holder": "github-app:agenticcells-site-factory",
+      "permission": "contents:write",
+      "why": "org-apply: create the dev branch and seed files in a new repository",
+      "state": "expected"
+    },
+    {
+      "holder": "github-app:agenticcells-site-factory",
+      "permission": "pages:write",
+      "why": "org-apply: turn on GitHub Pages for site repositories",
+      "state": "expected"
+    },
+    {
+      "holder": "github-app:agenticcells-site-factory",
+      "permission": "workflows:write",
+      "why": "org-apply: seed a new repository's CI workflows",
+      "state": "expected"
+    },
+    {
+      "holder": "aws-role:sovereignwebsite-factory-dns",
+      "permission": "route53:ChangeResourceRecordSets (UPSERT; A, AAAA, CNAME, TXT) on the three sovereignwebsite zones and the sovereignweb.site zone; route53:ListResourceRecordSets, route53:GetHostedZone, route53:GetChange",
+      "why": "dns-apply: write org/dns.json to Route 53",
+      "state": "active for the three sovereignwebsite zones; sovereignweb.site to be added to the role by Dinis (docs/aws-oidc.md)"
+    },
+    {
+      "holder": "github-app:agenticcells-site-factory",
+      "permission": "members:read (organisation)",
+      "why": "org-apply: give the agents' team push on each repository (team.grant_push)",
+      "state": "needed; not yet checked"
+    },
+    {
+      "holder": "github-user-token:Dinis Cruz via github-app:sovereignwebsite-transfer",
+      "permission": "administration:write (repository), metadata:read; the App installed only on the repositories in transfer-apply limits and on SovereignWebsite",
+      "why": "transfer-apply: POST /repos/{owner}/{repo}/transfer accepts a user access token only (GitHub App permissions page, 20 Nov 2026); held as TRANSFER_USER_TOKEN in the transfer environment, a long-lived token for the waves of moves between organisations we control, revoked when they are done",
+      "state": "made by Dinis, 20 Nov 2026 ~12:15 UTC: App sovereignwebsite-transfer (repository Administration read and write, metadata read), installed on AgentiCCells with all repositories; TRANSFER_USER_TOKEN stored in the transfer environment"
+    },
+    {
+      "holder": "github-app:agenticcells-site-factory",
+      "permission": "metadata, contents, actions and pull requests: read, on the AgentiCCells installation",
+      "why": "transfer-apply plan: read-only preflight of the source repository",
+      "state": "needed; not yet checked"
+    },
+    {
+      "holder": "github-app:agenticcells-site-factory",
+      "permission": "administration:write and metadata:read on PrompTugal/PrompTugal__News__Bulletins and PrompTugal/PrompTugal__News__Data (PrompTugal installation)",
+      "why": "external-collaborators: add diniscruz-agent with push, the one grant listed for each of those repositories",
+      "state": "installed; Dinis reports the permissions updated, 22 Nov 2026 ~01:16 UTC; PrompTugal__News__Bulletins checked by Org apply run 44971099440 (22 Nov 01:22 UTC: role set to push); PrompTugal__News__Data added 22 Nov 2026 ~03:55 UTC, the App's access to it not yet checked by a run",
+      "source": "Dinis, 22 Nov 2026 ~01:11 UTC in factory.d's session: \"can you make sure the GH user diniscruz-agent is a writer on the repo PrompTugal/PrompTugal__News__Bulletins\"; ~01:16 UTC: \"App was already installed but needed updates permissions (which I did) So can you build it\". Dinis, 22 Nov 2026 ~03:53 UTC in factory.d's session: \"can you add dinisCruz-agent push access to PrompTugal/PrompTugal__News__Data\"."
+    },
+    {
+      "holder": "github-app:agenticcells-site-factory",
+      "permission": "contents:write on PrompTugal/PrompTugal__News__Data and PrompTugal/PrompTugal__News__Bulletins (PrompTugal installation)",
+      "why": "key-apply: push the one factory-signed commit that adds a reviewed agent key to team/keys.json on dev",
+      "state": "not yet granted: Dinis adds Contents read and write to the App's PrompTugal installation",
+      "source": "Dinis, 22 Nov 2026 13:39 UTC on the Decision Desk (relayed by conductor.d from maestro.d's session): \"I like factory doing it because that leaves a full track record and if infrastructure as code, but the factory agent should merge it after a security review. For tasks like this I should not be the bottleneck\"; in factory.d's session ~15:30 UTC: \"build the factory [signed] key ... every time you do here, you should also do a security check and role-based security checks\"."
+    },
+    {
+      "holder": "secret:FACTORY_SIGNING_KEY (apply environment)",
+      "permission": "signs key-adding commits in the key-apply targets",
+      "why": "key-apply: the targets trust this key for key additions only",
+      "state": "not made yet (Dinis)",
+      "source": "Dinis, 22 Nov 2026 13:39 UTC on the Decision Desk (relayed by conductor.d from maestro.d's session): \"I like factory doing it because that leaves a full track record and if infrastructure as code, but the factory agent should merge it after a security review. For tasks like this I should not be the bottleneck\"; in factory.d's session ~15:30 UTC: \"build the factory [signed] key ... every time you do here, you should also do a security check and role-based security checks\"."
+    }
+  ],
+  "keys_rule": "Each agent publishes its own key when it starts: its first commit to this repository adds one entry to team/keys.json, its own (agent and session as the commit's Agent: and Claude-Session: trailers, status active, with bundle.sign), changes nothing else there, and is signed by that new key; build/check-signatures.mjs verifies that one commit against the key it adds, and every later commit against its parent's keys. One live key per agent name: a second session of a role takes its own name, <role>.<label>.<account>@SovereignWebsite.dinis (for example conductor.keys.d@SovereignWebsite.dinis), while there is only one <role>.<account>. An agent may retire its own entry; a conductor (an agent whose may_change lists team/keys.json) may also retire another agent's entry. No commit adds another agent's key, edits a key, name or session in place, or removes an entry; changing another agent's key is Dinis's. build/abp.mjs keysChange enforces this. Trade-off, accepted by Dinis: anyone with push on dev can publish a key under an unused name, so the trust rests on the team's GitHub write access and the session trailer.",
+  "keys_rule_source": "Dinis, 22 Nov 2026 ~01:31 UTC in conductor.d's session (relayed by conductor.d): \"it is the agents (when they start) that need to push their key to that location on the repo\"; \"we can only have one conductor.d@SovereignWebsite.dinis (you) but we can have many conductor.*@SovereignWebsite.dinis sessions\". In factory.d's session, ~03:25 UTC: \"yes to building the self published rule and yes to the second session of a role\". Replaces the rule \"No agent may change its own entry in team/keys.json ... The conductor adds and retires its team's keys; only Dinis changes the conductor's key.\""
+}

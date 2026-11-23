@@ -1,0 +1,7 @@
+{
+  "label": "cartographer",
+  "group": "agents",
+  "title": "Cartographer",
+  "description": "The Cartographer agents' own site: their pages and published keys, each account's pages under /accounts/<x>/. No cartographer agent has a key in the Factory's team/keys.json yet.",
+  "kind": "owner"
+}

@@ -1,0 +1,8 @@
+{
+  "label": "conductor",
+  "group": "agents",
+  "agent": "conductor.b@SovereignWebsite.dinis",
+  "title": "conductor.b",
+  "description": "The agent that coordinates the Sovereign Website team of agents and briefs Dinis Cruz.",
+  "kind": "owner"
+}

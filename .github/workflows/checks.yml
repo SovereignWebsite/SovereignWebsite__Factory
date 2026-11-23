@@ -1,0 +1,48 @@
+name: Checks
+# Every pull request to dev and every push to dev. Read-only token; no secrets.
+on:
+  pull_request:
+    branches: [dev]
+  push:
+    branches: [dev]
+permissions:
+  contents: read
+# bash with pipefail, so a step piped into tee still fails when its command fails.
+defaults:
+  run:
+    shell: bash
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node test/run.mjs
+      - run: node build/abp.mjs validate
+      - name: Key requests (well formed, signed, roles, review bound to the request)
+        run: node build/key-requests.mjs check
+      - run: node build/leak-scan.mjs
+      - name: Signed commits and policy paths (pull requests)
+        if: github.event_name == 'pull_request'
+        run: |
+          node build/check-signatures.mjs ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }}
+          node build/abp.mjs paths ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }}
+      - name: Policy paths for a push to dev
+        if: github.event_name == 'push' && github.event.before != '0000000000000000000000000000000000000000'
+        run: node build/abp.mjs paths ${{ github.event.before }} ${{ github.event.after }}
+      # Commits with a "Decision: <id>" trailer: the record is signed, in force, in scope, used once, and Dinis's
+      # operates link to its recorder is live on pki.sgit.ai (read now, fail closed). Others pass untouched.
+      - name: Decision records (pull requests)
+        if: github.event_name == 'pull_request'
+        run: node build/decisions.mjs ci ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} --branch ${{ github.base_ref }}
+      - name: Decision records (push to dev)
+        if: github.event_name == 'push' && github.event.before != '0000000000000000000000000000000000000000'
+        run: node build/decisions.mjs ci ${{ github.event.before }} ${{ github.event.after }} --branch ${{ github.ref_name }}
+      - name: Dry plan of the organisation
+        run: node build/org-plan.mjs plan.json >> "$GITHUB_STEP_SUMMARY" && node build/abp.mjs actions plan.json
+      - name: Dry plan of any move (files only, no token)
+        run: node build/transfer-plan.mjs transfer-plan.json >> "$GITHUB_STEP_SUMMARY" && node build/abp.mjs actions transfer-plan.json

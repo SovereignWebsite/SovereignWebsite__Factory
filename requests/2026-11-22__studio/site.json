@@ -1,0 +1,7 @@
+{
+  "label": "studio",
+  "group": "agents",
+  "title": "Studio",
+  "description": "The Studio agents' own site: their pages and published keys, each account's pages under /accounts/<x>/. No studio agent has a key in the Factory's team/keys.json yet.",
+  "kind": "owner"
+}

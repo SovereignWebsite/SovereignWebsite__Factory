@@ -1,0 +1,7 @@
+{
+  "label": "strategy",
+  "group": "agents",
+  "title": "Strategy",
+  "description": "The Strategy agents' own site: their pages and published keys, each account's pages under /accounts/<x>/. No strategy agent has a key in the Factory's team/keys.json yet.",
+  "kind": "owner"
+}

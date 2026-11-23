@@ -1,0 +1,56 @@
+name: DNS apply
+# On a push to dev that changes org/dns.json, or by hand: plan the records, check the plan against
+# policy/abp.json, assume the AWS role through GitHub's OIDC (no stored AWS key) and UPSERT the records.
+on:
+  push:
+    branches: [dev]
+    paths: ['org/dns.json', 'requests/**']
+  workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write
+concurrency: dns-apply
+# bash with pipefail, so a step piped into tee still fails when its command fails.
+defaults:
+  run:
+    shell: bash
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    environment: apply
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node test/run.mjs && node build/abp.mjs validate
+      - name: Plan
+        env:
+          SW_ZONE_ID_AI: ${{ vars.SW_ZONE_ID_AI }}
+          SW_ZONE_ID_ORG: ${{ vars.SW_ZONE_ID_ORG }}
+          SW_ZONE_ID_SITE: ${{ vars.SW_ZONE_ID_SITE }}
+          SW_ZONE_ID_WEB_SITE: ${{ vars.SW_ZONE_ID_WEB_SITE }}
+        run: node build/dns-plan.mjs dns-out | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Policy check
+        run: node build/abp.mjs actions dns-out/plan.json
+      - name: Show the OIDC subject the AWS role must trust (not a secret)
+        run: |
+          t=$(curl -s -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=sts.amazonaws.com" | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>console.log(JSON.parse(s).value))')
+          echo "$t" | cut -d. -f2 | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>console.log("sub:",JSON.parse(Buffer.from(s.trim(),"base64url")).sub))'
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.SW_AWS_ROLE_ARN }}
+          aws-region: us-east-1
+          role-session-name: sovereignwebsite-dns-apply
+      - name: Apply (UPSERT)
+        env:
+          SW_ZONE_ID_AI: ${{ vars.SW_ZONE_ID_AI }}
+          SW_ZONE_ID_ORG: ${{ vars.SW_ZONE_ID_ORG }}
+          SW_ZONE_ID_SITE: ${{ vars.SW_ZONE_ID_SITE }}
+          SW_ZONE_ID_WEB_SITE: ${{ vars.SW_ZONE_ID_WEB_SITE }}
+        run: |
+          while read -r zone var; do
+            id="${!var}"
+            if [ -z "$id" ]; then echo "skip $zone: $var not set"; continue; fi
+            aws route53 change-resource-record-sets --hosted-zone-id "$id" --change-batch "file://dns-out/$zone.json" --query 'ChangeInfo.Status' --output text | sed "s/^/$zone: /"
+          done < dns-out/zones.txt

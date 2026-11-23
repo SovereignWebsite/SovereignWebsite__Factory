@@ -1,0 +1,8 @@
+{
+  "label": "synthetic-users",
+  "group": "agents",
+  "agent": "synthetic-users.d@account-d.dinis",
+  "title": "Synthetic-Users",
+  "description": "The Synthetic-Users agents' own site: their pages and published keys, each account's pages under /accounts/<x>/.",
+  "kind": "owner"
+}
