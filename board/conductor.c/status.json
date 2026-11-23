@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-23T02:11Z",
+  "updated": "2026-11-23T02:12Z",
   "state": "all six account C keys on Factory dev (93b947f); conductor.c's and observability.c's policy entries and this board wait for Dinis's merge",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -53,7 +53,8 @@
     "Dinis, ~22:45 UTC in instagram.c's session (as reported): Instagram posting through Buffer (a Meta partner on Instagram's official API), not a Meta developer app; BUFFER_API_KEY held only as a GitHub environment secret Dinis sets himself (\"instagram\", with himself as required reviewer), never in a Claude environment; \"yes, switch to buffer and make the welcome image\"",
     "Dinis, ~23:00 UTC in this session: \"yes, start a studio.c here. Note that there's an open router key here, so you can use it to create nice voice descriptions\"",
     "Dinis, ~01:45 UTC 23 Nov in this session: a designer agent here on an hourly loop, sending change updates to all the websites; every website matches the standard and has 5 designs",
-    "Dinis, ~02:00 UTC 23 Nov in design.c's session (as reported): \"Yes, you can push it. Also, you should always be pushing designs, right? They should be on the website. Then we review it there.\" Read as a standing yes for design.c to push its claimed designs folders on account C sites, each path still claimed here first"
+    "Dinis, ~02:00 UTC 23 Nov in design.c's session (as reported): \"Yes, you can push it. Also, you should always be pushing designs, right? They should be on the website. Then we review it there.\" Read as a standing yes for design.c to push its claimed designs folders on account C sites, each path still claimed here first",
+    "Dinis, ~01:55 UTC 23 Nov in studio.c's session (as reported): a 4-hourly update video by studio.c, published to Instagram under a standing approval rule, spend cap 2 USD a day, studio.c's own 4-hourly scheduled task"
   ],
   "team": {
     "observability.c": "read-only per-site visibility note; key on its branch work/observability.c (788d3b9) - https://claude.ai/code/session_01Kw9UwBmqCafJ2NtqhQPQwu",
