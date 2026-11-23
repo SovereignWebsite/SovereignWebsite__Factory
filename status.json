@@ -96,7 +96,9 @@
     "sites.b: the workflow page now says the price for changes is set after hand-over (dcb06ef); the wayfinder plan is written for a fresh sites.b session (24275ef)",
     "Cost of round-the-clock feedback (accountant.b, an estimate at 1.41 USD a wake): one of four agents every 15 minutes is about 135 USD a day; each of the four every 15 minutes about 541 USD a day. Its suggestion: a script with no model checks the inboxes and wakes an agent only when a message waits",
     "Design guideline 2b \"Agents as provenance\": from every page an Agent step opens a linked graph of the keeper and its chain to Dinis, the agents behind each page, the decision records and the design rounds, with a provenance line in every footer (design.b, 1c1abb5); relayed to every maestro",
-    "Vault keys (Dinis, 23:25 UTC, record 2026-11-23__vault-keys-to-maestro): any agent may create a vault, and gives a sealed copy of its key to the account's maestro, so at least two hold each; vault-making agents told, vault names (never keys) go to decisions.b through b.maestro"
+    "Vault keys (Dinis, 23:25 UTC, record 2026-11-23__vault-keys-to-maestro): any agent may create a vault, and gives a sealed copy of its key to the account's maestro, so at least two hold each; vault-making agents told, vault names (never keys) go to decisions.b through b.maestro",
+    "Hub v0.1.54 live with the ask 31 change (443bf9d); registry.json shape proposed for the shared wayfinder; navigation is item 0 in the hub hand-over (86c790c)",
+    "Ask 30 tried: Car Buyer cannot fetch DVLA or MOT data from a static page (both refuse browser requests and need server-held keys); the idea is archived under Dinis's rule, the site stays live"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
@@ -128,8 +130,8 @@
     "Dinis: create the four agreed wake tasks (ask 24); the old conductor task is retired - board/2026-11-23__wake-schedule.md",
     "Dinis: re-enable feedback.b's inbox round (trig_01FsUjtCGwD9w9i3eBWJVoY3) and say so in its session (\"Turn the inbox back on\", 23:22 UTC) - https://claude.ai/code/session_01Kw9UwBiG9d5KHvFjdtiP69",
     "Dinis: start a fresh sites.b session with docs/handover.md (24275ef) as its first read; it leads the shared wayfinder (ask 40) and takes the hourly wake - https://github.com/SovereignWebsite/Site__Agent__Sites/blob/dev/docs/handover.md",
-    "Dinis: yes in factory.b's session to a named exemption in build/check-signatures.mjs for two Factory commits signed in maestro.d's session on 21 Nov with a key never published (b7c8bfd, 5eb7fde); no history rewrite - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
-    "Dinis: do the vaults you wanted kept to yourself also go to the maestro under the vault-keys rule? Until you say, they stay as they are"
+    "Dinis: do the vaults you wanted kept to yourself also go to the maestro under the vault-keys rule? Until you say, they stay as they are",
+    "Dinis: yes in factory.b's session to two always-ask changes: 6c668e8 names two known-bad Factory commits (b7c8bfd, 5eb7fde) so the checker passes all 444, and f421bad lets each site's Signers check read agents' keys from site/keys/<name>.json in its own repository - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
   ],
   "decisions": [
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",
