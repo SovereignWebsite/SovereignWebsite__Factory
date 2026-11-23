@@ -6,8 +6,8 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-23T09:34Z",
-  "state": "account C green for the five-hour window (accountant.c, 09:36); design.c back to hourly (trig_01LJTULyHHB71yYGfiWb5hWt, 43 * * * *); back to 2-hourly if Dinis's next weekly reading is over 60%",
+  "updated": "2026-11-23T10:49Z",
+  "state": "account C weekly 61% at ~09:40 (amber; red at 75%); design.c every 2 hours (43 */2); no new sessions or scheduled tasks on account C; new work to another account where possible",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
     "sgit key conductor-c-sovereignwebsite: fingerprint sha256:3dc033c53b9c979d, signing sha256:066b77ff10e8c18f; commits signed with its ECDSA P-256 half",
@@ -25,10 +25,11 @@
     "the Factory is now SovereignWebsite__IaC (2aa00a6, at Dinis's word to factory.c); the old raw keys.json URL still answers 200 (55 keys), so site signer checks keep working; YouTube request merged (2678244)",
     "design.c round 1: five Instagram designs live on Site__Platform__Instagram dev 63c9fcb (site/designs/** only, owner override line recorded); recommended design 2",
     "instagram.c, at Dinis's word: Instagram media in sgit vault c0kmaggy (dev.send.sgraph.ai); read key to be published on the Instagram site's /vault/ page; the full vault key sealed to conductor.c's PKI key and held (still encrypted) in conductor.c's session only, never in a repository",
-    "owasp.c's key made at Dinis's yes (owasp-c-sovereignwebsite, sha256:7a71de7fb6bd221b); its public entry sent to factory.c as text (its Factory push was refused); still needs Dinis's yes in its session to write its git signing file"
+    "owasp.c's key made at Dinis's yes (owasp-c-sovereignwebsite, sha256:7a71de7fb6bd221b); its public entry sent to factory.c as text (its Factory push was refused); still needs Dinis's yes in its session to write its git signing file",
+    "design.c round 1 on every claimed account C site: Instagram, Studio accounts/c, DNS, GitHub, YouTube, AWS (OWASP next)"
   ],
   "next": [
-    "if Dinis's next weekly reading is over 60%: design.c back to every 2 hours",
+    "when the weekly figure falls or resets: design.c back to hourly; at 75%: pause design.c and ask studio.c to pause",
     "factory.c and mistral.c: read their first reports, claim each piece of their work here before they touch it; no tasks given without Dinis",
     "once the key is merged: push this board to dev",
     "conduct the account C sessions maestro.c starts at Dinis's word (observability.c, the cheese market's account C session), each with the Factory reachable or its key on dev before it works (incident lesson)",
