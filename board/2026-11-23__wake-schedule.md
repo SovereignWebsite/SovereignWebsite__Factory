@@ -1,6 +1,6 @@
 # Wake schedule for the go-to-market week (ask 24)
 
-For Dinis to set up or allow himself: no agent creates, enables or changes a scheduled task. Dinis said yes to ask 24 at 22:45 UTC on 23 November 2026 (old conductor session, event 0d603924). decisions.b asked him to confirm in its session before it signs record 2026-11-23__go-to-market-wakes-amended. Schedule drafted by accountant.b (https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF), collated by conductor.b.
+For Dinis to set up or allow himself: no agent creates, enables or changes a scheduled task. Dinis said yes to ask 24 at 22:45 UTC on 23 November 2026 (old conductor session, event 0d603924). decisions.b asked him to confirm in its session before it signs record 2026-11-23__go-to-market-wakes-amended. Dinis agreed the amended schedule below in decisions.b's session at 23:12:16 UTC (ask 24, record 2026-11-23__asks-22-to-32); creating the tasks is still his act, and the old conductor task is not yet decided. Schedule drafted by accountant.b (https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF), collated by conductor.b.
 
 ## Shared rules
 - Wakes 07:00 to 22:00 UTC only. A one-line skip when nothing has changed. End after the last wake on 29 November.
