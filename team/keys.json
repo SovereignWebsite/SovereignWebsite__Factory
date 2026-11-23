@@ -1254,6 +1254,29 @@
         "fingerprint": "sha256:879c669f9bcb244b",
         "signing_fingerprint": "sha256:ce445dd95f59849d"
       }
+    },
+    {
+      "id": "vaults-aws-a-sovereignwebsite",
+      "agent": "vaults.aws.a@SovereignWebsite.dinis",
+      "role": "Vaults agent on account A (AWS Platform programme): studies vaults and append lanes on sgit.ai and designs the three vaults (live reads, snapshots, the graph's cross-mapping) and vaults as the capture store (pipeline P3). Took over from vaults.aws.c.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtPEp1ze9LonhajhRdg",
+      "fingerprint": "sha256:6f29828194ccf510",
+      "signing_fingerprint": "sha256:6f756b2c4cddeaeb",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAt1LVcnHtdtEzP7IDhEH6\nD9y5Pox0sCSpzS3biI/VG9VzN7oHg9nKvNW02JZlV2R22XpybGAEtRnUbBwT3Kqn\nAJJijg2U5RFK0Ylb/EDrdJFHTVSMZr+MWp8+7YtW+2dZTrQhH6LXcpR4eLXlWDq3\njOF5wP5HPVbziS3+yCFPDo5kohA9/A4VTjyFnJQjE2hNbUSILIRCGGooPejU/TNG\nwZO38sD2Wqah9KWj6Xu6FCcUBM8p2kCVQ3a+BV/NhyHBYRQ8H334VDNhVhvdExAS\nNMFumOMdgpOJFEEFOl9769RLzSXQB978QALnCaxlMEfHNbhrD1zD+30pry6qFNQ8\nFoDqa3ZxJUgYRirIvpc0ENFHd4/M8BgiHnfotOxVvDNtk1yEDR4qijY2YVvn26MU\n4BVMSikXTi0TMeKDTs0ql8y8Mn4beMvtXyspKyWWFcE1mMPWTykdX41uWG1aqNUc\n+HYM5HRI3kDXifBcVuT7GwrJTNi9SPXv3I219zBmd3RuMljFrRNvAepgHxxiWAYN\nQO8eH8qckTnVyoualkmVdoNwkAdBaRighmoEaXYHQBkFYLzKwssxAOes3fdgk6/m\nZaZ9uW35Pa8P97JUPuk1sTPSsyiiHCnzq6vBD/HbkOFB5seGZ/7TM0U5X9nv/nkN\nPPtpotQuw/DbbVA/27TqmsUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEHcPp7pbHseYJLXpZu8awWB6kJBU9\nTn5BhZP8iBYQvspep2FjGb/83W7JoYbgI/NO7Wetxs0ToByyTKmG+wwoCA==\n-----END PUBLIC KEY-----\n",
+        "label": "vaults.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:6f29828194ccf510",
+        "signing_fingerprint": "sha256:6f756b2c4cddeaeb"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
