@@ -6,8 +6,8 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-23T07:10Z",
-  "state": "account C at amber pace after the 06:20 reset (accountant.c); design.c's wake back on every 2 hours (trig_01LJTULyHHB71yYGfiWb5hWt, 43 */2); hourly again once the five-hour window is at or under ~35%",
+  "updated": "2026-11-23T09:34Z",
+  "state": "account C green for the five-hour window (accountant.c, 09:36); design.c back to hourly (trig_01LJTULyHHB71yYGfiWb5hWt, 43 * * * *); back to 2-hourly if Dinis's next weekly reading is over 60%",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
     "sgit key conductor-c-sovereignwebsite: fingerprint sha256:3dc033c53b9c979d, signing sha256:066b77ff10e8c18f; commits signed with its ECDSA P-256 half",
@@ -28,7 +28,7 @@
     "owasp.c's key made at Dinis's yes (owasp-c-sovereignwebsite, sha256:7a71de7fb6bd221b); its public entry sent to factory.c as text (its Factory push was refused); still needs Dinis's yes in its session to write its git signing file"
   ],
   "next": [
-    "when Dinis's reading shows the five-hour window at or under ~35% and weekly under ~60%: design.c back to hourly",
+    "if Dinis's next weekly reading is over 60%: design.c back to every 2 hours",
     "factory.c and mistral.c: read their first reports, claim each piece of their work here before they touch it; no tasks given without Dinis",
     "once the key is merged: push this board to dev",
     "conduct the account C sessions maestro.c starts at Dinis's word (observability.c, the cheese market's account C session), each with the Factory reachable or its key on dev before it works (incident lesson)",
