@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-23T23:16Z",
+  "updated": "2026-11-23T23:18Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
@@ -14,14 +14,11 @@
     "Dinis: one yes to start the decisions system: factory.b pushes 8ee995a, 68565f8, 933d92a and the checker 90677bb, with decisions.b's policy entry - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: add SovereignWebsite__Website to the fresh conductor.b session; add_repo was refused by the permission check - https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
     "Dinis: start the weather-demo transfer: Actions, Transfer apply, Run workflow, request 2026-11-20__weather-demo, then approve the apply job in the transfer environment (factory.b reads the run) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
-    "Dinis: make the IaC push grant for strategy.b, grace.b and strategy.d (agreed in ask 2, record 2026-11-23__asks-2-to-21); it is an organisation change only he makes or merges",
     "Dinis: yes in factory.b's session to 0048389, a wording fix to policy/abp.json saying sovereignweb.site is already on the DNS role (docs fix 7ce3f14 goes with it) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: create the four agreed wake tasks (ask 24 agreed 23:12 UTC), and decide the old conductor task trig_015LDYEmyDkQNBjbiWuPnBc9 - board/2026-11-23__wake-schedule.md",
     "Dinis: allow mistral.conductor to write its signing key file in its own session (ask 5 agreed; its safety check refused the step) - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT"
   ],
   "done_recent": [
-    "Dinis signed 12 decision records via decisions.b (15:54 UTC), incl. segment A leads with B as proof; records usable once committed in IaC decisions/",
-    "sovereignwebsite.ai: decided launch offer on home and all designs; address and agent-policy lines made accurate (Website 7773632, 7303c87)",
     "The workflow in one page, nine steps with Car Buyer as the example: https://pipeline-demo.demo.sovereignweb.site/workflow/ (461a834)",
     "design.agents.sovereignweb.site /policy/ live (v0.1.29); every listed site now publishes its policy",
     "Suno platform site live: https://suno.platform.sovereignweb.site/ (v0.1.1, record 2026-11-23__suno-site)",
@@ -34,7 +31,9 @@
     "Dinis answered asks 22 to 32 (record 2026-11-23__asks-22-to-32, 23:12 UTC): wakes agreed; customers pay by Stripe, for now by email to agent@withmandate.ai; 5 or 6 WordPress reference sites first; songs on the existing Suno account within its limits; the Road atlas as a real map first. Routed to the agents",
     "Startups: RiskMandate brochure approval live (v0.1.36, f0f3143); each of the five startup sites now has docs/owner.md listing what Dinis can do himself, with nothing waiting on him (startups.b)",
     "dinis-cruz.presentations ready for Dinis to add presentations himself: https://dinis-cruz.presentations.sovereignweb.site/add/ (fb6aa33); what he can do on every site sites.b keeps: https://sites.agents.sovereignweb.site/yours/ (sites.b)",
-    "Dinis's principle (never block on him; list what he can do on each site) sent to the whole team"
+    "Dinis's principle (never block on him; list what he can do on each site) sent to the whole team",
+    "Dinis revised asks 2, 8 and 31 (record 2026-11-23__asks-2-8-31-revised, 23:14 UTC): no IaC push access for strategy.b, grace.b or strategy.d (keys go in their own repositories); feedback is always driven by QR codes; the first handed-over site may be listed on our website without naming its owner. Routed",
+    "Offboarding process drafted for Dinis (ask 39): board/workflow/2026-11-23__offboarding-draft.md, for security.b's review"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
