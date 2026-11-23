@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-23T23:21Z",
+  "updated": "2026-11-23T23:22Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
@@ -20,21 +20,21 @@
     "Dinis: approve or change the offboarding process (ask 39; security.b review 028 passed with changes, all made) - board/workflow/2026-11-23__offboarding-draft.md"
   ],
   "done_recent": [
-    "Car Buyer tool site live: https://car-buyer.tool.sovereignweb.site (fc3266d), from request to live in about two hours",
     "conductor.b handed over to a fresh session at Dinis's word (22:45 UTC 23 Nov): old key retired (34e2b08), new key published (14e9243)",
     "Dinis installed the sovereignwebsite-transfer App on SovereignWebsite, so transfers (weather-demo, dinis-cruz) can resume with factory.b (reported by decisions.b, signed note 2026-11-23__transfer-app-installed)",
-    "Dinis agreed asks 2, 5, 8, 14, 15, 17, 19, 20 and 21 (record 2026-11-23__asks-2-to-21, 23:08 UTC): RiskMandate brochure approved, the Mistral key file, dinis-cruz.presentations left ready for him, the Algarve Evolution move confirmed; routed to the agents. His principle: leave each site so he can carry it on himself, and never block on him",
+    "Dinis agreed asks 2, 5, 8, 14, 15, 17, 19, 20 and 21 (record 2026-11-23__asks-2-to-21, 23:08 UTC): RiskMandate brochure (later made a review item), the Mistral key file, dinis-cruz.presentations left ready for him, the Algarve Evolution move confirmed; routed to the agents. His principle: leave each site so he can carry it on himself, and never block on him",
     "AWS is not blocked: DNS apply run 45211861879 (16:02 UTC 23 Nov) assumed the role through OIDC and wrote all four zones, sovereignweb.site included (factory.b, from the run log)",
-    "Design: RiskMandate brochure approved and rated M5; a site owner placed at M2 from the history, what is unknown said plainly; docs/maturity.md now says \"Never block on the owner\" (design.b, 2e58498)",
+    "Design: RiskMandate brochure rated (ask 14 later made a review item for Dinis, not an approval: rating back to M4, 08c179c); a site owner placed at M2 from the history, what is unknown said plainly; docs/maturity.md now says \"Never block on the owner\" (design.b, 2e58498)",
     "Dinis answered asks 22 to 32 (record 2026-11-23__asks-22-to-32, 23:12 UTC): wakes agreed; customers pay by Stripe, for now by email to agent@withmandate.ai; 5 or 6 WordPress reference sites first; songs on the existing Suno account within its limits; the Road atlas as a real map first. Routed to the agents",
-    "Startups: RiskMandate brochure approval live (v0.1.36, f0f3143); each of the five startup sites now has docs/owner.md listing what Dinis can do himself, with nothing waiting on him (startups.b)",
+    "Startups: RiskMandate brochure v0.1.36 live, now for Dinis to review rather than approved (v0.1.36, f0f3143); each of the five startup sites now has docs/owner.md listing what Dinis can do himself, with nothing waiting on him (startups.b)",
     "dinis-cruz.presentations ready for Dinis to add presentations himself: https://dinis-cruz.presentations.sovereignweb.site/add/ (fb6aa33); what he can do on every site sites.b keeps: https://sites.agents.sovereignweb.site/yours/ (sites.b)",
     "Dinis's principle (never block on him; list what he can do on each site) sent to the whole team",
     "Dinis revised asks 2, 8 and 31 (record 2026-11-23__asks-2-8-31-revised, 23:14 UTC): no IaC push access for strategy.b, grace.b or strategy.d (keys go in their own repositories); feedback is always driven by QR codes; the first handed-over site may be listed on our website without naming its owner. Routed",
     "Offboarding process drafted for Dinis (ask 39): board/workflow/2026-11-23__offboarding-draft.md, for security.b's review",
     "Owner pages, listing what Dinis can do himself with nothing waiting on him: South Beacon (6abc7a4), Kate Curtis-Evans (1b5243e), Sarah Cruz (0cb1a11, v0.1.5), design.agents (https://design.agents.sovereignweb.site/owner.html), Suno (4841d42)",
     "Hub: every \"I want one\" now leads to /start/#get-one with the offer and \"To take it up, email agent@withmandate.ai\"; no Stripe link (hub.b)",
-    "Offboarding draft reviewed by security.b (review 028, pass with changes) and updated: a fast stop now contains the session first, then retires, then revokes"
+    "Offboarding draft reviewed by security.b (review 028, pass with changes) and updated: a fast stop now contains the session first, then retires, then revokes",
+    "Dinis split his list in two (record 2026-11-23__navigation-and-review, 23:17 UTC): decisions that block agents, and sites for him to look at; a review item never blocks an agent. design.b set the navigation guideline (\"the wayfinder\", 08c179c)"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
