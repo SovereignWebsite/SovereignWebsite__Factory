@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-23T23:20Z",
+  "updated": "2026-11-23T23:21Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
@@ -16,7 +16,8 @@
     "Dinis: start the weather-demo transfer: Actions, Transfer apply, Run workflow, request 2026-11-20__weather-demo, then approve the apply job in the transfer environment (factory.b reads the run) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: yes in factory.b's session to 0048389, a wording fix to policy/abp.json saying sovereignweb.site is already on the DNS role (docs fix 7ce3f14 goes with it) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: create the four agreed wake tasks (ask 24 agreed 23:12 UTC), and decide the old conductor task trig_015LDYEmyDkQNBjbiWuPnBc9 - board/2026-11-23__wake-schedule.md",
-    "Dinis: allow mistral.conductor to write its signing key file in its own session (ask 5 agreed; its safety check refused the step) - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT"
+    "Dinis: allow mistral.conductor to write its signing key file in its own session (ask 5 agreed; its safety check refused the step) - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT",
+    "Dinis: approve or change the offboarding process (ask 39; security.b review 028 passed with changes, all made) - board/workflow/2026-11-23__offboarding-draft.md"
   ],
   "done_recent": [
     "Car Buyer tool site live: https://car-buyer.tool.sovereignweb.site (fc3266d), from request to live in about two hours",
@@ -36,6 +37,7 @@
     "Offboarding draft reviewed by security.b (review 028, pass with changes) and updated: a fast stop now contains the session first, then retires, then revokes"
   ],
   "next": [
+    "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
     "the vault as the approval step before a site goes live (Dinis, in sites.b's session), when he says build it",
     "transfers: weather-demo (real, Dinis's yes given) needs Dinis to start Transfer apply for request 2026-11-20__weather-demo and approve the apply job; dinis-cruz stays dry-run until his yes and the consent question in its NOTES.md",
