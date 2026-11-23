@@ -8,7 +8,9 @@ const e = process.env;
 const version = e.SITE_VERSION || 'v0.0.0';
 const commit = (e.GITHUB_SHA || 'local').slice(0, 7);
 const date = new Date().toISOString().slice(0, 10);
-const run = e.GITHUB_RUN_ID ? `${e.GITHUB_SERVER_URL}/${e.GITHUB_REPOSITORY}/actions/runs/${e.GITHUB_RUN_ID}` : '';
+// A gated (vault) site (SWS_GATE=1, set in its pages.yml) publishes no run link: the run's address carries the
+// repository's name, which may say more than the holding page (security.b, review 026). Its chip points at /version.json.
+const run = e.GITHUB_RUN_ID && e.SWS_GATE !== '1' ? `${e.GITHUB_SERVER_URL}/${e.GITHUB_REPOSITORY}/actions/runs/${e.GITHUB_RUN_ID}` : '';
 rmSync('_site', { recursive: true, force: true });
 cpSync('site', '_site', { recursive: true });
 writeFileSync('_site/version.json', JSON.stringify({ version, commit, date, run, built_at: new Date().toISOString() }, null, 1) + '\n');

@@ -49,6 +49,7 @@ jobs:
         run: node .github/ci/build.mjs
         env:
           SITE_VERSION: ${{ steps.version.outputs.version }}
+          SWS_GATE: '1'
       - name: Link previews (Open Graph tags and the share card)
         run: node .github/ci/share-check.mjs _site
       - name: Links, em dashes, family strip and leak scan

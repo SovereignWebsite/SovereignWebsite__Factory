@@ -325,7 +325,7 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   const g = seedFiles('seed/gate-template');
   for (const must of ['.github/workflows/pages.yml', '.github/ci/build.mjs', '.github/ci/quality.mjs', '.github/ci/share-check.mjs', 'site/assets/share/card-1200x630.jpg']) assert.ok(g.includes(must), `gate-template seeds ${must}`);
   for (const never of ['site/start/index.html', 'site/agents/index.html', 'site/admin/index.html', 'site/llms.txt', 'site/data/agents.json']) assert.ok(!g.includes(never), `gate-template never seeds ${never}`);
-  assert.equal(readFileSync('seed/gate-template/.github/workflows/pages.yml', 'utf8'), readFileSync('seed/site-template/.github/workflows/pages.yml', 'utf8'), 'one pipeline for both templates');
+  assert.equal(readFileSync('seed/gate-template/.github/workflows/pages.yml', 'utf8').replace("          SWS_GATE: '1'\n", ''), readFileSync('seed/site-template/.github/workflows/pages.yml', 'utf8'), 'one pipeline for both templates (the gate adds only SWS_GATE)');
 }
 // Agent sites: the same pipeline, plus the key copied from team/keys.json, a daily refresh that makes no new
 // version, and the family bar allowed. The version chip's CSS is a file, for a strict style-src 'self'.
@@ -497,4 +497,10 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   assert.ok(R.validate({ ...pb, group: 'artist' }, '2026-11-22__pybot').some((e) => e.includes('provider')), 'provider is for tool sites only');
   assert.ok(R.validate({ ...pb, provider: 'Hugging Face' }, '2026-11-22__pybot').some((e) => e.includes('provider')), 'provider is a lower-case name');
   assert.equal(R.host({ label: 'whois', group: 'tool' }), 'whois.tool.sovereignweb.site', 'a tool with no provider is unchanged'); }
+{ const { mkdtempSync, cpSync } = await import('node:fs'); const { execFileSync } = await import('node:child_process'); const { tmpdir } = await import('node:os');
+  assert.ok(readFileSync('seed/gate-template/.github/workflows/pages.yml', 'utf8').includes("SWS_GATE: '1'"), 'the gate pipeline sets SWS_GATE');
+  const d = mkdtempSync(tmpdir() + '/gate-'); cpSync('seed/gate-template', d, { recursive: true });
+  execFileSync('node', ['.github/ci/build.mjs'], { cwd: d, stdio: 'pipe', env: { ...process.env, SWS_GATE: '1', GITHUB_RUN_ID: '42', GITHUB_SERVER_URL: 'https://github.com', GITHUB_REPOSITORY: 'SovereignWebsite/Site__Invest__Secret-Name' } });
+  const all = readFileSync(d + '/_site/version.json', 'utf8') + readFileSync(d + '/_site/index.html', 'utf8');
+  assert.ok(!all.includes('Secret-Name') && all.includes('href="/version.json"'), 'a gated site publishes no run link and no repository name'); }
 console.log('OK (tests)');
