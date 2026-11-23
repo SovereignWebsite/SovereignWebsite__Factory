@@ -78,6 +78,11 @@ try {
   };
   const work = (file, id) => { mkdirSync(join(dir, file, '..'), { recursive: true }); writeFileSync(join(dir, file), file); git('add', '.'); git('commit', '-qm', `w ${file}`, '-m', `Decision: ${id}`); };
   put(rec); work('requests/a/site.json', rec.id); work('seed/b', rec.id);
+  { const { scanText } = await import('../build/leak-scan.mjs'); const { readFileSync } = await import('node:fs');
+    const sig = readFileSync(join(dir, `decisions/${rec.id}.json.sig`), 'utf8');
+    assert.deepEqual(scanText(`decisions/${rec.id}.json.sig`, sig), [], 'a decision signature passes the leak scan');
+    assert.ok(scanText('docs/x.sig', sig).length, 'the same block anywhere else is still flagged');
+    assert.ok(scanText(`decisions/${rec.id}.json.sig`, `${sig}${['to', 'ken'].join('')} = ${(await import('node:crypto')).randomBytes(30).toString('base64')}\n`).length, 'anything beside the block is scanned'); }
   const run = (over = {}) => D.checkPush({ cwd: dir, before: base, after: git('rev-parse', 'HEAD'), branch: 'dev', repository: rec.scope.repository, now, index, anchor: afp, ...over });
   assert.deepEqual((await run()).errors, [], 'a signed, in-scope record passes');
   // the real check pins Dinis's anchor; here the made-up one stands in for it
