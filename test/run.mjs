@@ -504,4 +504,14 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   const all = readFileSync(d + '/_site/version.json', 'utf8') + readFileSync(d + '/_site/index.html', 'utf8');
   assert.ok(!all.includes('Secret-Name') && all.includes('href="/version.json"'), 'a gated site publishes no run link and no repository name'); }
 { const R = await import('../build/requests.mjs'); const h = { label: 'presentations', title: 'P', description: 'x', kind: 'demo' }; assert.deepEqual(R.validate(h, '2026-11-23__presentations'), [], 'the presentations home needs no group'); assert.equal(R.repoName(h), 'Site__Presentations'); assert.equal(R.host(h), 'presentations.sovereignweb.site'); const p = { label: 'ana', group: 'presentations', title: 'A', description: 'x', kind: 'owner' }; assert.equal(R.repoName(p), 'Site__Presentations__Ana'); assert.equal(R.host(p), 'ana.presentations.sovereignweb.site'); }
+{ const R = await import('../build/requests.mjs'); const { mkdtempSync, mkdirSync, writeFileSync: w } = await import('node:fs'); const { tmpdir } = await import('node:os');
+  const d = mkdtempSync(tmpdir() + '/req-'); const put = (f, j) => { mkdirSync(`${d}/${f}`); w(`${d}/${f}/site.json`, JSON.stringify(j)); };
+  put('2026-11-21__ana', { label: 'ana', group: 'cv', title: 'A', description: 'x', kind: 'owner' });
+  put('2026-11-23__ana', { label: 'ana', group: 'presentations', title: 'A', description: 'x', kind: 'owner' });
+  let L = R.load(d); assert.deepEqual(L.errors, [], 'one label in two groups is allowed');
+  const rs = R.repos(L.requests); assert.deepEqual(rs.map((x) => x.name).sort(), ['Site__CV__Ana', 'Site__Presentations__Ana']);
+  assert.ok(rs.every((x) => !(x.aka || []).some((a) => /^Site__ana$|^Site__Ana$/.test(a))), 'a shared label claims no bare old name');
+  put('2026-11-24__ana', { label: 'ana', group: 'cv', title: 'A', description: 'x', kind: 'owner' });
+  L = R.load(d); assert.ok(L.errors.some((e) => e.includes('a.cv.sovereignweb.site') || e.includes('ana.cv.sovereignweb.site')), 'the same label in the same group is refused');
+  const one = R.repos([{ label: 'bo', group: 'cv', title: 'B', description: 'x', kind: 'owner' }]); assert.ok(one[0].aka.includes('Site__Bo'), 'a label used once keeps its bare old name'); }
 console.log('OK (tests)');

@@ -103,8 +103,15 @@ export function load(dir = 'requests') {
     if (req.from && existsSync(t)) { try { moved = JSON.parse(readFileSync(t, 'utf8')).state === 'moved'; } catch { errors.push(`${f}: transfer.json is not valid JSON`); continue; } }
     out.push({ ...req, folder: f, moved });
   }
-  const seen = new Set();
-  for (const r of out) { if (seen.has(r.label)) errors.push(`label ${r.label} requested twice`); seen.add(r.label); }
+  // A label may be used in several groups, so one label finds all of a person's sites (Dinis, 23 Nov 2026: "allow labels
+  // to be used in different groups ... that label will allow me to find all dinis-cruz related sites"). The address and
+  // the repository name stay unique.
+  const seenHost = new Map(), seenRepo = new Map();
+  for (const r of out) {
+    const h = host(r), n = repoName(r);
+    if (seenHost.has(h)) errors.push(`${r.folder}: ${h} is already requested by ${seenHost.get(h)}`); else seenHost.set(h, r.folder);
+    if (seenRepo.has(n)) errors.push(`${r.folder}: ${n} is already requested by ${seenRepo.get(n)}`); else seenRepo.set(n, r.folder);
+  }
   return { requests: out, errors };
 }
 
@@ -123,10 +130,15 @@ export const live = (requests) => requests.filter((r) => !r.from || r.moved);
 // A moved address keeps working: each old address gets a small redirect site, Redirect__<label>, sending every path
 // (and its query and #fragment, so a vault key still opens) to the new address. Listed after every site, so Org apply
 // frees the old custom domain on Site__<label> before it gives it to the redirect.
+// A label used by more than one request: its bare old names (Site__<label>, Redirect__<label>) could belong to either
+// site, so neither claims them as aka and Org apply renames nothing by them.
+const shared = (requests) => { const c = {}; for (const r of requests) c[r.label] = (c[r.label] || 0) + 1; return (label) => c[label] > 1; };
+
 export function redirects(requests) {
+  const isShared = shared(requests);
   return live(requests).flatMap((r) => (r.previous || []).map((from, i) => {
     const n = i ? `-${i + 1}` : '';
-    return { from, to: host(r), label: r.label, name: `Redirect__${suffix(r)}${n}`, old: [`Redirect__${r.label}${n}`, `Redirect__${cap(r.label)}${n}`] };
+    return { from, to: host(r), label: r.label, name: `Redirect__${suffix(r)}${n}`, old: isShared(r.label) ? [] : [`Redirect__${r.label}${n}`, `Redirect__${cap(r.label)}${n}`] };
   }));
 }
 
@@ -144,10 +156,11 @@ export function repos(requests) {
 }
 
 function sites(requests) {
+  const isShared = shared(requests);
   return live(requests).map((r) => ({
     name: repoName(r),
     // Agent homes are singular, Site__Agent__<Name> (Dinis, 22 Nov 2026 ~17:05 UTC: "It's not agents, it's agent"); the plural is kept as aka so Org apply renames.
-    ...aka(repoName(r), `Site__${r.label}`, `Site__${cap(r.label)}`, ...(r.group === 'agents' ? [`Site__Agents__${r.repo_label || cap(r.label)}`] : [])),
+    ...aka(repoName(r), ...(isShared(r.label) ? [] : [`Site__${r.label}`, `Site__${cap(r.label)}`]), ...(r.group === 'agents' ? [`Site__Agents__${r.repo_label || cap(r.label)}`] : [])),
     description: `${host(r)}: ${r.description}`.slice(0, 350),
     homepage: `https://${host(r)}`,
     pages: true,
