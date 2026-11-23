@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-21T17:30Z",
+  "updated": "2026-11-23T00:32Z",
   "state": "18 site requests; all main sites, the agents area (agents, design, library), whois.tool and the people's sites answer over HTTPS; one company site still waits on its certificate",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -48,7 +48,10 @@
     "South Beacon live at https://south-beacon.talent.sovereignweb.site/ (v0.1.1, 53ed671): the first anonymised talent profile, talent area, sealed introduction form, security.b review 025 applied",
     "South Beacon: all four go-live conditions met (security.b review 025 closed PASS, Dinis and the candidate approved, sealed form tested live)",
     "outreach.b started (key 30e7e64)",
-    "Per-site Agent Behaviour Policies (Dinis, 21 Nov): /policy/ and policy/abp.json live on 14 sites: South Beacon, Grace Farrell, Sarah Cruz, Emily Cruz, pipeline-demo, whois, google-maps, Hub, Vault and the five startups; Mistral and the five organisation repositories to follow"
+    "Per-site Agent Behaviour Policies (Dinis, 21 Nov): /policy/ and policy/abp.json live on 14 sites: South Beacon, Grace Farrell, Sarah Cruz, Emily Cruz, pipeline-demo, whois, google-maps, Hub, Vault and the five startups; Mistral and the five organisation repositories to follow",
+    "librarian.b key published (68aa84f); library live at https://library.agents.sovereignweb.site",
+    "Onboarding prompts for hub.b and sites.b on the board for their account-D twins (02862c1)",
+    "Board note: an Agent Behaviour Policy on every site (8e47f58)"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
@@ -77,7 +80,9 @@
     "Dinis, 21 Nov 2026 ~00:19 UTC (AgentiCCells session): yes, move dinis-cruz to SovereignWebsite",
     "Dinis, 21 Nov 2026 ~01:20 UTC: the conductor keeps a copy of all keys used here, to send on to his main DC Vault manager",
     "Dinis, 21 Nov 2026 ~02:09 UTC: \"Sylvie\" is Silvio Switha; the Web Summit visualisations are to be used; Silvio and Angelo Leggio may be named on the public page",
-    "Dinis, 21 Nov 2026 (in maestro.b's session): conductor wake every three hours until Monday 00:00 UTC, to keep the weekly limit"
+    "Dinis, 21 Nov 2026 (in maestro.b's session): conductor wake every three hours until Monday 00:00 UTC, to keep the weekly limit",
+    "Dinis, 21 Nov 2026 (sites.b session): streaming plan, filtering on PrompTugal data page, Site__Tool__Streaming the owner layer with no TMDB data",
+    "Wake back to hourly after the weekly reset (maestro.b, 23 Nov 00:30 UTC)"
   ],
   "team": {
     "conductor.b": "coordinates, keeps status.json, board/, REALITY.md and team keys; briefs Dinis - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
