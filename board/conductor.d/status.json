@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-23T00:52Z",
+  "updated": "2026-11-23T04:53Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -95,7 +95,8 @@
     "synthetic-users.d asked for a persona test of the Wardley Maps explainer once cartographer.d's redraw is live (claimed docs/runs/wardley-maps-*.md)",
     "answered conductor.c's 13 entries in board/conductor.d/to-c.md (OWASP moved to owasp.c; docs/hub-c-plan.md carved out for hub.c; no feedback.d, no lanes; factory.d built on factory.c's work)",
     "daily debrief: board/conductor.d/handover/2026-11-22__conductor-d-debrief.md",
-    "pybot.d started by sites.d for Site__Tool__Huggingface__Pybot (claim moved); hub.d's claim widened to tools/build-showroom.py (shared) and the hub site schema; factory.d's raw-URL risk for the IaC rename passed to conductor.c"
+    "pybot.d started by sites.d for Site__Tool__Huggingface__Pybot (claim moved); hub.d's claim widened to tools/build-showroom.py (shared) and the hub site schema; factory.d's raw-URL risk for the IaC rename passed to conductor.c",
+    "passed the 'no agent blocked' rule to every agent conductor.d runs (design.d, synthetic-users.d, factory.d, library.d, security.d, counsel.d, observability.d, chiswick-cheese-market.d, sites.d, hub.d, streaming.d, wordpress.d, donna-freed.d, pybot.d), with the limits: keeper-reserved files and permission refusals stand"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -148,7 +149,8 @@
     "Dinis, ~17:05 UTC 22 Nov in maestro.d's session (relayed): agent homes are always singular, Site__Agent__<Name> (conductor.d had wrongly passed on the plural); platform tool sites <service>.<provider>.tool.sovereignweb.site, ours under one of our own names; two-way doors go ahead, one-way doors come to him; no private pages: briefings publish on the agents' own sites",
     "Dinis, in sites.d's session (as reported, 22 Nov evening): sites are never attached to sites.d's session; each gets its own agent session",
     "Dinis, ~21:30 UTC 22 Nov in factory.d's session (as reported): PyBot at pybot.huggingface.tool; yes to Site__Agent__<Name>; yes to reversible changes going ahead; Wardley Maps in a frameworks group; no separate site for the Streaming agents; key requests merged to dev; Site__Agent__Studio",
-    "Dinis, ~19:10 UTC 22 Nov in feedback.c's session (relayed by conductor.c): one lane per site, one inbox agent per account, all eventually on one shared vault with staggered wakes"
+    "Dinis, ~19:10 UTC 22 Nov in feedback.c's session (relayed by conductor.c): one lane per site, one inbox agent per account, all eventually on one shared vault with staggered wakes",
+    "Dinis, ~03:00 and ~03:35 UTC 23 Nov in maestro.c's session (PrompTugal__News__Website CLAUDE.md, 'No agent blocked'): reversible steps inside an agent's own area go ahead on its own recommendation, logged under exceptions; one-way doors stay his (trust keys in routers, AWS, money, legal, private persons' details, deleting, main, connectors)"
   ],
   "team": {
     "sites.d": "https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf",
@@ -165,5 +167,6 @@
     "wordpress.d": "Site__Tool__Wordpress, started by sites.d - https://claude.ai/code/session_015gaHda1bnbqASo1ed8VUdY",
     "donna-freed.d": "Site__Author__Donna-Freed, started by sites.d - https://claude.ai/code/session_015gaHdeh6Sh45Ef2fZFAhLi",
     "pybot.d": "Site__Tool__Huggingface__Pybot, started by sites.d - https://claude.ai/code/session_015gaHddy85C9E8oW9YhJ6FK"
-  }
+  },
+  "exceptions": []
 }
