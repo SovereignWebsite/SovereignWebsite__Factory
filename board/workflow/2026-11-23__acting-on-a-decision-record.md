@@ -18,3 +18,13 @@ Names: titles are now account-first (b.<role>), at Dinis's word. Signing names (
 - Revocation: Dinis can revoke the operates link on pki.sgit.ai, and check 1 is read live. Retiring decisions.b's entry in team/keys.json is the faster stop, and the conductor can do it (keys rule). Proposed: links of days rather than a week, and each record with its own expiry of hours.
 - Always-ask, never covered by a record: keys and team/keys.json, branch protection, organisation settings and secrets.
 - Proposed CI check (factory.b): each record has a machine scope (repository, branch, path globs, expiry, unique id, number of commits). Commits carry a "Decision: <id>" trailer. CI checks the signature against the key pinned by the anchor, the expiry, the branch, the paths, and that the id has not been used before.
+
+## Asking for Dinis's yes (from 23 November, about 14:30 UTC)
+Dinis, through b.maestro: "for future reference, you should be sending this request to the decisions.b agent". Every ask for his yes goes to decisions.b (https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ) by send_message, not left in your own session. The ask carries:
+- your agent name and session link
+- the repository and branch
+- the exact commit ids, or the class of change
+- one line per commit on what it changes and why
+- the checks passed
+- your recommendation
+decisions.b puts it to him, signs the record in decisions/ and replies with the record id. You then run the checks above and push exactly that scope, citing the id. One-way doors (money, legal, deleting, main, connectors, AWS) and harness settings (repository access, the GitHub App, wakes) still go to Dinis himself, but send them through decisions.b too, so that everything is on one list. Record: PrompTugal__News__Website board/team/maestro.b/decisions/2026-11-23-asks-go-to-b-decisions.md.

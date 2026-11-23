@@ -1273,6 +1273,29 @@
         "fingerprint": "sha256:a23b2dd69959b6e0",
         "signing_fingerprint": "sha256:eefbe996d9c67a7c"
       }
+    },
+    {
+      "id": "pybot-d-sovereignwebsite",
+      "agent": "pybot.d@SovereignWebsite.dinis",
+      "role": "Keeper of the PyBot tool site (pybot.huggingface.tool.sovereignweb.site): an unofficial look at PyBot. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_015gaHddy85C9E8oW9YhJ6FK",
+      "fingerprint": "sha256:63fa2c6062f854c6",
+      "signing_fingerprint": "sha256:745eca03a5062d8e",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAqjzk8vTkkU74tBmBxsIu\nq3MNswQpGQRQFubay/8mfLc1ET8jjGGBVw2hWp9UD6a3xUbFzngA6da5GYGtV1N5\nFKjAyRjSl58pGbAyEAJgS2/9iaRHJbTLB0Dn3hXqrtT66nBBXQdqGfZjJpP7pfUu\n5HoC01yBDHRMvMzC+/6W966iuzC6Q/yBhowUuAst6CZ96ZIGCIAmu3MJOsQxWLMZ\n+BAdSQN2+PH+xplUW+k4S4tO2MWfNWF+ilHkzsS9UOXyQD/4wSBNp2yZr2BgfLnS\nyKl2GHVY5lXJvAd307IeH/SeXmb1m8bdI+SCAFSPwQVEilZiaHRs/oqI6o09ArC3\nwRGAOXESetCcTgjPGnvmnd4RBiBoDq+jtNm4Qqs4K5R40cbWu+5u0Af9MTWin/3p\nIa2PPGJplswArDLD2FK/bd6xSGprnvVv6XjnIxCGH1iLw/Ui0d+76kpSMxVmw9pY\nSDqA7RcB5wjNsC36H/SPpP+BVdeJXVdH7BRTmOHlpOqYgRjf2GNR9wj+A7wrl+Nr\n4ivmF57y2M+QPYk71vFjVZ8XclW8UeoRNTT3uSV/y0UmmfkWrOOq6q78bsxrmpOL\nBqy/nbvCAQK5+Jc1W0uwByUji9suh3WFgB57U+0uyCmg+XGu+03BMbbjPAokHoLe\nxPTNJcguxfkUiq51lIWy+78CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEw88fdVt824FZOc517weUXyVDJcqj\nnrvUC99DBaPuVvV6BV+AcdznhGZWEqUWUheUahrXp4BFm5m8gwLSwqGw9w==\n-----END PUBLIC KEY-----\n",
+        "label": "pybot-d-sovereignwebsite",
+        "fingerprint": "sha256:63fa2c6062f854c6",
+        "signing_fingerprint": "sha256:745eca03a5062d8e"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-23T15:07Z",
+  "updated": "2026-11-23T16:00Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -69,7 +69,11 @@
     "Launch offer £50 or €50 live on sovereignwebsite.ai/pricing.html (Website 73d6630), Dinis confirmed",
     "Hub v0.1.32 to v0.1.46: the case for buying on every design, I want one, own versus rent, /features/; The Line is home; 'Would you want one?' 1/5 to 4/5",
     "RiskMandate startup site rated 4, maturity M4; all five startups under 8,000 px on a phone",
-    "design.b's maturity model M0 to M8; 61 unrated live sites now recorded in ratings"
+    "design.b's maturity model M0 to M8; 61 unrated live sites now recorded in ratings",
+    "Dinis signed 12 decision records via decisions.b (15:54 UTC), incl. segment A leads with B as proof; records usable once committed in IaC decisions/",
+    "sovereignwebsite.ai: decided launch offer on home and all designs; address and agent-policy lines made accurate (Website 7773632, 7303c87)",
+    "The workflow in one page, nine steps with Car Buyer as the example: https://pipeline-demo.demo.sovereignweb.site/workflow/ (461a834)",
+    "design.agents.sovereignweb.site /policy/ live (v0.1.29); every listed site now publishes its policy"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
@@ -79,6 +83,7 @@
     "strategy.b plan (proposals): A founders and small teams wanting the agentic workflow (lead), B personal sites (proof: 11 people's sites, 1 handed over), C web freelancers and agencies (maintain, do not replace), D local businesses later. Sites need: a \"Want one?\" page on the hub, the own-versus-rent market page, a workflow page for A, three consented examples for B"
   ],
   "asks": [
+    "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
     "Dinis: yes to accountant.agents.sovereignweb.site - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: a budget for the librarian's first run, or let accountant.b propose one - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF",
     "Dinis: who keeps sovereignwebsite.ai, .org and .site - https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67",
@@ -108,7 +113,8 @@
     "Dinis, 23 Nov ~01:20 UTC (maestro.b session): agents publish their own key (factory.d 1aa1829 accepted); no re-sign for 5eb7fde and b7c8bfd, never force-push",
     "Dinis, 23 Nov ~01:20 UTC: every account-B schedule stopped, the conductor wake included (trig_015LDYEmyDkQNBjbiWuPnBc9 disabled); he re-enables them himself",
     "suno.b started by maestro.b at Dinis word (https://claude.ai/code/session_01Kw9UwBWVj7sxLdmr1ZKwh4), reports to conductor.b, waits for a spend cap",
-    "Dinis, 23 Nov ~11:30 UTC (maestro.b session): account B is the Sovereign Website account; go to market; a site created or improved every hour; operator page on the hub; strategy.b started"
+    "Dinis, 23 Nov ~11:30 UTC (maestro.b session): account B is the Sovereign Website account; go to market; a site created or improved every hour; operator page on the hub; strategy.b started",
+    "Dinis, 23 Nov ~14:30 UTC (via b.maestro): every ask for his yes goes to decisions.b by send_message"
   ],
   "team": {
     "conductor.b": "coordinates, keeps status.json, board/, REALITY.md and team keys; briefs Dinis - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
