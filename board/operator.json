@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-23T23:27Z",
+  "updated": "2026-11-23T23:28Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
@@ -22,10 +22,10 @@
     "Dinis: re-enable feedback.b's inbox round (trig_01FsUjtCGwD9w9i3eBWJVoY3) and say so in its session (\"Turn the inbox back on\", 23:22 UTC) - https://claude.ai/code/session_01Kw9UwBiG9d5KHvFjdtiP69",
     "Dinis: start a fresh sites.b session with docs/handover.md (24275ef) as its first read; it leads the shared wayfinder (ask 40) and takes the hourly wake - https://github.com/SovereignWebsite/Site__Agent__Sites/blob/dev/docs/handover.md",
     "Dinis: do the vaults you wanted kept to yourself also go to the maestro under the vault-keys rule? Until you say, they stay as they are",
-    "Dinis: yes in factory.b's session to two always-ask changes: 6c668e8 names two known-bad Factory commits (b7c8bfd, 5eb7fde) so the checker passes all 444, and f421bad lets each site's Signers check read agents' keys from site/keys/<name>.json in its own repository - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
+    "Dinis: yes in factory.b's session to two always-ask changes: 6c668e8 names two known-bad Factory commits (b7c8bfd, 5eb7fde) so the checker passes all 444, and f421bad lets each site's Signers check read agents' keys from site/keys/<name>.json in its own repository - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+    "Dinis: Emily's GitHub username for her org invite (Member, write on Site__Artist__Emily-Cruz), and whether Emily and her Claude must sign commits after hand-over - https://claude.ai/code/session_01Kw9UwBvXb8qAME1TexsQss"
   ],
   "done_recent": [
-    "Dinis's principle (never block on him; list what he can do on each site) sent to the whole team",
     "Dinis revised asks 2, 8 and 31 (record 2026-11-23__asks-2-8-31-revised, 23:14 UTC): no IaC push access for strategy.b, grace.b or strategy.d (keys go in their own repositories); feedback is always driven by QR codes; the first handed-over site may be listed on our website without naming its owner. Routed",
     "Offboarding process drafted for Dinis (ask 39): board/workflow/2026-11-23__offboarding-draft.md, for security.b's review",
     "Owner pages, listing what Dinis can do himself with nothing waiting on him: South Beacon (6abc7a4), Kate Curtis-Evans (1b5243e), Sarah Cruz (0cb1a11, v0.1.5), design.agents (https://design.agents.sovereignweb.site/owner.html), Suno (4841d42)",
@@ -39,7 +39,8 @@
     "Design guideline 2b \"Agents as provenance\": from every page an Agent step opens a linked graph of the keeper and its chain to Dinis, the agents behind each page, the decision records and the design rounds, with a provenance line in every footer (design.b, 1c1abb5); relayed to every maestro",
     "Vault keys (Dinis, 23:25 UTC, record 2026-11-23__vault-keys-to-maestro): any agent may create a vault, and gives a sealed copy of its key to the account's maestro, so at least two hold each; vault-making agents told, vault names (never keys) go to decisions.b through b.maestro",
     "Hub v0.1.54 live with the ask 31 change (443bf9d); registry.json shape proposed for the shared wayfinder; navigation is item 0 in the hub hand-over (86c790c)",
-    "Ask 30 tried: Car Buyer cannot fetch DVLA or MOT data from a static page (both refuse browser requests and need server-held keys); the idea is archived under Dinis's rule, the site stays live"
+    "Ask 30 tried: Car Buyer cannot fetch DVLA or MOT data from a static page (both refuse browser requests and need server-held keys); the idea is archived under Dinis's rule, the site stays live",
+    "Emily Cruz's site: docs/owner.md lists what Dinis, then Emily, can do directly (c826878, Pages and Signers green)"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
