@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-23T11:46Z",
+  "updated": "2026-11-23T14:17Z",
   "state": "account C weekly 61% at ~09:40 (amber; red at 75%); design.c every 2 hours (43 */2); no new sessions or scheduled tasks on account C; new work to another account where possible",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -42,8 +42,7 @@
     "Dinis: feedback.c needs your yes in its session to install sgit-ai and make its key; and a choice for the feedback lanes sealed to feedback.b (kate-curtis-evans, south-beacon, grace-farrell, vault 7966duv1): unseal feedback.b's keys to feedback.c, wait for feedback.b on Monday, or new lanes sealed to feedback.c's key. It drains nothing until then - https://claude.ai/code/session_01Kw9UwEQb6jZQ17nxMfkAVB",
     "Dinis: owasp.c, like feedback.c (and mistral.c before), was refused the sgit-ai install by its session's permission check; your yes in its session lets it make its key. Its first slice (plan, /projects/, /graph/, provenance; data CC BY-SA 4.0 from owasp.org) is built locally - https://claude.ai/code/session_01Kw9UwE69pr5bPeaQ4tYqir",
     "Dinis: a spend cap for mistral.c's Mistral runs (it proposed 2 USD for the first workflow and probes); and confirm I archive the first mistral.c session once the second is official (I did not start it) - https://claude.ai/code/session_01Kw9UwE87QCsWenVdtLcxoM",
-    "Dinis: start an Instagram agent (instagram.c@SovereignWebsite.dinis) on account C to keep the Instagram platform site and run the posting? Say so in this session and I start it - https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj",
-    "Dinis: reviewers for the Instagram standing rule: account C has no security or counsel agent and is at 61% weekly, so I asked security.d and counsel.d (account D) through to-d.md; or say a security.c and counsel.c should start here (or on account A). Until then each video needs your yes - https://claude.ai/code/session_01Kw9UwBf2gRkufCCnZs335u"
+    "Dinis: start an Instagram agent (instagram.c@SovereignWebsite.dinis) on account C to keep the Instagram platform site and run the posting? Say so in this session and I start it - https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj"
   ],
   "decisions": [
     "Dinis, ~17:36 UTC in factory.c's session (as reported by factory.c): \"yes, merge the keys to dev in that order\"",
@@ -60,7 +59,8 @@
     "Dinis, ~01:55 UTC 23 Nov in studio.c's session (as reported): a 4-hourly update video by studio.c, published to Instagram under a standing approval rule, spend cap 2 USD a day, studio.c's own 4-hourly scheduled task",
     "Dinis, ~02:45 UTC in aws.c's session (memo part 2, a484694, as reported): the AWS Platform programme gets its own conductor (conductor.aws) and a PM; maestro.c creates the whole team and holds the decisions; per-area sites (s3, lambda, iam and others under .aws.platform.sovereignweb.site) as IaC requests. conductor.c coordinates claims with maestro.c and starts none of that team",
     "Dinis, ~03:00 UTC 23 Nov in maestro.c's session (as relayed; PrompTugal__News__Website board/team/maestro.c/decisions/2026-11-23-no-agent-blocked.md): no agent blocked; two-way doors go on the agent's own recommendation, each exception logged; one-way doors (trust keys, AWS changes, money, legal, deleting, main, connectors, private people's details) stay his",
-    "Dinis, ~11:45 UTC in instagram.c's session (as reported): \"yes push them\" (four Reels via Buffer) and a standing review rule: instagram.c, security and counsel review each studio video; no red flags or private data means publish"
+    "Dinis, ~11:45 UTC in instagram.c's session (as reported): \"yes push them\" (four Reels via Buffer) and a standing review rule: instagram.c, security and counsel review each studio video; no red flags or private data means publish",
+    "Dinis, ~13:45 UTC in instagram.c's session (as reported): the \"Agent (RiskMandate.ai)\" YouTube channel connected in Buffer; each studio Reel posts to Instagram and as a YouTube Short in one run; posting now runs on the written rules with Dinis reviewing after publication (\"that is a better workflow\"); the YouTube site to show the videos like the Instagram site"
   ],
   "team": {
     "observability.c": "read-only per-site visibility note; key on its branch work/observability.c (788d3b9) - https://claude.ai/code/session_01Kw9UwBmqCafJ2NtqhQPQwu",
