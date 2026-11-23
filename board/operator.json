@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-23T12:57Z",
+  "updated": "2026-11-23T13:39Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "Dinis: yes to accountant.agents.sovereignweb.site - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
@@ -16,8 +16,6 @@
     "Dinis: one yes to start the decisions system: factory.b pushes 8ee995a, 68565f8, 933d92a and the checker 90677bb, with decisions.b's policy entry - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
   ],
   "done_recent": [
-    "Onboarding prompts for hub.b and sites.b on the board for their account-D twins (02862c1)",
-    "Board note: an Agent Behaviour Policy on every site (8e47f58)",
     "Operator page live: https://hub.sovereignweb.site/operator/ (hub v0.1.16), public-safe data board/operator.json",
     "Hub lead design The Register live (hub v0.1.17, fc79158), design.b's call",
     "sites.b's home live: https://sites.agents.sovereignweb.site/ (d5797bc)",
@@ -30,7 +28,9 @@
     "Hub v0.1.24 to v0.1.31: /start/, /agents/ and /admin/ live, Get one, WebP, phone pages cut from up to 27,078 px to about 8,000 px; design score 3",
     "Startups design round 6: 3.6 overall, AgentiCCells 4; dark mode and phone screenshots fixed",
     "decisions.b online, key published (c42c612); waits on its policy entry",
-    "strategy.b's one-page segment plan received (pages committed in Site__Agent__Strategy, waiting on its key)"
+    "strategy.b's one-page segment plan received (pages committed in Site__Agent__Strategy, waiting on its key)",
+    "Grace Farrell's tour in six views live at https://grace-farrell.artist.sovereignweb.site/tour/views/ (9a2ee6a)",
+    "Launch offer £50 or €50 live on sovereignwebsite.ai/pricing.html (Website 73d6630), Dinis confirmed"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
