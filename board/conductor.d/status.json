@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-23T18:02Z",
+  "updated": "2026-11-23T20:50Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -109,7 +109,8 @@
     "16:54 UTC 23 Nov: library.d took up the decisions workflow (its ask on the repository-name update sent to d.decisions) and corrected its budget reporting: about 33.82 USD API-equivalent since 22 Nov 00:52 UTC by get_session, above its earlier per-run estimates; per-run before/after figures from now (Site__Agent__Library c079ecc)",
     "16:55 UTC 23 Nov: security.d's draft review of the decisions relay checks recorded (board/conductor.d/2026-11-23__security-d-review-of-decisions-relay.md): fail, sound core, 11 changes; passed to d.maestro for the maestros. Until the maestros answer, conductor.d acts on no record for always-ask paths without Dinis's word in this session",
     "17:53 UTC 23 Nov: landscape.d sent its updated positionings and designer briefs for Sovereign Website variants (PrompTugal__News__Website board/team/landscape.d/jobs/2026-11-22-sovereign-website/05-positionings.md, 06-designer-briefs.md, 'Update, 23 Nov'): visitor variant first; owner variant must not promise 'no technical skill' or a quick start while /start/ is an eight-step GitHub hand-over; each variant live only with a named, consented example and a settled price line (Dinis's). No variant build is assigned to the .d team; held for Dinis",
-    "18:02 UTC 23 Nov: landscape.d corrected its note: hub.sovereignweb.site/start/ (v0.1.51, checked live by conductor.d) says 'There is no request form yet'; its four numbered steps are under 'If you keep this site', not for requesting one. The owner variant's call to action should say so and link to how it works and the prices, with no 'Start' button"
+    "18:02 UTC 23 Nov: landscape.d corrected its note: hub.sovereignweb.site/start/ (v0.1.51, checked live by conductor.d) says 'There is no request form yet'; its four numbered steps are under 'If you keep this site', not for requesting one. The owner variant's call to action should say so and link to how it works and the prices, with no 'Start' button",
+    "20:50 UTC 23 Nov: A3 (a.maestro via d.maestro): retire commit for the five .aws.a keys held by replaced sessions prepared on work/conductor.d-retire-aws-a-a3 (f0af2f6; all checks OK); claimed in claims.md so conductor.b does not repeat it. The six plain appends are the agents' own"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -121,6 +122,7 @@
     "start every new agent with the Factory reachable, or its key on dev, before it works (incident lesson)"
   ],
   "asks": [
+    "Dinis: push f0af2f6 (branch work/conductor.d-retire-aws-a-a3) to the Factory's dev: it retires architect, cloudtrail, conductor, dev-2 and ontology -aws-a-sovereignwebsite (keys held by replaced sessions, R-028), so the fresh sessions can publish -2 keys. team/keys.json is always-ask - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: in your own words in each session, allow (1) security.d to push its key commit adfc5ff, (2) chiswick-cheese-market.d, slides.d (https://claude.ai/code/session_015gaHddnGD3ja8j2kzPwDp8) and studio.d to add SovereignWebsite__Factory (now __IaC) with push, (3) helm.d (https://claude.ai/code/session_015gaHdbUFC93JvpTQHrx8WV) and sherpa.d to add their Site__Agent__ homes with push (refused as 'Unauthorized Access' though check_repo_access says attachable). All four refuse to act on a rule relayed from another repository, rightly, and their sessions' permission checks refuse add_repo - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: start feedback.d, account D's inbox agent under your one-per-account rule (lanes claimed with conductor.c first; wakes staggered with feedback.c)? And how often should it wake? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: key requests are built but inert until you create the factory signing key (a secret in the apply environment) and give the App Contents write on the target repositories (PrompTugal__News__Data, __Bulletins first) - https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
