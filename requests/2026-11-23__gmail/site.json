@@ -1,0 +1,8 @@
+{
+  "label": "gmail",
+  "group": "tool",
+  "provider": "google",
+  "title": "Gmail tool (unofficial)",
+  "description": "Read and send your Gmail in your browser with your own Google sign-in, with a demo on synthetic mail. Unofficial, not affiliated with Google.",
+  "kind": "demo"
+}
