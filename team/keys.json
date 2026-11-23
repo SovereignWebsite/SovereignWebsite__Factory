@@ -1143,6 +1143,29 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "suno-b-sovereignwebsite",
+      "agent": "suno.b@SovereignWebsite.dinis",
+      "role": "Suno agent on account B, twin of suno.c: music made with Suno's official API for the team's Instagram posts, only with Dinis's word and a spend cap he sets",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwBWVj7sxLdmr1ZKwh4",
+      "fingerprint": "sha256:e53baca9785b02e6",
+      "signing_fingerprint": "sha256:d69db1d15770f4c6",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAvAM4/I1cgu3TuHeZX4uf\n8OLyXIpn8sx/rLj+tSsO+CfhU8SFzQQIyEnRBeDet3Zc4ELaD9tDSowFodrOi5rn\nUUSave0bp66+fbfwFHQDnZLNrYhl/KapX41AufsXccj7k/u4+U0ux9HIquohJpAL\nZjQ7NL6Hmx+Dpa8KUG3BmRbywyI3m700GNJ36hJwLdpnfy4IpkNOwPP2jmy9dge+\nVphGw0RLA91hwbyC3v5gNB4xitonOe8w7J4QeymCIHboziEW+nWzlVtsYGT5tHzI\nuB2pvAVrHr9SFCRfWz7O6MPh9pF3i7xSxG9YRKVf/DR8p1Y+tZKVyGNzhXNw1PFW\nzcg/362RBThufW8hXkDS+N/vDOKWoB5c4qj+UXuKyajtZKFWymBvMIF9ic1Rr3M6\n21957NXCENvRabOthTvsJ9cSXtOn4UmvFSvG0uaxzFLFQhzz16Xtao7TxIXBX4rI\n1OY/zOlV+P3j+lUBO1UmOqqELCaAX7wsWoXQ7HM62+HbqHj6UZyhGu1eyghb+Z9b\nEjj7OmWMZgt7Le7EcpaFBg1OLb77odpUQ9PwiiRF01dHCMXTTtdLEPVA6dDZeMx4\nc5EBSqffNGtxZfDOJK18xWzPx65eAaKSAcmqNIwQ218X1nA/mm8OkuCykjgrKHtv\nmCo/7X/gxoIAwQ6GW/SVMhcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESSvIryUqfSrFOKiXJ0+WOdYmLf/v\nUXD9NIE8/LaiFWbjEY9t1ImCTqmZjhMWNq3+AnlyHVuRiwiRJ3hbQxhVvg==\n-----END PUBLIC KEY-----\n",
+        "label": "suno.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:e53baca9785b02e6",
+        "signing_fingerprint": "sha256:d69db1d15770f4c6"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
