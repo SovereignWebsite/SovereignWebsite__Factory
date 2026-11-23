@@ -1,0 +1,8 @@
+{
+  "label": "wordpress-section",
+  "group": "demo",
+  "repo_label": "WordPress-Section",
+  "title": "A section fed from WordPress (demo)",
+  "description": "A demo for web agencies: a static section built from a WordPress site's public data, so the agency keeps its WordPress. Built from public WordPress feeds; not affiliated with the sites shown.",
+  "kind": "demo"
+}
