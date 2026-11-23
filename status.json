@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
-  "updated": "2026-11-23T15:34Z",
+  "updated": "2026-11-23T15:58Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -69,7 +69,9 @@
     "Launch offer £50 or €50 live on sovereignwebsite.ai/pricing.html (Website 73d6630), Dinis confirmed",
     "Hub v0.1.32 to v0.1.46: the case for buying on every design, I want one, own versus rent, /features/; The Line is home; 'Would you want one?' 1/5 to 4/5",
     "RiskMandate startup site rated 4, maturity M4; all five startups under 8,000 px on a phone",
-    "design.b's maturity model M0 to M8; 61 unrated live sites now recorded in ratings"
+    "design.b's maturity model M0 to M8; 61 unrated live sites now recorded in ratings",
+    "Dinis signed 12 decision records via decisions.b (15:54 UTC), incl. segment A leads with B as proof; records usable once committed in IaC decisions/",
+    "sovereignwebsite.ai: decided launch offer on home and all designs; address and agent-policy lines made accurate (Website 7773632, 7303c87)"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",

@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-23T15:34Z",
+  "updated": "2026-11-23T15:58Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
@@ -17,8 +17,6 @@
     "Dinis: one yes to start the decisions system: factory.b pushes 8ee995a, 68565f8, 933d92a and the checker 90677bb, with decisions.b's policy entry - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
   ],
   "done_recent": [
-    "Five startup sites redesigned (sources at section ends, chooser out of the header): sovereign-website v0.1.16, sgit, the-cyber-boardroom, risk-mandate, agentic-cells v0.1.15",
-    "Operator page reads board/operator.json live (hub v0.1.18)",
     "Hub alternative design The Gallery live at https://hub.sovereignweb.site/gallery/ (v0.1.19)",
     "Hub alternative design Contact Sheet live at https://hub.sovereignweb.site/contact-sheet/ (v0.1.20)",
     "Hub alternative design The Street live at https://hub.sovereignweb.site/street/ (v0.1.21)",
@@ -31,7 +29,9 @@
     "Launch offer £50 or €50 live on sovereignwebsite.ai/pricing.html (Website 73d6630), Dinis confirmed",
     "Hub v0.1.32 to v0.1.46: the case for buying on every design, I want one, own versus rent, /features/; The Line is home; 'Would you want one?' 1/5 to 4/5",
     "RiskMandate startup site rated 4, maturity M4; all five startups under 8,000 px on a phone",
-    "design.b's maturity model M0 to M8; 61 unrated live sites now recorded in ratings"
+    "design.b's maturity model M0 to M8; 61 unrated live sites now recorded in ratings",
+    "Dinis signed 12 decision records via decisions.b (15:54 UTC), incl. segment A leads with B as proof; records usable once committed in IaC decisions/",
+    "sovereignwebsite.ai: decided launch offer on home and all designs; address and agent-policy lines made accurate (Website 7773632, 7303c87)"
   ],
   "next": [
     "design.b: guidelines and a design pass on pipeline-demo, then emily-cruz",
