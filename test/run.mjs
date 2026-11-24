@@ -455,7 +455,15 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   const A = key('a'); key('b'); x('git', ['init', '-q', r]); fs.writeFileSync(`${r}/f`, '0'); git('add', '-A'); git('-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'init'); const base = git('rev-parse', 'HEAD');
   const c = (signer, msg, agent) => { fs.writeFileSync(`${r}/f`, msg); git('add', '-A'); git(...(signer ? ['-c', `user.signingkey=${d}/${signer}`] : ['-c', 'commit.gpgsign=false']), 'commit', '-q', ...(signer ? ['-S'] : []), '-m', msg, ...(agent ? ['-m', `Agent: ${agent}@X.y\nClaude-Session: https://claude.ai/code/session_${agent}`] : [])); return git('rev-parse', 'HEAD'); };
   const good = c('a', 'by a, published', 'a'), early = c('b', 'by b, key not published', 'b'), person = c(null, 'an owner edits on GitHub'), anon = c(null, 'unsigned, no trailer'), ov = c('b', 'by b\n\nOwner override: "make this live", the owner\'s session', 'b');
-  const res = await checkSigners({ cwd: r, before: base, after: ov, keys: [A], personVerified: async (sha) => ({ verified: sha === person, login: 'owner' }) });
+  const res = await checkSigners({ cwd: r, before: base, after: ov, keys: [A], personVerified: async (sha) => ({ verified: sha === person, login: 'owner', type: 'User' }) });
+  // No Agent: trailer: only a GitHub User or the Factory's App, never Claude's shared "claude" login (kate-curtis-evans.b).
+  { const S = await import('../seed/site-template/.github/ci/signers.mjs');
+    const only = async (p) => (await checkSigners({ cwd: r, before: `${person}^`, after: person, keys: [A], personVerified: async () => p })).refused.length;
+    assert.equal(await only({ verified: true, login: 'claude', type: 'User' }), 1, 'no trailer, verified as the shared "claude" login: refused');
+    assert.equal(await only({ verified: true, login: 'some-app[bot]', type: 'Bot' }), 1, 'no trailer, verified as another bot: refused');
+    assert.equal(await only({ verified: true, login: 'owner', type: 'Organization' }), 1, 'no trailer, verified as a non-User account: refused');
+    assert.equal(await only({ verified: true, login: S.FACTORY_BOT, type: 'Bot' }), 0, 'the Factory\'s own App (Org apply seeding) passes');
+    assert.equal(await only({ verified: true, login: 'owner', type: 'User' }), 0, 'an owner editing on GitHub passes'); }
   assert.equal(res.checked, 5); assert.deepEqual(res.ok.map((s) => s.slice(0, 7)), [good.slice(0, 7)], 'a published key passes');
   assert.deepEqual(res.refused.map((s) => s.slice(0, 7)).sort(), [early.slice(0, 7), anon.slice(0, 7)].sort(), 'an unpublished key and an unverified commit are refused');
   assert.equal(res.people.length, 1, "a person's verified commit is listed"); assert.equal(res.overrides.length, 1, 'an owner override is listed, not refused');
