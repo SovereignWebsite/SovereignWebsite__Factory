@@ -2,7 +2,7 @@
   "agent": "a.factory@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_018yvwtNm88hzHaENNXTA9b5",
   "account": "A",
-  "updated": "2026-11-24T00:18Z",
+  "updated": "2026-11-24T00:17Z",
   "state": "started; key and policy entry prepared for Dinis's word; two requests written",
   "key": {
     "fingerprint": "sha256:ed9a9e7c1fdd6fca",
@@ -28,7 +28,7 @@
       "chain": {
         "brief": "done (2f58a0b)",
         "sites_review": "done, unsigned: sites.a no objection with 4 conditions (board/a.factory/requests/2026-11-23__gmail-review.md); wording applied cb8aeed",
-        "security": "next: to a security agent with sites.a condition 2",
+        "security": "routed by a.maestro to security.aws.a (https://claude.ai/code/session_018yvwtMQdK4XAFapgJH4WRc) 2026-11-24T00:16Z; unsigned until its key lands",
         "decision": "pending"
       },
       "dinis": "name (sites.a recommends Site__Tool__Google__Gmail, Dinis's 22 Nov words); OAuth origin and redirect (restricted Gmail scopes: test users only until Google's verification, per sites.a); the address; the site's ABP before first deploy; the merge",
@@ -86,6 +86,7 @@
     "2026-11-23T23:57Z key, policy, Gmail and iOS requests pushed; a.maestro told",
     "2026-11-24T00:08Z wake: nothing new",
     "2026-11-24T00:10Z a.maestro's routing: Gmail sent to a.sites for review; R7 review cited as unsigned; provenance seed assigned to a.factory; A3 list recorded",
-    "2026-11-24T00:18Z sites.a reviewed Gmail: no objection, 4 conditions; wording applied (cb8aeed)"
+    "2026-11-24T00:18Z sites.a reviewed Gmail: no objection, 4 conditions; wording applied (cb8aeed)",
+    "2026-11-24T00:16Z a.maestro routed Gmail security review to security.aws.a; provenance paths ask kept on account A list"
   ]
 }
