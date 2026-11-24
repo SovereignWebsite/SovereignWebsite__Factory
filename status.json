@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
-  "updated": "2026-11-24T00:23Z",
+  "updated": "2026-11-24T00:24Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -109,7 +109,10 @@
     "Team rule (Dinis, 00:16 UTC 24 Nov): query the website, not messages; every agent keeps its area at /factory/dinis-cruz/account-b/ on its agent-type site, current at each wake (board/workflow/2026-11-24__query-the-website.md); sent to the team, librarian.b indexes the areas",
     "Components proposal (small public component repositories, first local models) and abp@'s browser policy manifest with decisions.b for Dinis",
     "Dinis delegated routine decisions to decisions.b (00:19 UTC 24 Nov, record 2026-11-24__decisions-b-decides): it decides asks it can recommend, each underwritten by security.b (and counsel for terms or licences); main, money, legal, deleting, organisation and harness settings stay his. First batch signed: security site yes (42), 88c6dd7 no (50), 7f2a68f not now (52)",
-    "Vault keys: every one goes to the account's maestro, sealed, no exceptions, Algarve Evolution and Perspace included (Dinis, 00:19 UTC); holders run security.b's 030 checks first, as b.maestro's key is self-published"
+    "Vault keys: every one goes to the account's maestro, sealed, no exceptions, Algarve Evolution and Perspace included (Dinis, 00:19 UTC); holders run security.b's 030 checks first, as b.maestro's key is self-published",
+    "Agent areas live under the team rule: decisions.b, design.b and design.b.rounds (design.agents), hub.b (on the hub until it has an agent site); design.b now rates a stale or missing area as holding an agent site at 2",
+    "No site key under a name the Factory already lists with another key: decided by decisions.b under the delegation, pushed (IaC c40dddf)",
+    "factory.b's plan so no agent is left without an area: site keepers on their own sites, a Site__Agent__<Role> for each role agent without one (six requests to decisions.b), one shared site for the AWS platform team"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
@@ -142,8 +145,9 @@
     "Dinis: start a fresh sites.b session with docs/handover.md (24275ef) as its first read; it leads the shared wayfinder (ask 40) and takes the hourly wake - https://github.com/SovereignWebsite/Site__Agent__Sites/blob/dev/docs/handover.md",
     "Dinis: Emily's GitHub username for her org invite (Member, write on Site__Artist__Emily-Cruz), and whether Emily and her Claude must sign commits after hand-over - https://claude.ai/code/session_01Kw9UwBvXb8qAME1TexsQss",
     "Dinis: a pki.sgit.ai operates link from your anchor to b.maestro's key (sha256:3fa8f0c3e915cf6d), so vault keys can be sealed to it; until then agents hold them (security.b review 030)",
-    "Dinis or decisions.b (under the 00:19 delegation): factory.b's 6c668e8 (names two known-bad Factory commits) and b53aef0 (no site key under a name the Factory lists with another key); 0048389 (policy wording on the DNS role) was refused by the permission check on a relayed yes, so may need Dinis's own word in factory.b's session - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
-    "Dinis: yes in factory.b's session to push the components proposal (small public component repositories, first a local-models component; design.b commented, security.b 031 pass with changes) - policy/proposals/2026-11-24__components.md, 638bab5 - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
+    "Dinis or decisions.b (under the 00:19 delegation): factory.b's 6c668e8 (names two known-bad Factory commits) and 0048389 (policy wording on the DNS role), both with security.b to underwrite; 0048389 may need Dinis's own word if the permission check refuses again - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+    "Dinis: yes in factory.b's session to push the components proposal (small public component repositories, first a local-models component; design.b commented, security.b 031 pass with changes) - policy/proposals/2026-11-24__components.md, 638bab5 - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+    "Dinis: allow sgit pki keygen in accountant.b's session, so it can sign commits to accountant.agents.sovereignweb.site and publish its area - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF"
   ],
   "decisions": [
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",
