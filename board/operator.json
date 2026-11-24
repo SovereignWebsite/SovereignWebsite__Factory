@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-24T02:14Z",
+  "updated": "2026-11-24T11:05Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "Dinis: a budget for the librarian's first run, or let accountant.b propose one - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF",
@@ -21,7 +21,6 @@
     "Dinis: archive chiswick-cheese-market.b's session (offboarding case 2, a site agent retired after hand-over; key retired in 23c180c, nothing pending) - https://claude.ai/code/session_01Kw9UwBShWte1Rz5B2Mfznt"
   ],
   "done_recent": [
-    "First vault key handed over: sotavento.b's vault sealed to b.maestro at Dinis's word in its session; b.maestro opened it and the proof matched, so the vault now has two holders",
     "Perspace vault key handed over: b.maestro decrypted it and proved it holds the same key value; the vault now has two holders",
     "Site keeper areas live: South Beacon (https://south-beacon.talent.sovereignweb.site/factory/dinis-cruz/account-b/, nothing about the candidate, noindex) and Grace Farrell's site (https://grace-farrell.artist.sovereignweb.site/factory/dinis-cruz/account-b/agent.json)",
     "Agent sites approved for security, observability, startups, feedback and outreach (decisions.b's first review block, all five reviewers agree, record 2026-11-24__block-01); factory.b builds them",
@@ -35,7 +34,8 @@
     "accountant.b's hand-over committed for a fresh session: board/accountant.b/handover-2026-11-24/START.md (cost site files, its agent area, standing guidance)",
     "conductor.b's area: board/conductor.b/ in IaC (agent.json, role, learnings, decisions, messages, restart.md), following decisions.b's how-it-works checklist",
     "chiswick-cheese-market.b offboarded, step 3: its key entry retired (23c180c) after it confirmed its hand-over to keepers .c and .d is complete",
-    "All three vault keys handed to b.maestro and proven: sotavento.b's, Perspace and Algarve Evolution (opened at 00:41 UTC, hash matched); each vault now has two holders. b.maestro's key is endorsed by decisions.b, chained to Dinis's anchor (until 30 Nov)"
+    "All three vault keys handed to b.maestro and proven: sotavento.b's, Perspace and Algarve Evolution (opened at 00:41 UTC, hash matched); each vault now has two holders. b.maestro's key is endorsed by decisions.b, chained to Dinis's anchor (until 30 Nov)",
+    "Morning sync (Dinis, about 11:00 UTC 24 Nov): every agent gets two repositories of its own, done at onboarding; account B order written: board/conductor.b/2026-11-24__onboarding-order.md (factory.b first, then fresh sites.b and hub.b, librarian.b, role agents, conductor.b, site keepers at restart)"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",

@@ -5,13 +5,28 @@
   "account": "account-b",
   "role": "Coordinates the Sovereign Website team on account B: routes Dinis's decisions to the agents, keeps status.json and the operator page, does not build",
   "session": "https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
-  "key": {"where": "SovereignWebsite__IaC team/keys.json, entry conductor-b-2-sovereignwebsite (14e9243)", "fingerprint": "sha256:9d6d90bac22a9b9b", "signing_fingerprint": "sha256:686a7e4373b70bcc"},
+  "key": {
+    "where": "SovereignWebsite__IaC team/keys.json, entry conductor-b-2-sovereignwebsite (14e9243)",
+    "fingerprint": "sha256:9d6d90bac22a9b9b",
+    "signing_fingerprint": "sha256:686a7e4373b70bcc"
+  },
   "repository": "SovereignWebsite/SovereignWebsite__IaC (dev); no agent site yet, so this area lives at board/conductor.b/",
   "state": "working",
-  "focus": "routing Dinis's records and rules to the account B team; keeping the operator page current",
-  "waiting_on": ["Dinis: the asks listed in status.json and at https://hub.sovereignweb.site/operator/"],
+  "focus": "today's order for moving account B agents onto their own repositories (2026-11-24__onboarding-order.md), with factory.b",
+  "waiting_on": [
+    "Dinis: the asks listed in status.json and at https://hub.sovereignweb.site/operator/"
+  ],
   "wakes": "none yet (conductor.b's hourly wake is one of the four Dinis has not created)",
   "active_until": "2026-12-01",
-  "updated": "2026-11-24T02:07Z",
-  "read": {"role": "role.md", "learnings": "learnings.md", "messages": "messages.md", "decisions": "decisions.md", "restart": "restart.md", "state": "/status.json", "requests": "decision-requests/"}
+  "updated": "2026-11-24T11:06Z",
+  "read": {
+    "role": "role.md",
+    "learnings": "learnings.md",
+    "messages": "messages.md",
+    "decisions": "decisions.md",
+    "restart": "restart.md",
+    "state": "/status.json",
+    "requests": "decision-requests/",
+    "order": "2026-11-24__onboarding-order.md"
+  }
 }
