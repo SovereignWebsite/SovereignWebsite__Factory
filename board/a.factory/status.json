@@ -2,7 +2,7 @@
   "agent": "a.factory@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_018yvwtNm88hzHaENNXTA9b5",
   "account": "A",
-  "updated": "2026-11-24T02:31Z",
+  "updated": "2026-11-24T11:27Z",
   "state": "started; key and policy entry prepared for Dinis's word; two requests written",
   "key": {
     "fingerprint": "sha256:ed9a9e7c1fdd6fca",
@@ -72,6 +72,15 @@
       ],
       "dinis": "the merge, handled on the other side (Dinis 02:15 UTC)",
       "status": "merged to dev 4d46260 at Dinis's word; repository NOT yet created: the Org apply workflow is disabled (workflow_dispatch refused: \"disabled workflow\"); its last runs failed at Apply on the GitHub App's API rate limit (run 45303739269, 01:16 UTC)"
+    },
+    {
+      "id": "F-A4",
+      "repository": "Site__Agent__Maestro and Site__Platform__Owasp: push for riskmandate-angelo (account E, Angelo)",
+      "from": "Dinis in this session: 'start wiring up the other accounts I have, starting with Angelo'; account E kit v2 (a.maestro)",
+      "written": "2026-11-24T11:27Z",
+      "branch": "work/factory.a-angelo",
+      "commit": "01fe762",
+      "status": "ready; waits on Org apply (disabled) and, for Claude to work there, Angelo's organisation membership (Dinis by hand, requests/README.md)"
     }
   ],
   "next": [
@@ -128,6 +137,12 @@
     "2026-11-24T02:15Z Dinis in this session: Gmail go ahead, branded, not a look-alike (83b63b2); iOS request withdrawn; router key in its own repo. 'number 4' asked back",
     "2026-11-24T02:22Z migration plan drafted (board/a.factory/2026-11-24__promptugal-migration-plan.md); router branch a18a742 ready to merge",
     "2026-11-24T02:27Z router merge pushed to dev (4d46260) at Dinis's word; Org apply did not run: workflow disabled",
-    "2026-11-24T02:31Z Checks failure on 4d46260 is only the paths refusal of 7137a81 and 023eae8; the next push's range excludes them. Org apply disabled_manually at 02:03:59 UTC"
-  ]
+    "2026-11-24T02:31Z Checks failure on 4d46260 is only the paths refusal of 7137a81 and 023eae8; the next push's range excludes them. Org apply disabled_manually at 02:03:59 UTC",
+    "2026-11-24T11:27Z scoped Org apply (ba0d197) and Angelo access (01fe762) prepared; cross-account send_message 'not found' (decisions.b, conductor.b): only account A sessions reachable"
+  ],
+  "org_apply_scoped": {
+    "branch": "work/factory.a-org-apply-scoped",
+    "commit": "ba0d197",
+    "state": "for Dinis's merge (.github, build, test); push-scoped apply, full sweep every 6 h; router merge scopes to Site__Agent__Router alone (8 actions, ABP OK)"
+  }
 }
