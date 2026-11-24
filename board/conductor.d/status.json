@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-24T11:53Z",
+  "updated": "2026-11-24T13:51Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -122,7 +122,8 @@
     "11:51 UTC 24 Nov: morning sync passed (links only) to the ten agents conductor.d runs and through sites.d to its four; factory.d told not to double the CRM request; synthetic-users.d told it owns twin inboxes with security@'s conditions and to plan by request file; restart.md written for conductor.d",
     "11:52 UTC 24 Nov: factory.d confirmed it has landed nothing for CRM (a.factory carries it) and that seeds carry the signer check and Org apply sets main-locked and dev-safe rulesets; security.d's key adfc5ff still waits on Dinis in its session and it has no repository; synthetic-users.d's twin-inboxes plan recorded, its home already requested",
     "11:52 UTC 24 Nov: chiswick-cheese-market.d drafted its area and the cheese market README locally, not pushed: its key is not on Factory dev and it will not reuse an old override. Second route noted: site/keys/<name>.json in the site, accepted by aef6bcc once Org apply runs",
-    "11:53 UTC 24 Nov: library.d's area done (Site__Agent__Library site/factory/dinis-cruz/account-d, feca865), link sent to d.maestro; it is past the hand-over line and ready to restart"
+    "11:53 UTC 24 Nov: library.d's area done (Site__Agent__Library site/factory/dinis-cruz/account-d, feca865), link sent to d.maestro; it is past the hand-over line and ready to restart",
+    "13:51 UTC 24 Nov: 'every agent keeps its area' guidance (Site__Agent__Factory 16d5ea3, via d.maestro) passed to the ten agents and through sites.d; conductor.d's own area completed here (agent.json, now.md, role.md, restart.md), as this session cannot push to a Conductor home"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
