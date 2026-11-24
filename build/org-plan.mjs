@@ -48,9 +48,12 @@ export function plan(org, live) {
     if (r.pages && !l.has_pages) actions.push({ action: 'pages.enable', target: r.name });
     if (r.seed && l.seed_missing?.length) actions.push({ action: 'repo.seed', target: r.name, files: l.seed_missing });
     // Managed files (build/managed.mjs): refreshed only from an earlier seeded version; a keeper's own change is kept and reported.
+    // Gate (decisions.b, 24 Nov 2026): a site is refreshed only when org/repos.json names it in "refresh_managed", added
+    // site by site after the survey and the keeper's warning. Absent or empty: no site is refreshed, only reported.
     if (r.seed && l.managed_shas) {
       const { stale, kept } = staleFiles(r.seed, l.managed_shas, undefined, r.vars || {});
-      if (stale.length) actions.push({ action: 'repo.refresh_managed', target: r.name, files: stale, from: Object.fromEntries(stale.map((f) => [f, l.managed_shas[f]])) });
+      if (stale.length && !(org.refresh_managed || []).includes(r.name)) notes.push(`${r.name}: ${stale.join(', ')} is an earlier seeded version; refresh waits until org/repos.json lists it in refresh_managed`);
+      else if (stale.length) actions.push({ action: 'repo.refresh_managed', target: r.name, files: stale, from: Object.fromEntries(stale.map((f) => [f, l.managed_shas[f]])) });
       for (const f of kept) notes.push(`${r.name}: ${f} differs from the seed and is not a version the IaC seeded; kept as the keeper made it`);
     }
     if (r.cname && l.cname !== r.cname) actions.push({ action: 'pages.set_cname', target: r.name });

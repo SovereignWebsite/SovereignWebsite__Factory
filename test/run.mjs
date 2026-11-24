@@ -587,7 +587,12 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   assert.deepEqual(M.staleFiles('seed/site-template', { [f]: cur }), { stale: [], kept: [] }, 'the current version is left alone');
   assert.deepEqual(M.staleFiles('seed/site-template', { [f]: 'a'.repeat(40) }), { stale: [], kept: [f] }, 'a keeper\'s own change is kept and reported');
   const one = org.repos.find((r) => r.seed) || null;
-  if (one) { const pl2 = plan({ ...org, repos: [one] }, { [one.name]: { ...org.defaults, ...one, default_branch: 'dev', has_dev: true, has_pages: !!one.pages, cname: one.cname ?? null, https_enforced: true, teams: one.teams || {}, protected: true, seed_missing: [], managed_shas: { [f]: old } } });
+  if (one) { const liveOne = { [one.name]: { ...org.defaults, ...one, default_branch: 'dev', has_dev: true, has_pages: !!one.pages, cname: one.cname ?? null, https_enforced: true, teams: one.teams || {}, protected: true, seed_missing: [], managed_shas: { [f]: old } } };
+    assert.ok(!(org.refresh_managed || []).length, 'org/repos.json lists no site for refresh until the survey (gate off by default)');
+    const pl0 = plan({ ...org, repos: [one], refresh_managed: undefined }, liveOne);
+    assert.ok(!pl0.actions.some((a) => a.action === 'repo.refresh_managed'), 'a site not listed in refresh_managed is not refreshed');
+    assert.ok(pl0.notes.some((n) => n.includes('refresh_managed')), 'and the waiting refresh is reported');
+    const pl2 = plan({ ...org, repos: [one], refresh_managed: [one.name] }, liveOne);
     assert.ok(pl2.actions.some((a) => a.action === 'repo.refresh_managed' && a.files.includes(f) && a.from[f] === old), 'Org apply plans the refresh with the version it saw');
     assert.deepEqual(checkActions(p, pl2), [], 'the refresh is an allowed Org apply action'); } }
 await import('./decisions.test.mjs');
