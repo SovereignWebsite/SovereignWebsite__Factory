@@ -8,22 +8,44 @@ import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { fill } from './fill.mjs';
 
-export const MANAGED = ['.github/ci/signers.mjs'];
+export const MANAGED = ['.github/ci/signers.mjs', 'CLAUDE.md'];
+// Managed files whose seed text carries {{vars}}: compared and written filled with each site's own values. Only for
+// the seeds named here, and their earlier versions are kept as text (seed/managed-templates/<seed>/<file>/), since a
+// blob id of a filled file differs per site. Dinis, 24 Nov 2026 in a.factory's session: every agent site's
+// instructions must be readable and make sense; agent sites said "only that agent commits here" and "never write a
+// key by hand", which the self-published key rule (aef6bcc) and the per-account areas contradict.
+export const TEMPLATED = { 'CLAUDE.md': ['seed/agent-template'] };
+export const TEMPLATES = 'seed/managed-templates';
+const managedHere = (seedDir, f) => !TEMPLATED[f] || TEMPLATED[f].includes(seedDir.replace(/\/+$/, ''));
+export function earlierTemplates(seedDir, f) {
+  const d = join(TEMPLATES, seedDir.replace(/^seed\//, '').replace(/\/+$/, ''), f);
+  return existsSync(d) ? readdirSync(d).sort().map((n) => readFileSync(join(d, n), 'utf8')) : [];
+}
 export const HISTORY = 'seed/managed-history.json';
 // The id git gives a file's content (what the contents API returns as sha).
 export const blobSha = (buf) => createHash('sha1').update(Buffer.concat([Buffer.from(`blob ${buf.length}\0`), buf])).digest('hex');
 export const history = (file = HISTORY) => (existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')).versions : {});
 
 // repoShas: { path: blob sha on the site's dev } for the managed files it has. Returns { stale, kept }.
-export function staleFiles(seedDir, repoShas, hist = history()) {
+// The current seed text of a managed file for one site: filled with its vars when the file is templated.
+export function seedContent(seedDir, f, vars = {}) {
+  const buf = readFileSync(join(seedDir, f));
+  return TEMPLATED[f] ? Buffer.from(fill(buf.toString('utf8'), vars, f)) : buf;
+}
+export function managedFor(seedDir) { return MANAGED.filter((f) => managedHere(seedDir, f)); }
+
+// repoShas: { path: blob sha on the site's dev } for the managed files it has. vars: the site's own values.
+export function staleFiles(seedDir, repoShas, hist = history(), vars = {}) {
   const stale = [], kept = [];
-  for (const f of MANAGED) {
+  for (const f of managedFor(seedDir)) {
     const p = join(seedDir, f);
     if (!existsSync(p) || !repoShas[f]) continue;
-    const cur = blobSha(readFileSync(p));
+    const cur = blobSha(seedContent(seedDir, f, vars));
     if (repoShas[f] === cur) continue;
-    if ((hist[f] || []).includes(repoShas[f])) stale.push(f); else kept.push(f);
+    const earlier = TEMPLATED[f] ? earlierTemplates(seedDir, f).map((t) => blobSha(Buffer.from(fill(t, vars, f)))) : (hist[f] || []);
+    if (earlier.includes(repoShas[f])) stale.push(f); else kept.push(f);
   }
   return { stale, kept };
 }
@@ -31,7 +53,7 @@ export function staleFiles(seedDir, repoShas, hist = history()) {
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   if (process.argv[2] !== 'record') { console.error('usage: node build/managed.mjs record'); process.exit(2); }
   const h = history();
-  for (const d of readdirSync('seed')) for (const f of MANAGED) {
+  for (const d of readdirSync('seed')) for (const f of MANAGED.filter((x) => !TEMPLATED[x])) {
     const p = join('seed', d, f); if (!existsSync(p)) continue;
     const s = blobSha(readFileSync(p)); h[f] = h[f] || []; if (!h[f].includes(s)) h[f].push(s);
   }

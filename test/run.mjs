@@ -615,3 +615,21 @@ console.log('OK (tests)');
   assert.equal(scoped(org, []), org, 'no list: every repository');
 }
 console.log('OK (org scope)');
+
+// CLAUDE.md is a managed file on agent sites only, compared and written filled with each site's own values: an earlier
+// seeded version (any site's values) is refreshed, a keeper's own change is kept, and customer sites are never touched.
+{
+  const M = await import('../build/managed.mjs'); const { fill } = await import('../build/fill.mjs'); const fs = await import('node:fs');
+  const vars = { title: 'CRM agents', host: 'crm.agents.sovereignweb.site', agent: 'a.crm.dev@SovereignWebsite.dinis', repo: 'Site__Agent__CRM', label: 'crm', description: 'x', kind: 'owner' };
+  const earlier = M.earlierTemplates('seed/agent-template', 'CLAUDE.md');
+  assert.ok(earlier.length >= 2, 'earlier agent CLAUDE.md versions are kept as text');
+  const oldSha = M.blobSha(Buffer.from(fill(earlier[0], vars, 'CLAUDE.md')));
+  assert.deepEqual(M.staleFiles('seed/agent-template', { 'CLAUDE.md': oldSha }, undefined, vars), { stale: ['CLAUDE.md'], kept: [] }, 'an earlier seeded agent CLAUDE.md is refreshed');
+  const curSha = M.blobSha(M.seedContent('seed/agent-template', 'CLAUDE.md', vars));
+  assert.deepEqual(M.staleFiles('seed/agent-template', { 'CLAUDE.md': curSha }, undefined, vars), { stale: [], kept: [] }, 'the current one is left alone');
+  assert.deepEqual(M.staleFiles('seed/agent-template', { 'CLAUDE.md': 'b'.repeat(40) }, undefined, vars), { stale: [], kept: ['CLAUDE.md'] }, 'a keeper\'s own CLAUDE.md is kept and reported');
+  assert.ok(!M.managedFor('seed/site-template').includes('CLAUDE.md'), 'a customer site\'s CLAUDE.md is never managed');
+  assert.ok(M.seedContent('seed/agent-template', 'CLAUDE.md', vars).toString().includes('crm.agents.sovereignweb.site'), 'the refresh is written filled');
+  assert.ok(fs.readFileSync('seed/agent-template/CLAUDE.md', 'utf8').includes('START.md'), 'agent sites start with START.md');
+}
+console.log('OK (managed CLAUDE.md)');

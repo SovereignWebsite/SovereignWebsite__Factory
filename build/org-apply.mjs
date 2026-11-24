@@ -7,6 +7,7 @@ import { wanted, seedFiles, withRequests } from './org-plan.mjs';
 const TEXT = /(\.(html?|css|m?js|json|md|txt|ya?ml|xml|svg|webmanifest)|(^|\/)CNAME)$/i;
 import { join } from 'node:path';
 import { fill } from './fill.mjs';
+import { seedContent } from './managed.mjs';
 
 const p = JSON.parse(readFileSync(process.argv[2], 'utf8'));
 const refused = checkActions(load(), p);
@@ -68,7 +69,7 @@ for (const a of p.actions) {
       const commit = await gh('GET', `${base}/git/commits/${head}`);
       const tree = [];
       for (const f of files) {
-        const b = await gh('POST', `${base}/git/blobs`, { content: readFileSync(join(r.seed, f)).toString('base64'), encoding: 'base64' });
+        const b = await gh('POST', `${base}/git/blobs`, { content: seedContent(r.seed, f, r.vars || {}).toString('base64'), encoding: 'base64' });
         must(b, `blob ${a.target}/${f}`, [201]); tree.push({ path: f, mode: '100644', type: 'blob', sha: b.data.sha });
       }
       const t = await gh('POST', `${base}/git/trees`, { base_tree: commit.data.tree.sha, tree }); must(t, `tree ${a.target}`, [201]);

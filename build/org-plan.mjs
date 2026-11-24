@@ -5,7 +5,7 @@ import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { gh } from './github.mjs';
-import { MANAGED, staleFiles } from './managed.mjs';
+import { MANAGED, managedFor, staleFiles } from './managed.mjs';
 import { load as loadRequests, repos as requestRepos } from './requests.mjs';
 
 // The organisation as code plus one repository per hosted-site request.
@@ -49,7 +49,7 @@ export function plan(org, live) {
     if (r.seed && l.seed_missing?.length) actions.push({ action: 'repo.seed', target: r.name, files: l.seed_missing });
     // Managed files (build/managed.mjs): refreshed only from an earlier seeded version; a keeper's own change is kept and reported.
     if (r.seed && l.managed_shas) {
-      const { stale, kept } = staleFiles(r.seed, l.managed_shas);
+      const { stale, kept } = staleFiles(r.seed, l.managed_shas, undefined, r.vars || {});
       if (stale.length) actions.push({ action: 'repo.refresh_managed', target: r.name, files: stale, from: Object.fromEntries(stale.map((f) => [f, l.managed_shas[f]])) });
       for (const f of kept) notes.push(`${r.name}: ${f} differs from the seed and is not a version the IaC seeded; kept as the keeper made it`);
     }
@@ -125,7 +125,7 @@ async function describe(org, x, spec) {
   const names = new Set((Array.isArray(rs.data) ? rs.data : []).map((q) => q.name));
   const isProtected = names.has('main-locked') && names.has('dev-safe');
   const managed_shas = {};
-  if (want.seed && dev.status === 200) for (const f of seedFiles(want.seed)) { const c = await gh('GET', `/repos/${org}/${x.name}/contents/${f}?ref=dev`); if (c.status === 404) seed_missing.push(f); else if (MANAGED.includes(f) && c.data?.sha) managed_shas[f] = c.data.sha; }
+  if (want.seed && dev.status === 200) for (const f of seedFiles(want.seed)) { const c = await gh('GET', `/repos/${org}/${x.name}/contents/${f}?ref=dev`); if (c.status === 404) seed_missing.push(f); else if (managedFor(want.seed).includes(f) && c.data?.sha) managed_shas[f] = c.data.sha; }
   const tm = await gh('GET', `/repos/${org}/${x.name}/teams`);
   const teams = Object.fromEntries((Array.isArray(tm.data) ? tm.data : []).map((t) => [t.slug, t.permission]));
   // Collaborators already there or invited, and named logins that do not exist on GitHub.
