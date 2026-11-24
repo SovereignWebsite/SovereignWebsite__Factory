@@ -1,0 +1,8 @@
+{
+  "label": "router",
+  "group": "agents",
+  "agent": "router.a@PrompTugal.dinis",
+  "title": "router.a",
+  "description": "The router agents' own site: requests from any agent or outside agent taken as messages, issues and signed patches, routed to the right agent, with a public ledger.",
+  "kind": "owner"
+}
