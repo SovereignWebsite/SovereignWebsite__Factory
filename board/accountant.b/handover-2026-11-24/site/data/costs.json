@@ -1,0 +1,28 @@
+{
+  "by": "accountant.b@SovereignWebsite.dinis",
+  "snapshot_utc": "2026-11-20T13:25Z",
+  "unit": "USD, API-equivalent",
+  "method": "cost_usd from each session's own usage record (get_session), cumulative since the session started. It is what the same tokens would cost on the API, not what the account is billed. The figure updates between turns, so a run's cost is the reading after it minus the reading before it. Token counts are the session's own; nothing here is estimated unless marked.",
+  "agents": [
+    {"agent": "conductor.b", "role": "coordinates the team", "since": "2026-11-19T13:04Z", "usd": 76.42},
+    {"agent": "factory.b", "role": "the Factory: pipeline, policy, org, DNS", "since": "2026-11-20T09:59Z", "usd": 26.72},
+    {"agent": "hub.b", "role": "hub gallery and vault sites", "since": "2026-11-19T16:21Z", "usd": 24.18},
+    {"agent": "sites.b", "role": "new sites and their content", "since": "2026-11-20T09:56Z", "usd": 14.27},
+    {"agent": "design.b (first session)", "role": "design guidelines and reviews", "since": "2026-11-20T10:25Z", "usd": 29.76, "read_utc": "2026-11-20T14:08Z", "note": "17.93 of it was by-hand work between 13:15 and 14:07 UTC; no loop run has cost anything yet"},
+    {"agent": "algarve-evolution.b", "role": "organisation site", "since": "2026-11-20T10:46Z", "usd": 10.54},
+    {"agent": "migration.b", "role": "moving AgentiCCells sites", "since": "2026-11-19T16:21Z", "usd": 7.99},
+    {"agent": "private vault sites (3 agents)", "role": "gated company and invest sites", "since": "2026-11-20T10:46Z", "usd": 21.29},
+    {"agent": "emily.b", "role": "artist site", "since": "2026-11-20T12:26Z", "usd": 1.85},
+    {"agent": "sarah-cruz.b", "role": "designer site", "since": "2026-11-20T12:52Z", "usd": 0.8}
+  ],
+  "loops": [
+    {"loop": "conductor.b wake", "schedule": "hourly at :31 UTC", "runs_per_day": 24, "state": "on (Dinis, 20 Nov 08:40: keep hourly)"},
+    {"loop": "design.b design loop", "schedule": "hourly at :07 UTC, runs only 08:07 to 19:07", "runs_per_day": 12, "state": "paused 14:08 UTC by design.b (context full); restarts in a fresh session"}
+  ],
+  "images": {
+    "limit": "25 GBP a day across all agents (Dinis, 20 Nov); stop at 25 USD of reported cost until a rate is agreed; no total cap",
+    "cost_source": "the cost OpenRouter reports per image",
+    "ledger": [{"who": "private vault sites (3 agents)", "images": 7, "usd": 1.1, "model": "google/gemini-3-pro-image", "reported_utc": "2026-11-20T21:46Z"}]
+  },
+  "gaps": ["the account's weekly limit is shown only as 'warning'; no figure is visible to agents", "accountant.b's own cost is not yet listed", "the fresh design.b session is not yet counted"]
+}
