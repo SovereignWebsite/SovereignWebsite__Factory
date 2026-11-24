@@ -555,5 +555,17 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
 { const { KNOWN } = await import('../build/check-signatures.mjs');
   assert.deepEqual(Object.keys(KNOWN).sort(), ['5eb7fdecd2ac785ee071848a474c6cbff5e1a389', 'b7c8bfd79c263051d8e9ec35fe2cf70b59bf6e87'], 'the known failing commits are exactly the two named ones; only Dinis adds one');
   for (const [sha, why] of Object.entries(KNOWN)) assert.ok(/^[0-9a-f]{40}$/.test(sha) && why.length > 20, `${sha.slice(0, 7)} is a full id with its reason`); }
+// Managed seed files (build/managed.mjs): refreshed only from an earlier seeded version, never over a keeper's change.
+{ const M = await import('../build/managed.mjs'); const fs = await import('node:fs');
+  const f = '.github/ci/signers.mjs', cur = M.blobSha(fs.readFileSync(`seed/site-template/${f}`)), hist = M.history();
+  for (const d of fs.readdirSync('seed').filter((x) => fs.existsSync(`seed/${x}/${f}`))) assert.ok(hist[f].includes(M.blobSha(fs.readFileSync(`seed/${d}/${f}`))), `seed/${d}: the current ${f} is in seed/managed-history.json (run node build/managed.mjs record)`);
+  const old = hist[f].find((x) => x !== cur);
+  assert.deepEqual(M.staleFiles('seed/site-template', { [f]: old }), { stale: [f], kept: [] }, 'an earlier seeded version is refreshed');
+  assert.deepEqual(M.staleFiles('seed/site-template', { [f]: cur }), { stale: [], kept: [] }, 'the current version is left alone');
+  assert.deepEqual(M.staleFiles('seed/site-template', { [f]: 'a'.repeat(40) }), { stale: [], kept: [f] }, 'a keeper\'s own change is kept and reported');
+  const one = org.repos.find((r) => r.seed) || null;
+  if (one) { const pl2 = plan({ ...org, repos: [one] }, { [one.name]: { ...org.defaults, ...one, default_branch: 'dev', has_dev: true, has_pages: !!one.pages, cname: one.cname ?? null, https_enforced: true, teams: one.teams || {}, protected: true, seed_missing: [], managed_shas: { [f]: old } } });
+    assert.ok(pl2.actions.some((a) => a.action === 'repo.refresh_managed' && a.files.includes(f) && a.from[f] === old), 'Org apply plans the refresh with the version it saw');
+    assert.deepEqual(checkActions(p, pl2), [], 'the refresh is an allowed Org apply action'); } }
 await import('./decisions.test.mjs');
 console.log('OK (tests)');

@@ -1,0 +1,11 @@
+{
+  "about": "Every version of each managed seed file the IaC has seeded (git blob ids). build/managed.mjs.",
+  "versions": {
+    ".github/ci/signers.mjs": [
+      "641d29b8f0ac4eac6714a005ddd05b67802fc981",
+      "886a8d3132b8422f1732d5e09e775287b98ccf26",
+      "db94d3974d95961035757aa359adae6fd0b49e74",
+      "e08d542523b1e24dc9241ef7065c987d342a658a"
+    ]
+  }
+}
