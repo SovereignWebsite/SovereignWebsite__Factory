@@ -1,0 +1,9 @@
+{
+  "label": "devops",
+  "group": "agents",
+  "repo_label": "DevOps",
+  "agent": "a.devops@SovereignWebsite.dinis",
+  "title": "DevOps agents",
+  "description": "The DevOps agents' own site: measurements of the pipelines across the public repositories, and the changes they propose, each account's under /factory/<owner>/<account>/.",
+  "kind": "owner"
+}
