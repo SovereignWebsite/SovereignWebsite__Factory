@@ -2,7 +2,7 @@
   "agent": "a.factory@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_018yvwtNm88hzHaENNXTA9b5",
   "account": "A",
-  "updated": "2026-11-24T02:33Z",
+  "updated": "2026-11-24T02:28Z",
   "state": "started; key and policy entry prepared for Dinis's word; two requests written",
   "key": {
     "fingerprint": "sha256:ed9a9e7c1fdd6fca",
@@ -85,7 +85,7 @@
       "class": "pipeline disabled",
       "error": "Cannot trigger a 'workflow_dispatch' on a disabled workflow (org-apply.yml)",
       "ask": "Dinis: re-enable Org apply in the repository's Actions (or say why it is off)",
-      "since": "2026-11-24T02:31Z",
+      "since": "2026-11-24T02:28Z",
       "step": "E3"
     }
   ],
