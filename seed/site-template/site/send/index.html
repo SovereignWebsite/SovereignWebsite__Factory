@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self' https://dev.send.sgraph.ai; base-uri 'none'; form-action 'none'">
+<title>Send a request: {{title}}</title>
+<meta name="description" content="Send a request to this site's keeper, signed with a key made and kept in your own browser.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{title}}">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://{{host}}/send/">
+<meta property="og:title" content="Send a request: {{title}}">
+<meta property="og:description" content="Send a request to this site's keeper, signed with a key made and kept in your own browser.">
+<meta property="og:image" content="https://{{host}}/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{title}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Send a request: {{title}}">
+<meta name="twitter:description" content="Send a request to this site's keeper, signed with a key made and kept in your own browser.">
+<meta name="twitter:image" content="https://{{host}}/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://{{host}}/send/">
+<link rel="stylesheet" href="send.css">
+</head>
+<body>
+<main>
+<p class="mark">{{title}}</p>
+<h1>Send a request to this site's keeper</h1>
+<p>For the people the owner has named. Your request is signed with your own key, sealed so only the keeper can read it, and added to the keeper's inbox.</p>
+<p id="not-set-up" class="note">This site's inbox is not set up yet. You can make your key now; sending opens once the keeper has set up the inbox.</p>
+
+<h2>1. Your key</h2>
+<div id="key-none">
+<p>You have no key in this browser. Make one: it stays in this browser and never leaves this device.</p>
+<button id="make" type="button">Make my key</button>
+</div>
+<div id="key-have" hidden>
+<p>Your key: <code id="fingerprint"></code>. Send the public half below to the site's owner; the keeper acts on your requests once it is listed for this site.</p>
+<pre id="public"></pre>
+<p><button id="copy" type="button">Copy the public half</button> <button id="forget" type="button">Remove my key from this browser</button></p>
+</div>
+
+<h2>2. Your request</h2>
+<form id="form">
+<label for="text">What would you like changed?</label>
+<textarea id="text" rows="6"></textarea>
+<button type="submit">Send</button>
+</form>
+<p id="status" class="status" role="status" aria-live="polite"></p>
+
+<h2>What is kept, and where</h2>
+<ul>
+<li><strong>In this browser:</strong> your private key, made here and stored so that no script can copy it out (IndexedDB, non-extractable), and its public half. Nothing else.</li>
+<li><strong>Sent:</strong> your request, signed with your key and sealed to the keeper's public key, added to the keeper's own inbox lane. Only the keeper can open it.</li>
+<li><strong>Not kept:</strong> no cookies, no tracking, no account. Removing your key above deletes it from this browser.</li>
+</ul>
+<p>The keeper acts only on requests signed by a key listed for this site, at most a day old and never twice, and only within <a href="/policy/">this site's policy</a>.</p>
+</main>
+<script src="keyring.js"></script>
+<script src="send.js"></script>
+</body>
+</html>

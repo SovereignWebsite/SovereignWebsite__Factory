@@ -1,0 +1,9 @@
+{
+  "about": "This site's /send/ lane: requests sealed to the keeper and appended to its own lane. Not set up yet: the keeper fills endpoint, vault_id, append_token and recipient at its first wake, and the page sends nothing until then. The append token can only append: it cannot read or delete.",
+  "set_up": false,
+  "site": "{{host}}",
+  "endpoint": "",
+  "vault_id": "",
+  "append_token": "",
+  "recipient": null
+}

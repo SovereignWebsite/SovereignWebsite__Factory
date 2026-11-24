@@ -18,6 +18,11 @@ export const MANAGED = ['.github/ci/signers.mjs', 'CLAUDE.md'];
 // key by hand", which the self-published key rule (aef6bcc) and the per-account areas contradict.
 export const TEMPLATED = { 'CLAUDE.md': ['seed/agent-template'] };
 export const TEMPLATES = 'seed/managed-templates';
+// Seed files a site gets only when the repository is created, never added to a site that already exists: the /send/
+// lane (security.b, opinion 2026-11-24__send-lane-in-site-seed: "Org apply must not add /send/ to an existing site";
+// existing sites opt in by request).
+export const NEW_ONLY = ['site/send/', 'tools/verify-request.mjs'];
+export const newOnly = (f) => NEW_ONLY.some((p) => (p.endsWith('/') ? f.startsWith(p) : f === p));
 const managedHere = (seedDir, f) => !TEMPLATED[f] || TEMPLATED[f].includes(seedDir.replace(/\/+$/, ''));
 export function earlierTemplates(seedDir, f) {
   const d = join(TEMPLATES, seedDir.replace(/^seed\//, '').replace(/\/+$/, ''), f);

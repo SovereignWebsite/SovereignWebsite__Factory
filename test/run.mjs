@@ -633,3 +633,36 @@ console.log('OK (org scope)');
   assert.ok(fs.readFileSync('seed/agent-template/CLAUDE.md', 'utf8').includes('START.md'), 'agent sites start with START.md');
 }
 console.log('OK (managed CLAUDE.md)');
+
+// The /send/ lane in the site seed (security.b's conditions, opinion 2026-11-24__send-lane-in-site-seed): the keeper
+// acts only on a signed request from a listed key, at most 24 hours old, never twice; and /send/ reaches new sites only.
+{
+  const { verify, signed, fingerprintOf } = await import('../seed/site-template/tools/verify-request.mjs');
+  const { webcrypto: wc } = await import('node:crypto');
+  const M = await import('../build/managed.mjs'); const fs = await import('node:fs');
+  const pair = await wc.subtle.generateKey({ name: 'ECDSA', namedCurve: 'P-256' }, true, ['sign', 'verify']);
+  const jwk = await wc.subtle.exportKey('jwk', pair.publicKey);
+  const sign = { kty: 'EC', crv: 'P-256', x: jwk.x, y: jwk.y };
+  const fingerprint = await fingerprintOf(sign);
+  const requesters = [{ person: 'test', fingerprint, sign, status: 'active' }];
+  const now = Date.parse('2026-11-24T16:00:00Z');
+  const make = async (over = {}) => { const r = { v: 1, id: 'abcdefghijklmnopqrstuv', at: '2026-11-24T15:00:00Z', site: 'x.demo.sovereignweb.site', fingerprint, text: 'make it green', files: [], ...over }; r.sig = Buffer.from(await wc.subtle.sign({ name: 'ECDSA', hash: 'SHA-256' }, pair.privateKey, new TextEncoder().encode(signed(r)))).toString('base64'); return r; };
+  const ok = await make();
+  assert.equal((await verify(ok, { requesters, now, site: 'x.demo.sovereignweb.site' })).ok, true, 'a signed request from a listed key is acted on');
+  const { sig, ...unsigned } = ok;
+  assert.match((await verify(unsigned, { requesters, now })).why, /unsigned/, 'an unsigned request is not acted on');
+  assert.match((await verify(ok, { requesters: [], now })).why, /unknown/, 'an unknown key is refused');
+  assert.match((await verify(ok, { requesters, now, seen: new Set([ok.id]) })).why, /replayed/, 'a replayed id is refused');
+  assert.match((await verify(await make({ at: '2026-11-23T15:00:00Z' }), { requesters, now })).why, /24 hours/, 'a request older than 24 hours is refused');
+  assert.match((await verify({ ...ok, text: 'make it red' }, { requesters, now })).why, /bad signature/, 'a changed request is refused');
+  assert.match((await verify(ok, { requesters, now, site: 'other.demo.sovereignweb.site' })).why, /another site/, 'a request for another site is refused');
+  assert.ok(M.newOnly('site/send/send.js') && M.newOnly('tools/verify-request.mjs') && !M.newOnly('site/index.html'), '/send/ is for new sites only');
+  const inbox = JSON.parse(fs.readFileSync('seed/site-template/site/send/inbox.json', 'utf8'));
+  assert.equal(inbox.set_up, false); assert.equal(inbox.append_token, ''); assert.deepEqual(JSON.parse(fs.readFileSync('seed/site-template/site/send/requesters.json', 'utf8')).keys, [], 'the seed ships the lane empty');
+  const page = fs.readFileSync('seed/site-template/site/send/index.html', 'utf8');
+  assert.ok(!/<script>|<style>|unsafe-inline|on(click|load|submit)=/.test(page), 'no inline script or style on /send/');
+  assert.ok(/script-src 'self'/.test(page) && /connect-src 'self' https:\/\/dev\.send\.sgraph\.ai;/.test(page), 'CSP: self plus the exact SG/Send host');
+  assert.ok(/window\.top !== window\.self/.test(fs.readFileSync('seed/site-template/site/send/send.js', 'utf8')), 'frame check first');
+  assert.ok(!/importKey\('jwk', jwk\(p\.s\)/.test(fs.readFileSync('seed/site-template/site/send/keyring.js', 'utf8')) && /generateKey\(\{ name: 'ECDSA', namedCurve: 'P-256' \}, false/.test(fs.readFileSync('seed/site-template/site/send/keyring.js', 'utf8')), 'the key is made in the browser, non-extractable, never imported from a keeper');
+}
+console.log('OK (send lane)');

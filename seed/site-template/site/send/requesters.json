@@ -1,0 +1,4 @@
+{
+  "about": "The people the owner names who may send requests from /send/: their PUBLIC keys only, each made on that person's own device (this site's /send/ page makes it and shows the public half). The owner endorses a key; the keeper lists it here. No keeper ever holds anyone's private half. Remove a key here to revoke it. Names are published only with the person's agreement.",
+  "keys": []
+}
