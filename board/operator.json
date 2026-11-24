@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-24T00:56Z",
+  "updated": "2026-11-24T00:59Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "Dinis: a budget for the librarian's first run, or let accountant.b propose one - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF",
@@ -21,7 +21,6 @@
     "Dinis: say \"push 38\" and \"push 49\" in factory.b's session. Both are approved in block 1, but its permission check refused the push. 38 (0048389): policy wording, the DNS role is active for all four zones. 49 (f125da8): the signature check names two old unsigned Factory commits instead of failing on them - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
   ],
   "done_recent": [
-    "factory.b's plan so no agent is left without an area: site keepers on their own sites, a Site__Agent__<Role> for each role agent without one (six requests to decisions.b), one shared site for the AWS platform team",
     "Offboarding process approved with eight conditions by the panel under Dinis's delegation (record 2026-11-24__offboarding-approved); folded into board/workflow/2026-11-23__offboarding-draft.md: routine hand-overs archived without asking, every vault key keeps the maestro as a holder, a one-screen checklist, and archived sessions counted in status.json",
     "Agent sites requested by factory.b as routine asks: security, observability, startups, feedback, outreach; pybot keeps its area on the PyBot tool site; an AWS platform site waits for an owner on accounts A and C",
     "Offboarding process in force (decisions.b checked 6c4ea92 against record 2026-11-24__offboarding-approved): board/workflow/2026-11-23__offboarding-draft.md",
@@ -35,7 +34,8 @@
     "security.b's site and area live: https://security.agents.sovereignweb.site/factory/dinis-cruz/account-b/, with all 33 reviews at /reviews/, guidelines and decision opinions (Site__Agent__Security 7c9388c)",
     "startups.b's area live: https://startups.agents.sovereignweb.site/factory/dinis-cruz/account-b/agent.json",
     "conductor.b state and hand-over note written early: board/2026-11-24__conductor-state.md; four settled asks removed from the list (accountant site, domain keepers, decisions system start, the 15:36 note)",
-    "Core principle (Dinis, 00:52 UTC 24 Nov, record 2026-11-24__own-keys-principle): repository access is the moment of authorisation; every agent and owner creates and updates its own keys in repositories it can push to, and no one else's. Site keepers add the own-key step to their hand-over prompts; factory.b to the seeds"
+    "Core principle (Dinis, 00:52 UTC 24 Nov, record 2026-11-24__own-keys-principle): repository access is the moment of authorisation; every agent and owner creates and updates its own keys in repositories it can push to, and no one else's. Site keepers add the own-key step to their hand-over prompts; factory.b to the seeds",
+    "Own-key step in owners' hand-over prompts: Grace (bbe9386), South Beacon (f066f81), Kate (038bbc1, tested against the seeded check), Emily (154e833, bcd865e: her assistant adds a signing key to her own GitHub account, because her site's check predates site keys; with decisions.b), and in the seed for new sites (factory.b 107edc9, with decisions.b)"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
