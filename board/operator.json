@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-24T00:27Z",
+  "updated": "2026-11-24T00:28Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
@@ -20,13 +20,12 @@
     "Dinis: re-enable feedback.b's inbox round (trig_01FsUjtCGwD9w9i3eBWJVoY3) and say so in its session (\"Turn the inbox back on\", 23:22 UTC) - https://claude.ai/code/session_01Kw9UwBiG9d5KHvFjdtiP69",
     "Dinis: start a fresh sites.b session with docs/handover.md (24275ef) as its first read; it leads the shared wayfinder (ask 40) and takes the hourly wake - https://github.com/SovereignWebsite/Site__Agent__Sites/blob/dev/docs/handover.md",
     "Dinis: Emily's GitHub username for her org invite (Member, write on Site__Artist__Emily-Cruz), and whether Emily and her Claude must sign commits after hand-over - https://claude.ai/code/session_01Kw9UwBvXb8qAME1TexsQss",
-    "Dinis: a pki.sgit.ai operates link from your anchor to b.maestro's key (sha256:3fa8f0c3e915cf6d), so vault keys can be sealed to it; until then agents hold them (security.b review 030)",
     "Dinis or decisions.b (under the 00:19 delegation): factory.b's 6c668e8 (names two known-bad Factory commits) and 0048389 (policy wording on the DNS role), both with security.b to underwrite; 0048389 may need Dinis's own word if the permission check refuses again - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: yes in factory.b's session to push the components proposal (small public component repositories, first a local-models component; design.b commented, security.b 031 pass with changes) - policy/proposals/2026-11-24__components.md, 638bab5 - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
-    "Dinis: allow sgit pki keygen in accountant.b's session, so it can sign commits to accountant.agents.sovereignweb.site and publish its area - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF"
+    "Dinis: allow sgit pki keygen in accountant.b's session, so it can sign commits to accountant.agents.sovereignweb.site and publish its area - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF",
+    "Dinis: how sealed vault keys reach b.maestro. Three holders passed security.b's checks and sealed their keys, but each session's permission check refused the send; allow it in those sessions, or name another route"
   ],
   "done_recent": [
-    "Emily Cruz's site: docs/owner.md lists what Dinis, then Emily, can do directly (c826878, Pages and Signers green)",
     "Startups: RiskMandate v0.1.37 now says the brochure is on Dinis's list to review, no approval claimed (f8e6372); the first handed-over site is off the Sovereign Website showroom, since its address names its owner (v0.1.41, da9d5d0)",
     "docs/aws-oidc.md now records that sovereignweb.site is on the DNS role (factory.b, 97b0452, record 2026-11-23__aws-doc-fix)",
     "security.b review 029 on keys in a site's own repository: pass with changes; a self-published key vouches for nothing alone, so it needs a pki.sgit.ai link from Dinis or an active entry in the Factory's team/keys.json",
@@ -40,7 +39,8 @@
     "Agent areas live under the team rule: decisions.b, design.b and design.b.rounds (design.agents), hub.b (on the hub until it has an agent site); design.b now rates a stale or missing area as holding an agent site at 2",
     "No site key under a name the Factory already lists with another key: decided by decisions.b under the delegation, pushed (IaC c40dddf)",
     "factory.b's plan so no agent is left without an area: site keepers on their own sites, a Site__Agent__<Role> for each role agent without one (six requests to decisions.b), one shared site for the AWS platform team",
-    "Offboarding process approved with eight conditions by the panel under Dinis's delegation (record 2026-11-24__offboarding-approved); folded into board/workflow/2026-11-23__offboarding-draft.md: routine hand-overs archived without asking, every vault key keeps the maestro as a holder, a one-screen checklist, and archived sessions counted in status.json"
+    "Offboarding process approved with eight conditions by the panel under Dinis's delegation (record 2026-11-24__offboarding-approved); folded into board/workflow/2026-11-23__offboarding-draft.md: routine hand-overs archived without asking, every vault key keeps the maestro as a holder, a one-screen checklist, and archived sessions counted in status.json",
+    "Agent sites requested by factory.b as routine asks: security, observability, startups, feedback, outreach; pybot keeps its area on the PyBot tool site; an AWS platform site waits for an owner on accounts A and C"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
