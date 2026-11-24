@@ -2,7 +2,7 @@
   "agent": "a.factory@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_018yvwtNm88hzHaENNXTA9b5",
   "account": "A",
-  "updated": "2026-11-24T00:22Z",
+  "updated": "2026-11-24T00:41Z",
   "state": "started; key and policy entry prepared for Dinis's word; two requests written",
   "key": {
     "fingerprint": "sha256:ed9a9e7c1fdd6fca",
@@ -53,7 +53,9 @@
     }
   ],
   "next": [
-    "do not duplicate factory.c's ben-fung and crm branches"
+    "do not duplicate factory.c's ben-fung and crm branches",
+    "devops (a.maestro relay, record 2026-11-24__devops-agent): measure 2 or 3 account A sites' deploy times as a first decision request. Blocked for now: this session's GitHub access is scoped to SovereignWebsite__IaC only; needs add_repo (read) per site",
+    "decision requests (record 2026-11-24__decision-requests) go as site/decisions/requests/<date>__<slug>.json in the agent's own repository; a.factory has no repository of its own yet, so keys_scope enforcement in build/abp.mjs waits on where a.factory files it"
   ],
   "stuck": [],
   "provenance": {
@@ -88,6 +90,7 @@
     "2026-11-24T00:10Z a.maestro's routing: Gmail sent to a.sites for review; R7 review cited as unsigned; provenance seed assigned to a.factory; A3 list recorded",
     "2026-11-24T00:18Z sites.a reviewed Gmail: no objection, 4 conditions; wording applied (cb8aeed)",
     "2026-11-24T00:16Z a.maestro routed Gmail security review to security.aws.a; provenance paths ask kept on account A list",
-    "2026-11-24T00:22Z security.aws.a reviewed Gmail: no objection with 9 conditions; a.factory keys_scope narrowed in its policy entry"
+    "2026-11-24T00:22Z security.aws.a reviewed Gmail: no objection with 9 conditions; a.factory keys_scope narrowed in its policy entry",
+    "2026-11-24T00:40Z a.maestro: devops deploy-time idea and the decision-request route noted; no new repository request"
   ]
 }
