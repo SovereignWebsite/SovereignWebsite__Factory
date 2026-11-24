@@ -546,5 +546,11 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
 { const C = await import('../build/coverage.mjs');
   const c = C.coverage(['a.x.site', 'b.x.site', 'c.x.site'], { sites: { 'a.x.site': {}, 'c.x.site': {} } }, { sites: [{ address: { url: 'https://a.x.site/' } }, { address: {} }] });
   assert.deepEqual(c, { notRated: ['b.x.site'], notOnHub: ['b.x.site', 'c.x.site'] }, 'coverage lists the sites the design ratings and the hub miss'); }
+{ const R = await import('../build/requests.mjs'); const C = await import('../build/coverage.mjs');
+  const h = { label: 'ana', group: 'cv', title: 'A', description: 'x', kind: 'owner' };
+  assert.deepEqual(R.validate({ ...h, design_brief: 'https://design.agents.sovereignweb.site/briefs/ana.html' }, '2026-11-24__ana'), [], 'a design brief link on design.agents passes');
+  assert.deepEqual(R.validate({ ...h, design_brief: 'https://github.com/SovereignWebsite/Site__Agents__Design/blob/dev/docs/briefs/ana.md' }, '2026-11-24__ana'), [], 'a brief in design.b\'s docs/briefs passes');
+  assert.ok(R.validate({ ...h, design_brief: 'https://example.org/brief' }, '2026-11-24__ana').length, 'a brief elsewhere is refused');
+  assert.deepEqual(C.noBrief([{ ...h, folder: '2026-11-24__ana' }, { ...h, folder: '2026-11-20__old' }, { ...h, folder: '2026-11-24__b', design_brief: 'https://design.agents.sovereignweb.site/x' }, { ...h, group: 'agents', folder: '2026-11-24__c' }, { ...h, access: 'vault', folder: '2026-11-24__d' }]), ['2026-11-24__ana'], 'Org status lists only new, unbriefed, public, non-agent requests'); }
 await import('./decisions.test.mjs');
 console.log('OK (tests)');

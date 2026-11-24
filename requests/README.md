@@ -82,11 +82,16 @@ Every site's `.github/workflows/pages.yml` runs on each push to dev, after the A
 4. **Deploy** to Pages, then **tag** the released commit. The run's summary lists every check, so `/admin/` and the design back office can link to the latest run.
 - **Private**, `"access": "vault"`: seeded from `seed/gate-template`, a gated holding page. The holding page is public and names the site; the site itself is sealed in a private sgit vault, published only as ciphertext (`site/private/<id>.zip`), and opens in the browser only for people holding its QR code. Everything the page needs (`open.js`, `vendor/jsqr-1.4.0`) is in the site's own repository. Private sites are made, sealed and handed over by the site's own agent: they are never routed through the hub or listed on it (Dinis, 20 November 2026: "all vault/private sites should not be visible at all by the hub.b session and website").
 
+## Design brief before the first build
+
+Register every new site request with design.b at M0, when the request is made (block 2026-11-24__block-03). design.b sends five ideas from the owner's world as a brief, made from its template (https://github.com/SovereignWebsite/Site__Agents__Design/blob/dev/docs/briefs/TEMPLATE.md); its link goes in the request as `"design_brief": "https://github.com/SovereignWebsite/Site__Agents__Design/blob/dev/docs/briefs/<name>.md"` (a page on design.agents.sovereignweb.site also works). The repository is still created at once from the neutral seed; the keeper's first real build waits for the brief. Org status lists requests made since 24 November 2026 that have none yet (agents' own sites and private vault sites are not briefed).
+
 ## Rules checked by build/requests.mjs and the tests
 
 - label: lower-case letters, digits and hyphens, at most 40 characters, matching the folder name, not reserved (www, hub, vault, api, admin, mail, factory, or a group name);
 - title at most 80 characters; description at most 200; kind `demo` or `owner`; no em or en dashes;
-- group, domain and access only from the lists above.
+- group, domain and access only from the lists above;
+- design_brief, when present, a docs/briefs/<name>.md in Site__Agents__Design, or a page on https://design.agents.sovereignweb.site/.
 
 A request names no private person: an owner's details stay out of this public repository until they agree. Every site Dinis asks for has the person's or organisation's approval for a public address (Dinis, 20 November 2026).
 

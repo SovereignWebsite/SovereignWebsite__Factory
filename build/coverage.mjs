@@ -20,3 +20,10 @@ export function coverage(hosts, ratings, hub) {
 export async function fetchJson(url) {
   try { const r = await fetch(url); return r.ok ? await r.json() : null; } catch { return null; }
 }
+
+// Requests made since the brief rule (block 2026-11-24__block-03, 24 Nov 2026) that do not yet name design.b's brief.
+// Private (vault) sites and agents' own sites are left out: they are not built from a design brief.
+export const BRIEF_SINCE = '2026-11-24';
+export function noBrief(requests, since = BRIEF_SINCE) {
+  return requests.filter((r) => r.folder >= since && !r.design_brief && r.access !== 'vault' && r.group !== 'agents').map((r) => r.folder).sort();
+}
