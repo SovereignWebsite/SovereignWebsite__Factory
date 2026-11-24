@@ -3,5 +3,8 @@
   "group": "manager",
   "title": "Ben Fung",
   "description": "Ben Fung, technology project and programme manager: 25 years in technology, 20 in delivery leadership, told through his career path.",
-  "kind": "owner"
+  "kind": "owner",
+  "collaborators": {
+    "onetrickdonkey": "push"
+  }
 }
