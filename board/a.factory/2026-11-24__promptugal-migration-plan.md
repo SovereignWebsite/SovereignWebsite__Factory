@@ -54,8 +54,7 @@ Each has a Site__Agent__ repository requested already. Only its state moves.
 - devops: Site__Agent__Devops. Fits the DevOps record 2026-11-24__devops-agent.
 - backup: Site__Agent__Backup.
 - abp: Site__Agent__Abp (see Wave 1).
-- investors and customers: Site__Agent__Investors and Site__Agent__Customers. **To confirm first:** these may be the newsroom's own business work rather than agent state. investors/ holds 1,009 files, mostly decks.
-- ontologist, rights, gamma-ray, researcher, historian: to confirm with each owner whether the role is newsroom-only. If it is, its state still moves to a Site__Agent__<Role>, and its work products stay.
+- investors, customers, ontologist, rights, gamma-ray, researcher, historian: **newsroom work** (Dinis, 24 Nov ~02:25 UTC in a.factory's session: "Yes, they are the work for the newsroom"). Their work products stay in PrompTugal; no new agent-site requests for them.
 
 ## Stays in PrompTugal: newsroom work products
 Only the work stays. Each agent's state still moves (rule 2).
@@ -80,6 +79,5 @@ Only the work stays. Each agent's state still moves (rule 2).
 5. **Measure.** PrompTugal commits per day and run time, before and after (the DevOps agent's first numbers).
 
 ## Decisions for Dinis
-- Confirm the newsroom-or-agent split for investors, customers, ontologist, rights, gamma-ray, researcher and historian.
 - The PrompTugal cut-over check (step 4), and its date.
 - Whether a.factory gets seed/** to do step 2, or factory.c does it.
