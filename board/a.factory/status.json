@@ -2,7 +2,7 @@
   "agent": "a.factory@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_018yvwtNm88hzHaENNXTA9b5",
   "account": "A",
-  "updated": "2026-11-24T02:28Z",
+  "updated": "2026-11-24T02:36Z",
   "state": "started; key and policy entry prepared for Dinis's word; two requests written",
   "key": {
     "fingerprint": "sha256:ed9a9e7c1fdd6fca",
@@ -83,10 +83,11 @@
     {
       "what": "Site__Agent__Router not created",
       "class": "pipeline disabled",
-      "error": "Cannot trigger a 'workflow_dispatch' on a disabled workflow (org-apply.yml)",
+      "error": "org-apply.yml state disabled_manually since 2026-11-24T02:03:59Z (GitHub API); workflow_dispatch refused. Last runs (01:15, 01:16 UTC) failed at Apply on the GitHub App's API rate limit, after c8aab28 (refresh managed seed files in every site) landed at 01:12",
       "ask": "Dinis: re-enable Org apply in the repository's Actions (or say why it is off)",
       "since": "2026-11-24T02:28Z",
-      "step": "E3"
+      "step": "E3",
+      "tried": "workflow_dispatch (refused); this session has no tool to enable a workflow, and a.factory never creates a repository by hand"
     }
   ],
   "provenance": {
@@ -126,6 +127,7 @@
     "2026-11-24T02:04Z Site__Agent__Router request written (acde5eb); dev moved to 8b20ba3 incl. c8aab28 (org apply refreshes managed seed files in existing sites: answers part of the provenance roll-out question)",
     "2026-11-24T02:15Z Dinis in this session: Gmail go ahead, branded, not a look-alike (83b63b2); iOS request withdrawn; router key in its own repo. 'number 4' asked back",
     "2026-11-24T02:22Z migration plan drafted (board/a.factory/2026-11-24__promptugal-migration-plan.md); router branch a18a742 ready to merge",
-    "2026-11-24T02:27Z router merge pushed to dev (4d46260) at Dinis's word; Org apply did not run: workflow disabled"
+    "2026-11-24T02:27Z router merge pushed to dev (4d46260) at Dinis's word; Org apply did not run: workflow disabled",
+    "2026-11-24T02:36Z Checks failure on 4d46260 is only the paths refusal of 7137a81 and 023eae8; the next push's range excludes them. Org apply disabled_manually at 02:03:59 UTC"
   ]
 }
