@@ -1,6 +1,6 @@
 # Plan: agents leave PrompTugal__News__Website for their own repositories
 
-Drafted by a.factory, 24 Nov 2026, at Dinis's word in its session (~02:25 UTC): "can you draft the migration plan and then can you start creating the repos for the agents? Can you start with the router one?"
+Drafted by a.factory, 24 Nov 2026, at Dinis's word in its session (~02:20 UTC): "can you draft the migration plan and then can you start creating the repos for the agents? Can you start with the router one?"
 
 Earlier in the same session he said: "every agent here should be committing to their own site, their own repo", and "nobody should be touching that repo". He gives the repository as having 8,000 commits and a 12-minute run. Those figures are Dinis's; a.factory has not measured them.
 
