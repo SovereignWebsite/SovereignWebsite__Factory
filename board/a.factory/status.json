@@ -2,7 +2,7 @@
   "agent": "a.factory@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_018yvwtNm88hzHaENNXTA9b5",
   "account": "A",
-  "updated": "2026-11-23T23:57Z",
+  "updated": "2026-11-24T00:12Z",
   "state": "started; key and policy entry prepared for Dinis's word; two requests written",
   "key": {
     "fingerprint": "sha256:ed9a9e7c1fdd6fca",
@@ -25,7 +25,12 @@
       "arrived": "2026-11-23T23:52Z (in a.factory's start brief)",
       "written": "2026-11-23T23:57Z",
       "branch": "work/factory.a-gmail",
-      "chain": { "brief": "done (2f58a0b)", "sites_review": "asked of a.sites", "security": "pending", "decision": "pending" },
+      "chain": {
+        "brief": "done (2f58a0b)",
+        "sites_review": "asked of a.sites (session_018yvwtQ7z3PUt9L5gpZCNzt) 2026-11-24T00:10Z, by message; it cannot commit yet",
+        "security": "pending",
+        "decision": "pending"
+      },
       "dinis": "name (provider google or not); OAuth origin and redirect; the address; the site's ABP; the merge",
       "status": "written, waiting on the chain"
     },
@@ -37,15 +42,49 @@
       "written": "2026-11-23T23:57Z",
       "branch": "work/factory.a-status",
       "file": "board/a.factory/requests/2026-11-23__sovereignwebsite-app-ios.md",
-      "chain": { "brief": "done", "sites_review": "done (d.sites, signed copy to link)", "security": "pending", "decision": "pending" },
+      "chain": {
+        "brief": "done",
+        "sites_review": "done, unsigned (d.sites has no commit rights; a.maestro relay, from-a.md 22:24Z)",
+        "security": "pending",
+        "decision": "pending"
+      },
       "dinis": "who commits the org/repos.json entry (factory.c, or org/repos.json added to a.factory's paths); public or private; the merge",
       "status": "written, waiting on the chain"
     }
   ],
   "next": [
-    "A3: account A's .aws.a keys: conductor.d's retire f0af2f6 waits on Dinis's word or a b.decisions record; the fresh keys and -2 entries are each agent's own commit",
-    "provenance generator for the Factory seed: coordinate with factory.c and d.factory through a.maestro",
     "do not duplicate factory.c's ben-fung and crm branches"
   ],
-  "stuck": []
+  "stuck": [],
+  "provenance": {
+    "owner": "a.factory builds it in the Factory seed (a.maestro, 24 Nov 00:09 UTC); factory.c and d.factory review through a.maestro; d.design owns the footer",
+    "plan": "board/a.factory/provenance-plan.md",
+    "blocked": "seed/**, build/** and test/** are not in a.factory's proposed paths; asked Dinis 2026-11-24T00:12Z"
+  },
+  "a3": {
+    "plain_appends_ready": [
+      "security be381ea",
+      "journalist 9453109",
+      "boto3 b0c5231",
+      "billing 8776381",
+      "ux abd2d0a",
+      "lambda 360fc72",
+      "iam a80f2eb"
+    ],
+    "after_retire_f0af2f6": [
+      "conductor cb376c7 (ready)",
+      "architect (ready to re-sign on the retire sha)",
+      "cloudtrail (ready to re-sign on the retire sha)",
+      "dev.2 (ready)",
+      "ontology (no commit; waits on its A2 yes)"
+    ],
+    "already_live": "the ten older .aws.a keys",
+    "source": "a.maestro, 24 Nov 00:09 UTC",
+    "state": "each is the agent's own commit; landing waits on Dinis's word or a b.decisions record (A3); retire f0af2f6 first, then the -2 entries"
+  },
+  "log": [
+    "2026-11-23T23:57Z key, policy, Gmail and iOS requests pushed; a.maestro told",
+    "2026-11-24T00:08Z wake: nothing new",
+    "2026-11-24T00:10Z a.maestro's routing: Gmail sent to a.sites for review; R7 review cited as unsigned; provenance seed assigned to a.factory; A3 list recorded"
+  ]
 }

@@ -10,7 +10,7 @@ The Sovereign Website app for iOS: edit a website from an iOS app with Apple Int
 | Step | Who | Evidence | State |
 |---|---|---|---|
 | 1. Brief | a.maestro | PrompTugal__News__Website board/team/maestros/briefs/2026-11-23-a-any-agent-routing-chain-of-evidence-ios.md (R4, R7) and 2026-11-23-a-r7-sovereign-website-ios-app.md, from Dinis's words in a.maestro's session (~16:45 and ~19:00 UTC) | done |
-| 2. Sites review | d.sites | Relayed by a.maestro, from-a.md 22:24Z: no objection to the name (an app, so the Site__<Group>__<Name> rule does not apply), with two conditions (below). The signed review itself: location not yet known to a.factory | done, signed copy to link |
+| 2. Sites review | d.sites | Unsigned: d.sites has no commit rights yet. The only record is a.maestro's relay line in PrompTugal__News__Website board/team/maestros/from-a.md (22:24Z), from d.maestro's vault line (a.maestro, 24 Nov 00:09 UTC): no objection to the name (an app, so the Site__<Group>__<Name> rule does not apply), with two conditions (below) | done, unsigned |
 | 3. Factory | a.factory | This file and the entry below, signed | done |
 | 4. Security | security (a security agent) | review for abuse and prompt injection | pending |
 | 5. Decision | b.decisions, on Dinis's word | a decision record naming the repository | pending |
