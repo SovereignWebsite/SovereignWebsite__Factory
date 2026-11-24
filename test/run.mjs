@@ -480,6 +480,12 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   git('reset', '-q', '--hard', pub);
   const swap = put({ g: { ...G, bundle: H.bundle } }, 'h', 'g');
   assert.equal((await run(pub, swap)).refused.length, 1, 'changing an existing key file is not a self-publication');
+  git('reset', '-q', '--hard', top);
+  const claim = put({ a: { ...G, agent: 'a@X.y', session: A.session } }, 'g', 'a');
+  assert.equal((await run(top, claim)).refused.length, 1, 'a site cannot claim a Factory agent\'s name with another key (security.b, review 029)');
+  git('reset', '-q', '--hard', top);
+  const same = put({ a: A }, 'a', 'a');
+  assert.deepEqual((await run(top, same)).refused, [], 'publishing the same key the Factory lists for that agent is fine');
   fs.rmSync(d, { recursive: true, force: true }); }
 // Key requests: roles, signatures, a security and a counsel review each bound to the exact request (build/key-requests.mjs).
 { const fs = await import('node:fs'); const { execFileSync: x } = await import('node:child_process'); const { tmpdir } = await import('node:os');

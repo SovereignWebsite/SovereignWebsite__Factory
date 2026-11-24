@@ -12,7 +12,8 @@
 //     vouch for itself. Dinis, 23 Nov 2026 (record 2026-11-23__asks-2-8-31-revised): agents publish their keys
 //     in their own repositories. The one exception, as the Factory's keys rule: a commit that only adds one new
 //     file site/keys/<name>.json, for the agent named in its own Agent: trailer, verifies against that key alone
-//     (an agent publishing its own key);
+//     (an agent publishing its own key). A site key for an agent that has a live entry with a different key in
+//     the Factory's team/keys.json does not count: a site cannot claim a team identity it does not hold;
 //   - without one: a person's commit (an owner editing on GitHub, or the Factory's own seeding). It must be signed
 //     and verified by GitHub (asked through the API with the workflow's token); it is listed in the summary;
 //   - "Owner override: <quote>, <where>" in the message lets a commit through that would otherwise fail; it is listed.
@@ -22,12 +23,15 @@ import { writeFileSync, appendFileSync, mkdtempSync, rmSync, readFileSync } from
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
+import { createHash, createPublicKey } from 'node:crypto';
 
 export const KEYS_URL = 'https://raw.githubusercontent.com/SovereignWebsite/SovereignWebsite__IaC/dev/team/keys.json';
 export const SITE_KEYS = 'site/keys';
 const keyFile = (agent) => `${SITE_KEYS}/${agent.split('@')[0]}.json`;
 const AGENT = /^[a-z0-9]+(?:[.-][a-z0-9]+)*@[a-z0-9.-]+$/i;
 const live = (k) => k.status !== 'superseded' && k.status !== 'retired';
+// A key's signing fingerprint, worked out from the key itself (sha256 of its public key), never read from the file.
+const fp = (k) => { try { return `sha256:${createHash('sha256').update(createPublicKey(k.bundle?.sign ?? k.public_key?.sign).export({ type: 'spki', format: 'der' })).digest('hex').slice(0, 16)}`; } catch { return null; } };
 const lines = (s) => (s ? s.split('\n').map((x) => x.trim()).filter(Boolean) : []);
 
 // keys: the Factory's team/keys.json entries. personVerified(sha): { verified, login } from GitHub, for commits with no Agent:.
@@ -44,6 +48,11 @@ export async function checkSigners({ cwd = process.cwd(), before, after, keys, p
     const names = lines(tryGit('ls-tree', '--name-only', `${rev}:${SITE_KEYS}`) || '').filter((f) => /^[a-z0-9.-]+\.json$/.test(f));
     return names.flatMap((f) => { try { const k = JSON.parse(tryGit('show', `${rev}:${SITE_KEYS}/${f}`)); return k && k.agent && keyFile(k.agent) === `${SITE_KEYS}/${f}` ? [k] : []; } catch { return []; } });
   };
+  // A site cannot claim a team identity it does not hold: a site key whose agent has a live entry in the Factory's
+  // team/keys.json with a different key does not count (security.b, review 029 on aef6bcc).
+  const factoryFps = new Map();
+  for (const k of keys.filter(live)) { if (!factoryFps.has(k.agent)) factoryFps.set(k.agent, new Set()); factoryFps.get(k.agent).add(fp(k)); }
+  const notClaimed = (list) => list.filter((k) => !factoryFps.has(k.agent) || factoryFps.get(k.agent).has(fp(k)));
   let n = 0;
   // An allowed-signers file and the sessions published with each key, for one list of keys.
   const signersFor = (list) => {
@@ -78,7 +87,7 @@ export async function checkSigners({ cwd = process.cwd(), before, after, keys, p
       let why = null;
       if (agents.length) {
         const own = agents.length === 1 ? selfPublished(c, agents[0]) : null;
-        const { file: allowed, sessionOf } = signersFor(own ? [own] : [...keys, ...keysAt(`${c}^`)]);
+        const { file: allowed, sessionOf } = signersFor(own ? notClaimed([own]) : [...keys, ...notClaimed(keysAt(`${c}^`))]);
         const v = spawnSync('git', ['-c', 'gpg.format=ssh', '-c', 'gpg.ssh.program=ssh-keygen', '-c', `gpg.ssh.allowedSignersFile=${allowed}`, 'verify-commit', c], { cwd, encoding: 'utf8' });
         const principal = (`${v.stdout}\n${v.stderr}`.match(/Good "git" signature for (\S+)/) || [])[1];
         if (v.status !== 0) why = `Agent: ${agents.join(', ')}, but not signed by a key published in the Factory's team/keys.json or this repository's ${SITE_KEYS}/`;
