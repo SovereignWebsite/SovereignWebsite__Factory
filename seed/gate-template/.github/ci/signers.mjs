@@ -15,7 +15,13 @@
 //     (an agent publishing its own key). A site key for an agent that has a live entry with a different key in
 //     the Factory's team/keys.json does not count: a site cannot claim a team identity it does not hold;
 //   - without one: a person's commit (an owner editing on GitHub, or the Factory's own seeding). It must be signed
-//     and verified by GitHub (asked through the API with the workflow's token); it is listed in the summary;
+//     and verified by GitHub (asked through the API with the workflow's token); it is listed in the summary. The same
+//     holds for a commit with an Agent: trailer that no published key signed but GitHub verifies: an owner's own
+//     assistant working under the owner's account (kate-curtis-evans.b, 24 Nov 2026). Two conditions (record
+//     2026-11-24__block-05): no name in the trailer may have a live published key (that key is still required), and
+//     the verified login must be a person named in this repository's .github/ci/people.json (as at the parent
+//     commit), never the shared "claude" login, a [bot] or any account GitHub does not call a User. It is listed as
+//     that person's commit, never as the agent's;
 //   - "Owner override: <quote>, <where>" in the message lets a commit through that would otherwise fail; it is listed.
 // Exit 1 on any refusal, so the deploy that follows does not run. Prints no secret. Needs git and ssh-keygen.
 import { execFileSync, spawnSync } from 'node:child_process';
@@ -27,6 +33,10 @@ import { createHash, createPublicKey } from 'node:crypto';
 
 export const KEYS_URL = 'https://raw.githubusercontent.com/SovereignWebsite/SovereignWebsite__IaC/dev/team/keys.json';
 export const SITE_KEYS = 'site/keys';
+// The people whose own GitHub-verified commits may carry an assistant's Agent: trailer: {"people": ["<github login>"]}.
+export const PEOPLE = '.github/ci/people.json';
+// A named person: GitHub calls the account a User, and it is not Claude's shared signer or a bot.
+export const isPerson = (p) => !!p?.login && p.type === 'User' && p.login.toLowerCase() !== 'claude' && !/\[bot\]$/i.test(p.login);
 const keyFile = (agent) => `${SITE_KEYS}/${agent.split('@')[0]}.json`;
 const AGENT = /^[a-z0-9]+(?:[.-][a-z0-9]+)*@[a-z0-9.-]+$/i;
 const live = (k) => k.status !== 'superseded' && k.status !== 'retired';
@@ -52,6 +62,8 @@ export async function checkSigners({ cwd = process.cwd(), before, after, keys, p
   // team/keys.json with a different key does not count (security.b, review 029 on aef6bcc).
   const factoryFps = new Map();
   for (const k of keys.filter(live)) { if (!factoryFps.has(k.agent)) factoryFps.set(k.agent, new Set()); factoryFps.get(k.agent).add(fp(k)); }
+  // The people this repository names, as at a revision (lower case).
+  const peopleAt = (rev) => { try { const d = JSON.parse(tryGit('show', `${rev}:${PEOPLE}`)); return new Set((d.people || []).filter((x) => typeof x === 'string').map((x) => x.toLowerCase())); } catch { return new Set(); } };
   const notClaimed = (list) => list.filter((k) => !factoryFps.has(k.agent) || factoryFps.get(k.agent).has(fp(k)));
   let n = 0;
   // An allowed-signers file and the sessions published with each key, for one list of keys.
@@ -90,7 +102,15 @@ export async function checkSigners({ cwd = process.cwd(), before, after, keys, p
         const { file: allowed, sessionOf } = signersFor(own ? notClaimed([own]) : [...keys, ...notClaimed(keysAt(`${c}^`))]);
         const v = spawnSync('git', ['-c', 'gpg.format=ssh', '-c', 'gpg.ssh.program=ssh-keygen', '-c', `gpg.ssh.allowedSignersFile=${allowed}`, 'verify-commit', c], { cwd, encoding: 'utf8' });
         const principal = (`${v.stdout}\n${v.stderr}`.match(/Good "git" signature for (\S+)/) || [])[1];
-        if (v.status !== 0) why = `Agent: ${agents.join(', ')}, but not signed by a key published in the Factory's team/keys.json or this repository's ${SITE_KEYS}/`;
+        if (v.status !== 0) {
+          // No published key signed it. If GitHub verifies it as a person's own signed commit (an owner's own assistant
+          // working under the owner's account, e.g. "Agent: Claude Code"), it is that person's commit: listed, not refused.
+          // Only for names with no published key: a name with a live key still needs that key (emily.b, 24 Nov 2026).
+          const published = new Set([...keys, ...keysAt(`${c}^`)].filter(live).map((k) => k.agent));
+          const p = agents.some((a) => published.has(a)) ? null : await personVerified(c);
+          if (p?.verified && isPerson(p) && peopleAt(`${c}^`).has(p.login.toLowerCase())) { people.push(`${short} by ${p.login}, a person's commit GitHub verified (its Agent: ${agents.join(', ')} has no published key): ${subject}`); continue; }
+          why = `Agent: ${agents.join(', ')}, but not signed by a key published in the Factory's team/keys.json or this repository's ${SITE_KEYS}/, nor (for a name with no published key) a commit GitHub verified for a person named in ${PEOPLE}`;
+        }
         else if (agents.length !== 1 || agents[0] !== principal) why = `signed by ${principal}, Agent: ${agents.join(', ')}`;
         else if (sessions.length !== 1 || !(sessionOf.get(principal) || new Set()).has(sessions[0])) why = `Claude-Session: missing or not the session published with ${principal}'s key`;
         else { ok.push(`${short} ${principal}`); continue; }
@@ -127,7 +147,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
       const r = await fetch(`https://api.github.com/repos/${process.env.REPO}/commits/${sha}`, { headers: { authorization: `Bearer ${process.env.GH_TOKEN}`, accept: 'application/vnd.github+json', 'user-agent': 'sws-signers' } });
       if (!r.ok) return null;
       const j = await r.json();
-      return { verified: j.commit?.verification?.verified === true, login: j.author?.login || j.commit?.author?.name };
+      return { verified: j.commit?.verification?.verified === true, login: j.author?.login || j.commit?.author?.name, type: j.author?.type };
     };
     const r = await checkSigners({ before, after, keys, personVerified });
     out(summary(r));

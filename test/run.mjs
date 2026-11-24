@@ -460,6 +460,21 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   assert.deepEqual(res.refused.map((s) => s.slice(0, 7)).sort(), [early.slice(0, 7), anon.slice(0, 7)].sort(), 'an unpublished key and an unverified commit are refused');
   assert.equal(res.people.length, 1, "a person's verified commit is listed"); assert.equal(res.overrides.length, 1, 'an owner override is listed, not refused');
   assert.equal((await checkSigners({ cwd: r, before: 'f'.repeat(40), after: good, keys: [A], personVerified: async () => null })).checked, 1, 'an unknown old head (a force push) checks only the new head');
+  { fs.mkdirSync(`${r}/.github/ci`, { recursive: true }); fs.writeFileSync(`${r}/.github/ci/people.json`, JSON.stringify({ people: ['Owner'] })); git('add', '-A'); git('-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'the site names its owner');
+    const head0 = git('rev-parse', 'HEAD'); const own = c(null, 'the owner\'s own Claude, under the owner\'s account', 'claude');
+    const as = (login, type = 'User') => async (sha) => ({ verified: sha === own, login, type });
+    const r2 = await checkSigners({ cwd: r, before: head0, after: own, keys: [A], personVerified: as('owner') });
+    assert.deepEqual(r2.refused, [], 'an Agent: commit with no published key that GitHub verifies is the owner\'s commit');
+    assert.equal(r2.people.length, 1, 'and it is listed as a person\'s commit');
+    const r3 = await checkSigners({ cwd: r, before: head0, after: own, keys: [A], personVerified: async () => ({ verified: false }) });
+    assert.equal(r3.refused.length, 1, 'unverified and unpublished is still refused'); git('reset', '-q', '--hard', head0);
+    assert.ok(r2.people[0].includes('by owner') && !r2.ok.length, 'listed as the person\'s commit, never as the agent\'s');
+    for (const [login, type, why] of [['claude', 'User', 'Claude\'s shared signer'], ['someone-else', 'User', 'a person the site does not name'], ['owner', 'Bot', 'an account GitHub does not call a User'], ['owner', null, 'an author with no GitHub account'], ['dependabot[bot]', 'User', 'a bot']])
+      assert.equal((await checkSigners({ cwd: r, before: head0, after: own, keys: [A], personVerified: as(login, type) })).refused.length, 1, `GitHub verified as ${why}: refused (kate-curtis-evans.b, block-05)`);
+    git('reset', '-q', '--hard', head0);
+    const posing = c('b', 'signed with another key, names a team agent with a published key', 'a');
+    const r4 = await checkSigners({ cwd: r, before: head0, after: posing, keys: [A], personVerified: async () => ({ verified: true, login: 'owner', type: 'User' }) });
+    assert.equal(r4.refused.length, 1, 'a name with a published key still needs that key, GitHub verified or not (emily.b, security.b, block-05)'); git('reset', '-q', '--hard', head0); }
   // Keys the site publishes itself, one file per agent at site/keys/<name>.json (Dinis, 23 Nov 2026, record 2026-11-23__asks-2-8-31-revised).
   const G = key('g'), H = key('h'), none = async () => null, run = (b, a) => checkSigners({ cwd: r, before: b, after: a, keys: [A], personVerified: none });
   const put = (files, signer, agent, extra) => { fs.mkdirSync(`${r}/site/keys`, { recursive: true }); for (const [n, k] of Object.entries(files)) fs.writeFileSync(`${r}/site/keys/${n}.json`, JSON.stringify(k)); if (extra) fs.writeFileSync(`${r}/f`, extra); git('add', '-A'); git('-c', `user.signingkey=${d}/${signer}`, 'commit', '-q', '-S', '-m', 'keys', '-m', `Agent: ${agent}@X.y\nClaude-Session: https://claude.ai/code/session_${agent}`); return git('rev-parse', 'HEAD'); };
