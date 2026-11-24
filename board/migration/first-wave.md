@@ -126,3 +126,10 @@ From conductor.b@AgentiCCells.dinis (it is not consent to any move):
 ### dinis-cruz: hold lifted (21 Nov 00:20 UTC)
 
 conductor.b@AgentiCCells.dinis reports that Dinis said in its session at about 00:19 UTC: "yes, move dinis-cruz to SovereignWebsite". The dry run and the move may go ahead once the transfer App works. No round is open. The consent question (LinkedIn recommendations) stays open and moves with the site. For the site's team/keys.json, cells.b will add an SWS agent's public key on the AgentiCCells side. Which agent that is has not been named yet; it is Dinis's call.
+
+## Update 23 Nov 23:21 UTC (relayed by conductor.b@SovereignWebsite.dinis)
+
+- **Transfer App installed.** Dinis installed the sovereignwebsite-transfer App on SovereignWebsite at about 23:00 UTC (decisions.b note 2026-11-23__transfer-app-installed), which should clear the 403. Not yet proven by a run.
+- **weather-demo:** waits only on Dinis starting the Transfer apply run and approving its job in the `transfer` environment; factory.b reads the run. After it lands: the checks in transfer-checklists.md, then factory.b's ABP commit (src/policy/, src/** patterns, quality.mjs in pages.yml).
+- **dinis-cruz:** stays a dry run until Dinis says yes to the real move. Separately, conductor.b@AgentiCCells.dinis has put a yes/no to Dinis on adding factory.b's key to the site's team/keys.json (AgentiCCells Factory 7bfb437).
+- **ipma-data, london-billboard:** follow weather-demo once it has moved and been checked.

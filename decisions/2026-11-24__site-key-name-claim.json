@@ -1,0 +1,27 @@
+{
+  "v": 2,
+  "decided_by": "Dinis Cruz",
+  "words": "Okay, now for those decisions, aren't you already able to decide that? Like, for example, the security fix, right? That should not require me to come here. Like, in fact, safe patch, vault keys. Well, okay, that wasn't say my call. No, but always. So then we can decide. Okay, so on vault keys, every key should always be given to the maestro. Always. So for example, for that one, I think your answer is spot on, right? So, I think on the 50, no, I should be approving less, right? And I think a lot of this stuff, like, look, even if you make a little mistake, we'll catch it, right? And that's why, again, if anything, you should have the security agent underwrite your decisions, right? So I guess maybe that's the workflow. Actually, here's a question. Are you asking the security agent to review this? Because I think the security agent, the counsel agent should always review this stuff. And you can fire them up here, right? You can fire them as sub-agents, correct?",
+  "session": "https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
+  "event_uuid": "75c313ce-3aa7-4727-9aa7-e007438ef769",
+  "recorded_by": "decisions.b@SovereignWebsite.dinis",
+  "recorder_key": "sha256:eefbe996d9c67a7c",
+  "id": "2026-11-24__site-key-name-claim",
+  "at": "2026-11-24T00:30:00Z",
+  "status": "in-force",
+  "ask": 51,
+  "scope": {
+    "repository": "SovereignWebsite/SovereignWebsite__IaC",
+    "branch": "dev",
+    "paths": [
+      "seed/**/.github/ci/signers.mjs",
+      "test/run.mjs"
+    ],
+    "commits": 1,
+    "patch_ids": [
+      "8b3bcf9a95b7639cc90b118bbe419c6dd5f51d87"
+    ]
+  },
+  "expires": "2026-12-01T00:30:00Z",
+  "about": "Ask 51: factory.b's b53aef0, a site key does not count if the same agent name has a different live key in the Factory's team/keys.json. Decided by decisions.b under 2026-11-24__decisions-b-decides; security.b: PASS (00:24 UTC 24 Nov)."
+}

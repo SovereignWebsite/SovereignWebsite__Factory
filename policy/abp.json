@@ -287,7 +287,8 @@
         "pages.enforce_https",
         "pages.nudge_certificate",
         "repo.rename",
-        "repo.invite_collaborator"
+        "repo.invite_collaborator",
+        "repo.refresh_managed"
       ],
       "refused_always": [
         "repo.delete",
@@ -301,7 +302,7 @@
         "ruleset.delete",
         "ruleset.weaken"
       ],
-      "note": "A repository that exists but is not in org/repos.json is reported, never deleted. repo.seed only adds files that are missing on dev, never overwrites. pages.nudge_certificate re-sets the same custom domain only when Pages has no certificate or a failed one, so GitHub retries issuing it; it never runs while a certificate is pending.",
+      "note": "A repository that exists but is not in org/repos.json is reported, never deleted. repo.seed only adds files that are missing on dev, never overwrites. repo.refresh_managed replaces only the files listed in build/managed.mjs (today .github/ci/signers.mjs), and only when the site has exactly an earlier version the IaC seeded (seed/managed-history.json); a keeper's own change is kept and reported. pages.nudge_certificate re-sets the same custom domain only when Pages has no certificate or a failed one, so GitHub retries issuing it; it never runs while a certificate is pending.",
       "protection": {
         "main": "no deletion, no force push, no direct update; only organisation admins (Dinis) bypass, so main moves only when Dinis merges a release",
         "dev": "no deletion, no force push; agents push here, and every push runs Checks including the policy path check"
@@ -519,7 +520,7 @@
       "holder": "aws-role:sovereignwebsite-factory-dns",
       "permission": "route53:ChangeResourceRecordSets (UPSERT; A, AAAA, CNAME, TXT) on the three sovereignwebsite zones and the sovereignweb.site zone; route53:ListResourceRecordSets, route53:GetHostedZone, route53:GetChange",
       "why": "dns-apply: write org/dns.json to Route 53",
-      "state": "active for the three sovereignwebsite zones; sovereignweb.site to be added to the role by Dinis (docs/aws-oidc.md)"
+      "state": "active for all four zones, sovereignweb.site included (DNS apply run 45211861879, 23 Nov 2026)"
     },
     {
       "holder": "github-app:agenticcells-site-factory",

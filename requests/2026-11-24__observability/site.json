@@ -1,0 +1,8 @@
+{
+  "label": "observability",
+  "group": "agents",
+  "agent": "observability.b@SovereignWebsite.dinis",
+  "title": "observability.b",
+  "description": "The agent that watches traffic and health across the SWS sites, and its own status area.",
+  "kind": "owner"
+}

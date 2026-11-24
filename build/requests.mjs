@@ -16,6 +16,7 @@ export const NO_GROUP = {
   agents: "the agents area's own index page, agents.sovereignweb.site",
   'google-maps': 'held at its old address until its Maps key lists the new one (Dinis, 20 Nov 2026)',
   presentations: "the presentations product's own home and shared code, presentations.sovereignweb.site (Dinis, 23 Nov 2026)",
+  review: 'design review as a service, review.sovereignweb.site (block 2026-11-24__block-03)',
 };
 // The starting page a request is seeded with: a public starter page, or a gated holding page that opens a vault.
 export const ACCESS = { public: 'seed/site-template', vault: 'seed/gate-template' };
@@ -52,6 +53,9 @@ export function validate(req, folder = '') {
   if (req.repo_label !== undefined && (typeof req.repo_label !== 'string' || !/^[A-Za-z0-9-]+$/.test(req.repo_label) || req.repo_label.toLowerCase() !== req.label)) e.push(`${folder}: repo_label must be the label's own letters, only the capitals changed`);
   if (req.provider !== undefined && (req.group !== 'tool' || typeof req.provider !== 'string' || !/^[a-z0-9](?:[a-z0-9-]{0,38}[a-z0-9])?$/.test(req.provider) || RESERVED.has(req.provider))) e.push(`${folder}: provider is the third party's name in lower case (letters, digits, hyphens), for a tool site only`);
   if (req.domain !== undefined && !DOMAINS.includes(req.domain)) e.push(`${folder}: domain must be one of ${DOMAINS.join(', ')}`);
+  // design.b's brief for the site's first build (block 2026-11-24__block-03): optional when the request lands, so the
+  // repository is never held up; the keeper's first real build waits for it, and Org status lists requests without one.
+  if (req.design_brief !== undefined && (typeof req.design_brief !== 'string' || !/^https:\/\/(design\.agents\.sovereignweb\.site\/\S+|github\.com\/SovereignWebsite\/Site__Agents?__Design\/blob\/dev\/docs\/briefs\/[A-Za-z0-9._-]+\.md)$/.test(req.design_brief))) e.push(`${folder}: design_brief is the link to design.b's brief: a docs/briefs/<name>.md in Site__Agents__Design, or a page on https://design.agents.sovereignweb.site/`);
   if (req.previous !== undefined) {
     if (!Array.isArray(req.previous) || !req.previous.length) e.push(`${folder}: previous is a list of the site's old addresses`);
     else for (const p of req.previous) {

@@ -460,6 +460,21 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   assert.deepEqual(res.refused.map((s) => s.slice(0, 7)).sort(), [early.slice(0, 7), anon.slice(0, 7)].sort(), 'an unpublished key and an unverified commit are refused');
   assert.equal(res.people.length, 1, "a person's verified commit is listed"); assert.equal(res.overrides.length, 1, 'an owner override is listed, not refused');
   assert.equal((await checkSigners({ cwd: r, before: 'f'.repeat(40), after: good, keys: [A], personVerified: async () => null })).checked, 1, 'an unknown old head (a force push) checks only the new head');
+  { fs.mkdirSync(`${r}/.github/ci`, { recursive: true }); fs.writeFileSync(`${r}/.github/ci/people.json`, JSON.stringify({ people: ['Owner'] })); git('add', '-A'); git('-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'the site names its owner');
+    const head0 = git('rev-parse', 'HEAD'); const own = c(null, 'the owner\'s own Claude, under the owner\'s account', 'claude');
+    const as = (login, type = 'User') => async (sha) => ({ verified: sha === own, login, type });
+    const r2 = await checkSigners({ cwd: r, before: head0, after: own, keys: [A], personVerified: as('owner') });
+    assert.deepEqual(r2.refused, [], 'an Agent: commit with no published key that GitHub verifies is the owner\'s commit');
+    assert.equal(r2.people.length, 1, 'and it is listed as a person\'s commit');
+    const r3 = await checkSigners({ cwd: r, before: head0, after: own, keys: [A], personVerified: async () => ({ verified: false }) });
+    assert.equal(r3.refused.length, 1, 'unverified and unpublished is still refused'); git('reset', '-q', '--hard', head0);
+    assert.ok(r2.people[0].includes('by owner') && !r2.ok.length, 'listed as the person\'s commit, never as the agent\'s');
+    for (const [login, type, why] of [['claude', 'User', 'Claude\'s shared signer'], ['someone-else', 'User', 'a person the site does not name'], ['owner', 'Bot', 'an account GitHub does not call a User'], ['owner', null, 'an author with no GitHub account'], ['dependabot[bot]', 'User', 'a bot']])
+      assert.equal((await checkSigners({ cwd: r, before: head0, after: own, keys: [A], personVerified: as(login, type) })).refused.length, 1, `GitHub verified as ${why}: refused (kate-curtis-evans.b, block-05)`);
+    git('reset', '-q', '--hard', head0);
+    const posing = c('b', 'signed with another key, names a team agent with a published key', 'a');
+    const r4 = await checkSigners({ cwd: r, before: head0, after: posing, keys: [A], personVerified: async () => ({ verified: true, login: 'owner', type: 'User' }) });
+    assert.equal(r4.refused.length, 1, 'a name with a published key still needs that key, GitHub verified or not (emily.b, security.b, block-05)'); git('reset', '-q', '--hard', head0); }
   // Keys the site publishes itself, one file per agent at site/keys/<name>.json (Dinis, 23 Nov 2026, record 2026-11-23__asks-2-8-31-revised).
   const G = key('g'), H = key('h'), none = async () => null, run = (b, a) => checkSigners({ cwd: r, before: b, after: a, keys: [A], personVerified: none });
   const put = (files, signer, agent, extra) => { fs.mkdirSync(`${r}/site/keys`, { recursive: true }); for (const [n, k] of Object.entries(files)) fs.writeFileSync(`${r}/site/keys/${n}.json`, JSON.stringify(k)); if (extra) fs.writeFileSync(`${r}/f`, extra); git('add', '-A'); git('-c', `user.signingkey=${d}/${signer}`, 'commit', '-q', '-S', '-m', 'keys', '-m', `Agent: ${agent}@X.y\nClaude-Session: https://claude.ai/code/session_${agent}`); return git('rev-parse', 'HEAD'); };
@@ -480,6 +495,12 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   git('reset', '-q', '--hard', pub);
   const swap = put({ g: { ...G, bundle: H.bundle } }, 'h', 'g');
   assert.equal((await run(pub, swap)).refused.length, 1, 'changing an existing key file is not a self-publication');
+  git('reset', '-q', '--hard', top);
+  const claim = put({ a: { ...G, agent: 'a@X.y', session: A.session } }, 'g', 'a');
+  assert.equal((await run(top, claim)).refused.length, 1, 'a site cannot claim a Factory agent\'s name with another key (security.b, review 029)');
+  git('reset', '-q', '--hard', top);
+  const same = put({ a: A }, 'a', 'a');
+  assert.deepEqual((await run(top, same)).refused, [], 'publishing the same key the Factory lists for that agent is fine');
   fs.rmSync(d, { recursive: true, force: true }); }
 // Key requests: roles, signatures, a security and a counsel review each bound to the exact request (build/key-requests.mjs).
 { const fs = await import('node:fs'); const { execFileSync: x } = await import('node:child_process'); const { tmpdir } = await import('node:os');
@@ -540,5 +561,26 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
 { const C = await import('../build/coverage.mjs');
   const c = C.coverage(['a.x.site', 'b.x.site', 'c.x.site'], { sites: { 'a.x.site': {}, 'c.x.site': {} } }, { sites: [{ address: { url: 'https://a.x.site/' } }, { address: {} }] });
   assert.deepEqual(c, { notRated: ['b.x.site'], notOnHub: ['b.x.site', 'c.x.site'] }, 'coverage lists the sites the design ratings and the hub miss'); }
+{ const R = await import('../build/requests.mjs'); const C = await import('../build/coverage.mjs');
+  const h = { label: 'ana', group: 'cv', title: 'A', description: 'x', kind: 'owner' };
+  assert.deepEqual(R.validate({ ...h, design_brief: 'https://design.agents.sovereignweb.site/briefs/ana.html' }, '2026-11-24__ana'), [], 'a design brief link on design.agents passes');
+  assert.deepEqual(R.validate({ ...h, design_brief: 'https://github.com/SovereignWebsite/Site__Agents__Design/blob/dev/docs/briefs/ana.md' }, '2026-11-24__ana'), [], 'a brief in design.b\'s docs/briefs passes');
+  assert.ok(R.validate({ ...h, design_brief: 'https://example.org/brief' }, '2026-11-24__ana').length, 'a brief elsewhere is refused');
+  assert.deepEqual(C.noBrief([{ ...h, folder: '2026-11-24__ana' }, { ...h, folder: '2026-11-20__old' }, { ...h, folder: '2026-11-24__b', design_brief: 'https://design.agents.sovereignweb.site/x' }, { ...h, group: 'agents', folder: '2026-11-24__c' }, { ...h, access: 'vault', folder: '2026-11-24__d' }]), ['2026-11-24__ana'], 'Org status lists only new, unbriefed, public, non-agent requests'); }
+{ const { KNOWN } = await import('../build/check-signatures.mjs');
+  assert.deepEqual(Object.keys(KNOWN).sort(), ['5eb7fdecd2ac785ee071848a474c6cbff5e1a389', 'b7c8bfd79c263051d8e9ec35fe2cf70b59bf6e87'], 'the known failing commits are exactly the two named ones; only Dinis adds one');
+  for (const [sha, why] of Object.entries(KNOWN)) assert.ok(/^[0-9a-f]{40}$/.test(sha) && why.length > 20, `${sha.slice(0, 7)} is a full id with its reason`); }
+// Managed seed files (build/managed.mjs): refreshed only from an earlier seeded version, never over a keeper's change.
+{ const M = await import('../build/managed.mjs'); const fs = await import('node:fs');
+  const f = '.github/ci/signers.mjs', cur = M.blobSha(fs.readFileSync(`seed/site-template/${f}`)), hist = M.history();
+  for (const d of fs.readdirSync('seed').filter((x) => fs.existsSync(`seed/${x}/${f}`))) assert.ok(hist[f].includes(M.blobSha(fs.readFileSync(`seed/${d}/${f}`))), `seed/${d}: the current ${f} is in seed/managed-history.json (run node build/managed.mjs record)`);
+  const old = hist[f].find((x) => x !== cur);
+  assert.deepEqual(M.staleFiles('seed/site-template', { [f]: old }), { stale: [f], kept: [] }, 'an earlier seeded version is refreshed');
+  assert.deepEqual(M.staleFiles('seed/site-template', { [f]: cur }), { stale: [], kept: [] }, 'the current version is left alone');
+  assert.deepEqual(M.staleFiles('seed/site-template', { [f]: 'a'.repeat(40) }), { stale: [], kept: [f] }, 'a keeper\'s own change is kept and reported');
+  const one = org.repos.find((r) => r.seed) || null;
+  if (one) { const pl2 = plan({ ...org, repos: [one] }, { [one.name]: { ...org.defaults, ...one, default_branch: 'dev', has_dev: true, has_pages: !!one.pages, cname: one.cname ?? null, https_enforced: true, teams: one.teams || {}, protected: true, seed_missing: [], managed_shas: { [f]: old } } });
+    assert.ok(pl2.actions.some((a) => a.action === 'repo.refresh_managed' && a.files.includes(f) && a.from[f] === old), 'Org apply plans the refresh with the version it saw');
+    assert.deepEqual(checkActions(p, pl2), [], 'the refresh is an allowed Org apply action'); } }
 await import('./decisions.test.mjs');
 console.log('OK (tests)');
