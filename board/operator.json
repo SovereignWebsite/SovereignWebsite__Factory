@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-24T12:21Z",
+  "updated": "2026-11-24T13:21Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "Dinis: a budget for the librarian's first run, or let accountant.b propose one - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF",
@@ -22,7 +22,6 @@
     "Dinis: attach Site__Agents__Factory with push to factory.b's session, the first step of account B's onboarding order (agreed by factory.b) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
   ],
   "done_recent": [
-    "Site keeper areas live: South Beacon (https://south-beacon.talent.sovereignweb.site/factory/dinis-cruz/account-b/, nothing about the candidate, noindex) and Grace Farrell's site (https://grace-farrell.artist.sovereignweb.site/factory/dinis-cruz/account-b/agent.json)",
     "Agent sites approved for security, observability, startups, feedback and outreach (decisions.b's first review block, all five reviewers agree, record 2026-11-24__block-01); factory.b builds them",
     "Agent sites live: security, observability, startups, feedback and outreach.agents.sovereignweb.site (factory.b, Org apply 00:40 UTC); feedback's site never publishes a reader's message",
     "Components proposal on dev (3ed2957): small public component repositories, first a local-models component, with browser policy manifests",
@@ -36,7 +35,8 @@
     "chiswick-cheese-market.b offboarded, step 3: its key entry retired (23c180c) after it confirmed its hand-over to keepers .c and .d is complete",
     "All three vault keys handed to b.maestro and proven: sotavento.b's, Perspace and Algarve Evolution (opened at 00:41 UTC, hash matched); each vault now has two holders. b.maestro's key is endorsed by decisions.b, chained to Dinis's anchor (until 30 Nov)",
     "Morning sync (Dinis, about 11:00 UTC 24 Nov): every agent gets two repositories of its own, done at onboarding; account B order written: board/conductor.b/2026-11-24__onboarding-order.md (factory.b first, then fresh sites.b and hub.b, librarian.b, role agents, conductor.b, site keepers at restart)",
-    "factory.b agreed the onboarding order; every new agent repository starts with the signature check, leak scan and branch protection, made only by the Factory (security.b's condition)"
+    "factory.b agreed the onboarding order; every new agent repository starts with the signature check, leak scan and branch protection, made only by the Factory (security.b's condition)",
+    "Dinis's guidance (24 Nov, a.factory's session): every active agent keeps its area in its own Site__Agent__ repository, current at every wake, registered in its type's factory/index.json; b.maestro sent it to the account B agents. Every account B role type has an agent site; areas still missing on hub, conductor, factory, migration, library and outreach"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",

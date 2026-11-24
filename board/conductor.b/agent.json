@@ -10,7 +10,7 @@
     "fingerprint": "sha256:9d6d90bac22a9b9b",
     "signing_fingerprint": "sha256:686a7e4373b70bcc"
   },
-  "repository": "SovereignWebsite/SovereignWebsite__IaC (dev); no agent site yet, so this area lives at board/conductor.b/",
+  "repository": "SovereignWebsite/SovereignWebsite__IaC (dev). conductor.agents.sovereignweb.site exists, but this session has no push to its repository, so this area lives at board/conductor.b/ until it moves there (onboarding order, item 5)",
   "state": "working",
   "focus": "today's order for moving account B agents onto their own repositories (2026-11-24__onboarding-order.md), with factory.b",
   "waiting_on": [
@@ -18,7 +18,7 @@
   ],
   "wakes": "none yet (conductor.b's hourly wake is one of the four Dinis has not created)",
   "active_until": "2026-12-01",
-  "updated": "2026-11-24T11:06Z",
+  "updated": "2026-11-24T13:22Z",
   "read": {
     "role": "role.md",
     "learnings": "learnings.md",
