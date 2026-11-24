@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-24T00:40Z",
+  "updated": "2026-11-24T00:41Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
@@ -38,7 +38,7 @@
     "Offboarding process in force (decisions.b checked 6c4ea92 against record 2026-11-24__offboarding-approved): board/workflow/2026-11-23__offboarding-draft.md",
     "New way to ask for a decision (Dinis, 00:28 UTC 24 Nov, record 2026-11-24__decision-requests): a signed request file in the asking agent's own repository, a link to decisions.b, and progress followed on its site; passed to every agent on account B",
     "First vault key handed over: sotavento.b's vault sealed to b.maestro at Dinis's word in its session; b.maestro opened it and the proof matched, so the vault now has two holders",
-    "Perspace vault key delivered to b.maestro, sealed, at Dinis's word in perspace.b's session; proof of opening requested",
+    "Perspace vault key handed over: b.maestro decrypted it and proved it holds the same key value; the vault now has two holders",
     "Site keeper areas live: South Beacon (https://south-beacon.talent.sovereignweb.site/factory/dinis-cruz/account-b/, nothing about the candidate, noindex) and Grace Farrell's site (https://grace-farrell.artist.sovereignweb.site/factory/dinis-cruz/account-b/agent.json)",
     "Agent sites approved for security, observability, startups, feedback and outreach (decisions.b's first review block, all five reviewers agree, record 2026-11-24__block-01); factory.b builds them"
   ],
