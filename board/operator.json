@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-24T00:24Z",
+  "updated": "2026-11-24T00:27Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
@@ -15,7 +15,6 @@
     "Dinis: add SovereignWebsite__Website to the fresh conductor.b session; add_repo was refused by the permission check - https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
     "Dinis: start the weather-demo transfer: Actions, Transfer apply, Run workflow, request 2026-11-20__weather-demo, then approve the apply job in the transfer environment (factory.b reads the run) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: allow mistral.conductor to write its signing key file in its own session (ask 5 agreed; its safety check refused the step) - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT",
-    "Dinis: approve or change the offboarding process (ask 39; security.b review 028 passed with changes, all made) - board/workflow/2026-11-23__offboarding-draft.md",
     "Dinis: start a fresh hub.b session from its hand-over (docs/HANDOVER.md, v0.1.53, plus the later ask 31 commit) before its wake is created - https://claude.ai/code/session_01Kw9UwB7XboTsnbPPWaMr2d",
     "Dinis: create the four agreed wake tasks (ask 24); the old conductor task is retired - board/2026-11-23__wake-schedule.md",
     "Dinis: re-enable feedback.b's inbox round (trig_01FsUjtCGwD9w9i3eBWJVoY3) and say so in its session (\"Turn the inbox back on\", 23:22 UTC) - https://claude.ai/code/session_01Kw9UwBiG9d5KHvFjdtiP69",
@@ -27,7 +26,6 @@
     "Dinis: allow sgit pki keygen in accountant.b's session, so it can sign commits to accountant.agents.sovereignweb.site and publish its area - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF"
   ],
   "done_recent": [
-    "Ask 30 tried: Car Buyer cannot fetch DVLA or MOT data from a static page (both refuse browser requests and need server-held keys); the idea is archived under Dinis's rule, the site stays live",
     "Emily Cruz's site: docs/owner.md lists what Dinis, then Emily, can do directly (c826878, Pages and Signers green)",
     "Startups: RiskMandate v0.1.37 now says the brochure is on Dinis's list to review, no approval claimed (f8e6372); the first handed-over site is off the Sovereign Website showroom, since its address names its owner (v0.1.41, da9d5d0)",
     "docs/aws-oidc.md now records that sovereignweb.site is on the DNS role (factory.b, 97b0452, record 2026-11-23__aws-doc-fix)",
@@ -41,7 +39,8 @@
     "Vault keys: every one goes to the account's maestro, sealed, no exceptions, Algarve Evolution and Perspace included (Dinis, 00:19 UTC); holders run security.b's 030 checks first, as b.maestro's key is self-published",
     "Agent areas live under the team rule: decisions.b, design.b and design.b.rounds (design.agents), hub.b (on the hub until it has an agent site); design.b now rates a stale or missing area as holding an agent site at 2",
     "No site key under a name the Factory already lists with another key: decided by decisions.b under the delegation, pushed (IaC c40dddf)",
-    "factory.b's plan so no agent is left without an area: site keepers on their own sites, a Site__Agent__<Role> for each role agent without one (six requests to decisions.b), one shared site for the AWS platform team"
+    "factory.b's plan so no agent is left without an area: site keepers on their own sites, a Site__Agent__<Role> for each role agent without one (six requests to decisions.b), one shared site for the AWS platform team",
+    "Offboarding process approved with eight conditions by the panel under Dinis's delegation (record 2026-11-24__offboarding-approved); folded into board/workflow/2026-11-23__offboarding-draft.md: routine hand-overs archived without asking, every vault key keeps the maestro as a holder, a one-screen checklist, and archived sessions counted in status.json"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
