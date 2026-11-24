@@ -633,3 +633,14 @@ console.log('OK (org scope)');
   assert.ok(fs.readFileSync('seed/agent-template/CLAUDE.md', 'utf8').includes('START.md'), 'agent sites start with START.md');
 }
 console.log('OK (managed CLAUDE.md)');
+
+// A chapter names its parent organisation (Dinis, 24 Nov 2026: "london.agentics-foundation.organisation").
+{
+  const R = await import('../build/requests.mjs');
+  const r = { label: 'london', group: 'organisation', provider: 'agentics-foundation', title: 'T', description: 'D', kind: 'owner' };
+  assert.deepEqual(R.validate(r, '2026-11-24__london'), [], 'an organisation chapter may name its parent');
+  assert.equal(R.host(r), 'london.agentics-foundation.organisation.sovereignweb.site');
+  assert.equal(R.repoName(r), 'Site__Organisation__Agentics-Foundation__London');
+  assert.ok(R.validate({ ...r, group: 'artist' }, '2026-11-24__london').some((e) => /provider/.test(e)), 'other groups still may not');
+}
+console.log('OK (organisation chapters)');

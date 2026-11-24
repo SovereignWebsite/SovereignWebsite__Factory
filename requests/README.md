@@ -45,7 +45,7 @@ More groups will be added as we go; adding one is a change to `GROUPS` in build/
 
 Rules: a label may be used in more than one group, so one label finds all of a person's sites (Dinis, 23 November 2026: "allow labels to be used in different groups"); each site's address and repository name must still be unique, and a group name cannot be a label (except a group's own home, listed in `NO_GROUP`). When a label is shared, its bare old names (`Site__<label>`, `Redirect__<label>`) are not used to rename anything.
 
-A `tool` site about a third party's service names that party: `"provider": "huggingface"` gives `pybot.huggingface.tool.sovereignweb.site` and `Site__Tool__Huggingface__Pybot` (Dinis, 22 November 2026: "gmail.google.tool"; "use pybot.huggingface.tool").
+A `tool` site about a third party's service names that party: `"provider": "huggingface"` gives `pybot.huggingface.tool.sovereignweb.site` and `Site__Tool__Huggingface__Pybot` (Dinis, 22 November 2026: "gmail.google.tool"; "use pybot.huggingface.tool"). An `organisation` site for one chapter of a larger organisation names its parent the same way: `"label": "london", "provider": "agentics-foundation"` gives `london.agentics-foundation.organisation.sovereignweb.site` and `Site__Organisation__Agentics-Foundation__London`, so one parent can hold several cities (Dinis, 24 November 2026: "london.agentics-foundation.organisation").
 
 ## Repository names: `Site__<Group>__<Name>`
 
