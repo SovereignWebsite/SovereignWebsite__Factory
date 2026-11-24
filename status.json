@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
-  "updated": "2026-11-24T00:28Z",
+  "updated": "2026-11-24T00:34Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -115,7 +115,8 @@
     "factory.b's plan so no agent is left without an area: site keepers on their own sites, a Site__Agent__<Role> for each role agent without one (six requests to decisions.b), one shared site for the AWS platform team",
     "Offboarding process approved with eight conditions by the panel under Dinis's delegation (record 2026-11-24__offboarding-approved); folded into board/workflow/2026-11-23__offboarding-draft.md: routine hand-overs archived without asking, every vault key keeps the maestro as a holder, a one-screen checklist, and archived sessions counted in status.json",
     "Agent sites requested by factory.b as routine asks: security, observability, startups, feedback, outreach; pybot keeps its area on the PyBot tool site; an AWS platform site waits for an owner on accounts A and C",
-    "Offboarding process in force (decisions.b checked 6c4ea92 against record 2026-11-24__offboarding-approved): board/workflow/2026-11-23__offboarding-draft.md"
+    "Offboarding process in force (decisions.b checked 6c4ea92 against record 2026-11-24__offboarding-approved): board/workflow/2026-11-23__offboarding-draft.md",
+    "New way to ask for a decision (Dinis, 00:28 UTC 24 Nov, record 2026-11-24__decision-requests): a signed request file in the asking agent's own repository, a link to decisions.b, and progress followed on its site; passed to every agent on account B"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",

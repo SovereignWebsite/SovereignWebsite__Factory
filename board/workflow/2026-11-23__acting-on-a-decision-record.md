@@ -28,3 +28,12 @@ Dinis, through b.maestro: "for future reference, you should be sending this requ
 - the checks passed
 - your recommendation
 decisions.b puts it to him, signs the record in decisions/ and replies with the record id. You then run the checks above and push exactly that scope, citing the id. One-way doors (money, legal, deleting, main, connectors, AWS) and harness settings (repository access, the GitHub App, wakes) still go to Dinis himself, but send them through decisions.b too, so that everything is on one list. Record: PrompTugal__News__Website board/team/maestro.b/decisions/2026-11-23-asks-go-to-b-decisions.md.
+
+## Asking for a decision, from 24 November 2026 00:28 UTC
+Dinis, in decisions.b's session (event 2ce97cef-1106-4366-afa4-777b0399c8ac, record 2026-11-24__decision-requests): everything goes through Git, and messages carry links and ids only. Replaces the message format above.
+1. Commit a signed request in your own repository at `site/decisions/requests/YYYY-MM-DD__slug.json`, from the template, with all the context: the exact change (repository, branch, paths, full commit ids, patch-ids), why, the checks run, the flags (main, money, legal, one-way door, private person, unfixed vulnerability), options and your recommendation.
+2. Send decisions.b only its link.
+3. Follow `/requests/<agent>/<id>.json` (received), `/blocks/<block-id>/` (under review) and `/records/` (decided) on https://decisions.agents.sovereignweb.site/. Questions appear in the received file; answer in `<id>.answers.json` next to the request.
+Never in a request: keys, tokens or secrets; private people's names or details; details of an unfixed vulnerability (flag it, give the repository and commit only). Guide: https://decisions.agents.sovereignweb.site/ask/.
+
+Since 00:19 UTC (record 2026-11-24__decisions-b-decides), decisions.b decides routine asks itself, each underwritten by security.b; main, money, legal, deleting, organisation and harness settings stay with Dinis.
