@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-24T11:51Z",
+  "updated": "2026-11-24T11:52Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -119,7 +119,8 @@
     "00:56 UTC 24 Nov: sites.d's unsigned review of the tool-site requests passed to d.maestro: CRM (Site__Tool__CRM) no objection with 4 conditions (no real data ever, plain storage notice, no third-party scripts and strict CSP, ABP before deploy); Gmail (Site__Tool__Google__Gmail) no objection with sites.a's 4 plus Google sign-in's script against the no-third-party-scripts rule (an ABP exception for Dinis or a flow that loads none; for security review) and the unofficial line",
     "00:56 UTC 24 Nov: vault list complete for the .d team: only observability.d holds one (observability-d, dyewsrs1, empty); sites.d, streaming.d (Streaming vault put off by Dinis), wordpress.d, donna-freed.d, pybot.d, factory.d, chiswick-cheese-market.d, design.d, synthetic-users.d, library.d, conductor.d none. wordpress.d's first pages on Site__Tool__Wordpress dev (7ebc4ae), its key on Factory dev (d912ae2); donna-freed.d's key on Factory dev (bd43e07)",
     "01:01 UTC 24 Nov: d.helm reported slides.d and cartographer.d published keys in their homes (Dinis's 23 Nov record) and their commits are red under the old seeded signers.mjs; told it the fix is factory.b's aef6bcc and b3ae4cd on dev, waiting on Dinis's merge and Org apply",
-    "11:51 UTC 24 Nov: morning sync passed (links only) to the ten agents conductor.d runs and through sites.d to its four; factory.d told not to double the CRM request; synthetic-users.d told it owns twin inboxes with security@'s conditions and to plan by request file; restart.md written for conductor.d"
+    "11:51 UTC 24 Nov: morning sync passed (links only) to the ten agents conductor.d runs and through sites.d to its four; factory.d told not to double the CRM request; synthetic-users.d told it owns twin inboxes with security@'s conditions and to plan by request file; restart.md written for conductor.d",
+    "11:52 UTC 24 Nov: factory.d confirmed it has landed nothing for CRM (a.factory carries it) and that seeds carry the signer check and Org apply sets main-locked and dev-safe rulesets; security.d's key adfc5ff still waits on Dinis in its session and it has no repository; synthetic-users.d's twin-inboxes plan recorded, its home already requested"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -131,6 +132,7 @@
     "start every new agent with the Factory reachable, or its key on dev, before it works (incident lesson)"
   ],
   "asks": [
+    "Dinis: synthetic-users.d's twin inboxes (morning sync section 6). (1) Create its home Site__Agent__Synthetic-Users (request requests/2026-11-22__synthetic-users, 13947db) by the merge and Org apply, so it can commit its plan as a request. (2) Its plan: invented personas labelled synthetic; a send guard in code refusing any recipient outside the twin domain, with SYNTHETIC in every subject and first line; a dry run with no mail; then live inboxes. Yours to choose: the domain we control and the mail service (may cost money), and when inboxes go live. Recommendation: yes to the repository, personas, send guard and dry run now - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: merge the Factory's dev to main and run Org apply so the agent homes get factory.b's new signer check (aef6bcc: accepts keys a site publishes itself; b3ae4cd: no claiming a team agent's name with another key). Until then signed commits in Site__Agent__Slides (ee14c84), __Cartographer (c8225ad), and Studio, Helm and Decisions show red and do not deploy - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: in synthetic-users.d's session (https://claude.ai/code/session_015gaHddQiB4aYZWXjfs16rM), yes to one commit on SovereignWebsite/Site__Agents__Design dev, site/policy/abp.json only: add docs/runs/wardley-maps-*.md, site/runs-wardley-maps-*.html and site/runs/wardley-maps-*/** to roles.synthetic_users_d.may_change, and extend its 'who' line to pages other .d agents ask it to test (first cartographer.d's Wardley Maps explainer). Reversible; site checks before push; recommendation yes. Replaces void D12 - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: push f0af2f6 (branch work/conductor.d-retire-aws-a-a3) to the Factory's dev, AFTER the predecessor-signed .aws.a work has landed (signers.mjs refuses unlanded commits signed by a retired key: dev.2's fast-forward from c87dc92 and ontology's 22 commits on work/ontology.aws.a, cleared by security.aws.a for aws.c). It retires architect, cloudtrail, conductor, dev-2 and ontology -aws-a-sovereignwebsite (R-028). team/keys.json is always-ask - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
