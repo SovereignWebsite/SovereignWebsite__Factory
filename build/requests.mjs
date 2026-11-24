@@ -16,6 +16,7 @@ export const NO_GROUP = {
   agents: "the agents area's own index page, agents.sovereignweb.site",
   'google-maps': 'held at its old address until its Maps key lists the new one (Dinis, 20 Nov 2026)',
   presentations: "the presentations product's own home and shared code, presentations.sovereignweb.site (Dinis, 23 Nov 2026)",
+  review: 'design review as a service, review.sovereignweb.site (block 2026-11-24__block-03)',
 };
 // The starting page a request is seeded with: a public starter page, or a gated holding page that opens a vault.
 export const ACCESS = { public: 'seed/site-template', vault: 'seed/gate-template' };

@@ -1,0 +1,7 @@
+{
+  "label": "review",
+  "title": "Design review for sovereign websites",
+  "description": "Design review as a service: rounds, ratings and what to fix, for any Sovereign Website.",
+  "kind": "demo",
+  "design_brief": "https://github.com/SovereignWebsite/Site__Agents__Design/blob/dev/docs/briefs/review-site.md"
+}
