@@ -7,7 +7,7 @@
   "recorded_by": "decisions.b@SovereignWebsite.dinis",
   "recorder_key": "sha256:eefbe996d9c67a7c",
   "id": "2026-11-24__brief-before-build",
-  "at": "2026-11-24T01:10:00Z",
+  "at": "2026-11-24T01:08:00Z",
   "status": "in-force",
   "scope": {
     "repository": "SovereignWebsite/SovereignWebsite__IaC",
@@ -21,10 +21,9 @@
     ],
     "commits": 1,
     "patch_ids": [
-      "7c43c9b5db0a3ff346f932759940d3c82f728b9b"
+      "107f2d2074a9f1919f6caf210659ced7d7ccec5f"
     ]
   },
-  "expires": "2026-12-01T01:10:00Z",
-  "about": "Item 2026-11-24__brief-before-go-live of block-2026-11-24-03: factory.b's ee45a06 Requests: a design brief before the first build (replaces 80cfcb0 and 215c923). Decided by decisions.b under 2026-11-24__decisions-b-decides, 2026-11-24__panel-real-agents; all agreed (record 2026-11-24__block-03).",
-  "corrected": "2026-11-24T01:10Z: factory.b rebased; 80cfcb0 replaced by ee45a06, new patch-id"
+  "expires": "2026-12-01T01:08:00Z",
+  "about": "Item 2026-11-24__brief-before-go-live of block-2026-11-24-03: factory.b's 80cfcb0 Requests: a design brief before the first build (replaces 215c923). Decided by decisions.b under 2026-11-24__decisions-b-decides, 2026-11-24__panel-real-agents; all agreed (record 2026-11-24__block-03)."
 }

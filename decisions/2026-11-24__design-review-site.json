@@ -7,7 +7,7 @@
   "recorded_by": "decisions.b@SovereignWebsite.dinis",
   "recorder_key": "sha256:eefbe996d9c67a7c",
   "id": "2026-11-24__design-review-site",
-  "at": "2026-11-24T01:10:00Z",
+  "at": "2026-11-24T01:08:00Z",
   "status": "in-force",
   "scope": {
     "repository": "SovereignWebsite/SovereignWebsite__IaC",
@@ -18,10 +18,9 @@
     ],
     "commits": 1,
     "patch_ids": [
-      "75bfedf8b5df415bd87dd6ef9dc57bb793f0aa89"
+      "ec491837006c5cd6ab54d2220a36be874adf7321"
     ]
   },
-  "expires": "2026-12-01T01:10:00Z",
-  "about": "Item 2026-11-24__design-review-service-site of block-2026-11-24-03: factory.b's 6cfd25f Request: review, design review as a service, pushed together with ee45a06. Condition from strategy.b: the site says what is offered today against what is proposed, and shows no price until Dinis sets one. Decided by decisions.b under 2026-11-24__decisions-b-decides, 2026-11-24__panel-real-agents; all agreed (record 2026-11-24__block-03).",
-  "corrected": "2026-11-24T01:10Z: factory.b rebased; 3521aec replaced by 6cfd25f, new patch-id"
+  "expires": "2026-12-01T01:08:00Z",
+  "about": "Item 2026-11-24__design-review-service-site of block-2026-11-24-03: factory.b's 3521aec Request: review, design review as a service, on top of 80cfcb0. Condition from strategy.b: the site says what is offered today against what is proposed, and shows no price until Dinis sets one. Decided by decisions.b under 2026-11-24__decisions-b-decides, 2026-11-24__panel-real-agents; all agreed (record 2026-11-24__block-03)."
 }
