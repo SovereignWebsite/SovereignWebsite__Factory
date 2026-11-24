@@ -87,6 +87,17 @@ Every site's `.github/workflows/pages.yml` runs on each push to dev, after the A
 
 Register every new site request with design.b at M0, when the request is made (block 2026-11-24__block-03). design.b sends five ideas from the owner's world as a brief, made from its template (https://design.agents.sovereignweb.site/briefs/TEMPLATE.html; all briefs at /briefs/); its link goes in the request as `"design_brief": "https://design.agents.sovereignweb.site/briefs/<slug>.html"`, where `<slug>` is the request's slug (its docs/briefs/<slug>.md in Site__Agents__Design also works). The repository is still created at once from the neutral seed; the keeper's first real build waits for the brief. Org status lists requests made since 24 November 2026 that have none yet (agents' own sites and private vault sites are not briefed).
 
+## Keeper and design
+
+Every site with a public part has a dedicated keeper from its first rounds and design directions with review rounds (Dinis, 24 November 2026: "every website that we create that has a public element always has a keeper, at least to do a couple rounds in the beginning, and actually should also have the design element to this"). From 25 November 2026 a public request names both, as agent names:
+
+```json
+"keeper": "a.ben-fung@SovereignWebsite.dinis",
+"design": "design.b@SovereignWebsite.dinis"
+```
+
+The routing agent never builds the site itself; it starts the keeper in its own session on the site's repository (Site__Agent__Factory site/guidance/). Agent sites and private vault sites are exempt.
+
 ## Rules checked by build/requests.mjs and the tests
 
 - label: lower-case letters, digits and hyphens, at most 40 characters, matching the folder name, not reserved (www, hub, vault, api, admin, mail, factory, or a group name);

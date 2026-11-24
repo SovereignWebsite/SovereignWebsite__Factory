@@ -644,3 +644,16 @@ console.log('OK (managed CLAUDE.md)');
   assert.ok(R.validate({ ...r, group: 'artist' }, '2026-11-24__london').some((e) => /provider/.test(e)), 'other groups still may not');
 }
 console.log('OK (organisation chapters)');
+
+// Every public site names its keeper and design reviewer, for requests filed from 2026-11-25 (Dinis, 24 Nov 2026).
+{
+  const R = await import('../build/requests.mjs');
+  const base = { label: 'x', group: 'tool', title: 'T', description: 'D', kind: 'demo' };
+  assert.deepEqual(R.validate(base, '2026-11-24__x'), [], 'requests filed before the rule are unchanged');
+  assert.equal(R.validate(base, '2026-11-25__x').filter((e) => /names its (keeper|design)/.test(e)).length, 2, 'a new public request without keeper and design is incomplete');
+  assert.deepEqual(R.validate({ ...base, keeper: 'a.x@SovereignWebsite.dinis', design: 'design.b@SovereignWebsite.dinis' }, '2026-11-25__x'), [], 'with both it is complete');
+  assert.ok(R.validate({ ...base, keeper: 'not a name', design: 'design.b@SovereignWebsite.dinis' }, '2026-11-25__x').some((e) => /keeper must be an agent name/.test(e)));
+  assert.deepEqual(R.validate({ ...base, access: 'vault' }, '2026-11-25__x'), [], 'private vault sites are exempt');
+  assert.deepEqual(R.validate({ label: 'x', group: 'agents', agent: 'a.x@SovereignWebsite.dinis', title: 'T', description: 'D', kind: 'owner' }, '2026-11-25__x'), [], 'agent sites are their own keeper');
+}
+console.log('OK (keeper and design)');

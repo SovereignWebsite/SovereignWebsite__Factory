@@ -4,6 +4,8 @@
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
+// Public requests filed on or after this date must name a keeper and a design reviewer.
+export const KEEPER_RULE_FROM = '2026-11-25';
 export const LABEL = /^[a-z0-9](?:[a-z0-9-]{0,38}[a-z0-9])?$/;
 // Organisations a repository may be moved from (the ABP's transfer-apply limits name the repositories).
 export const FROM_OWNERS = ['AgentiCCells'];
@@ -66,6 +68,14 @@ export function validate(req, folder = '') {
       else if (p === host(req)) e.push(`${folder}: previous address ${p} is the site's own address`);
     }
   }
+  // Every public site has a keeper and design rounds from the start (Dinis, 24 Nov 2026 ~22:41 UTC, in a.maestro's
+  // session: "every website that we create that has a public element always has a keeper, at least to do a couple
+  // rounds in the beginning, and actually should also have the design element to this"). Required for public requests
+  // filed from 2026-11-25; agent sites are their own keeper.
+  const AGENT_NAME = /^[a-z0-9.-]+@[A-Za-z0-9.-]+$/;
+  for (const k of ['keeper', 'design']) if (req[k] !== undefined && (typeof req[k] !== 'string' || !AGENT_NAME.test(req[k]))) e.push(`${folder}: ${k} must be an agent name, <role>@<Project>.<owner>`);
+  const filed = (folder.match(/^(\d{4}-\d{2}-\d{2})__/) || [])[1];
+  if (filed && filed >= KEEPER_RULE_FROM && req.access !== 'vault' && req.group !== 'agents' && !req.from) for (const k of ['keeper', 'design']) if (req[k] === undefined) e.push(`${folder}: a public site names its ${k} (requests/README.md, "Keeper and design")`);
   if (req.agent !== undefined) {
     if (!/^[a-z0-9.-]+@[A-Za-z0-9.-]+$/.test(req.agent)) e.push(`${folder}: agent must be <role>@<Project>.<owner>`);
     if (req.group !== 'agents') e.push(`${folder}: an agent's site is in the agents group`);
