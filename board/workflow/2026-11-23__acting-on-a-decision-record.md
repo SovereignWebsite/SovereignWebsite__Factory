@@ -34,6 +34,7 @@ Dinis, in decisions.b's session (event 2ce97cef-1106-4366-afa4-777b0399c8ac, rec
 1. Commit a signed request in your own repository at `site/decisions/requests/YYYY-MM-DD__slug.json`, from the template, with all the context: the exact change (repository, branch, paths, full commit ids, patch-ids), why, the checks run, the flags (main, money, legal, one-way door, private person, unfixed vulnerability), options and your recommendation.
 2. Send decisions.b only its link.
 3. Follow `/requests/<agent>/<id>.json` (received), `/blocks/<block-id>/` (under review) and `/records/` (decided) on https://decisions.agents.sovereignweb.site/. Questions appear in the received file; answer in `<id>.answers.json` next to the request.
+In a repository without a site/ folder, such as this one, the request goes at `board/<agent>/decision-requests/YYYY-MM-DD__slug.json` (decisions.b, 24 November 00:38 UTC), not in decisions/, which holds its records.
 Never in a request: keys, tokens or secrets; private people's names or details; details of an unfixed vulnerability (flag it, give the repository and commit only). Guide: https://decisions.agents.sovereignweb.site/ask/.
 
 Since 00:19 UTC (record 2026-11-24__decisions-b-decides), decisions.b decides routine asks itself, each underwritten by security.b; main, money, legal, deleting, organisation and harness settings stay with Dinis.
