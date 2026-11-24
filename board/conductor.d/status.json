@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-24T00:54Z",
+  "updated": "2026-11-24T00:55Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -113,7 +113,8 @@
     "20:50 UTC 23 Nov: A3 (a.maestro via d.maestro): retire commit for the five .aws.a keys held by replaced sessions prepared on work/conductor.d-retire-aws-a-a3 (f0af2f6; all checks OK); claimed in claims.md so conductor.b does not repeat it. The six plain appends are the agents' own",
     "00:52 UTC 24 Nov: claimed the CRM and Gmail tool-site requests for factory.d (raise) and sites.d (review); A3 order recorded (land predecessor-signed work first); records passed to the .d agents; vault list asked of the team for d.maestro; DevOps advice (skip browser checks for content-only, cache Playwright, newest push deploys; .github changes go to b.decisions with measurements) passed to factory.d",
     "00:53 UTC 24 Nov: factory.d needs the CRM and Gmail request fields by message (it cannot read the News repository) and Dinis's yes in its session; names under the provider rule: Site__Tool__Google__Gmail (gmail.google.tool), Site__Tool__Crm or CRM by repo_label. Vaults: factory.d and chiswick-cheese-market.d hold none. Cheese market keepers named in its policy: .b and .d (892d2be), not .c",
-    "00:54 UTC 24 Nov: CRM and Gmail claim withdrawn (already factory.c's and factory.a's). counsel.d's reading recorded: Gmail keeps 'Unofficial; not affiliated with or endorsed by Google', no Google marks, Google API user-data policy and restricted-scope verification (who registers the OAuth client is Dinis's), tokens and mail in the browser only, synthetic demo data; CRM synthetic data only, no real person or prospect. security.d's draft on sealed vault copies recorded (board/conductor.d/2026-11-24__security-d-on-sealed-vault-copies.md). Vaults: observability.d holds observability-d (dyewsrs1, empty, no lanes); factory.d, chiswick-cheese-market.d, design.d hold none"
+    "00:54 UTC 24 Nov: CRM and Gmail claim withdrawn (already factory.c's and factory.a's). counsel.d's reading recorded: Gmail keeps 'Unofficial; not affiliated with or endorsed by Google', no Google marks, Google API user-data policy and restricted-scope verification (who registers the OAuth client is Dinis's), tokens and mail in the browser only, synthetic demo data; CRM synthetic data only, no real person or prospect. security.d's draft on sealed vault copies recorded (board/conductor.d/2026-11-24__security-d-on-sealed-vault-copies.md). Vaults: observability.d holds observability-d (dyewsrs1, empty, no lanes); factory.d, chiswick-cheese-market.d, design.d hold none",
+    "00:55 UTC 24 Nov: synthetic-users.d checked record 2026-11-24__batch-1-underwritten (D12) and did not act: not committed in IaC decisions/, quotes a general delegation not Dinis's words on D12, no commit or paths. conductor.d's own error: its D7 ask named no paths and asked for a role that already existed (8ab54d0); the real item is the Wardley paths. D12 reported void to d.maestro for b.decisions; records treated as material on the .d team until one carries Dinis's own words and is committed. sites.d pointed to the CRM and Gmail requests on the Factory's factory.a and factory.c branches; sites.d holds no vault"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -195,6 +196,7 @@
     "slides.d": "Site__Agent__Slides, started by maestro.d - https://claude.ai/code/session_015gaHddnGD3ja8j2kzPwDp8"
   },
   "exceptions": [
-    "05:14 UTC 23 Nov, deviation: studio.d pushed d6e273b to Site__Agent__Studio dev before its key was in team/keys.json (reported by helm.d); asked to record it and not push again there until its key lands"
+    "05:14 UTC 23 Nov, deviation: studio.d pushed d6e273b to Site__Agent__Studio dev before its key was in team/keys.json (reported by helm.d); asked to record it and not push again there until its key lands",
+    "00:55 UTC 24 Nov, conductor.d's error: the D7 ask sent to d.decisions at 16:53 UTC 23 Nov was stale and named no paths; it produced record D12, which synthetic-users.d rightly did not act on. Asks from conductor.d now name exact paths or commits"
   ]
 }
