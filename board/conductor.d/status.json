@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-24T11:52Z",
+  "updated": "2026-11-24T11:53Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -121,7 +121,8 @@
     "01:01 UTC 24 Nov: d.helm reported slides.d and cartographer.d published keys in their homes (Dinis's 23 Nov record) and their commits are red under the old seeded signers.mjs; told it the fix is factory.b's aef6bcc and b3ae4cd on dev, waiting on Dinis's merge and Org apply",
     "11:51 UTC 24 Nov: morning sync passed (links only) to the ten agents conductor.d runs and through sites.d to its four; factory.d told not to double the CRM request; synthetic-users.d told it owns twin inboxes with security@'s conditions and to plan by request file; restart.md written for conductor.d",
     "11:52 UTC 24 Nov: factory.d confirmed it has landed nothing for CRM (a.factory carries it) and that seeds carry the signer check and Org apply sets main-locked and dev-safe rulesets; security.d's key adfc5ff still waits on Dinis in its session and it has no repository; synthetic-users.d's twin-inboxes plan recorded, its home already requested",
-    "11:52 UTC 24 Nov: chiswick-cheese-market.d drafted its area and the cheese market README locally, not pushed: its key is not on Factory dev and it will not reuse an old override. Second route noted: site/keys/<name>.json in the site, accepted by aef6bcc once Org apply runs"
+    "11:52 UTC 24 Nov: chiswick-cheese-market.d drafted its area and the cheese market README locally, not pushed: its key is not on Factory dev and it will not reuse an old override. Second route noted: site/keys/<name>.json in the site, accepted by aef6bcc once Org apply runs",
+    "11:53 UTC 24 Nov: library.d's area done (Site__Agent__Library site/factory/dinis-cruz/account-d, feca865), link sent to d.maestro; it is past the hand-over line and ready to restart"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -133,6 +134,7 @@
     "start every new agent with the Factory reachable, or its key on dev, before it works (incident lesson)"
   ],
   "asks": [
+    "Dinis: library.d is past the 300k hand-over line (484k context); its START.md is ready in its area (Site__Agent__Library feca865). Start a fresh library.d session from it, and when? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: synthetic-users.d's twin inboxes (morning sync section 6). (1) Create its home Site__Agent__Synthetic-Users (request requests/2026-11-22__synthetic-users, 13947db) by the merge and Org apply, so it can commit its plan as a request. (2) Its plan: invented personas labelled synthetic; a send guard in code refusing any recipient outside the twin domain, with SYNTHETIC in every subject and first line; a dry run with no mail; then live inboxes. Yours to choose: the domain we control and the mail service (may cost money), and when inboxes go live. Recommendation: yes to the repository, personas, send guard and dry run now - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: merge the Factory's dev to main and run Org apply so the agent homes get factory.b's new signer check (aef6bcc: accepts keys a site publishes itself; b3ae4cd: no claiming a team agent's name with another key). Until then signed commits in Site__Agent__Slides (ee14c84), __Cartographer (c8225ad), and Studio, Helm and Decisions show red and do not deploy - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: in synthetic-users.d's session (https://claude.ai/code/session_015gaHddQiB4aYZWXjfs16rM), yes to one commit on SovereignWebsite/Site__Agents__Design dev, site/policy/abp.json only: add docs/runs/wardley-maps-*.md, site/runs-wardley-maps-*.html and site/runs/wardley-maps-*/** to roles.synthetic_users_d.may_change, and extend its 'who' line to pages other .d agents ask it to test (first cartographer.d's Wardley Maps explainer). Reversible; site checks before push; recommendation yes. Replaces void D12 - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
@@ -195,7 +197,7 @@
     "streaming.d": "streaming.d@SovereignWebsite.dinis, the Streaming site, started by sites.d - https://claude.ai/code/session_015gaHdbE7t4XNf21L7neufF",
     "design.d": "design rounds for the .d sites, every 2 hours - https://claude.ai/code/session_015gaHdczGFLc7N3kCq8MrWz",
     "synthetic-users.d": "synthetic users for the .d sites, on design.d's request - https://claude.ai/code/session_015gaHddQiB4aYZWXjfs16rM",
-    "library.d": "library and newsroom relay for the .d team, budget in observation mode - https://claude.ai/code/session_015gaHdecGUXfFRDs8DmeUFN",
+    "library.d": "library and newsroom relay for the .d team, budget in observation mode; area https://github.com/SovereignWebsite/Site__Agent__Library/tree/dev/site/factory/dinis-cruz/account-d - https://claude.ai/code/session_015gaHdecGUXfFRDs8DmeUFN",
     "factory.d": "Factory changes for the .d team, twin of factory.b - https://claude.ai/code/session_015gaHde6kToHbUHDD8AN72E",
     "chiswick-cheese-market.d": "changes to the Chiswick Cheese Market demonstration, twin of chiswick-cheese-market.b - https://claude.ai/code/session_015gaHdcNSDvpHf63UJRg64C",
     "security.d": "security reviews, first the key requests; twin of security.b - https://claude.ai/code/session_015gaHdegs3vxyNtU2tmc28P",
