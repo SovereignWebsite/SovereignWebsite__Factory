@@ -584,3 +584,26 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
     assert.deepEqual(checkActions(p, pl2), [], 'the refresh is an allowed Org apply action'); } }
 await import('./decisions.test.mjs');
 console.log('OK (tests)');
+
+// Org apply scoped to what a push is about (build/org-scope.mjs; Dinis, 24 Nov 2026: "keep it focused on the actions
+// that I'm working on and reviewing"): a request names its own repository, a removed request or a policy change names
+// none, and an org/repos.json change names the entries it adds or changes.
+{
+  const { scope } = await import('../build/org-scope.mjs');
+  const { scoped } = await import('../build/org-plan.mjs');
+  const { load: loadReq } = await import('../build/requests.mjs');
+  const { requests } = loadReq('requests');
+  const org = JSON.parse(readFileSync('org/repos.json', 'utf8'));
+  const router = requests.find((r) => r.label === 'router' && r.group === 'agents');
+  if (router) assert.deepEqual(scope({ changed: [`requests/${router.folder}/site.json`], requests, orgBefore: org, orgAfter: org }), ['Site__Agent__Router'], 'a request names its own repository');
+  assert.deepEqual(scope({ changed: ['policy/abp.json', 'seed/site-template/site/index.html', 'requests/1999-01-01__gone/site.json'], requests, orgBefore: org, orgAfter: org }), [], 'policy, seed and removed requests name nothing');
+  const after = { ...org, repos: org.repos.map((r) => r.name === 'SovereignWebsite__Hub' ? { ...r, description: 'changed' } : r) };
+  assert.deepEqual(scope({ changed: ['org/repos.json'], requests, orgBefore: org, orgAfter: after }), ['SovereignWebsite__Hub'], 'an org entry names itself');
+  const moved = requests.find((r) => (r.previous || []).length && (!r.from || r.moved));
+  if (moved) assert.ok(scope({ changed: [`requests/${moved.folder}/site.json`], requests, orgBefore: org, orgAfter: org }).some((n) => n.startsWith('Redirect__')), 'a moved site names its redirect too');
+  const one = scoped(org, ['SovereignWebsite__Hub']);
+  assert.deepEqual(one.repos.map((r) => r.name), ['SovereignWebsite__Hub'], 'a scoped plan wants only the named repositories');
+  assert.deepEqual(plan(one, {}).actions.map((a) => a.target).filter((t) => t !== 'SovereignWebsite__Hub'), [], 'and acts on nothing else');
+  assert.equal(scoped(org, []), org, 'no list: every repository');
+}
+console.log('OK (org scope)');
