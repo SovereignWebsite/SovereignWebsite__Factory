@@ -2,20 +2,20 @@
   "agent": "a.factory@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_018yvwtNm88hzHaENNXTA9b5",
   "account": "A",
-  "updated": "2026-11-24T02:22Z",
+  "updated": "2026-11-24T02:33Z",
   "state": "started; key and policy entry prepared for Dinis's word; two requests written",
   "key": {
     "fingerprint": "sha256:ed9a9e7c1fdd6fca",
     "signing_fingerprint": "sha256:514761d90cfb937a",
     "branch": "work/factory.a-key",
     "commit": "ca8fb19",
-    "state": "signing works (ssh-keygen, ECDSA P-256 from sgit); decrypting the key for git was not refused; waits on Dinis's word to go to dev"
+    "state": "on dev (4d46260, 24 Nov 02:27 UTC, Dinis: \"can you merge it now?\")"
   },
   "policy": {
     "branch": "work/factory.a-policy",
     "commit": "7137a81",
     "asks": "may_change requests/** and team/keys.json (Dinis's merge), board/a.factory/** (status); branches work/factory.a-*",
-    "state": "waits on Dinis's merge; paths check refuses it until then, as designed"
+    "state": "on dev (4d46260); Checks run 45312519556 failed on the paths check for 7137a81 and 023eae8, as expected"
   },
   "requests": [
     {
@@ -71,7 +71,7 @@
         "the per-account layout: router.a's first commits"
       ],
       "dinis": "the merge, handled on the other side (Dinis 02:15 UTC)",
-      "status": "Dinis asked to start with it (02:20 UTC); branch ready for his merge"
+      "status": "merged to dev 4d46260 at Dinis's word; repository NOT yet created: the Org apply workflow is disabled (workflow_dispatch refused: \"disabled workflow\"); its last runs failed at Apply on the GitHub App's API rate limit (run 45303739269, 01:16 UTC)"
     }
   ],
   "next": [
@@ -79,7 +79,16 @@
     "devops (a.maestro relay, record 2026-11-24__devops-agent): measure 2 or 3 account A sites' deploy times as a first decision request. Blocked for now: this session's GitHub access is scoped to SovereignWebsite__IaC only; needs add_repo (read) per site",
     "decision requests (record 2026-11-24__decision-requests) go as site/decisions/requests/<date>__<slug>.json in the agent's own repository; a.factory has no repository of its own yet, so keys_scope enforcement in build/abp.mjs waits on where a.factory files it"
   ],
-  "stuck": [],
+  "stuck": [
+    {
+      "what": "Site__Agent__Router not created",
+      "class": "pipeline disabled",
+      "error": "Cannot trigger a 'workflow_dispatch' on a disabled workflow (org-apply.yml)",
+      "ask": "Dinis: re-enable Org apply in the repository's Actions (or say why it is off)",
+      "since": "2026-11-24T02:31Z",
+      "step": "E3"
+    }
+  ],
   "provenance": {
     "owner": "a.factory builds it in the Factory seed (a.maestro, 24 Nov 00:09 UTC); factory.c and d.factory review through a.maestro; d.design owns the footer",
     "plan": "board/a.factory/provenance-plan.md",
@@ -116,6 +125,7 @@
     "2026-11-24T00:40Z a.maestro: devops deploy-time idea and the decision-request route noted; no new repository request",
     "2026-11-24T02:04Z Site__Agent__Router request written (acde5eb); dev moved to 8b20ba3 incl. c8aab28 (org apply refreshes managed seed files in existing sites: answers part of the provenance roll-out question)",
     "2026-11-24T02:15Z Dinis in this session: Gmail go ahead, branded, not a look-alike (83b63b2); iOS request withdrawn; router key in its own repo. 'number 4' asked back",
-    "2026-11-24T02:22Z migration plan drafted (board/a.factory/2026-11-24__promptugal-migration-plan.md); router branch a18a742 ready to merge"
+    "2026-11-24T02:22Z migration plan drafted (board/a.factory/2026-11-24__promptugal-migration-plan.md); router branch a18a742 ready to merge",
+    "2026-11-24T02:27Z router merge pushed to dev (4d46260) at Dinis's word; Org apply did not run: workflow disabled"
   ]
 }
