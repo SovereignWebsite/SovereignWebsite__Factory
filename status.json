@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
-  "updated": "2026-11-23T23:45Z",
+  "updated": "2026-11-24T02:14Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -105,7 +105,33 @@
     "security.b review 029 on keys in a site's own repository: pass with changes; a self-published key vouches for nothing alone, so it needs a pki.sgit.ai link from Dinis or an active entry in the Factory's team/keys.json",
     "Vault keys: sotavento.b sealed one vault key to b.maestro, but its session's permission check blocked the send; the sealed copy stays in its session and nothing has left it, pending the pki link (security.b 030)",
     "Site keys (Dinis, 23:30 UTC, record 2026-11-23__site-keys-self-published): an agent publishes its key in its own repository at site/keys/<name>.json, authenticated by push access and the public repository; the seeded check accepts it (factory.b, aef6bcc). grace.b is now b.site.grace-farrell@SWS on its site, with a new key pair (Signers and Pages green)",
-    "WordPress section demo live: https://wordpress-section.demo.sovereignweb.site (a44d8fc, record 2026-11-23__wordpress-section-demo): six public WordPress feeds read in the browser, labelled demo and not affiliated; Car Buyer round 10 and workflow round 5 (sites.b). The old sites.b session has stopped; the fresh one starts from its hand-over"
+    "WordPress section demo live: https://wordpress-section.demo.sovereignweb.site (a44d8fc, record 2026-11-23__wordpress-section-demo): six public WordPress feeds read in the browser, labelled demo and not affiliated; Car Buyer round 10 and workflow round 5 (sites.b). The old sites.b session has stopped; the fresh one starts from its hand-over",
+    "Team rule (Dinis, 00:16 UTC 24 Nov): query the website, not messages; every agent keeps its area at /factory/dinis-cruz/account-b/ on its agent-type site, current at each wake (board/workflow/2026-11-24__query-the-website.md); sent to the team, librarian.b indexes the areas",
+    "Components proposal (small public component repositories, first local models) and abp@'s browser policy manifest with decisions.b for Dinis",
+    "Dinis delegated routine decisions to decisions.b (00:19 UTC 24 Nov, record 2026-11-24__decisions-b-decides): it decides asks it can recommend, each underwritten by security.b (and counsel for terms or licences); main, money, legal, deleting, organisation and harness settings stay his. First batch signed: security site yes (42), 88c6dd7 no (50), 7f2a68f not now (52)",
+    "Vault keys: every one goes to the account's maestro, sealed, no exceptions, Algarve Evolution and Perspace included (Dinis, 00:19 UTC); holders run security.b's 030 checks first, as b.maestro's key is self-published",
+    "Agent areas live under the team rule: decisions.b, design.b and design.b.rounds (design.agents), hub.b (on the hub until it has an agent site); design.b now rates a stale or missing area as holding an agent site at 2",
+    "No site key under a name the Factory already lists with another key: decided by decisions.b under the delegation, pushed (IaC c40dddf)",
+    "factory.b's plan so no agent is left without an area: site keepers on their own sites, a Site__Agent__<Role> for each role agent without one (six requests to decisions.b), one shared site for the AWS platform team",
+    "Offboarding process approved with eight conditions by the panel under Dinis's delegation (record 2026-11-24__offboarding-approved); folded into board/workflow/2026-11-23__offboarding-draft.md: routine hand-overs archived without asking, every vault key keeps the maestro as a holder, a one-screen checklist, and archived sessions counted in status.json",
+    "Agent sites requested by factory.b as routine asks: security, observability, startups, feedback, outreach; pybot keeps its area on the PyBot tool site; an AWS platform site waits for an owner on accounts A and C",
+    "Offboarding process in force (decisions.b checked 6c4ea92 against record 2026-11-24__offboarding-approved): board/workflow/2026-11-23__offboarding-draft.md",
+    "New way to ask for a decision (Dinis, 00:28 UTC 24 Nov, record 2026-11-24__decision-requests): a signed request file in the asking agent's own repository, a link to decisions.b, and progress followed on its site; passed to every agent on account B",
+    "First vault key handed over: sotavento.b's vault sealed to b.maestro at Dinis's word in its session; b.maestro opened it and the proof matched, so the vault now has two holders",
+    "Perspace vault key handed over: b.maestro decrypted it and proved it holds the same key value; the vault now has two holders",
+    "Site keeper areas live: South Beacon (https://south-beacon.talent.sovereignweb.site/factory/dinis-cruz/account-b/, nothing about the candidate, noindex) and Grace Farrell's site (https://grace-farrell.artist.sovereignweb.site/factory/dinis-cruz/account-b/agent.json)",
+    "Agent sites approved for security, observability, startups, feedback and outreach (decisions.b's first review block, all five reviewers agree, record 2026-11-24__block-01); factory.b builds them",
+    "Agent sites live: security, observability, startups, feedback and outreach.agents.sovereignweb.site (factory.b, Org apply 00:40 UTC); feedback's site never publishes a reader's message",
+    "Components proposal on dev (3ed2957): small public component repositories, first a local-models component, with browser policy manifests",
+    "security.b's site and area live: https://security.agents.sovereignweb.site/factory/dinis-cruz/account-b/, with all 33 reviews at /reviews/, guidelines and decision opinions (Site__Agent__Security 7c9388c)",
+    "startups.b's area live: https://startups.agents.sovereignweb.site/factory/dinis-cruz/account-b/agent.json",
+    "conductor.b state and hand-over note written early: board/2026-11-24__conductor-state.md; four settled asks removed from the list (accountant site, domain keepers, decisions system start, the 15:36 note)",
+    "Core principle (Dinis, 00:52 UTC 24 Nov, record 2026-11-24__own-keys-principle): repository access is the moment of authorisation; every agent and owner creates and updates its own keys in repositories it can push to, and no one else's. Site keepers add the own-key step to their hand-over prompts; factory.b to the seeds",
+    "Own-key step in owners' hand-over prompts: Grace (bbe9386), South Beacon (f066f81), Kate (038bbc1, tested against the seeded check), Sarah (d31e7b6), Emily (154e833, bcd865e: her assistant adds a signing key to her own GitHub account, because her site's check predates site keys; with decisions.b), and in the seed for new sites (factory.b 107edc9, with decisions.b)",
+    "accountant.b's hand-over committed for a fresh session: board/accountant.b/handover-2026-11-24/START.md (cost site files, its agent area, standing guidance)",
+    "conductor.b's area: board/conductor.b/ in IaC (agent.json, role, learnings, decisions, messages, restart.md), following decisions.b's how-it-works checklist",
+    "chiswick-cheese-market.b offboarded, step 3: its key entry retired (23c180c) after it confirmed its hand-over to keepers .c and .d is complete",
+    "All three vault keys handed to b.maestro and proven: sotavento.b's, Perspace and Algarve Evolution (opened at 00:41 UTC, hash matched); each vault now has two holders. b.maestro's key is endorsed by decisions.b, chained to Dinis's anchor (until 30 Nov)"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
@@ -118,28 +144,23 @@
     "strategy.b plan (proposals): A founders and small teams wanting the agentic workflow (lead), B personal sites (proof: 11 people's sites, 1 handed over), C web freelancers and agencies (maintain, do not replace), D local businesses later. Sites need: a \"Want one?\" page on the hub, the own-versus-rent market page, a workflow page for A, three consented examples for B"
   ],
   "asks": [
-    "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
-    "Dinis: yes to accountant.agents.sovereignweb.site - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: a budget for the librarian's first run, or let accountant.b propose one - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF",
-    "Dinis: who keeps sovereignwebsite.ai, .org and .site - https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67",
     "Dinis: say \"push\" for 544ecbc - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: Grace's photos, Spotlight links, and whether photos credited to Jennie Scott may be used - https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67",
     "Dinis: the DC Vault manager session or public key, and whether every agent backs up its private key - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
     "Dinis: strategy.b's decisions: which segment leads (it recommends A, with B as proof), where \"I want one\" leads (call or email, and which address), one price for personal sites before anything is sent, and the first ten contacts for A - https://claude.ai/code/session_01Kw9UwDF1rJD6h9xEsVg5bx",
-    "Dinis: one yes to start the decisions system: factory.b pushes 8ee995a, 68565f8, 933d92a and the checker 90677bb, with decisions.b's policy entry - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: add SovereignWebsite__Website to the fresh conductor.b session; add_repo was refused by the permission check - https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
     "Dinis: start the weather-demo transfer: Actions, Transfer apply, Run workflow, request 2026-11-20__weather-demo, then approve the apply job in the transfer environment (factory.b reads the run) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: save the Algarve Evolution vault read key and QR, check they open the site, and say so in algarve-evolution.b's session (move done; it keeps its key copies until then) - https://algarve-evolution.organisation.sovereignweb.site",
     "Dinis: allow mistral.conductor to write its signing key file in its own session (ask 5 agreed; its safety check refused the step) - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT",
-    "Dinis: approve or change the offboarding process (ask 39; security.b review 028 passed with changes, all made) - board/workflow/2026-11-23__offboarding-draft.md",
     "Dinis: start a fresh hub.b session from its hand-over (docs/HANDOVER.md, v0.1.53, plus the later ask 31 commit) before its wake is created - https://claude.ai/code/session_01Kw9UwB7XboTsnbPPWaMr2d",
     "Dinis: create the four agreed wake tasks (ask 24); the old conductor task is retired - board/2026-11-23__wake-schedule.md",
     "Dinis: re-enable feedback.b's inbox round (trig_01FsUjtCGwD9w9i3eBWJVoY3) and say so in its session (\"Turn the inbox back on\", 23:22 UTC) - https://claude.ai/code/session_01Kw9UwBiG9d5KHvFjdtiP69",
     "Dinis: start a fresh sites.b session with docs/handover.md (24275ef) as its first read; it leads the shared wayfinder (ask 40) and takes the hourly wake - https://github.com/SovereignWebsite/Site__Agent__Sites/blob/dev/docs/handover.md",
-    "Dinis: do the vaults you wanted kept to yourself also go to the maestro under the vault-keys rule? Until you say, they stay as they are",
-    "Dinis: Emily's GitHub username for her org invite (Member, write on Site__Artist__Emily-Cruz), and whether Emily and her Claude must sign commits after hand-over - https://claude.ai/code/session_01Kw9UwBvXb8qAME1TexsQss",
-    "Dinis: a pki.sgit.ai operates link from your anchor to b.maestro's key (sha256:3fa8f0c3e915cf6d), so vault keys can be sealed to it; until then agents hold them (security.b review 030)",
-    "Dinis: five factory.b changes, each needing your yes in its session (all with decisions.b): 6c668e8 (names two known-bad Factory commits), 0048389 (policy wording: sovereignweb.site is on the DNS role), 88c6dd7 (seed trust files on the always-ask list), and, passed by security.b, b53aef0 (a site cannot publish a key under a name the Factory lists with another key) and 7f2a68f (an owner override counts only on a person's verified commit) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
+    "Dinis: Emily's GitHub username for her org invite (Member, write on Site__Artist__Emily-Cruz); her own assistant then makes and pushes its own key (own-keys principle) - https://claude.ai/code/session_01Kw9UwBvXb8qAME1TexsQss",
+    "Dinis: say \"push 38\" and \"push 49\" in factory.b's session. Both are approved in block 1, but its permission check refused the push. 38 (0048389): policy wording, the DNS role is active for all four zones. 49 (f125da8): the signature check names two old unsigned Factory commits instead of failing on them - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+    "Dinis: start a fresh accountant.b session in Site__Agents__Accountant from board/accountant.b/handover-2026-11-24/START.md (on Sonnet if you agree); its settings there allow it to make its own key",
+    "Dinis: archive chiswick-cheese-market.b's session (offboarding case 2, a site agent retired after hand-over; key retired in 23c180c, nothing pending) - https://claude.ai/code/session_01Kw9UwBShWte1Rz5B2Mfznt"
   ],
   "decisions": [
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",
@@ -191,5 +212,6 @@
     "transfer App installed on SovereignWebsite (weather-demo transfer refused, 403)",
     "budget for conductor.mistral and its agents up to the hackathon",
     "Chiswick images and the organiser's name"
-  ]
+  ],
+  "archived_sessions": []
 }

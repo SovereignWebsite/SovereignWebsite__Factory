@@ -1,0 +1,22 @@
+{
+  "request": "2026-11-20__weather-demo",
+  "from": "AgentiCCells/AgentiCCells__Site__Weather-Demo",
+  "to": "SovereignWebsite/Site__Demo__Weather-Demo",
+  "run": "45303079668",
+  "at": "2026-11-24T01:11:34.626Z",
+  "version_before": "v0.1.8",
+  "pages_branches": [
+    "dev"
+  ],
+  "findings": [
+    "Pages: workflow, custom domain weather-demo.agenticcells.site, HTTPS enforced",
+    "environments: github-pages",
+    "github-pages may deploy from: dev (set again after the move if missing)",
+    "rulesets: none",
+    "version before: \"v0.1.8\""
+  ],
+  "old_name": "GitHub redirects github.com/AgentiCCells/AgentiCCells__Site__Weather-Demo only while no repository takes that name again: AgentiCCells must not reuse it",
+  "old_address": "for AgentiCCells' own factory: a redirect page at weather-demo.agenticcells.site to https://weather-demo.demo.sovereignweb.site",
+  "state": "moved",
+  "http": 202
+}

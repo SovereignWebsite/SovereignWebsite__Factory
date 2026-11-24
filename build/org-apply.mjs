@@ -56,6 +56,25 @@ for (const a of p.actions) {
       const c = await gh('POST', `${base}/git/commits`, { message: `Seed ${files.length} files from SovereignWebsite__IaC (org-apply)`, tree: t.data.sha, parents: [head] }); must(c, `commit ${a.target}`, [201]);
       must(await gh('PATCH', `${base}/git/refs/heads/dev`, { sha: c.data.sha }), `seed ${a.target}: ${files.join(', ')}`);
     }
+  } else if (a.action === 'repo.refresh_managed') {
+    // Replace a managed file only if the site still has exactly the earlier seeded version the plan saw.
+    const files = [];
+    for (const f of a.files) {
+      const have = await gh('GET', `${base}/contents/${f}?ref=dev`);
+      if (have.status === 200 && have.data.sha === a.from?.[f]) files.push(f); else console.log(`kept: ${a.target}/${f} (changed since the plan, not overwritten)`);
+    }
+    if (files.length) {
+      const ref = await gh('GET', `${base}/git/ref/heads/dev`); const head = ref.data.object.sha;
+      const commit = await gh('GET', `${base}/git/commits/${head}`);
+      const tree = [];
+      for (const f of files) {
+        const b = await gh('POST', `${base}/git/blobs`, { content: readFileSync(join(r.seed, f)).toString('base64'), encoding: 'base64' });
+        must(b, `blob ${a.target}/${f}`, [201]); tree.push({ path: f, mode: '100644', type: 'blob', sha: b.data.sha });
+      }
+      const t = await gh('POST', `${base}/git/trees`, { base_tree: commit.data.tree.sha, tree }); must(t, `tree ${a.target}`, [201]);
+      const c = await gh('POST', `${base}/git/commits`, { message: `Refresh ${files.join(', ')} from SovereignWebsite__IaC (org-apply; was an earlier seeded version)`, tree: t.data.sha, parents: [head] }); must(c, `commit ${a.target}`, [201]);
+      must(await gh('PATCH', `${base}/git/refs/heads/dev`, { sha: c.data.sha }), `refresh ${a.target}: ${files.join(', ')}`);
+    }
   } else if (a.action === 'pages.set_cname') must(await gh('PUT', `${base}/pages`, { cname: r.cname, build_type: 'workflow' }), `custom domain ${r.cname} on ${a.target}`);
   else if (a.action === 'team.grant_push') must(await gh('PUT', `/orgs/${p.org}/teams/${a.team}/repos/${p.org}/${a.target}`, { permission: 'push' }), `team ${a.team} push on ${a.target}`);
   else if (a.action === 'repo.protect_branches') {

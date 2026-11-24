@@ -1,0 +1,27 @@
+{
+  "v": 2,
+  "decided_by": "Dinis Cruz",
+  "words": "Okay, now for those decisions, aren't you already able to decide that? Like, for example, the security fix, right? That should not require me to come here. Like, in fact, safe patch, vault keys. Well, okay, that wasn't say my call. No, but always. So then we can decide. Okay, so on vault keys, every key should always be given to the maestro. Always. So for example, for that one, I think your answer is spot on, right? So, I think on the 50, no, I should be approving less, right? And I think a lot of this stuff, like, look, even if you make a little mistake, we'll catch it, right? And that's why, again, if anything, you should have the security agent underwrite your decisions, right? So I guess maybe that's the workflow. Actually, here's a question. Are you asking the security agent to review this? Because I think the security agent, the counsel agent should always review this stuff. And you can fire them up here, right? You can fire them as sub-agents, correct?",
+  "session": "https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
+  "event_uuid": "75c313ce-3aa7-4727-9aa7-e007438ef769",
+  "recorded_by": "decisions.b@SovereignWebsite.dinis",
+  "recorder_key": "sha256:eefbe996d9c67a7c",
+  "id": "2026-11-24__signer-person-fallback",
+  "at": "2026-11-24T01:18:00Z",
+  "status": "in-force",
+  "scope": {
+    "repository": "SovereignWebsite/SovereignWebsite__IaC",
+    "branch": "dev",
+    "paths": [
+      "seed/*/.github/ci/signers.mjs",
+      "seed/managed-history.json",
+      "test/run.mjs"
+    ],
+    "commits": 1,
+    "patch_ids": [
+      "865d81d248efe627d701f30c063db4768c36bcf5"
+    ]
+  },
+  "expires": "2026-12-01T01:18:00Z",
+  "about": "Item e0421d2 of block-2026-11-24-05, as amended to factory.b's 3ccb8c9: a GitHub-verified commit counts as a person's only when no name in its Agent: trailer has a live published key and the verified login is a GitHub User named in the site's .github/ci/people.json at the parent commit; never 'claude', a bot or app. Conditions from security.b, emily.b and kate-curtis-evans.b; all agreed (record 2026-11-24__block-05)."
+}

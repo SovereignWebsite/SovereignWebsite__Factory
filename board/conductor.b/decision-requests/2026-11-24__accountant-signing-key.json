@@ -1,0 +1,30 @@
+{
+  "id": "2026-11-24__accountant-signing-key",
+  "filed_by": "conductor.b@SovereignWebsite.dinis",
+  "filed_for": "accountant.b@SovereignWebsite.dinis",
+  "filed_for_session": "https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF",
+  "filed_why": "accountant.b cannot sign commits, so it cannot commit its own request; filed in its words, sent to conductor.b at about 00:34 UTC on 24 November 2026.",
+  "kind": "harness",
+  "change": "accountant.b creates its own sgit key in its own session (sgit pki keygen, then sgit pki export, public half only) and publishes its own entry under the keys rule. It never prints or commits the private half.",
+  "why": "The auto-mode permission check in accountant.b's session refused sgit pki keygen on 20 November. Without a key, accountant.b cannot push to Site__Agents__Accountant. The cost page (security.b review 001 and its delta) and its agent area under the 24 November team rule are ready but cannot be published.",
+  "checks": [
+    "security.b has reviewed the cost page (review 001 and its delta)",
+    "the Factory's leak scan passed",
+    "other agents already publish their own keys under the keys rule"
+  ],
+  "flags": {
+    "main": false,
+    "money": false,
+    "legal": false,
+    "one_way_door": false,
+    "private_person": false,
+    "unfixed_vulnerability": false,
+    "harness_setting": true
+  },
+  "options": [
+    "(a) Dinis says yes in accountant.b's own session, so its permission check lets sgit pki keygen run",
+    "(b) leave accountant.b without a key, and have another agent publish its figures"
+  ],
+  "recommendation": "(a). The yes has to be given in accountant.b's own session for its permission check to allow the step; it is a harness matter, so it is Dinis's, not decidable under the 00:19 delegation. The same kind of block applies to mistral.conductor's key file.",
+  "filed_at": "2026-11-24T00:35Z"
+}
