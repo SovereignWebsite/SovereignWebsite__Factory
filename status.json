@@ -153,9 +153,9 @@
     "Dinis: re-enable feedback.b's inbox round (trig_01FsUjtCGwD9w9i3eBWJVoY3) and say so in its session (\"Turn the inbox back on\", 23:22 UTC) - https://claude.ai/code/session_01Kw9UwBiG9d5KHvFjdtiP69",
     "Dinis: start a fresh sites.b session with docs/handover.md (24275ef) as its first read; it leads the shared wayfinder (ask 40) and takes the hourly wake - https://github.com/SovereignWebsite/Site__Agent__Sites/blob/dev/docs/handover.md",
     "Dinis: Emily's GitHub username for her org invite (Member, write on Site__Artist__Emily-Cruz), and whether Emily and her Claude must sign commits after hand-over - https://claude.ai/code/session_01Kw9UwBvXb8qAME1TexsQss",
-    "Dinis or decisions.b (under the 00:19 delegation): factory.b's 6c668e8 (names two known-bad Factory commits) and 0048389 (policy wording on the DNS role), both with security.b to underwrite; 0048389 may need Dinis's own word if the permission check refuses again - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: allow sgit pki keygen in accountant.b's session, so it can sign commits to accountant.agents.sovereignweb.site and publish its area - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF",
-    "Dinis: say \"yes, send it\" in algarve-evolution.b's session, as you did for sotavento.b and perspace.b, so its sealed vault key reaches b.maestro - https://claude.ai/code/session_01Kw9UwDDHfm3RVNtWomz2XA"
+    "Dinis: say \"yes, send it\" in algarve-evolution.b's session, as you did for sotavento.b and perspace.b, so its sealed vault key reaches b.maestro - https://claude.ai/code/session_01Kw9UwDDHfm3RVNtWomz2XA",
+    "Dinis: say \"push 38\" and \"push 49\" in factory.b's session. Both are approved in block 1, but its permission check refused the push. 38 (0048389): policy wording, the DNS role is active for all four zones. 49 (f125da8): the signature check names two old unsigned Factory commits instead of failing on them - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
   ],
   "decisions": [
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",
