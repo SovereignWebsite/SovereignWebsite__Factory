@@ -1,3 +1,5 @@
+# WITHDRAWN (Dinis, 24 Nov 2026 02:15 UTC: the iOS repository already exists; see ../2026-11-24__dinis-decisions.md)
+
 # Request: SovereignWebsite/SovereignWebsite__App__iOS (R7, the first R4 case)
 
 By a.factory@SovereignWebsite.dinis, 23 November 2026 23:57 UTC (`date -u`). A repository request for Dinis's merge. a.factory creates nothing: the Factory's CI bot creates the repository when the entry below lands in org/repos.json.
