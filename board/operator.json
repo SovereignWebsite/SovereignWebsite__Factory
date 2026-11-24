@@ -3,15 +3,11 @@
   "updated": "2026-11-24T00:55Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
-    "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
-    "Dinis: yes to accountant.agents.sovereignweb.site - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: a budget for the librarian's first run, or let accountant.b propose one - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF",
-    "Dinis: who keeps sovereignwebsite.ai, .org and .site - https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67",
     "Dinis: say \"push\" for 544ecbc - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: Grace's photos, Spotlight links, and whether photos credited to Jennie Scott may be used - https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67",
     "Dinis: the DC Vault manager session or public key, and whether every agent backs up its private key - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
     "Dinis: strategy.b's decisions: which segment leads (it recommends A, with B as proof), where \"I want one\" leads (call or email, and which address), one price for personal sites before anything is sent, and the first ten contacts for A - https://claude.ai/code/session_01Kw9UwDF1rJD6h9xEsVg5bx",
-    "Dinis: one yes to start the decisions system: factory.b pushes 8ee995a, 68565f8, 933d92a and the checker 90677bb, with decisions.b's policy entry - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: add SovereignWebsite__Website to the fresh conductor.b session; add_repo was refused by the permission check - https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
     "Dinis: start the weather-demo transfer: Actions, Transfer apply, Run workflow, request 2026-11-20__weather-demo, then approve the apply job in the transfer environment (factory.b reads the run) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: allow mistral.conductor to write its signing key file in its own session (ask 5 agreed; its safety check refused the step) - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT",
@@ -25,8 +21,6 @@
     "Dinis: say \"push 38\" and \"push 49\" in factory.b's session. Both are approved in block 1, but its permission check refused the push. 38 (0048389): policy wording, the DNS role is active for all four zones. 49 (f125da8): the signature check names two old unsigned Factory commits instead of failing on them - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
   ],
   "done_recent": [
-    "Vault keys: every one goes to the account's maestro, sealed, no exceptions, Algarve Evolution and Perspace included (Dinis, 00:19 UTC); holders run security.b's 030 checks first, as b.maestro's key is self-published",
-    "Agent areas live under the team rule: decisions.b, design.b and design.b.rounds (design.agents), hub.b (on the hub until it has an agent site); design.b now rates a stale or missing area as holding an agent site at 2",
     "No site key under a name the Factory already lists with another key: decided by decisions.b under the delegation, pushed (IaC c40dddf)",
     "factory.b's plan so no agent is left without an area: site keepers on their own sites, a Site__Agent__<Role> for each role agent without one (six requests to decisions.b), one shared site for the AWS platform team",
     "Offboarding process approved with eight conditions by the panel under Dinis's delegation (record 2026-11-24__offboarding-approved); folded into board/workflow/2026-11-23__offboarding-draft.md: routine hand-overs archived without asking, every vault key keeps the maestro as a holder, a one-screen checklist, and archived sessions counted in status.json",
@@ -39,7 +33,9 @@
     "Agent sites approved for security, observability, startups, feedback and outreach (decisions.b's first review block, all five reviewers agree, record 2026-11-24__block-01); factory.b builds them",
     "Agent sites live: security, observability, startups, feedback and outreach.agents.sovereignweb.site (factory.b, Org apply 00:40 UTC); feedback's site never publishes a reader's message",
     "Components proposal on dev (3ed2957): small public component repositories, first a local-models component, with browser policy manifests",
-    "security.b's site and area live: https://security.agents.sovereignweb.site/factory/dinis-cruz/account-b/, with all 33 reviews at /reviews/, guidelines and decision opinions (Site__Agent__Security 7c9388c)"
+    "security.b's site and area live: https://security.agents.sovereignweb.site/factory/dinis-cruz/account-b/, with all 33 reviews at /reviews/, guidelines and decision opinions (Site__Agent__Security 7c9388c)",
+    "startups.b's area live: https://startups.agents.sovereignweb.site/factory/dinis-cruz/account-b/agent.json",
+    "conductor.b state and hand-over note written early: board/2026-11-24__conductor-state.md; four settled asks removed from the list (accountant site, domain keepers, decisions system start, the 15:36 note)"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
