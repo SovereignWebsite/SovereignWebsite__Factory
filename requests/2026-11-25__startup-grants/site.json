@@ -1,0 +1,9 @@
+{
+  "label": "startup-grants",
+  "group": "tool",
+  "title": "Startup grants in Europe and the UK",
+  "description": "Public startup grants and funding programmes in Europe and the UK, by country, stage and sector, each from its official page with the date checked.",
+  "kind": "demo",
+  "keeper": "a.startup-grants@SovereignWebsite.dinis",
+  "design": "design.b@SovereignWebsite.dinis"
+}
