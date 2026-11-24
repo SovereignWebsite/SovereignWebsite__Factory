@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-23T23:45Z",
+  "updated": "2026-11-24T00:12Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
@@ -23,7 +23,8 @@
     "Dinis: do the vaults you wanted kept to yourself also go to the maestro under the vault-keys rule? Until you say, they stay as they are",
     "Dinis: Emily's GitHub username for her org invite (Member, write on Site__Artist__Emily-Cruz), and whether Emily and her Claude must sign commits after hand-over - https://claude.ai/code/session_01Kw9UwBvXb8qAME1TexsQss",
     "Dinis: a pki.sgit.ai operates link from your anchor to b.maestro's key (sha256:3fa8f0c3e915cf6d), so vault keys can be sealed to it; until then agents hold them (security.b review 030)",
-    "Dinis: five factory.b changes, each needing your yes in its session (all with decisions.b): 6c668e8 (names two known-bad Factory commits), 0048389 (policy wording: sovereignweb.site is on the DNS role), 88c6dd7 (seed trust files on the always-ask list), and, passed by security.b, b53aef0 (a site cannot publish a key under a name the Factory lists with another key) and 7f2a68f (an owner override counts only on a person's verified commit) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
+    "Dinis: five factory.b changes, each needing your yes in its session (all with decisions.b): 6c668e8 (names two known-bad Factory commits), 0048389 (policy wording: sovereignweb.site is on the DNS role), 88c6dd7 (seed trust files on the always-ask list), and, passed by security.b, b53aef0 (a site cannot publish a key under a name the Factory lists with another key) and 7f2a68f (an owner override counts only on a person's verified commit) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+    "Dinis: yes in factory.b's session to push the components proposal (small public component repositories, first a local-models component; design.b commented, security.b 031 pass with changes) - policy/proposals/2026-11-24__components.md, 638bab5 - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
   ],
   "done_recent": [
     "Hub: email route live (v0.1.52); the first handed-over site listed as \"A founder's site, handed over\", unnamed and without pictures (ask 31); ask 6 note sent to decisions.b (no public form; email stays); hand-over written (docs/HANDOVER.md, v0.1.53)",
