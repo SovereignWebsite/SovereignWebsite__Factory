@@ -4,5 +4,7 @@
   "repo_label": "UK-Driving-Test",
   "title": "UK driving theory test: learn and practise",
   "description": "Help for anyone learning for the UK driving theory test: the Highway Code by topic, practice questions and how the test works, linked to GOV.UK.",
-  "kind": "demo"
+  "kind": "demo",
+  "keeper": "uk-driving-test.a@SovereignWebsite.dinis",
+  "design": "design.b@SovereignWebsite.dinis"
 }
