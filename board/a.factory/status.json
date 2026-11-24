@@ -2,7 +2,7 @@
   "agent": "a.factory@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_018yvwtNm88hzHaENNXTA9b5",
   "account": "A",
-  "updated": "2026-11-24T02:18Z",
+  "updated": "2026-11-24T02:30Z",
   "state": "started; key and policy entry prepared for Dinis's word; two requests written",
   "key": {
     "fingerprint": "sha256:ed9a9e7c1fdd6fca",
@@ -58,7 +58,7 @@
       "arrived": "2026-11-24T01:57Z",
       "written": "2026-11-24T02:04Z",
       "branch": "work/factory.a-site-agent-router",
-      "commit": "acde5eb",
+      "commit": "a18a742 (dev merged in; ready for Dinis's merge)",
       "chain": {
         "brief": "a.maestro's decision request named, not found on PrompTugal dev at 9d17e2e",
         "sites_review": "pending",
@@ -71,7 +71,7 @@
         "the per-account layout: router.a's first commits"
       ],
       "dinis": "the merge, handled on the other side (Dinis 02:15 UTC)",
-      "status": "written, waiting on the chain"
+      "status": "Dinis asked to start with it (02:25 UTC); branch ready for his merge"
     }
   ],
   "next": [
@@ -115,6 +115,7 @@
     "2026-11-24T00:22Z security.aws.a reviewed Gmail: no objection with 9 conditions; a.factory keys_scope narrowed in its policy entry",
     "2026-11-24T00:40Z a.maestro: devops deploy-time idea and the decision-request route noted; no new repository request",
     "2026-11-24T02:04Z Site__Agent__Router request written (acde5eb); dev moved to 8b20ba3 incl. c8aab28 (org apply refreshes managed seed files in existing sites: answers part of the provenance roll-out question)",
-    "2026-11-24T02:15Z Dinis in this session: Gmail go ahead, branded, not a look-alike (83b63b2); iOS request withdrawn; router key in its own repo. 'number 4' asked back"
+    "2026-11-24T02:15Z Dinis in this session: Gmail go ahead, branded, not a look-alike (83b63b2); iOS request withdrawn; router key in its own repo. 'number 4' asked back",
+    "2026-11-24T02:30Z migration plan drafted (board/a.factory/2026-11-24__promptugal-migration-plan.md); router branch a18a742 ready to merge"
   ]
 }
