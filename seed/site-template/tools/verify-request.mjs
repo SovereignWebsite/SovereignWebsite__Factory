@@ -4,9 +4,15 @@
 // request says is material: the keeper acts only within site/policy/abp.json site_requests, and never on policy,
 // keys, .github/ or CNAME without a decision record or the owner's word in its own session.
 // Keys are made on each person's own device (send/keyring.js); no keeper ever holds anyone's private half.
-// Node 20+, no dependencies. verify(request, { requesters, seen, now }) -> { ok, why, person }.
+// Endorsement (security.b, build review): the first key in requesters.json is the owner's own, listed by the keeper on
+// the owner's word in its own session. Every other key carries an endorsement signed by that owner key over
+// {fingerprint, person, site, expires}; a key without a valid one is refused, so a key pushed into requesters.json
+// cannot instruct the keeper. The site must be known (site/CNAME), and the CLI remembers every accepted id in a file
+// outside site/ (not published), so a replay is refused across runs.
+// Node 20+, no dependencies. verify(request, { requesters, seen, now, site }) -> { ok, why, person }.
 import { webcrypto as wc } from 'node:crypto';
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
+import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const MAX_AGE_MS = 24 * 60 * 60 * 1000;
@@ -20,7 +26,12 @@ export async function fingerprintOf(jwk) {
   return `sha256:${Buffer.from(d).toString('hex').slice(0, 16)}`;
 }
 
+// The exact bytes the owner signs to endorse another person's key.
+export const endorsed = (k) => JSON.stringify({ fingerprint: k.fingerprint, person: k.person, site: k.endorsement?.site, expires: k.endorsement?.expires ?? null });
+const ecdsa = (jwk) => wc.subtle.importKey('jwk', { kty: 'EC', crv: 'P-256', x: jwk.x, y: jwk.y }, { name: 'ECDSA', namedCurve: 'P-256' }, false, ['verify']);
+
 export async function verify(r, { requesters = [], seen = new Set(), now = Date.now(), site } = {}) {
+  if (!site) return { ok: false, why: 'the site is unknown (no site/CNAME): nothing is acted on' };
   if (!r || typeof r !== 'object') return { ok: false, why: 'not a request' };
   if (!r.sig) return { ok: false, why: 'unsigned: not acted on' };
   if (!r.id || typeof r.id !== 'string' || r.id.length < 16) return { ok: false, why: 'no request id' };
@@ -29,23 +40,36 @@ export async function verify(r, { requesters = [], seen = new Set(), now = Date.
   if (!Number.isFinite(at)) return { ok: false, why: 'no time' };
   if (now - at > MAX_AGE_MS) return { ok: false, why: 'older than 24 hours' };
   if (at - now > 5 * 60 * 1000) return { ok: false, why: 'from the future' };
-  if (site && r.site !== site) return { ok: false, why: `for another site (${r.site})` };
+  if (r.site !== site) return { ok: false, why: `for another site (${r.site})` };
   const k = requesters.find((x) => x.fingerprint === r.fingerprint && x.status === 'active' && (!x.expires || Date.parse(x.expires) > now));
   if (!k) return { ok: false, why: `unknown or inactive key ${r.fingerprint}` };
   if ((await fingerprintOf(k.sign)) !== k.fingerprint) return { ok: false, why: 'requesters.json fingerprint does not match its key' };
-  const pub = await wc.subtle.importKey('jwk', { kty: 'EC', crv: 'P-256', x: k.sign.x, y: k.sign.y }, { name: 'ECDSA', namedCurve: 'P-256' }, false, ['verify']);
+  const owner = requesters[0];
+  if (k !== owner) {
+    const e = k.endorsement;
+    if (!e || !e.sig) return { ok: false, why: `key ${k.fingerprint} has no endorsement from the owner's key` };
+    if (e.site !== site) return { ok: false, why: `key ${k.fingerprint} is endorsed for another site` };
+    if (e.expires && Date.parse(e.expires) <= now) return { ok: false, why: `key ${k.fingerprint}'s endorsement has expired` };
+    if (!owner || owner.status !== 'active' || (await fingerprintOf(owner.sign)) !== owner.fingerprint) return { ok: false, why: 'no valid owner key to check the endorsement' };
+    const good = await wc.subtle.verify({ name: 'ECDSA', hash: 'SHA-256' }, await ecdsa(owner.sign), fromB64(e.sig), te.encode(endorsed(k)));
+    if (!good) return { ok: false, why: `key ${k.fingerprint}'s endorsement is not signed by the owner's key` };
+  }
+  const pub = await ecdsa(k.sign);
   const good = await wc.subtle.verify({ name: 'ECDSA', hash: 'SHA-256' }, pub, fromB64(r.sig), te.encode(signed(r)));
   if (!good) return { ok: false, why: 'bad signature' };
   return { ok: true, person: k.person };
 }
 
-// node tools/verify-request.mjs <request.json> [seen-ids.json]: prints the verdict; exit 1 when refused.
+// node tools/verify-request.mjs <request.json> [seen-ids.json]: prints the verdict; exit 1 when refused. On OK the id is
+// added to the seen file (default .send/seen.json at the repository root: outside site/, never published).
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const r = JSON.parse(readFileSync(process.argv[2], 'utf8'));
   const requesters = JSON.parse(readFileSync('site/send/requesters.json', 'utf8')).keys || [];
-  const seen = new Set(process.argv[3] && existsSync(process.argv[3]) ? JSON.parse(readFileSync(process.argv[3], 'utf8')) : []);
+  const seenFile = process.argv[3] || '.send/seen.json';
+  const ids = existsSync(seenFile) ? JSON.parse(readFileSync(seenFile, 'utf8')) : [];
   const host = existsSync('site/CNAME') ? readFileSync('site/CNAME', 'utf8').trim() : undefined;
-  const v = await verify(r, { requesters, seen, site: host });
+  const v = await verify(r, { requesters, seen: new Set(ids), site: host });
+  if (v.ok) { mkdirSync(dirname(seenFile), { recursive: true }); writeFileSync(seenFile, JSON.stringify([...ids, r.id], null, 1) + '\n'); }
   console.log(v.ok ? `OK: from ${v.person}, id ${r.id}` : `REFUSED: ${v.why}`);
   process.exit(v.ok ? 0 : 1);
 }

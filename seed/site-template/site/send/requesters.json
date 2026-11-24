@@ -1,4 +1,4 @@
 {
-  "about": "The people the owner names who may send requests from /send/: their PUBLIC keys only, each made on that person's own device (this site's /send/ page makes it and shows the public half). The owner endorses a key; the keeper lists it here. No keeper ever holds anyone's private half. Remove a key here to revoke it. Names are published only with the person's agreement.",
+  "about": "The people the owner names who may send requests from /send/: their PUBLIC keys only, each made on that person's own device (this site's /send/ page makes it and shows the public half). The first key is the owner's own, listed by the keeper on the owner's word in its own session. Every other key carries \"endorsement\": {site, expires, sig}, the owner's key's signature over {fingerprint, person, site, expires}; a key without it is refused. No keeper ever holds anyone's private half. Remove a key here to revoke it. Names are published only with the person's agreement.",
   "keys": []
 }

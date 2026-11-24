@@ -634,28 +634,52 @@ console.log('OK (org scope)');
 }
 console.log('OK (managed CLAUDE.md)');
 
-// The /send/ lane in the site seed (security.b's conditions, opinion 2026-11-24__send-lane-in-site-seed): the keeper
-// acts only on a signed request from a listed key, at most 24 hours old, never twice; and /send/ reaches new sites only.
+// The /send/ lane in the site seed (security.b, opinions 2026-11-24__send-lane-in-site-seed and __build): the keeper
+// acts only on a signed request from a listed key (the owner's, or one the owner endorsed), at most 24 hours old, never
+// twice even across runs, for this site only; and /send/ reaches new sites only.
 {
-  const { verify, signed, fingerprintOf } = await import('../seed/site-template/tools/verify-request.mjs');
+  const { verify, signed, endorsed, fingerprintOf } = await import('../seed/site-template/tools/verify-request.mjs');
   const { webcrypto: wc } = await import('node:crypto');
-  const M = await import('../build/managed.mjs'); const fs = await import('node:fs');
-  const pair = await wc.subtle.generateKey({ name: 'ECDSA', namedCurve: 'P-256' }, true, ['sign', 'verify']);
-  const jwk = await wc.subtle.exportKey('jwk', pair.publicKey);
-  const sign = { kty: 'EC', crv: 'P-256', x: jwk.x, y: jwk.y };
-  const fingerprint = await fingerprintOf(sign);
-  const requesters = [{ person: 'test', fingerprint, sign, status: 'active' }];
-  const now = Date.parse('2026-11-24T16:00:00Z');
-  const make = async (over = {}) => { const r = { v: 1, id: 'abcdefghijklmnopqrstuv', at: '2026-11-24T15:00:00Z', site: 'x.demo.sovereignweb.site', fingerprint, text: 'make it green', files: [], ...over }; r.sig = Buffer.from(await wc.subtle.sign({ name: 'ECDSA', hash: 'SHA-256' }, pair.privateKey, new TextEncoder().encode(signed(r)))).toString('base64'); return r; };
-  const ok = await make();
-  assert.equal((await verify(ok, { requesters, now, site: 'x.demo.sovereignweb.site' })).ok, true, 'a signed request from a listed key is acted on');
-  const { sig, ...unsigned } = ok;
-  assert.match((await verify(unsigned, { requesters, now })).why, /unsigned/, 'an unsigned request is not acted on');
-  assert.match((await verify(ok, { requesters: [], now })).why, /unknown/, 'an unknown key is refused');
-  assert.match((await verify(ok, { requesters, now, seen: new Set([ok.id]) })).why, /replayed/, 'a replayed id is refused');
-  assert.match((await verify(await make({ at: '2026-11-23T15:00:00Z' }), { requesters, now })).why, /24 hours/, 'a request older than 24 hours is refused');
-  assert.match((await verify({ ...ok, text: 'make it red' }, { requesters, now })).why, /bad signature/, 'a changed request is refused');
-  assert.match((await verify(ok, { requesters, now, site: 'other.demo.sovereignweb.site' })).why, /another site/, 'a request for another site is refused');
+  const M = await import('../build/managed.mjs'); const fs = await import('node:fs'); const os = await import('node:os'); const path = await import('node:path'); const cp = await import('node:child_process');
+  const SITE = 'x.demo.sovereignweb.site', now = Date.parse('2026-11-24T16:00:00Z'), te = new TextEncoder();
+  const keyPair = async () => { const pair = await wc.subtle.generateKey({ name: 'ECDSA', namedCurve: 'P-256' }, true, ['sign', 'verify']); const j = await wc.subtle.exportKey('jwk', pair.publicKey); const sign = { kty: 'EC', crv: 'P-256', x: j.x, y: j.y }; return { pair, sign, fingerprint: await fingerprintOf(sign) }; };
+  const sig = async (pair, text) => Buffer.from(await wc.subtle.sign({ name: 'ECDSA', hash: 'SHA-256' }, pair.privateKey, te.encode(text))).toString('base64');
+  const owner = await keyPair(), team = await keyPair();
+  const ownerKey = { person: 'owner', fingerprint: owner.fingerprint, sign: owner.sign, status: 'active' };
+  const teamKey = { person: 'team', fingerprint: team.fingerprint, sign: team.sign, status: 'active', endorsement: { site: SITE, expires: '2027-01-01T00:00:00Z' } };
+  teamKey.endorsement.sig = await sig(owner.pair, endorsed(teamKey));
+  const requesters = [ownerKey, teamKey];
+  const make = async (who, over = {}) => { const r = { v: 1, id: 'id-' + Math.random().toString(36).slice(2).padEnd(18, 'x'), at: '2026-11-24T15:00:00Z', site: SITE, fingerprint: who.fingerprint, text: 'make it green', files: [], ...over }; r.sig = await sig(who.pair, signed(r)); return r; };
+  const ctx = { requesters, now, site: SITE };
+  const ok = await make(owner);
+  assert.equal((await verify(ok, ctx)).ok, true, "the owner's signed request is acted on");
+  assert.equal((await verify(await make(team), ctx)).ok, true, 'an endorsed key is acted on');
+  const { sig: _s, ...unsigned } = ok;
+  assert.match((await verify(unsigned, ctx)).why, /unsigned/, 'an unsigned request is not acted on');
+  assert.match((await verify(ok, { ...ctx, requesters: [] })).why, /unknown/, 'an unknown key is refused');
+  assert.match((await verify(ok, { ...ctx, seen: new Set([ok.id]) })).why, /replayed/, 'a replayed id is refused');
+  assert.match((await verify(await make(owner, { at: '2026-11-23T15:00:00Z' }), ctx)).why, /24 hours/, 'a request older than 24 hours is refused');
+  assert.match((await verify({ ...ok, text: 'make it red' }, ctx)).why, /bad signature/, 'a changed request is refused');
+  assert.match((await verify(ok, { ...ctx, site: 'other.demo.sovereignweb.site' })).why, /another site/, 'a request for another site is refused');
+  assert.match((await verify(ok, { ...ctx, site: undefined })).why, /site is unknown/, 'an unknown site is refused');
+  const pushed = { ...teamKey, endorsement: undefined };
+  assert.match((await verify(await make(team), { ...ctx, requesters: [ownerKey, pushed] })).why, /no endorsement/, 'a key pushed in without the owner\'s endorsement is refused');
+  const forged = { ...teamKey, endorsement: { ...teamKey.endorsement, sig: await sig(team.pair, endorsed(teamKey)) } };
+  assert.match((await verify(await make(team), { ...ctx, requesters: [ownerKey, forged] })).why, /not signed by the owner/, 'a self-signed endorsement is refused');
+  const elsewhere = { ...teamKey, endorsement: { ...teamKey.endorsement, site: 'other.demo.sovereignweb.site' } };
+  assert.match((await verify(await make(team), { ...ctx, requesters: [ownerKey, elsewhere] })).why, /another site/, 'an endorsement for another site is refused');
+  // The command line remembers accepted ids outside site/, so the same request is refused on a second run.
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'send-'));
+  fs.mkdirSync(path.join(dir, 'site/send'), { recursive: true }); fs.writeFileSync(path.join(dir, 'site/CNAME'), SITE + '\n');
+  fs.writeFileSync(path.join(dir, 'site/send/requesters.json'), JSON.stringify({ keys: [ownerKey] }));
+  const fresh = await make(owner, { at: new Date().toISOString() }); fs.writeFileSync(path.join(dir, 'r.json'), JSON.stringify(fresh));
+  const run = () => cp.spawnSync(process.execPath, [path.resolve('seed/site-template/tools/verify-request.mjs'), 'r.json'], { cwd: dir, encoding: 'utf8' });
+  const first = run(), second = run();
+  assert.equal(first.status, 0, `first run accepted: ${first.stdout}${first.stderr}`); assert.equal(second.status, 1, 'second run refused'); assert.match(second.stdout, /replayed/);
+  assert.ok(fs.existsSync(path.join(dir, '.send/seen.json')) && !fs.existsSync(path.join(dir, 'site/.send')), 'seen ids are kept outside site/');
+  fs.rmSync(dir, { recursive: true, force: true });
+  const never = JSON.parse(fs.readFileSync('seed/site-template/site/policy/abp.json', 'utf8')).site_requests.never_from_a_request;
+  assert.ok(never.includes('site/send/**') && never.includes('site/keys/**'), 'a request can never change the lane or the keys');
   assert.ok(M.newOnly('site/send/send.js') && M.newOnly('tools/verify-request.mjs') && !M.newOnly('site/index.html'), '/send/ is for new sites only');
   const inbox = JSON.parse(fs.readFileSync('seed/site-template/site/send/inbox.json', 'utf8'));
   assert.equal(inbox.set_up, false); assert.equal(inbox.append_token, ''); assert.deepEqual(JSON.parse(fs.readFileSync('seed/site-template/site/send/requesters.json', 'utf8')).keys, [], 'the seed ships the lane empty');
@@ -663,6 +687,7 @@ console.log('OK (managed CLAUDE.md)');
   assert.ok(!/<script>|<style>|unsafe-inline|on(click|load|submit)=/.test(page), 'no inline script or style on /send/');
   assert.ok(/script-src 'self'/.test(page) && /connect-src 'self' https:\/\/dev\.send\.sgraph\.ai;/.test(page), 'CSP: self plus the exact SG/Send host');
   assert.ok(/window\.top !== window\.self/.test(fs.readFileSync('seed/site-template/site/send/send.js', 'utf8')), 'frame check first');
-  assert.ok(!/importKey\('jwk', jwk\(p\.s\)/.test(fs.readFileSync('seed/site-template/site/send/keyring.js', 'utf8')) && /generateKey\(\{ name: 'ECDSA', namedCurve: 'P-256' \}, false/.test(fs.readFileSync('seed/site-template/site/send/keyring.js', 'utf8')), 'the key is made in the browser, non-extractable, never imported from a keeper');
+  const kr = fs.readFileSync('seed/site-template/site/send/keyring.js', 'utf8');
+  assert.ok(/generateKey\(\{ name: 'ECDSA', namedCurve: 'P-256' \}, false/.test(kr) && !/#key=/.test(kr), 'the key is made in the browser, non-extractable, never imported from a keeper');
 }
 console.log('OK (send lane)');
