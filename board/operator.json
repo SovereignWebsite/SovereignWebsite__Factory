@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-24T00:12Z",
+  "updated": "2026-11-24T00:22Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
@@ -27,8 +27,6 @@
     "Dinis: yes in factory.b's session to push the components proposal (small public component repositories, first a local-models component; design.b commented, security.b 031 pass with changes) - policy/proposals/2026-11-24__components.md, 638bab5 - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
   ],
   "done_recent": [
-    "Hub: email route live (v0.1.52); the first handed-over site listed as \"A founder's site, handed over\", unnamed and without pictures (ask 31); ask 6 note sent to decisions.b (no public form; email stays); hand-over written (docs/HANDOVER.md, v0.1.53)",
-    "Dinis answered 47, 40, 19, 24, 30, 26 and 37 (record 2026-11-23__briefings-keepers-messages, 23:22 UTC): briefings on the presentations website; every site leads to its agents (provenance and graphs); a keeper agent per domain; six WordPress reference sites agreed; the docs/aws-oidc.md fix covered. Routed, and relayed to every maestro",
     "sites.b: the workflow page now says the price for changes is set after hand-over (dcb06ef); the wayfinder plan is written for a fresh sites.b session (24275ef)",
     "Cost of round-the-clock feedback (accountant.b, an estimate at 1.41 USD a wake): one of four agents every 15 minutes is about 135 USD a day; each of the four every 15 minutes about 541 USD a day. Its suggestion: a script with no model checks the inboxes and wakes an agent only when a message waits",
     "Design guideline 2b \"Agents as provenance\": from every page an Agent step opens a linked graph of the keeper and its chain to Dinis, the agents behind each page, the decision records and the design rounds, with a provenance line in every footer (design.b, 1c1abb5); relayed to every maestro",
@@ -41,7 +39,9 @@
     "security.b review 029 on keys in a site's own repository: pass with changes; a self-published key vouches for nothing alone, so it needs a pki.sgit.ai link from Dinis or an active entry in the Factory's team/keys.json",
     "Vault keys: sotavento.b sealed one vault key to b.maestro, but its session's permission check blocked the send; the sealed copy stays in its session and nothing has left it, pending the pki link (security.b 030)",
     "Site keys (Dinis, 23:30 UTC, record 2026-11-23__site-keys-self-published): an agent publishes its key in its own repository at site/keys/<name>.json, authenticated by push access and the public repository; the seeded check accepts it (factory.b, aef6bcc). grace.b is now b.site.grace-farrell@SWS on its site, with a new key pair (Signers and Pages green)",
-    "WordPress section demo live: https://wordpress-section.demo.sovereignweb.site (a44d8fc, record 2026-11-23__wordpress-section-demo): six public WordPress feeds read in the browser, labelled demo and not affiliated; Car Buyer round 10 and workflow round 5 (sites.b). The old sites.b session has stopped; the fresh one starts from its hand-over"
+    "WordPress section demo live: https://wordpress-section.demo.sovereignweb.site (a44d8fc, record 2026-11-23__wordpress-section-demo): six public WordPress feeds read in the browser, labelled demo and not affiliated; Car Buyer round 10 and workflow round 5 (sites.b). The old sites.b session has stopped; the fresh one starts from its hand-over",
+    "Team rule (Dinis, 00:16 UTC 24 Nov): query the website, not messages; every agent keeps its area at /factory/dinis-cruz/account-b/ on its agent-type site, current at each wake (board/workflow/2026-11-24__query-the-website.md); sent to the team, librarian.b indexes the areas",
+    "Components proposal (small public component repositories, first local models) and abp@'s browser policy manifest with decisions.b for Dinis"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
