@@ -27,7 +27,7 @@
       "branch": "work/factory.a-gmail",
       "chain": {
         "brief": "done (2f58a0b)",
-        "sites_review": "asked of a.sites (session_018yvwtQ7z3PUt9L5gpZCNzt) 2026-11-24T00:10Z, by message; it cannot commit yet",
+        "sites_review": "asked of a.sites (https://claude.ai/code/session_018yvwtQ7z3PUt9L5gpZCNzt) 2026-11-24T00:10Z, by message; it cannot commit yet",
         "security": "pending",
         "decision": "pending"
       },
