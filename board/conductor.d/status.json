@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-24T13:55Z",
+  "updated": "2026-11-24T15:02Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -129,7 +129,8 @@
     "13:53 UTC 24 Nov: factory.d confirmed Site__Agent__Synthetic-Users, __Counsel, __Security, __Observability and __Sites all exist; Security, Observability and Sites name only the .b twin. d.data has asked factory.d for a home (Site__Agent__Data); no request yet, factory.d's to write at Dinis's yes",
     "13:53 UTC 24 Nov: observability.d: vault dyewsrs1 now has five append lanes (one per .d site plus a probe) on account D's own SG/Send access, a sealed probe written and decrypted end to end, no visits yet (exception on its own call, reversible). observability.b's design is readable at Site__Agent__Observability work/traffic/design.md, quoting Dinis: 'you can take away the no tracking and add the privacy note'; the sites' policy change for capture still needs each keeper and Dinis",
     "13:55 UTC 24 Nov: streaming.d keeps its area at Site__Tool__Streaming docs/keeper (5e14ce5, out of site/); Site__Agent__Streaming claimed for factory.d to raise at Dinis's yes",
-    "13:55 UTC 24 Nov: Site__Agent__Streaming withdrawn: Dinis already said no in factory.d's session (22 Nov ~21:35 UTC, 'no separate site for Streaming agents since that is a site not an agent'); streaming.d's area stays in its own repository, Site__Tool__Streaming docs/keeper"
+    "13:55 UTC 24 Nov: Site__Agent__Streaming withdrawn: Dinis already said no in factory.d's session (22 Nov ~21:35 UTC, 'no separate site for Streaming agents since that is a site not an agent'); streaming.d's area stays in its own repository, Site__Tool__Streaming docs/keeper",
+    "15:02 UTC 24 Nov: design.d's area live at Site__Agent__Design site/factory/dinis-cruz/account-d (6339269), in site/factory/index.json; link passed to d.maestro"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -141,7 +142,7 @@
     "start every new agent with the Factory reachable, or its key on dev, before it works (incident lesson)"
   ],
   "asks": [
-    "Dinis: the homes exist (factory.d checked the organisation; Site__Agent__<Name> is live, plurals redirect). To let seven .d agents keep their areas: (1) in each session, allow adding its home with push: synthetic-users.d -> Site__Agent__Synthetic-Users; counsel.d -> Site__Agent__Counsel; factory.d -> Site__Agent__Factory; security.d -> Site__Agent__Security; observability.d -> Site__Agent__Observability; sites.d -> Site__Agent__Sites. (2) For the homes built for the .b twin (Security, Sites; Observability already gives each account an area in its CLAUDE.md, so it needs only session access) and design.d's site/factory/ path in Site__Agent__Design: yes to naming the .d agent second keeper with an accounts/d area, committed by each site's keeper (security.b, observability.b, sites.b, design.b). (3) Optional: correct counsel's stale request description (one line, factory.d) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
+    "Dinis: the homes exist (factory.d checked the organisation; Site__Agent__<Name> is live, plurals redirect). To let seven .d agents keep their areas: (1) in each session, allow adding its home with push: synthetic-users.d -> Site__Agent__Synthetic-Users; counsel.d -> Site__Agent__Counsel; factory.d -> Site__Agent__Factory; security.d -> Site__Agent__Security; observability.d -> Site__Agent__Observability; sites.d -> Site__Agent__Sites. (2) For the homes built for the .b twin (Security, Sites; Observability already gives each account an area in its CLAUDE.md, so it needs only session access) and design.d's site/factory/ path in Site__Agent__Design (already written at its CLAUDE.md's word, 6339269; the policy entry lags): yes to naming the .d agent second keeper with an accounts/d area, committed by each site's keeper (security.b, observability.b, sites.b, design.b). (3) Optional: correct counsel's stale request description (one line, factory.d) - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: yes to factory.d writing a request for the agent home Site__Agent__Data (d.data)? Creation follows your merge and Org apply - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: library.d is past the 300k hand-over line (484k context); its START.md is ready in its area (Site__Agent__Library feca865). Start a fresh library.d session from it, and when? - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
     "Dinis: synthetic-users.d's twin inboxes (morning sync section 6). (1) Create its home Site__Agent__Synthetic-Users (request requests/2026-11-22__synthetic-users, 13947db) by the merge and Org apply, so it can commit its plan as a request. (2) Its plan: invented personas labelled synthetic; a send guard in code refusing any recipient outside the twin domain, with SYNTHETIC in every subject and first line; a dry run with no mail; then live inboxes. Yours to choose: the domain we control and the mail service (may cost money), and when inboxes go live. Recommendation: yes to the repository, personas, send guard and dry run now - https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
@@ -220,6 +221,7 @@
   "exceptions": [
     "05:14 UTC 23 Nov, deviation: studio.d pushed d6e273b to Site__Agent__Studio dev before its key was in team/keys.json (reported by helm.d); asked to record it and not push again there until its key lands",
     "00:55 UTC 24 Nov, conductor.d's error: the D7 ask sent to d.decisions at 16:53 UTC 23 Nov was stale and named no paths; it produced record D12, which synthetic-users.d rightly did not act on. Asks from conductor.d now name exact paths or commits",
-    "13:53 UTC 24 Nov, observability.d: configured five append lanes on its own vault (reversible; configure replaces the list), on its own call under the no-agent-blocked rule"
+    "13:53 UTC 24 Nov, observability.d: configured five append lanes on its own vault (reversible; configure replaces the list), on its own call under the no-agent-blocked rule",
+    "15:02 UTC 24 Nov, design.d: wrote its area at site/factory/dinis-cruz/account-d/ in Site__Agent__Design as that site's CLAUDE.md (cd14199) and START.md ask, while site/policy/abp.json still gives design_d only its review paths; recorded by design.d in now.md; the policy fix is Dinis's"
   ]
 }
