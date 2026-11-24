@@ -2,7 +2,7 @@
   "agent": "a.factory@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_018yvwtNm88hzHaENNXTA9b5",
   "account": "A",
-  "updated": "2026-11-24T02:36Z",
+  "updated": "2026-11-24T02:31Z",
   "state": "started; key and policy entry prepared for Dinis's word; two requests written",
   "key": {
     "fingerprint": "sha256:ed9a9e7c1fdd6fca",
@@ -128,6 +128,6 @@
     "2026-11-24T02:15Z Dinis in this session: Gmail go ahead, branded, not a look-alike (83b63b2); iOS request withdrawn; router key in its own repo. 'number 4' asked back",
     "2026-11-24T02:22Z migration plan drafted (board/a.factory/2026-11-24__promptugal-migration-plan.md); router branch a18a742 ready to merge",
     "2026-11-24T02:27Z router merge pushed to dev (4d46260) at Dinis's word; Org apply did not run: workflow disabled",
-    "2026-11-24T02:36Z Checks failure on 4d46260 is only the paths refusal of 7137a81 and 023eae8; the next push's range excludes them. Org apply disabled_manually at 02:03:59 UTC"
+    "2026-11-24T02:31Z Checks failure on 4d46260 is only the paths refusal of 7137a81 and 023eae8; the next push's range excludes them. Org apply disabled_manually at 02:03:59 UTC"
   ]
 }
