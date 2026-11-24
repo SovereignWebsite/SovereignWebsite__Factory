@@ -250,7 +250,8 @@
         "retire a key without Dinis's word or a b.decisions record"
       ],
       "source": "Proposed by a.factory for Dinis's word. Started by a.maestro (account-a) at Dinis's word, ~23:55 UTC 23 Nov 2026 in a.maestro's session (https://claude.ai/code/session_018yvwtLiem1AqdA1YkKse4h), as relayed by a.maestro: \"start a.factory\", \"so that if the sites need to create a new repo, it doesn't go through the other project\". The account A twin of factory.c and d.factory, limited to requests, account A's key entries and its own status.",
-      "note": "a.factory writes account A's repository requests on work/factory.a-<name> branches and runs each through the R4 chain (brief, sites review, security, decision). It never creates a repository: the Factory's CI bot does, on Dinis's merge or a b.decisions record naming it. board/a.factory/** holds its status and debrief, committed at every wake."
+      "note": "a.factory writes account A's repository requests on work/factory.a-<name> branches and runs each through the R4 chain (brief, sites review, security, decision). It never creates a repository: the Factory's CI bot does, on Dinis's merge or a b.decisions record naming it. board/a.factory/** holds its status and debrief, committed at every wake.",
+      "keys_scope": "In team/keys.json a.factory publishes and retires only its own entry and account A's (agents named <role>.a or a.<role>, or with .a. in the name), each retire only on Dinis's word or a b.decisions record. security.aws.a (24 Nov 2026 00:17 UTC) recommends the Factory checks refuse its changes to other entries; build/abp.mjs keysChange is factory.b's, c's or d's path, so that is asked of them."
     }
   },
   "pipelines": {
