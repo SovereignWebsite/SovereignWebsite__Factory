@@ -552,5 +552,8 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   assert.deepEqual(R.validate({ ...h, design_brief: 'https://github.com/SovereignWebsite/Site__Agents__Design/blob/dev/docs/briefs/ana.md' }, '2026-11-24__ana'), [], 'a brief in design.b\'s docs/briefs passes');
   assert.ok(R.validate({ ...h, design_brief: 'https://example.org/brief' }, '2026-11-24__ana').length, 'a brief elsewhere is refused');
   assert.deepEqual(C.noBrief([{ ...h, folder: '2026-11-24__ana' }, { ...h, folder: '2026-11-20__old' }, { ...h, folder: '2026-11-24__b', design_brief: 'https://design.agents.sovereignweb.site/x' }, { ...h, group: 'agents', folder: '2026-11-24__c' }, { ...h, access: 'vault', folder: '2026-11-24__d' }]), ['2026-11-24__ana'], 'Org status lists only new, unbriefed, public, non-agent requests'); }
+{ const { KNOWN } = await import('../build/check-signatures.mjs');
+  assert.deepEqual(Object.keys(KNOWN).sort(), ['5eb7fdecd2ac785ee071848a474c6cbff5e1a389', 'b7c8bfd79c263051d8e9ec35fe2cf70b59bf6e87'], 'the known failing commits are exactly the two named ones; only Dinis adds one');
+  for (const [sha, why] of Object.entries(KNOWN)) assert.ok(/^[0-9a-f]{40}$/.test(sha) && why.length > 20, `${sha.slice(0, 7)} is a full id with its reason`); }
 await import('./decisions.test.mjs');
 console.log('OK (tests)');
