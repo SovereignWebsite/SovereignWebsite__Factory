@@ -1,4 +1,4 @@
-// Which repositories a push to dev is about, so Org apply plans and acts on only those (Dinis, 24 Nov 2026 ~02:45 UTC
+// Which repositories a push to dev is about, so Org apply plans and acts on only those (Dinis, 24 Nov 2026
 // in a.factory's session: "keep it focused on the actions that I'm working on and reviewing"). Every repository in the
 // organisation is read only by the full sweep: by hand with no repos named, and on the schedule (every sixth hour).
 // Before this, each push and each hour read every repository (about 6 calls each, plus one per seed file), and the
