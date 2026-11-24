@@ -1,0 +1,9 @@
+{
+  "label": "crm",
+  "group": "agents",
+  "repo_label": "CRM",
+  "agent": "a.crm.dev@SovereignWebsite.dinis",
+  "title": "CRM agents",
+  "description": "The CRM agents' own site: their pages, keys and state, each account's under /factory/<owner>/<account>/. They build crm.tool.sovereignweb.site.",
+  "kind": "owner"
+}
