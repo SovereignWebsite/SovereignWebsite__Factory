@@ -355,7 +355,7 @@
       "role": "Builds a gated vault demo in Site__Organisation__Chiswick-Cheese-Market, made by sites.b at Dinis Cruz's request; content sealed in the vault. No paths in this repository. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 20 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
       "created": "2026-11-20",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_01Kw9UwBShWte1Rz5B2Mfznt",
       "fingerprint": "sha256:f679dc00e4703e41",
       "signing_fingerprint": "sha256:64da4ab2764206c1",
@@ -366,7 +366,9 @@
         "label": "chiswick-cheese-market-b",
         "fingerprint": "sha256:f679dc00e4703e41",
         "signing_fingerprint": "sha256:64da4ab2764206c1"
-      }
+      },
+      "retired": "2026-11-24",
+      "retired_note": "Retired by conductor.b after the agent's hand-over to keepers .c and .d (Site__Organisation__Chiswick-Cheese-Market, last commit 7b93e6a). The agent confirmed in its session at 02:11 UTC on 24 November 2026 that the hand-over is complete, its signing key exists only in its own container, and it makes no further commits. Offboarding case 2; archiving its session is Dinis's."
     },
     {
       "id": "conductor-mistral-sovereignwebsite",
