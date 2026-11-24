@@ -2,7 +2,7 @@
   "agent": "a.factory@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_018yvwtNm88hzHaENNXTA9b5",
   "account": "A",
-  "updated": "2026-11-24T00:41Z",
+  "updated": "2026-11-24T02:05Z",
   "state": "started; key and policy entry prepared for Dinis's word; two requests written",
   "key": {
     "fingerprint": "sha256:ed9a9e7c1fdd6fca",
@@ -50,6 +50,28 @@
       },
       "dinis": "who commits the org/repos.json entry (factory.c, or org/repos.json added to a.factory's paths); public or private; the merge",
       "status": "written, waiting on the chain"
+    },
+    {
+      "id": "F-A3",
+      "repository": "SovereignWebsite/Site__Agent__Router (router.agents.sovereignweb.site)",
+      "from": "router.a via a.maestro (Dinis in router.a's session ~01:50 UTC, as router.a reports)",
+      "arrived": "2026-11-24T01:57Z",
+      "written": "2026-11-24T02:04Z",
+      "branch": "work/factory.a-site-agent-router",
+      "commit": "acde5eb",
+      "chain": {
+        "brief": "a.maestro's decision request named, not found on PrompTugal dev at 9d17e2e",
+        "sites_review": "pending",
+        "security": "pending",
+        "abp": "pending",
+        "decision": "pending"
+      },
+      "open": [
+        "router.a's key is not in team/keys.json: site/key.json empty and signer check fails until it publishes here or in site/keys/",
+        "the per-account layout is not in the agent seed: router.a's first commits, or a seed change"
+      ],
+      "dinis": "the merge",
+      "status": "written, waiting on the chain"
     }
   ],
   "next": [
@@ -91,6 +113,7 @@
     "2026-11-24T00:18Z sites.a reviewed Gmail: no objection, 4 conditions; wording applied (cb8aeed)",
     "2026-11-24T00:16Z a.maestro routed Gmail security review to security.aws.a; provenance paths ask kept on account A list",
     "2026-11-24T00:22Z security.aws.a reviewed Gmail: no objection with 9 conditions; a.factory keys_scope narrowed in its policy entry",
-    "2026-11-24T00:40Z a.maestro: devops deploy-time idea and the decision-request route noted; no new repository request"
+    "2026-11-24T00:40Z a.maestro: devops deploy-time idea and the decision-request route noted; no new repository request",
+    "2026-11-24T02:04Z Site__Agent__Router request written (acde5eb); dev moved to 8b20ba3 incl. c8aab28 (org apply refreshes managed seed files in existing sites: answers part of the provenance roll-out question)"
   ]
 }
