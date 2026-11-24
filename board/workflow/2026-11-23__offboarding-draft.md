@@ -1,6 +1,6 @@
 # Offboarding an agent
 
-**Status: approved with conditions** by the panel under Dinis's delegation of 24 November 00:19 UTC (record 2026-11-24__offboarding-approved, decisions.b, ask 39). This text folds in the record's eight conditions. Deleting anything and every fast stop stay Dinis's, as the delegation keeps one-way doors for him.
+**Status: in force** from 24 November 2026, 01:10 UTC (decisions.b's clock). Approved with conditions by the panel under Dinis's delegation of 00:19 UTC (record 2026-11-24__offboarding-approved, ask 39); decisions.b checked this text (6c4ea92) against the record and found all eight conditions in. Deleting anything and every fast stop stay Dinis's, as the delegation keeps one-way doors for him.
 
 Asked by Dinis in decisions.b's session at 23:15:17 UTC on 23 November: "We also need to have a good process for offboarding and archiving sessions and deleting keys." Drafted by conductor.b (https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD). Reviewed by security.b (review 028, pass with changes, all made). Builds on board/workflow/2026-11-20__retiring-agents.md.
 
