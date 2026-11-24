@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-24T00:52Z",
+  "updated": "2026-11-24T00:55Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "All open asks were sent to decisions.b at 15:36 UTC 23 Nov, as Dinis directed; it signs records as he answers - https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
@@ -25,7 +25,6 @@
     "Dinis: say \"push 38\" and \"push 49\" in factory.b's session. Both are approved in block 1, but its permission check refused the push. 38 (0048389): policy wording, the DNS role is active for all four zones. 49 (f125da8): the signature check names two old unsigned Factory commits instead of failing on them - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
   ],
   "done_recent": [
-    "Dinis delegated routine decisions to decisions.b (00:19 UTC 24 Nov, record 2026-11-24__decisions-b-decides): it decides asks it can recommend, each underwritten by security.b (and counsel for terms or licences); main, money, legal, deleting, organisation and harness settings stay his. First batch signed: security site yes (42), 88c6dd7 no (50), 7f2a68f not now (52)",
     "Vault keys: every one goes to the account's maestro, sealed, no exceptions, Algarve Evolution and Perspace included (Dinis, 00:19 UTC); holders run security.b's 030 checks first, as b.maestro's key is self-published",
     "Agent areas live under the team rule: decisions.b, design.b and design.b.rounds (design.agents), hub.b (on the hub until it has an agent site); design.b now rates a stale or missing area as holding an agent site at 2",
     "No site key under a name the Factory already lists with another key: decided by decisions.b under the delegation, pushed (IaC c40dddf)",
@@ -39,7 +38,8 @@
     "Site keeper areas live: South Beacon (https://south-beacon.talent.sovereignweb.site/factory/dinis-cruz/account-b/, nothing about the candidate, noindex) and Grace Farrell's site (https://grace-farrell.artist.sovereignweb.site/factory/dinis-cruz/account-b/agent.json)",
     "Agent sites approved for security, observability, startups, feedback and outreach (decisions.b's first review block, all five reviewers agree, record 2026-11-24__block-01); factory.b builds them",
     "Agent sites live: security, observability, startups, feedback and outreach.agents.sovereignweb.site (factory.b, Org apply 00:40 UTC); feedback's site never publishes a reader's message",
-    "Components proposal on dev (3ed2957): small public component repositories, first a local-models component, with browser policy manifests"
+    "Components proposal on dev (3ed2957): small public component repositories, first a local-models component, with browser policy manifests",
+    "security.b's site and area live: https://security.agents.sovereignweb.site/factory/dinis-cruz/account-b/, with all 33 reviews at /reviews/, guidelines and decision opinions (Site__Agent__Security 7c9388c)"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
