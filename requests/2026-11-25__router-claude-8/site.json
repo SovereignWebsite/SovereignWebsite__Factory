@@ -1,0 +1,15 @@
+{
+  "label": "router-claude-8",
+  "group": "agents",
+  "agent": "cl-8.router@dinis",
+  "title": "cl-8.router",
+  "description": "The router of Dinis's 8th Claude account: its own home, with its key and its area under /factory/<owner>/<account>/, listed by the shared Router site.",
+  "kind": "owner",
+  "home": {
+    "role": "router",
+    "provider": "claude",
+    "number": 8
+  },
+  "pages": false,
+  "source": "Naming step 2 (Dinis, 25 Nov 2026, after merging step 1: \"merged, let's do this :)\", relayed by a.maestro): the 8th account's router home, with no website."
+}
