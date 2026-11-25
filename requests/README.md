@@ -112,4 +112,6 @@ The routing agent never builds the site itself; it starts the keeper in its own 
 
 A request names no private person: an owner's details stay out of this public repository until they agree. Every site Dinis asks for has the person's or organisation's approval for a public address (Dinis, 20 November 2026).
 
+A moved site can keep its old address while its new one waits for a certificate: `"keep_address": true` (only with a `from` block) keeps Pages on `from.address` and adds the new address's DNS record ahead of time; removing the flag switches the domain.
+
 The pipeline never deletes: a request removed from this folder leaves its repository and address in place, for Dinis to retire by hand.

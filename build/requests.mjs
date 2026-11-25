@@ -93,6 +93,7 @@ export function validate(req, folder = '') {
       if (typeof h.role === 'string' && HOME_PROVIDERS[h.provider] && Number.isInteger(h.number) && req.label !== homeLabel(h)) e.push(`${folder}: an agent home's label is ${homeLabel(h)}`);
     }
   }
+  if (req.keep_address !== undefined && (req.keep_address !== true || !req.from || !req.from.address)) e.push(`${folder}: keep_address is only ever true, on a moved site with from.address`);
   if (req.pages !== undefined && req.pages !== false) e.push(`${folder}: pages is only ever false (no website, no custom domain, no DNS record)`);
   if (req.pages === false && req.group !== 'agents') e.push(`${folder}: only an agent home goes without a website`);
   // Old repository names Org apply may rename from (it refuses any other rename, build/org-apply.mjs).
@@ -209,7 +210,10 @@ function sites(requests) {
     // Agent homes are singular, Site__Agent__<Name> (Dinis, 22 Nov 2026 ~17:05 UTC: "It's not agents, it's agent"); the plural is kept as aka so Org apply renames.
     ...aka(repoName(r), ...(isShared(r.label) || r.home ? [] : [`Site__${r.label}`, `Site__${cap(r.label)}`]), ...(r.group === 'agents' && !r.home ? [`Site__Agents__${r.repo_label || cap(r.label)}`] : []), ...(r.aka || [])),
     description: `${where(r)}: ${r.description}`.slice(0, 350),
-    ...(hasPages(r) ? { homepage: `https://${host(r)}`, pages: true, cname: host(r) } : { pages: false }),
+    // A moved site may keep its old address for a while ("keep_address": true): Pages stays on from.address while the new
+    // address's DNS record is added ahead of time, and the domain switches when the request drops the flag (a
+    // certificate slot free under Let's Encrypt's weekly limit; Mondweep's site, 25 Nov 2026).
+    ...(hasPages(r) ? { homepage: `https://${r.keep_address ? r.from.address : host(r)}`, pages: true, cname: r.keep_address ? r.from.address : host(r) } : { pages: false }),
     ...(r.from ? { transfer_from: `${r.from.owner}/${r.from.repo}` } : { seed: !hasPages(r) ? 'seed/home-template' : r.agent ? 'seed/agent-template' : ACCESS[r.access || 'public'] }),
     ...(r.collaborators ? { collaborators: r.collaborators } : {}),
     vars: { label: r.label, repo: repoName(r), host: where(r), title: r.title, description: r.description, kind: r.kind, ...(r.agent ? { agent: r.agent } : {}) },
