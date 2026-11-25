@@ -1,0 +1,9 @@
+{
+  "label": "maestro-claude-8",
+  "group": "agents",
+  "agent": "claude-8.maestro@claude-8.dinis",
+  "title": "claude-8.maestro",
+  "description": "The maestro of Dinis's 8th Claude account: its own home, with its key, its area under /factory/<owner>/<account>/ and its pages, linked from the shared Maestro site.",
+  "kind": "owner",
+  "source": "Dinis Cruz created SovereignWebsite/Site__Agent__Maestro-Claude-8 by hand (README, LICENSE, .gitignore; dev and main at ae53777) for his 8th account's maestro; a.maestro asked for it to be adopted and seeded, 25 Nov 2026. Org apply's seed only adds missing files, so the existing README, LICENSE and .gitignore stay."
+}
