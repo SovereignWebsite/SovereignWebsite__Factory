@@ -203,7 +203,7 @@
       "role": "Design guidelines, briefs, reviews and sign-off for every site; keeps Site__Agents__Design (design.agents.sovereignweb.site). No paths in this repository. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 20 November 2026 with sgit, at Dinis's word there; public bundle sent to the conductor. Only the public half is here.",
       "created": "2026-11-20",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_01Kw9UwCvZbGkWo3D9DEpRMv",
       "fingerprint": "sha256:97ea8c356fbf1697",
       "signing_fingerprint": "sha256:ad8a7bf35603a085",
@@ -214,7 +214,9 @@
         "label": "design.b@SovereignWebsite.dinis",
         "fingerprint": "sha256:97ea8c356fbf1697",
         "signing_fingerprint": "sha256:ad8a7bf35603a085"
-      }
+      },
+      "retired": "2026-11-25",
+      "retired_note": "Superseded on 25 November 2026: design.b handed over to a fresh session (https://claude.ai/code/session_01Kw9UwDmfLmMC1vktxw9rF1) at Dinis's word in b.maestro's session. The new key (sha256:8572d949faed1016, signing sha256:be5f90a7a8e96565) is published by the agent in its own repository, Site__Agent__Design site/keys/design.b.json (f804f93), under the own-keys principle. Retired by conductor.b under the keys rule; offboarding case 1."
     },
     {
       "id": "sarah-cruz-b-sovereignwebsite",
