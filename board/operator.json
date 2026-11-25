@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-25T19:22Z",
+  "updated": "2026-11-25T22:26Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "Dinis: a budget for the librarian's first run, or let accountant.b propose one - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF",
@@ -22,8 +22,6 @@
     "Dinis: whether account-wide capability census families and counts may be published (security.b: per-agent results stay private)"
   ],
   "done_recent": [
-    "startups.b's area live: https://startups.agents.sovereignweb.site/factory/dinis-cruz/account-b/agent.json",
-    "conductor.b state and hand-over note written early: board/2026-11-24__conductor-state.md; four settled asks removed from the list (accountant site, domain keepers, decisions system start, the 15:36 note)",
     "Core principle (Dinis, 00:52 UTC 24 Nov, record 2026-11-24__own-keys-principle): repository access is the moment of authorisation; every agent and owner creates and updates its own keys in repositories it can push to, and no one else's. Site keepers add the own-key step to their hand-over prompts; factory.b to the seeds",
     "Own-key step in owners' hand-over prompts: Grace (bbe9386), South Beacon (f066f81), Kate (038bbc1, tested against the seeded check), Sarah (d31e7b6), Emily (154e833, bcd865e: her assistant adds a signing key to her own GitHub account, because her site's check predates site keys; with decisions.b), and in the seed for new sites (factory.b 107edc9, with decisions.b)",
     "accountant.b's hand-over committed for a fresh session: board/accountant.b/handover-2026-11-24/START.md (cost site files, its agent area, standing guidance)",
@@ -36,7 +34,9 @@
     "sovereignwebsite.ai has a dedicated keeper: website.a on account A, at Dinis's word (about 00:55 UTC 25 Nov); it removed the no-customers claims (a94fc8a), naming no customer. conductor.b's notes for it: board/conductor.b/2026-11-25__sovereignwebsite-ai-handover.md",
     "New site keepers (Car Buyer, Lee-Elle Horowitz, Moving Van) publish their own keys in their own repositories; sites.b's keeper start prompt corrected so none asks for an IaC team/keys.json entry: Site__Agent__Sites keeper-start-prompt.md (a41b8e6)",
     "Naming model agreed by Dinis (25 Nov, a.maestro's session): ids <account id>.<role>[.<speciality>]@[<project>.]<owner>, account B is cl-2, the factory becomes infra. Incremental, each step a PR for Dinis; the team and site keepers told not to rename until their step",
-    "Capability census (b.abp): read-only; per security.b (19:27 UTC 25 Nov) results are private, sealed for abp and security, with no hosts, ids, emails or allowlists; step 6 only with Dinis present; run only from a copy Dinis pastes. Passed to the team and every account"
+    "Capability census (b.abp): read-only; per security.b (19:27 UTC 25 Nov) results are private, sealed for abp and security, with no hosts, ids, emails or allowlists; step 6 only with Dinis present; run only from a copy Dinis pastes. Passed to the team and every account",
+    "observability.b handed to a fresh session at Dinis's word; its old key entry retired (35a0523), the new key published in its own repository",
+    "conductor.b state note and restart.md refreshed for its own hand-over (board/2026-11-24__conductor-state.md, board/conductor.b/restart.md)"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",

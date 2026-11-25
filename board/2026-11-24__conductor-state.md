@@ -14,15 +14,16 @@ For whoever continues conductor.b@SovereignWebsite.dinis after https://claude.ai
 - status.json and board/operator.json are regenerated together: operator.json is state, next, the last 15 done lines and the asks, with lines naming an organisation vault site filtered out. The helper used here lived in the scratchpad; rewrite it from that description.
 - Before every push: `node test/run.mjs && node build/abp.mjs validate && node build/leak-scan.mjs`, then `node build/abp.mjs paths origin/dev HEAD` and `node build/check-signatures.mjs origin/dev HEAD`, chained on real exit codes (never through a pipe to tail; that hid a failure once, fixed in 4ce93c1).
 
-## Open threads
-- Vault keys to b.maestro: sotavento.b and perspace.b done and proven; algarve-evolution.b waits on Dinis's "yes, send it" in its session; feedback.b acts only on his word in its session.
-- factory.b: 38 (0048389) and 49 (f125da8) approved in block 1, waiting on "push 38" and "push 49" from Dinis in factory.b's session.
-- Fresh sessions for sites.b (it stopped; hand-over at Site__Agent__Sites docs/handover.md) and hub.b (docs/HANDOVER.md), then the four wake tasks (board/2026-11-23__wake-schedule.md).
-- Shared navigation (ask 40) and briefings (ask 47) wait on the fresh sites.b; keepers per domain (ask 19: website.b for sovereignwebsite.ai, principles.b for .org) and starting sessions (ask 48) are with Dinis.
-- sovereignwebsite.ai: this session never got the repository (ask 35); website.b would keep it.
-- Agent sites live: decisions, design (and design.b.rounds), security, observability, startups, feedback, outreach; hub.b's area is on the hub. Areas still to come from the rest, as their sites allow.
-- Components (proposal on dev 3ed2957) and browser policy manifests (abp@PrompTugal.dinis, https://claude.ai/code/session_01Kw9UwC3EfbmHL8QUj8KypP).
-- conductor.b has no agent-type site yet: ask factory.b for Site__Agent__Conductor, or keep using status.json.
+## Open threads (refreshed 25 November 22:30 UTC)
+- Keys: agents publish their own keys in their own repositories (own-keys principle). A conductor only retires entries in team/keys.json, never adds one; several new agents asked for an entry and were told so. Retired by this session: chiswick-cheese-market.b (23c180c), observability.b's old key (35a0523).
+- Vault keys: sotavento.b's, Perspace and Algarve Evolution are with b.maestro and proven. feedback.b's waits on Dinis in its own session.
+- Onboarding order for agents' own repositories: board/conductor.b/2026-11-24__onboarding-order.md, agreed by factory.b. First step waits on Dinis: push to Site__Agents__Factory for factory.b.
+- factory.b's 38 (0048389) and 49 (f125da8) wait on "push 38" and "push 49" from Dinis in its session.
+- Fresh sessions for sites.b and hub.b, and the four wake tasks, are Dinis's.
+- Naming model (25 Nov): nobody renames until each step is announced.
+- Capability census (b.abp): results private, sealed for abp and security (security.b, 25 Nov 19:27 UTC); publishing account-wide counts waits on Dinis.
+- sovereignwebsite.ai is kept by website.a on account A; notes for it: board/conductor.b/2026-11-25__sovereignwebsite-ai-handover.md.
+- Live list for Dinis: status.json asks, and https://hub.sovereignweb.site/operator/.
 
 ## Steps 1 to 9 for this session, when it hands over
 Sessions it created: none. Wakes into it: none yet (conductor.b's wake is one of the four Dinis has not created). Lanes: none. Secrets: its own signing key and sgit keystore, only in this container; nothing sealed to it. Personal data in the transcript: names of site owners as routed in messages, no contact details.
