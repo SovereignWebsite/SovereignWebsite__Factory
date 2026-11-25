@@ -720,3 +720,25 @@ console.log('OK (deploy retries once)');
   assert.ok(R.validate({ ...r, group: 'cv' }, '2026-11-25__one-human-nine-agents').some((e) => /provider/.test(e)), 'other groups still refuse a provider');
 }
 console.log('OK (author works)');
+
+// Every local stylesheet link gets ?v=<hash of the file> at build, so no browser keeps a stale copy (sites.a, 25 Nov
+// 2026: TauGuard's picker showed as a black block on a cached stylesheet). Built in a scratch folder.
+{
+  const { mkdtempSync, mkdirSync, writeFileSync, readFileSync: rd } = await import('node:fs');
+  const { tmpdir } = await import('node:os'); const { join } = await import('node:path'); const { execFileSync } = await import('node:child_process');
+  const { MANAGED } = await import('../build/managed.mjs');
+  const a = ['site-template', 'gate-template', 'agent-template'].map((t) => rd(`seed/${t}/.github/ci/build.mjs`, 'utf8'));
+  assert.ok(a.every((x) => x === a[0]), 'one build.mjs for every seed');
+  assert.ok(MANAGED.includes('.github/ci/build.mjs'), 'build.mjs is managed');
+  const d = mkdtempSync(join(tmpdir(), 'sws-build-')); mkdirSync(join(d, 'site/assets'), { recursive: true }); mkdirSync(join(d, 'site/sub'));
+  writeFileSync(join(d, 'site/assets/a.css'), 'a{}');
+  writeFileSync(join(d, 'site/sub/b.css'), 'b{}');
+  writeFileSync(join(d, 'site/sub/index.html'), '<html><head><link rel="stylesheet" href="/assets/a.css"><link rel="stylesheet" href="b.css"><link rel="stylesheet" href="https://x.test/c.css"><link rel="stylesheet" href="/assets/a.css?v=keep"></head><body></body></html>');
+  execFileSync('node', [join(process.cwd(), 'seed/site-template/.github/ci/build.mjs')], { cwd: d });
+  const out = rd(join(d, '_site/sub/index.html'), 'utf8');
+  assert.match(out, /href="\/assets\/a\.css\?v=[0-9a-f]{10}"/, 'a root stylesheet is hashed');
+  assert.match(out, /href="b\.css\?v=[0-9a-f]{10}"/, 'a relative stylesheet is hashed');
+  assert.ok(out.includes('href="https://x.test/c.css"') && out.includes('a.css?v=keep'), 'another host and an existing ?v are left as they are');
+  assert.equal((out.match(/sws-version\.css\?v=/g) || []).length, 1, 'the chip stylesheet once, hashed');
+}
+console.log('OK (stylesheets carry a content hash)');
