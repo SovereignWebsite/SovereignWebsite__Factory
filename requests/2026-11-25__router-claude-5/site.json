@@ -1,0 +1,15 @@
+{
+  "label": "router-claude-5",
+  "group": "agents",
+  "agent": "cl-5.router@angelo",
+  "title": "cl-5.router",
+  "description": "The router of Claude account 5 (Angelo's): its own home, with its key and its area under /factory/<owner>/<account>/, listed by the shared Router site.",
+  "kind": "owner",
+  "home": {
+    "role": "router",
+    "provider": "claude",
+    "number": 5
+  },
+  "pages": false,
+  "source": "Dinis Cruz, in a.maestro's session, 25 Nov 2026 17:51 UTC: \"yes great plan\" (the per-account homes), and 18:38 UTC: \"Angelo is ok with being names\"; relayed by a.maestro."
+}
