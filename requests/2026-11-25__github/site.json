@@ -1,0 +1,10 @@
+{
+  "label": "github",
+  "group": "tool",
+  "repo_label": "GitHub",
+  "title": "GitHub in the browser (unofficial)",
+  "description": "Work with GitHub from your browser through its own APIs, with a token you paste in and that never leaves your browser except to GitHub. Not affiliated with GitHub.",
+  "kind": "demo",
+  "keeper": "github-tool.a@SovereignWebsite.dinis",
+  "design": "a.design@SovereignWebsite.dinis"
+}

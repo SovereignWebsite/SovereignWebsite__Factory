@@ -1,0 +1,9 @@
+{
+  "label": "apple",
+  "group": "platform",
+  "title": "Apple as a platform (unofficial)",
+  "description": "Apple Intelligence first, then iOS, on-device models, TestFlight and iCloud, and our own work on Apple, from Apple's public pages. Not affiliated with Apple.",
+  "kind": "demo",
+  "keeper": "apple.a@SovereignWebsite.dinis",
+  "design": "a.design@SovereignWebsite.dinis"
+}
