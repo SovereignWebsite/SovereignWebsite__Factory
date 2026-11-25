@@ -11,7 +11,7 @@ export const LABEL = /^[a-z0-9](?:[a-z0-9-]{0,38}[a-z0-9])?$/;
 export const FROM_OWNERS = ['AgentiCCells'];
 // Groups of sites under their own subdomain: <label>.<group>.sovereignweb.site. The official list (requests/README.md),
 // agreed by Dinis on 20 Nov 2026 ~12:02 UTC: "I agree with, can you put that on our official guidance"; more will be added.
-export const GROUPS = ['artist', 'cv', 'company', 'organisation', 'invest', 'agents', 'designer', 'tool', 'founder', 'startups', 'demo', 'provider', 'talent', 'author', 'platform', 'frameworks', 'presentations', 'manager'];
+export const GROUPS = ['artist', 'cv', 'company', 'organisation', 'invest', 'agents', 'designer', 'tool', 'founder', 'startups', 'demo', 'provider', 'talent', 'author', 'platform', 'frameworks', 'presentations', 'manager', 'services'];
 // Kept only while a live site still uses it, until that site moves.
 export const LEGACY_GROUPS = ['artists'];
 export const NO_GROUP = {
@@ -135,7 +135,7 @@ export function load(dir = 'requests') {
 // Repository names are indexed by type, capitalised (Dinis, 20 Nov 2026 ~12:28 UTC: "the repo should be
 // Site__Organisation__Algarve-Evolution, Site__Artist__Emily-Cruz (note the capitalisation on the names)").
 // A site without a group is Site__<Name>. The old name, Site__<label>, is kept as aka so Org apply renames it.
-export const GROUP_NAMES = { artist: 'Artist', cv: 'CV', company: 'Company', organisation: 'Organisation', invest: 'Invest', agents: 'Agent', designer: 'Designer', tool: 'Tool', founder: 'Founder', startups: 'Startups', demo: 'Demo', provider: 'Provider', talent: 'Talent', author: 'Author', platform: 'Platform', frameworks: 'Frameworks', artists: 'Artist' , presentations: 'Presentations', manager: 'Manager' };
+export const GROUP_NAMES = { artist: 'Artist', cv: 'CV', company: 'Company', organisation: 'Organisation', invest: 'Invest', agents: 'Agent', designer: 'Designer', tool: 'Tool', founder: 'Founder', startups: 'Startups', demo: 'Demo', provider: 'Provider', talent: 'Talent', author: 'Author', platform: 'Platform', frameworks: 'Frameworks', artists: 'Artist' , presentations: 'Presentations', manager: 'Manager', services: 'Services' };
 export const cap = (label) => label.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join('-');
 const suffix = (r) => `${r.group ? `${GROUP_NAMES[r.group]}__` : ''}${r.provider ? `${cap(r.provider)}__` : ''}${r.repo_label || cap(r.label)}`;
 export const repoName = (r) => `Site__${suffix(r)}`;
