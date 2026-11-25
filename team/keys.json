@@ -317,7 +317,7 @@
       "role": "Traffic for every site: the shared page piece, the aggregates per site and across all sites. No paths in this repository. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 20 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
       "created": "2026-11-20",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_01Kw9UwDcJXSxNCBzPpxxXw8",
       "fingerprint": "sha256:ddfbf8335c123e5e",
       "signing_fingerprint": "sha256:0a773143f2975585",
@@ -328,7 +328,9 @@
         "label": "observability.b@SovereignWebsite.dinis",
         "fingerprint": "sha256:ddfbf8335c123e5e",
         "signing_fingerprint": "sha256:0a773143f2975585"
-      }
+      },
+      "retired": "2026-11-25",
+      "retired_note": "Superseded at 22:25 UTC on 25 November 2026: observability.b handed over to a fresh session (https://claude.ai/code/session_01Kw9UwCWpbdQcxFY1GgbC2J) at Dinis's word in b.maestro's session. The new key (sha256:dd793b83d902ea84, signing sha256:2e6140c55b5ce7ab) is published by the agent in its own repository, Site__Agent__Observability site/keys/observability.b.json (95ede5f), under the own-keys principle. Retired by conductor.b under the keys rule; offboarding case 1."
     },
     {
       "id": "feedback-b-sovereignwebsite",
