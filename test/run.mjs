@@ -742,3 +742,13 @@ console.log('OK (author works)');
   assert.equal((out.match(/sws-version\.css\?v=/g) || []).length, 1, 'the chip stylesheet once, hashed');
 }
 console.log('OK (stylesheets carry a content hash)');
+
+// A coach names the sport (Dinis, 25 Nov 2026: "sport, paddle, Oscar").
+{
+  const R = await import('../build/requests.mjs');
+  const r = { label: 'oscar', group: 'sport', provider: 'padel', title: 't', description: 'd', kind: 'owner', keeper: 'x.a@Y.z', design: 'd.a@Y.z' };
+  assert.deepEqual(R.validate(r, '2026-11-25__oscar'), []);
+  assert.equal(R.host(r), 'oscar.padel.sport.sovereignweb.site');
+  assert.equal(R.repoName(r), 'Site__Sport__Padel__Oscar');
+}
+console.log('OK (sport coaches)');
