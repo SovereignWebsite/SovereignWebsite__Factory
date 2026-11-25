@@ -657,3 +657,18 @@ console.log('OK (organisation chapters)');
   assert.deepEqual(R.validate({ label: 'x', group: 'agents', agent: 'a.x@SovereignWebsite.dinis', title: 'T', description: 'D', kind: 'owner' }, '2026-11-25__x'), [], 'agent sites are their own keeper');
 }
 console.log('OK (keeper and design)');
+
+// A scoped run by hand with the nudge re-saves a domain whose certificate is stuck pending; the schedule does not.
+{
+  const { plan } = await import('../build/org-plan.mjs');
+  const org = { org: 'SovereignWebsite', defaults: {}, repos: [{ name: 'Site__X', cname: 'x.tool.sovereignweb.site', pages: true, default_branch: 'dev' }] };
+  const live = { Site__X: { default_branch: 'dev', has_dev: true, has_pages: true, cname: 'x.tool.sovereignweb.site', https_enforced: false, cert_state: 'authorization_pending', teams: {}, protected: true } };
+  const saved = { m: process.env.NUDGE_MISSING, o: process.env.ONLY_REPOS };
+  process.env.NUDGE_MISSING = 'true'; delete process.env.ONLY_REPOS;
+  assert.ok(!plan(org, live).actions.some((a) => a.action === 'pages.nudge_certificate'), 'the schedule leaves a pending certificate alone');
+  process.env.ONLY_REPOS = 'Site__X';
+  assert.ok(plan(org, live).actions.some((a) => a.action === 'pages.nudge_certificate' && a.state === 'authorization_pending'), 'a scoped run by hand re-saves it');
+  if (saved.m === undefined) delete process.env.NUDGE_MISSING; else process.env.NUDGE_MISSING = saved.m;
+  if (saved.o === undefined) delete process.env.ONLY_REPOS; else process.env.ONLY_REPOS = saved.o;
+}
+console.log('OK (scoped certificate nudge)');

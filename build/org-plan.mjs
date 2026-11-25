@@ -66,7 +66,10 @@ export function plan(org, live) {
     if (r.cname && l.cname === r.cname && !l.https_enforced) {
       const st = l.cert_state;
       if (st === 'approved' || st === 'issued') actions.push({ action: 'pages.enforce_https', target: r.name });
-      else if ((process.env.NUDGE_MISSING === 'true' && !st) || ['errored', 'bad_authz', 'authorization_revoked', 'dns_changed', 'destroy_pending'].includes(st)) actions.push({ action: 'pages.nudge_certificate', target: r.name, state: st || 'none' });
+      // A run by hand that names its repositories (ONLY_REPOS) with the nudge on re-saves the domain whatever the
+      // pending state, since a certificate can sit in "new" or "authorization_pending" for hours (uk-driving-test.tool,
+      // 24 to 25 Nov 2026). The schedule nudges only missing or failed certificates.
+      else if ((process.env.NUDGE_MISSING === 'true' && (!st || !!process.env.ONLY_REPOS)) || ['errored', 'bad_authz', 'authorization_revoked', 'dns_changed', 'destroy_pending'].includes(st)) actions.push({ action: 'pages.nudge_certificate', target: r.name, state: st || 'none' });
     }
   }
   const names = new Set(org.repos.flatMap((r) => [r.name, ...(r.aka || [])]));
