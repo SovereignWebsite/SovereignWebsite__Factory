@@ -752,3 +752,15 @@ console.log('OK (stylesheets carry a content hash)');
   assert.equal(R.repoName(r), 'Site__Sport__Padel__Oscar');
 }
 console.log('OK (sport coaches)');
+
+// plan_only reports each Pages domain and certificate state without changing anything (a.devops, 25 Nov 2026).
+{
+  const { pagesReport } = await import('../build/org-plan.mjs');
+  const r = pagesReport({ Site__B: { cname: 'b.x', cert_state: 'authorization_pending', cert_description: 'rate | limited', https_enforced: false }, Site__A: { cname: 'a.x', cert_state: 'approved', https_enforced: true }, Site__C: { cname: null } });
+  const rows = r.split('\n').filter((l) => l.startsWith('| Site__'));
+  assert.deepEqual(rows.map((l) => l.split(' | ')[0]), ['| Site__A', '| Site__B'], 'sites with a domain, sorted');
+  assert.ok(rows[1].includes('authorization_pending') && rows[1].includes('rate / limited'), 'state and description shown, pipes escaped');
+  const wf = readFileSync('.github/workflows/org-apply.yml', 'utf8');
+  assert.ok(/name: Apply\n\s+if: .*inputs\.plan_only != true/.test(wf) && /name: Policy check\n\s+if: .*inputs\.plan_only != true/.test(wf), 'plan_only skips apply');
+}
+console.log('OK (plan only)');
