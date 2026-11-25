@@ -802,3 +802,17 @@ console.log('OK (sport coaches)');
   for (const f of ['.github/workflows/signers.yml', '.github/ci/signers.mjs', 'CLAUDE.md', 'START.md', 'site/factory/index.json', 'tools/setup-signing.sh']) assert.ok(existsSync(`seed/home-template/${f}`), `home seed has ${f}`);
 }
 console.log('OK (agent homes and written aliases)');
+
+// A moved site keeps its old address until the request drops keep_address (certificate slots, 25 Nov 2026).
+{
+  const R = await import('../build/requests.mjs');
+  const moved = { label: 'x-y', group: 'founder', title: 't', description: 'd', kind: 'owner', from: { owner: 'AgentiCCells', repo: 'AgentiCCells__Site__X-Y', address: 'x-y.agenticcells.site' }, keep_address: true, folder: '2026-11-25__x-y', moved: true };
+  assert.deepEqual(R.validate(moved, '2026-11-25__x-y').filter((m) => /keep_address/.test(m)), []);
+  const spec = R.repos([moved])[0];
+  assert.equal(spec.cname, 'x-y.agenticcells.site', 'Pages keeps the old address');
+  assert.equal(R.dnsRecords([moved])[0].name, 'x-y.founder.sovereignweb.site', 'the new address gets its DNS record ahead of time');
+  const { keep_address, ...after } = moved;
+  assert.equal(R.repos([after])[0].cname, 'x-y.founder.sovereignweb.site', 'dropping the flag switches the domain');
+  assert.ok(R.validate({ ...moved, from: undefined }, '2026-11-25__x-y').some((m) => /keep_address/.test(m)), 'only on a moved site');
+}
+console.log('OK (a moved site keeps its old address)');
