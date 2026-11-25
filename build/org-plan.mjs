@@ -155,7 +155,8 @@ export function markdown(p) {
 }
 
 // Each Pages site's domain and certificate as GitHub reports them, read only (a.devops, 25 Nov 2026: read cert_state
-// without re-saving a domain, which spends a Let's Encrypt certificate). Shown when SHOW_PAGES=true.
+// without re-saving a domain, which spends a Let's Encrypt certificate). Shown when SHOW_PAGES=true. Lists only sites
+// that have a custom domain: one that has lost its domain shows in the plan as pages.set_cname instead.
 export function pagesReport(live) {
   const rows = Object.entries(live).filter(([, l]) => l && l.cname).sort(([a], [b]) => a.localeCompare(b));
   const cell = (v) => String(v ?? '').replace(/\|/g, '/').replace(/\s+/g, ' ');
