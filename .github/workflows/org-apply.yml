@@ -19,6 +19,10 @@ on:
         description: 'Only these repositories, comma separated (empty: every repository)'
         type: string
         default: ''
+      plan_only:
+        description: 'Plan and report each Pages domain and certificate state; change nothing (no nudge, no apply)'
+        type: boolean
+        default: false
   schedule:
     - cron: '17 */6 * * *'
 permissions:
@@ -73,17 +77,20 @@ jobs:
           GH_TOKEN: ${{ steps.app.outputs.token }}
           ONLY_REPOS: ${{ steps.scope.outputs.only }}
           NUDGE_INPUT: ${{ inputs.nudge_missing_certificates == true }}
+          PLAN_ONLY: ${{ inputs.plan_only == true }}
           EVENT: ${{ github.event_name }}
         # A domain with no certificate is nudged when asked by hand, and by the schedule every sixth hour
         # (00, 06, 12, 18 UTC), so a new site gets its certificate without a person; never while one is pending.
         run: |
-          if [ "$NUDGE_INPUT" = "true" ] || { [ "$EVENT" = "schedule" ] && [ $(( 10#$(date -u +%H) % 6 )) -eq 0 ]; }; then export NUDGE_MISSING=true; fi
+          if [ "$PLAN_ONLY" = "true" ]; then export SHOW_PAGES=true
+          elif [ "$NUDGE_INPUT" = "true" ] || { [ "$EVENT" = "schedule" ] && [ $(( 10#$(date -u +%H) % 6 )) -eq 0 ]; }; then export NUDGE_MISSING=true; fi
           node build/org-plan.mjs plan.json | tee -a "$GITHUB_STEP_SUMMARY"
+      # plan_only (by hand): read and report, then stop; nothing is applied (a.devops, 25 Nov 2026).
       - name: Policy check
-        if: steps.scope.outputs.skip != 'true'
+        if: steps.scope.outputs.skip != 'true' && inputs.plan_only != true
         run: node build/abp.mjs actions plan.json
       - name: Apply
-        if: steps.scope.outputs.skip != 'true'
+        if: steps.scope.outputs.skip != 'true' && inputs.plan_only != true
         env:
           GH_TOKEN: ${{ steps.app.outputs.token }}
         run: node build/org-apply.mjs plan.json | tee -a "$GITHUB_STEP_SUMMARY"
