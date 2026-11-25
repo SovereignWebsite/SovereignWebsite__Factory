@@ -42,6 +42,7 @@ sovereignweb.site is the domain for new sites (Dinis, 20 November 2026: "a bette
 | `services` | services we offer or research for customers (Dinis, 25 November 2026: "I think we should put this under services") | domain-registrars.services.sovereignweb.site |
 | `sport` | coaches, instructors and clubs, under their sport as provider (Dinis, 25 November 2026: "what about sport, paddle, Oscar as a category") | oscar.padel.sport.sovereignweb.site |
 | `business` | small local businesses, customers' own trading sites (Dinis, 25 November 2026: "for the moving van make it generic ... moving-van.business.SWS") | moving-van.business.sovereignweb.site |
+| `template` | a generic site with placeholder content only, for an area (a group, given as `provider`); a real customer's site is made from a copy once the owner agrees (Dinis, 25 November 2026: "Site__Template__Business__Moving-Van ... we could have templates for other types of areas and types of sites") | moving-van.business.template.sovereignweb.site |
 | `agents` | the SWS agents' own sites | factory.agents.sovereignweb.site |
 
 More groups will be added as we go; adding one is a change to `GROUPS` in build/requests.mjs and to this table. Every site has a group (Dinis, 20 November 2026: "Everything should have a group for now"; demos go in `demo`). The only exceptions are listed in `NO_GROUP` in build/requests.mjs: the agents area's own index page, and google-maps, held at its old address until its Maps key lists the new one.

@@ -11,7 +11,7 @@ export const LABEL = /^[a-z0-9](?:[a-z0-9-]{0,38}[a-z0-9])?$/;
 export const FROM_OWNERS = ['AgentiCCells'];
 // Groups of sites under their own subdomain: <label>.<group>.sovereignweb.site. The official list (requests/README.md),
 // agreed by Dinis on 20 Nov 2026 ~12:02 UTC: "I agree with, can you put that on our official guidance"; more will be added.
-export const GROUPS = ['artist', 'cv', 'company', 'organisation', 'invest', 'agents', 'designer', 'tool', 'founder', 'startups', 'demo', 'provider', 'talent', 'author', 'platform', 'frameworks', 'presentations', 'manager', 'services', 'sport', 'business'];
+export const GROUPS = ['artist', 'cv', 'company', 'organisation', 'invest', 'agents', 'designer', 'tool', 'founder', 'startups', 'demo', 'provider', 'talent', 'author', 'platform', 'frameworks', 'presentations', 'manager', 'services', 'sport', 'business', 'template'];
 // Kept only while a live site still uses it, until that site moves.
 export const LEGACY_GROUPS = ['artists'];
 export const NO_GROUP = {
@@ -42,7 +42,9 @@ export const zoneOf = (h) => DOMAINS.find((d) => h.endsWith(`.${d}`)) || null;
 // session: "title.dinis.author.sws"), so one author can hold several books.
 // A sport's coach or club names the sport: <name>.<sport>.sport (Dinis, 25 Nov 2026 02:14 UTC, in sites.a's session:
 // "what about sport, paddle, Oscar as a category ... you can have other sports").
-export const PROVIDER_GROUPS = ['tool', 'organisation', 'author', 'sport'];
+export const PROVIDER_GROUPS = ['tool', 'organisation', 'author', 'sport', 'template'];
+// A template's provider is the area it is a template for, which is a group name (Dinis, 25 Nov 2026:
+// "Site__Template__Business__Moving-Van ... we could have templates for other types of areas and types of sites").
 export const host = (r) => `${r.label}.${r.provider ? `${r.provider}.` : ''}${r.group ? `${r.group}.` : ''}${domain(r)}`;
 
 export function validate(req, folder = '') {
@@ -60,7 +62,7 @@ export function validate(req, folder = '') {
   if (req.group !== undefined && !GROUPS.includes(req.group) && !LEGACY_GROUPS.includes(req.group)) e.push(`${folder}: group must be one of ${GROUPS.join(', ')}`);
   // repo_label: the label's own capitals in the repository name, same letters (Dinis, 22 Nov 2026: "should be Site__Platform__AWS").
   if (req.repo_label !== undefined && (typeof req.repo_label !== 'string' || !/^[A-Za-z0-9-]+$/.test(req.repo_label) || req.repo_label.toLowerCase() !== req.label)) e.push(`${folder}: repo_label must be the label's own letters, only the capitals changed`);
-  if (req.provider !== undefined && (!PROVIDER_GROUPS.includes(req.group) || typeof req.provider !== 'string' || !/^[a-z0-9](?:[a-z0-9-]{0,38}[a-z0-9])?$/.test(req.provider) || RESERVED.has(req.provider))) e.push(`${folder}: provider is the third party's name in lower case (letters, digits, hyphens), for a tool site, the parent of an organisation's chapter, the author of an author's work, or the sport of a coach or club`);
+  if (req.provider !== undefined && (!PROVIDER_GROUPS.includes(req.group) || typeof req.provider !== 'string' || !/^[a-z0-9](?:[a-z0-9-]{0,38}[a-z0-9])?$/.test(req.provider) || (RESERVED.has(req.provider) && !(req.group === 'template' && GROUPS.includes(req.provider))))) e.push(`${folder}: provider is the third party's name in lower case (letters, digits, hyphens), for a tool site, the parent of an organisation's chapter, the author of an author's work, or the sport of a coach or club`);
   if (req.domain !== undefined && !DOMAINS.includes(req.domain)) e.push(`${folder}: domain must be one of ${DOMAINS.join(', ')}`);
   // design.b's brief for the site's first build (block 2026-11-24__block-03): optional when the request lands, so the
   // repository is never held up; the keeper's first real build waits for it, and Org status lists requests without one.
@@ -157,7 +159,7 @@ export function load(dir = 'requests') {
 // Repository names are indexed by type, capitalised (Dinis, 20 Nov 2026 ~12:28 UTC: "the repo should be
 // Site__Organisation__Algarve-Evolution, Site__Artist__Emily-Cruz (note the capitalisation on the names)").
 // A site without a group is Site__<Name>. The old name, Site__<label>, is kept as aka so Org apply renames it.
-export const GROUP_NAMES = { artist: 'Artist', cv: 'CV', company: 'Company', organisation: 'Organisation', invest: 'Invest', agents: 'Agent', designer: 'Designer', tool: 'Tool', founder: 'Founder', startups: 'Startups', demo: 'Demo', provider: 'Provider', talent: 'Talent', author: 'Author', platform: 'Platform', frameworks: 'Frameworks', artists: 'Artist' , presentations: 'Presentations', manager: 'Manager', services: 'Services', sport: 'Sport', business: 'Business' };
+export const GROUP_NAMES = { artist: 'Artist', cv: 'CV', company: 'Company', organisation: 'Organisation', invest: 'Invest', agents: 'Agent', designer: 'Designer', tool: 'Tool', founder: 'Founder', startups: 'Startups', demo: 'Demo', provider: 'Provider', talent: 'Talent', author: 'Author', platform: 'Platform', frameworks: 'Frameworks', artists: 'Artist' , presentations: 'Presentations', manager: 'Manager', services: 'Services', sport: 'Sport', business: 'Business', template: 'Template' };
 export const cap = (label) => label.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join('-');
 const suffix = (r) => `${r.group ? `${GROUP_NAMES[r.group]}__` : ''}${r.provider ? `${cap(r.provider)}__` : ''}${r.repo_label || cap(r.label)}`;
 // Per-account agent homes (Dinis, 25 Nov 2026, relayed by a.maestro: one repository per role per account,
