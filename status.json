@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
-  "updated": "2026-11-24T13:21Z",
+  "updated": "2026-11-25T00:20Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -164,7 +164,8 @@
     "Dinis: say \"push 38\" and \"push 49\" in factory.b's session. Both are approved in block 1, but its permission check refused the push. 38 (0048389): policy wording, the DNS role is active for all four zones. 49 (f125da8): the signature check names two old unsigned Factory commits instead of failing on them - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: start a fresh accountant.b session in Site__Agents__Accountant from board/accountant.b/handover-2026-11-24/START.md (on Sonnet if you agree); its settings there allow it to make its own key",
     "Dinis: archive chiswick-cheese-market.b's session (offboarding case 2, a site agent retired after hand-over; key retired in 23c180c, nothing pending) - https://claude.ai/code/session_01Kw9UwBShWte1Rz5B2Mfznt",
-    "Dinis: attach Site__Agents__Factory with push to factory.b's session, the first step of account B's onboarding order (agreed by factory.b) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
+    "Dinis: attach Site__Agents__Factory with push to factory.b's session, the first step of account B's onboarding order (agreed by factory.b) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+    "Dinis: sovereignwebsite.ai should drop \"Nothing is sold yet\" now that there are customers (your word in a.sites's session, relayed; decisions.b confirming). No one on account B can edit the site: add SovereignWebsite__Website to this session (ask 35) or start website.b (asks 19, 48)"
   ],
   "decisions": [
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",
