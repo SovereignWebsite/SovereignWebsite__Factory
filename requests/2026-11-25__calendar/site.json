@@ -1,0 +1,12 @@
+{
+  "label": "calendar",
+  "group": "tool",
+  "provider": "google",
+  "title": "Google Calendar tool",
+  "description": "A Sovereign Website tool for your calendar, in your browser with your own Google sign-in, read-only first, demo on synthetic events. Not affiliated with or endorsed by Google.",
+  "kind": "demo",
+  "keeper": "mail.dev.a@AgentiCCells.dinis",
+  "design": "a.design@SovereignWebsite.dinis",
+  "conditions": "As the Gmail tool (cd9266f): Sovereign Website brand, no look-alike, no Google logo or trade dress, a notice that it is not affiliated with Google. OAuth with restricted Calendar scopes, read-only first; the token in memory, or sessionStorage on opt-in, never localStorage. A CSP limited to self and the Google API hosts it uses. An ABP. A security review before real use.",
+  "source": "Dinis, 25 Nov 2026, in mail.dev.a's session: \"create also one for calendar ... calendar dot Google dot tool\"; relayed by a.maestro (00:50 UTC) and sites.a."
+}
