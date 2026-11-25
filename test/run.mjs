@@ -701,3 +701,11 @@ console.log('OK (local checks before a push)');
   assert.ok(history()['.github/ci/axe.mjs'].includes('ff9f2e26bdeb31850f4b4a1b004c7ee0fcf57f56'), 'the version on existing sites is recorded, so it is refreshed');
 }
 console.log('OK (axe on every page)');
+
+// deploy-pages gets one more attempt after a pause when the artifact is not yet visible (sites.a, 25 Nov 2026).
+for (const t of ['site-template', 'gate-template', 'agent-template']) {
+  const wf = readFileSync(`seed/${t}/.github/workflows/pages.yml`, 'utf8');
+  assert.ok(/id: deployment\n\s+continue-on-error: true/.test(wf) && /id: retry\n\s+if: steps\.deployment\.outcome == 'failure'/.test(wf), `${t}: deploy retries once`);
+  assert.ok(wf.includes('cancel-in-progress: false'), `${t}: a deploy is never cancelled mid-way`);
+}
+console.log('OK (deploy retries once)');

@@ -73,9 +73,18 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.retry.outputs.page_url }}
     steps:
+      # deploy-pages sometimes starts before the build's artifact is visible ("no artifact named github-pages") and
+      # passes when re-run (SovereignWebsite__Website a94fc8a and 42de84a, Site__Agent__Sites; sites.a, 25 Nov 2026).
+      # So one more attempt after a pause; a second failure fails the job as before.
       - id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+      - if: steps.deployment.outcome == 'failure'
+        run: sleep 30
+      - id: retry
+        if: steps.deployment.outcome == 'failure'
         uses: actions/deploy-pages@v4
   tag:
     needs: [build, deploy]
