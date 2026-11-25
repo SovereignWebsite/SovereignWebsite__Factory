@@ -80,6 +80,23 @@ export function validate(req, folder = '') {
   for (const k of ['keeper', 'design']) if (req[k] !== undefined && (typeof req[k] !== 'string' || !AGENT_NAME.test(req[k]))) e.push(`${folder}: ${k} must be an agent name, <role>@<Project>.<owner>`);
   const filed = (folder.match(/^(\d{4}-\d{2}-\d{2})__/) || [])[1];
   if (filed && filed >= KEEPER_RULE_FROM && req.access !== 'vault' && req.group !== 'agents' && !req.from) for (const k of ['keeper', 'design']) if (req[k] === undefined) e.push(`${folder}: a public site names its ${k} (requests/README.md, "Keeper and design")`);
+  // An agent home: Site__Agent__<Role>__<Provider>__<Number>, its label <role>-<provider>-<number>.
+  if (req.home !== undefined) {
+    const h = req.home;
+    if (!h || typeof h !== 'object' || Array.isArray(h)) e.push(`${folder}: home is { "role", "provider", "number" }`);
+    else {
+      if (req.group !== 'agents') e.push(`${folder}: an agent home is in the agents group`);
+      if (typeof h.role !== 'string' || !/^[a-z][a-z0-9-]{0,30}$/.test(h.role)) e.push(`${folder}: home.role is the role in lower case (letters, digits, hyphens)`);
+      if (h.role_label !== undefined && (typeof h.role_label !== 'string' || !/^[A-Za-z0-9-]+$/.test(h.role_label) || h.role_label.toLowerCase() !== h.role)) e.push(`${folder}: home.role_label must be the role's own letters, only the capitals changed`);
+      if (!HOME_PROVIDERS[h.provider]) e.push(`${folder}: home.provider is one of ${Object.keys(HOME_PROVIDERS).join(', ')}`);
+      if (!Number.isInteger(h.number) || h.number < 1 || h.number > 999) e.push(`${folder}: home.number is the account number, 1 to 999`);
+      if (typeof h.role === 'string' && HOME_PROVIDERS[h.provider] && Number.isInteger(h.number) && req.label !== homeLabel(h)) e.push(`${folder}: an agent home's label is ${homeLabel(h)}`);
+    }
+  }
+  if (req.pages !== undefined && req.pages !== false) e.push(`${folder}: pages is only ever false (no website, no custom domain, no DNS record)`);
+  if (req.pages === false && req.group !== 'agents') e.push(`${folder}: only an agent home goes without a website`);
+  // Old repository names Org apply may rename from (it refuses any other rename, build/org-apply.mjs).
+  if (req.aka !== undefined && (!Array.isArray(req.aka) || !req.aka.every((n) => typeof n === 'string' && /^(Site|Redirect)__[A-Za-z0-9-]+(__[A-Za-z0-9-]+)*$/.test(n)))) e.push(`${folder}: aka is a list of old repository names, Site__... or Redirect__...`);
   if (req.agent !== undefined) {
     if (!/^[a-z0-9.-]+@[A-Za-z0-9.-]+$/.test(req.agent)) e.push(`${folder}: agent must be <role>@<Project>.<owner>`);
     if (req.group !== 'agents') e.push(`${folder}: an agent's site is in the agents group`);
@@ -142,7 +159,16 @@ export function load(dir = 'requests') {
 export const GROUP_NAMES = { artist: 'Artist', cv: 'CV', company: 'Company', organisation: 'Organisation', invest: 'Invest', agents: 'Agent', designer: 'Designer', tool: 'Tool', founder: 'Founder', startups: 'Startups', demo: 'Demo', provider: 'Provider', talent: 'Talent', author: 'Author', platform: 'Platform', frameworks: 'Frameworks', artists: 'Artist' , presentations: 'Presentations', manager: 'Manager', services: 'Services', sport: 'Sport', business: 'Business' };
 export const cap = (label) => label.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join('-');
 const suffix = (r) => `${r.group ? `${GROUP_NAMES[r.group]}__` : ''}${r.provider ? `${cap(r.provider)}__` : ''}${r.repo_label || cap(r.label)}`;
-export const repoName = (r) => `Site__${suffix(r)}`;
+// Per-account agent homes (Dinis, 25 Nov 2026, relayed by a.maestro: one repository per role per account,
+// Site__Agent__<Role>__<Provider>__<Number>, each segment one meaning, preferably no custom domain). The provider is a
+// platform from this list, written with its own capitals; its account code (cl-N, gpt-N, ...) starts the agent ids.
+export const HOME_PROVIDERS = { claude: { name: 'Claude', code: 'cl' }, chatgpt: { name: 'ChatGPT', code: 'gpt' }, mistral: { name: 'Mistral', code: 'mi' }, gemini: { name: 'Gemini', code: 'gem' } };
+const homeName = (h) => `Site__Agent__${h.role_label || cap(h.role)}__${HOME_PROVIDERS[h.provider].name}__${h.number}`;
+export const homeLabel = (h) => `${h.role}-${h.provider}-${h.number}`;
+export const repoName = (r) => (r.home ? homeName(r.home) : `Site__${suffix(r)}`);
+// A site with "pages": false has no website: no Pages, no custom domain, no DNS record. Its address names the repository.
+export const hasPages = (r) => r.pages !== false;
+export const where = (r) => (hasPages(r) ? host(r) : `github.com/SovereignWebsite/${repoName(r)}`);
 const aka = (name, ...old) => { const a = [...new Set(old)].filter((o) => o !== name); return a.length ? { aka: a } : {}; };
 
 // The sites Org apply and DNS apply look after: new ones, and moved ones once the move is recorded.
@@ -181,20 +207,18 @@ function sites(requests) {
   return live(requests).map((r) => ({
     name: repoName(r),
     // Agent homes are singular, Site__Agent__<Name> (Dinis, 22 Nov 2026 ~17:05 UTC: "It's not agents, it's agent"); the plural is kept as aka so Org apply renames.
-    ...aka(repoName(r), ...(isShared(r.label) ? [] : [`Site__${r.label}`, `Site__${cap(r.label)}`]), ...(r.group === 'agents' ? [`Site__Agents__${r.repo_label || cap(r.label)}`] : [])),
-    description: `${host(r)}: ${r.description}`.slice(0, 350),
-    homepage: `https://${host(r)}`,
-    pages: true,
-    cname: host(r),
-    ...(r.from ? { transfer_from: `${r.from.owner}/${r.from.repo}` } : { seed: r.agent ? 'seed/agent-template' : ACCESS[r.access || 'public'] }),
+    ...aka(repoName(r), ...(isShared(r.label) || r.home ? [] : [`Site__${r.label}`, `Site__${cap(r.label)}`]), ...(r.group === 'agents' && !r.home ? [`Site__Agents__${r.repo_label || cap(r.label)}`] : []), ...(r.aka || [])),
+    description: `${where(r)}: ${r.description}`.slice(0, 350),
+    ...(hasPages(r) ? { homepage: `https://${host(r)}`, pages: true, cname: host(r) } : { pages: false }),
+    ...(r.from ? { transfer_from: `${r.from.owner}/${r.from.repo}` } : { seed: !hasPages(r) ? 'seed/home-template' : r.agent ? 'seed/agent-template' : ACCESS[r.access || 'public'] }),
     ...(r.collaborators ? { collaborators: r.collaborators } : {}),
-    vars: { label: r.label, repo: repoName(r), host: host(r), title: r.title, description: r.description, kind: r.kind, ...(r.agent ? { agent: r.agent } : {}) },
+    vars: { label: r.label, repo: repoName(r), host: where(r), title: r.title, description: r.description, kind: r.kind, ...(r.agent ? { agent: r.agent } : {}) },
   }));
 }
 
 export function dnsRecords(requests) {
   return [
-    ...live(requests).map((r) => ({ zone: domain(r), name: host(r), type: 'CNAME', values: ['sovereignwebsite.github.io'], for: repoName(r) })),
+    ...live(requests).filter(hasPages).map((r) => ({ zone: domain(r), name: host(r), type: 'CNAME', values: ['sovereignwebsite.github.io'], for: repoName(r) })),
     ...redirects(requests).map((x) => ({ zone: zoneOf(x.from), name: x.from, type: 'CNAME', values: ['sovereignwebsite.github.io'], for: x.name })),
   ];
 }
