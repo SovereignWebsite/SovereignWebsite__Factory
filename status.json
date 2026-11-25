@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
-  "updated": "2026-11-25T11:58Z",
+  "updated": "2026-11-25T17:21Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -136,7 +136,8 @@
     "factory.b agreed the onboarding order; every new agent repository starts with the signature check, leak scan and branch protection, made only by the Factory (security.b's condition)",
     "Dinis's guidance (24 Nov, a.factory's session): every active agent keeps its area in its own Site__Agent__ repository, current at every wake, registered in its type's factory/index.json; b.maestro sent it to the account B agents. Every account B role type has an agent site; areas still missing on hub, conductor, factory, migration, library and outreach",
     "sovereignwebsite.ai has a dedicated keeper: website.a on account A, at Dinis's word (about 00:55 UTC 25 Nov); it removed the no-customers claims (a94fc8a), naming no customer. conductor.b's notes for it: board/conductor.b/2026-11-25__sovereignwebsite-ai-handover.md",
-    "New site keepers (Car Buyer, Lee-Elle Horowitz, Moving Van) publish their own keys in their own repositories; sites.b's keeper start prompt corrected so none asks for an IaC team/keys.json entry: Site__Agent__Sites keeper-start-prompt.md (a41b8e6)"
+    "New site keepers (Car Buyer, Lee-Elle Horowitz, Moving Van) publish their own keys in their own repositories; sites.b's keeper start prompt corrected so none asks for an IaC team/keys.json entry: Site__Agent__Sites keeper-start-prompt.md (a41b8e6)",
+    "Naming model agreed by Dinis (25 Nov, a.maestro's session): ids <account id>.<role>[.<speciality>]@[<project>.]<owner>, account B is cl-2, the factory becomes infra. Incremental, each step a PR for Dinis; the team and site keepers told not to rename until their step"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
