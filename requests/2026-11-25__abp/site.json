@@ -1,0 +1,10 @@
+{
+  "label": "abp",
+  "group": "agents",
+  "repo_label": "ABP",
+  "agent": "a.abp@SovereignWebsite.dinis",
+  "title": "ABP agents",
+  "description": "The Agent Behaviour Policy agents' own site: the policies as data, each agent's generated ABP, run reports, hourly reviews and case studies, each account's under /factory/<owner>/<account>/.",
+  "kind": "owner",
+  "source": "Dinis Cruz, in a.maestro's session, 25 Nov 2026 15:19 UTC: \"yes can you create a start up kit and can you put is on the and on the main SovereignWebsite.ai with a lot of it (and live examples) coming from Site__Agent__ABP\"; relayed by a.maestro (15:20). Its first keeper, a.abp, is started once the repository exists, at Dinis's word."
+}
