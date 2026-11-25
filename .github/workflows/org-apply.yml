@@ -98,6 +98,8 @@ jobs:
   # policy/abp.json (pipeline external-collaborators). One token per owner, limited to the listed repositories.
   # A separate job, so a problem here never stops the organisation's own apply.
   external-collaborators:
+    # plan_only changes nothing, so this job does not run with it (a.devops's review of fdad22b).
+    if: inputs.plan_only != true
     runs-on: ubuntu-latest
     environment: apply
     steps:
