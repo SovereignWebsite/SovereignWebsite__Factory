@@ -752,3 +752,53 @@ console.log('OK (stylesheets carry a content hash)');
   assert.equal(R.repoName(r), 'Site__Sport__Padel__Oscar');
 }
 console.log('OK (sport coaches)');
+
+// Naming step 1 (Dinis, 25 Nov 2026, relayed by a.maestro): agent homes Site__Agent__<Role>__<Provider>__<Number>, with
+// no website ("pages": false), and old names written in a request ("aka") so Org apply may rename from them.
+{
+  const R = await import('../build/requests.mjs');
+  const { requests } = R.load('requests');
+  // Every request that existed before these rules keeps its repository, address, aliases, domain and DNS record.
+  const before = JSON.parse(readFileSync('test/fixtures/names-2026-11-25.json', 'utf8')).names;
+  const repos = Object.fromEntries(R.repos(requests).map((x) => [x.name, x]));
+  const dns = new Set(R.dnsRecords(requests).map((d) => d.name));
+  for (const [folder, was] of Object.entries(before)) {
+    const r = requests.find((x) => x.folder === folder);
+    if (!r) continue; // a request removed later is not this test's business
+    const now = repos[R.repoName(r)] || {};
+    if (r.home || r.aka || r.pages === false) continue; // changed on purpose by a later naming step
+    assert.deepEqual({ repo: R.repoName(r), host: R.host(r), aka: now.aka || [], cname: now.cname || null, dns: dns.has(R.host(r)) }, was, `${folder} keeps its names`);
+  }
+  // An agent home.
+  const home = { label: 'router-claude-8', group: 'agents', agent: 'cl-8.router@dinis', title: 't', description: 'd', kind: 'owner', home: { role: 'router', provider: 'claude', number: 8 }, pages: false };
+  assert.deepEqual(R.validate(home, '2026-11-26__router-claude-8'), []);
+  assert.equal(R.repoName(home), 'Site__Agent__Router__Claude__8');
+  assert.equal(R.repoName({ ...home, label: 'router-chatgpt-1', home: { role: 'router', provider: 'chatgpt', number: 1 } }), 'Site__Agent__Router__ChatGPT__1', 'the provider keeps its own capitals');
+  assert.equal(R.repoName({ ...home, label: 'aws-claude-1', home: { role: 'aws', role_label: 'AWS', provider: 'claude', number: 1 } }), 'Site__Agent__AWS__Claude__1');
+  const spec = R.repos([{ ...home, folder: '2026-11-26__router-claude-8', moved: false }])[0];
+  assert.equal(spec.pages, false); assert.equal(spec.cname, undefined); assert.equal(spec.homepage, undefined);
+  assert.equal(spec.seed, 'seed/home-template'); assert.equal(spec.vars.host, 'github.com/SovereignWebsite/Site__Agent__Router__Claude__8');
+  assert.equal(R.dnsRecords([{ ...home, folder: 'x', moved: false }]).length, 0, 'no DNS record for a home with no website');
+  const { plan } = await import('../build/org-plan.mjs');
+  const acts = plan({ org: 'SovereignWebsite', defaults: {}, repos: [spec] }, {}).actions.map((a) => a.action);
+  assert.ok(!acts.includes('pages.enable') && !acts.includes('pages.set_cname') && acts.includes('repo.seed'), 'a new home is created and seeded, with no Pages and no domain');
+  // Refused shapes.
+  const bad = (x, re) => assert.ok(R.validate({ ...home, ...x }, '2026-11-26__router-claude-8').some((m) => re.test(m)), `refused: ${JSON.stringify(x)}`);
+  bad({ label: 'router-8' }, /label is router-claude-8/);
+  bad({ home: { role: 'router', provider: 'grok', number: 8 } }, /home.provider/);
+  bad({ home: { role: 'router', provider: 'claude', number: 0 } }, /home.number/);
+  bad({ group: 'tool' }, /agents group/);
+  bad({ pages: true }, /pages is only ever false/);
+  bad({ aka: ['Bad Name'] }, /aka is a list/);
+  // A written alias lets Org apply rename an existing repository.
+  const renamed = R.repos([{ label: 'maestro-claude-8', group: 'agents', agent: 'cl-8.maestro@dinis', title: 't', description: 'd', kind: 'owner', home: { role: 'maestro', provider: 'claude', number: 8 }, aka: ['Site__Agent__Maestro-Claude-8'], folder: 'x', moved: false }])[0];
+  assert.ok(renamed.aka.includes('Site__Agent__Maestro-Claude-8'));
+  assert.deepEqual(plan({ org: 'SovereignWebsite', defaults: {}, repos: [renamed] }, { 'Site__Agent__Maestro-Claude-8': {} }).actions, [{ action: 'repo.rename', target: 'Site__Agent__Maestro-Claude-8', to: 'Site__Agent__Maestro__Claude__8' }]);
+  // The new agent ids pass where agent names are checked.
+  for (const id of ['cl-1.infra@SovereignWebsite.dinis', 'cl-8.maestro@dinis', 'cl-1.aws.iam@SovereignWebsite.dinis', 'gpt-1.router@dinis']) assert.deepEqual(R.validate({ label: 'x', group: 'agents', agent: id, title: 't', description: 'd', kind: 'owner' }, '2026-11-26__x'), [], id);
+  // The home seed has no website parts.
+  const { existsSync } = await import('node:fs');
+  for (const f of ['.github/workflows/pages.yml', 'site/CNAME', 'site/index.html', 'tools/check.sh']) assert.ok(!existsSync(`seed/home-template/${f}`), `home seed has no ${f}`);
+  for (const f of ['.github/workflows/signers.yml', '.github/ci/signers.mjs', 'CLAUDE.md', 'START.md', 'site/factory/index.json', 'tools/setup-signing.sh']) assert.ok(existsSync(`seed/home-template/${f}`), `home seed has ${f}`);
+}
+console.log('OK (agent homes and written aliases)');
