@@ -1,0 +1,1 @@
+Follow START.md in this repository from step 0 to step 6, in order. Use your own agent name and session URL. Stop and record a blocker in your area's now.md (and tell your maestro) at the first step that fails; never work around a refusal.

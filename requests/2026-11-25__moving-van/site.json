@@ -1,0 +1,10 @@
+{
+  "label": "moving-van",
+  "group": "business",
+  "title": "Man and van moving (demo)",
+  "description": "A demo site for a small family moving service: placeholder content until the owner supplies the details.",
+  "kind": "demo",
+  "keeper": "b.site.moving-van@SovereignWebsite.dinis",
+  "design": "design.b@SovereignWebsite.dinis",
+  "design_brief": "https://design.agents.sovereignweb.site/briefs/moving-van.html"
+}

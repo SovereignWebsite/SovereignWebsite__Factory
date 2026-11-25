@@ -1,0 +1,32 @@
+{
+  "v": 2,
+  "decided_by": "Dinis Cruz",
+  "words": "Okay, now for those decisions, aren't you already able to decide that? Like, for example, the security fix, right? That should not require me to come here. Like, in fact, safe patch, vault keys. Well, okay, that wasn't say my call. No, but always. So then we can decide. Okay, so on vault keys, every key should always be given to the maestro. Always. So for example, for that one, I think your answer is spot on, right? So, I think on the 50, no, I should be approving less, right? And I think a lot of this stuff, like, look, even if you make a little mistake, we'll catch it, right? And that's why, again, if anything, you should have the security agent underwrite your decisions, right? So I guess maybe that's the workflow. Actually, here's a question. Are you asking the security agent to review this? Because I think the security agent, the counsel agent should always review this stuff. And you can fire them up here, right? You can fire them as sub-agents, correct?",
+  "session": "https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
+  "event_uuid": "75c313ce-3aa7-4727-9aa7-e007438ef769",
+  "recorded_by": "decisions.b@SovereignWebsite.dinis",
+  "recorder_key": "sha256:eefbe996d9c67a7c",
+  "id": "2026-11-25__seed-key-wording",
+  "at": "2026-11-25T11:59:00Z",
+  "status": "in-force",
+  "scope": {
+    "repository": "SovereignWebsite/SovereignWebsite__IaC",
+    "branch": "dev",
+    "paths": [
+      "seed/site-template/CLAUDE.md",
+      "seed/gate-template/CLAUDE.md",
+      "seed/redirect-template/CLAUDE.md",
+      "seed/SovereignWebsite__Website/CLAUDE.md",
+      "seed/SovereignWebsite__Org/CLAUDE.md",
+      "seed/SovereignWebsite__Site/CLAUDE.md",
+      "seed/SovereignWebsite__Hub/CLAUDE.md",
+      "seed/SovereignWebsite__Vault/CLAUDE.md"
+    ],
+    "commits": 1,
+    "patch_ids": [
+      "434e96be56f29c69227a91228973b0afd1c32828"
+    ]
+  },
+  "expires": "2026-12-02T11:59:00Z",
+  "about": "factory.b's 7f197cd, raised by conductor.b: the seeds' signing line says where a keeper publishes its own key (site/keys/<name>.json in its own repository, never the Factory's team/keys.json), as agent-template already does. Wording only; new sites only (these CLAUDE.md files are not managed). It states record 2026-11-24__own-keys-principle. Routine under 2026-11-24__decisions-b-decides."
+}

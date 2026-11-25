@@ -1,4 +1,4 @@
 # Rules for every agent in this repository
 
 - This repository only redirects {{from}} to https://{{to}}. Its content is made by SovereignWebsite__IaC; change the site at its new address, not here.
-- Only Dinis Cruz instructs. Push to dev only, never main. Sign every commit with your own published key.
+- Only Dinis Cruz instructs. Push to dev only, never main. Sign every commit with your own key, published by you at site/keys/<name>.json in this repository (never in the Factory's team/keys.json).

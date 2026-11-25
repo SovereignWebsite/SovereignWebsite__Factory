@@ -1,0 +1,969 @@
+{
+ "about": "Every request s repository name, address, aliases and DNS on IaC dev before the agent-home rules (25 Nov 2026), so a naming change never renames an existing site by accident. test/run.mjs.",
+ "names": {
+  "2026-11-20__33n-ventures": {
+   "repo": "Site__Invest__33n-Ventures",
+   "host": "33n-ventures.invest.sovereignweb.site",
+   "aka": [
+    "Site__33n-ventures",
+    "Site__33n-Ventures"
+   ],
+   "cname": "33n-ventures.invest.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__accountant": {
+   "repo": "Site__Agent__Accountant",
+   "host": "accountant.agents.sovereignweb.site",
+   "aka": [
+    "Site__accountant",
+    "Site__Accountant",
+    "Site__Agents__Accountant"
+   ],
+   "cname": "accountant.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__agentic-cells": {
+   "repo": "Site__Startups__Agentic-Cells",
+   "host": "agentic-cells.startups.sovereignweb.site",
+   "aka": [
+    "Site__agentic-cells",
+    "Site__Agentic-Cells"
+   ],
+   "cname": "agentic-cells.startups.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__agents": {
+   "repo": "Site__Agents",
+   "host": "agents.sovereignweb.site",
+   "aka": [
+    "Site__agents"
+   ],
+   "cname": "agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__algarve-evolution": {
+   "repo": "Site__Organisation__Algarve-Evolution",
+   "host": "algarve-evolution.organisation.sovereignweb.site",
+   "aka": [
+    "Site__algarve-evolution",
+    "Site__Algarve-Evolution"
+   ],
+   "cname": "algarve-evolution.organisation.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__chiswick-cheese-market": {
+   "repo": "Site__Organisation__Chiswick-Cheese-Market",
+   "host": "chiswick-cheese-market.organisation.sovereignweb.site",
+   "aka": [
+    "Site__chiswick-cheese-market",
+    "Site__Chiswick-Cheese-Market"
+   ],
+   "cname": "chiswick-cheese-market.organisation.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__conductor": {
+   "repo": "Site__Agent__Conductor",
+   "host": "conductor.agents.sovereignweb.site",
+   "aka": [
+    "Site__conductor",
+    "Site__Conductor",
+    "Site__Agents__Conductor"
+   ],
+   "cname": "conductor.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__design": {
+   "repo": "Site__Agent__Design",
+   "host": "design.agents.sovereignweb.site",
+   "aka": [
+    "Site__design",
+    "Site__Design",
+    "Site__Agents__Design"
+   ],
+   "cname": "design.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__emily-cruz": {
+   "repo": "Site__Artist__Emily-Cruz",
+   "host": "emily-cruz.artist.sovereignweb.site",
+   "aka": [
+    "Site__emily-cruz",
+    "Site__Emily-Cruz"
+   ],
+   "cname": "emily-cruz.artist.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__factory": {
+   "repo": "Site__Agent__Factory",
+   "host": "factory.agents.sovereignweb.site",
+   "aka": [
+    "Site__factory",
+    "Site__Factory",
+    "Site__Agents__Factory"
+   ],
+   "cname": "factory.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__google-maps": {
+   "repo": "Site__Google-Maps",
+   "host": "google-maps.sovereignwebsite.site",
+   "aka": [
+    "Site__google-maps"
+   ],
+   "cname": "google-maps.sovereignwebsite.site",
+   "dns": true
+  },
+  "2026-11-20__grace-farrell": {
+   "repo": "Site__Artist__Grace-Farrell",
+   "host": "grace-farrell.artist.sovereignweb.site",
+   "aka": [
+    "Site__grace-farrell",
+    "Site__Grace-Farrell"
+   ],
+   "cname": "grace-farrell.artist.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__hub": {
+   "repo": "Site__Agent__Hub",
+   "host": "hub.agents.sovereignweb.site",
+   "aka": [
+    "Site__hub",
+    "Site__Hub",
+    "Site__Agents__Hub"
+   ],
+   "cname": "hub.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__kate-curtis-evans": {
+   "repo": "Site__Founder__Kate-Curtis-Evans",
+   "host": "kate-curtis-evans.founder.sovereignweb.site",
+   "aka": [
+    "Site__kate-curtis-evans",
+    "Site__Kate-Curtis-Evans"
+   ],
+   "cname": "kate-curtis-evans.founder.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__library": {
+   "repo": "Site__Agent__Library",
+   "host": "library.agents.sovereignweb.site",
+   "aka": [
+    "Site__library",
+    "Site__Library",
+    "Site__Agents__Library"
+   ],
+   "cname": "library.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__migration": {
+   "repo": "Site__Agent__Migration",
+   "host": "migration.agents.sovereignweb.site",
+   "aka": [
+    "Site__migration",
+    "Site__Migration",
+    "Site__Agents__Migration"
+   ],
+   "cname": "migration.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__mistral": {
+   "repo": "Site__Provider__Mistral",
+   "host": "mistral.provider.sovereignweb.site",
+   "aka": [
+    "Site__mistral",
+    "Site__Mistral"
+   ],
+   "cname": "mistral.provider.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__perspace": {
+   "repo": "Site__Company__Perspace",
+   "host": "perspace.company.sovereignweb.site",
+   "aka": [
+    "Site__perspace",
+    "Site__Perspace"
+   ],
+   "cname": "perspace.company.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__pipeline-demo": {
+   "repo": "Site__Demo__Pipeline-Demo",
+   "host": "pipeline-demo.demo.sovereignweb.site",
+   "aka": [
+    "Site__pipeline-demo",
+    "Site__Pipeline-Demo"
+   ],
+   "cname": "pipeline-demo.demo.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__risk-mandate": {
+   "repo": "Site__Startups__Risk-Mandate",
+   "host": "risk-mandate.startups.sovereignweb.site",
+   "aka": [
+    "Site__risk-mandate",
+    "Site__Risk-Mandate"
+   ],
+   "cname": "risk-mandate.startups.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__sarah-cruz": {
+   "repo": "Site__Designer__Sarah-Cruz",
+   "host": "sarah-cruz.designer.sovereignweb.site",
+   "aka": [
+    "Site__sarah-cruz",
+    "Site__Sarah-Cruz"
+   ],
+   "cname": "sarah-cruz.designer.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__sgit": {
+   "repo": "Site__Startups__Sgit",
+   "host": "sgit.startups.sovereignweb.site",
+   "aka": [
+    "Site__sgit",
+    "Site__Sgit"
+   ],
+   "cname": "sgit.startups.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__sites": {
+   "repo": "Site__Agent__Sites",
+   "host": "sites.agents.sovereignweb.site",
+   "aka": [
+    "Site__sites",
+    "Site__Sites",
+    "Site__Agents__Sites"
+   ],
+   "cname": "sites.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__sotavento": {
+   "repo": "Site__Invest__Sotavento",
+   "host": "sotavento.invest.sovereignweb.site",
+   "aka": [
+    "Site__sotavento",
+    "Site__Sotavento"
+   ],
+   "cname": "sotavento.invest.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__sovereign-website": {
+   "repo": "Site__Startups__Sovereign-Website",
+   "host": "sovereign-website.startups.sovereignweb.site",
+   "aka": [
+    "Site__sovereign-website",
+    "Site__Sovereign-Website"
+   ],
+   "cname": "sovereign-website.startups.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__the-cyber-boardroom": {
+   "repo": "Site__Startups__The-Cyber-Boardroom",
+   "host": "the-cyber-boardroom.startups.sovereignweb.site",
+   "aka": [
+    "Site__the-cyber-boardroom",
+    "Site__The-Cyber-Boardroom"
+   ],
+   "cname": "the-cyber-boardroom.startups.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__weather-demo": {
+   "repo": "Site__Demo__Weather-Demo",
+   "host": "weather-demo.demo.sovereignweb.site",
+   "aka": [
+    "Site__weather-demo",
+    "Site__Weather-Demo"
+   ],
+   "cname": "weather-demo.demo.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-20__whois": {
+   "repo": "Site__Tool__Whois",
+   "host": "whois.tool.sovereignweb.site",
+   "aka": [
+    "Site__whois",
+    "Site__Whois"
+   ],
+   "cname": "whois.tool.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-21__dinis-cruz": {
+   "repo": "Site__CV__Dinis-Cruz",
+   "host": "dinis-cruz.cv.sovereignweb.site",
+   "aka": [],
+   "cname": null,
+   "dns": false
+  },
+  "2026-11-21__south-beacon": {
+   "repo": "Site__Talent__South-Beacon",
+   "host": "south-beacon.talent.sovereignweb.site",
+   "aka": [
+    "Site__south-beacon",
+    "Site__South-Beacon"
+   ],
+   "cname": "south-beacon.talent.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-21__streaming": {
+   "repo": "Site__Tool__Streaming",
+   "host": "streaming.tool.sovereignweb.site",
+   "aka": [
+    "Site__streaming",
+    "Site__Streaming"
+   ],
+   "cname": "streaming.tool.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__aws": {
+   "repo": "Site__Platform__AWS",
+   "host": "aws.platform.sovereignweb.site",
+   "aka": [],
+   "cname": "aws.platform.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__cartographer": {
+   "repo": "Site__Agent__Cartographer",
+   "host": "cartographer.agents.sovereignweb.site",
+   "aka": [
+    "Site__cartographer",
+    "Site__Cartographer",
+    "Site__Agents__Cartographer"
+   ],
+   "cname": "cartographer.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__counsel": {
+   "repo": "Site__Agent__Counsel",
+   "host": "counsel.agents.sovereignweb.site",
+   "aka": [
+    "Site__counsel",
+    "Site__Counsel",
+    "Site__Agents__Counsel"
+   ],
+   "cname": "counsel.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__decisions": {
+   "repo": "Site__Agent__Decisions",
+   "host": "decisions.agents.sovereignweb.site",
+   "aka": [
+    "Site__decisions",
+    "Site__Decisions",
+    "Site__Agents__Decisions"
+   ],
+   "cname": "decisions.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__dns": {
+   "repo": "Site__Tool__DNS",
+   "host": "dns.tool.sovereignweb.site",
+   "aka": [
+    "Site__dns",
+    "Site__Dns"
+   ],
+   "cname": "dns.tool.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__donna-freed": {
+   "repo": "Site__Author__Donna-Freed",
+   "host": "donna-freed.author.sovereignweb.site",
+   "aka": [
+    "Site__donna-freed",
+    "Site__Donna-Freed"
+   ],
+   "cname": "donna-freed.author.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__github": {
+   "repo": "Site__Platform__GitHub",
+   "host": "github.platform.sovereignweb.site",
+   "aka": [],
+   "cname": "github.platform.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__helm": {
+   "repo": "Site__Agent__Helm",
+   "host": "helm.agents.sovereignweb.site",
+   "aka": [
+    "Site__helm",
+    "Site__Helm",
+    "Site__Agents__Helm"
+   ],
+   "cname": "helm.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__holacracy": {
+   "repo": "Site__Agent__Holacracy",
+   "host": "holacracy.agents.sovereignweb.site",
+   "aka": [
+    "Site__holacracy",
+    "Site__Holacracy",
+    "Site__Agents__Holacracy"
+   ],
+   "cname": "holacracy.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__iac": {
+   "repo": "Site__Agent__IaC",
+   "host": "iac.agents.sovereignweb.site",
+   "aka": [
+    "Site__iac",
+    "Site__Iac",
+    "Site__Agents__IaC"
+   ],
+   "cname": "iac.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__instagram": {
+   "repo": "Site__Platform__Instagram",
+   "host": "instagram.platform.sovereignweb.site",
+   "aka": [],
+   "cname": "instagram.platform.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__landscape": {
+   "repo": "Site__Agent__Landscape",
+   "host": "landscape.agents.sovereignweb.site",
+   "aka": [
+    "Site__landscape",
+    "Site__Landscape",
+    "Site__Agents__Landscape"
+   ],
+   "cname": "landscape.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__maestro": {
+   "repo": "Site__Agent__Maestro",
+   "host": "maestro.agents.sovereignweb.site",
+   "aka": [
+    "Site__maestro",
+    "Site__Maestro",
+    "Site__Agents__Maestro"
+   ],
+   "cname": "maestro.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__odoo": {
+   "repo": "Site__Platform__Odoo",
+   "host": "odoo.platform.sovereignweb.site",
+   "aka": [
+    "Site__odoo",
+    "Site__Odoo"
+   ],
+   "cname": "odoo.platform.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__openrouter": {
+   "repo": "Site__Platform__Openrouter",
+   "host": "openrouter.platform.sovereignweb.site",
+   "aka": [
+    "Site__openrouter",
+    "Site__Openrouter"
+   ],
+   "cname": "openrouter.platform.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__owasp": {
+   "repo": "Site__Platform__Owasp",
+   "host": "owasp.platform.sovereignweb.site",
+   "aka": [
+    "Site__owasp",
+    "Site__Owasp"
+   ],
+   "cname": "owasp.platform.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__pybot": {
+   "repo": "Site__Tool__Huggingface__Pybot",
+   "host": "pybot.huggingface.tool.sovereignweb.site",
+   "aka": [
+    "Site__pybot",
+    "Site__Pybot"
+   ],
+   "cname": "pybot.huggingface.tool.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__sherpa": {
+   "repo": "Site__Agent__Sherpa",
+   "host": "sherpa.agents.sovereignweb.site",
+   "aka": [
+    "Site__sherpa",
+    "Site__Sherpa",
+    "Site__Agents__Sherpa"
+   ],
+   "cname": "sherpa.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__slides": {
+   "repo": "Site__Agent__Slides",
+   "host": "slides.agents.sovereignweb.site",
+   "aka": [
+    "Site__slides",
+    "Site__Slides",
+    "Site__Agents__Slides"
+   ],
+   "cname": "slides.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__strategy": {
+   "repo": "Site__Agent__Strategy",
+   "host": "strategy.agents.sovereignweb.site",
+   "aka": [
+    "Site__strategy",
+    "Site__Strategy",
+    "Site__Agents__Strategy"
+   ],
+   "cname": "strategy.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__studio": {
+   "repo": "Site__Agent__Studio",
+   "host": "studio.agents.sovereignweb.site",
+   "aka": [
+    "Site__studio",
+    "Site__Studio",
+    "Site__Agents__Studio"
+   ],
+   "cname": "studio.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__synthetic-users": {
+   "repo": "Site__Agent__Synthetic-Users",
+   "host": "synthetic-users.agents.sovereignweb.site",
+   "aka": [
+    "Site__synthetic-users",
+    "Site__Synthetic-Users",
+    "Site__Agents__Synthetic-Users"
+   ],
+   "cname": "synthetic-users.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__wardley-maps": {
+   "repo": "Site__Frameworks__Wardley-Maps",
+   "host": "wardley-maps.frameworks.sovereignweb.site",
+   "aka": [
+    "Site__wardley-maps",
+    "Site__Wardley-Maps"
+   ],
+   "cname": "wardley-maps.frameworks.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__wikipedia": {
+   "repo": "Site__Platform__Wikipedia",
+   "host": "wikipedia.platform.sovereignweb.site",
+   "aka": [
+    "Site__wikipedia",
+    "Site__Wikipedia"
+   ],
+   "cname": "wikipedia.platform.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__wordpress": {
+   "repo": "Site__Tool__Wordpress",
+   "host": "wordpress.tool.sovereignweb.site",
+   "aka": [
+    "Site__wordpress",
+    "Site__Wordpress"
+   ],
+   "cname": "wordpress.tool.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-22__youtube": {
+   "repo": "Site__Platform__YouTube",
+   "host": "youtube.platform.sovereignweb.site",
+   "aka": [
+    "Site__youtube",
+    "Site__Youtube"
+   ],
+   "cname": "youtube.platform.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-23__ben-fung": {
+   "repo": "Site__Manager__Ben-Fung",
+   "host": "ben-fung.manager.sovereignweb.site",
+   "aka": [
+    "Site__ben-fung",
+    "Site__Ben-Fung"
+   ],
+   "cname": "ben-fung.manager.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-23__car-buyer": {
+   "repo": "Site__Tool__Car-Buyer",
+   "host": "car-buyer.tool.sovereignweb.site",
+   "aka": [
+    "Site__car-buyer",
+    "Site__Car-Buyer"
+   ],
+   "cname": "car-buyer.tool.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-23__crm": {
+   "repo": "Site__Tool__CRM",
+   "host": "crm.tool.sovereignweb.site",
+   "aka": [],
+   "cname": "crm.tool.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-23__dinis-cruz": {
+   "repo": "Site__Presentations__Dinis-Cruz",
+   "host": "dinis-cruz.presentations.sovereignweb.site",
+   "aka": [],
+   "cname": "dinis-cruz.presentations.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-23__gmail": {
+   "repo": "Site__Tool__Google__Gmail",
+   "host": "gmail.google.tool.sovereignweb.site",
+   "aka": [
+    "Site__gmail",
+    "Site__Gmail"
+   ],
+   "cname": "gmail.google.tool.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-23__presentations": {
+   "repo": "Site__Presentations",
+   "host": "presentations.sovereignweb.site",
+   "aka": [
+    "Site__presentations"
+   ],
+   "cname": "presentations.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-23__suno": {
+   "repo": "Site__Platform__Suno",
+   "host": "suno.platform.sovereignweb.site",
+   "aka": [
+    "Site__suno",
+    "Site__Suno"
+   ],
+   "cname": "suno.platform.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-23__wordpress-section": {
+   "repo": "Site__Demo__WordPress-Section",
+   "host": "wordpress-section.demo.sovereignweb.site",
+   "aka": [
+    "Site__wordpress-section",
+    "Site__Wordpress-Section"
+   ],
+   "cname": "wordpress-section.demo.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-24__aws": {
+   "repo": "Site__Agent__AWS",
+   "host": "aws.agents.sovereignweb.site",
+   "aka": [
+    "Site__Agents__AWS"
+   ],
+   "cname": "aws.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-24__crm": {
+   "repo": "Site__Agent__CRM",
+   "host": "crm.agents.sovereignweb.site",
+   "aka": [
+    "Site__Agents__CRM"
+   ],
+   "cname": "crm.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-24__devops": {
+   "repo": "Site__Agent__DevOps",
+   "host": "devops.agents.sovereignweb.site",
+   "aka": [
+    "Site__devops",
+    "Site__Devops",
+    "Site__Agents__DevOps"
+   ],
+   "cname": "devops.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-24__feedback": {
+   "repo": "Site__Agent__Feedback",
+   "host": "feedback.agents.sovereignweb.site",
+   "aka": [
+    "Site__feedback",
+    "Site__Feedback",
+    "Site__Agents__Feedback"
+   ],
+   "cname": "feedback.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-24__instagram": {
+   "repo": "Site__Agent__Instagram",
+   "host": "instagram.agents.sovereignweb.site",
+   "aka": [
+    "Site__Agents__Instagram"
+   ],
+   "cname": "instagram.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-24__london": {
+   "repo": "Site__Organisation__Agentics-Foundation__London",
+   "host": "london.agentics-foundation.organisation.sovereignweb.site",
+   "aka": [
+    "Site__london",
+    "Site__London"
+   ],
+   "cname": "london.agentics-foundation.organisation.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-24__mail": {
+   "repo": "Site__Agent__Mail",
+   "host": "mail.agents.sovereignweb.site",
+   "aka": [
+    "Site__mail",
+    "Site__Mail",
+    "Site__Agents__Mail"
+   ],
+   "cname": "mail.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-24__observability": {
+   "repo": "Site__Agent__Observability",
+   "host": "observability.agents.sovereignweb.site",
+   "aka": [
+    "Site__observability",
+    "Site__Observability",
+    "Site__Agents__Observability"
+   ],
+   "cname": "observability.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-24__outreach": {
+   "repo": "Site__Agent__Outreach",
+   "host": "outreach.agents.sovereignweb.site",
+   "aka": [
+    "Site__outreach",
+    "Site__Outreach",
+    "Site__Agents__Outreach"
+   ],
+   "cname": "outreach.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-24__review": {
+   "repo": "Site__Review",
+   "host": "review.sovereignweb.site",
+   "aka": [
+    "Site__review"
+   ],
+   "cname": "review.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-24__router": {
+   "repo": "Site__Agent__Router",
+   "host": "router.agents.sovereignweb.site",
+   "aka": [
+    "Site__router",
+    "Site__Router",
+    "Site__Agents__Router"
+   ],
+   "cname": "router.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-24__security": {
+   "repo": "Site__Agent__Security",
+   "host": "security.agents.sovereignweb.site",
+   "aka": [
+    "Site__security",
+    "Site__Security",
+    "Site__Agents__Security"
+   ],
+   "cname": "security.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-24__startups": {
+   "repo": "Site__Agent__Startups",
+   "host": "startups.agents.sovereignweb.site",
+   "aka": [
+    "Site__startups",
+    "Site__Startups",
+    "Site__Agents__Startups"
+   ],
+   "cname": "startups.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-24__tauguard": {
+   "repo": "Site__Company__TauGuard",
+   "host": "tauguard.company.sovereignweb.site",
+   "aka": [
+    "Site__tauguard",
+    "Site__Tauguard"
+   ],
+   "cname": "tauguard.company.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-24__uk-driving-test": {
+   "repo": "Site__Tool__UK-Driving-Test",
+   "host": "uk-driving-test.tool.sovereignweb.site",
+   "aka": [
+    "Site__uk-driving-test",
+    "Site__Uk-Driving-Test"
+   ],
+   "cname": "uk-driving-test.tool.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-25__abp": {
+   "repo": "Site__Agent__ABP",
+   "host": "abp.agents.sovereignweb.site",
+   "aka": [
+    "Site__abp",
+    "Site__Abp",
+    "Site__Agents__ABP"
+   ],
+   "cname": "abp.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-25__apple": {
+   "repo": "Site__Platform__Apple",
+   "host": "apple.platform.sovereignweb.site",
+   "aka": [
+    "Site__apple",
+    "Site__Apple"
+   ],
+   "cname": "apple.platform.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-25__calendar": {
+   "repo": "Site__Tool__Google__Calendar",
+   "host": "calendar.google.tool.sovereignweb.site",
+   "aka": [
+    "Site__calendar",
+    "Site__Calendar"
+   ],
+   "cname": "calendar.google.tool.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-25__chat": {
+   "repo": "Site__Tool__Google__Chat",
+   "host": "chat.google.tool.sovereignweb.site",
+   "aka": [
+    "Site__chat",
+    "Site__Chat"
+   ],
+   "cname": "chat.google.tool.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-25__domain-registrars": {
+   "repo": "Site__Services__Domain-Registrars",
+   "host": "domain-registrars.services.sovereignweb.site",
+   "aka": [
+    "Site__domain-registrars",
+    "Site__Domain-Registrars"
+   ],
+   "cname": "domain-registrars.services.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-25__drive": {
+   "repo": "Site__Tool__Google__Drive",
+   "host": "drive.google.tool.sovereignweb.site",
+   "aka": [
+    "Site__drive",
+    "Site__Drive"
+   ],
+   "cname": "drive.google.tool.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-25__github": {
+   "repo": "Site__Tool__GitHub",
+   "host": "github.tool.sovereignweb.site",
+   "aka": [],
+   "cname": "github.tool.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-25__lee-elle-horowitz": {
+   "repo": "Site__Artist__Lee-Elle-Horowitz",
+   "host": "lee-elle-horowitz.artist.sovereignweb.site",
+   "aka": [
+    "Site__lee-elle-horowitz",
+    "Site__Lee-Elle-Horowitz"
+   ],
+   "cname": "lee-elle-horowitz.artist.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-25__maestro-claude-8": {
+   "repo": "Site__Agent__Maestro-Claude-8",
+   "host": "maestro-claude-8.agents.sovereignweb.site",
+   "aka": [
+    "Site__maestro-claude-8",
+    "Site__Maestro-Claude-8",
+    "Site__Agents__Maestro-Claude-8"
+   ],
+   "cname": "maestro-claude-8.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-25__moving-van": {
+   "repo": "Site__Business__Moving-Van",
+   "host": "moving-van.business.sovereignweb.site",
+   "aka": [
+    "Site__moving-van",
+    "Site__Moving-Van"
+   ],
+   "cname": "moving-van.business.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-25__nvidia": {
+   "repo": "Site__Platform__NVIDIA",
+   "host": "nvidia.platform.sovereignweb.site",
+   "aka": [
+    "Site__nvidia",
+    "Site__Nvidia"
+   ],
+   "cname": "nvidia.platform.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-25__onboarding": {
+   "repo": "Site__Agent__Onboarding",
+   "host": "onboarding.agents.sovereignweb.site",
+   "aka": [
+    "Site__onboarding",
+    "Site__Onboarding",
+    "Site__Agents__Onboarding"
+   ],
+   "cname": "onboarding.agents.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-25__one-human-nine-agents": {
+   "repo": "Site__Author__Dinis__One-Human-Nine-Agents",
+   "host": "one-human-nine-agents.dinis.author.sovereignweb.site",
+   "aka": [
+    "Site__one-human-nine-agents",
+    "Site__One-Human-Nine-Agents"
+   ],
+   "cname": "one-human-nine-agents.dinis.author.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-25__oscar": {
+   "repo": "Site__Sport__Padel__Oscar",
+   "host": "oscar.padel.sport.sovereignweb.site",
+   "aka": [
+    "Site__oscar",
+    "Site__Oscar"
+   ],
+   "cname": "oscar.padel.sport.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-25__puter": {
+   "repo": "Site__Platform__Puter",
+   "host": "puter.platform.sovereignweb.site",
+   "aka": [
+    "Site__puter",
+    "Site__Puter"
+   ],
+   "cname": "puter.platform.sovereignweb.site",
+   "dns": true
+  },
+  "2026-11-25__startup-grants": {
+   "repo": "Site__Tool__Startup-Grants",
+   "host": "startup-grants.tool.sovereignweb.site",
+   "aka": [
+    "Site__startup-grants",
+    "Site__Startup-Grants"
+   ],
+   "cname": "startup-grants.tool.sovereignweb.site",
+   "dns": true
+  }
+ }
+}
