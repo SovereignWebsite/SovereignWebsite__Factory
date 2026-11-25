@@ -35,5 +35,8 @@ open(f"site/keys/{name}.json", "w").write(json.dumps(entry, indent=2) + "\n")
 print(f"public key written: site/keys/{name}.json (signing {b['signing_fingerprint']})")
 PY
 ssh-keygen -y -f "$SECRET/signing" | cut -d' ' -f1-2 | diff -q - <(python3 -c "import json;print(json.load(open('site/keys/$NAME.json'))['ssh'])") >/dev/null || { echo "key check failed: the OpenSSH key does not match the bundle" >&2; exit 1; }
-git config gpg.format ssh; git config user.signingkey "$SECRET/signing"; git config commit.gpgsign true; git config gpg.ssh.program ssh-keygen
+# Set in THIS clone (--local), so a container's global signer (for example a default ed25519 key) cannot override it.
+git config --local gpg.format ssh; git config --local user.signingkey "$SECRET/signing"; git config --local commit.gpgsign true; git config --local gpg.ssh.program ssh-keygen
+[ "$(git config --get gpg.ssh.program)" = ssh-keygen ] && [ "$(git config --get user.signingkey)" = "$SECRET/signing" ] || { echo "git still picks another signer: check git config --show-origin --get-all user.signingkey" >&2; exit 1; }
+echo "Check after your first commit: git cat-file -p HEAD must show an SSH signature, and git log --show-signature -1 (with an allowed-signers file) must name YOUR key, not the container's."
 echo "git signs with your key in this clone. Next: commit ONLY site/keys/$NAME.json, with trailers Agent: $AGENT and Claude-Session: $SESSION (START.md step 3)."
