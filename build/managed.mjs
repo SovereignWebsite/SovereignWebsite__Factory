@@ -10,7 +10,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fill } from './fill.mjs';
 
-export const MANAGED = ['.github/ci/signers.mjs', 'CLAUDE.md'];
+export const MANAGED = ['.github/ci/signers.mjs', 'CLAUDE.md', '.github/ci/axe.mjs'];
 // Managed files whose seed text carries {{vars}}: compared and written filled with each site's own values. Only for
 // the seeds named here, and their earlier versions are kept as text (seed/managed-templates/<seed>/<file>/), since a
 // blob id of a filled file differs per site. Dinis, 24 Nov 2026 in a.factory's session: every agent site's

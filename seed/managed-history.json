@@ -8,6 +8,11 @@
       "e08d542523b1e24dc9241ef7065c987d342a658a",
       "120178a82f75c68f2c7d0998846d797876f1fa57",
       "e82a1fd741114d2aa6951eeb47345482a486f1d6"
+    ],
+    ".github/ci/axe.mjs": [
+      "ff9f2e26bdeb31850f4b4a1b004c7ee0fcf57f56",
+      "0b80db36575c3b38f9d4cc92fe0e287f56ceb25a",
+      "523c01ecbc70b781f40d450cca6339c22c157a51"
     ]
   }
 }

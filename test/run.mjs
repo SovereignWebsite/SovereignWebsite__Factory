@@ -687,3 +687,17 @@ console.log('OK (scoped certificate nudge)');
   }
 }
 console.log('OK (local checks before a push)');
+
+// axe-core checks every page at any depth, not just designs/<x>/ (startup-grants.a via sites.a, 25 Nov 2026: pages at
+// designs/round-2/dN/ were never checked). The same file in every seed, and a managed file, so existing sites get it.
+{
+  const { MANAGED, history } = await import('../build/managed.mjs');
+  const { blobSha } = await import('../build/managed.mjs');
+  const a = ['site-template', 'gate-template', 'agent-template'].map((t) => readFileSync(`seed/${t}/.github/ci/axe.mjs`, 'utf8'));
+  assert.ok(a.every((x) => x === a[0]), 'one axe.mjs for every seed');
+  assert.ok(/const walk = \(d\) =>/.test(a[0]) && !a[0].includes("join(dir, 'designs')"), 'axe walks the whole tree');
+  assert.ok(MANAGED.includes('.github/ci/axe.mjs'), 'axe.mjs is managed');
+  assert.ok(history()['.github/ci/axe.mjs'].includes(blobSha(Buffer.from(a[0]))), 'the current axe.mjs is recorded');
+  assert.ok(history()['.github/ci/axe.mjs'].includes('ff9f2e26bdeb31850f4b4a1b004c7ee0fcf57f56'), 'the version on existing sites is recorded, so it is refreshed');
+}
+console.log('OK (axe on every page)');
