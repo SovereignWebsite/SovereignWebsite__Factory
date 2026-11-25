@@ -672,3 +672,18 @@ console.log('OK (keeper and design)');
   if (saved.o === undefined) delete process.env.ONLY_REPOS; else process.env.ONLY_REPOS = saved.o;
 }
 console.log('OK (scoped certificate nudge)');
+
+// Every site seed carries tools/check.sh, which runs each check its deploy runs, so an agent finds a failure before it
+// pushes (sites.a and startup-grants.a, 25 Nov 2026: new design pages failed share-check at deploy, runs 45517939062
+// and 45518494287). Each .github/ci script the workflow runs must also be run by check.sh.
+{
+  const { existsSync } = await import('node:fs');
+  for (const t of ['site-template', 'gate-template', 'agent-template']) {
+    const sh = readFileSync(`seed/${t}/tools/check.sh`, 'utf8'), wf = readFileSync(`seed/${t}/.github/workflows/pages.yml`, 'utf8');
+    for (const s of new Set([...wf.matchAll(/\.github\/ci\/(build|share-check|quality|axe)\.mjs/g)].map((m) => m[0]))) assert.ok(sh.includes(s), `${t}: check.sh runs ${s}`);
+    assert.ok(sh.includes('html-validate@' + wf.match(/html-validate@([\d.]+)/)[1]), `${t}: check.sh uses the workflow's html-validate`);
+    assert.ok(readFileSync(`seed/${t}/CLAUDE.md`, 'utf8').includes('bash tools/check.sh'), `${t}: CLAUDE.md says to run it`);
+    assert.ok(existsSync(`seed/${t}/.github/ci/axe.mjs`));
+  }
+}
+console.log('OK (local checks before a push)');
