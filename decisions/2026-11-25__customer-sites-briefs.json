@@ -1,0 +1,26 @@
+{
+  "v": 2,
+  "decided_by": "Dinis Cruz",
+  "words": "Okay, now for those decisions, aren't you already able to decide that? Like, for example, the security fix, right? That should not require me to come here. Like, in fact, safe patch, vault keys. Well, okay, that wasn't say my call. No, but always. So then we can decide. Okay, so on vault keys, every key should always be given to the maestro. Always. So for example, for that one, I think your answer is spot on, right? So, I think on the 50, no, I should be approving less, right? And I think a lot of this stuff, like, look, even if you make a little mistake, we'll catch it, right? And that's why, again, if anything, you should have the security agent underwrite your decisions, right? So I guess maybe that's the workflow. Actually, here's a question. Are you asking the security agent to review this? Because I think the security agent, the counsel agent should always review this stuff. And you can fire them up here, right? You can fire them as sub-agents, correct?",
+  "session": "https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
+  "event_uuid": "75c313ce-3aa7-4727-9aa7-e007438ef769",
+  "recorded_by": "decisions.b@SovereignWebsite.dinis",
+  "recorder_key": "sha256:eefbe996d9c67a7c",
+  "id": "2026-11-25__customer-sites-briefs",
+  "at": "2026-11-25T11:59:00Z",
+  "status": "in-force",
+  "scope": {
+    "repository": "SovereignWebsite/SovereignWebsite__IaC",
+    "branch": "dev",
+    "paths": [
+      "requests/2026-11-25__lee-elle-horowitz/site.json",
+      "requests/2026-11-25__moving-van/site.json"
+    ],
+    "commits": 1,
+    "patch_ids": [
+      "62eb91712e33f29e8df0560d70cb3d9ef17aaa18"
+    ]
+  },
+  "expires": "2026-12-02T11:59:00Z",
+  "about": "factory.b's 3ad8deb: design.b's design_brief links (7222e25) added to the first two customer sites' requests. A field only; inside record 2026-11-25__first-customer-sites-v2 and the brief-before-build rule (record 2026-11-24__block-03). Pushed together with 215b40b (record 2026-11-25__seed-key-wording)."
+}
