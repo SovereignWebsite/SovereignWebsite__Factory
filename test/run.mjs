@@ -709,3 +709,14 @@ for (const t of ['site-template', 'gate-template', 'agent-template']) {
   assert.ok(wf.includes('cancel-in-progress: false'), `${t}: a deploy is never cancelled mid-way`);
 }
 console.log('OK (deploy retries once)');
+
+// An author's work names its author (Dinis, 25 Nov 2026: "title.dinis.author.sws").
+{
+  const R = await import('../build/requests.mjs');
+  const r = { label: 'one-human-nine-agents', group: 'author', provider: 'dinis', title: 't', description: 'd', kind: 'owner', keeper: 'x.a@Y.z', design: 'd.a@Y.z' };
+  assert.deepEqual(R.validate(r, '2026-11-25__one-human-nine-agents'), []);
+  assert.equal(R.host(r), 'one-human-nine-agents.dinis.author.sovereignweb.site');
+  assert.equal(R.repoName(r), 'Site__Author__Dinis__One-Human-Nine-Agents');
+  assert.ok(R.validate({ ...r, group: 'cv' }, '2026-11-25__one-human-nine-agents').some((e) => /provider/.test(e)), 'other groups still refuse a provider');
+}
+console.log('OK (author works)');
