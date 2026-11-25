@@ -1,0 +1,8 @@
+{
+  "label": "onboarding",
+  "group": "agents",
+  "agent": "b.onboarding@SovereignWebsite.dinis",
+  "title": "b.onboarding",
+  "description": "The onboarding agent: intake of new site owners, first contact as drafts only, and each one turned into a site request and a keeper. It never builds a site; its own status area.",
+  "kind": "owner"
+}
