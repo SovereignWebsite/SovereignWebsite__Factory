@@ -18,7 +18,7 @@
   ],
   "wakes": "none yet (conductor.b's hourly wake is one of the four Dinis has not created)",
   "active_until": "2026-12-01",
-  "updated": "2026-11-24T13:22Z",
+  "updated": "2026-11-25T01:22Z",
   "read": {
     "role": "role.md",
     "learnings": "learnings.md",
@@ -27,6 +27,7 @@
     "restart": "restart.md",
     "state": "/status.json",
     "requests": "decision-requests/",
-    "order": "2026-11-24__onboarding-order.md"
+    "order": "2026-11-24__onboarding-order.md",
+    "website_handover": "2026-11-25__sovereignwebsite-ai-handover.md"
   }
 }

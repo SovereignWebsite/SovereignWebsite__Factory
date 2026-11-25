@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
-  "updated": "2026-11-25T00:20Z",
+  "updated": "2026-11-25T01:21Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -134,7 +134,8 @@
     "All three vault keys handed to b.maestro and proven: sotavento.b's, Perspace and Algarve Evolution (opened at 00:41 UTC, hash matched); each vault now has two holders. b.maestro's key is endorsed by decisions.b, chained to Dinis's anchor (until 30 Nov)",
     "Morning sync (Dinis, about 11:00 UTC 24 Nov): every agent gets two repositories of its own, done at onboarding; account B order written: board/conductor.b/2026-11-24__onboarding-order.md (factory.b first, then fresh sites.b and hub.b, librarian.b, role agents, conductor.b, site keepers at restart)",
     "factory.b agreed the onboarding order; every new agent repository starts with the signature check, leak scan and branch protection, made only by the Factory (security.b's condition)",
-    "Dinis's guidance (24 Nov, a.factory's session): every active agent keeps its area in its own Site__Agent__ repository, current at every wake, registered in its type's factory/index.json; b.maestro sent it to the account B agents. Every account B role type has an agent site; areas still missing on hub, conductor, factory, migration, library and outreach"
+    "Dinis's guidance (24 Nov, a.factory's session): every active agent keeps its area in its own Site__Agent__ repository, current at every wake, registered in its type's factory/index.json; b.maestro sent it to the account B agents. Every account B role type has an agent site; areas still missing on hub, conductor, factory, migration, library and outreach",
+    "sovereignwebsite.ai has a dedicated keeper: website.a on account A, at Dinis's word (about 00:55 UTC 25 Nov); it removed the no-customers claims (a94fc8a), naming no customer. conductor.b's notes for it: board/conductor.b/2026-11-25__sovereignwebsite-ai-handover.md"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
@@ -152,7 +153,6 @@
     "Dinis: Grace's photos, Spotlight links, and whether photos credited to Jennie Scott may be used - https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67",
     "Dinis: the DC Vault manager session or public key, and whether every agent backs up its private key - https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
     "Dinis: strategy.b's decisions: which segment leads (it recommends A, with B as proof), where \"I want one\" leads (call or email, and which address), one price for personal sites before anything is sent, and the first ten contacts for A - https://claude.ai/code/session_01Kw9UwDF1rJD6h9xEsVg5bx",
-    "Dinis: add SovereignWebsite__Website to the fresh conductor.b session; add_repo was refused by the permission check - https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
     "Dinis: start the weather-demo transfer: Actions, Transfer apply, Run workflow, request 2026-11-20__weather-demo, then approve the apply job in the transfer environment (factory.b reads the run) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: save the Algarve Evolution vault read key and QR, check they open the site, and say so in algarve-evolution.b's session (move done; it keeps its key copies until then) - https://algarve-evolution.organisation.sovereignweb.site",
     "Dinis: allow mistral.conductor to write its signing key file in its own session (ask 5 agreed; its safety check refused the step) - https://claude.ai/code/session_01Kw9UwB4akPeq6twCVg9hVT",
@@ -164,8 +164,7 @@
     "Dinis: say \"push 38\" and \"push 49\" in factory.b's session. Both are approved in block 1, but its permission check refused the push. 38 (0048389): policy wording, the DNS role is active for all four zones. 49 (f125da8): the signature check names two old unsigned Factory commits instead of failing on them - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: start a fresh accountant.b session in Site__Agents__Accountant from board/accountant.b/handover-2026-11-24/START.md (on Sonnet if you agree); its settings there allow it to make its own key",
     "Dinis: archive chiswick-cheese-market.b's session (offboarding case 2, a site agent retired after hand-over; key retired in 23c180c, nothing pending) - https://claude.ai/code/session_01Kw9UwBShWte1Rz5B2Mfznt",
-    "Dinis: attach Site__Agents__Factory with push to factory.b's session, the first step of account B's onboarding order (agreed by factory.b) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
-    "Dinis: sovereignwebsite.ai should drop \"Nothing is sold yet\" now that there are customers (your word in a.sites's session, relayed; decisions.b confirming). No one on account B can edit the site: add SovereignWebsite__Website to this session (ask 35) or start website.b (asks 19, 48)"
+    "Dinis: attach Site__Agents__Factory with push to factory.b's session, the first step of account B's onboarding order (agreed by factory.b) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
   ],
   "decisions": [
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",
