@@ -1,6 +1,6 @@
 {
   "about": "Public-safe view of status.json for the hub's operator page: no private or vault site is named. Kept by conductor.b.",
-  "updated": "2026-11-25T17:21Z",
+  "updated": "2026-11-25T19:22Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "waiting_on_dinis": [
     "Dinis: a budget for the librarian's first run, or let accountant.b propose one - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF",
@@ -18,10 +18,10 @@
     "Dinis: say \"push 38\" and \"push 49\" in factory.b's session. Both are approved in block 1, but its permission check refused the push. 38 (0048389): policy wording, the DNS role is active for all four zones. 49 (f125da8): the signature check names two old unsigned Factory commits instead of failing on them - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: start a fresh accountant.b session in Site__Agents__Accountant from board/accountant.b/handover-2026-11-24/START.md (on Sonnet if you agree); its settings there allow it to make its own key",
     "Dinis: archive chiswick-cheese-market.b's session (offboarding case 2, a site agent retired after hand-over; key retired in 23c180c, nothing pending) - https://claude.ai/code/session_01Kw9UwBShWte1Rz5B2Mfznt",
-    "Dinis: attach Site__Agents__Factory with push to factory.b's session, the first step of account B's onboarding order (agreed by factory.b) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6"
+    "Dinis: attach Site__Agents__Factory with push to factory.b's session, the first step of account B's onboarding order (agreed by factory.b) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
+    "Dinis: whether account-wide capability census families and counts may be published (security.b: per-agent results stay private)"
   ],
   "done_recent": [
-    "security.b's site and area live: https://security.agents.sovereignweb.site/factory/dinis-cruz/account-b/, with all 33 reviews at /reviews/, guidelines and decision opinions (Site__Agent__Security 7c9388c)",
     "startups.b's area live: https://startups.agents.sovereignweb.site/factory/dinis-cruz/account-b/agent.json",
     "conductor.b state and hand-over note written early: board/2026-11-24__conductor-state.md; four settled asks removed from the list (accountant site, domain keepers, decisions system start, the 15:36 note)",
     "Core principle (Dinis, 00:52 UTC 24 Nov, record 2026-11-24__own-keys-principle): repository access is the moment of authorisation; every agent and owner creates and updates its own keys in repositories it can push to, and no one else's. Site keepers add the own-key step to their hand-over prompts; factory.b to the seeds",
@@ -35,7 +35,8 @@
     "Dinis's guidance (24 Nov, a.factory's session): every active agent keeps its area in its own Site__Agent__ repository, current at every wake, registered in its type's factory/index.json; b.maestro sent it to the account B agents. Every account B role type has an agent site; areas still missing on hub, conductor, factory, migration, library and outreach",
     "sovereignwebsite.ai has a dedicated keeper: website.a on account A, at Dinis's word (about 00:55 UTC 25 Nov); it removed the no-customers claims (a94fc8a), naming no customer. conductor.b's notes for it: board/conductor.b/2026-11-25__sovereignwebsite-ai-handover.md",
     "New site keepers (Car Buyer, Lee-Elle Horowitz, Moving Van) publish their own keys in their own repositories; sites.b's keeper start prompt corrected so none asks for an IaC team/keys.json entry: Site__Agent__Sites keeper-start-prompt.md (a41b8e6)",
-    "Naming model agreed by Dinis (25 Nov, a.maestro's session): ids <account id>.<role>[.<speciality>]@[<project>.]<owner>, account B is cl-2, the factory becomes infra. Incremental, each step a PR for Dinis; the team and site keepers told not to rename until their step"
+    "Naming model agreed by Dinis (25 Nov, a.maestro's session): ids <account id>.<role>[.<speciality>]@[<project>.]<owner>, account B is cl-2, the factory becomes infra. Incremental, each step a PR for Dinis; the team and site keepers told not to rename until their step",
+    "Capability census (b.abp): read-only; per security.b (19:27 UTC 25 Nov) results are private, sealed for abp and security, with no hosts, ids, emails or allowlists; step 6 only with Dinis present; run only from a copy Dinis pastes. Passed to the team and every account"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
