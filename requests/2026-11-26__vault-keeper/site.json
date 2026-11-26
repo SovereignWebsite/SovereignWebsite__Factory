@@ -1,0 +1,9 @@
+{
+  "label": "vault-keeper",
+  "group": "agents",
+  "agent": "b.vault.keeper@SovereignWebsite.dinis",
+  "title": "b.vault.keeper",
+  "description": "The vault keeper's own site: its public notes, its own published key and its state, each account's under /factory/<owner>/<account>/. No vault key is ever kept here.",
+  "kind": "owner",
+  "source": "Dinis Cruz, in maestro.b's session (https://claude.ai/code/session_01Kw9UwEbwyWMbZ7yCr81Dq9), 26 Nov 2026 at 13:21 UTC: \"maybe we create an agent here called the key keeper, or the vault keeper, or the key holder, and that's the only agent that actually handles the secrets\". Relayed by maestro.b at 13:24 UTC."
+}
