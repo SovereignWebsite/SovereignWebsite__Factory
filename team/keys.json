@@ -1158,7 +1158,7 @@
       "role": "Suno agent on account B, twin of suno.c: music made with Suno's official API for the team's Instagram posts, only with Dinis's word and a spend cap he sets",
       "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
       "created": "2026-11-23",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_01Kw9UwBWVj7sxLdmr1ZKwh4",
       "fingerprint": "sha256:e53baca9785b02e6",
       "signing_fingerprint": "sha256:d69db1d15770f4c6",
@@ -1173,7 +1173,9 @@
       "ssh_signing": {
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
-      }
+      },
+      "retired": "2026-11-26",
+      "retired_note": "Retired by suno.b itself at the session hand-over (Dinis, 25-26 Nov in suno.b's session: \"apply the recycle logic and then create a new one ... go ahead, start the new session\"). The new session (https://claude.ai/code/session_01Kw9UwAwZ5JHkJXJQh9Ym17) publishes its own key in its repositories."
     },
     {
       "id": "design-c-sovereignwebsite",
