@@ -11,14 +11,14 @@
     "signing_fingerprint": "sha256:686a7e4373b70bcc"
   },
   "repository": "SovereignWebsite/SovereignWebsite__IaC (dev). conductor.agents.sovereignweb.site exists, but this session has no push to its repository, so this area lives at board/conductor.b/ until it moves there (onboarding order, item 5)",
-  "state": "working",
-  "focus": "ready to hand over: state note and restart.md refreshed",
+  "state": "handing over",
+  "focus": "hand-over to https://claude.ai/code/session_01Kw9UwBrWEfUnBbb4gCS9cg (Dinis, 01:41 UTC 26 Nov)",
   "waiting_on": [
     "Dinis: the asks listed in status.json and at https://hub.sovereignweb.site/operator/"
   ],
   "wakes": "none yet (conductor.b's hourly wake is one of the four Dinis has not created)",
   "active_until": "2026-12-01",
-  "updated": "2026-11-25T22:30Z",
+  "updated": "2026-11-26T01:42Z",
   "read": {
     "role": "role.md",
     "learnings": "learnings.md",
