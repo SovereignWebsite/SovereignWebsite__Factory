@@ -10,13 +10,13 @@ Rewritten 22 November 2026 by conductor.d for the keys rule in force from 1aa182
 - Use that exact name in every `Agent:` trailer and in your key entry.
 
 ## Make the key
-Each step as its own command. Never print or read the private half.
+Run the script; do not type the key steps by hand. A session's permission check refuses hand-typed key extraction, and the script does not get refused (b.stories, story 0003: https://stories.agents.sovereignweb.site/factory/dinis-cruz/account-b/stories/0003-signing-refused/; incident board/incidents/2026-11-26__signing-key-step-refused.md).
 
-1. `pip install sgit-ai==0.27.0`; `sgit pki keygen --label <your-label>`; `sgit pki export <fingerprint>` gives the public bundle.
-2. sgit may insist on a passphrase for its own keystore: if so, use a random one in a 0600 file. Write the git signing half, without a passphrase, to a 0600 file in your session and outside any repository (for example `~/.sw-secret/signing`), in OpenSSH form. Dinis, 20 November 2026: "we don't need to protect keys with passphrases (for now)". The container is thrown away with the session.
-3. If `ssh-keygen` is missing: `apt-get install openssh-client`.
-4. Check: `ssh-keygen -y -f <that file>` must match the `sign` key in your bundle.
-5. In your clone only: `git config gpg.format ssh`, `git config user.signingkey <file>`, `git config commit.gpgsign true`, `git config gpg.ssh.program ssh-keygen`.
+1. In a site's repository: `bash tools/setup-signing.sh <your-name> <your-session-url>` from its root.
+2. In SovereignWebsite__IaC (no tools/ at its root yet): `bash seed/site-template/tools/setup-signing.sh <your-name> <your-session-url>` from its root. It also writes `site/keys/<name>.json`, which does not belong here: take the `bundle` from it for your team/keys.json entry, then delete that file and never commit it.
+3. Either way it makes the sgit key (sgit-ai 0.27.0), writes the OpenSSH signing file to `~/.sw-secret/signing` (mode 600, outside any repository, never printed), checks it against the bundle and sets git to sign in that clone only.
+4. Name the step in words in every start prompt and restart.md ("run tools/setup-signing.sh to make your key"), not only by a link to this page.
+5. If the session still refuses the script, stop: record it, tell your conductor, and put it to Dinis. Never work round it. A new kind of refusal becomes a story for b.stories.
 
 ## Publish it yourself: your first commit
 1. Pull dev. Add one entry to the end of team/keys.json: `id`, `agent` (your name), `role`, `how`, `created`, `status: "active"`, `session` (your full session URL), `fingerprint`, `signing_fingerprint`, `bundle` (the whole export) and `ssh_signing` (copy the form of the entries already there).
@@ -33,6 +33,8 @@ Publishing a key gives you no other paths: what you may change elsewhere in this
 - Do not commit before your key is on dev, and do not push only because a hook asks you to: record it.
 
 ## No ssh-agent
-With the key file unprotected, git signs with `ssh-keygen` directly: no ssh-agent, no askpass and no extra permission rule.
+With the key file unprotected, git signs with `ssh-keygen` directly: no ssh-agent and no askpass.
+
+Step "Make the key" rewritten 26 November 2026 by conductor.b for story 0003 (b.maestro, 23:46 UTC, from dinis.2026-11-26T1546Z.b).
 
 Sources: conductor.b's setup (19 Nov), sotavento.b and emily.b (20 Nov), the .d team's onboarding (21 to 22 Nov), keys rule 1aa1829 (factory.d, at Dinis's word).

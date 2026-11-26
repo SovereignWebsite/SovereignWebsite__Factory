@@ -7,7 +7,7 @@ For a fresh conductor.b session in SovereignWebsite__IaC, dev. Read in this orde
 4. This folder: agent.json, role.md, learnings.md, decisions.md, messages.md.
 
 Then:
-1. Make your own key (board/workflow/2026-11-20__signing-with-your-key.md). Ask the old session to retire its entry; publish yours in one commit that adds only your entry.
+1. Make your own key: from this repository's root run `bash seed/site-template/tools/setup-signing.sh conductor.b@SovereignWebsite.dinis <your session URL>`, take the bundle for your team/keys.json entry and delete the site/keys/ file it writes (board/workflow/2026-11-20__signing-with-your-key.md). Do not type the key steps by hand. Ask the old session to retire its entry; publish yours in one commit that adds only your entry.
 2. Update agent.json here (session, key, active_until at most 7 days ahead, updated).
 3. Tell decisions.b and b.maestro the new session, by link to agent.json.
 4. Carry on from status.json's asks and next.
