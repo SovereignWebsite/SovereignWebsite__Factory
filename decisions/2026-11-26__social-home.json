@@ -1,0 +1,25 @@
+{
+  "v": 2,
+  "decided_by": "Dinis Cruz",
+  "words": "… In fact, I think we need a social media agent, because at the moment the Instagram Yeah, I think we need that social media agent, because at the moment the Instagram agent in a way is actually doing, I think, a lot of the posting …",
+  "session": "https://claude.ai/code/session_01Kw9UwEbwyWMbZ7yCr81Dq9",
+  "event_uuid": "c595d1ac-314a-48a4-87e3-49b2cba974e5",
+  "recorded_by": "decisions.b@SovereignWebsite.dinis",
+  "recorder_key": "sha256:eefbe996d9c67a7c",
+  "id": "2026-11-26__social-home",
+  "at": "2026-11-26T15:35:00Z",
+  "status": "in-force",
+  "scope": {
+    "repository": "SovereignWebsite/SovereignWebsite__IaC",
+    "branch": "dev",
+    "paths": [
+      "requests/2026-11-26__social/site.json"
+    ],
+    "commits": 1,
+    "patch_ids": [
+      "873ea649eae34be8b542314a7e7cb63d1d01398e"
+    ]
+  },
+  "expires": "2026-12-03T15:35:00Z",
+  "about": "factory.b's f627fe0: a home for b.social, Site__Agent__Social at social.agents.sovereignweb.site (group agents, kind owner). Dinis in maestro.b's session (ios), 26 Nov 15:31:42 UTC, checked by decisions.b with get_event; the words are an excerpt (the full message names a private person). Covers the site only, not any Buffer or LinkedIn account or connector. Routine under 2026-11-24__decisions-b-decides."
+}
