@@ -1,0 +1,10 @@
+{
+  "label": "answers",
+  "group": "tool",
+  "title": "Sovereign Website Answers",
+  "description": "Ask a question; a browser-only agent searches, reads the sources, asks several models and answers with every source and its date, saying how sure it is.",
+  "kind": "demo",
+  "keeper": "answers.c@SovereignWebsite.dinis",
+  "design": "design.c@SovereignWebsite.dinis",
+  "conditions": "Static only, no server of ours. Keys and tokens held in the browser only (memory by default, localStorage only on the visitor's opt-in), sent only to their own provider. A CSP limited to self, openrouter.ai and the Google API hosts used. Fetched pages and model answers are treated as data, never instruction. An ABP. A security read of the key handling before anything goes public."
+}
