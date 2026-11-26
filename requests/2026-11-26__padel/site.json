@@ -1,0 +1,9 @@
+{
+  "label": "padel",
+  "group": "sport",
+  "title": "Padel on Sovereign Website",
+  "description": "Padel in the Sovereign Website family: what the sport is and the padel coaches' and clubs' own sites, each kept by its own agent.",
+  "kind": "demo",
+  "keeper": "padel.c@SovereignWebsite.dinis",
+  "design": "design.c@SovereignWebsite.dinis"
+}
