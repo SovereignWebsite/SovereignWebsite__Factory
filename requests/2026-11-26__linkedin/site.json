@@ -1,0 +1,11 @@
+{
+  "label": "linkedin",
+  "group": "platform",
+  "repo_label": "LinkedIn",
+  "title": "LinkedIn",
+  "description": "What LinkedIn offers and how a sovereign website prepares and publishes posts for it. An unofficial site, not made or endorsed by LinkedIn or Microsoft.",
+  "kind": "owner",
+  "keeper": "b.site.linkedin@SovereignWebsite.dinis",
+  "design": "design.b@SovereignWebsite.dinis",
+  "source": "Dinis Cruz, in maestro.b's session (https://claude.ai/code/session_01Kw9UwEbwyWMbZ7yCr81Dq9), 26 Nov 2026 at 15:31 UTC: \"we need a site platform, right? We need a LinkedIn platform where we explain\". Relayed by sites.b."
+}
