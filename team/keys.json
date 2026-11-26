@@ -1697,6 +1697,29 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "answers-c-sovereignwebsite",
+      "agent": "answers.c@SovereignWebsite.dinis",
+      "role": "Builds, on account C, a browser-only agentic workflow that answers questions with web search and several models (the visitor's own keys, held only in the browser), and an accuracy harness that compares model and tool combinations. Started by conductor.c at Dinis Cruz's word, 26 November 2026. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 26 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-26",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwDdYBbiAW7UYsezWWV",
+      "fingerprint": "sha256:c1fc743d4887dc9a",
+      "signing_fingerprint": "sha256:3ff7908129183a8f",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAomz3nBwbf83c9YLVY6N6\nrjBpoxME9AMidNllSHQYY9aBUU/+Jlq31WVw1vsBhl8yqHDa8QNv7ccS2NVw+Oqn\nr9W1exuXtbTtGo9eMnUbVGhIRNhIgWU+rPheLlLiRYlQkgXzOaMZsanCuek/y5p+\nun4Iw5EwBPCBgfKIyr1DamQoEfZQbODZYyJEaB8lfthMAfXNXwAjP/mVAfUM6VRJ\nYj2MTtYN6MJx1jPtEp2xJVoVwwy2Kd7Q5syHKvafVeAr3i/Kko6fGQvvhjOxvb/m\nrrxvmW+8xBR1UadN+ZzPh4qGkwqmKkeVrrY9LYFFzBTyaUYauu27YkhQLVw6uH+u\nBJt1XeyyrAVm9qMbz29+k/3W3zcwSFtwczcgEE6IL4cVaBIsoyTnEaKxwfq+8Zs7\nf07k+N8DDu2PI25czkzat+fkPkIk8LZ1+KNJXXj092DghZLKSbQ76Scd1rSJf0Kn\nMRyA8GShUZGJYuaykxYUtKJslM1bEtOS4K7Z6JoajdubkT6RH1DgVl6i1oibsevz\n1UQAXOg9N0ZOZ5a91S6iH6/NbA1qtDHoN59OXxy/hrDI+UVhDXX6B2g28DoGMxGv\n5Ku9LJCzeGeABxBIX0EjKL7hjHe5RMJsy0hWxOGKnIaYzUHQsWE6VwgUCykPs5UJ\n00SP4O7K/A7FZncrAId5gUsCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEDAvCqI17JRHVRiPp0qq6Kb7tPKsi\nQc3jtBmwqvDW5KGa1AVWKAD864Urq5VYDXTeK0k5u+g9yYK7yLe++pnqtw==\n-----END PUBLIC KEY-----\n",
+        "label": "answers.c",
+        "fingerprint": "sha256:c1fc743d4887dc9a",
+        "signing_fingerprint": "sha256:3ff7908129183a8f"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
