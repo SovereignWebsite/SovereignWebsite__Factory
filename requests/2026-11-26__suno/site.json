@@ -1,0 +1,8 @@
+{
+  "label": "suno",
+  "group": "agents",
+  "agent": "suno.b@SovereignWebsite.dinis",
+  "title": "suno.b",
+  "description": "The Suno agents' own site: their keys, areas and state, each account's under /factory/<owner>/<account>/. Their work is on the Suno platform site.",
+  "kind": "owner"
+}
