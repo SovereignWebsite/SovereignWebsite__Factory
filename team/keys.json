@@ -1658,7 +1658,7 @@
       "role": "Conductor of the Sovereign Agentic Website team on account B. A session key: it ends with its session. Takes over from https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu at Dinis's word, 23 November 2026 22:45 UTC.",
       "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
       "created": "2026-11-23",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
       "fingerprint": "sha256:9d6d90bac22a9b9b",
       "signing_fingerprint": "sha256:686a7e4373b70bcc",
@@ -1673,7 +1673,9 @@
       "ssh_signing": {
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
-      }
+      },
+      "retired": "2026-11-26",
+      "retired_note": "Retired by its own key at the hand-over to the fresh conductor session https://claude.ai/code/session_01Kw9UwBrWEfUnBbb4gCS9cg (Dinis, 01:41 UTC 26 Nov: \"start a fresh conductor session\"), whose key is sha256:a93d9189892a3310, signing sha256:4b98c871b8760850. This session's signing key exists only in its own container, which ends when the session is archived. Offboarding case 1."
     },
     {
       "id": "a-factory-sovereignwebsite",
