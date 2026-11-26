@@ -1,0 +1,27 @@
+{
+  "v": 2,
+  "decided_by": "Dinis Cruz",
+  "words": "… In fact, we need a platform buffer page, because I want to go to market with a buffer offering … We need a LinkedIn platform where we explain … And also, we need a self-publishing site for authors. … we should have a self-publishing sort of a site, which are those sort of topical sites which we need to add.",
+  "session": "https://claude.ai/code/session_01Kw9UwEbwyWMbZ7yCr81Dq9",
+  "event_uuid": "c595d1ac-314a-48a4-87e3-49b2cba974e5",
+  "recorded_by": "decisions.b@SovereignWebsite.dinis",
+  "recorder_key": "sha256:eefbe996d9c67a7c",
+  "id": "2026-11-26__platform-buffer-linkedin-selfpub",
+  "at": "2026-11-26T15:37:00Z",
+  "status": "in-force",
+  "scope": {
+    "repository": "SovereignWebsite/SovereignWebsite__IaC",
+    "branch": "dev",
+    "paths": [
+      "requests/2026-11-26__buffer/site.json",
+      "requests/2026-11-26__linkedin/site.json",
+      "requests/2026-11-26__self-publishing/site.json"
+    ],
+    "commits": 1,
+    "patch_ids": [
+      "da445ee1759ab4e89bd74c319bec58e79cb760f6"
+    ]
+  },
+  "expires": "2026-12-03T15:37:00Z",
+  "about": "factory.b's 3ba79d9: Site__Platform__Buffer, Site__Platform__LinkedIn and Site__Services__Self-Publishing, kept by b.site.buffer, b.site.linkedin and b.site.self-publishing (named by sites.b, not started yet); design by design.b. The Buffer and LinkedIn sites are marked unofficial and must not present themselves as those companies. Dinis in maestro.b's session (ios), 26 Nov 15:31:42 UTC, checked by decisions.b with get_event; the words are excerpts (the full message names a private person). Covers the sites only: no account, connector, partnership claim or outreach. Routine under 2026-11-24__decisions-b-decides."
+}
