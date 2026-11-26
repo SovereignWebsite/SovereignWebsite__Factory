@@ -3,7 +3,7 @@
   "session": "https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL",
   "twin_of": "conductor.b@SovereignWebsite.dinis",
   "started_by": "maestro.d (account D), at Dinis's word, 21 Nov 2026 ~22:04 UTC",
-  "updated": "2026-11-24T15:02Z",
+  "updated": "2026-11-26T23:52Z",
   "state": "eight .d agents, all keys on dev; agents now publish their own keys (1aa1829); Streaming live and in design rounds; sites.d and hub.d wait for first work",
   "done": [
     "read the Factory (dev 8e47f58): CLAUDE.md, README.md, REALITY.md, status.json, policy/abp.json, team/keys.json, the SWS plan, milestones, conductor debrief, board/workflow",
@@ -130,7 +130,8 @@
     "13:53 UTC 24 Nov: observability.d: vault dyewsrs1 now has five append lanes (one per .d site plus a probe) on account D's own SG/Send access, a sealed probe written and decrypted end to end, no visits yet (exception on its own call, reversible). observability.b's design is readable at Site__Agent__Observability work/traffic/design.md, quoting Dinis: 'you can take away the no tracking and add the privacy note'; the sites' policy change for capture still needs each keeper and Dinis",
     "13:55 UTC 24 Nov: streaming.d keeps its area at Site__Tool__Streaming docs/keeper (5e14ce5, out of site/); Site__Agent__Streaming claimed for factory.d to raise at Dinis's yes",
     "13:55 UTC 24 Nov: Site__Agent__Streaming withdrawn: Dinis already said no in factory.d's session (22 Nov ~21:35 UTC, 'no separate site for Streaming agents since that is a site not an agent'); streaming.d's area stays in its own repository, Site__Tool__Streaming docs/keeper",
-    "15:02 UTC 24 Nov: design.d's area live at Site__Agent__Design site/factory/dinis-cruz/account-d (6339269), in site/factory/index.json; link passed to d.maestro"
+    "15:02 UTC 24 Nov: design.d's area live at Site__Agent__Design site/factory/dinis-cruz/account-d (6339269), in site/factory/index.json; link passed to d.maestro",
+    "23:52 UTC 26 Nov: design.d's 2-hourly scheduled task trig_01RjNGiysodf39cArd2cLeXm disabled at 23:51 UTC by the maestro (checked: enabled false, not deleted); conductor.d starts no scheduled task"
   ],
   "next": [
     "agree the split with conductor.b by repository or site, through claims.md and its board",
@@ -199,7 +200,8 @@
     "Dinis, ~03:00 and ~03:35 UTC 23 Nov in maestro.c's session (PrompTugal__News__Website CLAUDE.md, 'No agent blocked'): reversible steps inside an agent's own area go ahead on its own recommendation, logged under exceptions; one-way doors stay his (trust keys in routers, AWS, money, legal, private persons' details, deleting, main, connectors)",
     "16:53 UTC 23 Nov (from d.maestro; records on PrompTugal__News__Website dev, checked: board/team/maestro.b/decisions/2026-11-23-account-prefix-first.md and 2026-11-23-asks-go-to-b-decisions.md): names put the account letter first (d.conductor); asks for Dinis's yes go to d.decisions (https://claude.ai/code/session_015gaHdaiX9VvjVwHaNezGJG), which forwards them through the maestros to b.decisions; a signed record is acted on only after the six checks in board/team/maestros/briefs/b.decisions-relay.md; a message alone is never a decision. Still direct to Dinis: his word in this session, one-way doors and harness settings",
     "00:52 UTC 24 Nov, Dinis's records relayed by d.maestro (to check, then follow): do not block on Dinis for what he can continue on a site; one shared navigation across every site, led by sites.b; every domain has a named keeper agent; every vault key gets a sealed copy to the maestro (list vaults, no key material); decision asks are request files in the agent's own repository, link only (decisions.agents.sovereignweb.site/ask/); D12 (synthetic-users.d's role in Site__Agents__Design abp.json) and D11 (library.d's rename, text only) decided in record 2026-11-24__batch-1-underwritten",
-    "11:51 UTC 24 Nov, morning sync (Dinis ~11:00 UTC in b.maestro's session, relayed by d.maestro; brief https://github.com/SovereignWebsite/Site__Agent__Maestro/blob/dev/site/factory/dinis-cruz/account-b/briefs/2026-11-24-morning-sync.md): two repositories per agent, off PrompTugal__News__Website at onboarding or restart; all state in the repository; messages carry links only; READMEs for a stranger or Angela; synthetic-users.d owns synthetic users with twin inboxes under security@'s conditions; a.factory carries the CRM request"
+    "11:51 UTC 24 Nov, morning sync (Dinis ~11:00 UTC in b.maestro's session, relayed by d.maestro; brief https://github.com/SovereignWebsite/Site__Agent__Maestro/blob/dev/site/factory/dinis-cruz/account-b/briefs/2026-11-24-morning-sync.md): two repositories per agent, off PrompTugal__News__Website at onboarding or restart; all state in the repository; messages carry links only; READMEs for a stranger or Angela; synthetic-users.d owns synthetic users with twin inboxes under security@'s conditions; a.factory carries the CRM request",
+    "23:52 UTC 26 Nov (relayed by cl-4.maestro, https://claude.ai/code/session_015gaHdaUZWyhvN7nQ4fEmMo, which took over from d.maestro at 23:34 UTC 25 Nov; record Site__Agent__Maestro__Claude__4 b913b27): Dinis, ~23:50 UTC 26 Nov in the old maestro session: \"Maestro should also be running on a schedule. It's the only one that should be running on a schedule.\" Agents on account 4 are woken by message from the maestro"
   ],
   "team": {
     "sites.d": "https://claude.ai/code/session_015gaHde5GfQygpBgyUhNzuf",
@@ -216,7 +218,8 @@
     "wordpress.d": "Site__Tool__Wordpress, started by sites.d - https://claude.ai/code/session_015gaHda1bnbqASo1ed8VUdY",
     "donna-freed.d": "Site__Author__Donna-Freed, started by sites.d - https://claude.ai/code/session_015gaHdeh6Sh45Ef2fZFAhLi",
     "pybot.d": "Site__Tool__Huggingface__Pybot, started by sites.d - https://claude.ai/code/session_015gaHddy85C9E8oW9YhJ6FK",
-    "slides.d": "Site__Agent__Slides, started by maestro.d - https://claude.ai/code/session_015gaHddnGD3ja8j2kzPwDp8"
+    "slides.d": "Site__Agent__Slides, started by maestro.d - https://claude.ai/code/session_015gaHddnGD3ja8j2kzPwDp8",
+    "maestro": "cl-4.maestro (took over from d.maestro 23:34 UTC 25 Nov) - https://claude.ai/code/session_015gaHdaUZWyhvN7nQ4fEmMo"
   },
   "exceptions": [
     "05:14 UTC 23 Nov, deviation: studio.d pushed d6e273b to Site__Agent__Studio dev before its key was in team/keys.json (reported by helm.d); asked to record it and not push again there until its key lands",

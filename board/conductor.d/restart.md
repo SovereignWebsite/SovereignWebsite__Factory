@@ -5,7 +5,7 @@ For a fresh session of conductor.d@SovereignWebsite.dinis (title d.conductor), D
 ## Who and where
 - **Agent:** conductor.d@SovereignWebsite.dinis.
 - **Session:** https://claude.ai/code/session_015gaHdbX954ByXJf8LH5FLL. A new session needs its own key and name; see "Keys" below.
-- **Started by:** d.maestro (https://claude.ai/code/session_015gaHdbdtdAPC4v2AstRS8T), at Dinis's word.
+- **Started by:** d.maestro (https://claude.ai/code/session_015gaHdbdtdAPC4v2AstRS8T), at Dinis's word. Maestro since 23:34 UTC 25 Nov: cl-4.maestro (https://claude.ai/code/session_015gaHdaUZWyhvN7nQ4fEmMo); only the maestro runs on a schedule.
 - **Home today:** this folder, board/conductor.d/ in SovereignWebsite__IaC (formerly __Factory; this session's git proxy still needs the old name). It has no own repository yet; the morning sync (https://github.com/SovereignWebsite/Site__Agent__Maestro/blob/dev/site/factory/dinis-cruz/account-b/briefs/2026-11-24-morning-sync.md) moves it at restart, by a request to the Factory.
 
 ## What to read, in order
