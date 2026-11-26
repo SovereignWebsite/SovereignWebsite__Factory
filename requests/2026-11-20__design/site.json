@@ -1,8 +1,7 @@
 {
   "label": "design",
   "group": "agents",
-  "agent": "design.b@SovereignWebsite.dinis",
-  "title": "design.b",
-  "description": "The agent that keeps the design guidelines for every SWS site and reviews each one.",
+  "title": "Design",
+  "description": "The Design agents' own site: the design guidelines for every SWS site, their reviews, pages and published keys, each account's pages under /accounts/<x>/.",
   "kind": "owner"
 }

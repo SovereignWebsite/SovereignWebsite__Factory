@@ -3,6 +3,8 @@
 import { readFileSync } from 'node:fs';
 import { gh } from './github.mjs';
 import { wanted, withRequests } from './org-plan.mjs';
+import { coverage, noBrief, fetchJson, RATINGS_URL, HUB_URL } from './coverage.mjs';
+import { load as loadRequests } from './requests.mjs';
 const org = withRequests(JSON.parse(readFileSync('org/repos.json', 'utf8')));
 const policy = [];
 const out = ['### Sites'];
@@ -25,4 +27,12 @@ for (const r of wanted(org).filter((x) => x.pages)) {
   }
 }
 out.push('', '### Agent Behaviour Policy', ...policy);
+// Sites the design back office or the hub does not list (design.b, 23 Nov 2026). Some are off the hub on purpose.
+{ const hosts = wanted(org).filter((x) => x.pages && x.cname && !x.name.startsWith('Redirect__')).map((x) => x.cname);
+  const [ratings, hub] = await Promise.all([fetchJson(RATINGS_URL), fetchJson(HUB_URL)]);
+  const c = coverage(hosts, ratings, hub);
+  out.push('', '### Coverage', ratings ? `- not in design ratings (${c.notRated.length}): ${c.notRated.join(', ') || 'none'}` : `- design ratings unreadable: ${RATINGS_URL}`,
+    hub ? `- not on the hub (${c.notOnHub.length}, some on purpose): ${c.notOnHub.join(', ') || 'none'}` : `- hub list unreadable: ${HUB_URL}`);
+  const nb = noBrief(loadRequests().requests);
+  out.push(`- requests with no design brief yet (${nb.length}; the first real build waits for one): ${nb.join(', ') || 'none'}`); }
 console.log(out.join('\n'));

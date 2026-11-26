@@ -1,0 +1,25 @@
+{
+  "v": 2,
+  "decided_by": "Dinis Cruz",
+  "words": "… or maybe we create an agent here called the key keeper, or the vault keeper, or the key holder, and that's the only agent that actually handles the secrets, right? … Okay, meanwhile, but go with this, right? So basically we have, let's say, a vault keeper here, which again encrypts the data locally …",
+  "session": "https://claude.ai/code/session_01Kw9UwEbwyWMbZ7yCr81Dq9",
+  "event_uuid": "13237266-c6d7-41b6-9493-b9b259b49617",
+  "recorded_by": "decisions.b@SovereignWebsite.dinis",
+  "recorder_key": "sha256:eefbe996d9c67a7c",
+  "id": "2026-11-26__vault-keeper-home",
+  "at": "2026-11-26T13:27:00Z",
+  "status": "in-force",
+  "scope": {
+    "repository": "SovereignWebsite/SovereignWebsite__IaC",
+    "branch": "dev",
+    "paths": [
+      "requests/2026-11-26__vault-keeper/site.json"
+    ],
+    "commits": 1,
+    "patch_ids": [
+      "f03f87943113a9cf9e59d606e3fa8000fdaee5fa"
+    ]
+  },
+  "expires": "2026-12-03T13:27:00Z",
+  "about": "factory.b's d24ee6b: a home for b.vault.keeper, Site__Agent__Vault-Keeper at vault-keeper.agents.sovereignweb.site (group agents, kind owner). Dinis in maestro.b's session (ios), 26 Nov 13:21:01 UTC, checked by decisions.b with get_event; the words are an excerpt (the full message names private people). This record covers the site only: what secrets or vault keys the vault keeper may hold stays Dinis's to decide. Routine under 2026-11-24__decisions-b-decides."
+}

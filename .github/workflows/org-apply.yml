@@ -1,6 +1,10 @@
 name: Org apply
-# On a push to dev that changes org/ or policy/, or by hand: plan against the live organisation,
-# check the plan against policy/abp.json, then apply it with the pipeline App's token.
+# Plan against the live organisation, check the plan against policy/abp.json, then apply it with the pipeline App's token.
+# A push to dev reads and acts on only the repositories it is about (build/org-scope.mjs: the requests and org/repos.json
+# entries it adds or changes), so each change is applied on its own and the App's hourly API limit is not spent on the
+# whole organisation (Dinis, 24 Nov 2026, in a.factory's session: "keep it focused on the actions that I'm working on
+# and reviewing"). The full sweep (every repository, seed refresh, certificates) runs by hand with no repos named and on
+# the schedule, every sixth hour.
 on:
   push:
     branches: [dev]
@@ -11,8 +15,12 @@ on:
         description: 'Also re-set custom domains that have no certificate yet (use once DNS points at Pages)'
         type: boolean
         default: false
+      repos:
+        description: 'Only these repositories, comma separated (empty: every repository)'
+        type: string
+        default: ''
   schedule:
-    - cron: '17 * * * *'
+    - cron: '17 */6 * * *'
 permissions:
   contents: read
 concurrency: org-apply
@@ -26,19 +34,44 @@ jobs:
     environment: apply
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: node test/run.mjs && node build/abp.mjs validate
+      - name: Scope (which repositories this run is about)
+        id: scope
+        env:
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          INPUT_REPOS: ${{ inputs.repos }}
+        run: |
+          only=""; skip=false
+          if [ "$EVENT" = push ]; then
+            if [ -n "$BEFORE" ] && [ "$BEFORE" != 0000000000000000000000000000000000000000 ] && git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+              only=$(node build/org-scope.mjs "$BEFORE" "$AFTER")
+              [ -z "$only" ] && skip=true
+            fi
+          elif [ "$EVENT" = workflow_dispatch ]; then
+            only=$(printf '%s' "$INPUT_REPOS" | tr -d ' ')
+          fi
+          if [ "$skip" = true ]; then echo "This push names no repository: nothing to apply (the full sweep runs every sixth hour, or by hand)." | tee -a "$GITHUB_STEP_SUMMARY"
+          else echo "Scope: ${only:-every repository}" | tee -a "$GITHUB_STEP_SUMMARY"; fi
+          echo "only=$only" >> "$GITHUB_OUTPUT"; echo "skip=$skip" >> "$GITHUB_OUTPUT"
       - id: app
+        if: steps.scope.outputs.skip != 'true'
         uses: actions/create-github-app-token@v1
         with:
           app-id: ${{ vars.FACTORY_APP_ID }}
           private-key: ${{ secrets.FACTORY_APP_PRIVATE_KEY }}
           owner: SovereignWebsite
       - name: Plan against the live organisation
+        if: steps.scope.outputs.skip != 'true'
         env:
           GH_TOKEN: ${{ steps.app.outputs.token }}
+          ONLY_REPOS: ${{ steps.scope.outputs.only }}
           NUDGE_INPUT: ${{ inputs.nudge_missing_certificates == true }}
           EVENT: ${{ github.event_name }}
         # A domain with no certificate is nudged when asked by hand, and by the schedule every sixth hour
@@ -47,8 +80,10 @@ jobs:
           if [ "$NUDGE_INPUT" = "true" ] || { [ "$EVENT" = "schedule" ] && [ $(( 10#$(date -u +%H) % 6 )) -eq 0 ]; }; then export NUDGE_MISSING=true; fi
           node build/org-plan.mjs plan.json | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Policy check
+        if: steps.scope.outputs.skip != 'true'
         run: node build/abp.mjs actions plan.json
       - name: Apply
+        if: steps.scope.outputs.skip != 'true'
         env:
           GH_TOKEN: ${{ steps.app.outputs.token }}
         run: node build/org-apply.mjs plan.json | tee -a "$GITHUB_STEP_SUMMARY"

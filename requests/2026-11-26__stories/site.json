@@ -1,0 +1,9 @@
+{
+  "label": "stories",
+  "group": "agents",
+  "agent": "b.stories@SovereignWebsite.dinis",
+  "title": "b.stories",
+  "description": "The second stories agent's own site: its public notes, own key and state, each account's under /factory/<owner>/<account>/. It finds the gap behind each problem.",
+  "kind": "owner",
+  "source": "Dinis Cruz, in maestro.b's session (https://claude.ai/code/session_01Kw9UwEbwyWMbZ7yCr81Dq9), 26 Nov 2026 at 15:46 UTC: \"we need to have an incident agent that finds back and does like root cause analysis ... Maybe we call it like second stories or something like that\". Relayed by maestro.b at 15:50 UTC."
+}

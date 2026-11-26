@@ -1,0 +1,12 @@
+{
+  "label": "drive",
+  "group": "tool",
+  "provider": "google",
+  "title": "Sovereign Website Drive, a variation of Google Drive",
+  "description": "A Sovereign Website tool: browse, preview, upload and download your Google Drive files in your browser with your own Google sign-in. Not affiliated with or endorsed by Google.",
+  "kind": "demo",
+  "keeper": "a.drive@SovereignWebsite.dinis",
+  "design": "a.design@SovereignWebsite.dinis",
+  "conditions": "As the Gmail tool (cd9266f): Sovereign Website brand, no look-alike, no Google logo or trade dress, a not-affiliated notice. OAuth in the browser only, with the narrowest Drive scope that works (per-file access first); the token in memory, or sessionStorage on opt-in, never localStorage. A Drive message channel comes later, as its own step. A CSP limited to self and the Google API hosts it uses. An ABP. A security review before real use. No outside team or person named on the site without their consent.",
+  "source": "Dinis Cruz, in a.maestro's session, 25 Nov 2026 15:28 to 15:29 UTC: an outside team \"would like ... to communicate over google drive instead of vaults\"; \"so we need to kickstart the agent to create that GDrive capabillity and API\". Then: \"this is to be used without Claude\"; \"let's start with a GDrive browser and OAuth integration like we did with gmail\". Relayed by a.maestro, who starts the keeper."
+}

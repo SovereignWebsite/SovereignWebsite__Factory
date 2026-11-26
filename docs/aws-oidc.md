@@ -88,3 +88,5 @@ Dinis, about 11:38 UTC in the sites.b session: "we are going to be using soverei
 3. **The variable:** set `SW_ZONE_ID_WEB_SITE` to that zone ID in this repository's `apply` environment.
 
 Until steps 2 and 3 are done, DNS apply plans the sovereignweb.site records and skips them ("SW_ZONE_ID_WEB_SITE not set"); the other zones are unaffected. Until step 1 propagates, the records are written but not served.
+
+**Done.** All three steps are in place. DNS apply run 45211861879 (23 Nov 2026, 16:02 UTC) assumed `sovereignwebsite-factory-dns` through OIDC and wrote all four zones, sovereignweb.site included: each returned PENDING from Route 53, none was skipped and none was refused. The sites under sovereignweb.site answer on their addresses.

@@ -1,0 +1,15 @@
+{
+  "label": "maestro-claude-3",
+  "group": "agents",
+  "agent": "cl-3.maestro@dinis",
+  "title": "cl-3.maestro",
+  "description": "The maestro of Dinis's Claude account 3: its own home, with its key and its area under /factory/<owner>/<account>/, listed by the shared Maestro site.",
+  "kind": "owner",
+  "home": {
+    "role": "maestro",
+    "provider": "claude",
+    "number": 3
+  },
+  "pages": false,
+  "source": "Dinis Cruz, in a.maestro's session, 25 Nov 2026 17:51 UTC: \"yes great plan\" (the per-account homes, all without a website); relayed by a.maestro."
+}

@@ -1,0 +1,11 @@
+{
+  "label": "puter",
+  "group": "platform",
+  "title": "Puter: LLMs from the browser",
+  "description": "How to reach language models from a static page with Puter.js: the visitor signs in with their own Puter account and pays their own way. No API key, no backend.",
+  "kind": "demo",
+  "keeper": "puter.a@SovereignWebsite.dinis",
+  "design": "a.design@SovereignWebsite.dinis",
+  "conditions": "Facts only from Puter's own documentation; no Puter logo or trade dress; the demo runs only when a visitor signs in with their own account; nothing billed to us.",
+  "source": "Dinis Cruz, in a.maestro's session, 25 Nov 2026 ~02:37 UTC: \"in terms of platforms, I think we should put one for Puter, and I actually think that it's probably worth also doing one for NVIDIA ... the idea is to create these web-based environments where we can access them\"; relayed by a.maestro (02:39) and sites.a."
+}

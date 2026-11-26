@@ -3,5 +3,8 @@
   "group": "platform",
   "title": "OWASP",
   "description": "What OWASP offers and how to use it, from its public material. An unofficial site, not made or endorsed by OWASP.",
-  "kind": "owner"
+  "kind": "owner",
+  "collaborators": {
+    "riskmandate-angelo": "push"
+  }
 }

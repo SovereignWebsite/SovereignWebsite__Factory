@@ -1,0 +1,15 @@
+{
+  "label": "maestro-claude-5",
+  "group": "agents",
+  "agent": "cl-5.maestro@angelo",
+  "title": "cl-5.maestro",
+  "description": "The maestro of Claude account 5 (Angelo's): its own home, with its key and its area under /factory/<owner>/<account>/, listed by the shared Maestro site.",
+  "kind": "owner",
+  "home": {
+    "role": "maestro",
+    "provider": "claude",
+    "number": 5
+  },
+  "pages": false,
+  "source": "Dinis Cruz, in a.maestro's session, 25 Nov 2026 17:51 UTC: \"yes great plan\" (the per-account homes), and 18:38 UTC: \"Angelo is ok with being names\"; relayed by a.maestro."
+}

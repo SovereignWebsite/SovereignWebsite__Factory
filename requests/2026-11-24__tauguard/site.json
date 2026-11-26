@@ -1,0 +1,10 @@
+{
+  "label": "tauguard",
+  "group": "company",
+  "repo_label": "TauGuard",
+  "title": "TauGuard and RiskMandate: working together",
+  "description": "What TauGuard builds, explained with its architecture and infographics, and how TauGuard and RiskMandate could work together: shared workflows and a two-way MVP.",
+  "kind": "owner",
+  "keeper": "tauguard.a@SovereignWebsite.dinis",
+  "design": "design.b@SovereignWebsite.dinis"
+}

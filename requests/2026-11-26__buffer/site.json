@@ -1,0 +1,10 @@
+{
+  "label": "buffer",
+  "group": "platform",
+  "title": "Buffer",
+  "description": "What Buffer offers and how a sovereign website plans, schedules and publishes social posts with it. An unofficial site, not made or endorsed by Buffer.",
+  "kind": "owner",
+  "keeper": "b.site.buffer@SovereignWebsite.dinis",
+  "design": "design.b@SovereignWebsite.dinis",
+  "source": "Dinis Cruz, in maestro.b's session (https://claude.ai/code/session_01Kw9UwEbwyWMbZ7yCr81Dq9), 26 Nov 2026 at 15:31 UTC: \"publishing it to Buffer, and then Buffer does the scheduling and the release ... something we should be reaching out\". Relayed by sites.b."
+}

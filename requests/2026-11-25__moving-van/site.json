@@ -1,0 +1,17 @@
+{
+  "label": "moving-van",
+  "group": "template",
+  "provider": "business",
+  "title": "Moving van: a template for a small moving business",
+  "description": "A template: a generic site for a small family moving service, with placeholder content only. A real customer site is made from a copy once the owner agrees and supplies the details.",
+  "kind": "demo",
+  "keeper": "b.site.moving-van@SovereignWebsite.dinis",
+  "design": "design.b@SovereignWebsite.dinis",
+  "design_brief": "https://design.agents.sovereignweb.site/briefs/moving-van.html",
+  "aka": [
+    "Site__Business__Moving-Van"
+  ],
+  "previous": [
+    "moving-van.business.sovereignweb.site"
+  ]
+}

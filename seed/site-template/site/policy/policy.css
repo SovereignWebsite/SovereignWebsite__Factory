@@ -38,3 +38,4 @@ pre{background:rgba(127,127,127,.1);padding:.8rem 1rem;border-radius:6px;white-s
 code{font-size:.9em}main a,main code{overflow-wrap:anywhere}
 /* The build's version chip sits in the muted footer; a site's build may also fade it. Kept at full contrast so the page passes axe (design.d and chiswick-cheese-market.d, 22 Nov 2026). */
 footer .sws-version{opacity:1;color:var(--fg)}
+@media (max-width:599px){footer,.family-credit,.family,.site-links{font-size:15px}}

@@ -1,0 +1,12 @@
+{
+  "label": "chat",
+  "group": "tool",
+  "provider": "google",
+  "title": "Sovereign Website Chat, a variation of Google Chat",
+  "description": "A Sovereign Website tool: Google Chat for any website, with your own Google sign-in in the browser only, an API at /api/ to read and post in spaces, and a small app. Not affiliated with Google.",
+  "kind": "demo",
+  "keeper": "a.drive@SovereignWebsite.dinis",
+  "design": "a.design@SovereignWebsite.dinis",
+  "conditions": "As the Gmail and Drive tools: Sovereign Website brand, no look-alike, no Google logo or trade dress, a not-affiliated notice. OAuth in the browser only, the narrowest Chat scopes that work, read before write; the token in memory, or sessionStorage on opt-in, never localStorage; posting needs the user's confirmation. A CSP limited to self and the Google API hosts it uses. An ABP. A security review before real use. No space, message or person named on the site without consent.",
+  "source": "Dinis Cruz, in a.maestro's session, 25 Nov 2026 15:50 UTC: \"great lets do this\" (the Chat tool, named \"Chat\"); relayed by a.maestro. Kept by a.drive, which keeps the Drive tool."
+}

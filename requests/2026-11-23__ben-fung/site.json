@@ -1,0 +1,13 @@
+{
+  "label": "ben-fung",
+  "group": "manager",
+  "title": "Ben Fung",
+  "description": "Ben Fung, technology project and programme manager: 25 years in technology, 20 in delivery leadership, told through his career path.",
+  "kind": "owner",
+  "collaborators": {
+    "riskmandate-ben": "push"
+  },
+  "keeper": "a.ben-fung@SovereignWebsite.dinis",
+  "design": "design.b@SovereignWebsite.dinis",
+  "collaborators_note": "riskmandate-ben replaces onetrickdonkey, Ben's personal account (Dinis Cruz in a.ben-fung's session, 25 Nov 2026 15:04 UTC: \"remove his personal account as the contributor and add https://github.com/riskmandate-ben\"). Org apply only invites; removing onetrickdonkey is done by an organisation owner in GitHub."
+}

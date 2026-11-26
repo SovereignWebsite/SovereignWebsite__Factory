@@ -1,0 +1,8 @@
+{
+  "label": "startups",
+  "group": "agents",
+  "agent": "startups.b@SovereignWebsite.dinis",
+  "title": "startups.b",
+  "description": "The agent that works with startups on the Sovereign Website, and its own status area.",
+  "kind": "owner"
+}

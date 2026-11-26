@@ -1,0 +1,8 @@
+{
+  "label": "outreach",
+  "group": "agents",
+  "agent": "outreach.b@SovereignWebsite.dinis",
+  "title": "outreach.b",
+  "description": "The agent that helps Dinis with outreach for the Sovereign Website, and its own status area. It never names a private contact.",
+  "kind": "owner"
+}

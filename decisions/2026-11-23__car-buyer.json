@@ -1,0 +1,25 @@
+{
+  "v": 2,
+  "id": "2026-11-23__car-buyer",
+  "decided_by": "Dinis Cruz",
+  "words": "yes, separate record for car-buyer",
+  "context": "Answering decisions.b's question on factory.b's 7fac694 \"Request: car-buyer\" (requests/2026-11-23__car-buyer/site.json: Site__Tool__Car-Buyer at car-buyer.tool.sovereignweb.site, group tool, kind demo, public). Pushing it makes Org apply create the repository. Dinis's idea is in sites.b's session, event 844115a6-5065-4f91-8c42-1b2524136e12 (14:25:41 UTC).",
+  "session": "https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
+  "event_uuid": "4fcb7ad4-fecb-40ed-828e-7ec712d03146",
+  "at": "2026-11-23T15:09:30Z",
+  "recorded_by": "decisions.b@SovereignWebsite.dinis",
+  "recorder_key": "sha256:eefbe996d9c67a7c",
+  "expires": "2026-11-24T15:09:30Z",
+  "scope": {
+    "repository": "SovereignWebsite/SovereignWebsite__IaC",
+    "branch": "dev",
+    "paths": [
+      "requests/2026-11-23__car-buyer/**"
+    ],
+    "commits": 1,
+    "patch_ids": [
+      "43a8c3dc6d6c36599bd199dd503bcf467021a547"
+    ]
+  },
+  "status": "in-force"
+}

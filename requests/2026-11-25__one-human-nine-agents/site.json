@@ -1,0 +1,13 @@
+{
+  "label": "one-human-nine-agents",
+  "group": "author",
+  "provider": "dinis",
+  "title": "One Human, Nine Agents, Nineteen Hours",
+  "description": "Dinis Cruz's book on how one person and nine AI agents built a talk in nineteen hours, and how to set up your own. Links to the book's own site and stores.",
+  "kind": "owner",
+  "keeper": "one-human-nine-agents.a@SovereignWebsite.dinis",
+  "design": "a.design@SovereignWebsite.dinis",
+  "sources": ["https://leanpub.com/one-human-nine-agents-nineteen-hours", "https://the-ultimate-insider.book.sgit.ai/"],
+  "conditions": "Link to the book's own site and stores rather than copying the book; facts and numbers only from those sources; no affiliate links or tracking.",
+  "source": "Dinis Cruz, in sites.a's session (https://claude.ai/code/session_018yvwtQ7z3PUt9L5gpZCNzt), 25 Nov 2026 01:44 UTC: \"this should go as author.Dennis [Dinis]. So actually, maybe, title.dinis.author.sws\"; \"we probably don't want to put the whole title\"; the short name one-human-nine-agents, his answer at 01:44:54 UTC."
+}

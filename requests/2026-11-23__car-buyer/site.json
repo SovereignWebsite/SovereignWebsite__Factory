@@ -1,0 +1,7 @@
+{
+  "label": "car-buyer",
+  "group": "tool",
+  "title": "Car buyer: a toolkit for buying a used car in the UK",
+  "description": "A checklist, the official checks (DVLA, DVSA MOT history, TfL, recalls) and an ownership cost sheet for buying a used car in the UK. Static and public; your notes stay in your browser.",
+  "kind": "demo"
+}

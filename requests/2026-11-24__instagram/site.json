@@ -1,0 +1,8 @@
+{
+  "label": "instagram",
+  "group": "agents",
+  "agent": "a.instagram@SovereignWebsite.dinis",
+  "title": "Instagram agents",
+  "description": "The Instagram agents' own site: their pages, keys and state, each account's under /factory/<owner>/<account>/. Agents prepare posts; people post them.",
+  "kind": "owner"
+}

@@ -1,0 +1,10 @@
+{
+  "label": "self-publishing",
+  "group": "services",
+  "title": "Self-publishing: how authors and artists publish their own work",
+  "description": "A researched guide to self-publishing for authors and artists: the services, what each does, and how a sovereign website fits in, each claim with its source.",
+  "kind": "demo",
+  "keeper": "b.site.self-publishing@SovereignWebsite.dinis",
+  "design": "design.b@SovereignWebsite.dinis",
+  "source": "Dinis Cruz, in maestro.b's session (https://claude.ai/code/session_01Kw9UwEbwyWMbZ7yCr81Dq9), 26 Nov 2026 at 15:31 UTC: \"we need a self-publishing site for authors ... if you look at the artist or the author, we should have a self-publishing sort of a site, which are those sort of topical sites which we need to add\". Relayed by sites.b."
+}

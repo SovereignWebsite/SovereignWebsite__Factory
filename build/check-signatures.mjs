@@ -36,6 +36,14 @@ const AGENT = /^[a-z0-9]+(?:[.-][a-z0-9]+)*@[a-z0-9.-]+$/i;
 // the parent's tree, not a date, because commit dates are set by whoever makes the commit.
 export const usable = (k) => k.status !== 'superseded' && k.status !== 'retired';
 const lines = (s) => (s ? s.split('\n').map((x) => x.trim()).filter(Boolean) : []);
+// Known commits that fail the rules and stay in history (history is never rewritten). Each entry is a full commit id,
+// who made it and why it fails; only Dinis (or a decision under his delegation) adds one. A known commit is skipped only
+// while it is an ancestor of main (block 2026-11-24__block-01, item 49); every other failure still fails.
+export const KNOWN = {
+  b7c8bfd79c263051d8e9ec35fe2cf70b59bf6e87: 'made in maestro.d (account-d)\'s session, 21 Nov 2026 22:14 UTC, carrying conductor.d\'s policy entry; trailer "Agent: maestro.d (account-d)", signed by a key never published in team/keys.json',
+  '5eb7fdecd2ac785ee071848a474c6cbff5e1a389': 'made in maestro.d (account-d)\'s session, 21 Nov 2026 22:14 UTC, carrying conductor.d\'s public key (sent by conductor.d); trailer "Agent: maestro.d (account-d)", signed by a key never published in team/keys.json',
+};
+export const MAIN = 'refs/remotes/origin/main';
 
 export function checkSignatures({ cwd = process.cwd(), before, after = 'HEAD' } = {}) {
   const git = (...a) => execFileSync('git', a, { cwd, encoding: 'utf8' }).trim();
@@ -46,7 +54,8 @@ export function checkSignatures({ cwd = process.cwd(), before, after = 'HEAD' } 
   const range = lines(git('rev-list', ...(from ? [`${from}..${after}`] : [after])));
   // Out of scope: the commit that added this file (reviewed by a person) and everything older than it.
   const older = new Set(lines(git('rev-list', first)));
-  const inScope = new Set(range.filter((c) => !older.has(c)));
+  const onMain = (c) => { try { execFileSync('git', ['merge-base', '--is-ancestor', c, MAIN], { cwd, stdio: 'ignore' }); return true; } catch { return false; } };
+  const inScope = new Set(range.filter((c) => !older.has(c) && !(KNOWN[c] && onMain(c))));
 
   const dir = mkdtempSync(join(tmpdir(), 'sigcheck-'));
   const cache = new Map();

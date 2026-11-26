@@ -1,0 +1,9 @@
+{
+  "label": "aws",
+  "group": "agents",
+  "repo_label": "AWS",
+  "agent": "a.conductor.aws@SovereignWebsite.dinis",
+  "title": "AWS Platform agents",
+  "description": "The AWS Platform team's own site: one area per agent role and account under /factory/<owner>/<account>/<role>/. They build aws.platform.sovereignweb.site.",
+  "kind": "owner"
+}

@@ -1,0 +1,11 @@
+{
+  "label": "suno",
+  "group": "platform",
+  "title": "Suno, our songs (unofficial)",
+  "description": "Our songs made with Suno, played through Suno's own player: vote for favourites, and see which move from experiments to pre-release. Not affiliated with Suno.",
+  "kind": "demo",
+  "aka": [
+    "Site__suno",
+    "Site__Suno"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "about": "Every version of each managed seed file the IaC has seeded (git blob ids). build/managed.mjs.",
+  "versions": {
+    ".github/ci/signers.mjs": [
+      "641d29b8f0ac4eac6714a005ddd05b67802fc981",
+      "886a8d3132b8422f1732d5e09e775287b98ccf26",
+      "db94d3974d95961035757aa359adae6fd0b49e74",
+      "e08d542523b1e24dc9241ef7065c987d342a658a",
+      "120178a82f75c68f2c7d0998846d797876f1fa57",
+      "e82a1fd741114d2aa6951eeb47345482a486f1d6"
+    ],
+    ".github/ci/axe.mjs": [
+      "ff9f2e26bdeb31850f4b4a1b004c7ee0fcf57f56",
+      "0b80db36575c3b38f9d4cc92fe0e287f56ceb25a",
+      "523c01ecbc70b781f40d450cca6339c22c157a51"
+    ],
+    ".github/ci/build.mjs": [
+      "3a9f8c678bf960ed4222241b035c8ac58f534b22",
+      "6ca69b0a72a4452f84f8419549f438c867b6328a",
+      "b5d06e7bd58e38f8c1c8501aa9fb880995fa004b",
+      "3115bb076bd3569500bc3974c27908cd182a5833",
+      "95009b8182a7968034a845b73a7a042b4f17696a",
+      "ec18789436ba4c4aeb357af310697da56f99edb6",
+      "cc359eef9054d30b3244dbdab59d6065099ceada"
+    ]
+  }
+}

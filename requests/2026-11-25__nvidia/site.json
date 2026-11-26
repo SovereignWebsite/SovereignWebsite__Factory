@@ -1,0 +1,12 @@
+{
+  "label": "nvidia",
+  "group": "platform",
+  "repo_label": "NVIDIA",
+  "title": "NVIDIA hosted models from the browser",
+  "description": "NVIDIA's hosted models (build.nvidia.com and NIM): the prototype tier, what works from a browser and what needs a key.",
+  "kind": "demo",
+  "keeper": "nvidia.a@SovereignWebsite.dinis",
+  "design": "a.design@SovereignWebsite.dinis",
+  "conditions": "Facts only from NVIDIA's own documentation; no NVIDIA logo or trade dress; no API key in the page, and no key of ours used at all.",
+  "source": "Dinis Cruz, in a.maestro's session, 25 Nov 2026 ~02:37 UTC: \"in terms of platforms, I think we should put one for Puter, and I actually think that it's probably worth also doing one for NVIDIA ... the idea is to create these web-based environments where we can access them\"; relayed by a.maestro (02:39) and sites.a."
+}

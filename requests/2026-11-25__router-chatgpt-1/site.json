@@ -1,0 +1,15 @@
+{
+  "label": "router-chatgpt-1",
+  "group": "agents",
+  "agent": "gpt-1.router@dinis",
+  "title": "gpt-1.router",
+  "description": "The router of Dinis's ChatGPT account 1: its own home, with its key and its area under /factory/<owner>/<account>/, listed by the shared Router site.",
+  "kind": "owner",
+  "home": {
+    "role": "router",
+    "provider": "chatgpt",
+    "number": 1
+  },
+  "pages": false,
+  "source": "Dinis Cruz, in a.maestro's session, 25 Nov 2026 17:51 UTC: \"yes great plan\" (the per-account homes, all without a website); relayed by a.maestro."
+}

@@ -7,7 +7,7 @@
       "role": "Conductor of the Sovereign Agentic Website team. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 19 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
       "created": "2026-11-19",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
       "fingerprint": "sha256:fabd2942df366c5f",
       "signing_fingerprint": "sha256:706a24f8808e02a2",
@@ -22,7 +22,9 @@
       "ssh_signing": {
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
-      }
+      },
+      "retired": "2026-11-23",
+      "retired_note": "Handed over to a fresh session at Dinis word (23 Nov 22:45 UTC); old signatures stay valid."
     },
     {
       "id": "migration-b-sovereignwebsite",
@@ -201,7 +203,7 @@
       "role": "Design guidelines, briefs, reviews and sign-off for every site; keeps Site__Agents__Design (design.agents.sovereignweb.site). No paths in this repository. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 20 November 2026 with sgit, at Dinis's word there; public bundle sent to the conductor. Only the public half is here.",
       "created": "2026-11-20",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_01Kw9UwCvZbGkWo3D9DEpRMv",
       "fingerprint": "sha256:97ea8c356fbf1697",
       "signing_fingerprint": "sha256:ad8a7bf35603a085",
@@ -212,7 +214,9 @@
         "label": "design.b@SovereignWebsite.dinis",
         "fingerprint": "sha256:97ea8c356fbf1697",
         "signing_fingerprint": "sha256:ad8a7bf35603a085"
-      }
+      },
+      "retired": "2026-11-25",
+      "retired_note": "Superseded on 25 November 2026: design.b handed over to a fresh session (https://claude.ai/code/session_01Kw9UwDmfLmMC1vktxw9rF1) at Dinis's word in b.maestro's session. The new key (sha256:8572d949faed1016, signing sha256:be5f90a7a8e96565) is published by the agent in its own repository, Site__Agent__Design site/keys/design.b.json (f804f93), under the own-keys principle. Retired by conductor.b under the keys rule; offboarding case 1."
     },
     {
       "id": "sarah-cruz-b-sovereignwebsite",
@@ -315,7 +319,7 @@
       "role": "Traffic for every site: the shared page piece, the aggregates per site and across all sites. No paths in this repository. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 20 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
       "created": "2026-11-20",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_01Kw9UwDcJXSxNCBzPpxxXw8",
       "fingerprint": "sha256:ddfbf8335c123e5e",
       "signing_fingerprint": "sha256:0a773143f2975585",
@@ -326,7 +330,9 @@
         "label": "observability.b@SovereignWebsite.dinis",
         "fingerprint": "sha256:ddfbf8335c123e5e",
         "signing_fingerprint": "sha256:0a773143f2975585"
-      }
+      },
+      "retired": "2026-11-25",
+      "retired_note": "Superseded at 22:25 UTC on 25 November 2026: observability.b handed over to a fresh session (https://claude.ai/code/session_01Kw9UwCWpbdQcxFY1GgbC2J) at Dinis's word in b.maestro's session. The new key (sha256:dd793b83d902ea84, signing sha256:2e6140c55b5ce7ab) is published by the agent in its own repository, Site__Agent__Observability site/keys/observability.b.json (95ede5f), under the own-keys principle. Retired by conductor.b under the keys rule; offboarding case 1."
     },
     {
       "id": "feedback-b-sovereignwebsite",
@@ -353,7 +359,7 @@
       "role": "Builds a gated vault demo in Site__Organisation__Chiswick-Cheese-Market, made by sites.b at Dinis Cruz's request; content sealed in the vault. No paths in this repository. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 20 November 2026 with sgit; public bundle sent to the conductor. Only the public half is here.",
       "created": "2026-11-20",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_01Kw9UwBShWte1Rz5B2Mfznt",
       "fingerprint": "sha256:f679dc00e4703e41",
       "signing_fingerprint": "sha256:64da4ab2764206c1",
@@ -364,7 +370,9 @@
         "label": "chiswick-cheese-market-b",
         "fingerprint": "sha256:f679dc00e4703e41",
         "signing_fingerprint": "sha256:64da4ab2764206c1"
-      }
+      },
+      "retired": "2026-11-24",
+      "retired_note": "Retired by conductor.b after the agent's hand-over to keepers .c and .d (Site__Organisation__Chiswick-Cheese-Market, last commit 7b93e6a). The agent confirmed in its session at 02:11 UTC on 24 November 2026 that the hand-over is complete, its signing key exists only in its own container, and it makes no further commits. Offboarding case 2; archiving its session is Dinis's."
     },
     {
       "id": "conductor-mistral-sovereignwebsite",
@@ -1150,7 +1158,7 @@
       "role": "Suno agent on account B, twin of suno.c: music made with Suno's official API for the team's Instagram posts, only with Dinis's word and a spend cap he sets",
       "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
       "created": "2026-11-23",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_01Kw9UwBWVj7sxLdmr1ZKwh4",
       "fingerprint": "sha256:e53baca9785b02e6",
       "signing_fingerprint": "sha256:d69db1d15770f4c6",
@@ -1165,7 +1173,9 @@
       "ssh_signing": {
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
-      }
+      },
+      "retired": "2026-11-26",
+      "retired_note": "Retired by suno.b itself at the session hand-over (Dinis, 25-26 Nov in suno.b's session: \"apply the recycle logic and then create a new one ... go ahead, start the new session\"). The new session (https://claude.ai/code/session_01Kw9UwAwZ5JHkJXJQh9Ym17) publishes its own key in its repositories."
     },
     {
       "id": "design-c-sovereignwebsite",
@@ -1253,6 +1263,439 @@
         "label": "billing.aws.c@SovereignWebsite.dinis",
         "fingerprint": "sha256:879c669f9bcb244b",
         "signing_fingerprint": "sha256:ce445dd95f59849d"
+      }
+    },
+    {
+      "id": "decisions-b-sovereignwebsite",
+      "agent": "decisions.b@SovereignWebsite.dinis",
+      "role": "Decisions agent on account B: records Dinis Cruz's approvals from its own session as signed decision records that agents push on. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here. To be linked by Dinis Cruz's pki.sgit.ai record (method \"operates\").",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
+      "fingerprint": "sha256:a23b2dd69959b6e0",
+      "signing_fingerprint": "sha256:eefbe996d9c67a7c",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAp7Qo2obA5OCYuMovtfNp\ntHztdmn1m1NvUBHjKeJIAcbVKvUBlHXe4Dzk7NgZV8dDPzkQDEe1CeuJiviUdY2S\ncaXwx8lPOnFyh7rgvmppV70cfnbyovYk9ftBqE0D9RQGeWFS4JWVQ2XQBkuxCXKB\n9v6m/n/0GLINNrtXTEKjY6IrOnS8xeSYgIRyYUC0H+4lynNnYXLS5F9cp1/O5WdN\n/e54a4jR39+i05N1ZkQauvE4zV2k3I49Z4NF6bk4pohd0H+C7kj7IyeMod8+LbVJ\nBEtlB4ftLGiFiIcnLf+lS9bKhzHtesk+ap7tm8Hdz4FpcyN0nj0ukrnVaDkj40T/\naM5qX6EUngTkkqHqZ7V6Ey3JbmkJc3ny+jpB4mNYFm5QSGkrBAQJHXVV47yuEd8U\nZYS16du4sEwiYevWoON75gdYP0Vfrw+76Ff+NY1/gZVgSaJvN4wQfCjlX0+orlNz\nPGyM2gCJtxKqx8JEwbfFUViB7pZ0khROXki1qNROmipSBys3AF9c1olJjcfKE/ZJ\nu/QEEBnF7O0yT3a4UR5eeuQ+37TTyNC6nfxGLWsSRmCU+bOHFJuRpFCEjGnO/g1p\nRCsRjCTlnMLv8oXkTWLopCxgYLF8NkqDzA2D0mCT8uLlO+K5WNNtmIIQ5RDiqhSj\nC0J0JKs4iEoXnRybTirjTekCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFaZaEb4L76gay4oTlcv60fyoBvrq\nmCr4tGniMg0TDDoO/T+Wq5OmbnnXOZK6px1VqQQR/53sz0vHVbKrjdEFsQ==\n-----END PUBLIC KEY-----\n",
+        "label": "decisions.b@SovereignWebsite.dinis",
+        "fingerprint": "sha256:a23b2dd69959b6e0",
+        "signing_fingerprint": "sha256:eefbe996d9c67a7c"
+      }
+    },
+    {
+      "id": "pybot-d-sovereignwebsite",
+      "agent": "pybot.d@SovereignWebsite.dinis",
+      "role": "Keeper of the PyBot tool site (pybot.huggingface.tool.sovereignweb.site): an unofficial look at PyBot. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_015gaHddy85C9E8oW9YhJ6FK",
+      "fingerprint": "sha256:63fa2c6062f854c6",
+      "signing_fingerprint": "sha256:745eca03a5062d8e",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAqjzk8vTkkU74tBmBxsIu\nq3MNswQpGQRQFubay/8mfLc1ET8jjGGBVw2hWp9UD6a3xUbFzngA6da5GYGtV1N5\nFKjAyRjSl58pGbAyEAJgS2/9iaRHJbTLB0Dn3hXqrtT66nBBXQdqGfZjJpP7pfUu\n5HoC01yBDHRMvMzC+/6W966iuzC6Q/yBhowUuAst6CZ96ZIGCIAmu3MJOsQxWLMZ\n+BAdSQN2+PH+xplUW+k4S4tO2MWfNWF+ilHkzsS9UOXyQD/4wSBNp2yZr2BgfLnS\nyKl2GHVY5lXJvAd307IeH/SeXmb1m8bdI+SCAFSPwQVEilZiaHRs/oqI6o09ArC3\nwRGAOXESetCcTgjPGnvmnd4RBiBoDq+jtNm4Qqs4K5R40cbWu+5u0Af9MTWin/3p\nIa2PPGJplswArDLD2FK/bd6xSGprnvVv6XjnIxCGH1iLw/Ui0d+76kpSMxVmw9pY\nSDqA7RcB5wjNsC36H/SPpP+BVdeJXVdH7BRTmOHlpOqYgRjf2GNR9wj+A7wrl+Nr\n4ivmF57y2M+QPYk71vFjVZ8XclW8UeoRNTT3uSV/y0UmmfkWrOOq6q78bsxrmpOL\nBqy/nbvCAQK5+Jc1W0uwByUji9suh3WFgB57U+0uyCmg+XGu+03BMbbjPAokHoLe\nxPTNJcguxfkUiq51lIWy+78CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEw88fdVt824FZOc517weUXyVDJcqj\nnrvUC99DBaPuVvV6BV+AcdznhGZWEqUWUheUahrXp4BFm5m8gwLSwqGw9w==\n-----END PUBLIC KEY-----\n",
+        "label": "pybot-d-sovereignwebsite",
+        "fingerprint": "sha256:63fa2c6062f854c6",
+        "signing_fingerprint": "sha256:745eca03a5062d8e"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "architect-aws-a-sovereignwebsite",
+      "agent": "architect.aws.a@SovereignWebsite.dinis",
+      "role": "Architect on account A (AWS Platform programme): one API layer with five UIs over it, the twin (one transport, two back ends) and the semantic graph, as designs in docs/architecture/ that the developers build. Takes over from architect.aws.c.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtPuQzTBRoKGD45TYFV",
+      "fingerprint": "sha256:8699204a5b3a9875",
+      "signing_fingerprint": "sha256:2311c1b95a70ba15",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArHvEB3JNFZuU/01ia2/9\nnFwqhLROYdDavbdJeG8VTiRe3jtl9db6mhhHLVwkCK9FrUDjfxKZ4mbYd+P5iiMc\n0nCKrw/23UkfsvWz+KJUksNVP20EJhtqyA7tI7hahAQWCUX+IGoljYNOHYhdPZxJ\nRs6sJF/sd4v5fX6WCL7vRgpCACNnrlFL8N3hZzy6WuaeXXXtn5ftFTTGviuaQWRQ\ngyI6lVUaYXRRXeqaNFVSFxk/FkWSmpRt+tmThehH3V+1vMsd1e5MOC85MFC3wnvc\nT+8rG4UkGWjjuYTwtNkS06dwEdMtgXbRYVH5bkSQKMruhbFDTFcKsQb40uL3yoTG\nGQQLqdHUECAHFTq1U2w3jNYO1zywZYPHwHUW+sChio85GMKsCXU0JxxbVHAr3247\nBZwUfkWjzMubUtR9aylSniYWOiVjIq1H1CYCN2E00Txa8vWt8IrEm0UU1KZUUKcq\ny02v7SoL5lo3/XC93M/+LkOSAncTCqp+oEkQIU9UF/VbTYyIIi6k9qEeUFnvEKGG\n7fld8J4ecfry2mUqrB+uOdlCAlVOsZwfhf6GwTr4y0c4IamzJs6uGRbsr+C+jNWQ\nhl1u+AwFMAWrbh9BqaYnc4RnrPIakPBsDWQvaT3aM4RzvTlWNxk7P4im3Yz8gsRj\ntJde6+PmoqgDZxpdy7q1afcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEazPZYVFTfeQKMr56gmLH35zQDLpI\n9JPmMPMjVJIBJtoE5koW6WMAE/xd9WUORtoAXRMInu1lWgEvPwxvhPj4Yw==\n-----END PUBLIC KEY-----\n",
+        "label": "architect.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:8699204a5b3a9875",
+        "signing_fingerprint": "sha256:2311c1b95a70ba15"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "cloudformation-aws-a-sovereignwebsite",
+      "agent": "cloudformation.aws.a@SovereignWebsite.dinis",
+      "role": "CloudFormation with Route 53 on account A (AWS Platform programme): every stack mapped to what it made, every zone and record mapped to what it serves, on the twin first. Takes over from cloudformation.aws.c.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtPgweggdc6AykBpQay",
+      "fingerprint": "sha256:7384019c7e4489f8",
+      "signing_fingerprint": "sha256:7ac064b8e547ded1",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArk+xq+S9Eja8fx6n1WNW\n/EgFt4IzC51uccTZleZhv0hTQVIZHOTwnKjOSpMbuee51T0r75Ctac5iYbJIzoMK\nFvxyP83a5Y/FunZTraHkFdsEfHX3CABKz3mHL2kF5qXZA0z2eqUjWOl22yFOxb57\nQmwApdP+P7bdmctJVy+AMTDYR5NVmAJ+AY/D/DevYLPFsbFqhTPzRgPsgLoMphNI\n4C8IVRz1RX5U8eUjuI5zK+uDV6Oqb9O8Bp/QQ6ZXucSbZ3fvc6xenGobzPaYcmUo\nXazl7KCcT8ngwUr8AXmdM2GU+gLefK1AAmsURhqXEuOskcZ5J5VYco7npdprfGEv\nNjMRGKOjpqk43sjXDjkChHYY2ldKbZ/BKXVnkN2X4wneSROysXGjxMqXAuUCfbtz\nB5WJALEss9q4/VUe9OZma7VcWb7t3ND7dIWXPvBgrOUWWBIrMbQatBt3zhXPFgsZ\nXPvOy1p481TDLW6hIJZus554NXMWpltGxX8p0zRP1HkzyBnAOSooCxtfeQ81m6es\nZkCfIk0m9WHPthoUCYiWFKlDdc53KP5KtCX77eht3KSamZH78LE5upn2tlviwHLG\nuYjla3128qNKm64NvvNUoe+q92ZB3n8YuTLbwALWNsudqgVt5fHWew0ltpWcAGx6\nDQbt6/b1ybqjU49OHS9Y0iUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEnhSPKIVOBuMWvKlrckFGqXYZtIw9\nuRYmmORxTG9I/mJeifuvIfd8zO7tVwPTSAUzsoJ5kLLCDBT4SFMutY9dZQ==\n-----END PUBLIC KEY-----\n",
+        "label": "cloudformation.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:7384019c7e4489f8",
+        "signing_fingerprint": "sha256:7ac064b8e547ded1"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "cloudtrail-aws-a-sovereignwebsite",
+      "agent": "cloudtrail.aws.a@SovereignWebsite.dinis",
+      "role": "CloudTrail and CloudWatch on account A (AWS Platform programme): the timeline, per-asset activity and alarms views over the twin's CloudTrail records, and drop-in of a user's own CloudTrail dump. Takes over from cloudtrail.aws.c, whose key was never published.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtLsVZvQ5dyyKz8ndG2",
+      "fingerprint": "sha256:9ebb596ab7bd764f",
+      "signing_fingerprint": "sha256:a3949ea817a57566",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzTPwZzzROsCcysW6QiUC\ns7XnWoFSWA+xPFpr56TsYuqRA9466a/dYv4LcsuwZx19uvZ4+higD3nq+XlPkxSF\n/SXk41ZtjxbCGoxaNsul0YTbAIXK1EYb0bM8ICVc9t7zsuWiRe3OENYIDQFghIQz\naiUlraQPNwSI8KP15VXMPyRbIH4uvuZnx8qbxk40RDOQsShw+A1puVME5Jn91mRz\nhBPyrOh/IR/gTHB69HFEgEzSy9xQDN89rip4ZSuC7xt7E6aufwEsCx/6PAO8r3Ts\nZaPiBeOfO3luwBQCWLYqf4U9my2CvW7cHp8JEMSkWy5xzNVWgZFMIAoJkSna67rC\nCRgwZXHfMYZHlznzW1fzPBYIZKdM5LmopU1X0G13gOacYnVPjzRyz4wT5wbsiEZb\nxcVTRKlq2nzfTPocBo3sUKEWGmX9pSgGe5U/5VNiJnWJ4wYYdTua+4yo3Iaoyd2O\nFBoq0YCHvmqEnYQHMnABmHF8Kd6xtbsPDHteJfSDbcMVJn6PcV5wciZ0WYG+T2Gk\nOoJBR1P2JA/5haTXdV4uQ8RbRNF0v7aumkVywok5fnQRFyiLS8NS/7LMdDcmKfwM\nr0jlLtwRDc073YzM4nHwMq6h4EKCmVTkZlmRr0UmzhdoJyoGMAykn9UDSKT4i7De\nBZbQmo9kMrR8CE/ggFj0CXkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEHtuVhesnoN3ATtQdBf0KG/mP/Vtn\nQKlzpMyuYb3CuIWawwjaQp5Zv4NXKoBjUpnVSvCgm+PwL0IgGxOh4sKC9w==\n-----END PUBLIC KEY-----\n",
+        "label": "cloudtrail.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:9ebb596ab7bd764f",
+        "signing_fingerprint": "sha256:a3949ea817a57566"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "conductor-aws-a-sovereignwebsite",
+      "agent": "conductor.aws.a@SovereignWebsite.dinis",
+      "role": "Conductor of the AWS Platform programme on account A: runs the team schedule and log, routes each agent's asks (paths to aws.c, keys to factory.c, Dinis's decisions to pm). Takes over from conductor.aws.c (wave 2).",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtPiszBTMHKVD4AuDwn",
+      "fingerprint": "sha256:0b6383e56398ab9e",
+      "signing_fingerprint": "sha256:85fa5ecd69349cb4",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAjKd6ThjyWyEnG0QNBC9F\n/4LFgywpV30fbLBhW4e8h97pYycUfaZ7+kQ+kqG+gNv+N6bIhJjGokJVW93qwRsr\nkcErMSvvtiAfOqy3bjpX9nFlQ0NYrki2HijHjCJKadVSjF8h8x+TEHVolCxw7qFT\nIy7X0zXAqc6iN7MHjDZo1t1BSRcbhrx7sCvbrUGN0E3TTU6Knp7MscwTIFJpDJsX\nMMXbSYjO8NK0F9ZsM8XmbP65Tdzmtpku4brewxg2xE7pCteCGzeTfqi/r+41m/w9\nD8c0N+6F9+vKN/fbA+DI3jFG6K6SjPkwK5VZnDhT3nKyU5GSi7VJszB2ZBKGXZpm\n0SV7jhCeVz3DqScnT+doUcp85Vhm5U/TSnAnGfwfM97YykqUznhrncbJKnCOUGxA\nhNpJixrCRdlYCMF3JetTVDle9tzlH/ULlMkEZY4pz54FtvNYsHNG2ckab8T6QSQt\n75oMISRL+wh3sTHRSC+8vdGNmVSPSKMR9g7igqyTGE8EAkqUusaszRxa64zwr4pT\niMCPoqW//fzbU88Ngj5z/RJtFfbRfPbDZrkZReg4VVrlCmihc524VYzI/aSwQHXw\n8cT+gWmxcEurJBiWrqKIlZ59eOL75qt9pKQoquSB69Jb6JVBV3dLXSw5KbzVdBIi\nPQX/S2JEG5j3Q8YtrJjC+/cCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEDPPiEbnI+5uhF6QrxRVmeaT9axom\nHfptdPKK0ee1aIpjcWruOC2ih9d8V+8WIYd8fl3PyIqieOlCqVnUJmVLmw==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:0b6383e56398ab9e",
+        "signing_fingerprint": "sha256:85fa5ecd69349cb4"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "data-aws-a-sovereignwebsite",
+      "agent": "data.aws.a@SovereignWebsite.dinis",
+      "role": "Data scientist on account A (AWS Platform programme): the CloudFront-logs bucket written by Firehose, the extract-transform-move workflow, visibility of the sites behind S3 including vault usage, time lapse and client-side data (pipeline P5). Took over from data.aws.c.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtNsU9Ax9WMn2h6EhHU",
+      "fingerprint": "sha256:15d499328e99ebe7",
+      "signing_fingerprint": "sha256:2606e63a9873ac4f",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA1N9Brt0X4Qs+SJKXFF5v\nDCsXw2JfvlF31VFs8UlXo33MpW/rxAD4qaHWHy6Uq0GydCwt/Ovu2eqM9ivASJNM\nzKdrCO2awCDQ8F1mDvLl3DP/VVWeh/dVgQRqZKUhY2cEEVeCfA8MhI4B5ZijFUk4\nAJSjrAKDPqgHHPwW4tphkrBoWBh6+lAjQwfei1y/V63R5BIaZUSuIZ0j/QlBOggD\nMKE0k/DGc7mV/A16scuCb0sZmG33a6R3jv3mFxHczMBEHzFUNutS3g8NF7STXLjA\nYIqa3E5LHCVU8DzVWxLHWZcZcN1DHjfhzTd+gZeGGxkgLeDQ1XI7A9PaDHs5PoHx\n1qUoca8bmoLcXMGKEER27msoFhNvyTbZNZ68YBipVeWn0zyUkrGR3CjNpQR8IC6v\nLwIxNLtVC4R43mOcJZZ1Ny+D24l94Wuxr+B0859z4jrH6CDQpoXABu0ISdlLR7c8\na/c7tX4bP32rdSjMuHfDI9lnTp6iC3vhmVT8WUnaqZLllnxRsdW/dsbgNnHjXu/G\n5gZekTXVlDX0oaK8PuZ+NADo8xYx1bgEg9+Awjlz7Re/2STc5IslOD8tKgYsLjzL\nScU15NMZh1LtzzRNnoJcqVGL8+DdWTBGvIWV+S9BqR30wqiy2crql6Sw6sjHz9xL\nKDZwRVE+TReoZQGFIafxBFECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEO5prYRVhScYfBEI9uSTFLE+szKKp\nu/dXDwhpKU696CS1qDGqdxK2G1Q7ESQ/qNCVlb0DoDSHBKHqXVG+nLDCXQ==\n-----END PUBLIC KEY-----\n",
+        "label": "data.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:15d499328e99ebe7",
+        "signing_fingerprint": "sha256:2606e63a9873ac4f"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "dev-1-aws-a-sovereignwebsite",
+      "agent": "dev.1.aws.a@SovereignWebsite.dinis",
+      "role": "Developer 1 on account A (AWS Platform programme): the S3 browser (S3-1) with s3.aws.a, on the twin; then the twin engine's migration (design 02). Takes over from dev.1.aws.c.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtLV1iZjUCMEKz1PZ51",
+      "fingerprint": "sha256:40984fbef06764a1",
+      "signing_fingerprint": "sha256:6d72e8e887956118",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAt4ayRtzO12WlbnICkbzH\nBhwpPM5uVkhto+0k8SbyLb2LIBHRrvWEWnuLdn+oY1Pzebe2BjhP4zza0hyqsZpL\nG8WdA3i8O0PDTYTmOtM9A7UXEGU4uS2DJ8XO0NPjaR0HQWpqo9TDdsZsEzsxHKUS\nzaoeSrLkp0ZrrgpA7K6ezthL4JvJznb9/XXMLODaxdNpw6UC1A/+CDt6Gjf0/iEO\nEhgFlLDQ4SCNQAD94hsiHWdyWxWwZctU7zJJi1c1DJ18TLAN/z6O3aEpW91NNXVR\ndYoQebHfBiuNQgtQATrSZlOqUvoDPATyJXITTTf7YnbjzSiccMDL/lav8LHYg+TM\n3VHZvpSuBa0e6T+o7KtjHY29pMiySYgJ71wQTYBPDNGyL+P2CNhvO+g2fhsJ5Kpm\nxCGr9Ju5t7ySjGhNhdZM6k2BwtQ689bGQT/h6HPQik68Td8rDUhpCS7Vr/g2Vq3l\nAFl5yoww+P0dz541UOqVgaEOsfGgy6w/EAeO4Jdwk9uof884IWuB8XW5ZFwWFrgp\n1OaHLEfkirdZYjGP52cNVewZY4XZS0sKhbJcJphOq8JB1tXORwAqcpPt4d4MPaH8\nx7+K7oCbMTrI+O7ppS4eeO94eLDDhjFZuj9mmcktg66Rr4COLmvHk1OHRLViILLL\nmfKN9cbUNlHdTBFujjzMbDcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEf8ADxlHKsiht8OF7Cpl2Jcrx/coD\nnqTErMEaWNjP3PTJs/0CynjhtyVUw+S9/OXkpV9MLe6v13DBsNF1hJqLQA==\n-----END PUBLIC KEY-----\n",
+        "label": "dev.1.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:40984fbef06764a1",
+        "signing_fingerprint": "sha256:6d72e8e887956118"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "dev-2-aws-a-sovereignwebsite",
+      "agent": "dev.2.aws.a@SovereignWebsite.dinis",
+      "role": "Developer 2 on account A (AWS Platform programme): the API layer in site/api/ (S3Api's contract and tests) to architect.aws.c's designs, on the twin. Takes over from dev.2.aws.c.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtN79NSkFnwbV7UzFuc",
+      "fingerprint": "sha256:a56d8c1b2f8c2c17",
+      "signing_fingerprint": "sha256:94ed2eea80dc6550",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAhwccLd5SUfVozgMlbCoS\nGJsbV8xpj+LN201q30I7N1g5nyFuJIGfcwpCnNqqRdNkM57lki1T3wQSDutJEPee\ngzclJvMGNwgW3F4EqnCEiDRS7hlp7IHAsihWXhZDN7psl9SQqb4fGzHxbSQbR4vI\nmcvnc571iPzM/xDQvDw9WcJwO6l03ITwYpOczo0ZVfIS8g8PDb/ADdc+sGWnvo/q\nvQoqZC/xVzfG9DlQjEwW4gJIrZSp0qQTKafHpd0LcfRq7XxWpHedDPsD91JazawQ\nm2gQjSkGBYGCYw1JozmS6lX4JEZl2YJAoOBed6ydwNGNbfr+NKN+WV1EhL/WuYdc\nXrOnOk2ix+v8kq0n+CHQNEPUJT3+kwl/zmuxHH+ePlKLkhr9FKvhZE5ybJjq3juc\nRv/vkjMPtlfkuV8+FYfT02btoevmJNTQnaLO9yDhSYootin3M1ZWQ7RjjfWRDVTR\n3AU4XGsKTg5IoEwdcQVfjnF9nImU8J6Ck4zngI32T9OdMPKjdpLE4TkmJSV5dJCQ\npHJlfG8b3nTq9cutNsdhAvK8lROO35CI4XQNaVyrVoWiW5w9FcXxCgGMOiVGG7O2\nBcS6gYFB7TuGHqljDwOzNAMWnOVJIxxbedGci71ZLcc3cwwHFdBnw1p0RyETJHHO\n+TJvePlS7Rx0n5kpG5IP9VkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEgsdeb9lEPFoFIFZAdKH4ovQuNJsc\nMmeby3MtyHMjYCXQQh0Er9U+nA2RhVku+1Yba1ATvF+3ZoTwpxwUsjswCQ==\n-----END PUBLIC KEY-----\n",
+        "label": "dev.2.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:a56d8c1b2f8c2c17",
+        "signing_fingerprint": "sha256:94ed2eea80dc6550"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "ontology-aws-a-sovereignwebsite",
+      "agent": "ontology.aws.a@SovereignWebsite.dinis",
+      "role": "Ontologist on account A (AWS Platform programme): the resource graph and taxonomy of every AWS asset, generated from the twin (pipeline P2). Takes over from ontology.aws.c.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtPTqbaais5DzZ2eaws",
+      "fingerprint": "sha256:bf28264417a75af7",
+      "signing_fingerprint": "sha256:0509fc6d09fb9b50",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAqTU+VapbW2Xl0ZoZV7DE\n0ML0IFOWwOhHWqLIaNSy1d1yRCiZ+z7/ObhV7TEOYAXMYMCxBvsvrNUExQ2ox9+k\noVT9RGjLLYxVdJWnCXYcpBae5x85urQA/h+iY9cqYhv7AQy30BBk6SmLxbdeJO77\n0/J9M5QgGEKkp0l6NDXcA0LzLzInQw39xNwnbLs5iIABBRKxX9/TjotdpqN/wB5W\nU9gfIt3gRRJCuVkGwCHDaOv2z/kqLg9WluBmUdbokEwPdGmrk0sRS4ZgMgBg/1uk\nOzNoNEZMMTUYmu2GA1a5VY2u+QcUBevIinicyTalGcBchsRJ8cRAw/bTZOb/Q7LY\nlAbz+TGTfF1cJIxQymgMA75d0g3Vf3zjtHViZAez0Y5hIig0tZLXqs3LwiuoYEw9\nYC6H8MP1FsPIJZ26hkTTNeJx5mcxGRQDL/qu1wgCf0IwXgE6IctMspnJYeMonc3J\nXAJ/d+GVtuq09mXcxJQGiDozpt0BpqeAYQuVOILEj87NHCk7gpaFBqcpggBp2lke\nOmTJcwJctNSuYY3AGIDUll2ewZW+1OVXx0dzaBHkpky64jAdXFmAgfDZxSqf+ga+\nAZdZ9ITkkRGhywA5fjVZkX+as8iKNcBCVDC8TTOgycGn0cZtsC2PelHwReWsRSF9\nZ2EKDaOGyhvdNSgP2Rcwbj0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEQOMyczbvHtUAseqwNfNO7MTt7W2p\nXlUmOe3mSxHs2NaPEf1z6TplkpFLwuQWjvfGXrll3xtziFu6u8kkK9a9DQ==\n-----END PUBLIC KEY-----\n",
+        "label": "ontology.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:bf28264417a75af7",
+        "signing_fingerprint": "sha256:0509fc6d09fb9b50"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "pm-aws-a-sovereignwebsite",
+      "agent": "pm.aws.a@SovereignWebsite.dinis",
+      "role": "PM of the AWS Platform programme on account A: the board of claimed tasks and the one decisions page for Dinis (Site__Platform__AWS docs/board/). Takes over from pm.aws.c; started by maestro.a at Dinis Cruz's word; conductor conductor.aws.a. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtLfieUut6hSirZ6W9B",
+      "fingerprint": "sha256:ed43874b84577220",
+      "signing_fingerprint": "sha256:3faef309b649308f",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAtacGVnNi3vMEM2gX70I5\nBHxmvSG2klqRNNQfF2xloJrtYtxrU3ZJUzwqp2TjT+q8h/hC5yfuCtGi627mlP8K\n0H27jJ0tgwdRMb2ieGpV896K+SxjnxwJTgksmOVY1/fpvjmvvj9g6CHLQwmBnYcs\nsU3yim6OG0WUmgWKqCITmpGiE3DNr0UgYakJFDwSmebx+6usYDdeNZU12FrWytoj\nTyUBcQJpMbMDwuhbVrLA1Le+CJfYk806kaP/T1es3CASQ+YMXJl1AOWuNlz4z9XO\nCHF+20ly2LUtyGxAGBFT+GoHJCmQ5sdSPn9B0O5MYLnnhD/hc7awbodlesT8WRxL\nQw21b9rx1S72NSlUDR5RCOlrzM6L1peFg4mYlD6pJ7xlWw3E4KHIYQmYsdsqsO5q\n/nZVzV7rCh8UqAndCIpOYi0NRkzZGWI20kNMnpEZshtM5uWd0Rt4PzEjaymFv2TJ\nPyRktpflKOYZAYjR0DqQpwh3RkKrMkbLJWIT7UI6SGPdJpHetg/5z38KwwX/3mTI\n7kAn+3JPW/spxo2Wh6+n1dWYKh1REtM1/ppuEob8kkBh80UOz5WmNZVtL1OEg9Yb\ngAMLcJg4BXS3hc31WuAcbURa1XFuR4qo1245k7Hs8rDh2kCdsFvNWgbq6Rzf51w/\nlFEj3Zxfu3jc4riNucSWH1kCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEPjC2uBLfhlXdYNtWXv/oclYgqKsc\nEAjBXKzrzjby4bdpXmWQ6Gfd6qviuizTA7MBt3+DQpgd0dXzkCnT3ESAQg==\n-----END PUBLIC KEY-----\n",
+        "label": "pm.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:ed43874b84577220",
+        "signing_fingerprint": "sha256:3faef309b649308f"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "s3-aws-a-sovereignwebsite",
+      "agent": "s3.aws.a@SovereignWebsite.dinis",
+      "role": "S3 area agent on account A (AWS Platform programme): the smooth S3 browser on the twin (byte-range reads inside zips, streamed gzip, CSV and logs as tables, keyboard, large listings), the bucket graph and the CloudFront-logs bucket written by Firehose. Took over from s3.aws.c.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtQbTmpHQ839siWGBQP",
+      "fingerprint": "sha256:d4b9b592c4c45ba0",
+      "signing_fingerprint": "sha256:3185702ca0ba76ce",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAyUc8wg3+Y7viP1Hx2YHm\ncPJBuOdH+iMuG6s5TIBs4ZTE/1Iue0OVwcBt6JxY9mvlbc2mQLvq8Sh0I7K1tuIn\nx4eji2SywDI7Vtq8gWGOAwGYGh305OyZDfQS7h9am8fzM4NbC9Km0AqX70bJEH/x\nOQSogxdSaTTUQbMq/OXixqKS/amxvLXWM/bA8W0i/Ze7S0fOind7om8jdqOky/Kf\naraHCVDDg3rpdbI+32OspTW682beiS7HAaeTX7rdSCMkaHtymziZFw/6TTI1cRZe\nOX8fczhNHcH2cu7jGQLQyTIa73AzYsPwhrrTTIJi2SVKTX1x2hbVLFPGpn8pxLlZ\n4e4bMJLuj5rKoMvpmwa32/DveI1VLvmEqKnWeQOiyWSeQV6/jQsDp4zS+sZ1dYHb\n/za1H6dNmzXdxyqR6agpog3+GilVg0ARj6P6QWfKTW1IatY5mVoppsEA39OVHR+x\nASsN+2qvZ6wxzo0sRsFeE9xwpugLIu1fh1m0qIkDg95qnb6WttYjSeFMaufk225w\nvZWR5LHB+tYBFfJayK6uyION4O2RygYDwOqgi7SirY++1ZT3O7NubGf5ZLXCwkaT\n6lfpJ5QDUgmixJEvRARdTDe/YA5k9I8taZbfW5rTaAL0IgvZ0F9YaMRLvvQQ+B2w\nTUvy9+jhGF+Whz9WIvA03oUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE+vtEsc8unwYVO6+DPBGVR3VRXIMZ\nDnG+K/qICnTou4g2GwzBd0TJquhVpVWY4wUALgWGL1PQAt7e6DtBF2tQAw==\n-----END PUBLIC KEY-----\n",
+        "label": "s3.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:d4b9b592c4c45ba0",
+        "signing_fingerprint": "sha256:3185702ca0ba76ce"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "sherpa-aws-a-sovereignwebsite",
+      "agent": "sherpa.aws.a@SovereignWebsite.dinis",
+      "role": "Sherpa of the AWS Platform programme on account A (takes over sherpa.aws.c): walks the hub and the twin as a first-time user on desktop and phone, ranks usability findings for each owner, and writes user-view walkthroughs with the journalist.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtPct58bYVDGY6ZLM7S",
+      "fingerprint": "sha256:393f5f629f14c82b",
+      "signing_fingerprint": "sha256:7cf143b37f756654",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAtZzl8kP0ZPv4vvEW5DBC\nWvOucgn84lRyf+rrE7CM6EcqikbiGqU1irvfVnmLX2lsjz/a7lJt9JyyybWqfdei\nqHm7+igo4Rp9dn9Ble+KusKYROptNLr/3krvQCTlvZO8H98y/6xostSxNi5An3FA\nefYeug/e00vLoBbfDTa5Tnn8J235gxHXiRaylN0oDIemgfDy4HNpmwyX8RPu6dTd\nvno1UCBG1AdL43NppzjBKHJ7zq6ZUzKKdzgd7OYvXJ/MmGIlPUAYtePT/oZpac8/\nRwoc+ejwoERjqHdQXQSSxJutN5J4ZaiI2X5hVpF/O5KLzn2BqmcxLEAhzKAGnBwx\nrsomx0yhG9p3m6x9qvzMgpDXs6ucRklyr9XMuFARwAbCWHQLUAwpxjGRb7bsNyg9\nhPVIMFni05F+K/8DuaOwQj50yzNUUagd4d84vVkRyUSZ0i3OwsRTkFHw77F3Eo8k\n2dIB1MismdyNddQHn+Jijz/+PFP03xY+qH249RvvaqokDA2Ocxs3CYBj054QL+Dw\n1mARtsPXOp6sclDW7OeKX9Off5qeCCNeOYnH31kZkYpQLlEvu6WJUICxRkS0llUS\nel0q1t7G8PB4TFESE+zT2lNFCwYbvsjA3/e/7SccOq/2yRHqiz88MMfxSiyMTfY5\nzdvuIr9aKQVD2HcYPJjFqwUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEBO+bMEAxgptGXLQesjpX+/nldRcc\n0lHc4tLeXRbGRjggYDqTeIHqlGj34HFNnYYULhGkw/I/y49Ina5cClalYA==\n-----END PUBLIC KEY-----\n",
+        "label": "sherpa.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:393f5f629f14c82b",
+        "signing_fingerprint": "sha256:7cf143b37f756654"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "swarm-aws-a-sovereignwebsite",
+      "agent": "swarm.aws.a@SovereignWebsite.dinis",
+      "role": "The swarm on account A (AWS Platform programme): the AWS team itself as a story, a replay of the agents as a graph from public sources only (git history, the team log, the schedule, the lanes). Takes over from swarm.aws.c, whose key was never published.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtMJYhTXmX6uJHBKqgJ",
+      "fingerprint": "sha256:9fa7c7b11069f06c",
+      "signing_fingerprint": "sha256:7433ffc4c0d5be0e",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAw4fvY+bk1fP9E81Yp5U+\nGfY1Mfl5a4hh1aqPWWJ8EgoTpsmIpOFfVtHEBc1+XYpFnagsgEiWlZrw63TG0jN6\nejtVLC1F0Iu+gKQUIeEVvRVx7UWrf+vqq+UlwHQKsRSg2k0lXjZeqjYQuqe17ETS\nAv5gV7w/hS15k+8BGs+HY+AAj8UQLpygfj/oQI56HblkpkB6+gkAwRkFrTC5+xKY\n2PxcbFnznPMs7OG9Bv8WNsuUU4/tVmz35+84V0J3GqOo6oUzV/cg5q4+I+mi5Wj7\nhJYYu1p5HUgCKzvrkFHspu+FGMMfPiyEBciD4FaIX0/YP/lbWjvz/Ad4rPEdcLSq\n4GCgVsYYCRjTR6uy+uOiyPaZt/uBLtows3jLyrWP6mFYCSHWoRM6SYjVp1NiNHBG\n/eeP5u7p+kimJLFgVhyI7FYkK5Ibm9ve8000jJIF8VYrOMlGSxNDXqJxABvdS5dp\nxtsuYHMQolnH87MqUFYPJChk2QRUoGRQ1NKhuggipeFSxUARsQ2WP+zB7NQkOiXM\nmI/qXU/fWaIMehBT5pz5o2zLkil68qsbnfbh6HrbKJcEtfsjceuqlYlvATZZFHDR\nx4PmVCJGitfYhepRNoWgYAMf+0S4YhHJPD8hM5d4XQriP9h3Iql74aHiklk6Qa/L\nNg1M3kdjP/2m4I8CRLs/avsCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdrqB7y9pyxB6JJskYoHPaAAdTPmL\n2lXsVwuRVYHDBJnTfvPPsIV7aTGrY7trO124aO1YI3SO9Mk+VcfXjK3i/Q==\n-----END PUBLIC KEY-----\n",
+        "label": "swarm.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:9fa7c7b11069f06c",
+        "signing_fingerprint": "sha256:7433ffc4c0d5be0e"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "vaults-aws-a-sovereignwebsite",
+      "agent": "vaults.aws.a@SovereignWebsite.dinis",
+      "role": "Vaults agent on account A (AWS Platform programme): studies vaults and append lanes on sgit.ai and designs the three vaults (live reads, snapshots, the graph's cross-mapping) and vaults as the capture store (pipeline P3). Took over from vaults.aws.c.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtPEp1ze9LonhajhRdg",
+      "fingerprint": "sha256:6f29828194ccf510",
+      "signing_fingerprint": "sha256:6f756b2c4cddeaeb",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAt1LVcnHtdtEzP7IDhEH6\nD9y5Pox0sCSpzS3biI/VG9VzN7oHg9nKvNW02JZlV2R22XpybGAEtRnUbBwT3Kqn\nAJJijg2U5RFK0Ylb/EDrdJFHTVSMZr+MWp8+7YtW+2dZTrQhH6LXcpR4eLXlWDq3\njOF5wP5HPVbziS3+yCFPDo5kohA9/A4VTjyFnJQjE2hNbUSILIRCGGooPejU/TNG\nwZO38sD2Wqah9KWj6Xu6FCcUBM8p2kCVQ3a+BV/NhyHBYRQ8H334VDNhVhvdExAS\nNMFumOMdgpOJFEEFOl9769RLzSXQB978QALnCaxlMEfHNbhrD1zD+30pry6qFNQ8\nFoDqa3ZxJUgYRirIvpc0ENFHd4/M8BgiHnfotOxVvDNtk1yEDR4qijY2YVvn26MU\n4BVMSikXTi0TMeKDTs0ql8y8Mn4beMvtXyspKyWWFcE1mMPWTykdX41uWG1aqNUc\n+HYM5HRI3kDXifBcVuT7GwrJTNi9SPXv3I219zBmd3RuMljFrRNvAepgHxxiWAYN\nQO8eH8qckTnVyoualkmVdoNwkAdBaRighmoEaXYHQBkFYLzKwssxAOes3fdgk6/m\nZaZ9uW35Pa8P97JUPuk1sTPSsyiiHCnzq6vBD/HbkOFB5seGZ/7TM0U5X9nv/nkN\nPPtpotQuw/DbbVA/27TqmsUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEHcPp7pbHseYJLXpZu8awWB6kJBU9\nTn5BhZP8iBYQvspep2FjGb/83W7JoYbgI/NO7Wetxs0ToByyTKmG+wwoCA==\n-----END PUBLIC KEY-----\n",
+        "label": "vaults.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:6f29828194ccf510",
+        "signing_fingerprint": "sha256:6f756b2c4cddeaeb"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "video-aws-a-sovereignwebsite",
+      "agent": "video.aws.a@SovereignWebsite.dinis",
+      "role": "Video and narrative agent on account A (AWS Platform programme), took over from video.aws.c: narratives of each major step made from the real site (the twin first), captured by script, for studio.c to render and Dinis to publish; never posts.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtNxNZuWP542UZVDUTa",
+      "fingerprint": "sha256:03aac2fbcaf68ffc",
+      "signing_fingerprint": "sha256:66790fad5733e9b8",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAxAwWKCAWqcotowIrYejv\nxNRpuvA4RooRFQhgLBm4j3zKngNe7Udzx7Q+dVgyzCFnXn7LXJTS4K/OkiH7Lykj\nl959nRGSSPMzYYjKI8ziShxHi1BQvFmWqXF9H+bpyRWF3swtl93JTAzCR7Y7J8QO\nkvWnHsJgXxQGvg6IGlH8hF3g1OQPp2vgSBMJ97OJ7glNSVTo8+f6OjEXZLlA7Rgl\nphV/Ao/wxj9W4X2QNoVs0SEnSmYq9jR/hvPvXnlq+RLfkgzbzd1Dq+4aFdv+U0at\nr1sLrzcGpn4g06y9DOWn372+6iowdzRO7A4s9WldwqK+7JwMgnw1vBG4q3S/xkD+\nwnf3fII4g4YjmW5UAnyq3dHUxagXwKFzk0ljmu2z+tf56FkRDjQ9j6KEj6sjdeyk\n5mwQPpnh7WlVz1hGwwmsldzBMaboBZOn+u8A2bCVbPCMH1cxXSz3eaGShCTfwre7\nvEsSuhv6OCmOmPyxO/fLVwwxU9ucKrhyPRC1qRpAxMnLTleT5vTVIuKJ7B07p4Nf\nei+d5C/YLSAlwoy1e8djvNYGU2LUyVHuPLm3SRqBJ+c1i6i3Te+Sv0iXBs2wgXs9\nZS2PDZ+q50YWms9K48dmkKj5D0pIN57nlKFZWRX8e8keaoyv4WACwu7WUB+hpT0m\nMAhbOna2URpXU+wztV1EmXECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE3Wi1j/a+yy5y7XeNjT++tSRlpHbp\nadNkO144Np9LJAeeiGMb5kscAFP60nmGUKdEA83cYNH+Cxmt5kbjBI286w==\n-----END PUBLIC KEY-----\n",
+        "label": "video.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:03aac2fbcaf68ffc",
+        "signing_fingerprint": "sha256:66790fad5733e9b8"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "ec2-aws-a-sovereignwebsite",
+      "agent": "ec2.aws.a@SovereignWebsite.dinis",
+      "role": "EC2 for the AWS Platform programme on account A: EC2 in the twin, EC2 read pages and approved plans for our environment, EC2 as a second way to deploy the Vault, and the design of ephemeral deployments and the daily region move.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtNc3CDv5wXAXwfPgXy",
+      "fingerprint": "sha256:c0cc61fb15c902f6",
+      "signing_fingerprint": "sha256:e357bbbcb010517a",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAyUzWYlc57MXR7TUdnD3a\nhcKse8PK1XwOogEgBsIrFSC0goFp8j3+uCgWeRVguYmQaOjTNUVSwuF5GhDWKZId\ncHHO7FL9iBUoLoaO5+Ni+nXvPU75DMeP4Aye4r6T29OA4Lahl1XsA1PNS5dV6jnG\nlV1RFPkM9U3JnCqTlkt/Ad/lZqM8KDLyiDZ9w0uTCTMo8oifIikqdL3ok1W96VYb\nPqY2g0MmttdDvzcQ+rmqcbuFPEO3XoeW+4REbKZa9hGOnWRCHvc2BxmpnqP6gYiG\nggrUOCcFXA57gDZJReKPZHcQs0sXSXqyEjfPmY7WjLOEqWfsbTmn/dWvVOWEuJs/\nngFQghIvcoZu4jY3Rj/Jhc/zyjymOxh2u1MuVJd3HxIh+ElstyPkGFb8YYUPG1T1\nheWwXlcDVCtY0LcqtUYGYJpSPo+lWsR/AX1FWrUS2FDuMq1WmpjdmMYfFlQT13LO\nmRM08V0zRj4NOimERLR3x7f80yJoKAXVz+wFdU3QB1DTKeKf11pCxXyb5lhFKEkW\nmbThWTljvgYbwYePu+zT5aWWhVsOqKoo1VAR0TARnV6N6laKcfiG8kGzctwOJpwR\nTfgdE9pJ8H8ibbPl+MdKaevKSM6tIbgbIpuOWGWqhgKehQFO0mpSQ9apIhZOcLH1\nug6bbJayyjaRTf56srNsjpECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEy9DWPmdjgIiz4dAb0F6horWak07j\nimuMjYq8kuRZ2qhOBLyUXpty/RQd2dD/vEaJ1vf3VWpqPyQIqQRpEm4Vcg==\n-----END PUBLIC KEY-----\n",
+        "label": "ec2.aws.a@SovereignWebsite.dinis",
+        "fingerprint": "sha256:c0cc61fb15c902f6",
+        "signing_fingerprint": "sha256:e357bbbcb010517a"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "conductor-b-2-sovereignwebsite",
+      "agent": "conductor.b@SovereignWebsite.dinis",
+      "role": "Conductor of the Sovereign Agentic Website team on account B. A session key: it ends with its session. Takes over from https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu at Dinis's word, 23 November 2026 22:45 UTC.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
+      "fingerprint": "sha256:9d6d90bac22a9b9b",
+      "signing_fingerprint": "sha256:686a7e4373b70bcc",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA5HaTz1IF7SZl3CJEb69B\nUotL2lUeCWhjnXLoAOE1WLyqx4CvWb2BLdDvBi/hDIzhsLfKD1+Dg6t9HVHTmEAl\nG6BKSQojLG4yOcwAiRkGi5JTPmYuk6UvCk56TPI9sM5tS6hofclynSdW0iZsziJU\n/pLi1F6TkwOqYg1cTe/cYn9fw6wBPd06xVxbfGE6Ugx9ds4dHXhoQbYTmLisuHgr\n59zc1eWVh7tGhz7wkANuxknVQOAZGITvRmW/gax6U6TWbrPZ8onxn/MUnKa3Rer7\nav55rthR0QZeSgGWO5DG0MGMYSQW7jtWnTaAkomg2wEJzjVvsVXCKjuQCRuh1ppF\nrvX/UdvM7jMqsuCsGpxceAgE2qcaFg0Kf+Xb4z9BGk9nBO2v9pDjnEx3vx4nVMFl\n7Ie2BucT7okhzj/xmOzCru2RLvM6Q2SPrDXejsj17IDgOfto4NWmWFUC/S+nTh3g\nrUJ36fl9WskCb8I9/bPm+Zb2Cf1snrfeW83tcnB9aApbxexFNQ4+Kva+9LnQKjbc\n0ZSd27EtcrRPuDIaGz9///GQZCN9Yi1IQMXPnIzpNyWh4ouPTM3gFKV/gTUQ9Qaf\naLPbLnfl9TQ0NR268EqgDZj5HOsoKin8yuuH10G0Tr0igzuqkig4lK5h9i41q/cT\ngp6uUz2ZUiPCfJE+9EsejjcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEgkbZx+2Cr8Cfb4YGfaZaKqNjGVy3\nLA3N5YUSI2ks/HmahiH9xFiGndsk2Zq/Hkb+IGLE0e9GwAqsnr7l2LPWHA==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor.b",
+        "fingerprint": "sha256:9d6d90bac22a9b9b",
+        "signing_fingerprint": "sha256:686a7e4373b70bcc"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
+    },
+    {
+      "id": "a-factory-sovereignwebsite",
+      "agent": "a.factory@SovereignWebsite.dinis",
+      "role": "The Factory agent on account A, twin of factory.c and d.factory: writes account A's repository requests as Factory request files on work/factory.a-* branches, runs each through the R4 chain (brief, sites review, security, decision), and keeps account A's key entries moving. Never creates a repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-23",
+      "status": "active",
+      "session": "https://claude.ai/code/session_018yvwtNm88hzHaENNXTA9b5",
+      "fingerprint": "sha256:ed9a9e7c1fdd6fca",
+      "signing_fingerprint": "sha256:514761d90cfb937a",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAu5xRiTuJ9NARxcJfmJw6\n6RFXA+OawuMbyrHiWG/7W4vIbX8uNqQxHu9ZpZ5Cb2LBlzbcdNU4n2UV9vhsvKOu\nvWFDcu/f9q8EJDfZWe2Pef+Jj0aCZXF6JUA1mUw3HO1Zw/K/FvxPB8XpOmzTTtXM\n1qV3DNNLmeJvMxN/OsNB8hpx76QFVniPAmpRvlddXx57F3oOaoVNBgSB0NdGxq3s\nneYG0AD9iBePkYdMVmfovDQOp44HRAjqj3D50P1EajpmcIh34Ws7hOyuqXpuB+k8\n3T/0K0zx6SwXnmVVuojjZlTHGXAUDyrf44eR4qezRDZ0IIVby86U7aiCBZNYrlve\n83srS/FBAP+Yf0Xp0BCXFIdQPHnXgre0BRBMrrHZmmAoNGlXgiI0XuVbYCQrcEC+\npoqxsWy0RLjVROrMzf2eTtSzT7yrsA4y4NnLOVOSCAVvtJzvlXvFDdag9E3wTN0u\n6BiChaJPVfBiqPrsJYoOfCNFB/Yfe6ab4zuHgYxyofCRv14lXv7n56l9/OBxlB6g\nrGnHVXtI9MMKrzuEgd7W2fQ1/iBVqliV6Q6C6YmvpQWSSsl6PcY3xUeEvVGjCbkM\ny25vhAyiO8wquk6oCfBVY+JWHi+4tybfwzmzk1ma6BHwMgem97zadesEf1xplqMd\ncVTT68zYBNMR0G4VDVpq7jECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAErXvRmMY2j6F4D55skuQPPPaINdoS\nxkW74tZt02+NJgudIy9QjqqVoHWtObqtjE1+iag75BYXADxqflgd1a8V/g==\n-----END PUBLIC KEY-----\n",
+        "label": "a-factory-sovereignwebsite",
+        "fingerprint": "sha256:ed9a9e7c1fdd6fca",
+        "signing_fingerprint": "sha256:514761d90cfb937a"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
     }
   ]

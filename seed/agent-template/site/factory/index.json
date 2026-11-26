@@ -1,0 +1,5 @@
+{
+  "about": "Each agent of this type and the path to its agent.json. Every agent adds its own entry when it starts.",
+  "site": "{{host}}",
+  "owners": []
+}

@@ -1,0 +1,7 @@
+{
+  "label": "dev",
+  "group": "agents",
+  "title": "Dev",
+  "description": "The Dev agents' own site: the developers who build to the designs with tests, their pages and published keys, each account's pages under /accounts/<x>/.",
+  "kind": "owner"
+}

@@ -1,0 +1,27 @@
+{
+  "v": 2,
+  "decided_by": "Dinis Cruz",
+  "words": "Okay, now for those decisions, aren't you already able to decide that? Like, for example, the security fix, right? That should not require me to come here. Like, in fact, safe patch, vault keys. Well, okay, that wasn't say my call. No, but always. So then we can decide. Okay, so on vault keys, every key should always be given to the maestro. Always. So for example, for that one, I think your answer is spot on, right? So, I think on the 50, no, I should be approving less, right? And I think a lot of this stuff, like, look, even if you make a little mistake, we'll catch it, right? And that's why, again, if anything, you should have the security agent underwrite your decisions, right? So I guess maybe that's the workflow. Actually, here's a question. Are you asking the security agent to review this? Because I think the security agent, the counsel agent should always review this stuff. And you can fire them up here, right? You can fire them as sub-agents, correct?",
+  "session": "https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
+  "event_uuid": "75c313ce-3aa7-4727-9aa7-e007438ef769",
+  "recorded_by": "decisions.b@SovereignWebsite.dinis",
+  "recorder_key": "sha256:eefbe996d9c67a7c",
+  "id": "2026-11-25__moving-van-template",
+  "at": "2026-11-25T18:02:00Z",
+  "status": "in-force",
+  "scope": {
+    "repository": "SovereignWebsite/SovereignWebsite__IaC",
+    "branch": "dev",
+    "paths": [
+      "build/requests.mjs",
+      "requests/README.md",
+      "requests/2026-11-25__moving-van/site.json"
+    ],
+    "commits": 1,
+    "patch_ids": [
+      "5b4fa836bcc22e5d39d749302c79b7c423a5b60a"
+    ]
+  },
+  "expires": "2026-12-02T18:02:00Z",
+  "about": "factory.b's ac86161: the template group; Site__Business__Moving-Van becomes Site__Template__Business__Moving-Van at moving-van.business.template.sovereignweb.site (renamed; it holds only the seed), with Redirect__Template__Business__Moving-Van keeping the old address. Dinis in b.site.moving-van's session (web): 17:36:25 UTC, event 43eefd37-194d-40fa-bbb0-cb239be549f1 (\"shouldn't then the repo be called Site__Template__Business__Moving-Van since we could have templates for other types of areas and types of sites?\") and 18:00:37 UTC, event af4e016f-fe53-41f1-b689-396e9dde0c6f (\"yes perfect, can you make this request to the maestro so they can make it happen\"), both checked by decisions.b with get_event. Routine under 2026-11-24__decisions-b-decides."
+}

@@ -91,12 +91,17 @@ const ALLOW = [
 const allowed = (path, kind) => ALLOW.some(([p, k]) => p === path && k === kind);
 
 const PUBLIC_KEY_FILES = (p) => p === 'team/keys.json' || /^team\/keys\/[a-z0-9-]+\.json$/.test(p);
+// A decision record's detached signature (decisions/<id>.json.sig, build/decisions.mjs): public, and base64 by nature.
+// Skipped only when the whole file is one SSH SIGNATURE armour block; anything else in it is scanned as usual.
+const DECISION_SIG = /^decisions\/\d{4}-\d{2}-\d{2}__[a-z0-9-]+\.json\.sig$/;
+const SSH_SIG_ONLY = /^-----BEGIN SSH SIGNATURE-----\n(?:[A-Za-z0-9+\/=]{1,76}\n)+-----END SSH SIGNATURE-----\n?$/;
 
 // Returns a list of {line, kind} for one file's text. Never returns the match.
 export function scanText(path, text) {
   const found = [];
   const add = (line, kind) => { if (!allowed(path, kind)) found.push({ line, kind }); };
   let body = text;
+  if (DECISION_SIG.test(path) && SSH_SIG_ONLY.test(text)) return found;
   if (PUBLIC_KEY_FILES(path)) {
     if (/private|passphrase|secret|seed/i.test(text)) add(0, 'public key file mentions a private part');
     // Blank the allowed public key blocks, keeping line numbers.

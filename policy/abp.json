@@ -208,6 +208,58 @@
       "note": "The counsel reviewer of key requests (policy, consent, privacy, third parties' names and terms, and licences): it writes only its own review files, signed with its own key, naming the exact request commit it reviewed. Verdicts pass, fail or needs-a-person; changes it asks for are listed under actions with verdict fail.",
       "source": "Dinis, 22 Nov 2026 ~16:33 UTC in factory.d's session: \"yes, to starting security [.d] and [counsel.d] with keys. Absolutely, they need to be signing the stuff they do\"; started by conductor.d."
     },
+    "decisions.b@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
+      "may_change": [
+        "decisions/**",
+        "board/decisions.b/**"
+      ],
+      "needs_dinis_merge": [
+        "decisions/**"
+      ],
+      "branches": [
+        "dev"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "record a decision without Dinis's words in its own session"
+      ],
+      "scope_source": "Dinis, 23 Nov 2026, in factory.b's session: \"we need to have a workflow for you to push ... I want to do it through decisions\"; decisions.b started at his word (maestro.b, ~12:20 UTC). Entry drafted by factory.b from decisions.b's proposal; needs_dinis_merge on decisions/** is dropped once build/decisions.mjs is merged."
+    },
+    "a.factory@SovereignWebsite.dinis": {
+      "session": "https://claude.ai/code/session_018yvwtNm88hzHaENNXTA9b5",
+      "may_change": [
+        "requests/**",
+        "team/keys.json",
+        "board/a.factory/**",
+        "seed/**",
+        "build/**",
+        "test/**"
+      ],
+      "needs_dinis_merge": [
+        "requests/**",
+        "team/keys.json",
+        "seed/**",
+        "build/**",
+        "test/**"
+      ],
+      "branches": [
+        "work/factory.a-*"
+      ],
+      "never": [
+        "push to main",
+        "print or commit a key or token",
+        "name a private prospect",
+        "create, delete, transfer or archive a repository",
+        "merge a request",
+        "retire a key without Dinis's word or a b.decisions record"
+      ],
+      "source": "Proposed by a.factory for Dinis's word. Started by a.maestro (account-a) at Dinis's word, ~23:55 UTC 23 Nov 2026 in a.maestro's session (https://claude.ai/code/session_018yvwtLiem1AqdA1YkKse4h), as relayed by a.maestro: \"start a.factory\", \"so that if the sites need to create a new repo, it doesn't go through the other project\". The account A twin of factory.c and d.factory, limited to requests, account A's key entries and its own status.",
+      "note": "a.factory writes account A's repository requests on work/factory.a-<name> branches and runs each through the R4 chain (brief, sites review, security, decision). It never creates a repository: the Factory's CI bot does, on Dinis's merge or a b.decisions record naming it. board/a.factory/** holds its status and debrief, committed at every wake.",
+      "keys_scope": "In team/keys.json a.factory publishes and retires only its own entry and account A's (agents named <role>.a or a.<role>, or with .a. in the name), each retire only on Dinis's word or a b.decisions record. security.aws.a (24 Nov 2026 00:17 UTC) recommends the Factory checks refuse its changes to other entries; build/abp.mjs keysChange is factory.b's, c's or d's path, so that is asked of them.",
+      "paths_source": "Dinis Cruz, 24 Nov 2026 in a.factory's session, asked what the seed/**, build/** and test/** paths were for (the provenance seed): \"ok, yes make those changes, you have my authorisation to change those files\"."
+    },
     "conductor.c@SovereignWebsite.dinis": {
       "session": "https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj",
       "may_change": [
@@ -263,7 +315,8 @@
         "pages.enforce_https",
         "pages.nudge_certificate",
         "repo.rename",
-        "repo.invite_collaborator"
+        "repo.invite_collaborator",
+        "repo.refresh_managed"
       ],
       "refused_always": [
         "repo.delete",
@@ -277,7 +330,7 @@
         "ruleset.delete",
         "ruleset.weaken"
       ],
-      "note": "A repository that exists but is not in org/repos.json is reported, never deleted. repo.seed only adds files that are missing on dev, never overwrites. pages.nudge_certificate re-sets the same custom domain only when Pages has no certificate or a failed one, so GitHub retries issuing it; it never runs while a certificate is pending.",
+      "note": "A repository that exists but is not in org/repos.json is reported, never deleted. repo.seed only adds files that are missing on dev, never overwrites. repo.refresh_managed replaces only the files listed in build/managed.mjs (today .github/ci/signers.mjs), and only when the site has exactly an earlier version the IaC seeded (seed/managed-history.json); a keeper's own change is kept and reported. pages.nudge_certificate re-sets the same custom domain only when Pages has no certificate or a failed one, so GitHub retries issuing it; it never runs while a certificate is pending.",
       "protection": {
         "main": "no deletion, no force push, no direct update; only organisation admins (Dinis) bypass, so main moves only when Dinis merges a release",
         "dev": "no deletion, no force push; agents push here, and every push runs Checks including the policy path check"
@@ -495,7 +548,7 @@
       "holder": "aws-role:sovereignwebsite-factory-dns",
       "permission": "route53:ChangeResourceRecordSets (UPSERT; A, AAAA, CNAME, TXT) on the three sovereignwebsite zones and the sovereignweb.site zone; route53:ListResourceRecordSets, route53:GetHostedZone, route53:GetChange",
       "why": "dns-apply: write org/dns.json to Route 53",
-      "state": "active for the three sovereignwebsite zones; sovereignweb.site to be added to the role by Dinis (docs/aws-oidc.md)"
+      "state": "active for all four zones, sovereignweb.site included (DNS apply run 45211861879, 23 Nov 2026)"
     },
     {
       "holder": "github-app:agenticcells-site-factory",

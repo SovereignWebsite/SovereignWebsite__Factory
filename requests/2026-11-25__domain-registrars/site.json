@@ -1,0 +1,9 @@
+{
+  "label": "domain-registrars",
+  "group": "services",
+  "title": "Domain registrars: how buying a domain works, and the good options",
+  "description": "A researched guide to domain registration: registries, registrars, resellers and brokers, buying direct, transfers, and registrars with APIs, each claim with its source.",
+  "kind": "demo",
+  "keeper": "domain-registrars.a@SovereignWebsite.dinis",
+  "design": "design.b@SovereignWebsite.dinis"
+}

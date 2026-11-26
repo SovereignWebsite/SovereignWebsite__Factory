@@ -1,0 +1,8 @@
+{
+  "label": "mail",
+  "group": "agents",
+  "agent": "a.mail.conductor@AgentiCCells.dinis",
+  "title": "Mail agents",
+  "description": "The mail agents' own site: their pages, keys and state, each account's under /factory/<owner>/<account>/. They build the Email Cell and gmail.google.tool.sovereignweb.site.",
+  "kind": "owner"
+}

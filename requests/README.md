@@ -24,6 +24,7 @@ sovereignweb.site is the domain for new sites (Dinis, 20 November 2026: "a bette
 |---|---|---|
 | `artist` | creative portfolios | emily-cruz.artist.sovereignweb.site |
 | `cv` | career profiles | silvio-switha.cv.sovereignweb.site |
+| `manager` | managers' career sites, told through their career path (Dinis, 23 November 2026: "Go for .manager. on the url") | ben-fung.manager.sovereignweb.site |
 | `company` | companies | perspace.company.sovereignweb.site |
 | `organisation` | groups that are not companies | algarve-evolution.organisation.sovereignweb.site |
 | `invest` | investment firms | sotavento.invest.sovereignweb.site |
@@ -37,13 +38,18 @@ sovereignweb.site is the domain for new sites (Dinis, 20 November 2026: "a bette
 | `author` | writers and their work (Dinis, 22 November 2026, for donna-freed: "put her as an author") | donna-freed.author.sovereignweb.site |
 | `platform` | unofficial sites about the platforms we use, from their public material, each saying it is not the platform's own (Dinis, 22 November 2026: "Yes, to the platform group, absolutely") | owasp.platform.sovereignweb.site |
 | `frameworks` | open frameworks and methods, explained with their tools (Dinis, 22 November 2026: "Wardley Maps in 'frameworks'") | wardley-maps.frameworks.sovereignweb.site |
+| `presentations` | presentations, one repository per person, the repository the source of truth (Dinis, 23 November 2026: "presentations cover the whole remit") | dinis-cruz.presentations.sovereignweb.site |
+| `services` | services we offer or research for customers (Dinis, 25 November 2026: "I think we should put this under services") | domain-registrars.services.sovereignweb.site |
+| `sport` | coaches, instructors and clubs, under their sport as provider (Dinis, 25 November 2026: "what about sport, paddle, Oscar as a category") | oscar.padel.sport.sovereignweb.site |
+| `business` | small local businesses, customers' own trading sites (Dinis, 25 November 2026: "for the moving van make it generic ... moving-van.business.SWS") | moving-van.business.sovereignweb.site |
+| `template` | a generic site with placeholder content only, for an area (a group, given as `provider`); a real customer's site is made from a copy once the owner agrees (Dinis, 25 November 2026: "Site__Template__Business__Moving-Van ... we could have templates for other types of areas and types of sites") | moving-van.business.template.sovereignweb.site |
 | `agents` | the SWS agents' own sites | factory.agents.sovereignweb.site |
 
 More groups will be added as we go; adding one is a change to `GROUPS` in build/requests.mjs and to this table. Every site has a group (Dinis, 20 November 2026: "Everything should have a group for now"; demos go in `demo`). The only exceptions are listed in `NO_GROUP` in build/requests.mjs: the agents area's own index page, and google-maps, held at its old address until its Maps key lists the new one.
 
-Rules: a label is unique across all groups, and a group name cannot be a label.
+Rules: a label may be used in more than one group, so one label finds all of a person's sites (Dinis, 23 November 2026: "allow labels to be used in different groups"); each site's address and repository name must still be unique, and a group name cannot be a label (except a group's own home, listed in `NO_GROUP`). When a label is shared, its bare old names (`Site__<label>`, `Redirect__<label>`) are not used to rename anything.
 
-A `tool` site about a third party's service names that party: `"provider": "huggingface"` gives `pybot.huggingface.tool.sovereignweb.site` and `Site__Tool__Huggingface__Pybot` (Dinis, 22 November 2026: "gmail.google.tool"; "use pybot.huggingface.tool"). The label stays unique across all groups.
+A `tool` site about a third party's service names that party: `"provider": "huggingface"` gives `pybot.huggingface.tool.sovereignweb.site` and `Site__Tool__Huggingface__Pybot` (Dinis, 22 November 2026: "gmail.google.tool"; "use pybot.huggingface.tool"). An `organisation` site for one chapter of a larger organisation names its parent the same way: `"label": "london", "provider": "agentics-foundation"` gives `london.agentics-foundation.organisation.sovereignweb.site` and `Site__Organisation__Agentics-Foundation__London`, so one parent can hold several cities (Dinis, 24 November 2026: "london.agentics-foundation.organisation"). An `author` site for one work names its author: `"label": "one-human-nine-agents", "provider": "dinis"` gives `one-human-nine-agents.dinis.author.sovereignweb.site` and `Site__Author__Dinis__One-Human-Nine-Agents`, so one author can hold several books (Dinis, 25 November 2026: "title.dinis.author.sws").
 
 ## Repository names: `Site__<Group>__<Name>`
 
@@ -60,6 +66,8 @@ Change the request's address (its group, or drop `"domain": "sovereignwebsite.si
 Org apply moves the site's repository to the new address and makes `Redirect__<Group>__<Name>`, a one-page site at the old address that sends every visitor, with the same path, query and `#fragment` (so a vault key still opens), to the new one. DNS apply keeps a CNAME for both names. Old addresses never vanish. Check the site's own content for the old address after a move.
 
 ## Agents' own sites
+
+**Per-account agent homes** (Dinis, 25 November 2026, relayed by a.maestro): one repository per role per account, `Site__Agent__<Role>__<Provider>__<Number>`, each segment one meaning, for example `Site__Agent__Router__Claude__8`. A request gives `"home": { "role": "router", "provider": "claude", "number": 8 }` (providers: claude, chatgpt, mistral, gemini, with their own capitals; `"role_label"` for a role's capitals, as `AWS`), the label `router-claude-8`, and usually `"pages": false`: no website, no custom domain, no DNS record, so it costs no certificate; it is seeded from `seed/home-template` (key, area, START.md, the signer check) and the shared site for the role reads its dev branch. A request may also list old repository names in `"aka"`, the only names Org apply will rename from.
 
 Each SWS agent has its own site, `<role>.agents.sovereignweb.site` (repository `Site__Agent__<Role>`, singular since 22 November 2026, Dinis: "It's not agents, it's agent"; Org apply renamed the plural ones), and `agents.sovereignweb.site` is the shared page for all of them (Dinis, 20 November 2026: "each of the agents here to manage their own site, including publishing their own keys to their site, which becomes a way to authenticate those agents and what they signed"). A request names the agent: `"group": "agents", "agent": "<role>@SovereignWebsite.dinis"`. The site is seeded from `seed/agent-template`. Its public key is never written by hand: every deploy (and once a day) copies the agent's active entry from this repository's `team/keys.json` into `site/key.json`. So `team/keys.json` stays the one root that the commit checks trust, and a key that is only on an agent's site counts for nothing. Each agent keeps its own site; only that agent commits there, under the repository's CLAUDE.md. All agents work through the same GitHub access, so this rule is enforced by signed commits, not by GitHub permissions.
 
@@ -81,12 +89,30 @@ Every site's `.github/workflows/pages.yml` runs on each push to dev, after the A
 4. **Deploy** to Pages, then **tag** the released commit. The run's summary lists every check, so `/admin/` and the design back office can link to the latest run.
 - **Private**, `"access": "vault"`: seeded from `seed/gate-template`, a gated holding page. The holding page is public and names the site; the site itself is sealed in a private sgit vault, published only as ciphertext (`site/private/<id>.zip`), and opens in the browser only for people holding its QR code. Everything the page needs (`open.js`, `vendor/jsqr-1.4.0`) is in the site's own repository. Private sites are made, sealed and handed over by the site's own agent: they are never routed through the hub or listed on it (Dinis, 20 November 2026: "all vault/private sites should not be visible at all by the hub.b session and website").
 
+## Design brief before the first build
+
+Register every new site request with design.b at M0, when the request is made (block 2026-11-24__block-03). design.b sends five ideas from the owner's world as a brief, made from its template (https://design.agents.sovereignweb.site/briefs/TEMPLATE.html; all briefs at /briefs/); its link goes in the request as `"design_brief": "https://design.agents.sovereignweb.site/briefs/<slug>.html"`, where `<slug>` is the request's slug (its docs/briefs/<slug>.md in Site__Agents__Design also works). The repository is still created at once from the neutral seed; the keeper's first real build waits for the brief. Org status lists requests made since 24 November 2026 that have none yet (agents' own sites and private vault sites are not briefed).
+
+## Keeper and design
+
+Every site with a public part has a dedicated keeper from its first rounds and design directions with review rounds (Dinis, 24 November 2026: "every website that we create that has a public element always has a keeper, at least to do a couple rounds in the beginning, and actually should also have the design element to this"). From 25 November 2026 a public request names both, as agent names:
+
+```json
+"keeper": "a.ben-fung@SovereignWebsite.dinis",
+"design": "design.b@SovereignWebsite.dinis"
+```
+
+The routing agent never builds the site itself; it starts the keeper in its own session on the site's repository (Site__Agent__Factory site/guidance/). Agent sites and private vault sites are exempt.
+
 ## Rules checked by build/requests.mjs and the tests
 
 - label: lower-case letters, digits and hyphens, at most 40 characters, matching the folder name, not reserved (www, hub, vault, api, admin, mail, factory, or a group name);
 - title at most 80 characters; description at most 200; kind `demo` or `owner`; no em or en dashes;
-- group, domain and access only from the lists above.
+- group, domain and access only from the lists above;
+- design_brief, when present, a docs/briefs/<name>.md in Site__Agents__Design, or a page on https://design.agents.sovereignweb.site/.
 
 A request names no private person: an owner's details stay out of this public repository until they agree. Every site Dinis asks for has the person's or organisation's approval for a public address (Dinis, 20 November 2026).
+
+A moved site can keep its old address while its new one waits for a certificate: `"keep_address": true` (only with a `from` block) keeps Pages on `from.address` and adds the new address's DNS record ahead of time; removing the flag switches the domain.
 
 The pipeline never deletes: a request removed from this folder leaves its repository and address in place, for Dinis to retire by hand.

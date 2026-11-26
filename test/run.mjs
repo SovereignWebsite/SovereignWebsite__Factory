@@ -325,7 +325,7 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   const g = seedFiles('seed/gate-template');
   for (const must of ['.github/workflows/pages.yml', '.github/ci/build.mjs', '.github/ci/quality.mjs', '.github/ci/share-check.mjs', 'site/assets/share/card-1200x630.jpg']) assert.ok(g.includes(must), `gate-template seeds ${must}`);
   for (const never of ['site/start/index.html', 'site/agents/index.html', 'site/admin/index.html', 'site/llms.txt', 'site/data/agents.json']) assert.ok(!g.includes(never), `gate-template never seeds ${never}`);
-  assert.equal(readFileSync('seed/gate-template/.github/workflows/pages.yml', 'utf8'), readFileSync('seed/site-template/.github/workflows/pages.yml', 'utf8'), 'one pipeline for both templates');
+  assert.equal(readFileSync('seed/gate-template/.github/workflows/pages.yml', 'utf8').replace("          SWS_GATE: '1'\n", ''), readFileSync('seed/site-template/.github/workflows/pages.yml', 'utf8'), 'one pipeline for both templates (the gate adds only SWS_GATE)');
 }
 // Agent sites: the same pipeline, plus the key copied from team/keys.json, a daily refresh that makes no new
 // version, and the family bar allowed. The version chip's CSS is a file, for a strict style-src 'self'.
@@ -455,11 +455,60 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   const A = key('a'); key('b'); x('git', ['init', '-q', r]); fs.writeFileSync(`${r}/f`, '0'); git('add', '-A'); git('-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'init'); const base = git('rev-parse', 'HEAD');
   const c = (signer, msg, agent) => { fs.writeFileSync(`${r}/f`, msg); git('add', '-A'); git(...(signer ? ['-c', `user.signingkey=${d}/${signer}`] : ['-c', 'commit.gpgsign=false']), 'commit', '-q', ...(signer ? ['-S'] : []), '-m', msg, ...(agent ? ['-m', `Agent: ${agent}@X.y\nClaude-Session: https://claude.ai/code/session_${agent}`] : [])); return git('rev-parse', 'HEAD'); };
   const good = c('a', 'by a, published', 'a'), early = c('b', 'by b, key not published', 'b'), person = c(null, 'an owner edits on GitHub'), anon = c(null, 'unsigned, no trailer'), ov = c('b', 'by b\n\nOwner override: "make this live", the owner\'s session', 'b');
-  const res = await checkSigners({ cwd: r, before: base, after: ov, keys: [A], personVerified: async (sha) => ({ verified: sha === person, login: 'owner' }) });
+  const res = await checkSigners({ cwd: r, before: base, after: ov, keys: [A], personVerified: async (sha) => ({ verified: sha === person, login: 'owner', type: 'User' }) });
+  // No Agent: trailer: only a GitHub User or the Factory's App, never Claude's shared "claude" login (kate-curtis-evans.b).
+  { const S = await import('../seed/site-template/.github/ci/signers.mjs');
+    const only = async (p) => (await checkSigners({ cwd: r, before: `${person}^`, after: person, keys: [A], personVerified: async () => p })).refused.length;
+    assert.equal(await only({ verified: true, login: 'claude', type: 'User' }), 1, 'no trailer, verified as the shared "claude" login: refused');
+    assert.equal(await only({ verified: true, login: 'some-app[bot]', type: 'Bot' }), 1, 'no trailer, verified as another bot: refused');
+    assert.equal(await only({ verified: true, login: 'owner', type: 'Organization' }), 1, 'no trailer, verified as a non-User account: refused');
+    assert.equal(await only({ verified: true, login: S.FACTORY_BOT, type: 'Bot' }), 0, 'the Factory\'s own App (Org apply seeding) passes');
+    assert.equal(await only({ verified: true, login: 'owner', type: 'User' }), 0, 'an owner editing on GitHub passes'); }
   assert.equal(res.checked, 5); assert.deepEqual(res.ok.map((s) => s.slice(0, 7)), [good.slice(0, 7)], 'a published key passes');
   assert.deepEqual(res.refused.map((s) => s.slice(0, 7)).sort(), [early.slice(0, 7), anon.slice(0, 7)].sort(), 'an unpublished key and an unverified commit are refused');
   assert.equal(res.people.length, 1, "a person's verified commit is listed"); assert.equal(res.overrides.length, 1, 'an owner override is listed, not refused');
   assert.equal((await checkSigners({ cwd: r, before: 'f'.repeat(40), after: good, keys: [A], personVerified: async () => null })).checked, 1, 'an unknown old head (a force push) checks only the new head');
+  { fs.mkdirSync(`${r}/.github/ci`, { recursive: true }); fs.writeFileSync(`${r}/.github/ci/people.json`, JSON.stringify({ people: ['Owner'] })); git('add', '-A'); git('-c', 'commit.gpgsign=false', 'commit', '-q', '-m', 'the site names its owner');
+    const head0 = git('rev-parse', 'HEAD'); const own = c(null, 'the owner\'s own Claude, under the owner\'s account', 'claude');
+    const as = (login, type = 'User') => async (sha) => ({ verified: sha === own, login, type });
+    const r2 = await checkSigners({ cwd: r, before: head0, after: own, keys: [A], personVerified: as('owner') });
+    assert.deepEqual(r2.refused, [], 'an Agent: commit with no published key that GitHub verifies is the owner\'s commit');
+    assert.equal(r2.people.length, 1, 'and it is listed as a person\'s commit');
+    const r3 = await checkSigners({ cwd: r, before: head0, after: own, keys: [A], personVerified: async () => ({ verified: false }) });
+    assert.equal(r3.refused.length, 1, 'unverified and unpublished is still refused'); git('reset', '-q', '--hard', head0);
+    assert.ok(r2.people[0].includes('by owner') && !r2.ok.length, 'listed as the person\'s commit, never as the agent\'s');
+    for (const [login, type, why] of [['claude', 'User', 'Claude\'s shared signer'], ['someone-else', 'User', 'a person the site does not name'], ['owner', 'Bot', 'an account GitHub does not call a User'], ['owner', null, 'an author with no GitHub account'], ['dependabot[bot]', 'User', 'a bot']])
+      assert.equal((await checkSigners({ cwd: r, before: head0, after: own, keys: [A], personVerified: as(login, type) })).refused.length, 1, `GitHub verified as ${why}: refused (kate-curtis-evans.b, block-05)`);
+    git('reset', '-q', '--hard', head0);
+    const posing = c('b', 'signed with another key, names a team agent with a published key', 'a');
+    const r4 = await checkSigners({ cwd: r, before: head0, after: posing, keys: [A], personVerified: async () => ({ verified: true, login: 'owner', type: 'User' }) });
+    assert.equal(r4.refused.length, 1, 'a name with a published key still needs that key, GitHub verified or not (emily.b, security.b, block-05)'); git('reset', '-q', '--hard', head0); }
+  // Keys the site publishes itself, one file per agent at site/keys/<name>.json (Dinis, 23 Nov 2026, record 2026-11-23__asks-2-8-31-revised).
+  const G = key('g'), H = key('h'), none = async () => null, run = (b, a) => checkSigners({ cwd: r, before: b, after: a, keys: [A], personVerified: none });
+  const put = (files, signer, agent, extra) => { fs.mkdirSync(`${r}/site/keys`, { recursive: true }); for (const [n, k] of Object.entries(files)) fs.writeFileSync(`${r}/site/keys/${n}.json`, JSON.stringify(k)); if (extra) fs.writeFileSync(`${r}/f`, extra); git('add', '-A'); git('-c', `user.signingkey=${d}/${signer}`, 'commit', '-q', '-S', '-m', 'keys', '-m', `Agent: ${agent}@X.y\nClaude-Session: https://claude.ai/code/session_${agent}`); return git('rev-parse', 'HEAD'); };
+  const top = git('rev-parse', 'HEAD');
+  const pub = put({ g: G }, 'g', 'g');
+  assert.deepEqual((await run(top, pub)).refused, [], 'an agent publishes its own key in the site (site/keys/g.json), signed by that key');
+  const byG = c('g', 'by g, key in the site', 'g');
+  assert.deepEqual((await run(pub, byG)).refused, [], 'a later commit by that key passes');
+  git('reset', '-q', '--hard', top);
+  const sneak = put({ g: G }, 'g', 'g', 'and another change');
+  assert.equal((await run(top, sneak)).refused.length, 1, 'a key added together with any other change does not vouch for itself');
+  git('reset', '-q', '--hard', pub);
+  const other = put({ h: H }, 'g', 'h');
+  assert.equal((await run(pub, other)).refused.length, 1, 'an agent cannot publish a key for someone else and sign as them');
+  git('reset', '-q', '--hard', pub);
+  const misfiled = put({ x: H }, 'h', 'h');
+  assert.equal((await run(pub, misfiled)).refused.length, 1, 'a key whose file name is not its agent does not count');
+  git('reset', '-q', '--hard', pub);
+  const swap = put({ g: { ...G, bundle: H.bundle } }, 'h', 'g');
+  assert.equal((await run(pub, swap)).refused.length, 1, 'changing an existing key file is not a self-publication');
+  git('reset', '-q', '--hard', top);
+  const claim = put({ a: { ...G, agent: 'a@X.y', session: A.session } }, 'g', 'a');
+  assert.equal((await run(top, claim)).refused.length, 1, 'a site cannot claim a Factory agent\'s name with another key (security.b, review 029)');
+  git('reset', '-q', '--hard', top);
+  const same = put({ a: A }, 'a', 'a');
+  assert.deepEqual((await run(top, same)).refused, [], 'publishing the same key the Factory lists for that agent is fine');
   fs.rmSync(d, { recursive: true, force: true }); }
 // Key requests: roles, signatures, a security and a counsel review each bound to the exact request (build/key-requests.mjs).
 { const fs = await import('node:fs'); const { execFileSync: x } = await import('node:child_process'); const { tmpdir } = await import('node:os');
@@ -497,4 +546,273 @@ assert.ok(wfSecret.blockers.some((b) => b.includes('APP_KEY')), 'a workflow secr
   assert.ok(R.validate({ ...pb, group: 'artist' }, '2026-11-22__pybot').some((e) => e.includes('provider')), 'provider is for tool sites only');
   assert.ok(R.validate({ ...pb, provider: 'Hugging Face' }, '2026-11-22__pybot').some((e) => e.includes('provider')), 'provider is a lower-case name');
   assert.equal(R.host({ label: 'whois', group: 'tool' }), 'whois.tool.sovereignweb.site', 'a tool with no provider is unchanged'); }
+{ const { mkdtempSync, cpSync } = await import('node:fs'); const { execFileSync } = await import('node:child_process'); const { tmpdir } = await import('node:os');
+  assert.ok(readFileSync('seed/gate-template/.github/workflows/pages.yml', 'utf8').includes("SWS_GATE: '1'"), 'the gate pipeline sets SWS_GATE');
+  const d = mkdtempSync(tmpdir() + '/gate-'); cpSync('seed/gate-template', d, { recursive: true });
+  execFileSync('node', ['.github/ci/build.mjs'], { cwd: d, stdio: 'pipe', env: { ...process.env, SWS_GATE: '1', GITHUB_RUN_ID: '42', GITHUB_SERVER_URL: 'https://github.com', GITHUB_REPOSITORY: 'SovereignWebsite/Site__Invest__Secret-Name' } });
+  const all = readFileSync(d + '/_site/version.json', 'utf8') + readFileSync(d + '/_site/index.html', 'utf8');
+  assert.ok(!all.includes('Secret-Name') && all.includes('href="/version.json"'), 'a gated site publishes no run link and no repository name'); }
+{ const R = await import('../build/requests.mjs'); const h = { label: 'presentations', title: 'P', description: 'x', kind: 'demo' }; assert.deepEqual(R.validate(h, '2026-11-23__presentations'), [], 'the presentations home needs no group'); assert.equal(R.repoName(h), 'Site__Presentations'); assert.equal(R.host(h), 'presentations.sovereignweb.site'); const p = { label: 'ana', group: 'presentations', title: 'A', description: 'x', kind: 'owner' }; assert.equal(R.repoName(p), 'Site__Presentations__Ana'); assert.equal(R.host(p), 'ana.presentations.sovereignweb.site'); }
+{ const R = await import('../build/requests.mjs'); const { mkdtempSync, mkdirSync, writeFileSync: w } = await import('node:fs'); const { tmpdir } = await import('node:os');
+  const d = mkdtempSync(tmpdir() + '/req-'); const put = (f, j) => { mkdirSync(`${d}/${f}`); w(`${d}/${f}/site.json`, JSON.stringify(j)); };
+  put('2026-11-21__ana', { label: 'ana', group: 'cv', title: 'A', description: 'x', kind: 'owner' });
+  put('2026-11-23__ana', { label: 'ana', group: 'presentations', title: 'A', description: 'x', kind: 'owner' });
+  let L = R.load(d); assert.deepEqual(L.errors, [], 'one label in two groups is allowed');
+  const rs = R.repos(L.requests); assert.deepEqual(rs.map((x) => x.name).sort(), ['Site__CV__Ana', 'Site__Presentations__Ana']);
+  assert.ok(rs.every((x) => !(x.aka || []).some((a) => /^Site__ana$|^Site__Ana$/.test(a))), 'a shared label claims no bare old name');
+  put('2026-11-24__ana', { label: 'ana', group: 'cv', title: 'A', description: 'x', kind: 'owner' });
+  L = R.load(d); assert.ok(L.errors.some((e) => e.includes('a.cv.sovereignweb.site') || e.includes('ana.cv.sovereignweb.site')), 'the same label in the same group is refused');
+  const one = R.repos([{ label: 'bo', group: 'cv', title: 'B', description: 'x', kind: 'owner' }]); assert.ok(one[0].aka.includes('Site__Bo'), 'a label used once keeps its bare old name'); }
+{ const { readdirSync: ls } = await import('node:fs'); const R = '@media (max-width:599px)';
+  for (const t of ['site', 'gate', 'agent']) assert.ok(readFileSync(`seed/${t}-template/.github/ci/build.mjs`, 'utf8').includes(`${R}{.sws-version{font-size:15px}}`), `${t}: the version chip is 15px on a phone (design.b)`);
+  for (const f of ['seed/site-template/site/index.html', 'seed/agent-template/site/index.html', 'seed/site-template/site/policy/policy.css', 'seed/shared/family-credit.css']) assert.ok(readFileSync(f, 'utf8').includes(`${R}{footer,.family-credit,.family,.site-links{font-size:15px}}`), `${f}: footer chrome is 15px on a phone`); }
+{ const C = await import('../build/coverage.mjs');
+  const c = C.coverage(['a.x.site', 'b.x.site', 'c.x.site'], { sites: { 'a.x.site': {}, 'c.x.site': {} } }, { sites: [{ address: { url: 'https://a.x.site/' } }, { address: {} }] });
+  assert.deepEqual(c, { notRated: ['b.x.site'], notOnHub: ['b.x.site', 'c.x.site'] }, 'coverage lists the sites the design ratings and the hub miss'); }
+{ const R = await import('../build/requests.mjs'); const C = await import('../build/coverage.mjs');
+  const h = { label: 'ana', group: 'cv', title: 'A', description: 'x', kind: 'owner' };
+  assert.deepEqual(R.validate({ ...h, design_brief: 'https://design.agents.sovereignweb.site/briefs/ana.html' }, '2026-11-24__ana'), [], 'a design brief link on design.agents passes');
+  assert.deepEqual(R.validate({ ...h, design_brief: 'https://github.com/SovereignWebsite/Site__Agents__Design/blob/dev/docs/briefs/ana.md' }, '2026-11-24__ana'), [], 'a brief in design.b\'s docs/briefs passes');
+  assert.ok(R.validate({ ...h, design_brief: 'https://example.org/brief' }, '2026-11-24__ana').length, 'a brief elsewhere is refused');
+  assert.deepEqual(C.noBrief([{ ...h, folder: '2026-11-24__ana' }, { ...h, folder: '2026-11-20__old' }, { ...h, folder: '2026-11-24__b', design_brief: 'https://design.agents.sovereignweb.site/x' }, { ...h, group: 'agents', folder: '2026-11-24__c' }, { ...h, access: 'vault', folder: '2026-11-24__d' }]), ['2026-11-24__ana'], 'Org status lists only new, unbriefed, public, non-agent requests'); }
+{ const { KNOWN } = await import('../build/check-signatures.mjs');
+  assert.deepEqual(Object.keys(KNOWN).sort(), ['5eb7fdecd2ac785ee071848a474c6cbff5e1a389', 'b7c8bfd79c263051d8e9ec35fe2cf70b59bf6e87'], 'the known failing commits are exactly the two named ones; only Dinis adds one');
+  for (const [sha, why] of Object.entries(KNOWN)) assert.ok(/^[0-9a-f]{40}$/.test(sha) && why.length > 20, `${sha.slice(0, 7)} is a full id with its reason`); }
+// Managed seed files (build/managed.mjs): refreshed only from an earlier seeded version, never over a keeper's change.
+{ const M = await import('../build/managed.mjs'); const fs = await import('node:fs');
+  const f = '.github/ci/signers.mjs', cur = M.blobSha(fs.readFileSync(`seed/site-template/${f}`)), hist = M.history();
+  for (const d of fs.readdirSync('seed').filter((x) => fs.existsSync(`seed/${x}/${f}`))) assert.ok(hist[f].includes(M.blobSha(fs.readFileSync(`seed/${d}/${f}`))), `seed/${d}: the current ${f} is in seed/managed-history.json (run node build/managed.mjs record)`);
+  const old = hist[f].find((x) => x !== cur);
+  assert.deepEqual(M.staleFiles('seed/site-template', { [f]: old }), { stale: [f], kept: [] }, 'an earlier seeded version is refreshed');
+  assert.deepEqual(M.staleFiles('seed/site-template', { [f]: cur }), { stale: [], kept: [] }, 'the current version is left alone');
+  assert.deepEqual(M.staleFiles('seed/site-template', { [f]: 'a'.repeat(40) }), { stale: [], kept: [f] }, 'a keeper\'s own change is kept and reported');
+  const one = org.repos.find((r) => r.seed) || null;
+  if (one) { const pl2 = plan({ ...org, repos: [one] }, { [one.name]: { ...org.defaults, ...one, default_branch: 'dev', has_dev: true, has_pages: !!one.pages, cname: one.cname ?? null, https_enforced: true, teams: one.teams || {}, protected: true, seed_missing: [], managed_shas: { [f]: old } } });
+    assert.ok(pl2.actions.some((a) => a.action === 'repo.refresh_managed' && a.files.includes(f) && a.from[f] === old), 'Org apply plans the refresh with the version it saw');
+    assert.deepEqual(checkActions(p, pl2), [], 'the refresh is an allowed Org apply action'); } }
+await import('./decisions.test.mjs');
 console.log('OK (tests)');
+
+// Org apply scoped to what a push is about (build/org-scope.mjs; Dinis, 24 Nov 2026: "keep it focused on the actions
+// that I'm working on and reviewing"): a request names its own repository, a removed request or a policy change names
+// none, and an org/repos.json change names the entries it adds or changes.
+{
+  const { scope } = await import('../build/org-scope.mjs');
+  const { scoped } = await import('../build/org-plan.mjs');
+  const { load: loadReq } = await import('../build/requests.mjs');
+  const { requests } = loadReq('requests');
+  const org = JSON.parse(readFileSync('org/repos.json', 'utf8'));
+  const router = requests.find((r) => r.label === 'router' && r.group === 'agents');
+  if (router) assert.deepEqual(scope({ changed: [`requests/${router.folder}/site.json`], requests, orgBefore: org, orgAfter: org }), ['Site__Agent__Router'], 'a request names its own repository');
+  assert.deepEqual(scope({ changed: ['policy/abp.json', 'seed/site-template/site/index.html', 'requests/1999-01-01__gone/site.json'], requests, orgBefore: org, orgAfter: org }), [], 'policy, seed and removed requests name nothing');
+  const after = { ...org, repos: org.repos.map((r) => r.name === 'SovereignWebsite__Hub' ? { ...r, description: 'changed' } : r) };
+  assert.deepEqual(scope({ changed: ['org/repos.json'], requests, orgBefore: org, orgAfter: after }), ['SovereignWebsite__Hub'], 'an org entry names itself');
+  const moved = requests.find((r) => (r.previous || []).length && (!r.from || r.moved));
+  if (moved) assert.ok(scope({ changed: [`requests/${moved.folder}/site.json`], requests, orgBefore: org, orgAfter: org }).some((n) => n.startsWith('Redirect__')), 'a moved site names its redirect too');
+  const one = scoped(org, ['SovereignWebsite__Hub']);
+  assert.deepEqual(one.repos.map((r) => r.name), ['SovereignWebsite__Hub'], 'a scoped plan wants only the named repositories');
+  assert.deepEqual(plan(one, {}).actions.map((a) => a.target).filter((t) => t !== 'SovereignWebsite__Hub'), [], 'and acts on nothing else');
+  assert.equal(scoped(org, []), org, 'no list: every repository');
+}
+console.log('OK (org scope)');
+
+// CLAUDE.md is a managed file on agent sites only, compared and written filled with each site's own values: an earlier
+// seeded version (any site's values) is refreshed, a keeper's own change is kept, and customer sites are never touched.
+{
+  const M = await import('../build/managed.mjs'); const { fill } = await import('../build/fill.mjs'); const fs = await import('node:fs');
+  const vars = { title: 'CRM agents', host: 'crm.agents.sovereignweb.site', agent: 'a.crm.dev@SovereignWebsite.dinis', repo: 'Site__Agent__CRM', label: 'crm', description: 'x', kind: 'owner' };
+  const earlier = M.earlierTemplates('seed/agent-template', 'CLAUDE.md');
+  assert.ok(earlier.length >= 2, 'earlier agent CLAUDE.md versions are kept as text');
+  const oldSha = M.blobSha(Buffer.from(fill(earlier[0], vars, 'CLAUDE.md')));
+  assert.deepEqual(M.staleFiles('seed/agent-template', { 'CLAUDE.md': oldSha }, undefined, vars), { stale: ['CLAUDE.md'], kept: [] }, 'an earlier seeded agent CLAUDE.md is refreshed');
+  const curSha = M.blobSha(M.seedContent('seed/agent-template', 'CLAUDE.md', vars));
+  assert.deepEqual(M.staleFiles('seed/agent-template', { 'CLAUDE.md': curSha }, undefined, vars), { stale: [], kept: [] }, 'the current one is left alone');
+  assert.deepEqual(M.staleFiles('seed/agent-template', { 'CLAUDE.md': 'b'.repeat(40) }, undefined, vars), { stale: [], kept: ['CLAUDE.md'] }, 'a keeper\'s own CLAUDE.md is kept and reported');
+  assert.ok(!M.managedFor('seed/site-template').includes('CLAUDE.md'), 'a customer site\'s CLAUDE.md is never managed');
+  assert.ok(M.seedContent('seed/agent-template', 'CLAUDE.md', vars).toString().includes('crm.agents.sovereignweb.site'), 'the refresh is written filled');
+  assert.ok(fs.readFileSync('seed/agent-template/CLAUDE.md', 'utf8').includes('START.md'), 'agent sites start with START.md');
+}
+console.log('OK (managed CLAUDE.md)');
+
+// A chapter names its parent organisation (Dinis, 24 Nov 2026: "london.agentics-foundation.organisation").
+{
+  const R = await import('../build/requests.mjs');
+  const r = { label: 'london', group: 'organisation', provider: 'agentics-foundation', title: 'T', description: 'D', kind: 'owner' };
+  assert.deepEqual(R.validate(r, '2026-11-24__london'), [], 'an organisation chapter may name its parent');
+  assert.equal(R.host(r), 'london.agentics-foundation.organisation.sovereignweb.site');
+  assert.equal(R.repoName(r), 'Site__Organisation__Agentics-Foundation__London');
+  assert.ok(R.validate({ ...r, group: 'artist' }, '2026-11-24__london').some((e) => /provider/.test(e)), 'other groups still may not');
+}
+console.log('OK (organisation chapters)');
+
+// Every public site names its keeper and design reviewer, for requests filed from 2026-11-25 (Dinis, 24 Nov 2026).
+{
+  const R = await import('../build/requests.mjs');
+  const base = { label: 'x', group: 'tool', title: 'T', description: 'D', kind: 'demo' };
+  assert.deepEqual(R.validate(base, '2026-11-24__x'), [], 'requests filed before the rule are unchanged');
+  assert.equal(R.validate(base, '2026-11-25__x').filter((e) => /names its (keeper|design)/.test(e)).length, 2, 'a new public request without keeper and design is incomplete');
+  assert.deepEqual(R.validate({ ...base, keeper: 'a.x@SovereignWebsite.dinis', design: 'design.b@SovereignWebsite.dinis' }, '2026-11-25__x'), [], 'with both it is complete');
+  assert.ok(R.validate({ ...base, keeper: 'not a name', design: 'design.b@SovereignWebsite.dinis' }, '2026-11-25__x').some((e) => /keeper must be an agent name/.test(e)));
+  assert.deepEqual(R.validate({ ...base, access: 'vault' }, '2026-11-25__x'), [], 'private vault sites are exempt');
+  assert.deepEqual(R.validate({ label: 'x', group: 'agents', agent: 'a.x@SovereignWebsite.dinis', title: 'T', description: 'D', kind: 'owner' }, '2026-11-25__x'), [], 'agent sites are their own keeper');
+}
+console.log('OK (keeper and design)');
+
+// A scoped run by hand with the nudge re-saves a domain whose certificate is stuck pending; the schedule does not.
+{
+  const { plan } = await import('../build/org-plan.mjs');
+  const org = { org: 'SovereignWebsite', defaults: {}, repos: [{ name: 'Site__X', cname: 'x.tool.sovereignweb.site', pages: true, default_branch: 'dev' }] };
+  const live = { Site__X: { default_branch: 'dev', has_dev: true, has_pages: true, cname: 'x.tool.sovereignweb.site', https_enforced: false, cert_state: 'authorization_pending', teams: {}, protected: true } };
+  const saved = { m: process.env.NUDGE_MISSING, o: process.env.ONLY_REPOS };
+  process.env.NUDGE_MISSING = 'true'; delete process.env.ONLY_REPOS;
+  assert.ok(!plan(org, live).actions.some((a) => a.action === 'pages.nudge_certificate'), 'the schedule leaves a pending certificate alone');
+  process.env.ONLY_REPOS = 'Site__X';
+  assert.ok(plan(org, live).actions.some((a) => a.action === 'pages.nudge_certificate' && a.state === 'authorization_pending'), 'a scoped run by hand re-saves it');
+  if (saved.m === undefined) delete process.env.NUDGE_MISSING; else process.env.NUDGE_MISSING = saved.m;
+  if (saved.o === undefined) delete process.env.ONLY_REPOS; else process.env.ONLY_REPOS = saved.o;
+}
+console.log('OK (scoped certificate nudge)');
+
+// Every site seed carries tools/check.sh, which runs each check its deploy runs, so an agent finds a failure before it
+// pushes (sites.a and startup-grants.a, 25 Nov 2026: new design pages failed share-check at deploy, runs 45517939062
+// and 45518494287). Each .github/ci script the workflow runs must also be run by check.sh.
+{
+  const { existsSync } = await import('node:fs');
+  for (const t of ['site-template', 'gate-template', 'agent-template']) {
+    const sh = readFileSync(`seed/${t}/tools/check.sh`, 'utf8'), wf = readFileSync(`seed/${t}/.github/workflows/pages.yml`, 'utf8');
+    for (const s of new Set([...wf.matchAll(/\.github\/ci\/(build|share-check|quality|axe)\.mjs/g)].map((m) => m[0]))) assert.ok(sh.includes(s), `${t}: check.sh runs ${s}`);
+    assert.ok(sh.includes('html-validate@' + wf.match(/html-validate@([\d.]+)/)[1]), `${t}: check.sh uses the workflow's html-validate`);
+    assert.ok(readFileSync(`seed/${t}/CLAUDE.md`, 'utf8').includes('bash tools/check.sh'), `${t}: CLAUDE.md says to run it`);
+    assert.ok(existsSync(`seed/${t}/.github/ci/axe.mjs`));
+  }
+}
+console.log('OK (local checks before a push)');
+
+// axe-core checks every page at any depth, not just designs/<x>/ (startup-grants.a via sites.a, 25 Nov 2026: pages at
+// designs/round-2/dN/ were never checked). The same file in every seed, and a managed file, so existing sites get it.
+{
+  const { MANAGED, history } = await import('../build/managed.mjs');
+  const { blobSha } = await import('../build/managed.mjs');
+  const a = ['site-template', 'gate-template', 'agent-template'].map((t) => readFileSync(`seed/${t}/.github/ci/axe.mjs`, 'utf8'));
+  assert.ok(a.every((x) => x === a[0]), 'one axe.mjs for every seed');
+  assert.ok(/const walk = \(d\) =>/.test(a[0]) && !a[0].includes("join(dir, 'designs')"), 'axe walks the whole tree');
+  assert.ok(MANAGED.includes('.github/ci/axe.mjs'), 'axe.mjs is managed');
+  assert.ok(history()['.github/ci/axe.mjs'].includes(blobSha(Buffer.from(a[0]))), 'the current axe.mjs is recorded');
+  assert.ok(history()['.github/ci/axe.mjs'].includes('ff9f2e26bdeb31850f4b4a1b004c7ee0fcf57f56'), 'the version on existing sites is recorded, so it is refreshed');
+}
+console.log('OK (axe on every page)');
+
+// deploy-pages gets one more attempt after a pause when the artifact is not yet visible (sites.a, 25 Nov 2026).
+for (const t of ['site-template', 'gate-template', 'agent-template']) {
+  const wf = readFileSync(`seed/${t}/.github/workflows/pages.yml`, 'utf8');
+  assert.ok(/id: deployment\n\s+continue-on-error: true/.test(wf) && /id: retry\n\s+if: steps\.deployment\.outcome == 'failure'/.test(wf), `${t}: deploy retries once`);
+  assert.ok(wf.includes('cancel-in-progress: false'), `${t}: a deploy is never cancelled mid-way`);
+}
+console.log('OK (deploy retries once)');
+
+// An author's work names its author (Dinis, 25 Nov 2026: "title.dinis.author.sws").
+{
+  const R = await import('../build/requests.mjs');
+  const r = { label: 'one-human-nine-agents', group: 'author', provider: 'dinis', title: 't', description: 'd', kind: 'owner', keeper: 'x.a@Y.z', design: 'd.a@Y.z' };
+  assert.deepEqual(R.validate(r, '2026-11-25__one-human-nine-agents'), []);
+  assert.equal(R.host(r), 'one-human-nine-agents.dinis.author.sovereignweb.site');
+  assert.equal(R.repoName(r), 'Site__Author__Dinis__One-Human-Nine-Agents');
+  assert.ok(R.validate({ ...r, group: 'cv' }, '2026-11-25__one-human-nine-agents').some((e) => /provider/.test(e)), 'other groups still refuse a provider');
+}
+console.log('OK (author works)');
+
+// Every local stylesheet link gets ?v=<hash of the file> at build, so no browser keeps a stale copy (sites.a, 25 Nov
+// 2026: TauGuard's picker showed as a black block on a cached stylesheet). Built in a scratch folder.
+{
+  const { mkdtempSync, mkdirSync, writeFileSync, readFileSync: rd } = await import('node:fs');
+  const { tmpdir } = await import('node:os'); const { join } = await import('node:path'); const { execFileSync } = await import('node:child_process');
+  const { MANAGED } = await import('../build/managed.mjs');
+  const a = ['site-template', 'gate-template', 'agent-template'].map((t) => rd(`seed/${t}/.github/ci/build.mjs`, 'utf8'));
+  assert.ok(a.every((x) => x === a[0]), 'one build.mjs for every seed');
+  assert.ok(MANAGED.includes('.github/ci/build.mjs'), 'build.mjs is managed');
+  const d = mkdtempSync(join(tmpdir(), 'sws-build-')); mkdirSync(join(d, 'site/assets'), { recursive: true }); mkdirSync(join(d, 'site/sub'));
+  writeFileSync(join(d, 'site/assets/a.css'), 'a{}');
+  writeFileSync(join(d, 'site/sub/b.css'), 'b{}');
+  writeFileSync(join(d, 'site/sub/index.html'), '<html><head><link rel="stylesheet" href="/assets/a.css"><link rel="stylesheet" href="b.css"><link rel="stylesheet" href="https://x.test/c.css"><link rel="stylesheet" href="/assets/a.css?v=keep"></head><body></body></html>');
+  execFileSync('node', [join(process.cwd(), 'seed/site-template/.github/ci/build.mjs')], { cwd: d });
+  const out = rd(join(d, '_site/sub/index.html'), 'utf8');
+  assert.match(out, /href="\/assets\/a\.css\?v=[0-9a-f]{10}"/, 'a root stylesheet is hashed');
+  assert.match(out, /href="b\.css\?v=[0-9a-f]{10}"/, 'a relative stylesheet is hashed');
+  assert.ok(out.includes('href="https://x.test/c.css"') && out.includes('a.css?v=keep'), 'another host and an existing ?v are left as they are');
+  assert.equal((out.match(/sws-version\.css\?v=/g) || []).length, 1, 'the chip stylesheet once, hashed');
+}
+console.log('OK (stylesheets carry a content hash)');
+
+// A coach names the sport (Dinis, 25 Nov 2026: "sport, paddle, Oscar").
+{
+  const R = await import('../build/requests.mjs');
+  const r = { label: 'oscar', group: 'sport', provider: 'padel', title: 't', description: 'd', kind: 'owner', keeper: 'x.a@Y.z', design: 'd.a@Y.z' };
+  assert.deepEqual(R.validate(r, '2026-11-25__oscar'), []);
+  assert.equal(R.host(r), 'oscar.padel.sport.sovereignweb.site');
+  assert.equal(R.repoName(r), 'Site__Sport__Padel__Oscar');
+}
+console.log('OK (sport coaches)');
+
+// Naming step 1 (Dinis, 25 Nov 2026, relayed by a.maestro): agent homes Site__Agent__<Role>__<Provider>__<Number>, with
+// no website ("pages": false), and old names written in a request ("aka") so Org apply may rename from them.
+{
+  const R = await import('../build/requests.mjs');
+  const { requests } = R.load('requests');
+  // Every request that existed before these rules keeps its repository, address, aliases, domain and DNS record.
+  const before = JSON.parse(readFileSync('test/fixtures/names-2026-11-25.json', 'utf8')).names;
+  const repos = Object.fromEntries(R.repos(requests).map((x) => [x.name, x]));
+  const dns = new Set(R.dnsRecords(requests).map((d) => d.name));
+  for (const [folder, was] of Object.entries(before)) {
+    const r = requests.find((x) => x.folder === folder);
+    if (!r) continue; // a request removed later is not this test's business
+    const now = repos[R.repoName(r)] || {};
+    if (r.home || r.aka || r.pages === false) continue; // changed on purpose by a later naming step
+    assert.deepEqual({ repo: R.repoName(r), host: R.host(r), aka: now.aka || [], cname: now.cname || null, dns: dns.has(R.host(r)) }, was, `${folder} keeps its names`);
+  }
+  // An agent home.
+  const home = { label: 'router-claude-8', group: 'agents', agent: 'cl-8.router@dinis', title: 't', description: 'd', kind: 'owner', home: { role: 'router', provider: 'claude', number: 8 }, pages: false };
+  assert.deepEqual(R.validate(home, '2026-11-26__router-claude-8'), []);
+  assert.equal(R.repoName(home), 'Site__Agent__Router__Claude__8');
+  assert.equal(R.repoName({ ...home, label: 'router-chatgpt-1', home: { role: 'router', provider: 'chatgpt', number: 1 } }), 'Site__Agent__Router__ChatGPT__1', 'the provider keeps its own capitals');
+  assert.equal(R.repoName({ ...home, label: 'aws-claude-1', home: { role: 'aws', role_label: 'AWS', provider: 'claude', number: 1 } }), 'Site__Agent__AWS__Claude__1');
+  const spec = R.repos([{ ...home, folder: '2026-11-26__router-claude-8', moved: false }])[0];
+  assert.equal(spec.pages, false); assert.equal(spec.cname, undefined); assert.equal(spec.homepage, undefined);
+  assert.equal(spec.seed, 'seed/home-template'); assert.equal(spec.vars.host, 'github.com/SovereignWebsite/Site__Agent__Router__Claude__8');
+  assert.equal(R.dnsRecords([{ ...home, folder: 'x', moved: false }]).length, 0, 'no DNS record for a home with no website');
+  const { plan } = await import('../build/org-plan.mjs');
+  const acts = plan({ org: 'SovereignWebsite', defaults: {}, repos: [spec] }, {}).actions.map((a) => a.action);
+  assert.ok(!acts.includes('pages.enable') && !acts.includes('pages.set_cname') && acts.includes('repo.seed'), 'a new home is created and seeded, with no Pages and no domain');
+  // Refused shapes.
+  const bad = (x, re) => assert.ok(R.validate({ ...home, ...x }, '2026-11-26__router-claude-8').some((m) => re.test(m)), `refused: ${JSON.stringify(x)}`);
+  bad({ label: 'router-8' }, /label is router-claude-8/);
+  bad({ home: { role: 'router', provider: 'grok', number: 8 } }, /home.provider/);
+  bad({ home: { role: 'router', provider: 'claude', number: 0 } }, /home.number/);
+  bad({ group: 'tool' }, /agents group/);
+  bad({ pages: true }, /pages is only ever false/);
+  bad({ aka: ['Bad Name'] }, /aka is a list/);
+  // A written alias lets Org apply rename an existing repository.
+  const renamed = R.repos([{ label: 'maestro-claude-8', group: 'agents', agent: 'cl-8.maestro@dinis', title: 't', description: 'd', kind: 'owner', home: { role: 'maestro', provider: 'claude', number: 8 }, aka: ['Site__Agent__Maestro-Claude-8'], folder: 'x', moved: false }])[0];
+  assert.ok(renamed.aka.includes('Site__Agent__Maestro-Claude-8'));
+  assert.deepEqual(plan({ org: 'SovereignWebsite', defaults: {}, repos: [renamed] }, { 'Site__Agent__Maestro-Claude-8': {} }).actions, [{ action: 'repo.rename', target: 'Site__Agent__Maestro-Claude-8', to: 'Site__Agent__Maestro__Claude__8' }]);
+  // The new agent ids pass where agent names are checked.
+  for (const id of ['cl-1.infra@SovereignWebsite.dinis', 'cl-8.maestro@dinis', 'cl-1.aws.iam@SovereignWebsite.dinis', 'gpt-1.router@dinis']) assert.deepEqual(R.validate({ label: 'x', group: 'agents', agent: id, title: 't', description: 'd', kind: 'owner' }, '2026-11-26__x'), [], id);
+  // The home seed has no website parts.
+  const { existsSync } = await import('node:fs');
+  for (const f of ['.github/workflows/pages.yml', 'site/CNAME', 'site/index.html', 'tools/check.sh']) assert.ok(!existsSync(`seed/home-template/${f}`), `home seed has no ${f}`);
+  for (const f of ['.github/workflows/signers.yml', '.github/ci/signers.mjs', 'CLAUDE.md', 'START.md', 'site/factory/index.json', 'tools/setup-signing.sh']) assert.ok(existsSync(`seed/home-template/${f}`), `home seed has ${f}`);
+}
+console.log('OK (agent homes and written aliases)');
+
+// A moved site keeps its old address until the request drops keep_address (certificate slots, 25 Nov 2026).
+{
+  const R = await import('../build/requests.mjs');
+  const moved = { label: 'x-y', group: 'founder', title: 't', description: 'd', kind: 'owner', from: { owner: 'AgentiCCells', repo: 'AgentiCCells__Site__X-Y', address: 'x-y.agenticcells.site' }, keep_address: true, folder: '2026-11-25__x-y', moved: true };
+  assert.deepEqual(R.validate(moved, '2026-11-25__x-y').filter((m) => /keep_address/.test(m)), []);
+  const spec = R.repos([moved])[0];
+  assert.equal(spec.cname, 'x-y.agenticcells.site', 'Pages keeps the old address');
+  assert.equal(R.dnsRecords([moved])[0].name, 'x-y.founder.sovereignweb.site', 'the new address gets its DNS record ahead of time');
+  const { keep_address, ...after } = moved;
+  assert.equal(R.repos([after])[0].cname, 'x-y.founder.sovereignweb.site', 'dropping the flag switches the domain');
+  assert.ok(R.validate({ ...moved, from: undefined }, '2026-11-25__x-y').some((m) => /keep_address/.test(m)), 'only on a moved site');
+}
+console.log('OK (a moved site keeps its old address)');

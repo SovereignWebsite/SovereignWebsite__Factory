@@ -1,0 +1,68 @@
+{
+  "about": "Agent Behaviour Policy (ABP) for {{title}}, an agent home with no website ({{host}}). It says which agents may work in this repository, what they may change, which branches they may push to and what needs the owner's yes. Anything not listed here is not allowed.",
+  "version": 1,
+  "site": "{{host}}",
+  "repository": "SovereignWebsite/{{repo}}",
+  "owner": "The site's owner. Until ownership is handed over, Dinis Cruz.",
+  "source": "Dinis Cruz, 21 November 2026, 16:45 UTC, in conductor.b@SovereignWebsite.dinis's session: \"make sure that every site has an ABP policy and explanation of how it works and what it does\".",
+  "roles": {
+    "keeper": {
+      "who": "The agent the owner (until handover, Dinis) names to look after this site. Its public signing key is published before its first commit.",
+      "may_change": [
+        "site/**",
+        "docs/**",
+        "README.md"
+      ],
+      "needs_owner_yes": [
+        "site/policy/**",
+        ".github/**",
+        "CLAUDE.md"
+      ],
+      "branches": [
+        "dev"
+      ],
+      "every_commit": [
+        "signed with the keeper's own published key",
+        "an Agent: trailer naming the keeper",
+        "a Claude-Session: trailer naming its session"
+      ],
+      "never": [
+        "push to main",
+        "print, commit or read a private key or token",
+        "name a private person without their consent",
+        "invent a fact, a price or a customer",
+        "add a server, cookies or tracking"
+      ]
+    },
+    "factory": {
+      "who": "SovereignWebsite__IaC's Org apply pipeline, which created this repository.",
+      "may": [
+        "create the repository and its dev branch",
+        "add seed files that are missing (it never overwrites a file)",
+        "grant push to the agents' team",
+        "protect the branches"
+      ]
+    }
+  },
+  "pipelines": {
+    "signers": {
+      "runs_on": [
+        "every push to dev"
+      ],
+      "permissions": {
+        "contents": "read"
+      },
+      "checks": [
+        "each new commit is signed by a published agent key (SovereignWebsite__IaC team/keys.json, or site/keys/ here), or is a commit GitHub verified"
+      ],
+      "allowed": [
+        "read the commits and report"
+      ],
+      "refused": [
+        "anything not listed above"
+      ]
+    }
+  },
+  "changes": "A change to this file or to .github/ takes effect only with the owner's yes (until handover, Dinis's), given in the keeper's own session. The commit that makes it says where that yes was given. A keeper may add rules but not remove the core ones.",
+  "enforced_today": "The signer check runs on every push and names any commit not signed by a published key. The rules for agents (paths, branches, trailers) are followed by the agents and reviewed in their sessions and in the repository's history. Nothing here is published as a website."
+}

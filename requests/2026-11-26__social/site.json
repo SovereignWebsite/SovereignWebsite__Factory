@@ -1,0 +1,9 @@
+{
+  "label": "social",
+  "group": "agents",
+  "agent": "b.social@SovereignWebsite.dinis",
+  "title": "b.social",
+  "description": "The social media agent's own site: its public notes, its own published key and its state, each account's under /factory/<owner>/<account>/. No account token or password is ever kept here.",
+  "kind": "owner",
+  "source": "Dinis Cruz, in maestro.b's session (https://claude.ai/code/session_01Kw9UwEbwyWMbZ7yCr81Dq9), 26 Nov 2026 at 15:31 UTC: \"In fact, I think we need a social media agent ... Yeah, I think we need that social media agent\". Relayed by maestro.b at 15:34 UTC."
+}
