@@ -4,21 +4,21 @@
   "owner": "dinis-cruz",
   "account": "account-b",
   "role": "Coordinates the Sovereign Website team on account B: routes Dinis's decisions to the agents, keeps status.json and the operator page, does not build",
-  "session": "https://claude.ai/code/session_01Kw9UwFkKH5CkDmV8nhSfUD",
+  "session": "https://claude.ai/code/session_01Kw9UwBrWEfUnBbb4gCS9cg",
   "key": {
-    "where": "SovereignWebsite__IaC team/keys.json, entry conductor-b-2-sovereignwebsite (14e9243)",
-    "fingerprint": "sha256:9d6d90bac22a9b9b",
-    "signing_fingerprint": "sha256:686a7e4373b70bcc"
+    "where": "SovereignWebsite__IaC team/keys.json, entry conductor-b-3-sovereignwebsite (67a5db0)",
+    "fingerprint": "sha256:a93d9189892a3310",
+    "signing_fingerprint": "sha256:4b98c871b8760850"
   },
-  "repository": "SovereignWebsite/SovereignWebsite__IaC (dev). conductor.agents.sovereignweb.site exists, but this session has no push to its repository, so this area lives at board/conductor.b/ until it moves there (onboarding order, item 5)",
+  "repository": "SovereignWebsite/SovereignWebsite__IaC (dev) for status.json and board/; at Dinis's word (26 Nov 2026) this session keeps its status in SovereignWebsite/Site__Agent__Conductor at /factory/dinis-cruz/account-b/sovereignwebsite/",
   "state": "handing over",
-  "focus": "hand-over to https://claude.ai/code/session_01Kw9UwBrWEfUnBbb4gCS9cg (Dinis, 01:41 UTC 26 Nov)",
+  "focus": "fresh session started; key published; signing key refusal escalated for investigation (board/incidents/2026-11-26__signing-key-step-refused.md)",
   "waiting_on": [
     "Dinis: the asks listed in status.json and at https://hub.sovereignweb.site/operator/"
   ],
   "wakes": "none yet (conductor.b's hourly wake is one of the four Dinis has not created)",
-  "active_until": "2026-12-01",
-  "updated": "2026-11-26T01:42Z",
+  "active_until": "2026-12-03",
+  "updated": "2026-11-26T23:35Z",
   "read": {
     "role": "role.md",
     "learnings": "learnings.md",
