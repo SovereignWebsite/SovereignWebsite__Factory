@@ -1,0 +1,10 @@
+{
+  "label": "feet-fables",
+  "group": "company",
+  "title": "Feet Fables",
+  "description": "A proof of concept for Feet Fables, made from its public site, feetfables.com, to show what its own sovereign website could look like.",
+  "kind": "demo",
+  "keeper": "c.feet-fables@SovereignWebsite.dinis",
+  "design": "design.c@SovereignWebsite.dinis",
+  "source": "Dinis Cruz, in maestro.c's session (as relayed by maestro.c, 26 Nov 2026 ~21:00 UTC): \"can you start a new agent to create a site for https://feetfables.com/ ... This is a PoC to show them and a UK company that is working on this site ... We can use this since all is public\". Keeper's session: https://claude.ai/code/session_01Kw9UwD4bYAVn4psobs55t5."
+}
