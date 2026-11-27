@@ -1,0 +1,11 @@
+{
+  "label": "elevenlabs",
+  "group": "platform",
+  "repo_label": "ElevenLabs",
+  "title": "ElevenLabs (unofficial)",
+  "description": "What ElevenLabs offers and how a sovereign website uses voices made with it. An unofficial site: no ElevenLabs branding, not made or endorsed by ElevenLabs.",
+  "kind": "demo",
+  "keeper": "elevenlabs.b@SovereignWebsite.dinis",
+  "design": "design.b@SovereignWebsite.dinis",
+  "source": "Dinis Cruz, in conductor.b's session (https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu), 27 Nov 2026 at 15:59 UTC: \"hi do we have site and agent for ElevenLabs?\", then \"ok\" at 16:10 UTC. Relayed by b.conductor and sites.b."
+}
