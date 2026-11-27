@@ -1,0 +1,12 @@
+{
+  "label": "padel-coach",
+  "group": "template",
+  "provider": "sport",
+  "title": "Padel coach, a fictional example",
+  "description": "A fictional padel coach in the Algarve, made with AI models, showing what a padel coach's own site can do. No real person or club.",
+  "kind": "demo",
+  "keeper": "padel-coach.c@SovereignWebsite.dinis",
+  "design": "design.c@SovereignWebsite.dinis",
+  "conditions": "Synthetic throughout: the coach (Tomas Vilareu), the club and every photo are invented and marked as fictional on every page; text by openai/gpt-5.6-sol and photos by google/gemini-3-pro-image through OpenRouter. No real person, club, brand, review or price. A real coach's site is made from a copy only with the coach's agreement and from their own facts.",
+  "source": "Dinis Cruz, in padel.c's session (https://claude.ai/code/session_01Kw9UwDKx249j6tWdeY93bd), 26 Nov 2026 ~18:08 UTC: \"can you use the Open Router models you have available here to create a synthetic user/example of a padel player and environment (put this coach in the Algarve) ... I would like to have sites (like this one) that shows what can be done and have that wow factor\"; ~23:35 UTC: \"padel-coach.sport.template.sovereignweb.site This is a better place for this site\"."
+}
