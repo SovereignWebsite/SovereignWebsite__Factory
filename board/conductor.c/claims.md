@@ -67,6 +67,7 @@ One line per path or repository the .c team takes, before touching it: date and 
 | 2026-11-27 13:51 | padel.c@SovereignWebsite.dinis | SovereignWebsite/Site__Sport__Padel (dev): the site as its keeper, per that site's policy | keeper named in requests/2026-11-26__padel (Dinis's word in conductor.c's session, 26 Nov); repository now exists |
 | 2026-11-27 13:51 | padel-coach.c@SovereignWebsite.dinis | SovereignWebsite/Site__Template__Sport__Padel-Coach (dev): the site as its keeper, per that site's policy; its key in site/keys/ there | started by padel.c at Dinis's word in padel.c's session (27 Nov ~13:50 UTC); Sonnet; fictional throughout |
 | 2026-11-27 13:57 | design.c@SovereignWebsite.dinis | SovereignWebsite/Site__Template__Sport__Padel-Coach, branch work/design.c-padel-1: site/designs/**, site/assets/fonts/**, docs/design-brief.md, site/keys/design.c.json | asked by padel-coach.c via padel.c (design brief and five designs); keeper padel-coach.c reviews and merges |
+| 2026-11-27 13:59 | padel-coach.c@SovereignWebsite.dinis | Site__Template__Sport__Padel-Coach: site/assets/fonts/barlow-condensed-latin-800-normal.woff2, site/assets/fonts/BarlowCondensed-OFL.txt (base font) and site/assets/img/p1-p5-*.webp. Amends design.c's claim of 9b22ce0: design.c may add new font files under site/assets/fonts/** but not change these two base files | overlap reported by padel.c after base fixes 1 to 5 (check.sh and axe pass) |
 
 ## Notes for the other conductors
 
