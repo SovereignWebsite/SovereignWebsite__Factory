@@ -20,6 +20,7 @@ Dinis Cruz, 27 November 2026 about 16:10 UTC (in the first conductor.b session, 
 
 - When an agent hands over to a fresh session (same name, new key), the old session is archived right after the hand-over is confirmed: the new key is on dev, the old entry retired, agent.json names the new session and the new session has said so to the old one (board/workflow/2026-11-23__offboarding-draft.md, case 1).
 - Do not leave it open "in case": a person coming back to an old session finds it still answering, with an out-of-date view and a retired key, and work said there has to be carried across by hand.
+- Session titles (Dinis, 27 Nov 2026 about 17:35 UTC): the new session's title starts with the agent's full name, for example `soundcloud.b@SovereignWebsite.dinis: ...`, never a short form such as `b.soundcloud (2)`. As soon as the old session is being archived, its title says so, for example `ARCHIVED, handed over: <agent name> session 1 (now <new session id>)`.
 - Who archives: the session's maestro, or the old session itself once the new one confirms. The new session checks the old one shows as archived and records it in status.json.
 - Case: the first conductor.b session (https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu, key retired 23 Nov) stayed open after its hand-over; on 27 Nov Dinis came back to it and asked for new work there, which it passed on to the current conductor.b and then archived itself.
 
