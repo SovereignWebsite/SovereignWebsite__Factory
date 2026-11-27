@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwBrWEfUnBbb4gCS9cg",
-  "updated": "2026-11-27T16:25Z",
+  "updated": "2026-11-27T16:35Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -146,7 +146,8 @@
     "signing key refusal investigated at Dinis's word: b.stories' story 0003 (cause: hand-typed key extraction is refused; tools/setup-signing.sh is not); incident board/incidents/2026-11-26__signing-key-step-refused.md; signing guide now runs the script (52f77b9); a site's Signers run lags about 5 minutes after a new key (story 0005, queued)",
     "hub.b: website.a@SovereignWebsite.dinis listed as keeper of sovereignwebsite.ai in registry.json and /directory/ (v0.1.87, d968ae0)",
     "Retiring agents workflow: the old session is archived right after a session hand-over (Dinis, 27 Nov ~16:10 UTC); both earlier conductor.b sessions archived",
-    "elevenlabs.b started (https://claude.ai/code/session_01Kw9UwDWq7YZCSQSZLPdKNK), key 9b55371; connector reachable, 119,729 of 131,000 credits left, nothing spent. Site request 2716d84 (factory.b) waits for decisions.b and Dinis's clear yes"
+    "elevenlabs.b started (https://claude.ai/code/session_01Kw9UwDWq7YZCSQSZLPdKNK), key 9b55371; connector reachable, 119,729 of 131,000 credits left, nothing spent. Site request 2716d84 (factory.b) waits for decisions.b and Dinis's clear yes",
+    "Site__Platform__ElevenLabs live at elevenlabs.platform.sovereignweb.site (request b1693de, Org apply 46033270253); elevenlabs.b's key there 614c408, /spend/ page f7e1bf2. First work at Dinis's word (16:15 UTC, in its session): the Signed music bed from studio's brief, 2 takes, 2,954 credits, 116,775 left"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
