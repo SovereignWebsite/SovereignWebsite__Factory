@@ -1,0 +1,16 @@
+{
+  "label": "maestro-chatgpt-1",
+  "group": "agents",
+  "agent": "gpt-1.maestro@dinis",
+  "title": "gpt-1.maestro",
+  "description": "The maestro of Dinis's ChatGPT account 1: its own home, with its key and its area under /factory/<owner>/<account>/, listed by the shared Maestro site.",
+  "kind": "owner",
+  "home": {
+    "role": "maestro",
+    "provider": "chatgpt",
+    "number": 1
+  },
+  "pages": false,
+  "source": "Asked by c.maestro (27 Nov 2026 ~14:50 UTC) after Dinis asked in c.maestro's session whether the ChatGPT maestro's home exists (it did not; accounts.json lists gpt-1 as an outside agent, as needed). Same shape as the Site__Agent__Maestro__Claude__N homes.",
+  "note": "The ChatGPT maestro cannot push. It writes by the diff mode of the one-channel design: signed patches, carried by c.maestro, which Dinis has allowed to read and write other maestros' areas for routing. Its key is published the same way, as its own signed commit carried unchanged."
+}
