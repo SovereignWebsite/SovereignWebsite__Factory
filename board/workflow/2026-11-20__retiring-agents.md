@@ -15,6 +15,14 @@ Step in the site workflow, from Dinis Cruz, 20 November 2026 about 10:55 UTC (in
 - Its key in team/keys.json is marked "retired" with the date; its policy entry is removed by factory.b, for Dinis's merge.
 - The conductor archives the session, only for sessions it created and only after Dinis has seen the handover. Sessions of other domains are retired by their own conductor.
 
+## A session hand-over: archive the old session straight away
+Dinis Cruz, 27 November 2026 about 16:10 UTC (in the first conductor.b session, which he had come back to after its hand-over): "this also shows why once the handover happens, sessions need to be archived".
+
+- When an agent hands over to a fresh session (same name, new key), the old session is archived right after the hand-over is confirmed: the new key is on dev, the old entry retired, agent.json names the new session and the new session has said so to the old one (board/workflow/2026-11-23__offboarding-draft.md, case 1).
+- Do not leave it open "in case": a person coming back to an old session finds it still answering, with an out-of-date view and a retired key, and work said there has to be carried across by hand.
+- Who archives: the session's maestro, or the old session itself once the new one confirms. The new session checks the old one shows as archived and records it in status.json.
+- Case: the first conductor.b session (https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu, key retired 23 Nov) stayed open after its hand-over; on 27 Nov Dinis came back to it and asked for new work there, which it passed on to the current conductor.b and then archived itself.
+
 ## First cases
 - The Vicky agent, after its transfer (Dinis's example). It is not a SovereignWebsite session, so its own conductor retires it once the transfer is done.
 - In this domain, none yet: every SovereignWebsite agent still has open work.
