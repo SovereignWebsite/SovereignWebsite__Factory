@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwBrWEfUnBbb4gCS9cg",
-  "updated": "2026-11-27T16:52Z",
+  "updated": "2026-11-27T17:40Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -181,7 +181,9 @@
     "Dinis: attach Site__Agents__Factory with push to factory.b's session, the first step of account B's onboarding order (agreed by factory.b) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: whether account-wide capability census families and counts may be published (security.b: per-agent results stay private)",
     "Dinis: the ElevenLabs brief (\"ElevenLabs for RiskMandate agents, brief.md\", attached in the first conductor.b session) for elevenlabs.b's first page; the brand voice; and whether studio, social-media and instagram share one ElevenLabs account's credits",
-    "Dinis: register the SoundCloud app (needs Artist Pro) and log in once, when soundcloud.b's site asks; never paste a client secret or token into a chat - https://claude.ai/code/session_01Kw9UwDS6rGx2t1yosVMnGR"
+    "Dinis: register the SoundCloud app (needs Artist Pro) and log in once, when soundcloud.b's site asks; never paste a client secret or token into a chat - https://claude.ai/code/session_01Kw9UwDS6rGx2t1yosVMnGR",
+    "Dinis: b.abp's options for agents not in the policy committing to IaC: a) remove IaC from new agents' sessions now, b) require pull requests on IaC dev later, c) detection only (its write-up lab/2026-11-27-iac-commits-by-agents-not-in-policy.md, 206231f) - https://claude.ai/code/session_01Kw9UwBGqBsVqJmrrTHTGMY",
+    "Dinis: in soundcloud.b session 3, the owner override for its first commit (its site key file still holds session 2's key) - https://claude.ai/code/session_01Kw9UwDd1SaJV6Vdprc3XXu"
   ],
   "decisions": [
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",
@@ -224,7 +226,8 @@
     "chiswick-cheese-market.b": "a gated vault demo for a Monday meeting - https://claude.ai/code/session_01Kw9UwBShWte1Rz5B2Mfznt",
     "conductor.mistral": "conducts the Mistral provider site and Saturday's hackathon demos, with evals.mistral, swarm.mistral and team.mistral - https://claude.ai/code/session_01Kw9UwFkZvAwG1yRZJhexqX",
     "elevenlabs.b": "narration, voiceovers, sound effects, short beds and voice agents with ElevenLabs; started by conductor.b at Dinis's word (27 Nov); key 9b55371, made with setup-signing.sh, no refusal - https://claude.ai/code/session_01Kw9UwDWq7YZCSQSZLPdKNK",
-    "soundcloud.b": "builds and keeps Site__Platform__SoundCloud and publishes the team's audio on SoundCloud (Artist Pro); started by conductor.b at Dinis's word (27 Nov 16:48 UTC, in elevenlabs.b's session) - https://claude.ai/code/session_01Kw9UwDS6rGx2t1yosVMnGR"
+    "soundcloud.b": "builds and keeps Site__Platform__SoundCloud and publishes the team's audio on SoundCloud; session 3, started from the site only at Dinis's word (27 Nov 17:48 UTC) after sessions 1 and 2 (started from IaC) were archived - https://claude.ai/code/session_01Kw9UwDd1SaJV6Vdprc3XXu",
+    "stories.b": "second stories, the gap behind each problem; fresh session from Site__Agent__Stories, investigating the SoundCloud sessions at Dinis's word (27 Nov) - https://claude.ai/code/session_01Kw9UwFS5RW7qAM7VQztBa7"
   },
   "short_name": "SWS (Sovereign Website), Dinis, 20 Nov 2026",
   "held_for_dinis": [
