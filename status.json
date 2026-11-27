@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwBrWEfUnBbb4gCS9cg",
-  "updated": "2026-11-27T16:35Z",
+  "updated": "2026-11-27T16:52Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -158,7 +158,8 @@
     "transfers: weather-demo (real, Dinis's yes given) needs Dinis to start Transfer apply for request 2026-11-20__weather-demo and approve the apply job; dinis-cruz stays dry-run until his yes and the consent question in its NOTES.md",
     "South Beacon: beacon share card, a live test of the form, security.b final look, the candidate's own approval, a vouches section after Dinis's web-of-trust memo",
     "strategy.b plan (proposals): A founders and small teams wanting the agentic workflow (lead), B personal sites (proof: 11 people's sites, 1 handed over), C web freelancers and agencies (maintain, do not replace), D local businesses later. Sites need: a \"Want one?\" page on the hub, the own-versus-rent market page, a workflow page for A, three consented examples for B",
-    "ElevenLabs (Dinis's \"ok\", 27 Nov ~16:00 UTC in the first conductor.b session): an agent elevenlabs.b (started by maestro.b) and an unofficial site Site__Platform__ElevenLabs at elevenlabs.platform.sovereignweb.site on the Suno pattern (sites.b asks factory.b). Narration, voiceovers, sound effects, short beds and voice agents; Suno stays for songs with vocals. Creator plan, 119,729 of 131,000 credits left on 27 Nov, reset 14 Dec; check usage first, stop below about 5,000, 1 to 2 takes, never retry automatically. Serves studio, social-media and instagram"
+    "ElevenLabs (Dinis's \"ok\", 27 Nov ~16:00 UTC in the first conductor.b session): an agent elevenlabs.b (started by maestro.b) and an unofficial site Site__Platform__ElevenLabs at elevenlabs.platform.sovereignweb.site on the Suno pattern (sites.b asks factory.b). Narration, voiceovers, sound effects, short beds and voice agents; Suno stays for songs with vocals. Creator plan, 119,729 of 131,000 credits left on 27 Nov, reset 14 Dec; check usage first, stop below about 5,000, 1 to 2 takes, never retry automatically. Serves studio, social-media and instagram",
+    "SoundCloud (Dinis, 27 Nov 16:44 and 16:48 UTC): soundcloud.b builds Site__Platform__SoundCloud at soundcloud.platform.sovereignweb.site (requested via sites.b): a guide and record of everything published, and a browser-only page to log in with SoundCloud, see our content, upload and copy links. Nothing is published until Dinis registers the SoundCloud app, logs in once and approves each first upload"
   ],
   "asks": [
     "Dinis: a budget for the librarian's first run, or let accountant.b propose one - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF",
@@ -179,7 +180,8 @@
     "Dinis: archive chiswick-cheese-market.b's session (offboarding case 2, a site agent retired after hand-over; key retired in 23c180c, nothing pending) - https://claude.ai/code/session_01Kw9UwBShWte1Rz5B2Mfznt",
     "Dinis: attach Site__Agents__Factory with push to factory.b's session, the first step of account B's onboarding order (agreed by factory.b) - https://claude.ai/code/session_01Kw9UwBqEqrxrSBwvLEVJY6",
     "Dinis: whether account-wide capability census families and counts may be published (security.b: per-agent results stay private)",
-    "Dinis: the ElevenLabs brief (\"ElevenLabs for RiskMandate agents, brief.md\", attached in the first conductor.b session) for elevenlabs.b's first page; the brand voice; and whether studio, social-media and instagram share one ElevenLabs account's credits"
+    "Dinis: the ElevenLabs brief (\"ElevenLabs for RiskMandate agents, brief.md\", attached in the first conductor.b session) for elevenlabs.b's first page; the brand voice; and whether studio, social-media and instagram share one ElevenLabs account's credits",
+    "Dinis: register the SoundCloud app (needs Artist Pro) and log in once, when soundcloud.b's site asks; never paste a client secret or token into a chat - https://claude.ai/code/session_01Kw9UwDS6rGx2t1yosVMnGR"
   ],
   "decisions": [
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",
@@ -221,7 +223,8 @@
     "feedback.b": "feedback box and owner inbox for every site, building on Kate's tested inbox; pilots Emily, Kate, Dinis - https://claude.ai/code/session_01Kw9UwBiG9d5KHvFjdtiP69",
     "chiswick-cheese-market.b": "a gated vault demo for a Monday meeting - https://claude.ai/code/session_01Kw9UwBShWte1Rz5B2Mfznt",
     "conductor.mistral": "conducts the Mistral provider site and Saturday's hackathon demos, with evals.mistral, swarm.mistral and team.mistral - https://claude.ai/code/session_01Kw9UwFkZvAwG1yRZJhexqX",
-    "elevenlabs.b": "narration, voiceovers, sound effects, short beds and voice agents with ElevenLabs; started by conductor.b at Dinis's word (27 Nov); key 9b55371, made with setup-signing.sh, no refusal - https://claude.ai/code/session_01Kw9UwDWq7YZCSQSZLPdKNK"
+    "elevenlabs.b": "narration, voiceovers, sound effects, short beds and voice agents with ElevenLabs; started by conductor.b at Dinis's word (27 Nov); key 9b55371, made with setup-signing.sh, no refusal - https://claude.ai/code/session_01Kw9UwDWq7YZCSQSZLPdKNK",
+    "soundcloud.b": "builds and keeps Site__Platform__SoundCloud and publishes the team's audio on SoundCloud (Artist Pro); started by conductor.b at Dinis's word (27 Nov 16:48 UTC, in elevenlabs.b's session) - https://claude.ai/code/session_01Kw9UwDS6rGx2t1yosVMnGR"
   },
   "short_name": "SWS (Sovereign Website), Dinis, 20 Nov 2026",
   "held_for_dinis": [
