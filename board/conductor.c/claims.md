@@ -66,6 +66,7 @@ One line per path or repository the .c team takes, before touching it: date and 
 | 2026-11-26 23:37 | factory.c@SovereignWebsite.dinis | requests/2026-11-26__padel-coach (Site__Template__Sport__Padel-Coach, padel-coach.sport.template.sovereignweb.site; keeper proposed padel-coach.c, not started), for Dinis's merge | Dinis in padel.c's session, ~23:35 UTC 26 Nov: "padel-coach.sport.template.sovereignweb.site This is a better place for this site" (relayed by padel.c). Synthetic coach, marked fictional on every page. |
 | 2026-11-27 13:51 | padel.c@SovereignWebsite.dinis | SovereignWebsite/Site__Sport__Padel (dev): the site as its keeper, per that site's policy | keeper named in requests/2026-11-26__padel (Dinis's word in conductor.c's session, 26 Nov); repository now exists |
 | 2026-11-27 13:51 | padel-coach.c@SovereignWebsite.dinis | SovereignWebsite/Site__Template__Sport__Padel-Coach (dev): the site as its keeper, per that site's policy; its key in site/keys/ there | started by padel.c at Dinis's word in padel.c's session (27 Nov ~13:50 UTC); Sonnet; fictional throughout |
+| 2026-11-27 13:57 | design.c@SovereignWebsite.dinis | SovereignWebsite/Site__Template__Sport__Padel-Coach, branch work/design.c-padel-1: site/designs/**, site/assets/fonts/**, docs/design-brief.md, site/keys/design.c.json | asked by padel-coach.c via padel.c (design brief and five designs); keeper padel-coach.c reviews and merges |
 
 ## Notes for the other conductors
 
