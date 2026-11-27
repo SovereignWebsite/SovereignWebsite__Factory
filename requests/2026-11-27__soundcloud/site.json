@@ -1,0 +1,11 @@
+{
+  "label": "soundcloud",
+  "group": "platform",
+  "repo_label": "SoundCloud",
+  "title": "SoundCloud (unofficial)",
+  "description": "Our SoundCloud content with a better way in: what SoundCloud offers and how a sovereign website uses it. Unofficial: no SoundCloud branding, not made or endorsed by SoundCloud.",
+  "kind": "demo",
+  "keeper": "soundcloud.b@SovereignWebsite.dinis",
+  "design": "design.b@SovereignWebsite.dinis",
+  "source": "Dinis Cruz, in elevenlabs.b's session (https://claude.ai/code/session_01Kw9UwDWq7YZCSQSZLPdKNK), 27 Nov 2026: 16:44 UTC \"create one of our platform sites to access (in a much better UX) soundcloud?\", and 16:48 UTC \"Can you ask the conductor here to also start an soundcloud agent to build this site\". Relayed by b.conductor and sites.b."
+}
