@@ -1,0 +1,10 @@
+{
+  "label": "open-source",
+  "group": "history",
+  "title": "Open source",
+  "description": "Open source software: its history, licences, communities and the projects that shaped it, each claim with its source.",
+  "kind": "owner",
+  "keeper": "c.history@SovereignWebsite.dinis",
+  "design": "design.c@SovereignWebsite.dinis",
+  "source": "Dinis Cruz, in c.maestro's session, 27 Nov 2026 (as relayed by c.maestro, ~13:40 UTC): \"Can you create a website for Agile ... and also have a website about open source\", and a framework repository for ephemeral agile teams with an API and JSON files. Brief: PrompTugal__News__Website board/team/maestro.c/briefs/2026-11-27-agile-open-source-and-agile-cells.md."
+}
