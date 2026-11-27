@@ -1722,6 +1722,29 @@
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
       }
+    },
+    {
+      "id": "elevenlabs-b-sovereignwebsite",
+      "agent": "elevenlabs.b@SovereignWebsite.dinis",
+      "role": "ElevenLabs agent of the Sovereign Website team on account B: narration, voiceovers, sound effects, short beds and voice agents with the ElevenLabs connector, for studio.b, b.social and instagram.b. Reports to conductor.b.",
+      "how": "Made by the agent in its own session with sgit pki keygen (tools/setup-signing.sh). Only the public half is here. A session key: it ends with its session.",
+      "created": "2026-11-27",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwDWq7YZCSQSZLPdKNK",
+      "fingerprint": "sha256:420b6fac7a46251f",
+      "signing_fingerprint": "sha256:703b2433facc40a8",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA4QLwG6kswfcX7VoWkqSy\nRrLroy7tZI/tHgOMZYw3hQJrqhVCfQiief9rW3xZsYOXim9hXGQRNOH1x0nThS8f\ndnOS9LhUofEAEPlve9k8RRKaxDB2Rs+nyNMRlyBTVYGv/hjk08DII3OiKbHezbqU\nMmLvHgGkHcVC8nat1eaoo8y0A2tsCQ/+QQnKLu+dP1hRqGVklUboRDfcAkRlfxf7\nMUvGDfTJWrKFsMKKR1WUJWY6BycrGz7XN7k9i8mHJOZb9zWCBXjCRgVlhznJxCZp\np0FwukhRVtQGLnmZrliF7HcWu4qWkvr/BpiaxS+VrSasF505J0tCQB4GcSOsS8IT\nyo2l4WwomZIqel8Hs9GYoN/rDHeL1SKpb5rPbopJUNo0Y5Uzls5IwwuTzaaZ/1qF\nSK3Z5P7m8AG+7mSUuUZW88entvYYpYMu3RwWmpEoj/+HpBpEGl9b+VDtR9gotZZ2\nEhHf5Ivv+dbV1mxw3q3jp02lFZSet4dALNdl5rCKpCYB3j/RXuR6rNTNLw/KqzM+\nK9qEz7Cbm4dU3l4RlG3SsszwY/MvjRWEE7ayxoZy5VtOkM3rdSxFO0bHKYqJyO4Q\nB8Ap74zZD1vSz2gjgYO7E4m9FjFjxKo9gBheO3FvmMrIhdSXfeNh9V2K8c7SuFa/\n3Y4iF/vN36hvwIDZMLpJAP0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEvMq8F6NgvZw0ouAewav84NM87Hqp\nRlZ9ZF3/X1F0wBD3MgPzRKxYfB3MSQuOYGlarfXgJnc/oOlMzxiTcClx/g==\n-----END PUBLIC KEY-----\n",
+        "label": "elevenlabs-b-sovereignwebsite",
+        "fingerprint": "sha256:420b6fac7a46251f",
+        "signing_fingerprint": "sha256:703b2433facc40a8"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
