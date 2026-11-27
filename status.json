@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwBrWEfUnBbb4gCS9cg",
-  "updated": "2026-11-27T17:55Z",
+  "updated": "2026-11-27T17:52Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -148,7 +148,8 @@
     "Retiring agents workflow: the old session is archived right after a session hand-over (Dinis, 27 Nov ~16:10 UTC); both earlier conductor.b sessions archived",
     "elevenlabs.b started (https://claude.ai/code/session_01Kw9UwDWq7YZCSQSZLPdKNK), key 9b55371; connector reachable, 119,729 of 131,000 credits left, nothing spent. Site request 2716d84 (factory.b) waits for decisions.b and Dinis's clear yes",
     "Site__Platform__ElevenLabs live at elevenlabs.platform.sovereignweb.site (request b1693de, Org apply 46033270253); elevenlabs.b's key there 614c408, /spend/ page f7e1bf2. First work at Dinis's word (16:15 UTC, in its session): the Signed music bed from studio's brief, 2 takes, 2,954 credits, 116,775 left",
-    "Correction (b.stories, story 0006): Dinis's \"archived that and start again\" was at 17:36:13 UTC, not 17:48 as written in 1df46d1 and 3aa6386; his title rule was at 17:33:18 UTC, not about 17:35 (43f665e). Session 2 of soundcloud.b was started by session 1, not by conductor.b. Story: https://stories.agents.sovereignweb.site/factory/dinis-cruz/account-b/stories/0006-soundcloud-sessions/"
+    "Correction (b.stories, story 0006): Dinis's \"archived that and start again\" was at 17:36:13 UTC, not 17:48 as written in 1df46d1 and 3aa6386; his title rule was at 17:33:18 UTC, not about 17:35 (43f665e). Session 2 of soundcloud.b was started by session 1, not by conductor.b. Story: https://stories.agents.sovereignweb.site/factory/dinis-cruz/account-b/stories/0006-soundcloud-sessions/",
+    "SoundCloud publishing works from a session (soundcloud.b session 3, at Dinis's word): first piece \"Signed (music bed)\", take A from elevenlabs.b, uploaded private 17:46, public 17:47, CC BY 17:48 UTC, https://soundcloud.com/agent-riskmandate-ai/signed-music-bed; recorded on /published/ (Site__Platform__SoundCloud f36b6d9). Story 0006 live (Site__Agent__Stories 66e5506)"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
@@ -160,7 +161,8 @@
     "South Beacon: beacon share card, a live test of the form, security.b final look, the candidate's own approval, a vouches section after Dinis's web-of-trust memo",
     "strategy.b plan (proposals): A founders and small teams wanting the agentic workflow (lead), B personal sites (proof: 11 people's sites, 1 handed over), C web freelancers and agencies (maintain, do not replace), D local businesses later. Sites need: a \"Want one?\" page on the hub, the own-versus-rent market page, a workflow page for A, three consented examples for B",
     "ElevenLabs (Dinis's \"ok\", 27 Nov ~16:00 UTC in the first conductor.b session): an agent elevenlabs.b (started by maestro.b) and an unofficial site Site__Platform__ElevenLabs at elevenlabs.platform.sovereignweb.site on the Suno pattern (sites.b asks factory.b). Narration, voiceovers, sound effects, short beds and voice agents; Suno stays for songs with vocals. Creator plan, 119,729 of 131,000 credits left on 27 Nov, reset 14 Dec; check usage first, stop below about 5,000, 1 to 2 takes, never retry automatically. Serves studio, social-media and instagram",
-    "SoundCloud (Dinis, 27 Nov 16:44 and 16:48 UTC): soundcloud.b builds Site__Platform__SoundCloud at soundcloud.platform.sovereignweb.site (requested via sites.b): a guide and record of everything published, and a browser-only page to log in with SoundCloud, see our content, upload and copy links. Nothing is published until Dinis registers the SoundCloud app, logs in once and approves each first upload"
+    "SoundCloud (Dinis, 27 Nov 16:44 and 16:48 UTC): soundcloud.b builds Site__Platform__SoundCloud at soundcloud.platform.sovereignweb.site (requested via sites.b): a guide and record of everything published, and a browser-only page to log in with SoundCloud, see our content, upload and copy links. Nothing is published until Dinis registers the SoundCloud app, logs in once and approves each first upload",
+    "SoundCloud: Suno songs (suno.b) once Suno's terms are checked; each upload, move to public and licence needs Dinis's word in soundcloud.b's session; the login lasts only as long as that session's container"
   ],
   "asks": [
     "Dinis: a budget for the librarian's first run, or let accountant.b propose one - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF",
@@ -183,8 +185,7 @@
     "Dinis: whether account-wide capability census families and counts may be published (security.b: per-agent results stay private)",
     "Dinis: the ElevenLabs brief (\"ElevenLabs for RiskMandate agents, brief.md\", attached in the first conductor.b session) for elevenlabs.b's first page; the brand voice; and whether studio, social-media and instagram share one ElevenLabs account's credits",
     "Dinis: register the SoundCloud app (needs Artist Pro) and log in once, when soundcloud.b's site asks; never paste a client secret or token into a chat - https://claude.ai/code/session_01Kw9UwDS6rGx2t1yosVMnGR",
-    "Dinis: b.abp's options for agents not in the policy committing to IaC: a) remove IaC from new agents' sessions now, b) require pull requests on IaC dev later, c) detection only (its write-up lab/2026-11-27-iac-commits-by-agents-not-in-policy.md, 206231f) - https://claude.ai/code/session_01Kw9UwBGqBsVqJmrrTHTGMY",
-    "Dinis: in soundcloud.b session 3, the owner override for its first commit (its site key file still holds session 2's key) - https://claude.ai/code/session_01Kw9UwDd1SaJV6Vdprc3XXu"
+    "Dinis: b.abp's options for agents not in the policy committing to IaC: a) remove IaC from new agents' sessions now, b) require pull requests on IaC dev later, c) detection only (its write-up lab/2026-11-27-iac-commits-by-agents-not-in-policy.md, 206231f) - https://claude.ai/code/session_01Kw9UwBGqBsVqJmrrTHTGMY"
   ],
   "decisions": [
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",
