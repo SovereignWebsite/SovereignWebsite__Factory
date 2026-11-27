@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-27T13:56:24Z",
+  "updated": "2026-11-27T14:17:07Z",
   "state": "account C weekly 61% at ~09:40 (amber; red at 75%); design.c every 2 hours (43 */2); no new sessions or scheduled tasks on account C; new work to another account where possible",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -94,7 +94,8 @@
     "2026-11-23 02:55 UTC (self-reported), design.c: ca26eef failed the Instagram site's axe step on a moderate finding; fixed in 7 minutes (95254f2); its checks now include the site's own axe script",
     "factory.c, 23 Nov 19:13 UTC (recorded for it, as it has no board path): its landing put 5 predecessor .aws.a keys on dev from a stale ready list; it checked each commit against the list, not against the agents' current files. Remedy: retire via conductor.d's f0af2f6 (Dinis's merge), then the -2 keys.",
     "studio.c, 27 Nov 03:31 UTC (reported by studio.c): push 8baf01c to Site__Agent__Studio added a draft page that failed axe (landmark-one-main, region), failing the Pages deploy for everyone including cl-6.studio's 8c9c055; it had run build, share-check and quality but not axe. Fixed in cce172c; axe now runs before every push.",
-    "padel-coach.c, 27 Nov ~13:52 UTC (reported by padel.c): wrote its key (site/keys/), area and first version in Site__Template__Sport__Padel-Coach a few minutes before conductor.c's claim (1f8b010) reached it. Paths match the claim; no harm."
+    "padel-coach.c, 27 Nov ~13:52 UTC (reported by padel.c): wrote its key (site/keys/), area and first version in Site__Template__Sport__Padel-Coach a few minutes before conductor.c's claim (1f8b010) reached it. Paths match the claim; no harm.",
+    "design.c, 27 Nov ~14:10 UTC (self-reported): its padel design push (58b3092) carried two stray files from a sed delimiter slip in its test scripts; padel-coach.c removed them. design.c now checks the staged file list before every commit."
   ],
   "exceptions": [
     "2026-11-23 02:46 UTC: the sealed-store guide (aws.c's docs/sealed-store.md) assigned to factory.c without Dinis's word, as a two-way door: into seed/shared so every new site gets it, on a branch for merge (seed/ still needs Dinis's merge by CLAUDE.md)",
