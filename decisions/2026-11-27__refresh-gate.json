@@ -1,0 +1,26 @@
+{
+  "v": 2,
+  "decided_by": "Dinis Cruz",
+  "words": "yes to all of them",
+  "session": "https://claude.ai/code/session_01Kw9UwEbwyWMbZ7yCr81Dq9",
+  "event_uuid": "a73ad9b9-517c-4333-9edc-9097ed1ca924",
+  "recorded_by": "decisions.b@SovereignWebsite.dinis",
+  "recorder_key": "sha256:eefbe996d9c67a7c",
+  "id": "2026-11-27__refresh-gate",
+  "at": "2026-11-27T16:30:00Z",
+  "status": "in-force",
+  "scope": {
+    "repository": "SovereignWebsite/SovereignWebsite__IaC",
+    "branch": "dev",
+    "paths": [
+      "build/org-plan.mjs",
+      "test/run.mjs"
+    ],
+    "commits": 1,
+    "patch_ids": [
+      "4e69575be77bdf6b12ff271dfb1232174425d66c"
+    ]
+  },
+  "expires": "2026-12-04T16:30:00Z",
+  "about": "factory.b's refresh gate, 1af7538 rebased onto b1693de as 1cafdbd (patch changed from 3df6949d by a conflict resolution that keeps dev's per-site vars in staleFiles): Org apply refreshes a site's managed files only when org/repos.json lists it in refresh_managed; otherwise each stale file is a note. Dinis in maestro.b's session (web), 27 Nov 16:20:36 UTC, answering a list whose item was \"push 1af7538, which releases the held seed fixes\" (site record 2026-11-27__yes-to-all-of-them), checked by decisions.b with list_events. Note: with refresh_managed absent, no site is refreshed after this push, including by a full sweep."
+}
