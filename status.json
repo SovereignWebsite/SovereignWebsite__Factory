@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwBrWEfUnBbb4gCS9cg",
-  "updated": "2026-11-27T17:40Z",
+  "updated": "2026-11-27T17:55Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -147,7 +147,8 @@
     "hub.b: website.a@SovereignWebsite.dinis listed as keeper of sovereignwebsite.ai in registry.json and /directory/ (v0.1.87, d968ae0)",
     "Retiring agents workflow: the old session is archived right after a session hand-over (Dinis, 27 Nov ~16:10 UTC); both earlier conductor.b sessions archived",
     "elevenlabs.b started (https://claude.ai/code/session_01Kw9UwDWq7YZCSQSZLPdKNK), key 9b55371; connector reachable, 119,729 of 131,000 credits left, nothing spent. Site request 2716d84 (factory.b) waits for decisions.b and Dinis's clear yes",
-    "Site__Platform__ElevenLabs live at elevenlabs.platform.sovereignweb.site (request b1693de, Org apply 46033270253); elevenlabs.b's key there 614c408, /spend/ page f7e1bf2. First work at Dinis's word (16:15 UTC, in its session): the Signed music bed from studio's brief, 2 takes, 2,954 credits, 116,775 left"
+    "Site__Platform__ElevenLabs live at elevenlabs.platform.sovereignweb.site (request b1693de, Org apply 46033270253); elevenlabs.b's key there 614c408, /spend/ page f7e1bf2. First work at Dinis's word (16:15 UTC, in its session): the Signed music bed from studio's brief, 2 takes, 2,954 credits, 116,775 left",
+    "Correction (b.stories, story 0006): Dinis's \"archived that and start again\" was at 17:36:13 UTC, not 17:48 as written in 1df46d1 and 3aa6386; his title rule was at 17:33:18 UTC, not about 17:35 (43f665e). Session 2 of soundcloud.b was started by session 1, not by conductor.b. Story: https://stories.agents.sovereignweb.site/factory/dinis-cruz/account-b/stories/0006-soundcloud-sessions/"
   ],
   "next": [
     "Ask 40, \"super critical\" (Dinis, 23:17 UTC): one shared navigation component so every site can reach home, up, down and its agent; sites.b leads with hub.b and design.b, to Dinis through decisions.b before his next review round",
@@ -226,7 +227,7 @@
     "chiswick-cheese-market.b": "a gated vault demo for a Monday meeting - https://claude.ai/code/session_01Kw9UwBShWte1Rz5B2Mfznt",
     "conductor.mistral": "conducts the Mistral provider site and Saturday's hackathon demos, with evals.mistral, swarm.mistral and team.mistral - https://claude.ai/code/session_01Kw9UwFkZvAwG1yRZJhexqX",
     "elevenlabs.b": "narration, voiceovers, sound effects, short beds and voice agents with ElevenLabs; started by conductor.b at Dinis's word (27 Nov); key 9b55371, made with setup-signing.sh, no refusal - https://claude.ai/code/session_01Kw9UwDWq7YZCSQSZLPdKNK",
-    "soundcloud.b": "builds and keeps Site__Platform__SoundCloud and publishes the team's audio on SoundCloud; session 3, started from the site only at Dinis's word (27 Nov 17:48 UTC) after sessions 1 and 2 (started from IaC) were archived - https://claude.ai/code/session_01Kw9UwDd1SaJV6Vdprc3XXu",
+    "soundcloud.b": "builds and keeps Site__Platform__SoundCloud and publishes the team's audio on SoundCloud; session 3, started from the site only at Dinis's word (27 Nov 17:36 UTC) after sessions 1 and 2 (started from IaC) were archived - https://claude.ai/code/session_01Kw9UwDd1SaJV6Vdprc3XXu",
     "stories.b": "second stories, the gap behind each problem; fresh session from Site__Agent__Stories, investigating the SoundCloud sessions at Dinis's word (27 Nov) - https://claude.ai/code/session_01Kw9UwFS5RW7qAM7VQztBa7"
   },
   "short_name": "SWS (Sovereign Website), Dinis, 20 Nov 2026",
