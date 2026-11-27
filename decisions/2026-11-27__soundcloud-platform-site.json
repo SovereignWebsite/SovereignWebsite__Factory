@@ -1,0 +1,25 @@
+{
+  "v": 2,
+  "decided_by": "Dinis Cruz",
+  "words": "Can you ask the conductor here to also start an soundcloud agent to build this site (which will also allow me to access all our content there)",
+  "session": "https://claude.ai/code/session_01Kw9UwDWq7YZCSQSZLPdKNK",
+  "event_uuid": "6ba86532-33da-4082-a894-b1e79e91f5cc",
+  "recorded_by": "decisions.b@SovereignWebsite.dinis",
+  "recorder_key": "sha256:eefbe996d9c67a7c",
+  "id": "2026-11-27__soundcloud-platform-site",
+  "at": "2026-11-27T16:55:00Z",
+  "status": "in-force",
+  "scope": {
+    "repository": "SovereignWebsite/SovereignWebsite__IaC",
+    "branch": "dev",
+    "paths": [
+      "requests/2026-11-27__soundcloud/site.json"
+    ],
+    "commits": 1,
+    "patch_ids": [
+      "34731b6ba4335a3e715035cb7b7b5a60a00c64f8"
+    ]
+  },
+  "expires": "2026-12-04T16:55:00Z",
+  "about": "factory.b's c275dc2: Site__Platform__SoundCloud (group platform, kind demo, unofficial), keeper soundcloud.b, design design.b. Dinis in elevenlabs.b's session (web), 27 Nov 16:48:55 UTC, after asking at 16:44:18 UTC (event 9db79209) \"cool so we could also create one of our platform sites to access (in a much better UX) soundcloud?\"; checked by decisions.b with get_event. Covers the site only: uploading Suno songs, any SoundCloud account or connector, and any spending are not part of it. The site stays marked unofficial and must not present itself as SoundCloud."
+}
