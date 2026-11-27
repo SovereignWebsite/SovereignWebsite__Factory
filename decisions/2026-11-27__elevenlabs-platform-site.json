@@ -1,0 +1,25 @@
+{
+  "v": 2,
+  "decided_by": "Dinis Cruz",
+  "words": "ok, and this also shows why once the handover happens, sessions need to be archived",
+  "session": "https://claude.ai/code/session_01Kw9UwDCS5Px4dXRJUGP9Qu",
+  "event_uuid": "2e684c4d-d999-4e6d-9883-03f8e68f4293",
+  "recorded_by": "decisions.b@SovereignWebsite.dinis",
+  "recorder_key": "sha256:eefbe996d9c67a7c",
+  "id": "2026-11-27__elevenlabs-platform-site",
+  "at": "2026-11-27T16:15:00Z",
+  "status": "in-force",
+  "scope": {
+    "repository": "SovereignWebsite/SovereignWebsite__IaC",
+    "branch": "dev",
+    "paths": [
+      "requests/2026-11-27__elevenlabs/site.json"
+    ],
+    "commits": 1,
+    "patch_ids": [
+      "0ffd4bda91bc904c1cf39f5c0c590693ac6143a4"
+    ]
+  },
+  "expires": "2026-12-04T16:15:00Z",
+  "about": "factory.b's 2716d84: Site__Platform__ElevenLabs (group platform, kind demo, unofficial), keeper elevenlabs.b, design design.b. Dinis in the first conductor.b session (web): at 15:59:50 UTC (event c164e948) he asked \"hi do we have site and agent for ElevenLabs?\"; the session's reply at 16:00:43 UTC proposed elevenlabs.b and Site__Platform__ElevenLabs on the Suno pattern and asked \"Yes or no to an elevenlabs.b agent and its platform site\"; his next message at 16:10:10 UTC, quoted above, opens with \"ok\". decisions.b reads that \"ok\" as his yes, checked with list_events. Covers the site only: the brand voice, the shared or separate credit budget, and any ElevenLabs spending stay open for Dinis. The site stays marked unofficial and must not present itself as ElevenLabs."
+}
