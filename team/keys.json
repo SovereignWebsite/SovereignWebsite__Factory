@@ -1752,7 +1752,7 @@
       "role": "SoundCloud agent of the Sovereign Website team on account B: builds and keeps Site__Platform__SoundCloud and publishes the team's audio on SoundCloud. Reports to conductor.b.",
       "how": "Made by the agent in its own session with sgit pki keygen (tools/setup-signing.sh). Only the public half is here. A session key: it ends with its session.",
       "created": "2026-11-27",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_01Kw9UwDS6rGx2t1yosVMnGR",
       "fingerprint": "sha256:de1c4b204089d769",
       "signing_fingerprint": "sha256:c6baf146531eb2df",
@@ -1767,7 +1767,9 @@
       "ssh_signing": {
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
-      }
+      },
+      "retired": "2026-11-27",
+      "retired_note": "Retired by its own key at the hand-over to the second soundcloud.b session https://claude.ai/code/session_01Kw9UwBLzDWpcN6zj1PHH2Q (Dinis, about 17:30 UTC 27 Nov: \"start a new session and those values are going to be in the env vars\"), whose key is sha256:aec592a6a28064e7, signing sha256:9b1bee1cd83f8780. This session's signing key exists only in its own container, which ends when the session is archived. Offboarding case 1."
     }
   ]
 }
