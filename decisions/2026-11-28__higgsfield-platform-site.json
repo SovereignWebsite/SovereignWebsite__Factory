@@ -1,0 +1,25 @@
+{
+  "v": 2,
+  "decided_by": "Dinis Cruz",
+  "words": "Yes I also want a website that we can use to capture our experiments, note that the image a and video a should be hosted on a vault that we publish the read key on the site\n\nI.e. don't upload images and videos to the GitHub repo",
+  "session": "https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67",
+  "event_uuid": "6b38a37b-289d-4649-8ee3-54a3bc5a2917",
+  "recorded_by": "decisions.b@SovereignWebsite.dinis",
+  "recorder_key": "sha256:eefbe996d9c67a7c",
+  "id": "2026-11-28__higgsfield-platform-site",
+  "at": "2026-11-28T00:36:00Z",
+  "status": "in-force",
+  "scope": {
+    "repository": "SovereignWebsite/SovereignWebsite__IaC",
+    "branch": "dev",
+    "paths": [
+      "requests/2026-11-28__higgsfield/site.json"
+    ],
+    "commits": 1,
+    "patch_ids": [
+      "bf0d929f5ee2da419d44753d6157dbfb6326720c"
+    ]
+  },
+  "expires": "2026-12-05T00:36:00Z",
+  "about": "factory.b's 57cbcb6: Site__Platform__Higgsfield (group platform, kind demo, unofficial), a site for Higgsfield experiments, keeper higgsfield.b, design design.b. Dinis in sites.b's session (ios), 28 Nov 00:29:58 UTC, answering \"Do you want an unofficial Higgsfield platform site, kept by higgsfield.b?\"; checked by decisions.b with get_event. His condition binds the keeper: images and videos are not committed to the repository but hosted in a vault whose read key is published on the site. Covers the site only: the vault, its keys, any Higgsfield account and any spending are separate. The site stays marked unofficial and must not present itself as Higgsfield."
+}
