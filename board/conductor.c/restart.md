@@ -62,6 +62,8 @@ factory.c (requests and keys in IaC; lands only on Dinis's merge or word in its 
 - A restart note should list: scheduled tasks and their state, replies owed to agents, how far the other conductors' channels were read, and anything held only in the old session (sealed copies, drafts).
 - status.json "state", "next" and "asks" must be rewritten before a hand-over, not left for the successor to untangle.
 - On sites (not IaC) the signer check lets a key be self-published only as a new file: before an old session stops it moves its key file to site/keys/retired/ in a signed commit, so the successor can publish its own (found by c.productions, 28 Nov). Put this in every refresh prompt.
+- At a refresh, tell every agent that writes to the old session the successor's id at once (not "as they next write"): on 28 Nov higgsfield.c's notice went to the archived c.productions session and was lost until it asked. The old session's last act is one line to each regular correspondent.
+- maestro.c's skills shape (28 Nov, at Dinis's word in its session, nothing to build until he names the templates): rules always loaded; procedures as skills (.claude/skills/<name>/SKILL.md, under about 150 lines, deterministic steps in scripts/); state in files (now.md, agent.json, restart.md); a procedure becomes a skill when needed twice. Candidates sent: refreshing a session, claiming paths, landing a key or board change.
 
 ## Titles at a refresh (Dinis, 28 Nov)
 
