@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwBrWEfUnBbb4gCS9cg",
-  "updated": "2026-11-27T17:52Z",
+  "updated": "2026-11-28T02:00Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -162,7 +162,8 @@
     "strategy.b plan (proposals): A founders and small teams wanting the agentic workflow (lead), B personal sites (proof: 11 people's sites, 1 handed over), C web freelancers and agencies (maintain, do not replace), D local businesses later. Sites need: a \"Want one?\" page on the hub, the own-versus-rent market page, a workflow page for A, three consented examples for B",
     "ElevenLabs (Dinis's \"ok\", 27 Nov ~16:00 UTC in the first conductor.b session): an agent elevenlabs.b (started by maestro.b) and an unofficial site Site__Platform__ElevenLabs at elevenlabs.platform.sovereignweb.site on the Suno pattern (sites.b asks factory.b). Narration, voiceovers, sound effects, short beds and voice agents; Suno stays for songs with vocals. Creator plan, 119,729 of 131,000 credits left on 27 Nov, reset 14 Dec; check usage first, stop below about 5,000, 1 to 2 takes, never retry automatically. Serves studio, social-media and instagram",
     "SoundCloud (Dinis, 27 Nov 16:44 and 16:48 UTC): soundcloud.b builds Site__Platform__SoundCloud at soundcloud.platform.sovereignweb.site (requested via sites.b): a guide and record of everything published, and a browser-only page to log in with SoundCloud, see our content, upload and copy links. Nothing is published until Dinis registers the SoundCloud app, logs in once and approves each first upload",
-    "SoundCloud: Suno songs (suno.b) once Suno's terms are checked; each upload, move to public and licence needs Dinis's word in soundcloud.b's session; the login lasts only as long as that session's container"
+    "SoundCloud: Suno songs (suno.b) once Suno's terms are checked; each upload, move to public and licence needs Dinis's word in soundcloud.b's session; the login lasts only as long as that session's container",
+    "Suno songs (Dinis, about 01:55 UTC 28 Nov in soundcloud.b's session, relayed by soundcloud.b, Site__Platform__SoundCloud 1e7e3be docs/tools/README.md): Suno is now Premier, 60 song downloads a month, commercial use. Before downloading: check https://soundcloud.platform.sovereignweb.site/data/published.json; download only through Suno's download channel (no stream ripping), one song is one download so choose the take first; send soundcloud.b the file with Suno id, take, title, description, tags and credit; each upload needs Dinis's word in its session. No Suno remixes; keep Suno's watermark and metadata"
   ],
   "asks": [
     "Dinis: a budget for the librarian's first run, or let accountant.b propose one - https://claude.ai/code/session_01Kw9UwEYZaKaf2XGuq7xQPF",
@@ -229,7 +230,8 @@
     "conductor.mistral": "conducts the Mistral provider site and Saturday's hackathon demos, with evals.mistral, swarm.mistral and team.mistral - https://claude.ai/code/session_01Kw9UwFkZvAwG1yRZJhexqX",
     "elevenlabs.b": "narration, voiceovers, sound effects, short beds and voice agents with ElevenLabs; started by conductor.b at Dinis's word (27 Nov); key 9b55371, made with setup-signing.sh, no refusal - https://claude.ai/code/session_01Kw9UwDWq7YZCSQSZLPdKNK",
     "soundcloud.b": "builds and keeps Site__Platform__SoundCloud and publishes the team's audio on SoundCloud; session 3, started from the site only at Dinis's word (27 Nov 17:36 UTC) after sessions 1 and 2 (started from IaC) were archived - https://claude.ai/code/session_01Kw9UwDd1SaJV6Vdprc3XXu",
-    "stories.b": "second stories, the gap behind each problem; fresh session from Site__Agent__Stories, investigating the SoundCloud sessions at Dinis's word (27 Nov) - https://claude.ai/code/session_01Kw9UwFS5RW7qAM7VQztBa7"
+    "stories.b": "second stories, the gap behind each problem; fresh session from Site__Agent__Stories, investigating the SoundCloud sessions at Dinis's word (27 Nov) - https://claude.ai/code/session_01Kw9UwFS5RW7qAM7VQztBa7",
+    "decisions.b": "decisions records and Dinis's Now list; session 2 from Site__Agent__Decisions at Dinis's word (28 Nov 01:38 UTC), key 6aedc9a - https://claude.ai/code/session_01Kw9UwB7DVJassrw3N6eMmm"
   },
   "short_name": "SWS (Sovereign Website), Dinis, 20 Nov 2026",
   "held_for_dinis": [
