@@ -1271,7 +1271,7 @@
       "role": "Decisions agent on account B: records Dinis Cruz's approvals from its own session as signed decision records that agents push on. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 23 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here. To be linked by Dinis Cruz's pki.sgit.ai record (method \"operates\").",
       "created": "2026-11-23",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_01Kw9UwEVSYcMDgNqrPVfCtZ",
       "fingerprint": "sha256:a23b2dd69959b6e0",
       "signing_fingerprint": "sha256:eefbe996d9c67a7c",
@@ -1282,7 +1282,9 @@
         "label": "decisions.b@SovereignWebsite.dinis",
         "fingerprint": "sha256:a23b2dd69959b6e0",
         "signing_fingerprint": "sha256:eefbe996d9c67a7c"
-      }
+      },
+      "retired": "2026-11-28",
+      "retired_note": "Session refreshed at Dinis's word (28 Nov 2026 01:38:35 UTC, event d75893cd in this session); successor https://claude.ai/code/session_01Kw9UwB7DVJassrw3N6eMmm, key in Site__Agent__Decisions 6aedc9a. Retired by conductor.b at 01:41 UTC."
     },
     {
       "id": "pybot-d-sovereignwebsite",
