@@ -53,6 +53,15 @@ factory.c (requests and keys in IaC; lands only on Dinis's merge or word in its 
 - I assumed session ids must never be published; Dinis disagreed. State assumptions as assumptions.
 - Agents wrote a few minutes ahead of a claim: claim first, then say go.
 
+## Lessons from the 28 Nov hand-over (added by the successor)
+
+- A successor's key: IaC allows one live key per agent name, and a self-published key commit may add only its own entry. So the OLD session retires its own entry first (its own signed commit), and the successor's commit, on top, adds only the new entry. Key id convention: conductor-c-2-sovereignwebsite, then -3. Run `node build/check-signatures.mjs` and `node build/abp.mjs paths origin/dev HEAD` on a key branch before giving it to factory.c.
+- setup-signing.sh writes site/keys/<name>.json in this clone, in a shape that is not team/keys.json's (add id, role, created, ssh_signing by hand; copy an existing entry). Move that file out of the tree afterwards: leak-scan fails on it.
+- leak-scan fails team/keys.json if certain words (the names of key parts, or the name of the template folder) appear anywhere in it: keep "how" and notes plain.
+- The old session keeps pushing the board for a while: fetch before every push.
+- A restart note should list: scheduled tasks and their state, replies owed to agents, how far the other conductors' channels were read, and anything held only in the old session (sealed copies, drafts).
+- status.json "state", "next" and "asks" must be rewritten before a hand-over, not left for the successor to untangle.
+
 ## Titles at a refresh (Dinis, 28 Nov)
 
 When a refresh starts, put "[being refreshed]" at the beginning of the old session's title; when the successor has confirmed and the old session stops, change that to "[archived]". Dinis reads his session list by these.
