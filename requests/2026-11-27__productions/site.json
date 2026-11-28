@@ -1,0 +1,9 @@
+{
+  "label": "productions",
+  "group": "agents",
+  "agent": "c.productions@SovereignWebsite.dinis",
+  "title": "Productions",
+  "description": "The Productions agents' own site: their releases, pages and published keys, each account's under its own folder.",
+  "kind": "owner",
+  "source": "Dinis Cruz, 27 Nov 2026 ~18:50 UTC, in c.productions's session (https://claude.ai/code/session_01Kw9UwC1WUdLtsXs7cEXv4d), relayed by c.maestro: \"you should also have your own productions site, not the studio site.\" c.productions's key is published in Site__Agent__Studio site/keys/c.productions.json; it publishes it here by its first commit."
+}
