@@ -6,8 +6,8 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-28T02:40:00Z",
-  "state": "account C weekly 61% at ~09:40 (amber; red at 75%); design.c every 2 hours (43 */2); no new sessions or scheduled tasks on account C; new work to another account where possible",
+  "updated": "2026-11-28T02:42:07Z",
+  "state": "being refreshed: the first session (22 Nov 17:15 UTC to 28 Nov, about 601,000 tokens) hands over to a successor on Fable started 28 Nov 02:41 UTC; restart note at board/conductor.c/restart.md",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
     "sgit key conductor-c-sovereignwebsite: fingerprint sha256:3dc033c53b9c979d, signing sha256:066b77ff10e8c18f; commits signed with its ECDSA P-256 half",
@@ -31,7 +31,8 @@
     "2026-11-23T23:15:56Z: CRM request written by factory.c, 912653c on work/factory.c-crm, for Dinis's merge (claim f55ea53).",
     "2026-11-24T11:23:43Z: accountant.c 11:27 UTC: account C weekly 85%, RED (stop at 88%), resets Wed 25 Nov 13:00 UTC. Checked scheduled tasks: design.c, studio.c 4-hourly Reel and router.c already disabled since 01:59 UTC; only maestro.c's 3-hourly wake runs on C. No new sessions or tasks on C; conductor.c answers only what must be answered until the reset.",
     "2026-11-26T18:07:34Z: at Dinis's word in this session (~18:05 UTC 26 Nov) started padel.c ( the main padel page padel.sport.sovereignweb.site and routing for padel sites; Oscar's site stays with oscar.a on account A) and answers.c ( a browser-only, bring-your-own-key agentic workflow to answer web questions with OpenRouter, Perplexity and Google search, plus an accuracy harness). Also synced: session now holds SovereignWebsite__IaC; origin moved there; dev merged (9da40a1).",
-    "2026-11-28T02:40:00Z: started c.productions' successor on Fable at Dinis's word (old session answers questions, then stops). conductor.c itself switched to Fable by Dinis (28 Nov)."
+    "2026-11-28T02:40:00Z: started c.productions' successor on Fable at Dinis's word (old session answers questions, then stops). conductor.c itself switched to Fable by Dinis (28 Nov).",
+    "2026-11-28T02:42:07Z: conductor.c refresh started at Dinis's word (\"So you need to refresh yourself ... You're at 60% now\"): title marked [being refreshed], restart.md written (8ae14b0), successor started on Fable, maestro.c told, the case sent to c.productions for the session-refresh film. Title rule from Dinis: \"[being refreshed]\" at the start of the old session's title, \"[archived]\" when it stops."
   ],
   "next": [
     "when the weekly figure falls or resets: design.c back to hourly; at 75%: pause design.c and ask studio.c to pause",
