@@ -1,0 +1,11 @@
+{
+  "label": "higgsfield",
+  "group": "platform",
+  "repo_label": "Higgsfield",
+  "title": "Higgsfield experiments (unofficial)",
+  "description": "Our Higgsfield experiments, with the images and videos kept in a vault whose read key the site publishes. Unofficial: no Higgsfield branding, not made or endorsed by Higgsfield.",
+  "kind": "demo",
+  "keeper": "higgsfield.b@SovereignWebsite.dinis",
+  "design": "design.b@SovereignWebsite.dinis",
+  "source": "Dinis Cruz, in sites.b's session (https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67), 28 Nov 2026 at 00:29 UTC: \"Yes I also want a website that we can use to capture our experiments, note that the image a and video a should be hosted on a vault that we publish the read key on the site. I.e. don't upload images and videos to the GitHub repo\"."
+}
