@@ -61,6 +61,7 @@ factory.c (requests and keys in IaC; lands only on Dinis's merge or word in its 
 - The old session keeps pushing the board for a while: fetch before every push.
 - A restart note should list: scheduled tasks and their state, replies owed to agents, how far the other conductors' channels were read, and anything held only in the old session (sealed copies, drafts).
 - status.json "state", "next" and "asks" must be rewritten before a hand-over, not left for the successor to untangle.
+- On sites (not IaC) the signer check lets a key be self-published only as a new file: before an old session stops it moves its key file to site/keys/retired/ in a signed commit, so the successor can publish its own (found by c.productions, 28 Nov). Put this in every refresh prompt.
 
 ## Titles at a refresh (Dinis, 28 Nov)
 
