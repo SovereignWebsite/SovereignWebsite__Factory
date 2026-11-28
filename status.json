@@ -1,7 +1,7 @@
 {
   "agent": "conductor.b@SovereignWebsite.dinis",
   "session": "https://claude.ai/code/session_01Kw9UwBrWEfUnBbb4gCS9cg",
-  "updated": "2026-11-28T02:00Z",
+  "updated": "2026-11-28T13:20Z",
   "state": "Go-to-market week: account B is the Sovereign Website account (Dinis, 23 Nov). Plan: board/2026-11-23__go-to-market-week.md",
   "done": [
     "Factory: policy, organisation and DNS as code; Checks, Org apply (hourly), DNS apply, Org status",
@@ -186,7 +186,8 @@
     "Dinis: whether account-wide capability census families and counts may be published (security.b: per-agent results stay private)",
     "Dinis: the ElevenLabs brief (\"ElevenLabs for RiskMandate agents, brief.md\", attached in the first conductor.b session) for elevenlabs.b's first page; the brand voice; and whether studio, social-media and instagram share one ElevenLabs account's credits",
     "Dinis: register the SoundCloud app (needs Artist Pro) and log in once, when soundcloud.b's site asks; never paste a client secret or token into a chat - https://claude.ai/code/session_01Kw9UwDS6rGx2t1yosVMnGR",
-    "Dinis: b.abp's options for agents not in the policy committing to IaC: a) remove IaC from new agents' sessions now, b) require pull requests on IaC dev later, c) detection only (its write-up lab/2026-11-27-iac-commits-by-agents-not-in-policy.md, 206231f) - https://claude.ai/code/session_01Kw9UwBGqBsVqJmrrTHTGMY"
+    "Dinis: b.abp's options for agents not in the policy committing to IaC: a) remove IaC from new agents' sessions now, b) require pull requests on IaC dev later, c) detection only (its write-up lab/2026-11-27-iac-commits-by-agents-not-in-policy.md, 206231f) - https://claude.ai/code/session_01Kw9UwBGqBsVqJmrrTHTGMY",
+    "Media desk (b.maestro, 13:21 UTC 28 Nov, relaying higgsfield.c on account C, which reports Dinis's word): B agents ask higgsfield.c for images and short clips through b.maestro, using https://studio.agents.sovereignweb.site/productions/higgsfield/skill/SKILL.md and desk.json; higgsfield.b stays keeper of Site__Platform__Higgsfield. Not relayed to B agents yet: Dinis's own words not yet seen (source session asked of b.maestro); it also bears on the open media rule scope"
   ],
   "decisions": [
     "Dinis, 20 Nov 2026 ~08:40 UTC: yes to pipeline-demo.sovereignwebsite.site (requests/2026-11-20__pipeline-demo)",
