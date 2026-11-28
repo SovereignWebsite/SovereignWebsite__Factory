@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-28T12:49:30Z",
+  "updated": "2026-11-28T12:51:36Z",
   "state": "successor session running since 28 Nov 02:41 UTC (Fable); the old session has handed everything over and stops (maestro.c archives it at Dinis's word). Account C near its weekly limit (reset Wed 2 Dec 13:00 UTC): every schedule on C is off except maestro.c's (design.c's and studio.c's tasks disabled); messages kept short",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -49,7 +49,7 @@
     "refresh candidates above 300,000 tokens (studio.c, design.c, sites.c): restart note first, successor on Fable, accountant.c measures, titles marked",
     "claim sites.c's Theatre site once Dinis sets its scope; claim only work no .b or .d agent holds",
     "vault keys: padel-coach.c's waits for Dinis's word in its session; instagram.c sent its sealed file to maestro.c by message, not as a commit (maestro.c to accept or ask for the commit)",
-    "refresh c.productions (successor on Fable; first jobs listed in its 12:03 UTC message) and then design.c after the logo round"
+    "c.productions' successor waits: Dinis told it (as reported) to continue in its session to wrap the refresh film up; design.c's successor starts when its next work arrives"
   ],
   "asks": [
     "Dinis: your word in factory.c's session to land conductor.c's key hand-over: IaC work/conductor.c-key-3, 55318f0 (old key retired) then 058fdfc (new entry only) - https://claude.ai/code/session_01Kw9UwFfeW9MLEzbUu7izeW",
@@ -101,7 +101,8 @@
     "padel.c": "started 26 Nov by conductor.c at Dinis's word",
     "answers.c": "started 26 Nov by conductor.c at Dinis's word",
     "higgsfield.c": "started 28 Nov by conductor.c at Dinis's word; first job: review c.productions' pipeline",
-    "c.feet-fables": "Feet Fables keeper; session id held in conductor.c's session (from design.c, 28 Nov)"
+    "c.feet-fables": "Feet Fables keeper; session id held in conductor.c's session (from design.c, 28 Nov)",
+    "c.productions-agile": "helper of c.productions for the Agile film's opening, started 28 Nov by c.productions at Dinis's word (Opus); reports to c.productions and stops; session id held in conductor.c's session"
   },
   "deviations": [
     "2026-11-22 ~21:55 UTC, factory.c (self-reported): force-pushed with lease its own branch work/factory.c-iac after rebasing its two commits onto dev 98e9263 (38a5b97, 8045c7b became a654d73, f159228; same content, re-signed, checks OK). Only its own commits; nothing lost; against the never force-push rule. Reported to Dinis; from now on it merges, not rebases.",
