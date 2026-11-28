@@ -17,6 +17,7 @@ Done:
 - Feet Fables round 2: eec0b99, live as v0.1.3. Recommendation: keep Shelf, Gallery and Night shelf. c.feet-fables adds the version line and star after Dinis's yes in its own session.
 - Padel: five designs merged. site/designs/build.mjs builds them from the live page. Recommended lead: Matchday, then Club Poster.
 - Logo: SovereignWebsite__Org work/design.c-logo at beb2300, in site/brand/, CC BY 4.0, handed to c.productions. The merge is for the keeper or Dinis.
+- Logo variations: same branch at bf85e53 (SW crowned, SWS, sovereign shield), in site/brand/variations/; Dinis to choose.
 - Earlier recommendations: Instagram 2, Studio 4, DNS 3, GitHub 4, YouTube 1, AWS 2, OWASP 2.
 
 Waiting on Dinis:
