@@ -882,7 +882,7 @@
       "role": "Conductor of the SovereignWebsite sessions on account C, the twin of conductor.b (account B) and conductor.d (account D); takes only work no .b or .d agent holds, each piece claimed in board/conductor.c/claims.md first. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 22 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
       "created": "2026-11-22",
-      "status": "active",
+      "status": "retired",
       "session": "https://claude.ai/code/session_01Kw9UwBwGEprxNQqNtSbzyj",
       "fingerprint": "sha256:3dc033c53b9c979d",
       "signing_fingerprint": "sha256:066b77ff10e8c18f",
@@ -897,7 +897,9 @@
       "ssh_signing": {
         "from": "bundle.sign",
         "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
-      }
+      },
+      "retired": "2026-11-28",
+      "retired_note": "Handed over to a fresh session under Dinis's word in the old session (28 Nov: \"So you need to refresh yourself\"); old signatures stay valid."
     },
     {
       "id": "observability-c-sovereignwebsite",
@@ -1797,6 +1799,29 @@
       },
       "retired": "2026-11-27",
       "retired_note": "Session started with the wrong repository (IaC); archived at Dinis's word, 27 Nov 2026 17:48 UTC in conductor.b's session; a fresh session takes over. Retired by conductor.b."
+    },
+    {
+      "id": "conductor-c-2-sovereignwebsite",
+      "agent": "conductor.c@SovereignWebsite.dinis",
+      "role": "Conductor of the SovereignWebsite sessions on account C, the twin of conductor.b and conductor.d. Second session (successor at the 28 Nov refresh). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 28 November 2026 with sgit pki keygen; public bundle from sgit pki export. Only the public half is here.",
+      "created": "2026-11-28",
+      "status": "active",
+      "session": "https://claude.ai/code/session_01Kw9UwFfeW9MLEzbUu7izeW",
+      "fingerprint": "sha256:c0f82c373d7d03f1",
+      "signing_fingerprint": "sha256:daf255878bde6be4",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAxmHQ19G9xhrn87eejSDo\nbt1KZHZEKVCw3c8idEO0SziugNlayf9oXrXF7ST1ugTDzFSz3EvtNUYbtLvQv4Lf\nzwDr5PB17RDQ0V9qoe1nbUTjN5Fa8z+FZZyKFkfmloBVJKPTF8E9Uvlz09ZbQ37v\nc4wuMVpnPii+WUTWrDwpilpqxbtO/v0GlanLWpRuS11QqZZFc0ixprQbKuJDONEg\n6KDaAm6VGKybtWwQM59zcIy+yUYzvmdvFcYryKhR+UxY6769JEefoFUTbWHSvoyn\nhlZRSJQKzAk4xT5IlAwYEbsdXNeqBN16qVk9xg4qhWCmjcVn11qWExEK+OaPNymf\nv6fm1Plcc/gxrjicfJWMd/ufxN+63WVgHJ4sZStH2OcRKtE84yEQuZOHWjEpO2R7\nzhrdKf5uLSoxSd1uzs3VoplaphsfYptV8YaV57sygJVdNz7Qcd3NWEFyTSVX1bB3\n5W/PHo34Z9UjwctGg1S6PhdYh779Bwjhm33l4VnvQ+BUhZi96zEA5E4VjV2xvfid\nsTlecK7RgNuJ1zJEpgbiOrTab+LqOAzi5alRSYYdVh5kfKBGQa/3mo50323Q7kl+\nJpL56BvsvG9RqA/NkSH0doP1jRi8vhvHqbAjqAsggvimN5sMFxeQ/eJaqAE5RTW9\nQ9vaF08m6LIajS9u/re5fZ8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE9IpPaueUlU8eSLxPxQ4Get0Xraca\nG2YX5K9jehoQ89/jzhxvBR6DxoQAkFGnG8U3dM+GOwzcVBmK27h+RHjQIQ==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor-c-sovereignwebsite",
+        "fingerprint": "sha256:c0f82c373d7d03f1",
+        "signing_fingerprint": "sha256:daf255878bde6be4"
+      },
+      "ssh_signing": {
+        "from": "bundle.sign",
+        "note": "build/check-signatures.mjs derives the OpenSSH form from bundle.sign and verifies each commit with git verify-commit."
+      }
     }
   ]
 }
