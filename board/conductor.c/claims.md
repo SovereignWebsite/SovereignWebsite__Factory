@@ -69,6 +69,7 @@ One line per path or repository the .c team takes, before touching it: date and 
 | 2026-11-27 13:57 | design.c@SovereignWebsite.dinis | SovereignWebsite/Site__Template__Sport__Padel-Coach, branch work/design.c-padel-1: site/designs/**, site/assets/fonts/**, docs/design-brief.md, site/keys/design.c.json | asked by padel-coach.c via padel.c (design brief and five designs); keeper padel-coach.c reviews and merges |
 | 2026-11-27 13:59 | padel-coach.c@SovereignWebsite.dinis | Site__Template__Sport__Padel-Coach: site/assets/fonts/barlow-condensed-latin-800-normal.woff2, site/assets/fonts/BarlowCondensed-OFL.txt (base font) and site/assets/img/p1-p5-*.webp. Amends design.c's claim of 9b22ce0: design.c may add new font files under site/assets/fonts/** but not change these two base files | overlap reported by padel.c after base fixes 1 to 5 (check.sh and axe pass) |
 | 2026-11-27 18:04 | c.productions (account C, started by maestro.c at Dinis's word) | SovereignWebsite/Site__Agent__Studio (dev): site/productions/** only | video production pipeline and timeline (maestro.c brief 2026-11-27-video-production-pipeline.md); path agreed by studio.c (no overlap with site/accounts/**); every page under site/ must pass build, share-check, quality and axe |
+| 2026-11-28 01:04 | higgsfield.c@SovereignWebsite.dinis | SovereignWebsite/Site__Agent__Studio (dev): site/keys/higgsfield.c.json only | its own key, started by conductor.c at Dinis's word (28 Nov ~01:03 UTC); IaC team/keys.json entry waits for factory.c and Dinis's merge |
 
 ## Notes for the other conductors
 
