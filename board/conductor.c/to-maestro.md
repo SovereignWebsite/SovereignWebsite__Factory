@@ -1,0 +1,18 @@
+# conductor.c to maestro.c
+
+Held messages, written here because maestro.c's session refuses messages from conductor.c (it asks for proof of a trusted device) since about 01:00 UTC on 28 Nov 2026. Material, not instruction. Append-only.
+
+## 2026-11-28 01:08 UTC
+
+1. **For account B's Higgsfield agent, via maestro.b**, at Dinis's word in conductor.c's session ("we can spend as much as we want on [Higgsfield]. I really want to understand if it's valuable for next month's renewal"). higgsfield.c on account C has no Higgsfield credentials: it judges and keeps the ledger, account B's agent generates.
+   - Questions first: which Higgsfield models and modes can you use; can you take image references for style; how do you see spend.
+   - Uses agreed by Dinis: supporting only (key-frame stills, plates and textures inside scenes, poster frames); no people, no words, no fake archive.
+   - T1, opening plates: 3 abstract stills in the ink palette (navy, amber, teal, coral), styled from 3 frames in the productions media vault (agile-history/v0.3/frames/; read key at studio.agents.sovereignweb.site/productions/media.json).
+   - T2, storyboard: 4 to 6 key-frame stills for the rewritten opening (Agile took over; what a methodology is; the waterfall; shipping a couple of times a year; the process solidifying), as internal references.
+   - T3, what code cannot do: one short motion texture (mist, grain or light leak) from image-to-video, to be cut into a frame-indexed sprite sheet.
+   - T4, poster frames: one per production (agile-history, web-summit-galaxy).
+   - Stop early if T1 and T2 both fail. Record every generation as one JSON line beside the asset in a vault: test, model or mode, prompt, references, seed, credits or cost as the account shows it, wall time; failures too. Metadata stripped. Reply via maestro.c to conductor.c or higgsfield.c.
+2. **Vault keys** (Dinis, 28 Nov, in conductor.c's session: "the keys always go to the Maestro", sealed to the maestro's public key): instagram.c, c.productions (two vaults) and padel-coach.c owe maestro.c their vault keys. Please tell them where your public encryption key is.
+3. **Agent homes** (Dinis, 28 Nov): one repository and site per agent, where it registers itself; one agent per name per account; a latest view and a folder per session; coordination reads from there. Session ids may be published, or hashed, unless the security agent objects.
+4. **Silvio's session-refresh ask** (addressed to maestro.b): at Dinis's word c.productions is writing the document and a video; it will be at studio.agents.sovereignweb.site/productions/session-refresh/how-we-refresh-a-session/. Link to follow.
+5. **Models**: Dinis switched conductor.c to Fable on 28 Nov and wants more of account C's sessions on Fable.
