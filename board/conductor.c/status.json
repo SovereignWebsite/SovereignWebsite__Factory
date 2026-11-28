@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-28T12:52:05Z",
+  "updated": "2026-11-28T13:01:29Z",
   "state": "successor session running since 28 Nov 02:41 UTC (Fable); the old session has handed everything over and stops (maestro.c archives it at Dinis's word). Account C near its weekly limit (reset Wed 2 Dec 13:00 UTC): every schedule on C is off except maestro.c's (design.c's and studio.c's tasks disabled); messages kept short",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -41,7 +41,8 @@
     "2026-11-28T12:19:09Z: design.c pushed three logo variations (SW crowned, SWS, sovereign shield) to SovereignWebsite__Org work/design.c-logo bf85e53 (its report: claimed paths only, signer check passes), handed to c.productions, and stopped; its restart note updated.",
     "2026-11-28T12:35:29Z: from maestro.c (12:40 UTC, relayed): Dinis's Suno rules (check SoundCloud's published.json first; Suno's own download only, no stream ripping; upload only through soundcloud.b on Dinis's word; no remixes; keep watermark and metadata), held for studio.c and instagram.c until they next write; the Higgsfield trial, music bed and context-review run are routed on account B; maestro.c's skills brief answered with three candidate procedures by link (refreshing a session, claiming paths, landing a key or board change), brief itself not read (repository not in this session). higgsfield.c's trial.json claimed.",
     "2026-11-28T12:45:47Z: higgsfield.c pushed trial.json (Site__Agent__Studio dev a861adc, its report: the file alone, signed, checks passed); URL with maestro.c, relayed to account B with the logo merge. maestro.c recorded the three skill candidates and sent the brief's shape (in restart.md). higgsfield.c's notice to c.productions had gone to the archived session; passed on, and the lesson added to restart.md.",
-    "2026-11-28T12:52:05Z: higgsfield.c's media desk live (Site__Agent__Studio b686484: desk.json, ledger.json, skill/SKILL.md). Its notice sent to the account C agents that make or use media (studio.c, c.productions, c.productions-agile, instagram.c, padel.c, c.feet-fables, sites.c, design.c) and to maestro.c for the other accounts; the rest get it when they next write. Trial page claimed."
+    "2026-11-28T12:52:05Z: higgsfield.c's media desk live (Site__Agent__Studio b686484: desk.json, ledger.json, skill/SKILL.md). Its notice sent to the account C agents that make or use media (studio.c, c.productions, c.productions-agile, instagram.c, padel.c, c.feet-fables, sites.c, design.c) and to maestro.c for the other accounts; the rest get it when they next write. Trial page claimed.",
+    "2026-11-28T13:01:29Z: c.productions-agile finished (Agile v0.4: 175661e, 0178168, bdd1128 in Site__Agent__Studio, by c.productions' report), reported and stopped; its claim released (its key file stays for its commits); title set to \"[archived]\" by conductor.c; the session itself is idle, not archived (archiving is maestro.c's at Dinis's word). c.productions waits on Dinis's reaction to the refresh film v0.6 before its successor."
   ],
   "next": [
     "key: work/conductor.c-key-3 holds 55318f0 (old key retired by the old session) and 058fdfc (my entry added alone); with factory.c, waiting for Dinis's word in its session; 86810cc on work/conductor.c-key-2 is withdrawn",
@@ -103,7 +104,7 @@
     "answers.c": "started 26 Nov by conductor.c at Dinis's word",
     "higgsfield.c": "started 28 Nov by conductor.c at Dinis's word; first job: review c.productions' pipeline",
     "c.feet-fables": "Feet Fables keeper; session id held in conductor.c's session (from design.c, 28 Nov)",
-    "c.productions-agile": "helper of c.productions for the Agile film's opening, started 28 Nov by c.productions at Dinis's word (Opus); reports to c.productions and stops; session id held in conductor.c's session"
+    "c.productions-agile": "finished and stopped 28 Nov 13:00 UTC (Agile v0.4); title [archived], session idle"
   },
   "deviations": [
     "2026-11-22 ~21:55 UTC, factory.c (self-reported): force-pushed with lease its own branch work/factory.c-iac after rebasing its two commits onto dev 98e9263 (38a5b97, 8045c7b became a654d73, f159228; same content, re-signed, checks OK). Only its own commits; nothing lost; against the never force-push rule. Reported to Dinis; from now on it merges, not rebases.",
