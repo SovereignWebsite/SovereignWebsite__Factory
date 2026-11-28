@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-28T02:46:52Z",
+  "updated": "2026-11-28T12:03:23Z",
   "state": "successor session running since 28 Nov 02:41 UTC (Fable); the old session has handed everything over and stops (maestro.c archives it at Dinis's word). Account C near its weekly limit (reset Wed 2 Dec 13:00 UTC): every schedule on C is off except maestro.c's (design.c's and studio.c's tasks disabled); messages kept short",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -35,15 +35,17 @@
     "2026-11-28T02:42:07Z: conductor.c refresh started at Dinis's word (\"So you need to refresh yourself ... You're at 60% now\"): title marked [being refreshed], restart.md written (8ae14b0), successor started on Fable, maestro.c told, the case sent to c.productions for the session-refresh film. Title rule from Dinis: \"[being refreshed]\" at the start of the old session's title, \"[archived]\" when it stops.",
     "2026-11-28T02:44:17Z: successor session (this one, on Fable) up since 02:41:51 UTC from board/conductor.c/restart.md; new key conductor-c-2-sovereignwebsite (signing sha256:daf255878bde6be4) on work/conductor.c-key-2 86810cc with the old key retired, for Dinis's merge through factory.c; accountant.c, maestro.c, factory.c and the old session told. Hand-over gaps sent to the old session in one message.",
     "2026-11-28T02:45:32Z: hand-over answers from the old session recorded: it owns no running scheduled task; asks for instagram.c's start and maestro.c's reachability are done and removed; maestro.c's public encryption key location passed (as relayed) to instagram.c, c.productions and padel.c. factory.c's checks refused 86810cc; route chosen: old key retired first, same name kept (one agent per name per account).",
-    "2026-11-28T02:46:52Z: key hand-over ready: 55318f0 and 058fdfc on work/conductor.c-key-3, sent to factory.c; the old session confirmed it holds nothing more and was told it may stop; maestro.c told."
+    "2026-11-28T02:46:52Z: key hand-over ready: 55318f0 and 058fdfc on work/conductor.c-key-3, sent to factory.c; the old session confirmed it holds nothing more and was told it may stop; maestro.c told.",
+    "2026-11-28T12:03:23Z: c.productions (about 370,000 tokens, at a natural break, restart files current at 1c896f9 by its report) has put its own refresh to Dinis in its session; successor to start on his yes, or under the standing rule if he is silent. Logo ask relayed by c.productions routed to design.c and claimed (SovereignWebsite__Org, site/brand/** on a branch). accountant.c pinged at 12:02 UTC for the +1 h and +6 h readings (late: idle since 02:55). instagram.c and c.productions sealed their vault keys to maestro.c; old conductor.c and old c.productions sessions archived, titles marked."
   ],
   "next": [
     "key: work/conductor.c-key-3 holds 55318f0 (old key retired by the old session) and 058fdfc (my entry added alone); with factory.c, waiting for Dinis's word in its session; 86810cc on work/conductor.c-key-2 is withdrawn",
-    "vault keys to maestro.c (entry maestro.c-account-c-2 in promptugal.news/board/keys.json, encryption sha256:061882802f561a04): instagram.c, c.productions and padel-coach.c (after Dinis's word in its session) seal theirs; the old session's sealed copy of c0kmaggy's key ends with it, instagram.c holds the key",
     "read board/conductor.d/to-c.md on dev from 24 Nov on (not read since 23 Nov) and answer in to-d.md",
     "owed: design.c's question on earlier account C sites (next round of change lists); higgsfield.c's verdict path site/productions/higgsfield/ to claim when data exists; hub.c's Email Cell listing for hub.d and sites.c's draft for ben-fung.a via maestro.c (neither confirmed); c.feet-fables's session id from design.c",
     "refresh candidates above 300,000 tokens (studio.c, design.c, sites.c): restart note first, successor on Fable, accountant.c measures, titles marked",
-    "claim sites.c's Theatre site once Dinis sets its scope; claim only work no .b or .d agent holds"
+    "claim sites.c's Theatre site once Dinis sets its scope; claim only work no .b or .d agent holds",
+    "vault keys: padel-coach.c's waits for Dinis's word in its session; instagram.c sent its sealed file to maestro.c by message, not as a commit (maestro.c to accept or ask for the commit)",
+    "refresh c.productions (successor on Fable; first jobs listed in its 12:03 UTC message) and then design.c after the logo round"
   ],
   "asks": [
     "Dinis: your word in factory.c's session to land conductor.c's key hand-over: IaC work/conductor.c-key-3, 55318f0 (old key retired) then 058fdfc (new entry only) - https://claude.ai/code/session_01Kw9UwFfeW9MLEzbUu7izeW",
@@ -91,7 +93,8 @@
     "design.c": "designer for account C sites, hourly round (trig_01LJTULyHHB71yYGfiWb5hWt, :43 each hour) - https://claude.ai/code/session_01Kw9UwFAkBTBoUvV1eCnMsY",
     "padel.c": "started 26 Nov by conductor.c at Dinis's word",
     "answers.c": "started 26 Nov by conductor.c at Dinis's word",
-    "higgsfield.c": "started 28 Nov by conductor.c at Dinis's word; first job: review c.productions' pipeline"
+    "higgsfield.c": "started 28 Nov by conductor.c at Dinis's word; first job: review c.productions' pipeline",
+    "c.feet-fables": "Feet Fables keeper; session id held in conductor.c's session (from design.c, 28 Nov)"
   },
   "deviations": [
     "2026-11-22 ~21:55 UTC, factory.c (self-reported): force-pushed with lease its own branch work/factory.c-iac after rebasing its two commits onto dev 98e9263 (38a5b97, 8045c7b became a654d73, f159228; same content, re-signed, checks OK). Only its own commits; nothing lost; against the never force-push rule. Reported to Dinis; from now on it merges, not rebases.",

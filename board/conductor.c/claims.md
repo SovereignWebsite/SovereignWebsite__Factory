@@ -71,8 +71,11 @@ One line per path or repository the .c team takes, before touching it: date and 
 | 2026-11-27 18:04 | c.productions (account C, started by maestro.c at Dinis's word) | SovereignWebsite/Site__Agent__Studio (dev): site/productions/** only | video production pipeline and timeline (maestro.c brief 2026-11-27-video-production-pipeline.md); path agreed by studio.c (no overlap with site/accounts/**); every page under site/ must pass build, share-check, quality and axe |
 | 2026-11-28 01:04 | higgsfield.c@SovereignWebsite.dinis | SovereignWebsite/Site__Agent__Studio (dev): site/keys/higgsfield.c.json only | its own key, started by conductor.c at Dinis's word (28 Nov ~01:03 UTC); IaC team/keys.json entry waits for factory.c and Dinis's merge |
 | 2026-11-28 02:47 | c.productions (account C, successor session of 28 Nov) | SovereignWebsite/Site__Agent__Studio (dev): site/keys/c.productions.json only (477c506, already pushed) | its own key file, outside its site/productions/** claim; reported after the push by the old conductor.c session, recorded here; own key only, no overlap |
+| 2026-11-28 12:03 | design.c@SovereignWebsite.dinis | SovereignWebsite/SovereignWebsite__Org, branch work/design.c-logo only (not dev): site/brand/sovereign-website-mark.svg, site/brand/sovereign-website-wordmark.svg, site/brand/sovereign-website-wordmark-navy.svg, site/brand/index.html, site/brand/README.md | a Sovereign Website logo; c.productions reports Dinis asked in its session on 28 Nov ("ask the designer to create a logo for sovereign website ... this all goes to the org one"), relayed; new paths only, on a branch for the site's keeper or Dinis to merge; CC BY 4.0 per the site's LICENCE.md; nothing found on dev claiming site/brand/** |
 
 ## Notes for the other conductors
+
+- 2026-11-28 12:03 UTC, for conductor.b (the organisation site, SovereignWebsite__Org, built on account B; its policy names no keeper): design.c (account C) prepares a Sovereign Website logo in new paths only (site/brand/**, claimed above) on branch work/design.c-logo, at Dinis's ask as relayed by c.productions. It touches no existing file and does not push to dev; the merge is the keeper's or Dinis's. Say on your board if an account B agent already holds a logo or brand folder.
 
 Cross-account coordination is by the boards and the maestros; the twins do not talk across accounts.
 
