@@ -125,8 +125,8 @@ async function describe(org, x, spec) {
   const dev = await gh('GET', `/repos/${org}/${x.name}/branches/dev`);
   const want = spec[x.name] || {};
   let cname = null, seed_missing = [];
-  let https_enforced = false, cert_state = null;
-  if (x.has_pages) { const pg = await gh('GET', `/repos/${org}/${x.name}/pages`); cname = pg.data?.cname ?? null; https_enforced = !!pg.data?.https_enforced; cert_state = pg.data?.https_certificate?.state ?? null; }
+  let https_enforced = false, cert_state = null, cert_description = null, cert_expires = null;
+  if (x.has_pages) { const pg = await gh('GET', `/repos/${org}/${x.name}/pages`); cname = pg.data?.cname ?? null; https_enforced = !!pg.data?.https_enforced; cert_state = pg.data?.https_certificate?.state ?? null; cert_description = pg.data?.https_certificate?.description ?? null; cert_expires = pg.data?.https_certificate?.expires_at ?? null; }
   const rs = await gh('GET', `/repos/${org}/${x.name}/rulesets`);
   const names = new Set((Array.isArray(rs.data) ? rs.data : []).map((q) => q.name));
   const isProtected = names.has('main-locked') && names.has('dev-safe');
@@ -145,7 +145,7 @@ async function describe(org, x, spec) {
     const usr = await gh('GET', `/users/${u}`);
     if (usr.status === 404) unknown_users.push(ul);
   }
-  return { ...x, has_dev: dev.status === 200, cname, seed_missing, managed_shas, teams, https_enforced, cert_state, protected: isProtected, collaborators, unknown_users };
+  return { ...x, has_dev: dev.status === 200, cname, seed_missing, managed_shas, teams, https_enforced, cert_state, cert_description, cert_expires, protected: isProtected, collaborators, unknown_users };
 }
 
 export function markdown(p) {
@@ -157,6 +157,16 @@ export function markdown(p) {
   return l.join('\n');
 }
 
+// Each Pages site's domain and certificate as GitHub reports them, read only (a.devops, 25 Nov 2026: read cert_state
+// without re-saving a domain, which spends a Let's Encrypt certificate). Shown when SHOW_PAGES=true. Lists only sites
+// that have a custom domain: one that has lost its domain shows in the plan as pages.set_cname instead.
+export function pagesReport(live) {
+  const rows = Object.entries(live).filter(([, l]) => l && l.cname).sort(([a], [b]) => a.localeCompare(b));
+  const cell = (v) => String(v ?? '').replace(/\|/g, '/').replace(/\s+/g, ' ');
+  return ['### Pages certificates (read only)', '', '| Repository | Domain | Certificate | Description | Expires | HTTPS enforced |', '|---|---|---|---|---|---|',
+    ...rows.map(([n, l]) => `| ${n} | ${l.cname} | ${cell(l.cert_state || 'none')} | ${cell(l.cert_description)} | ${cell(l.cert_expires)} | ${l.https_enforced ? 'yes' : 'no'} |`)].join('\n');
+}
+
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const only = (process.env.ONLY_REPOS || '').split(',').map((x) => x.trim()).filter(Boolean);
   const org = scoped(withRequests(JSON.parse(readFileSync('org/repos.json', 'utf8'))), only);
@@ -165,4 +175,5 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const p = { ...plan(org, live), ...(only.length ? { scope: only } : {}) };
   if (process.argv[2]) writeFileSync(process.argv[2], JSON.stringify(p, null, 2));
   console.log(markdown(p));
+  if (process.env.SHOW_PAGES === 'true') console.log('\n' + pagesReport(live));
 }

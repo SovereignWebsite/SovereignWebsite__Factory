@@ -808,6 +808,19 @@ console.log('OK (sport coaches)');
 }
 console.log('OK (agent homes and written aliases)');
 
+// plan_only reports each Pages domain and certificate state without changing anything (a.devops, 25 Nov 2026).
+{
+  const { pagesReport } = await import('../build/org-plan.mjs');
+  const r = pagesReport({ Site__B: { cname: 'b.x', cert_state: 'authorization_pending', cert_description: 'rate | limited', https_enforced: false }, Site__A: { cname: 'a.x', cert_state: 'approved', https_enforced: true }, Site__C: { cname: null } });
+  const rows = r.split('\n').filter((l) => l.startsWith('| Site__'));
+  assert.deepEqual(rows.map((l) => l.split(' | ')[0]), ['| Site__A', '| Site__B'], 'sites with a domain, sorted');
+  assert.ok(rows[1].includes('authorization_pending') && rows[1].includes('rate / limited'), 'state and description shown, pipes escaped');
+  const wf = readFileSync('.github/workflows/org-apply.yml', 'utf8');
+  assert.ok(/external-collaborators:\n\s+#[^\n]*\n\s+if: inputs\.plan_only != true/.test(wf), 'plan_only skips the collaborators job too');
+  assert.ok(/name: Apply\n\s+if: .*inputs\.plan_only != true/.test(wf) && /name: Policy check\n\s+if: .*inputs\.plan_only != true/.test(wf), 'plan_only skips apply');
+}
+console.log('OK (plan only)');
+
 // A moved site keeps its old address until the request drops keep_address (certificate slots, 25 Nov 2026).
 {
   const R = await import('../build/requests.mjs');
