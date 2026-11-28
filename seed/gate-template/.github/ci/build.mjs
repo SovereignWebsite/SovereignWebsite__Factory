@@ -32,6 +32,11 @@ if (!gated) {
       const detail = body.split('\n').filter((l) => l.trim() && !/^[A-Za-z-]+: /.test(l)).join(' ').trim().slice(0, 400);
       return { commit: c, date: d, what, ...(detail ? { detail } : {}) };
     });
+    // The version each change shipped in: the earliest release tag that contains it; none yet means this build.
+    if (changes.length) {
+      const names = execFileSync('git', ['name-rev', '--tags', '--name-only', ...changes.map((x) => x.commit)], { encoding: 'utf8' }).split('\n');
+      changes = changes.map((x, i) => { const t = (names[i] || '').trim().replace(/[~^].*$/, ''); return { version: t && t !== 'undefined' ? t : version, ...x }; });
+    }
   } catch { changes = []; } // no git history here (a local build): an empty list
   writeFileSync('_site/changes.json', JSON.stringify({ version, commit, date, repository: repoUrl, changes }, null, 1) + '\n');
 }
