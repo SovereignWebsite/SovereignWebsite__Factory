@@ -6,7 +6,7 @@
     "conductor.d@SovereignWebsite.dinis"
   ],
   "started_by": "maestro.c (account C, https://claude.ai/code/session_01Kw9UwEYkVCthc5KiVo3bAp), at Dinis's word, 22 Nov 2026 ~17:15 UTC",
-  "updated": "2026-11-28T14:10:24Z",
+  "updated": "2026-11-28T14:14:45Z",
   "state": "successor session running since 28 Nov 02:41 UTC (Fable); the old session has handed everything over and stops (maestro.c archives it at Dinis's word). Account C near its weekly limit (reset Wed 2 Dec 13:00 UTC): every schedule on C is off except maestro.c's (design.c's and studio.c's tasks disabled); messages kept short",
   "done": [
     "read the Factory (dev 95dc2c5): CLAUDE.md, README.md, REALITY.md, status.json (conductor.b), board/conductor.d/ (status, claims), board/workflow (signing, retiring agents), the 22 Nov incident, policy/abp.json, team/keys.json",
@@ -43,7 +43,8 @@
     "2026-11-28T12:45:47Z: higgsfield.c pushed trial.json (Site__Agent__Studio dev a861adc, its report: the file alone, signed, checks passed); URL with maestro.c, relayed to account B with the logo merge. maestro.c recorded the three skill candidates and sent the brief's shape (in restart.md). higgsfield.c's notice to c.productions had gone to the archived session; passed on, and the lesson added to restart.md.",
     "2026-11-28T12:52:05Z: higgsfield.c's media desk live (Site__Agent__Studio b686484: desk.json, ledger.json, skill/SKILL.md). Its notice sent to the account C agents that make or use media (studio.c, c.productions, c.productions-agile, instagram.c, padel.c, c.feet-fables, sites.c, design.c) and to maestro.c for the other accounts; the rest get it when they next write. Trial page claimed.",
     "2026-11-28T13:01:29Z: c.productions-agile finished (Agile v0.4: 175661e, 0178168, bdd1128 in Site__Agent__Studio, by c.productions' report), reported and stopped; its claim released (its key file stays for its commits); title set to \"[archived]\" by conductor.c; the session itself is idle, not archived (archiving is maestro.c's at Dinis's word). c.productions waits on Dinis's reaction to the refresh film v0.6 before its successor.",
-    "2026-11-28T14:10:24Z: routed c.productions' Agile plan (Site__Agent__Studio aa4a804) to instagram.c (Instagram post; YouTube upload via its Buffer run, unless it says otherwise) and c.history (hosting); claimed c.history's paths in Site__History__Agile. higgsfield.c's research page pushed (b69a965, its report). Nothing posted or published before Dinis signs the exact version."
+    "2026-11-28T14:10:24Z: routed c.productions' Agile plan (Site__Agent__Studio aa4a804) to instagram.c (Instagram post; YouTube upload via its Buffer run, unless it says otherwise) and c.history (hosting); claimed c.history's paths in Site__History__Agile. higgsfield.c's research page pushed (b69a965, its report). Nothing posted or published before Dinis signs the exact version.",
+    "2026-11-28T14:14:45Z: instagram.c holds the Agile film's Instagram, LinkedIn and YouTube posts; YouTube still allows 2 uploads a day through Buffer (read-only check today)."
   ],
   "next": [
     "key: work/conductor.c-key-3 holds 55318f0 (old key retired by the old session) and 058fdfc (my entry added alone); with factory.c, waiting for Dinis's word in its session; 86810cc on work/conductor.c-key-2 is withdrawn",
@@ -120,7 +121,8 @@
     "studio.c, 27 Nov 03:31 UTC (reported by studio.c): push 8baf01c to Site__Agent__Studio added a draft page that failed axe (landmark-one-main, region), failing the Pages deploy for everyone including cl-6.studio's 8c9c055; it had run build, share-check and quality but not axe. Fixed in cce172c; axe now runs before every push.",
     "padel-coach.c, 27 Nov ~13:52 UTC (reported by padel.c): wrote its key (site/keys/), area and first version in Site__Template__Sport__Padel-Coach a few minutes before conductor.c's claim (1f8b010) reached it. Paths match the claim; no harm.",
     "design.c, 27 Nov ~14:10 UTC (self-reported): its padel design push (58b3092) carried two stray files from a sed delimiter slip in its test scripts; padel-coach.c removed them. design.c now checks the staged file list before every commit.",
-    "2026-11-28 ~02:43 UTC, conductor.c (successor): pushed work/conductor.c-key-2 86810cc adding my key and retiring the old one in one commit, as my start prompt said; IaC's check-signatures and abp paths refuse that shape (factory.c's check). I ran test, abp validate and leak-scan but not check-signatures or abp paths against dev. Withdrawn, not landed; from now on both run before a key branch goes to factory.c."
+    "2026-11-28 ~02:43 UTC, conductor.c (successor): pushed work/conductor.c-key-2 86810cc adding my key and retiring the old one in one commit, as my start prompt said; IaC's check-signatures and abp paths refuse that shape (factory.c's check). I ran test, abp validate and leak-scan but not check-signatures or abp paths against dev. Withdrawn, not landed; from now on both run before a key branch goes to factory.c.",
+    "2026-11-28 ~14:12 UTC, c.history (self-reported): pushed one commit to Site__History__Agile dev adding only docs/tools/mirror_film.mjs (a claimed path; signed, site checks passing) before reading conductor.c's 'push nothing until Dinis signs'. It publishes no film and changes no page; kept, not reverted. Nothing more goes to dev before Dinis signs a version."
   ],
   "exceptions": [
     "2026-11-23 02:46 UTC: the sealed-store guide (aws.c's docs/sealed-store.md) assigned to factory.c without Dinis's word, as a two-way door: into seed/shared so every new site gets it, on a branch for merge (seed/ still needs Dinis's merge by CLAUDE.md)",
